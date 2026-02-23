@@ -1,0 +1,114 @@
+/* [1. 전체 레이아웃] */
+.admin-container { width: 98%; margin: 20px auto; font-family: 'Malgun Gothic', sans-serif; }
+nav { background: #f1f1f1; padding: 10px 20px; text-align: right; border-bottom: 1px solid #ddd; margin-bottom: 20px; }
+nav button { padding: 6px 12px; margin-left: 5px; cursor: pointer; border: 1px solid #ccc; border-radius: 4px; font-weight: bold; }
+h1 { text-align: center; color: #2c3e50; margin-bottom: 20px; font-size: 22px; }
+
+/* [2. 가로 스크롤 컨테이너] */
+.table-scroll-container { 
+    overflow-x: auto; 
+    max-width: 100%; 
+    border: 1px solid #000; 
+    position: relative;
+    background-color: white;
+}
+
+.summary-table { width: auto; border-collapse: collapse; table-layout: fixed; }
+
+/* [3. 셀 너비 슬림화] */
+.summary-table th, .summary-table td { 
+    border: 1px solid #000; 
+    padding: 6px 4px; 
+    text-align: center; 
+    font-size: 12px; 
+    white-space: nowrap; 
+}
+
+/* [4. 왼쪽 고정 열 너비 설정 (Sticky)] */
+.sticky-1 { position: sticky; left: 0; z-index: 20; background: #ffff00 !important; width: 35px; }
+.sticky-2 { position: sticky; left: 35px; z-index: 20; background: #ffff00 !important; width: 80px; }
+.sticky-3 { position: sticky; left: 115px; z-index: 20; background: #fff2cc !important; width: 65px; border-right: 2px solid #000 !important; }
+
+.unit-col { width: 110px; } 
+
+td.sticky-1 { position: sticky; left: 0; z-index: 10; background: #fff !important; }
+td.sticky-2 { position: sticky; left: 35px; z-index: 10; background: #fff !important; font-weight: bold; color: #3498db; cursor: pointer; text-decoration: underline; }
+td.sticky-3 { position: sticky; left: 115px; z-index: 10; background: #fffdf0 !important; font-weight: bold; color: red; border-right: 2px solid #000 !important; }
+
+.head-yellow { background: #ffff00; font-weight: bold; }
+.head-green { background: #92d050; cursor: pointer; text-decoration: underline; font-weight: bold; }
+.sub-header { background: #f2f2f2; font-size: 11px; }
+
+/* [5. 모달창 디자인] */
+.modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:9999; overflow-y:auto; }
+.modal-content { background:white; width:210mm; margin: 20px auto; padding: 20px; border-radius: 8px; }
+.print-selector { margin-bottom: 15px; background: #f8f9fa; padding: 10px; border: 1px solid #ddd; border-radius: 8px; }
+.student-item { display: inline-block; margin-right: 12px; font-size: 13px; cursor: pointer; }
+
+/* [6. 인쇄 최적화 - 세로 잘림 및 2페이지 해결 핵심 수선 부위] */
+@media print {
+    @page {
+        size: A4;
+        margin: 10mm; /* 여백을 10mm로 일정하게 조정 */
+    }
+    
+    /* 인쇄 시 모든 요소를 가둬두는 overflow를 해제 */
+    html, body {
+        height: auto !important;
+        overflow: visible !important;
+        width: 210mm;
+    }
+
+    /* 모달창의 '고정 위치'와 '스크롤'을 해제하여 페이지가 넘어가게 함 */
+    .modal {
+        position: absolute !important;
+        display: block !important;
+        overflow: visible !important;
+        background: transparent !important;
+    }
+
+    .modal-content {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        box-shadow: none !important;
+        overflow: visible !important;
+    }
+
+    body * { visibility: hidden; }
+    #printArea, #printArea * { visibility: visible; }
+    #printArea { 
+        position: absolute; 
+        left: 0; 
+        top: 0; 
+        width: 100% !important; 
+        overflow: visible !important;
+    }
+
+    .no-print { display: none !important; }
+
+    /* 표와 이미지가 짤리지 않게 강제 설정 */
+    .result-page-container {
+        width: 100% !important;
+        overflow: visible !important;
+        page-break-after: auto;
+    }
+    
+    table {
+        width: 100% !important;
+        table-layout: fixed !important;
+    }
+
+    .print-img-box {
+        max-width: 100px !important;
+        max-height: 80px !important;
+    }
+
+    /* 문제 중간 끊김 방지 */
+    .q-row-print {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+
+    td, th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}

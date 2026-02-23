@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8"><title>학생 응시 - 자동차 CBT</title><link rel="stylesheet" href="B_style.css">
+    <style>
+        .exam-subject-title { text-align: center; font-size: 24px; font-weight: bold; margin-bottom: 20px; padding: 10px; border-bottom: 3px double #000; color: #2c3e50; }
+        .report-table { width: 100%; border-collapse: collapse; table-layout: fixed; border: 2px solid #000; margin-bottom: 20px; }
+        .report-table td { border: 1px solid #000; padding: 10px; text-align: center; font-size: 14px; height: 45px; word-break: keep-all; background-color: #ffffff; }
+        .bg-blue-label { background-color: #e3f2fd !important; font-weight: bold; }
+        .col-label-1 { width: 15%; } .col-content-1 { width: 45%; } .col-label-2 { width: 13.33%; } .col-content-2 { width: 26.67%; }
+        .col-bottom-purpose { width: 60%; } .col-bottom-score { width: 13.33%; } .col-bottom-level { width: 13.33%; } .col-bottom-teacher { width: 13.34%; }
+        
+        #resScore, #resLevel { font-weight: bold; font-size: 20px; color: #e74c3c; } 
+
+        .question-table { width: 100%; border-collapse: collapse; table-layout: fixed; border: 2px solid #000; margin-top: 20px; }
+        .q-header { background-color: #e3f2fd; font-weight: bold; border: 1px solid #000; padding: 10px; text-align: center; }
+        .q-row td { border: 1px solid #000; padding: 15px; vertical-align: middle; background-color: #ffffff; }
+        .col-q-no { width: 8%; font-weight: bold; text-align: center; font-size: 16px; }
+        .col-q-main { width: 77%; text-align: left; }
+        .col-q-ans { width: 7.5%; text-align: center; font-size: 16px; }
+        .col-q-chk { width: 7.5%; text-align: center; font-size: 18px; font-weight: bold; color: red; } 
+        .q-inner-flex { display: flex; gap: 20px; align-items: flex-start; }
+        .q-img-box { flex: 0 0 250px; }
+        .q-img-box img { width: 100%; border: 1px solid #ddd; border-radius: 4px; }
+        .q-text-box { flex: 1; }
+        .q-options-list { list-style: none; padding: 0; margin: 8px 0 0 0; }
+        .q-options-list li { margin-bottom: 6px; display: flex; align-items: center; border: none; } 
+        .q-options-list input[type="radio"] { display: none; }
+        .q-opt-label { cursor: pointer; display: flex; align-items: center; font-size: 15px; border: none; line-height: 1.2; }
+        .q-opt-label::before { content: ''; display: inline-block; width: 18px; height: 18px; border: 1.5px solid #333; margin-right: 8px; background: #fff; text-align: center; line-height: 16px; font-size: 12px; font-weight: bold; }
+        input[type="radio"]:checked + .q-opt-label::before { content: '✔'; background: #333; color: #fff; }
+        input[type="radio"]:checked + .q-opt-label { font-weight: bold; color: #000; }
+        #userName { width: 95%; border: none; border-bottom: 2px solid #3498db; font-size: 18px; font-weight: bold; background: #fffdf0; padding: 5px; text-align: center; }
+        #userName:focus { background: #fff; outline: none; border-bottom: 2px solid #e74c3c; }
+        .mark-o { color: blue; } .mark-x { color: red; }
+        .btn-submit { padding: 15px 40px; font-size: 18px; background: #3498db; color: #fff; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div id="classSelectModal" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; display:flex; justify-content:center; align-items:center;">
+        <div style="background:white; padding:40px; border-radius:15px; text-align:center; width:350px;">
+            <h2 style="margin-bottom:20px; color:#2c3e50;">🚗 반 선택 및 성명 입력</h2>
+            <select id="studentClassSelect" style="padding:12px; font-size:18px; width:100%; margin-bottom:15px; border:2px solid #3498db; border-radius:8px;">
+                <option value="">--- 본인 반 선택 ---</option>
+                <option value="501반">501반</option><option value="601반">601반</option><option value="602반">602반</option>
+                <option value="603반">603반</option><option value="701반">701반</option><option value="702반">702반</option><option value="703반">703반</option>
+            </select>
+            <input type="text" id="startUserName" placeholder="성명을 입력하세요" style="padding:12px; font-size:18px; width:100%; box-sizing:border-box; border:2px solid #3498db; border-radius:8px; margin-bottom:20px; text-align:center;">
+            <button onclick="startExam()" style="padding:15px; width:100%; font-size:18px; background:#3498db; color:white; border:none; border-radius:8px; cursor:pointer; font-weight:bold;">시험 시작하기</button>
+        </div>
+    </div>
+
+    <div class="exam-container" style="display:none;" id="examMainArea">
+        <div id="displaySubTitle" class="exam-subject-title">능력단위 평가</div>
+        <table class="report-table">
+            <colgroup><col class="col-label-1"><col class="col-content-1"><col class="col-label-2"><col class="col-content-2"></colgroup>
+            <tr><td class="bg-blue-label">훈련과정</td><td class="text-left" id="infoGroupName"></td><td class="bg-blue-label">훈련기간</td><td id="infoGroupPeriod"></td></tr>
+            <tr><td class="bg-blue-label">훈련생명</td><td class="text-left"><input type="text" id="userName" placeholder="성명을 입력하세요" autocomplete="off" readonly></td><td class="bg-blue-label">시행일자</td><td id="infoExamDate"></td></tr>
+        </table>
+        <table class="report-table" style="margin-top:-1px;">
+            <colgroup><col class="col-bottom-purpose"><col class="col-bottom-score"><col class="col-bottom-level"><col class="col-bottom-teacher"></colgroup>
+            <tr><td class="bg-blue-label">사전평가 목적</td><td class="bg-blue-label">취득점수</td><td class="bg-blue-label">사전수준</td><td class="bg-blue-label">담당교사</td></tr>
+            <tr><td id="infoExamPurpose" class="text-left" style="height:90px; vertical-align:top; padding:10px;"></td><td id="resScore"></td><td id="resLevel"></td><td id="infoTeacherName" style="font-weight:bold;"></td></tr>
+        </table>
+        <table class="question-table">
+            <thead>
+                <tr><th class="q-header" style="width:8%;">번호</th><th class="q-header" style="width:77%;">문제</th><th class="q-header" style="width:7.5%;">답안</th><th class="q-header" style="width:7.5%;">채점</th></tr>
+            </thead>
+            <tbody id="questionContainer"></tbody>
+        </table>
+        <div class="submit-area" id="submitArea" style="text-align:center; margin-top:30px; padding-bottom:50px;">
+            <button onclick="submitExam()" class="btn-submit">최종 답안 제출</button>
+        </div>
+    </div>
+
+    <script>
+        let examQuestions = [];
+        let currentSubId = ""; 
+
+        function startExam() {
+            const selected = document.getElementById('studentClassSelect').value;
+            const sName = document.getElementById('startUserName').value.trim();
+            if(!selected) { alert("반을 선택해야 합니다."); return; }
+            if(!sName) { alert("성명을 입력해야 합니다."); return; }
+
+            sessionStorage.setItem('selectedClass', selected);
+            
+            // [추가 배선] 기록 체크 로직
+            const raw = localStorage.getItem(`${selected}_fullConfig`);
+            if(raw) {
+                const config = JSON.parse(raw);
+                let targetId = "";
+                [...(config.ncs || []), ...(config.nonNcs || [])].forEach(main => {
+                    main.subSubjects.forEach(sub => { if(sub.isActive) targetId = sub.name + sub.date; });
+                });
+                
+                if(targetId) {
+                    const results = JSON.parse(localStorage.getItem(`${selected}_results_${targetId}`) || '[]');
+                    const myResult = results.find(r => r.userName === sName);
+                    if(myResult) {
+                        alert(`${sName} 학생은 이미 응시했습니다. 결과 화면으로 이동합니다.`);
+                        document.getElementById('classSelectModal').style.display = 'none';
+                        document.getElementById('examMainArea').style.display = 'block';
+                        document.getElementById('userName').value = sName;
+                        loadActiveQuestions(selected, myResult); // 기록이 있을 때 로드
+                        return;
+                    }
+                }
+            }
+
+            document.getElementById('classSelectModal').style.display = 'none';
+            document.getElementById('examMainArea').style.display = 'block';
+            document.getElementById('userName').value = sName;
+            loadActiveQuestions(selected);
+        }
+
+        function loadActiveQuestions(className, existingData = null) {
+            document.getElementById('infoGroupName').innerText = localStorage.getItem(`${className}_groupName`) || '';
+            document.getElementById('infoGroupPeriod').innerText = localStorage.getItem(`${className}_groupPeriod`) || '';
+            document.getElementById('infoTeacherName').innerText = localStorage.getItem(`${className}_teacherName`) || '';
+            const raw = localStorage.getItem(`${className}_fullConfig`);
+            if(!raw) return;
+            const config = JSON.parse(raw);
+            examQuestions = [];
+            let displayTitle = "";
+            [...(config.ncs || []), ...(config.nonNcs || [])].forEach(main => {
+                main.subSubjects.forEach(sub => {
+                    if(sub.isActive) { 
+                        sub.questions.forEach(q => examQuestions.push({...q}));
+                        displayTitle = `(${main.title}) ${sub.name}`;
+                        currentSubId = sub.name + sub.date; 
+                        document.getElementById('infoExamPurpose').innerText = sub.purpose || "";
+                        document.getElementById('infoExamDate').innerText = sub.date || "";
+                    }
+                });
+            });
+            document.getElementById('displaySubTitle').innerText = displayTitle;
+            
+            if(existingData) {
+                renderQuestions(existingData);
+            } else {
+                renderQuestions();
+            }
+        }
+
+        function renderQuestions(existingData = null) {
+            const container = document.getElementById('questionContainer');
+            container.innerHTML = examQuestions.map((q, idx) => `
+                <tr class="q-row">
+                    <td class="col-q-no" id="q_no_${idx}">문제${idx+1}</td>
+                    <td class="col-q-main">
+                        <div class="q-inner-flex">
+                            ${q.img ? `<div class="q-img-box"><img src="${q.img}"></div>` : ''}
+                            <div class="q-text-box">
+                                <div style="font-weight:bold; font-size:16px; margin-bottom:8px;">${q.text}</div>
+                                <ul class="q-options-list">
+                                    ${q.options.map((opt, oIdx) => `
+                                        <li><input type="radio" id="q_${idx}_${oIdx}" name="q_${idx}" value="${oIdx+1}" onchange="updateAnswerDisplay(${idx}, ${oIdx+1})">
+                                            <label for="q_${idx}_${oIdx}" class="q-opt-label">${oIdx+1}. ${opt}</label></li>`).join('')}
+                                </ul>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="col-q-ans" id="ans_display_${idx}"></td>
+                    <td class="col-q-chk" id="chk_display_${idx}"></td>
+                </tr>`).join('');
+
+            // [추가 배선] 기록이 있으면 즉시 채점 화면 표시
+            if(existingData) {
+                existingData.details.forEach((d, idx) => {
+                    const isCorrect = d.studentVal == d.correctAns;
+                    document.getElementById(`q_no_${idx}`).innerHTML = `문제${idx+1}<br><span class="${isCorrect?'mark-o':'mark-x'}">(${isCorrect?'O':'X'})</span>`;
+                    document.getElementById(`ans_display_${idx}`).innerText = d.studentVal;
+                    document.getElementById(`chk_display_${idx}`).innerText = d.correctAns;
+                    const radios = document.querySelectorAll(`input[name="q_${idx}"]`);
+                    radios.forEach(r => {
+                        if(r.value == d.studentVal) r.checked = true;
+                        r.disabled = true;
+                    });
+                });
+                document.getElementById('resScore').innerText = existingData.score + "점";
+                document.getElementById('resLevel').innerText = existingData.level;
+                document.getElementById('submitArea').style.display = 'none';
+            }
+        }
+
+        function updateAnswerDisplay(qIdx, val) { document.getElementById(`ans_display_${qIdx}`).innerText = val; }
+
+        function submitExam() {
+            const name = document.getElementById('userName').value.trim();
+            const className = sessionStorage.getItem('selectedClass');
+            if(!name) { alert("성명이 누락되었습니다."); return; }
+            if(!confirm("최종 답안을 제출하시겠습니까?")) return;
+            let scoreCount = 0;
+            const studentDetails = []; 
+            examQuestions.forEach((q, idx) => {
+                const sel = document.querySelector(`input[name="q_${idx}"]:checked`);
+                const studentVal = sel ? sel.value : "0";
+                const isCorrect = studentVal == q.answer;
+                studentDetails.push({ studentVal: studentVal, correctAns: q.answer });
+                const noEl = document.getElementById(`q_no_${idx}`);
+                const chkEl = document.getElementById(`chk_display_${idx}`);
+                if (isCorrect) { noEl.innerHTML = `문제${idx+1}<br><span class="mark-o">(O)</span>`; scoreCount++; }
+                else { noEl.innerHTML = `문제${idx+1}<br><span class="mark-x">(X)</span>`; }
+                chkEl.innerText = q.answer; 
+                document.getElementById(`ans_display_${idx}`).innerText = studentVal;
+                document.querySelectorAll(`input[name="q_${idx}"]`).forEach(i => i.disabled = true);
+            });
+            const finalScore = Math.round((scoreCount / examQuestions.length) * 100);
+            let level = finalScore >= 80 ? "상" : (finalScore >= 60 ? "중" : "하");
+            document.getElementById('resScore').innerText = finalScore + "점";
+            document.getElementById('resLevel').innerText = level;
+            const fullResultData = {
+                userName: name, score: finalScore, level: level, submitTime: new Date().toLocaleString(),
+                displayTitle: document.getElementById('displaySubTitle').innerText,
+                groupName: document.getElementById('infoGroupName').innerText,
+                groupPeriod: document.getElementById('infoGroupPeriod').innerText,
+                examDate: document.getElementById('infoExamDate').innerText,
+                purpose: document.getElementById('infoExamPurpose').innerText,
+                teacherName: document.getElementById('infoTeacherName').innerText,
+                details: studentDetails
+            };
+            const results = JSON.parse(localStorage.getItem(`${className}_results_${currentSubId}`) || '[]');
+            results.push(fullResultData);
+            localStorage.setItem(`${className}_results_${currentSubId}`, JSON.stringify(results));
+            document.getElementById('submitArea').style.display = 'none';
+            alert(`제출되었습니다. 점수: ${finalScore}점`);
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
