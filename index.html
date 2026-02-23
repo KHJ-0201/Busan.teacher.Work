@@ -82,7 +82,7 @@
     </div>
 
     <div id="pw-section">
-        <input type="password" id="teacher-pw" placeholder="비밀번호를 입력하세요">
+        <input type="password" id="teacher-pw" placeholder="비밀번호를 입력하세요" onkeyup="if(window.event.keyCode==13){checkPassword()}">
         <button onclick="checkPassword()" style="width: 100%; background-color: #2c3e50; color: white;">확인</button>
     </div>
 </div>

@@ -1,4 +1,18 @@
+/* [1. 초기 설정 및 파이어베이스 연결] */
 const currentClass = sessionStorage.getItem('selectedClass');
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDs15RTlqQSz4u1Gr6NLQ2Kx25Raey2TtA",
+  authDomain: "khj-teacher-work.firebaseapp.com",
+  databaseURL: "https://khj-teacher-work-default-rtdb.firebaseio.com",
+  projectId: "khj-teacher-work",
+  storageBucket: "khj-teacher-work.firebasestorage.app",
+  messagingSenderId: "384706353235",
+  appId: "1:384706353235:web:9ab057e382bad1010b0ea6"
+};
+
+if (!firebase.apps.length) { firebase.initializeApp(firebaseConfig); }
+const database = firebase.database();
 
 window.onload = function() {
     if (!currentClass) {
@@ -11,29 +25,43 @@ window.onload = function() {
 };
 
 /* [1단계] 메인 통합 일람표 */
-function renderIntegratedTable() {
+async function renderIntegratedTable() {
     const area = document.getElementById('resultTableArea');
-    const config = JSON.parse(localStorage.getItem(`${currentClass}_fullConfig`) || '{"ncs":[], "nonNcs":[]}');
+    
+    // [수정] 클라우드(Firebase)에서 문제 구성 정보를 가져옵니다.
+    const configSnapshot = await database.ref(`CONFIG/${currentClass}/fullConfig`).once('value');
+    const config = configSnapshot.val() || { ncs: [], nonNcs: [] };
     
     let subjects = [];
     [...config.ncs, ...config.nonNcs].forEach(main => {
         main.subSubjects.forEach(sub => {
             if (sub.date) {
-                // [배선 완성] B페이지 저장 방식과 동일하게 모든 공백을 제거하여 ID를 생성합니다.
                 const subId = (sub.name + sub.date).replace(/\s+/g, '');
                 subjects.push({ id: subId, name: sub.name, date: sub.date, mainTitle: main.title });
             }
         });
     });
 
+    // [수정] 클라우드(Firebase)에서 모든 학생의 응시 결과를 가져옵니다.
+    const resultsSnapshot = await database.ref(`RESULTS/${currentClass}`).once('value');
+    const allResultsRaw = resultsSnapshot.val() || {};
+    
     let studentMap = {}; 
-    subjects.forEach(sub => {
-        // [배선 완성] B페이지에서 저장한 키 형식(`${currentClass}_results_${sub.id}`)으로 데이터를 호출합니다.
-        const results = JSON.parse(localStorage.getItem(`${currentClass}_results_${sub.id}`) || '[]');
-        results.forEach(res => {
-            if (!studentMap[res.userName]) studentMap[res.userName] = { name: res.userName, scores: {} };
-            studentMap[res.userName].scores[sub.id] = res.score;
-        });
+    
+    // 파이어베이스에서 가져온 데이터를 학생별/과목별로 재정리
+    Object.values(allResultsRaw).forEach(res => {
+        // [배선 완성] subId가 일치하는 데이터만 맵핑
+        const subId = (res.displayTitle || "").replace(/\s+/g, ''); 
+        // 만약 subId가 복잡하다면 저장 시 subId를 명시적으로 넣는 것이 좋습니다. 
+        // 여기서는 기존 로직 유지를 위해 이름 기반 매칭을 시도합니다.
+
+        if (!studentMap[res.name]) studentMap[res.name] = { name: res.name, scores: {} };
+        
+        // 과목 식별을 위해 subId를 찾습니다.
+        const matchedSub = subjects.find(s => res.displayTitle && res.displayTitle.includes(s.name));
+        if (matchedSub) {
+            studentMap[res.name].scores[matchedSub.id] = res.score;
+        }
     });
 
     const students = Object.values(studentMap).sort((a, b) => a.name.localeCompare(b.name, 'ko'));
@@ -47,7 +75,7 @@ function renderIntegratedTable() {
                 ${subjects.map(sub => `<th class="head-yellow unit-col">${sub.mainTitle}</th>`).join('')}
             </tr>
             <tr class="sub-header">
-                ${subjects.map(sub => `<th class="head-green unit-col" onclick="showSubjectStudentList('${sub.id}')">${sub.name}</th>`).join('')}
+                ${subjects.map(sub => `<th class="head-green unit-col" onclick="showSubjectStudentList('${sub.id}', '${sub.name}')">${sub.name}</th>`).join('')}
             </tr>
             <tr class="sub-header">${subjects.map(sub => `<th class="unit-col">${sub.date}</th>`).join('')}</tr>
         </thead>
@@ -76,8 +104,14 @@ function renderIntegratedTable() {
 }
 
 /* [2단계] 능력단위 클릭 시 - 학생 명단 */
-function showSubjectStudentList(subId) {
-    const results = JSON.parse(localStorage.getItem(`${currentClass}_results_${subId}`) || '[]');
+async function showSubjectStudentList(subId, subName) {
+    // 클라우드에서 해당 학급의 모든 결과를 다시 가져와 필터링
+    const snapshot = await database.ref(`RESULTS/${currentClass}`).once('value');
+    const allData = snapshot.val() || {};
+    const results = Object.entries(allData)
+        .map(([key, val]) => ({...val, firebaseKey: key}))
+        .filter(res => res.displayTitle && res.displayTitle.includes(subName));
+
     const modal = document.getElementById('individualModal');
     const printArea = document.getElementById('printArea');
     const selectorArea = document.getElementById('printSelectorArea');
@@ -91,15 +125,15 @@ function showSubjectStudentList(subId) {
                 <input type="checkbox" id="selectAllStudents" onclick="toggleAllStudents(this)" checked> 일괄 인쇄 대상 선택
             </label>
             <div>
-                <button onclick="printBatchReports('${subId}')" style="background:#e74c3c; color:white; border:none; padding:8px 15px; border-radius:4px; font-weight:bold; cursor:pointer; margin-right:5px;">🖨️ 일괄 인쇄</button>
-                <button onclick="deleteAllResults('${subId}')" style="background:#666; color:white; border:none; padding:8px 15px; border-radius:4px; font-weight:bold; cursor:pointer;">⚠️ 이 과목 전체 삭제</button>
+                <button onclick="printBatchReports('${subId}', '${subName}')" style="background:#e74c3c; color:white; border:none; padding:8px 15px; border-radius:4px; font-weight:bold; cursor:pointer; margin-right:5px;">🖨️ 일괄 인쇄</button>
+                <button onclick="deleteAllResults('${subId}', '${subName}')" style="background:#666; color:white; border:none; padding:8px 15px; border-radius:4px; font-weight:bold; cursor:pointer;">⚠️ 이 과목 전체 삭제</button>
             </div>
         </div>
     `;
     
     let listHtml = `
         <div style="padding:15px;">
-            <h2 style="text-align:center; margin-top:0;">📋 ${results[0].displayTitle} 응시 명단</h2>
+            <h2 style="text-align:center; margin-top:0;">📋 ${subName} 응시 명단</h2>
             <table style="width:100%; border-collapse:collapse; margin-top:10px;">
                 <thead>
                     <tr style="background:#f2f2f2;">
@@ -113,13 +147,13 @@ function showSubjectStudentList(subId) {
                 <tbody>
                     ${results.map((res, idx) => `
                         <tr>
-                            <td style="border:1px solid #ddd; padding:8px; text-align:center;"><input type="checkbox" class="student-chk" value="${res.userName}" checked></td>
+                            <td style="border:1px solid #ddd; padding:8px; text-align:center;"><input type="checkbox" class="student-chk" value="${res.name}" checked></td>
                             <td style="border:1px solid #ddd; padding:8px; text-align:center;">${idx + 1}</td>
-                            <td onclick="showIndividualReport('${subId}', '${res.userName}')" style="border:1px solid #ddd; padding:8px; cursor:pointer; color:#3498db; font-weight:bold; text-decoration:underline;">${res.userName}</td>
+                            <td onclick="showIndividualReport('${subId}', '${res.name}', '${subName}')" style="border:1px solid #ddd; padding:8px; cursor:pointer; color:#3498db; font-weight:bold; text-decoration:underline;">${res.name}</td>
                             <td style="border:1px solid #ddd; padding:8px; text-align:center;">${res.score}점</td>
                             <td style="border:1px solid #ddd; padding:8px; text-align:center;">
-                                <button onclick="printSingleReport('${subId}', '${res.userName}')" style="cursor:pointer; padding:3px 8px;">인쇄</button>
-                                <button onclick="deleteSingleResult('${subId}', '${res.userName}')" style="cursor:pointer; padding:3px 8px; color:red; margin-left:5px;">삭제</button>
+                                <button onclick="printSingleReport('${subId}', '${res.name}', '${subName}')" style="cursor:pointer; padding:3px 8px;">인쇄</button>
+                                <button onclick="deleteSingleResult('${res.firebaseKey}')" style="cursor:pointer; padding:3px 8px; color:red; margin-left:5px;">삭제</button>
                             </td>
                         </tr>
                     `).join('')}
@@ -133,15 +167,17 @@ function showSubjectStudentList(subId) {
 }
 
 /* [3단계] 개별 결과표 화면 */
-function showIndividualReport(subId, userName) {
-    const results = JSON.parse(localStorage.getItem(`${currentClass}_results_${subId}`) || '[]');
-    const data = results.find(r => r.userName === userName);
-    const config = JSON.parse(localStorage.getItem(`${currentClass}_fullConfig`));
+async function showIndividualReport(subId, userName, subName) {
+    const snapshot = await database.ref(`RESULTS/${currentClass}`).once('value');
+    const allData = snapshot.val() || {};
+    const data = Object.values(allData).find(r => r.name === userName && r.displayTitle.includes(subName));
+    
+    const configSnapshot = await database.ref(`CONFIG/${currentClass}/fullConfig`).once('value');
+    const config = configSnapshot.val();
     
     let questions = [];
     [...(config.ncs || []), ...(config.nonNcs || [])].forEach(m => {
         m.subSubjects.forEach(s => { 
-            // [배선 완성] 과목을 찾을 때도 공백이 제거된 subId와 매칭되도록 합니다.
             const sId = (s.name + s.date).replace(/\s+/g, '');
             if (sId === subId) questions = s.questions; 
         });
@@ -151,7 +187,7 @@ function showIndividualReport(subId, userName) {
 
     const headerHtml = `
         <div class="no-print" style="display:flex; justify-content:space-between; margin-bottom:15px; background:#f9f9f9; padding:10px; border-bottom:1px solid #ddd;">
-            <button onclick="showSubjectStudentList('${subId}')" style="padding:8px 15px; cursor:pointer;">← 명단으로 돌아가기</button>
+            <button onclick="showSubjectStudentList('${subId}', '${subName}')" style="padding:8px 15px; cursor:pointer;">← 명단으로 돌아가기</button>
             <button onclick="waitImagesAndPrint()" style="background:#27ae60; color:white; border:none; padding:8px 20px; border-radius:4px; font-weight:bold; cursor:pointer;">🖨️ 이 결과표 인쇄</button>
         </div>
     `;
@@ -164,55 +200,53 @@ function showIndividualReport(subId, userName) {
 function waitImagesAndPrint() {
     const images = document.querySelectorAll('#printArea img');
     if (images.length === 0) { window.print(); return; }
-
     let loadedCount = 0;
     images.forEach(img => {
-        if (img.complete) {
-            loadedCount++;
-        } else {
-            img.onload = img.onerror = () => {
-                loadedCount++;
-                if (loadedCount === images.length) {
-                    setTimeout(() => window.print(), 300); 
-                }
-            };
-        }
+        if (img.complete) { loadedCount++; } 
+        else { img.onload = img.onerror = () => { loadedCount++; if (loadedCount === images.length) setTimeout(() => window.print(), 300); }; }
     });
-    if (loadedCount === images.length) {
-        setTimeout(() => window.print(), 300);
-    }
+    if (loadedCount === images.length) setTimeout(() => window.print(), 300);
 }
 
-/* [기능] 개별 데이터 삭제 */
-function deleteSingleResult(subId, userName) {
-    if (!confirm(`${userName} 학생의 기록을 삭제하시겠습니까?`)) return;
-    let results = JSON.parse(localStorage.getItem(`${currentClass}_results_${subId}`) || '[]');
-    results = results.filter(r => r.userName !== userName);
-    localStorage.setItem(`${currentClass}_results_${subId}`, JSON.stringify(results));
+/* [기능] 클라우드 개별 데이터 삭제 */
+async function deleteSingleResult(firebaseKey) {
+    if (!confirm(`학생의 기록을 클라우드에서 영구 삭제하시겠습니까?`)) return;
+    await database.ref(`RESULTS/${currentClass}/${firebaseKey}`).remove();
     alert("삭제되었습니다.");
-    showSubjectStudentList(subId);
+    closeModal();
     renderIntegratedTable();
 }
 
-/* [기능] 해당 과목 전체 삭제 */
-function deleteAllResults(subId) {
-    if (!confirm("이 과목의 모든 학생 데이터를 삭제하시겠습니까?")) return;
-    localStorage.removeItem(`${currentClass}_results_${subId}`);
+/* [기능] 클라우드 해당 과목 전체 삭제 */
+async function deleteAllResults(subId, subName) {
+    if (!confirm("이 과목의 모든 학생 데이터를 클라우드에서 삭제하시겠습니까?")) return;
+    const snapshot = await database.ref(`RESULTS/${currentClass}`).once('value');
+    const allData = snapshot.val() || {};
+    
+    const updates = {};
+    Object.entries(allData).forEach(([key, val]) => {
+        if (val.displayTitle && val.displayTitle.includes(subName)) {
+            updates[key] = null; // 삭제 예약
+        }
+    });
+
+    await database.ref(`RESULTS/${currentClass}`).update(updates);
     alert("전체 데이터가 삭제되었습니다.");
     closeModal();
     renderIntegratedTable();
 }
 
 /* [인쇄] 단독 인쇄 */
-function printSingleReport(subId, userName) {
-    const results = JSON.parse(localStorage.getItem(`${currentClass}_results_${subId}`) || '[]');
-    const data = results.find(r => r.userName === userName);
-    const config = JSON.parse(localStorage.getItem(`${currentClass}_fullConfig`));
+async function printSingleReport(subId, userName, subName) {
+    const snapshot = await database.ref(`RESULTS/${currentClass}`).once('value');
+    const data = Object.values(snapshot.val() || {}).find(r => r.name === userName && r.displayTitle.includes(subName));
+    
+    const configSnapshot = await database.ref(`CONFIG/${currentClass}/fullConfig`).once('value');
+    const config = configSnapshot.val();
     let questions = [];
     [...(config.ncs || []), ...(config.nonNcs || [])].forEach(m => {
         m.subSubjects.forEach(s => { 
-            const sId = (s.name + s.date).replace(/\s+/g, '');
-            if (sId === subId) questions = s.questions; 
+            if ((s.name + s.date).replace(/\s+/g, '') === subId) questions = s.questions; 
         });
     });
 
@@ -222,23 +256,25 @@ function printSingleReport(subId, userName) {
 }
 
 /* [인쇄] 일괄 인쇄 */
-function printBatchReports(subId) {
+async function printBatchReports(subId, subName) {
     const selectedNames = Array.from(document.querySelectorAll('.student-chk:checked')).map(cb => cb.value);
     if (selectedNames.length === 0) { alert("인쇄할 학생을 선택하세요."); return; }
 
-    const results = JSON.parse(localStorage.getItem(`${currentClass}_results_${subId}`) || '[]');
-    const config = JSON.parse(localStorage.getItem(`${currentClass}_fullConfig`));
+    const snapshot = await database.ref(`RESULTS/${currentClass}`).once('value');
+    const allResults = Object.values(snapshot.val() || {}).filter(r => r.displayTitle.includes(subName));
+    
+    const configSnapshot = await database.ref(`CONFIG/${currentClass}/fullConfig`).once('value');
+    const config = configSnapshot.val();
     let questions = [];
     [...(config.ncs || []), ...(config.nonNcs || [])].forEach(m => {
         m.subSubjects.forEach(s => { 
-            const sId = (s.name + s.date).replace(/\s+/g, '');
-            if (sId === subId) questions = s.questions; 
+            if ((s.name + s.date).replace(/\s+/g, '') === subId) questions = s.questions; 
         });
     });
 
     let combinedHtml = "";
     selectedNames.forEach(name => {
-        const data = results.find(r => r.userName === name);
+        const data = allResults.find(r => r.name === name);
         if (data) combinedHtml += `<div style="page-break-after:always;">${generateBTypeHtml(data, questions)}</div>`;
     });
 
@@ -255,16 +291,16 @@ function generateBTypeHtml(data, questions) {
 
     return `
         <div class="result-page-container" style="width:190mm; margin:0 auto; font-family:'Malgun Gothic'; background:#fff; overflow:visible;">
-            <div style="text-align:center; font-size:18px; font-weight:bold; margin-bottom:8px; border-bottom:3px double #000; padding-bottom:5px;">${data.displayTitle}</div>
+            <div style="text-align:center; font-size:18px; font-weight:bold; margin-bottom:8px; border-bottom:3px double #000; padding-bottom:5px;">${data.displayTitle || ''}</div>
             
             <table style="width:100%; border-collapse:collapse; border:2px solid #000; table-layout:fixed;">
                 <colgroup><col style="width:15%;"><col style="width:45%;"><col style="width:13.33%;"><col style="width:26.67%;"></colgroup>
-                <tr><td style="${labelStyle}">훈련과정</td><td style="border:1px solid #000; padding:6px; text-align:left; font-size:12px;">${data.groupName}</td><td style="${labelStyle}">훈련기간</td><td style="${contentStyle}">${data.groupPeriod}</td></tr>
+                <tr><td style="${labelStyle}">훈련과정</td><td style="border:1px solid #000; padding:6px; text-align:left; font-size:12px;">${data.groupName || ''}</td><td style="${labelStyle}">훈련기간</td><td style="${contentStyle}">${data.groupPeriod || ''}</td></tr>
                 <tr>
                     <td style="${labelStyle}">훈련생명</td>
                     <td style="border:1px solid #000; padding:6px; font-weight:bold; text-align:left; font-size:12px;">
                         <div style="display:flex; align-items:center;">
-                            <span style="display:inline-block; width:100px; text-align:left;">${data.userName}</span>
+                            <span style="display:inline-block; width:100px; text-align:left;">${data.name || ''}</span>
                             <div class="c-sign-box" style="position:relative; width:80px; height:35px; margin-left:10px; display:flex; align-items:center; justify-content:center;">
                                 <span style="color:rgba(0,0,0,0.15); font-size:14px; font-weight:bold; border:1px solid rgba(0,0,0,0.1); border-radius:50%; width:28px; height:28px; display:flex; align-items:center; justify-content:center;">인</span>
                                 ${data.signData ? `<img src="${data.signData}" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:contain; z-index:2;">` : ''}
@@ -272,14 +308,14 @@ function generateBTypeHtml(data, questions) {
                         </div>
                     </td>
                     <td style="${labelStyle}">시행일자</td>
-                    <td style="${contentStyle}">${data.examDate}</td>
+                    <td style="${contentStyle}">${data.examDate || data.date || ''}</td>
                 </tr>
             </table>
 
             <table style="width:100%; border-collapse:collapse; border:2px solid #000; margin-top:-1px; table-layout:fixed;">
                 <colgroup><col style="width:60%;"><col style="width:13.33%;"><col style="width:13.33%;"><col style="width:13.34%;"></colgroup>
                 <tr><td style="${labelStyle}">사전평가 목적</td><td style="${labelStyle}">취득점수</td><td style="${labelStyle}">사전수준</td><td style="${labelStyle}">담당교사</td></tr>
-                <tr><td style="border:1px solid #000; padding:6px; height:45px; vertical-align:top; text-align:left; font-size:11px;">${data.purpose}</td><td style="${redStyle}">${data.score}점</td><td style="${redStyle}">${data.level}</td><td style="${contentStyle}">${data.teacherName}</td></tr>
+                <tr><td style="border:1px solid #000; padding:6px; height:45px; vertical-align:top; text-align:left; font-size:11px;">${data.purpose || ''}</td><td style="${redStyle}">${data.score}점</td><td style="${redStyle}">${data.level || ''}</td><td style="${contentStyle}">${data.teacherName || ''}</td></tr>
             </table>
 
             <table style="width:100%; border-collapse:collapse; border:2px solid #000; margin-top:10px; table-layout:fixed;">
@@ -293,7 +329,7 @@ function generateBTypeHtml(data, questions) {
                 </thead>
                 <tbody>
                     ${questions.map((q, idx) => {
-                        const sAns = data.details && data.details[idx] ? data.details[idx].studentVal : "0";
+                        const sAns = data.details && data.details[idx] ? data.details[idx].studentVal : (data.userAnswers ? data.userAnswers[idx] : "0");
                         const isCorrect = sAns == q.answer;
                         return `
                         <tr class="q-row-print">

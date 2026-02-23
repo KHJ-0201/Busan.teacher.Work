@@ -6,6 +6,21 @@ if (!currentClass) {
     location.href = 'index.html'; 
 }
 
+// --- 파이어베이스 연결 부품 추가 ---
+const firebaseConfig = {
+  apiKey: "AIzaSyDs15RTlqQSz4u1Gr6NLQ2Kx25Raey2TtA",
+  authDomain: "khj-teacher-work.firebaseapp.com",
+  databaseURL: "https://khj-teacher-work-default-rtdb.firebaseio.com",
+  projectId: "khj-teacher-work",
+  storageBucket: "khj-teacher-work.firebasestorage.app",
+  messagingSenderId: "384706353235",
+  appId: "1:384706353235:web:9ab057e382bad1010b0ea6"
+};
+
+if (!firebase.apps.length) { firebase.initializeApp(firebaseConfig); }
+const database = firebase.database();
+// --------------------------------
+
 /* [공용] 상단 알림 배너 생성 함수 */
 function showBanner(message, color = "#3498db") {
     const existingBanner = document.getElementById('statusBanner');
@@ -43,8 +58,15 @@ window.onload = function() {
     }, 800);
 };
 
-function DB_Save(key, data) { localStorage.setItem(key, JSON.stringify(data)); }
-function DB_Load(key) { const raw = localStorage.getItem(key); return raw ? JSON.parse(raw) : null; }
+// LocalStorage 대신 Firebase Realtime Database를 사용하도록 변경
+function DB_Save(key, data) { 
+    database.ref(key.replace(/_/g, '/')).set(data); 
+}
+
+async function DB_Load(key) { 
+    const snapshot = await database.ref(key.replace(/_/g, '/')).once('value');
+    return snapshot.val();
+}
 
 function loadFixedInfo(targetClass) {
     const fields = ['groupName', 'groupPeriod', 'teacherName', 'verifierName'];
@@ -167,7 +189,6 @@ function loadStampPreview(cls, type) {
     if (data && prevDiv) prevDiv.innerHTML = `<img src="${data}" style="width:40px; height:40px;">`; 
 }
 
-/* [핵심 수선] 학급 정보 필수 입력 체크 강화 및 저장 버튼 복구 */
 function saveAllData(silent = false) { 
     const fields = ['groupName', 'groupPeriod', 'teacherName', 'verifierName'];
     let isAllFilled = true;
@@ -189,10 +210,12 @@ function saveAllData(silent = false) {
         const ncsData = extractSubjectData('ncsSubjectContainer');
         const nonNcsData = extractSubjectData('nonNcsSubjectContainer');
         const data = { ncs: ncsData, nonNcs: nonNcsData }; 
+        
         DB_Save(`${currentClass}_fullConfig`, data); 
         saveFixedInfo(); 
+        
         if (silent !== true) {
-            showBanner("💾 모든 설정이 저장되었습니다.", "#27ae60");
+            showBanner("🚀 클라우드 데이터베이스에 실시간 저장되었습니다.", "#27ae60");
         }
     } catch (e) {
         console.error("저장 오류 상세:", e);
@@ -200,18 +223,16 @@ function saveAllData(silent = false) {
     }
 }
 
-/* [복구 및 추가] 능력단위 삭제 함수 */
 function deleteSubSubject(mId, btn) {
     if(!confirm("이 능력단위(그룹)를 삭제하시겠습니까?\n포함된 모든 문제가 함께 삭제됩니다.")) return;
     const subGroup = btn.closest('.sub-subject-group');
     if(subGroup) {
         subGroup.remove();
-        updateMainBadge(mId); // 상단 배지 갱신
+        updateMainBadge(mId);
         showBanner("🗑️ 능력단위가 삭제되었습니다.", "#e67e22");
     }
 }
 
-/* [추가] 세분류 삭제 함수 */
 function deleteMainSubject(sId) {
     if(!confirm("이 세분류를 삭제하시겠습니까?\n포함된 모든 능력단위와 문제가 삭제됩니다.")) return;
     const mainCard = document.getElementById(`main_${sId}`);
@@ -221,7 +242,6 @@ function deleteMainSubject(sId) {
     }
 }
 
-/* [추가] 세분류 명칭 수정 함수 */
 function editMainTitle(sId) {
     const card = document.getElementById(`main_${sId}`);
     const titleSpan = card.querySelector('.main-subject-title span');
@@ -234,7 +254,6 @@ function editMainTitle(sId) {
     }
 }
 
-/* [추가] 능력단위 명칭 수정 함수 */
 function editSubTitle(btn) {
     const group = btn.closest('.sub-subject-group');
     const nameInput = group.querySelector('.sub-name');
@@ -286,7 +305,15 @@ function extractSubjectData(containerId) {
     return subjects;
 }
 
-function loadSavedSubjects() { const data = DB_Load(`${currentClass}_fullConfig`); if (!data) return; document.getElementById('ncsSubjectContainer').innerHTML = ''; document.getElementById('nonNcsSubjectContainer').innerHTML = ''; rebuildUI('ncsSubjectContainer', data.ncs, 'ncs'); rebuildUI('nonNcsSubjectContainer', data.nonNcs, 'non-ncs'); }
+async function loadSavedSubjects() { 
+    const data = await DB_Load(`${currentClass}_fullConfig`); 
+    if (!data) return; 
+    document.getElementById('ncsSubjectContainer').innerHTML = ''; 
+    document.getElementById('nonNcsSubjectContainer').innerHTML = ''; 
+    rebuildUI('ncsSubjectContainer', data.ncs, 'ncs'); 
+    rebuildUI('nonNcsSubjectContainer', data.nonNcs, 'non-ncs'); 
+}
+
 function rebuildUI(containerId, subjects, type) { if(!subjects) return; subjects.forEach(s => { const sId = Date.now() + Math.random(); createMainSubject(type, s.title, sId); s.subSubjects.forEach(sub => { const subId = Date.now() + Math.random(); addSubSubject(sId, sub, subId); sub.questions.forEach(q => addQuestionRow(subId, q, sId)); }); }); sortMainSubjects(containerId); }
 function toggleMainSubject(header) { const body = header.nextElementSibling; const status = header.querySelector('.toggle-status'); if(body.style.display === "none") { body.style.display = "block"; status.innerText = "[접기]"; header.style.opacity = "1"; } else { body.style.display = "none"; status.innerText = "[열기]"; header.style.opacity = "0.7"; } }
 function toggleSubSubject(header) { const body = header.nextElementSibling; const arrow = header.querySelector('.arrow'); const status = header.querySelector('.toggle-status-sub'); if (body.style.display === "none") { body.style.display = "block"; arrow.innerText = "▼"; status.innerText = "[접기]"; } else { body.style.display = "none"; arrow.innerText = "▶"; status.innerText = "[열기]"; } }

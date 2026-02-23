@@ -2,24 +2,46 @@
 const currentClass = sessionStorage.getItem('selectedClass');
 if (!currentClass) { alert("반 선택 정보가 없습니다. 초기 화면으로 이동합니다."); location.href = 'select_class.html'; }
 
+// --- 파이어베이스 연결 부품 추가 ---
+const firebaseConfig = {
+  apiKey: "AIzaSyDs15RTlqQSz4u1Gr6NLQ2Kx25Raey2TtA",
+  authDomain: "khj-teacher-work.firebaseapp.com",
+  databaseURL: "https://khj-teacher-work-default-rtdb.firebaseio.com",
+  projectId: "khj-teacher-work",
+  storageBucket: "khj-teacher-work.firebasestorage.app",
+  messagingSenderId: "384706353235",
+  appId: "1:384706353235:web:9ab057e382bad1010b0ea6"
+};
+
+if (!firebase.apps.length) { firebase.initializeApp(firebaseConfig); }
+const database = firebase.database();
+// --------------------------------
+
 let examQuestions = []; // 실제 화면에 뿌려질 문제 배열
 
 /* [2. 페이지 로드 시 실행] */
 window.onload = function() {
     const banner = document.getElementById('displayTitle');
+    // 학급 명칭도 나중에 파이어베이스에서 가져올 수 있도록 확장 가능합니다.
     const groupName = localStorage.getItem(`${currentClass}_groupName`) || currentClass;
     if (banner) banner.innerText = `${groupName} 자동차 CBT 시험`;
     loadQuestionsFromAdmin();
 };
 
 /* [3. 관리자(A) 데이터 연동 핵심 로직] */
-function loadQuestionsFromAdmin() {
-    // A페이지에서 saveAllData()로 저장한 키값과 정확히 일치해야 함
-    const rawData = localStorage.getItem(`${currentClass}_fullConfig`);
-    if (!rawData) { alert("저장된 문제가 없습니다. 관리자 페이지에서 '설정 저장하기'를 먼저 눌러주세요."); return; }
-
+async function loadQuestionsFromAdmin() {
+    // A페이지에서 저장한 클라우드 경로(CONFIG/학급명/fullConfig)에서 데이터를 가져옵니다.
+    const dbPath = `CONFIG/${currentClass}/fullConfig`;
+    
     try {
-        const config = JSON.parse(rawData);
+        const snapshot = await database.ref(dbPath).once('value');
+        const config = snapshot.val();
+
+        if (!config) { 
+            alert("저장된 문제가 없습니다. 관리자 페이지에서 '설정 저장하기'를 먼저 눌러주세요."); 
+            return; 
+        }
+
         examQuestions = [];
 
         // NCS와 비NCS 섹션을 모두 합쳐서 순회
@@ -78,7 +100,7 @@ function renderExamPage() {
 }
 
 /* [5. 시험 제출] */
-function submitExam() {
+async function submitExam() {
     const userName = document.getElementById('userName').value.trim();
     if (!userName) { alert("성명을 입력해야 제출할 수 있습니다."); return; }
     if (!confirm("시험을 종료하시겠습니까?")) return;
@@ -90,13 +112,26 @@ function submitExam() {
     });
 
     const score = Math.round((scoreCount / examQuestions.length) * 100);
-    const resultData = { name: userName, score: score, date: new Date().toLocaleString() };
+    const resultData = { 
+        name: userName, 
+        score: score, 
+        date: new Date().toLocaleString(),
+        className: currentClass
+    };
 
-    // 결과 저장
-    const history = JSON.parse(localStorage.getItem(`${currentClass}_exam_results`)) || [];
-    history.push(resultData);
-    localStorage.setItem(`${currentClass}_exam_results`, JSON.stringify(history));
+    // 결과 저장 (Firebase 클라우드 RESULTS 폴더에 저장)
+    try {
+        const resultPath = `RESULTS/${currentClass}`;
+        await database.ref(resultPath).push(resultData);
+        
+        // C_Result 페이지에서 보여주기 위해 세션에도 잠시 저장
+        sessionStorage.setItem('lastScore', score);
+        sessionStorage.setItem('lastUserName', userName);
 
-    alert(`${userName} 학생 제출 완료! 점수: ${score}점`);
-    location.href = 'C_Result.html';
+        alert(`${userName} 학생 제출 완료! 점수: ${score}점`);
+        location.href = 'C_Result.html';
+    } catch (e) {
+        console.error("제출 오류:", e);
+        alert("결과 저장 중 오류가 발생했습니다. 네트워크를 확인해주세요.");
+    }
 }
