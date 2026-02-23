@@ -22,7 +22,6 @@ let examQuestions = []; // 실제 화면에 뿌려질 문제 배열
 /* [2. 페이지 로드 시 실행] */
 window.onload = function() {
     const banner = document.getElementById('displayTitle');
-    // 학급 명칭도 나중에 파이어베이스에서 가져올 수 있도록 확장 가능합니다.
     const groupName = localStorage.getItem(`${currentClass}_groupName`) || currentClass;
     if (banner) banner.innerText = `${groupName} 자동차 CBT 시험`;
     loadQuestionsFromAdmin();
@@ -30,7 +29,7 @@ window.onload = function() {
 
 /* [3. 관리자(A) 데이터 연동 핵심 로직] */
 async function loadQuestionsFromAdmin() {
-    // A페이지에서 저장한 클라우드 경로(CONFIG/학급명/fullConfig)에서 데이터를 가져옵니다.
+    // [경로 수정] A페이지의 DB_Save와 일치하도록 CONFIG/ 를 붙여줍니다.
     const dbPath = `CONFIG/${currentClass}/fullConfig`;
     
     try {
@@ -50,12 +49,17 @@ async function loadQuestionsFromAdmin() {
         allMainSubjects.forEach(main => {
             if (!main.subSubjects) return;
             main.subSubjects.forEach(sub => {
-                // [중요] 관리자 페이지에서 '활성화' 체크박스를 켠 소과목만 가져옴
                 if (sub.isActive === true) { 
                     sub.questions.forEach(q => {
-                        // 문제 텍스트가 비어있지 않은 것만 추가
                         if (q.text && q.text.trim() !== "") {
-                            examQuestions.push({ ...q, mainTitle: main.title, subTitle: sub.name });
+                            // C페이지 매칭을 위해 displayTitle에 능력단위명을 담아줍니다.
+                            examQuestions.push({ 
+                                ...q, 
+                                mainTitle: main.title, 
+                                subTitle: sub.name,
+                                purpose: sub.purpose, // 결과표 출력용
+                                ncsCode: sub.ncsCode  // 결과표 출력용
+                            });
                         }
                     });
                 }
@@ -106,25 +110,36 @@ async function submitExam() {
     if (!confirm("시험을 종료하시겠습니까?")) return;
 
     let scoreCount = 0;
+    let userAnswers = [];
     examQuestions.forEach((q, idx) => {
         const selected = document.querySelector(`input[name="q_${idx}"]:checked`);
-        if (selected && selected.value == q.answer) scoreCount++;
+        const ansVal = selected ? selected.value : "0";
+        userAnswers.push(ansVal);
+        if (ansVal == q.answer) scoreCount++;
     });
 
     const score = Math.round((scoreCount / examQuestions.length) * 100);
+    
+    // C페이지에서 어떤 과목인지 알 수 있게 현재 활성화된 과목명을 displayTitle로 저장합니다.
+    const activeSubName = examQuestions.length > 0 ? examQuestions[0].subTitle : "미분류 과목";
+
     const resultData = { 
         name: userName, 
         score: score, 
         date: new Date().toLocaleString(),
-        className: currentClass
+        className: currentClass,
+        displayTitle: activeSubName, // C페이지 매칭용 핵심 열쇠
+        userAnswers: userAnswers,
+        purpose: examQuestions[0].purpose || "",
+        groupName: localStorage.getItem(`${currentClass}_groupName`) || "",
+        groupPeriod: localStorage.getItem(`${currentClass}_groupPeriod`) || "",
+        teacherName: localStorage.getItem(`${currentClass}_teacherName`) || ""
     };
 
-    // 결과 저장 (Firebase 클라우드 RESULTS 폴더에 저장)
     try {
         const resultPath = `RESULTS/${currentClass}`;
         await database.ref(resultPath).push(resultData);
         
-        // C_Result 페이지에서 보여주기 위해 세션에도 잠시 저장
         sessionStorage.setItem('lastScore', score);
         sessionStorage.setItem('lastUserName', userName);
 

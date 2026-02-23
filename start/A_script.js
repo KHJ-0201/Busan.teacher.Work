@@ -60,11 +60,13 @@ window.onload = function() {
 
 // LocalStorage 대신 Firebase Realtime Database를 사용하도록 변경
 function DB_Save(key, data) { 
-    database.ref(key.replace(/_/g, '/')).set(data); 
+    // 경로를 CONFIG/(학급명)/fullConfig 형태로 명확히 지정합니다.
+    database.ref("CONFIG/" + key.replace(/_/g, '/')).set(data); 
 }
 
 async function DB_Load(key) { 
-    const snapshot = await database.ref(key.replace(/_/g, '/')).once('value');
+    // 불러올 때도 동일한 CONFIG 경로에서 가져옵니다.
+    const snapshot = await database.ref("CONFIG/" + key.replace(/_/g, '/')).once('value');
     return snapshot.val();
 }
 
