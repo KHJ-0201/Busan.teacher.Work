@@ -90,7 +90,7 @@
 <script>
     // 학생 버튼 클릭 시 이동
     function goToStudent() {
-        location.href = "B_Exam.html";
+        location.href = "start/B_Exam.html";
     }
 
     // 교사 버튼 클릭 시 비밀번호 입력창 보이기
@@ -105,7 +105,7 @@
 
         if (pw === correctPw) {
             alert("확인되었습니다. 관리자 페이지로 이동합니다.");
-            location.href = "select_class.html";
+            location.href = "start/select_class.html";
         } else {
             alert("비밀번호가 틀렸습니다.");
             document.getElementById('teacher-pw').value = "";
