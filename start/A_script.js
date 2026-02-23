@@ -58,14 +58,14 @@ window.onload = function() {
     }, 800);
 };
 
-// 파이어베이스 저장 및 로드 경로 일원화
+// 파이어베이스 저장 및 로드 경로 일원화 (콘솔 구조에 맞춰 경로 수정)
 function DB_Save(key, data) { 
-    const path = "CONFIG/" + currentClass + "/" + key.replace(`${currentClass}_`, "");
+    const path = currentClass + "/" + key.replace(`${currentClass}_`, "");
     database.ref(path).set(data); 
 }
 
 async function DB_Load(key) { 
-    const path = "CONFIG/" + currentClass + "/" + key.replace(`${currentClass}_`, "");
+    const path = currentClass + "/" + key.replace(`${currentClass}_`, "");
     const snapshot = await database.ref(path).once('value');
     return snapshot.val();
 }
@@ -92,7 +92,7 @@ function importClassData() {
     if (!targetClass) { alert("데이터를 가져올 반을 선택해주세요."); return; }
     if (!confirm(`${targetClass}의 '문제 데이터'만 현재 화면으로 불러오시겠습니까?`)) { return; }
     
-    database.ref("CONFIG/" + targetClass + "/fullConfig").once('value').then((snapshot) => {
+    database.ref(targetClass + "/fullConfig").once('value').then((snapshot) => {
         const data = snapshot.val();
         if (data) {
             document.getElementById('ncsSubjectContainer').innerHTML = '';
@@ -262,7 +262,6 @@ function extractSubjectData(containerId) {
     return subjects;
 }
 
-// [중요 수선 부위] 데이터 로드 시 빈값 체크 및 리빌드 로직 보강
 async function loadSavedSubjects() { 
     try {
         const data = await DB_Load(`${currentClass}_fullConfig`); 
@@ -274,7 +273,6 @@ async function loadSavedSubjects() {
         if(data.ncs) rebuildUI('ncsSubjectContainer', data.ncs, 'ncs'); 
         if(data.nonNcs) rebuildUI('nonNcsSubjectContainer', data.nonNcs, 'non-ncs'); 
         
-        // 로드 완료 후 입력 필드 색상 업데이트
         setTimeout(() => {
             document.querySelectorAll('input, textarea, select').forEach(el => checkInputStatus(el));
         }, 500);

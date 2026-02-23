@@ -29,8 +29,8 @@ window.onload = function() {
 
 /* [3. 관리자(A) 데이터 연동 핵심 로직] */
 async function loadQuestionsFromAdmin() {
-    // [수정] 파이어베이스 CONFIG 경로에서 가져옵니다.
-    const dbPath = `CONFIG/${currentClass}/fullConfig`;
+    // [수정] 콘솔 구조에 맞춰 경로 수정
+    const dbPath = `${currentClass}/fullConfig`;
     
     try {
         const snapshot = await database.ref(dbPath).once('value');
@@ -40,7 +40,6 @@ async function loadQuestionsFromAdmin() {
 
         examQuestions = [];
 
-        // NCS와 비NCS 섹션을 모두 합쳐서 순회
         const allMainSubjects = [...(config.ncs || []), ...(config.nonNcs || [])];
         
         allMainSubjects.forEach(main => {
@@ -62,7 +61,7 @@ async function loadQuestionsFromAdmin() {
             });
         });
 
-        renderExamPage(); // 화면에 그리기
+        renderExamPage(); 
     } catch (e) {
         console.error("데이터 로드 오류:", e);
         alert("데이터를 읽어오는 중 오류가 발생했습니다.");
@@ -115,8 +114,6 @@ async function submitExam() {
     });
 
     const score = Math.round((scoreCount / examQuestions.length) * 100);
-    
-    // [중요] C페이지 일람표와 매칭하기 위해 displayTitle에 능력단위명을 넣습니다.
     const activeSubName = examQuestions.length > 0 ? examQuestions[0].subTitle : "미분류";
 
     const resultData = { 
@@ -134,7 +131,8 @@ async function submitExam() {
     };
 
     try {
-        const resultPath = `RESULTS/${currentClass}`;
+        // [수정] 결과 저장 경로를 반이름_RESULTS로 변경
+        const resultPath = `${currentClass}_RESULTS`;
         await database.ref(resultPath).push(resultData);
         
         sessionStorage.setItem('lastScore', score);

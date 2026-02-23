@@ -28,8 +28,8 @@ window.onload = function() {
 async function renderIntegratedTable() {
     const area = document.getElementById('resultTableArea');
     
-    // 1. 클라우드에서 문제 구성 정보 로드
-    const configSnapshot = await database.ref(`CONFIG/${currentClass}/fullConfig`).once('value');
+    // 1. 클라우드에서 문제 구성 정보 로드 (경로 수정)
+    const configSnapshot = await database.ref(`${currentClass}/fullConfig`).once('value');
     const config = configSnapshot.val() || { ncs: [], nonNcs: [] };
     
     let subjects = [];
@@ -44,15 +44,14 @@ async function renderIntegratedTable() {
         }
     });
 
-    // 2. 클라우드에서 학생 응시 결과 로드
-    const resultsSnapshot = await database.ref(`RESULTS/${currentClass}`).once('value');
+    // 2. 클라우드에서 학생 응시 결과 로드 (경로 수정)
+    const resultsSnapshot = await database.ref(`${currentClass}_RESULTS`).once('value');
     const allResultsRaw = resultsSnapshot.val() || {};
     
     let studentMap = {}; 
     
     Object.values(allResultsRaw).forEach(res => {
         if (!studentMap[res.name]) studentMap[res.name] = { name: res.name, scores: {} };
-        // displayTitle 매칭 (A에서 만든 sub.name과 B에서 보낸 displayTitle 비교)
         const matchedSub = subjects.find(s => res.displayTitle === s.name);
         if (matchedSub) {
             studentMap[res.name].scores[matchedSub.id] = res.score;
@@ -100,7 +99,7 @@ async function renderIntegratedTable() {
 
 /* [2단계] 능력단위 클릭 시 - 학생 명단 */
 async function showSubjectStudentList(subId, subName) {
-    const snapshot = await database.ref(`RESULTS/${currentClass}`).once('value');
+    const snapshot = await database.ref(`${currentClass}_RESULTS`).once('value');
     const allData = snapshot.val() || {};
     const results = Object.entries(allData)
         .map(([key, val]) => ({...val, firebaseKey: key}))
@@ -162,11 +161,11 @@ async function showSubjectStudentList(subId, subName) {
 
 /* [3단계] 개별 결과표 화면 */
 async function showIndividualReport(subId, userName, subName) {
-    const snapshot = await database.ref(`RESULTS/${currentClass}`).once('value');
+    const snapshot = await database.ref(`${currentClass}_RESULTS`).once('value');
     const allData = snapshot.val() || {};
     const data = Object.values(allData).find(r => r.name === userName && r.displayTitle === subName);
     
-    const configSnapshot = await database.ref(`CONFIG/${currentClass}/fullConfig`).once('value');
+    const configSnapshot = await database.ref(`${currentClass}/fullConfig`).once('value');
     const config = configSnapshot.val();
     
     let questions = [];
@@ -207,7 +206,7 @@ function waitImagesAndPrint() {
 
 async function deleteSingleResult(firebaseKey) {
     if (!confirm(`학생의 기록을 삭제하시겠습니까?`)) return;
-    await database.ref(`RESULTS/${currentClass}/${firebaseKey}`).remove();
+    await database.ref(`${currentClass}_RESULTS/${firebaseKey}`).remove();
     alert("삭제되었습니다.");
     closeModal();
     renderIntegratedTable();
@@ -215,22 +214,22 @@ async function deleteSingleResult(firebaseKey) {
 
 async function deleteAllResults(subId, subName) {
     if (!confirm("이 과목의 모든 학생 데이터를 삭제하시겠습니까?")) return;
-    const snapshot = await database.ref(`RESULTS/${currentClass}`).once('value');
+    const snapshot = await database.ref(`${currentClass}_RESULTS`).once('value');
     const allData = snapshot.val() || {};
     const updates = {};
     Object.entries(allData).forEach(([key, val]) => {
         if (val.displayTitle === subName) updates[key] = null;
     });
-    await database.ref(`RESULTS/${currentClass}`).update(updates);
+    await database.ref(`${currentClass}_RESULTS`).update(updates);
     alert("전체 데이터가 삭제되었습니다.");
     closeModal();
     renderIntegratedTable();
 }
 
 async function printSingleReport(subId, userName, subName) {
-    const snapshot = await database.ref(`RESULTS/${currentClass}`).once('value');
+    const snapshot = await database.ref(`${currentClass}_RESULTS`).once('value');
     const data = Object.values(snapshot.val() || {}).find(r => r.name === userName && r.displayTitle === subName);
-    const configSnapshot = await database.ref(`CONFIG/${currentClass}/fullConfig`).once('value');
+    const configSnapshot = await database.ref(`${currentClass}/fullConfig`).once('value');
     const config = configSnapshot.val();
     let questions = [];
     [...(config.ncs || []), ...(config.nonNcs || [])].forEach(m => {
@@ -246,9 +245,9 @@ async function printSingleReport(subId, userName, subName) {
 async function printBatchReports(subId, subName) {
     const selectedNames = Array.from(document.querySelectorAll('.student-chk:checked')).map(cb => cb.value);
     if (selectedNames.length === 0) { alert("인쇄할 학생을 선택하세요."); return; }
-    const snapshot = await database.ref(`RESULTS/${currentClass}`).once('value');
+    const snapshot = await database.ref(`${currentClass}_RESULTS`).once('value');
     const allResults = Object.values(snapshot.val() || {}).filter(r => r.displayTitle === subName);
-    const configSnapshot = await database.ref(`CONFIG/${currentClass}/fullConfig`).once('value');
+    const configSnapshot = await database.ref(`${currentClass}/fullConfig`).once('value');
     const config = configSnapshot.val();
     let questions = [];
     [...(config.ncs || []), ...(config.nonNcs || [])].forEach(m => {
