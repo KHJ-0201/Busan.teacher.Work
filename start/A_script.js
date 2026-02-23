@@ -21,6 +21,7 @@ if (!firebase.apps.length) { firebase.initializeApp(firebaseConfig); }
 const database = firebase.database();
 // --------------------------------
 
+/* [공용] 상단 알림 배너 생성 함수 */
 function showBanner(message, color = "#3498db") {
     const existingBanner = document.getElementById('statusBanner');
     if (existingBanner) existingBanner.remove();
@@ -122,6 +123,7 @@ function createMainSubject(type, name = null, forceId = null) {
 
 function addSubSubject(mId, savedData = null, forceId = null) {
     const subContainer = document.getElementById(`subContainer_${mId}`);
+    if(!subContainer) return;
     const subId = forceId || Date.now() + Math.random();
     const subDiv = document.createElement('div');
     subDiv.className = 'sub-subject-group';
@@ -151,7 +153,12 @@ function handleActiveCheck(obj) {
 }
 
 function addQuestionRow(subId, qData = null, mId = null) { 
-    const qArea = document.getElementById(`qArea_${subId}`); const rowId = Date.now() + Math.random(); const row = document.createElement('div'); row.className = 'q-input-row'; const currentNum = qArea.querySelectorAll('.q-input-row').length + 1; 
+    const qArea = document.getElementById(`qArea_${subId}`); 
+    if(!qArea) return;
+    const rowId = Date.now() + Math.random(); 
+    const row = document.createElement('div'); 
+    row.className = 'q-input-row'; 
+    const currentNum = qArea.querySelectorAll('.q-input-row').length + 1; 
     row.innerHTML = `<div class="q-no-badge">Q ${currentNum}</div><div class="q-text-with-img"><textarea placeholder="문제 입력" oninput="checkInputStatus(this)">${qData ? qData.text : ''}</textarea><div id="qImgFrame_${rowId}" class="q-img-frame" style="display:${qData && qData.img ? 'block' : 'none'};"><div id="qImgPrev_${rowId}" class="q-img-inner-view">${qData && qData.img ? `<img src="${qData.img}" data-img="${qData.img}"><button onclick="removeQuestionImage('${rowId}')" class="img-del-x">X</button>` : ''}</div></div><div class="q-img-upload-box"><input type="file" id="qImg_${rowId}" accept="image/*" style="display:none;" onchange="handleQuestionImage(this, '${rowId}')"><button onclick="document.getElementById('qImg_${rowId}').click()" class="small-btn gray">🖼️ 사진</button></div></div><div class="opts"><input type="text" placeholder="1번" value="${qData ? qData.options[0] : ''}" oninput="checkInputStatus(this)"><input type="text" placeholder="2번" value="${qData ? qData.options[1] : ''}" oninput="checkInputStatus(this)"><input type="text" placeholder="3번" value="${qData ? qData.options[2] : ''}" oninput="checkInputStatus(this)"><input type="text" placeholder="4번" value="${qData ? qData.options[3] : ''}" oninput="checkInputStatus(this)"></div><div class="ans-exp">정답: <select onchange="checkInputStatus(this)"><option value="" ${!qData ? 'selected' : ''}>선택</option><option value="1" ${qData && qData.answer == '1' ? 'selected' : ''}>1</option><option value="2" ${qData && qData.answer == '2' ? 'selected' : ''}>2</option><option value="3" ${qData && qData.answer == '3' ? 'selected' : ''}>3</option><option value="4" ${qData && qData.answer == '4' ? 'selected' : ''}>4</option></select> 해설: <input type="text" class="exp-input" placeholder="해설" value="${qData ? qData.explain : ''}" oninput="checkInputStatus(this)"><button onclick="this.parentElement.parentElement.remove(); renumberQuestions('${subId}');" class="del-btn">삭제</button></div>`; 
     qArea.appendChild(row); 
     row.querySelectorAll('input, textarea, select').forEach(el => checkInputStatus(el)); 
@@ -255,30 +262,45 @@ function extractSubjectData(containerId) {
     return subjects;
 }
 
+// [중요 수선 부위] 데이터 로드 시 빈값 체크 및 리빌드 로직 보강
 async function loadSavedSubjects() { 
-    const data = await DB_Load(`${currentClass}_fullConfig`); 
-    if (!data) return; 
-    document.getElementById('ncsSubjectContainer').innerHTML = ''; 
-    document.getElementById('nonNcsSubjectContainer').innerHTML = ''; 
-    rebuildUI('ncsSubjectContainer', data.ncs, 'ncs'); 
-    rebuildUI('nonNcsSubjectContainer', data.nonNcs, 'non-ncs'); 
+    try {
+        const data = await DB_Load(`${currentClass}_fullConfig`); 
+        if (!data) return; 
+        
+        document.getElementById('ncsSubjectContainer').innerHTML = ''; 
+        document.getElementById('nonNcsSubjectContainer').innerHTML = ''; 
+        
+        if(data.ncs) rebuildUI('ncsSubjectContainer', data.ncs, 'ncs'); 
+        if(data.nonNcs) rebuildUI('nonNcsSubjectContainer', data.nonNcs, 'non-ncs'); 
+        
+        // 로드 완료 후 입력 필드 색상 업데이트
+        setTimeout(() => {
+            document.querySelectorAll('input, textarea, select').forEach(el => checkInputStatus(el));
+        }, 500);
+    } catch (err) {
+        console.error("로드 오류:", err);
+    }
 }
 
 function rebuildUI(containerId, subjects, type) { 
-    if(!subjects) return; 
+    if(!subjects || !Array.isArray(subjects)) return; 
     subjects.forEach(s => { 
         const sId = Date.now() + Math.random(); 
         createMainSubject(type, s.title, sId); 
-        if(s.subSubjects) {
+        if(s.subSubjects && Array.isArray(s.subSubjects)) {
             s.subSubjects.forEach(sub => { 
                 const subId = Date.now() + Math.random(); 
                 addSubSubject(sId, sub, subId); 
-                if(sub.questions) sub.questions.forEach(q => addQuestionRow(subId, q, sId)); 
+                if(sub.questions && Array.isArray(sub.questions)) {
+                    sub.questions.forEach(q => addQuestionRow(subId, q, sId)); 
+                }
             }); 
         }
     }); 
     sortMainSubjects(containerId); 
 }
+
 function toggleMainSubject(header) { const body = header.nextElementSibling; const status = header.querySelector('.toggle-status'); if(body.style.display === "none") { body.style.display = "block"; status.innerText = "[접기]"; header.style.opacity = "1"; } else { body.style.display = "none"; status.innerText = "[열기]"; header.style.opacity = "0.7"; } }
 function toggleSubSubject(header) { const body = header.nextElementSibling; const arrow = header.querySelector('.arrow'); const status = header.querySelector('.toggle-status-sub'); if (body.style.display === "none") { body.style.display = "block"; arrow.innerText = "▼"; status.innerText = "[접기]"; } else { body.style.display = "none"; arrow.innerText = "▶"; status.innerText = "[열기]"; } }
 function sortMainSubjects(containerId) { const container = document.getElementById(containerId); if(!container) return; const cards = Array.from(container.querySelectorAll('.main-subject-card')); cards.sort((a, b) => { const titleA = a.querySelector('.main-subject-title span').childNodes[0].textContent.replace('📂 ', '').trim(); const titleB = b.querySelector('.main-subject-title span').childNodes[0].textContent.replace('📂 ', '').trim(); return titleA.localeCompare(titleB, 'ko'); }); cards.forEach(card => container.appendChild(card)); }
