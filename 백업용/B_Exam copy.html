@@ -62,8 +62,8 @@
             #classSelectModal > div { width: 94% !important; padding: 20px 10px !important; }
         }
     </style>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
 </head>
 <body>
     <div id="classSelectModal" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; display:flex; justify-content:center; align-items:center;">
@@ -120,19 +120,6 @@
     </div>
 
     <script>
-        // --- 파이어베이스 연결 설정 ---
-        const firebaseConfig = {
-            apiKey: "AIzaSyDs15RTlqQSz4u1Gr6NLQ2Kx25Raey2TtA",
-            authDomain: "khj-teacher-work.firebaseapp.com",
-            databaseURL: "https://khj-teacher-work-default-rtdb.firebaseio.com",
-            projectId: "khj-teacher-work",
-            storageBucket: "khj-teacher-work.firebasestorage.app",
-            messagingSenderId: "384706353235",
-            appId: "1:384706353235:web:9ab057e382bad1010b0ea6"
-        };
-        if (!firebase.apps.length) { firebase.initializeApp(firebaseConfig); }
-        const database = firebase.database();
-
         let examQuestions = [];
         let currentSubId = ""; 
         let isDrawing = false;
@@ -173,7 +160,7 @@
         function stopDrawing() { isDrawing = false; signCtx.beginPath(); }
         function clearSign() { signCtx.clearRect(0, 0, signCanvas.width, signCanvas.height); }
 
-        async function startExam() {
+        function startExam() {
             const selected = document.getElementById('studentClassSelect').value;
             const sName = document.getElementById('startUserName').value.trim();
             if(!selected || !sName) { alert("반 선택과 성명을 입력하세요."); return; }
@@ -182,28 +169,22 @@
             const signDataUrl = signCanvas.toDataURL();
             sessionStorage.setItem('selectedClass', selected);
             
-            // 파이어베이스에서 설정 로드
-            const snapshot = await database.ref(`CONFIG/${selected}/fullConfig`).once('value');
-            const config = snapshot.val();
-            
-            if(config) {
-                let targetSub = null;
-                let mTitle = "";
+            const raw = localStorage.getItem(`${selected}_fullConfig`);
+            if(raw) {
+                const config = JSON.parse(raw);
+                let targetId = "";
                 [...(config.ncs || []), ...(config.nonNcs || [])].forEach(main => {
                     main.subSubjects.forEach(sub => { 
                         if(sub.isActive) {
-                            targetSub = sub;
-                            mTitle = main.title;
-                            currentSubId = (sub.name + sub.date).replace(/\s+/g, ''); 
+                            // [수선] 공백 제거 ID 생성
+                            targetId = (sub.name + sub.date).replace(/\s+/g, ''); 
                         }
                     });
                 });
                 
-                if(targetSub) {
-                    // 기응시 여부 체크
-                    const resultsSnapshot = await database.ref(`RESULTS/${selected}`).once('value');
-                    const allResults = resultsSnapshot.val() || {};
-                    const myResult = Object.values(allResults).find(r => r.name === sName && r.displayTitle === targetSub.name);
+                if(targetId) {
+                    const results = JSON.parse(localStorage.getItem(`${selected}_results_${targetId}`) || '[]');
+                    const myResult = results.find(r => r.userName === sName);
                     
                     if(myResult) {
                         alert(`${sName} 학생은 이미 응시했습니다. 채점 결과 화면으로 이동합니다.`);
@@ -211,44 +192,47 @@
                         document.getElementById('examMainArea').style.display = 'block';
                         document.getElementById('userName').value = sName;
                         if(myResult.signData) document.getElementById('displaySignImg').src = myResult.signData;
-                        examQuestions = targetSub.questions;
-                        loadExamInfo(selected, targetSub, mTitle);
-                        renderQuestions(myResult); 
+                        loadActiveQuestions(selected, myResult); 
                         return;
                     }
-
-                    // 신규 응시 시작
-                    document.getElementById('displaySignImg').src = signDataUrl;
-                    document.getElementById('classSelectModal').style.display = 'none';
-                    document.getElementById('examMainArea').style.display = 'block';
-                    document.getElementById('userName').value = sName;
-                    examQuestions = targetSub.questions;
-                    loadExamInfo(selected, targetSub, mTitle);
-                    renderQuestions();
-                } else {
-                    alert("현재 활성화된 시험 과목이 없습니다.");
                 }
-            } else {
-                alert("해당 반의 시험 설정 데이터가 없습니다.");
             }
-        }
 
-        async function loadExamInfo(className, sub, mainTitle) {
-            const infoSnapshot = await database.ref(`CONFIG/${className}/fixedInfo`).once('value');
-            const info = infoSnapshot.val() || {};
-            
-            document.getElementById('infoGroupName').innerText = info.groupName || '';
-            document.getElementById('infoGroupPeriod').innerText = info.groupPeriod || '';
-            document.getElementById('infoTeacherName').innerText = info.teacherName || '';
-            document.getElementById('infoExamPurpose').innerText = sub.purpose || "";
-            document.getElementById('infoExamDate').innerText = sub.date || "";
-            document.getElementById('displaySubTitle').innerText = `(${mainTitle}) ${sub.name}`;
+            document.getElementById('displaySignImg').src = signDataUrl;
+            document.getElementById('classSelectModal').style.display = 'none';
+            document.getElementById('examMainArea').style.display = 'block';
+            document.getElementById('userName').value = sName;
+            loadActiveQuestions(selected);
         }
 
         function isSignCanvasEmpty() {
             const blank = document.createElement('canvas');
             blank.width = signCanvas.width; blank.height = signCanvas.height;
             return signCanvas.toDataURL() === blank.toDataURL();
+        }
+
+        function loadActiveQuestions(className, existingData = null) {
+            const raw = localStorage.getItem(`${className}_fullConfig`);
+            if(!raw) return;
+            const config = JSON.parse(raw);
+            examQuestions = [];
+            [...(config.ncs || []), ...(config.nonNcs || [])].forEach(main => {
+                main.subSubjects.forEach(sub => {
+                    if(sub.isActive) {
+                        sub.questions.forEach(q => examQuestions.push({...q}));
+                        document.getElementById('infoGroupName').innerText = localStorage.getItem(`${className}_groupName`) || '';
+                        document.getElementById('infoGroupPeriod').innerText = localStorage.getItem(`${className}_groupPeriod`) || '';
+                        document.getElementById('infoTeacherName').innerText = localStorage.getItem(`${className}_teacherName`) || '';
+                        document.getElementById('infoExamPurpose').innerText = sub.purpose || "";
+                        document.getElementById('infoExamDate').innerText = sub.date || "";
+                        document.getElementById('displaySubTitle').innerText = `(${main.title}) ${sub.name}`;
+                        
+                        // [핵심 배선] C_script와 동일하게 공백을 제거하여 ID를 고정합니다.
+                        currentSubId = (sub.name + sub.date).replace(/\s+/g, '');
+                    }
+                });
+            });
+            renderQuestions(existingData);
         }
 
         function renderQuestions(existingData = null) {
@@ -274,15 +258,14 @@
                 </tr>`).join('');
             
             if(existingData) {
-                existingData.userAnswers.forEach((ans, idx) => {
-                    const correctAns = examQuestions[idx].answer;
-                    const isCorrect = ans == correctAns;
+                existingData.details.forEach((d, idx) => {
+                    const isCorrect = d.studentVal == d.correctAns;
                     const noEl = document.getElementById(`q_no_${idx}`);
                     if(noEl) noEl.innerHTML = `문제${idx+1}<br><span class="${isCorrect?'mark-o':'mark-x'}">(${isCorrect?'O':'X'})</span>`;
-                    document.getElementById(`ans_display_${idx}`).innerText = ans;
-                    document.getElementById(`chk_display_${idx}`).innerText = correctAns;
+                    document.getElementById(`ans_display_${idx}`).innerText = d.studentVal;
+                    document.getElementById(`chk_display_${idx}`).innerText = d.correctAns;
                     document.querySelectorAll(`input[name="q_${idx}"]`).forEach(r => {
-                        if(r.value == ans) r.checked = true;
+                        if(r.value == d.studentVal) r.checked = true;
                         r.disabled = true;
                     });
                 });
@@ -297,7 +280,7 @@
             if(el) el.innerText = val; 
         }
 
-        async function submitExam() {
+        function submitExam() {
             const name = document.getElementById('userName').value.trim();
             const className = sessionStorage.getItem('selectedClass');
             const signData = document.getElementById('displaySignImg').src;
@@ -305,13 +288,13 @@
             if(!confirm("최종 답안을 제출하시겠습니까?")) return;
 
             let scoreCount = 0;
-            const userAnswers = []; 
+            const studentDetails = []; 
             
             examQuestions.forEach((q, idx) => {
                 const sel = document.querySelector(`input[name="q_${idx}"]:checked`);
                 const studentVal = sel ? sel.value : "0";
-                userAnswers.push(studentVal);
                 const isCorrect = studentVal == q.answer;
+                studentDetails.push({ studentVal: studentVal, correctAns: q.answer });
                 
                 const noEl = document.getElementById(`q_no_${idx}`);
                 if (isCorrect) { 
@@ -332,30 +315,28 @@
             document.getElementById('resLevel').innerText = level;
 
             const fullResultData = {
-                name: name, 
+                userName: name, 
                 score: finalScore, 
                 level: level, 
-                date: new Date().toLocaleDateString(),
                 submitTime: new Date().toLocaleString(),
-                displayTitle: document.getElementById('displaySubTitle').innerText.split(') ')[1],
+                displayTitle: document.getElementById('displaySubTitle').innerText,
                 groupName: document.getElementById('infoGroupName').innerText,
                 groupPeriod: document.getElementById('infoGroupPeriod').innerText,
                 examDate: document.getElementById('infoExamDate').innerText,
                 purpose: document.getElementById('infoExamPurpose').innerText,
                 teacherName: document.getElementById('infoTeacherName').innerText,
-                userAnswers: userAnswers,
+                details: studentDetails,
                 signData: signData
             };
 
-            // 파이어베이스 저장
-            try {
-                await database.ref(`RESULTS/${className}`).push(fullResultData);
-                document.getElementById('submitArea').style.display = 'none';
-                alert(`제출되었습니다. 점수: ${finalScore}점`);
-                window.scrollTo(0, 0);
-            } catch (e) {
-                alert("데이터 저장 실패: " + e.message);
-            }
+            // [저장 배선 완성] C_script가 찾는 공백 제거된 ID 이름표를 붙여 저장합니다.
+            const results = JSON.parse(localStorage.getItem(`${className}_results_${currentSubId}`) || '[]');
+            results.push(fullResultData);
+            localStorage.setItem(`${className}_results_${currentSubId}`, JSON.stringify(results));
+            
+            document.getElementById('submitArea').style.display = 'none';
+            alert(`제출되었습니다. 점수: ${finalScore}점`);
+            window.scrollTo(0, 0);
         }
     </script>
 </body>

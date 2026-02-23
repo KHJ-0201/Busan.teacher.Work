@@ -1,0 +1,87 @@
+/* ============================================================
+   [1. 관리자 공용 디자인] - 기존 규격 절대 유지
+   ============================================================ */
+.admin-container { max-width: 1400px; margin: 20px auto; font-family: 'Malgun Gothic', sans-serif; padding: 20px; padding-bottom: 120px; }
+.nav-menu { text-align: right; padding: 10px 20px; background: #f1f1f1; border-bottom: 1px solid #ddd; margin-bottom: 10px; }
+.backup-area { position: fixed; bottom: 30px; left: 30px; z-index: 1000; display: flex; gap: 10px; }
+.final-save-btn { position: fixed; bottom: 30px; right: 30px; padding: 15px 30px; font-size: 18px; font-weight: bold; background: #27ae60; color: white; border: none; border-radius: 50px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); cursor: pointer; z-index: 1000; }
+
+/* 학급 설정 가로 배치 디자인 */
+.fixed-info-box { background: #eef2f7; padding: 20px; border-radius: 10px; margin-bottom: 30px; border-left: 5px solid #3498db; }
+.info-row { display: flex; gap: 20px; align-items: center; margin-bottom: 15px; }
+.input-item { display: flex; align-items: center; gap: 10px; }
+.flex-grow { flex: 1; }
+.input-item label { font-weight: bold; white-space: nowrap; }
+.wide-input { width: 100%; min-width: 500px; padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+input[type="text"], input[type="date"] { padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+input[type="date"]::-webkit-datetime-edit-year-field { width: 40px; }
+
+.stamp-preview { display: inline-block; width: 40px; height: 40px; background: #fff; border: 1px dashed #ccc; vertical-align: middle; overflow: hidden; }
+.stamp-preview img { width: 100%; height: 100%; object-fit: contain; }
+
+/* 세분류 및 능력단위 레이아웃 */
+.vertical-layout { display: flex; flex-direction: column; gap: 60px; }
+.subject-container-vertical { display: flex; flex-direction: column; gap: 30px; padding: 15px 0; }
+.main-subject-card { width: 100%; border: 1px solid #333; border-radius: 8px; background: #fff; overflow: hidden; height: fit-content; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.main-subject-title { color: white; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; font-weight: bold; cursor: pointer; }
+.main-btn-group { display: flex; align-items: center; }
+
+.toggle-status { font-size: 13px; color: #ffeb3b; font-weight: bold; margin-left: 10px; text-decoration: underline; }
+.toggle-status-sub { font-size: 12px; color: #2c3e50; font-weight: bold; margin-right: 10px; }
+.sub-count-badge { font-size: 12px; color: #fff; margin-left: 8px; opacity: 0.8; }
+.ncs-card { border-top: 5px solid #2980b9; } .ncs-card .main-subject-title { background: #2980b9; }
+.non-ncs-card { border-top: 5px solid #e67e22; } .non-ncs-card .main-subject-title { background: #e67e22; }
+
+.sub-subject-group { margin: 15px; border: 1px solid #ddd; border-radius: 8px; background: #fff; overflow: hidden; }
+.sub-header { background: #f8f9fa; padding: 10px 15px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #eee; }
+.sub-header-summary { display: flex; gap: 12px; align-items: center; flex: 1; font-size: 14px; }
+.sum-name { color: #2c3e50; font-weight: bold; } .sum-code { color: #3498db; font-family: monospace; } .sum-qcount { color: #e74c3c; font-size: 12px; }
+
+.sub-body { padding: 15px; background: #fff; }
+.sub-info-inputs { display: flex; gap: 10px; align-items: center; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px dashed #ddd; }
+
+/* 문제 입력 영역 및 미입력 색상 처리 */
+.q-no-badge { display: inline-block; color: #34495e; font-size: 11px; font-weight: bold; margin-bottom: 10px; border-bottom: 2px solid #34495e; }
+.q-input-row { background: #fff; padding: 15px; border: 1px solid #eee; margin-top: 10px; border-radius: 8px; }
+.q-text-with-img { display: flex; gap: 15px; }
+
+/* 🛠 [수정 포인트] 사진 영역 이탈 방지 */
+.q-img-frame { 
+    width: 140px; 
+    height: 90px; 
+    border: 1px solid #ddd; 
+    position: relative; 
+    flex-shrink: 0; 
+    overflow: hidden; /* 영역 밖으로 나가는 이미지 차단 */
+    background: #f9f9f9;
+    border-radius: 4px;
+}
+.q-img-inner-view {
+    width: 100%;
+    height: 100%;
+}
+.q-img-inner-view img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: contain; /* 영역에 맞춰 이미지 비율 유지하며 꽉 채움 */
+}
+
+.img-del-x { position: absolute; top: -5px; right: -5px; background: #e74c3c; color: #fff; border: none; cursor: pointer; width: 18px; height: 18px; border-radius: 50%; font-size: 10px; z-index: 10; }
+
+.opts { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 8px; margin: 12px 0; }
+.opts input { padding: 8px; border: 1px solid #ddd; border-radius: 4px; }
+.ans-exp { font-size: 13px; display: flex; align-items: center; gap: 15px; border-top: 1px solid #eee; padding-top: 10px; }
+.exp-input { flex: 1; padding: 6px; border: 1px solid #ddd; border-radius: 4px; }
+
+.small-btn { padding: 6px 14px; font-size: 12px; cursor: pointer; border: 1px solid #ccc; border-radius: 4px; }
+.navy { background: #2c3e50; color: white; border: none; } .gray { background: #95a5a6; color: white; border: none; }
+.del-btn { background: #ff4757; color: white; border: none; padding: 4px 10px; cursor: pointer; border-radius: 4px; font-size: 11px; }
+.q-add-btn { background: #3498db; color: white; border: none; padding: 10px; width: 100%; cursor: pointer; border-radius: 6px; font-weight: bold; margin-top: 15px; }
+
+/* 미입력 필드 강조 스타일 */
+.empty-field { background-color: #fff0f0 !important; border: 2px solid #ffcccc !important; }
+.filled-field { background-color: #ffffff !important; border: 1px solid #ddd !important; }
+
+/* 날짜순 보기 전용 스타일 */
+.date-view-box { background: #fff; padding: 25px; border-radius: 12px; border: 1px solid #333; margin-top: 20px; }
+.date-item-row { padding: 15px; border-bottom: 1px solid #eee; }

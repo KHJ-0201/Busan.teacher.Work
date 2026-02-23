@@ -6,7 +6,7 @@ if (!currentClass) {
     location.href = 'index.html'; 
 }
 
-// --- 파이어베이스 연결 부품 ---
+// --- 파이어베이스 연결 부품 추가 ---
 const firebaseConfig = {
   apiKey: "AIzaSyDs15RTlqQSz4u1Gr6NLQ2Kx25Raey2TtA",
   authDomain: "khj-teacher-work.firebaseapp.com",
@@ -21,6 +21,7 @@ if (!firebase.apps.length) { firebase.initializeApp(firebaseConfig); }
 const database = firebase.database();
 // --------------------------------
 
+/* [공용] 상단 알림 배너 생성 함수 */
 function showBanner(message, color = "#3498db") {
     const existingBanner = document.getElementById('statusBanner');
     if (existingBanner) existingBanner.remove();
@@ -57,27 +58,24 @@ window.onload = function() {
     }, 800);
 };
 
-// 파이어베이스 저장 및 로드 경로 일원화
+// LocalStorage 대신 Firebase Realtime Database를 사용하도록 변경
 function DB_Save(key, data) { 
-    const path = "CONFIG/" + currentClass + "/" + key.replace(`${currentClass}_`, "");
-    database.ref(path).set(data); 
+    // 경로를 CONFIG/(학급명)/fullConfig 형태로 명확히 지정합니다.
+    database.ref("CONFIG/" + key.replace(/_/g, '/')).set(data); 
 }
 
 async function DB_Load(key) { 
-    const path = "CONFIG/" + currentClass + "/" + key.replace(`${currentClass}_`, "");
-    const snapshot = await database.ref(path).once('value');
+    // 불러올 때도 동일한 CONFIG 경로에서 가져옵니다.
+    const snapshot = await database.ref("CONFIG/" + key.replace(/_/g, '/')).once('value');
     return snapshot.val();
 }
 
-async function loadFixedInfo(targetClass) {
+function loadFixedInfo(targetClass) {
     const fields = ['groupName', 'groupPeriod', 'teacherName', 'verifierName'];
-    const remoteData = await DB_Load(`${targetClass}_fixedInfo`);
-    
     fields.forEach(id => {
+        const val = localStorage.getItem(`${targetClass}_${id}`);
         const el = document.getElementById(id);
-        if(!el) return;
-        const val = (remoteData && remoteData[id]) ? remoteData[id] : localStorage.getItem(`${targetClass}_${id}`);
-        if(val) {
+        if(val && el) {
             el.value = val;
             if(typeof checkInputStatus === 'function') checkInputStatus(el);
         }
@@ -91,22 +89,28 @@ function importClassData() {
     if (!targetClass) { alert("데이터를 가져올 반을 선택해주세요."); return; }
     if (!confirm(`${targetClass}의 '문제 데이터'만 현재 화면으로 불러오시겠습니까?`)) { return; }
     
-    database.ref("CONFIG/" + targetClass + "/fullConfig").once('value').then((snapshot) => {
-        const data = snapshot.val();
-        if (data) {
-            document.getElementById('ncsSubjectContainer').innerHTML = '';
-            document.getElementById('nonNcsSubjectContainer').innerHTML = '';
-            rebuildUI('ncsSubjectContainer', data.ncs, 'ncs');
-            rebuildUI('nonNcsSubjectContainer', data.nonNcs, 'non-ncs');
+    const rawData = localStorage.getItem(`${targetClass}_fullConfig`);
+    if (rawData) {
+        const data = JSON.parse(rawData);
+        document.getElementById('ncsSubjectContainer').innerHTML = '';
+        document.getElementById('nonNcsSubjectContainer').innerHTML = '';
+        rebuildUI('ncsSubjectContainer', data.ncs, 'ncs');
+        rebuildUI('nonNcsSubjectContainer', data.nonNcs, 'non-ncs');
+        
+        setTimeout(() => {
+            document.querySelectorAll('input, textarea, select').forEach(el => {
+                if(typeof checkInputStatus === 'function') checkInputStatus(el);
+            });
             showBanner(`${targetClass}의 데이터가 로드되었습니다. '설정 저장하기'를 눌러주세요.`, "#16a085");
-        } else {
-            alert(`${targetClass}에 저장된 실시간 데이터가 없습니다.`);
-        }
-    });
+        }, 300);
+        
+    } else {
+        alert(`${targetClass}에 저장된 문제 데이터가 없습니다.`);
+    }
 }
 
 function createMainSubject(type, name = null, forceId = null) { 
-    const sName = name || prompt("세분류명 입력"); 
+    const sName = name || prompt("NCS 세분류명 입력"); 
     if(!sName) return; 
     const containerId = type === 'ncs' ? 'ncsSubjectContainer' : 'nonNcsSubjectContainer'; 
     const container = document.getElementById(containerId); 
@@ -126,7 +130,7 @@ function addSubSubject(mId, savedData = null, forceId = null) {
     const subDiv = document.createElement('div');
     subDiv.className = 'sub-subject-group';
     subDiv.id = `subGroup_${subId}`;
-    const qCount = savedData ? (savedData.questions ? savedData.questions.length : 0) : 0;
+    const qCount = savedData ? savedData.questions.length : 0;
     const isActive = savedData ? savedData.isActive : false;
     subDiv.innerHTML = `<div class="sub-header" onclick="toggleSubSubject(this)"><span class="arrow">▶</span><span class="sub-header-summary"><input type="checkbox" class="sub-active-check" ${isActive ? 'checked' : ''} onclick="handleActiveCheck(this); event.stopPropagation();" title="B페이지 노출 여부"><b class="sum-name">${savedData ? savedData.name : '신규 능력단위'}</b><span class="sum-code">${savedData && savedData.ncsCode ? '['+savedData.ncsCode+']' : ''}</span><span class="sum-qcount">(문제: ${qCount})</span></span><div class="sub-header-btns"><button onclick="event.stopPropagation(); editSubTitle(this)" class="small-btn gray" style="font-size:10px; padding:2px 5px;">명칭수정</button><span class="toggle-status-sub" style="margin-left:5px;">[열기]</span><button onclick="event.stopPropagation(); deleteSubSubject('${mId}', this)" class="del-btn" style="background:#e74c3c; padding:2px 8px; font-size:11px; margin-left:10px;">그룹 삭제</button></div></div>
     <div class="sub-body" style="display:none;">
@@ -144,8 +148,12 @@ function addSubSubject(mId, savedData = null, forceId = null) {
 
 function handleActiveCheck(obj) {
     const allChecks = document.querySelectorAll('.sub-active-check');
+    const subName = obj.closest('.sub-subject-group').querySelector('.sub-name').value || "이름 없음";
     if (obj.checked) {
         allChecks.forEach(chk => { if (chk !== obj) chk.checked = false; });
+        showBanner(`✅ 활성화 과목 변경: ${subName}`, "#27ae60");
+    } else {
+        showBanner(`❌ 활성화 해제: ${subName}`, "#e74c3c");
     }
     setTimeout(() => { saveAllData(true); }, 100); 
 }
@@ -160,16 +168,10 @@ function addQuestionRow(subId, qData = null, mId = null) {
 
 function saveFixedInfo() { 
     const fields = ['groupName', 'groupPeriod', 'teacherName', 'verifierName']; 
-    const infoData = {};
     fields.forEach(id => { 
         const el = document.getElementById(id); 
-        if(el) {
-            const val = el.value.trim();
-            localStorage.setItem(`${currentClass}_${id}`, val); 
-            infoData[id] = val;
-        }
+        if(el) localStorage.setItem(`${currentClass}_${id}`, el.value.trim()); 
     }); 
-    DB_Save(`${currentClass}_fixedInfo`, infoData);
 }
 
 function saveStampImage(type) { 
@@ -178,7 +180,6 @@ function saveStampImage(type) {
     const reader = new FileReader(); 
     reader.onload = (e) => { 
         localStorage.setItem(`${currentClass}_${type}StampImg`, e.target.result); 
-        DB_Save(`${currentClass}_${type}StampImg`, e.target.result); 
         loadStampPreview(currentClass, type); 
     }; 
     reader.readAsDataURL(file); 
@@ -200,19 +201,70 @@ function saveAllData(silent = false) {
             if(el) el.classList.add('empty-field');
         }
     });
+
     if(!isAllFilled) {
         showBanner("⚠️ 학급 기본 설정을 모두 입력해야 저장이 가능합니다.", "#e74c3c");
+        if(!silent) alert("학급 기본 설정(훈련과정, 기간, 교사, 검증자)을 모두 입력해주세요.");
         return;
     }
+
     try {
         const ncsData = extractSubjectData('ncsSubjectContainer');
         const nonNcsData = extractSubjectData('nonNcsSubjectContainer');
         const data = { ncs: ncsData, nonNcs: nonNcsData }; 
+        
         DB_Save(`${currentClass}_fullConfig`, data); 
         saveFixedInfo(); 
-        if (silent !== true) showBanner("🚀 클라우드 데이터베이스에 실시간 저장되었습니다.", "#27ae60");
+        
+        if (silent !== true) {
+            showBanner("🚀 클라우드 데이터베이스에 실시간 저장되었습니다.", "#27ae60");
+        }
     } catch (e) {
-        alert("저장 오류 발생");
+        console.error("저장 오류 상세:", e);
+        alert("저장 중 오류가 발생했습니다.");
+    }
+}
+
+function deleteSubSubject(mId, btn) {
+    if(!confirm("이 능력단위(그룹)를 삭제하시겠습니까?\n포함된 모든 문제가 함께 삭제됩니다.")) return;
+    const subGroup = btn.closest('.sub-subject-group');
+    if(subGroup) {
+        subGroup.remove();
+        updateMainBadge(mId);
+        showBanner("🗑️ 능력단위가 삭제되었습니다.", "#e67e22");
+    }
+}
+
+function deleteMainSubject(sId) {
+    if(!confirm("이 세분류를 삭제하시겠습니까?\n포함된 모든 능력단위와 문제가 삭제됩니다.")) return;
+    const mainCard = document.getElementById(`main_${sId}`);
+    if(mainCard) {
+        mainCard.remove();
+        showBanner("🗑️ 세분류가 삭제되었습니다.", "#e74c3c");
+    }
+}
+
+function editMainTitle(sId) {
+    const card = document.getElementById(`main_${sId}`);
+    const titleSpan = card.querySelector('.main-subject-title span');
+    const oldTitle = titleSpan.childNodes[0].textContent.replace('📂 ', '').trim();
+    const newTitle = prompt("수정할 세분류명 입력", oldTitle);
+    if(newTitle && newTitle !== oldTitle) {
+        const subBadge = card.querySelector('.sub-count-badge').outerHTML;
+        titleSpan.innerHTML = `📂 ${newTitle} ${subBadge}`;
+        showBanner("✏️ 명칭이 수정되었습니다.");
+    }
+}
+
+function editSubTitle(btn) {
+    const group = btn.closest('.sub-subject-group');
+    const nameInput = group.querySelector('.sub-name');
+    const oldName = nameInput.value;
+    const newName = prompt("수정할 능력단위명 입력", oldName);
+    if(newName && newName !== oldName) {
+        nameInput.value = newName;
+        updateSubSummary(nameInput);
+        showBanner("✏️ 명칭이 수정되었습니다.");
     }
 }
 
@@ -264,21 +316,7 @@ async function loadSavedSubjects() {
     rebuildUI('nonNcsSubjectContainer', data.nonNcs, 'non-ncs'); 
 }
 
-function rebuildUI(containerId, subjects, type) { 
-    if(!subjects) return; 
-    subjects.forEach(s => { 
-        const sId = Date.now() + Math.random(); 
-        createMainSubject(type, s.title, sId); 
-        if(s.subSubjects) {
-            s.subSubjects.forEach(sub => { 
-                const subId = Date.now() + Math.random(); 
-                addSubSubject(sId, sub, subId); 
-                if(sub.questions) sub.questions.forEach(q => addQuestionRow(subId, q, sId)); 
-            }); 
-        }
-    }); 
-    sortMainSubjects(containerId); 
-}
+function rebuildUI(containerId, subjects, type) { if(!subjects) return; subjects.forEach(s => { const sId = Date.now() + Math.random(); createMainSubject(type, s.title, sId); s.subSubjects.forEach(sub => { const subId = Date.now() + Math.random(); addSubSubject(sId, sub, subId); sub.questions.forEach(q => addQuestionRow(subId, q, sId)); }); }); sortMainSubjects(containerId); }
 function toggleMainSubject(header) { const body = header.nextElementSibling; const status = header.querySelector('.toggle-status'); if(body.style.display === "none") { body.style.display = "block"; status.innerText = "[접기]"; header.style.opacity = "1"; } else { body.style.display = "none"; status.innerText = "[열기]"; header.style.opacity = "0.7"; } }
 function toggleSubSubject(header) { const body = header.nextElementSibling; const arrow = header.querySelector('.arrow'); const status = header.querySelector('.toggle-status-sub'); if (body.style.display === "none") { body.style.display = "block"; arrow.innerText = "▼"; status.innerText = "[접기]"; } else { body.style.display = "none"; arrow.innerText = "▶"; status.innerText = "[열기]"; } }
 function sortMainSubjects(containerId) { const container = document.getElementById(containerId); if(!container) return; const cards = Array.from(container.querySelectorAll('.main-subject-card')); cards.sort((a, b) => { const titleA = a.querySelector('.main-subject-title span').childNodes[0].textContent.replace('📂 ', '').trim(); const titleB = b.querySelector('.main-subject-title span').childNodes[0].textContent.replace('📂 ', '').trim(); return titleA.localeCompare(titleB, 'ko'); }); cards.forEach(card => container.appendChild(card)); }
@@ -288,3 +326,8 @@ function updateSubSummaryById(subId) { const qArea = document.getElementById(`qA
 function updateMainBadge(mId) { const container = document.getElementById(`subContainer_${mId}`); if(!container) return; const count = container.querySelectorAll('.sub-subject-group').length; const header = container.previousElementSibling; if(header) header.querySelector('.sub-count-badge').innerText = `(능력단위: ${count})`; }
 function handleQuestionImage(input, rowId) { const file = input.files[0]; if (!file) return; const reader = new FileReader(); reader.onload = (e) => { document.getElementById(`qImgFrame_${rowId}`).style.display = 'block'; document.getElementById(`qImgPrev_${rowId}`).innerHTML = `<img src="${e.target.result}" data-img="${e.target.result}"><button onclick="removeQuestionImage('${rowId}')" class="img-del-x">X</button>`; }; reader.readAsDataURL(file); }
 function removeQuestionImage(rowId) { document.getElementById(`qImgFrame_${rowId}`).style.display = 'none'; document.getElementById(`qImgPrev_${rowId}`).innerHTML = ''; }
+function switchView(mode) { currentViewMode = mode; document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active')); if(mode === 'subject') { document.getElementById('viewBySubjectBtn').classList.add('active'); document.querySelector('.vertical-layout').style.display = 'flex'; document.getElementById('dateViewContainer').style.display = 'none'; loadSavedSubjects(); } else { document.getElementById('viewByDateBtn').classList.add('active'); document.querySelector('.vertical-layout').style.display = 'none'; document.getElementById('dateViewContainer').style.display = 'block'; renderDateView(); } }
+function updateDateInListView(subGroupId, newDate) { const subGroup = document.getElementById(subGroupId); if (subGroup) { const dateInput = subGroup.querySelector('.sub-date'); if (dateInput) { dateInput.value = newDate; checkInputStatus(dateInput); } } renderDateView(); }
+function renderDateView() { const list = document.getElementById('dateViewList'); if(!list) return; list.innerHTML = ''; const allGroups = document.querySelectorAll('.sub-subject-group'); let datedSubs = []; let undatedSubs = []; allGroups.forEach(group => { const card = group.closest('.main-subject-card'); if(!card) return; const mTitle = card.querySelector('.main-subject-title span').childNodes[0].textContent.replace('📂 ', '').trim(); const subName = group.querySelector('.sub-name').value; const subDate = group.querySelector('.sub-date').value; const qCount = group.querySelectorAll('.q-input-row').length; const originalId = group.id; const item = { mainTitle: mTitle, name: subName, date: subDate, questionsCount: qCount, originalId: originalId }; if (subDate) datedSubs.push(item); else undatedSubs.push(item); }); datedSubs.sort((a, b) => new Date(a.date) - new Date(b.date)); list.innerHTML += `<h3 style="color:#2980b9; border-bottom:2px solid #2980b9; padding-bottom:10px;">📅 날짜 확정 능력단위</h3>`; datedSubs.forEach(sub => { const row = document.createElement('div'); row.className = 'date-item-row'; row.innerHTML = `<div style="display:flex; justify-content:space-between; align-items:center;"><div><input type="date" value="${sub.date}" onchange="updateDateInListView('${sub.originalId}', this.value)" style="padding:4px; border:1px solid #2980b9; border-radius:4px; margin-right:15px; font-weight:bold;"><span style="color:#666; font-size:13px; margin-right:5px;">[${sub.mainTitle}]</span><span style="font-weight:bold;">${sub.name}</span></div><div style="font-size:12px; color:#e74c3c; font-weight:bold;">문제: ${sub.questionsCount}개</div></div>`; list.appendChild(row); }); list.innerHTML += `<h3 style="color:#7f8c8d; border-bottom:2px solid #7f8c8d; padding-bottom:10px; margin-top:40px;">❔ 날짜 미정 능력단위 (작성 중)</h3>`; undatedSubs.forEach(sub => { const row = document.createElement('div'); row.className = 'date-item-row'; row.style.background = "#fffafa"; row.innerHTML = `<div style="display:flex; justify-content:space-between; align-items:center;"><div><input type="date" onchange="updateDateInListView('${sub.originalId}', this.value)" style="padding:4px; border:1px solid #ccc; border-radius:4px; margin-right:15px;"><span style="color:#666; font-size:13px; margin-right:5px;">[${sub.mainTitle}]</span><span style="font-weight:bold; color:#7f8c8d;">${sub.name}</span></div><div style="font-size:12px; color:#e74c3c; font-weight:bold;">문제: ${sub.questionsCount}개</div></div>`; list.appendChild(row); }); }
+function exportBackup() { const allData = {}; for (let i = 0; i < localStorage.length; i++) { const key = localStorage.key(i); if(key.includes(currentClass)) allData[key] = localStorage.getItem(key); } const dataStr = JSON.stringify(allData); const blob = new Blob([dataStr], {type: "application/json"}); const url = URL.createObjectURL(blob); const link = document.createElement('a'); link.href = url; link.download = `백업_${currentClass}.json`; link.click(); }
+function importBackup(input) { const file = input.files[0]; if(!file) return; const reader = new FileReader(); reader.onload = (e) => { try { const data = JSON.parse(e.target.result); for (const k in data) localStorage.setItem(k, data[k]); location.reload(); } catch(err) { alert("백업 파일 형식이 올바르지 않습니다."); } }; reader.readAsText(file); }

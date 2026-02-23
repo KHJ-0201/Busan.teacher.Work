@@ -28,23 +28,21 @@ window.onload = function() {
 async function renderIntegratedTable() {
     const area = document.getElementById('resultTableArea');
     
-    // 1. 클라우드에서 문제 구성 정보 로드
+    // [수정] 클라우드(Firebase)에서 문제 구성 정보를 가져옵니다.
     const configSnapshot = await database.ref(`CONFIG/${currentClass}/fullConfig`).once('value');
     const config = configSnapshot.val() || { ncs: [], nonNcs: [] };
     
     let subjects = [];
-    [...(config.ncs || []), ...(config.nonNcs || [])].forEach(main => {
-        if(main.subSubjects) {
-            main.subSubjects.forEach(sub => {
-                if (sub.date) {
-                    const subId = (sub.name + sub.date).replace(/\s+/g, '');
-                    subjects.push({ id: subId, name: sub.name, date: sub.date, mainTitle: main.title });
-                }
-            });
-        }
+    [...config.ncs, ...config.nonNcs].forEach(main => {
+        main.subSubjects.forEach(sub => {
+            if (sub.date) {
+                const subId = (sub.name + sub.date).replace(/\s+/g, '');
+                subjects.push({ id: subId, name: sub.name, date: sub.date, mainTitle: main.title });
+            }
+        });
     });
 
-    // 2. 클라우드에서 학생 응시 결과 로드
+    // [수정] 클라우드(Firebase)에서 모든 학생의 응시 결과를 가져옵니다.
     const resultsSnapshot = await database.ref(`RESULTS/${currentClass}`).once('value');
     const allResultsRaw = resultsSnapshot.val() || {};
     
@@ -52,7 +50,6 @@ async function renderIntegratedTable() {
     
     Object.values(allResultsRaw).forEach(res => {
         if (!studentMap[res.name]) studentMap[res.name] = { name: res.name, scores: {} };
-        // displayTitle 매칭 (A에서 만든 sub.name과 B에서 보낸 displayTitle 비교)
         const matchedSub = subjects.find(s => res.displayTitle === s.name);
         if (matchedSub) {
             studentMap[res.name].scores[matchedSub.id] = res.score;
@@ -170,16 +167,12 @@ async function showIndividualReport(subId, userName, subName) {
     const config = configSnapshot.val();
     
     let questions = [];
-    if(config) {
-        [...(config.ncs || []), ...(config.nonNcs || [])].forEach(m => {
-            if(m.subSubjects) {
-                m.subSubjects.forEach(s => { 
-                    const sId = (s.name + s.date).replace(/\s+/g, '');
-                    if (sId === subId) questions = s.questions; 
-                });
-            }
+    [...(config.ncs || []), ...(config.nonNcs || [])].forEach(m => {
+        m.subSubjects.forEach(s => { 
+            const sId = (s.name + s.date).replace(/\s+/g, '');
+            if (sId === subId) questions = s.questions; 
         });
-    }
+    });
 
     if (!data) return;
 
@@ -194,6 +187,7 @@ async function showIndividualReport(subId, userName, subName) {
     document.getElementById('printArea').innerHTML = headerHtml + generateBTypeHtml(data, questions);
 }
 
+/* [그림 로드 대기 및 인쇄 실행] */
 function waitImagesAndPrint() {
     const images = document.querySelectorAll('#printArea img');
     if (images.length === 0) { window.print(); return; }
@@ -205,6 +199,7 @@ function waitImagesAndPrint() {
     if (loadedCount === images.length) setTimeout(() => window.print(), 300);
 }
 
+/* [기능] 개별 데이터 삭제 */
 async function deleteSingleResult(firebaseKey) {
     if (!confirm(`학생의 기록을 삭제하시겠습니까?`)) return;
     await database.ref(`RESULTS/${currentClass}/${firebaseKey}`).remove();
@@ -213,6 +208,7 @@ async function deleteSingleResult(firebaseKey) {
     renderIntegratedTable();
 }
 
+/* [기능] 해당 과목 전체 삭제 */
 async function deleteAllResults(subId, subName) {
     if (!confirm("이 과목의 모든 학생 데이터를 삭제하시겠습니까?")) return;
     const snapshot = await database.ref(`RESULTS/${currentClass}`).once('value');
@@ -227,6 +223,7 @@ async function deleteAllResults(subId, subName) {
     renderIntegratedTable();
 }
 
+/* [인쇄] 단독 인쇄 */
 async function printSingleReport(subId, userName, subName) {
     const snapshot = await database.ref(`RESULTS/${currentClass}`).once('value');
     const data = Object.values(snapshot.val() || {}).find(r => r.name === userName && r.displayTitle === subName);
@@ -243,6 +240,7 @@ async function printSingleReport(subId, userName, subName) {
     waitImagesAndPrint();
 }
 
+/* [인쇄] 일괄 인쇄 */
 async function printBatchReports(subId, subName) {
     const selectedNames = Array.from(document.querySelectorAll('.student-chk:checked')).map(cb => cb.value);
     if (selectedNames.length === 0) { alert("인쇄할 학생을 선택하세요."); return; }
@@ -266,6 +264,7 @@ async function printBatchReports(subId, subName) {
     waitImagesAndPrint();
 }
 
+/* [공용] B화면 결과표 양식 생성 함수 (원본 그대로 유지) */
 function generateBTypeHtml(data, questions) {
     const labelStyle = "background-color:#e3f2fd !important; font-weight:bold; border:1px solid #000; padding:6px; text-align:center; font-size:12px;";
     const contentStyle = "background-color:#ffffff !important; border:1px solid #000; padding:6px; text-align:center; font-size:12px;";
@@ -283,9 +282,6 @@ function generateBTypeHtml(data, questions) {
                     <td style="border:1px solid #000; padding:6px; font-weight:bold; text-align:left; font-size:12px;">
                         <div style="display:flex; align-items:center;">
                             <span style="display:inline-block; width:100px; text-align:left;">${data.name || ''}</span>
-                            <div style="width:60px; height:30px; position:relative; margin-left:10px;">
-                                ${data.signData ? `<img src="${data.signData}" style="width:100%; height:100%; object-fit:contain;">` : ''}
-                            </div>
                         </div>
                     </td>
                     <td style="${labelStyle}">시행일자</td>
