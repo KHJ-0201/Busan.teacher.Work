@@ -29,17 +29,14 @@ window.onload = function() {
 
 /* [3. 관리자(A) 데이터 연동 핵심 로직] */
 async function loadQuestionsFromAdmin() {
-    // [경로 수정] A페이지의 DB_Save와 일치하도록 CONFIG/ 를 붙여줍니다.
+    // [수정] 파이어베이스 CONFIG 경로에서 가져옵니다.
     const dbPath = `CONFIG/${currentClass}/fullConfig`;
     
     try {
         const snapshot = await database.ref(dbPath).once('value');
         const config = snapshot.val();
 
-        if (!config) { 
-            alert("저장된 문제가 없습니다. 관리자 페이지에서 '설정 저장하기'를 먼저 눌러주세요."); 
-            return; 
-        }
+        if (!config) { alert("저장된 문제가 없습니다. 관리자 페이지에서 '설정 저장하기'를 먼저 눌러주세요."); return; }
 
         examQuestions = [];
 
@@ -52,13 +49,12 @@ async function loadQuestionsFromAdmin() {
                 if (sub.isActive === true) { 
                     sub.questions.forEach(q => {
                         if (q.text && q.text.trim() !== "") {
-                            // C페이지 매칭을 위해 displayTitle에 능력단위명을 담아줍니다.
                             examQuestions.push({ 
                                 ...q, 
                                 mainTitle: main.title, 
                                 subTitle: sub.name,
-                                purpose: sub.purpose, // 결과표 출력용
-                                ncsCode: sub.ncsCode  // 결과표 출력용
+                                purpose: sub.purpose, 
+                                ncsCode: sub.ncsCode 
                             });
                         }
                     });
@@ -120,15 +116,16 @@ async function submitExam() {
 
     const score = Math.round((scoreCount / examQuestions.length) * 100);
     
-    // C페이지에서 어떤 과목인지 알 수 있게 현재 활성화된 과목명을 displayTitle로 저장합니다.
-    const activeSubName = examQuestions.length > 0 ? examQuestions[0].subTitle : "미분류 과목";
+    // [중요] C페이지 일람표와 매칭하기 위해 displayTitle에 능력단위명을 넣습니다.
+    const activeSubName = examQuestions.length > 0 ? examQuestions[0].subTitle : "미분류";
 
     const resultData = { 
         name: userName, 
         score: score, 
         date: new Date().toLocaleString(),
+        examDate: new Date().toLocaleDateString(),
         className: currentClass,
-        displayTitle: activeSubName, // C페이지 매칭용 핵심 열쇠
+        displayTitle: activeSubName, 
         userAnswers: userAnswers,
         purpose: examQuestions[0].purpose || "",
         groupName: localStorage.getItem(`${currentClass}_groupName`) || "",
@@ -147,6 +144,6 @@ async function submitExam() {
         location.href = 'C_Result.html';
     } catch (e) {
         console.error("제출 오류:", e);
-        alert("결과 저장 중 오류가 발생했습니다. 네트워크를 확인해주세요.");
+        alert("결과 저장 중 오류가 발생했습니다.");
     }
 }
