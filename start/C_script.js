@@ -74,15 +74,16 @@ async function renderIntegratedTable() {
     let html = `<table class="summary-table">
         <thead>
             <tr>
-                <th rowspan="3" class="sticky-1">번호</th>
-                <th rowspan="3" class="sticky-2">성명</th>
-                <th rowspan="3" class="sticky-3">평균</th>
+                <th rowspan="4" class="sticky-1">번호</th>
+                <th rowspan="4" class="sticky-2">성명</th>
+                <th rowspan="4" class="sticky-3">평균</th>
                 ${subjects.map(sub => `<th class="head-yellow unit-col">${sub.mainTitle}</th>`).join('')}
             </tr>
             <tr class="sub-header">
                 ${subjects.map(sub => `<th class="head-green unit-col" onclick="showSubjectStudentList('${sub.id}', '${sub.name}')">${sub.name}</th>`).join('')}
             </tr>
             <tr class="sub-header">${subjects.map(sub => `<th class="unit-col">${sub.date}</th>`).join('')}</tr>
+            <tr class="sub-header">${subjects.map(sub => `<th class="unit-col"><button onclick="showSubjectExplain('${sub.id}', '${sub.name}')" style="cursor:pointer; padding:2px 5px; font-size:10px; background:#34495e; color:white; border:none; border-radius:3px;">🔍 해설보기</button></th>`).join('')}</tr>
         </thead>
         <tbody>`;
 
@@ -288,7 +289,7 @@ function generateBTypeHtml(data, questions) {
 
     return `
         <div class="result-page-container" style="width:190mm; margin:0 auto; font-family:'Malgun Gothic'; background:#fff; overflow:visible;">
-            <div style="text-align:center; font-size:18px; font-weight:bold; margin-bottom:8px; border-bottom:3px double #000; padding-bottom:5px;">${data.displayTitle || ''} 사전평가 결과표</div>
+            <div style="text-align:center; font-size:24px; font-weight:bold; margin-bottom:8px; border-bottom:3px double #000; padding-bottom:5px;">${data.displayTitle || ''} 사전평가 결과표</div>
             
             <table style="width:100%; border-collapse:collapse; border:2px solid #000; table-layout:fixed;">
                 <colgroup><col style="width:15%;"><col style="width:45%;"><col style="width:13.33%;"><col style="width:26.67%;"></colgroup>
@@ -329,14 +330,44 @@ function generateBTypeHtml(data, questions) {
     const isCorrect = sAns == q.answer;
     return `
     <tr class="q-row-print">
-        <td style="border:1px solid #000; padding:4px; text-align:center; font-size:11px;">
-            ${idx+1}<br><span style="color:${isCorrect?'blue':'red'}; font-weight:bold;">(${isCorrect?'O':'X'})</span>
-        </td>
-        <td style="border:1px solid #000; padding:8px; text-align:left;">
-            <div style="font-weight:bold; font-size:12px; line-height:1.2; margin-bottom:5px;">${q.text}</div>
-            ${q.img ? `<div style="margin-bottom:8px; text-align:center;"><img src="${q.img}" style="max-width:150px; border:1px solid #ccc;"></div>` : ''}
-            <div style="font-size:11px; color:#555;">
-                ${q.options.map((opt, oIdx) => `<div style="margin-bottom:2px;">${oIdx+1}) ${opt}</div>`).join('')}
+    <td style="border:1px solid #000; padding:4px; text-align:center; font-size:11px; position:relative; vertical-align:middle; overflow:visible;">
+    <div style="position:relative; z-index:1; color:#333; font-weight:bold; font-size:13px;">${idx+1}</div>
+
+    ${isCorrect ? 
+        `<svg style="position:absolute; top:50%; left:50%; transform:translate(-40%, -40%) rotate(-5deg); 
+                     width:60px; height:60px; z-index:2; pointer-events:none;" viewBox="-50 -50 300 300">
+            <path 
+                d="M 100,140 C -80,100 1,0 90,0 C 180,4 120,100 80,144"
+                fill="none"
+                stroke="rgba(255, 30, 30, 0.75)"
+                stroke-width="15"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+         </svg>` :
+        // 틀렸을 때: 선생님이 만족하셨던 기존의 과감한 빗금 유지
+        `<div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%) rotate(12deg); 
+                     font-size:55px; color:rgba(255, 30, 30, 0.75); 
+                     font-family:'Brush Script MT', 'Cursive', 'serif'; 
+                     font-weight:100; z-index:2; pointer-events:none; line-height:1;
+                     display:flex; align-items:center; justify-content:center;">/</div>`
+    }
+</td>
+    </div>
+</td>
+        <td style="border:1px solid #000; padding:8px; text-align:left; vertical-align:top;">
+            <div style="font-weight:bold; font-size:12px; line-height:1.2; margin-bottom:8px;">${q.text}</div>
+            
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:15px;">
+                
+                <div style="flex: 1; font-size:11px; color:#333; line-height:1.4;">
+                    ${q.options.map((opt, oIdx) => `<div style="margin-bottom:3px;">${oIdx+1}) ${opt}</div>`).join('')}
+                </div>
+
+                ${q.img ? `
+                <div style="flex: 0 0 120px; text-align:right;">
+                    <img src="${q.img}" style="width:120px; height:auto; border:1px solid #ddd; border-radius:4px; display:block; margin-left:auto;">
+                </div>` : ''}
+                
             </div>
         </td>
         <td style="border:1px solid #000; text-align:center; font-size:12px;">${sAns}</td>
@@ -350,3 +381,51 @@ function generateBTypeHtml(data, questions) {
 
 function toggleAllStudents(source) { document.querySelectorAll('.student-chk').forEach(cb => cb.checked = source.checked); }
 function closeModal() { document.getElementById('individualModal').style.display = "none"; }
+
+// [신규 기능] 능력단위별 전체 문제 및 해설 보기
+async function showSubjectExplain(subId, subName) {
+    const configSnapshot = await database.ref(`${currentClass}/fullConfig`).once('value');
+    const configData = configSnapshot.val();
+    
+    let questions = [];
+    if(configData) {
+        [...(configData.ncs || []), ...(configData.nonNcs || [])].forEach(m => {
+            if(m.subSubjects) {
+                m.subSubjects.forEach(s => { 
+                    const currentId = (s.name + (s.date || "")).replace(/\s+/g, '');
+                    if (currentId === subId) questions = s.questions; 
+                });
+            }
+        });
+    }
+
+    if (questions.length === 0) { alert("해당 과목의 문제 데이터를 찾을 수 없습니다."); return; }
+
+    const modal = document.getElementById('individualModal');
+    const printArea = document.getElementById('printArea');
+    document.getElementById('printSelectorArea').style.display = "none";
+
+    let explainHtml = `
+        <div style="padding:20px; font-family:'Malgun Gothic';">
+            <h2 style="text-align:center; border-bottom:2px solid #34495e; padding-bottom:10px;">📝 ${subName} 전체 해설지</h2>
+            <div style="margin-top:20px;">
+                ${questions.map((q, idx) => `
+                    <div style="margin-bottom:30px; border:1px solid #ddd; padding:15px; border-radius:8px; background:#fff;">
+                        <div style="font-weight:bold; font-size:16px; margin-bottom:10px;">Q${idx+1}. ${q.text}</div>
+                        ${q.img ? `<div style="margin-bottom:10px;"><img src="${q.img}" style="max-width:200px; border:1px solid #eee;"></div>` : ''}
+                        <div style="margin-left:10px; margin-bottom:10px; color:#555;">
+                            ${q.options.map((opt, oIdx) => `<div style="margin-bottom:3px;">${oIdx+1}) ${opt}</div>`).join('')}
+                        </div>
+                        <div style="background:#f8f9fa; padding:10px; border-left:4px solid #27ae60;">
+                            <div style="font-weight:bold; color:#27ae60;">[정답] : ${q.answer}번</div>
+                            <div style="margin-top:5px; font-size:14px; color:#333;"><b>[해설]</b> : ${q.explain || '등록된 해설이 없습니다.'}</div>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    `;
+
+    printArea.innerHTML = explainHtml;
+    modal.style.display = "block";
+}
