@@ -18,7 +18,7 @@
 </head>
 <body>
     <div class="container">
-        <h2>🚗 결과 확인</h2>
+        <h2>🚗 반 사전능력평가 관리</h2>
         <p style="color:#666; font-size:14px;">데이터를 확인할 반을 선택해주세요</p>
         <div class="btn-grid">
             <button onclick="selectClass('501반')">501반</button>
@@ -35,8 +35,8 @@
         function selectClass(className) {
             // 선택한 반 정보를 세션에 저장
             sessionStorage.setItem('selectedClass', className);
-            // 결과 확인(C_Result.html)으로 이동
-            location.href = 'C_Result.html'; 
+            // 반별 메인(A_Admin.html)으로 이동
+            location.href = 'A_Admin.html'; 
         }
     </script>
 </body>

@@ -12,25 +12,38 @@
      <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
 </head>
 <body>
-    <nav class="nav-menu">
-        <span id="currentClassBanner" style="float: left; font-weight: bold; color: #2c3e50; padding: 5px 15px; background: #fff; border-radius: 5px; border: 1px solid #ddd; margin-left: 10px;">접속 반: 확인 중...</span>
-        <div style="display: inline-block; margin-right: 20px;">
-            <button onclick="location.href='A_Admin.html'" class="small-btn navy" style="background:#2c3e50;">설정(A)</button>
-            <button onclick="location.href='B_Exam.html'" class="small-btn navy" style="background:#2980b9;">응시(B)</button>
-            <button onclick="location.href='C_Result.html'" class="small-btn navy" style="background:#27ae60;">결과(C)</button>
+    <nav class="nav-menu" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
+        <div style="display: flex; gap: 10px; align-items: center;">
+            <span id="currentClassBanner" style="font-weight: bold; color: #2c3e50; padding: 5px 15px; background: #fff; border-radius: 5px; border: 1px solid #ddd;">접속 반: 확인 중...</span>
+            <div id="liveStatusBadge" style="padding: 5px 15px; background: #ebf5fb; color: #2980b9; border: 1px solid #2980b9; border-radius: 5px; font-weight: bold; font-size: 13px;">
+                📡 송출 중: <span id="activeSubjectName">로드 중...</span> <span id="activeSubjectDate" style="font-size: 11px; opacity: 0.8; margin-left: 5px;"></span>
+            </div>
         </div>
-        <div style="display: inline-block; margin-left: 20px; border-left: 1px solid #ccc; padding-left: 20px;">
-            <select id="importClassSelect" class="small-btn" style="background: white; color: black; height: 28px; vertical-align: middle;">
-                <option value="">불러올 반 선택</option>
-                <option value="501반">501반</option><option value="601반">601반</option><option value="602반">602반</option>
-                <option value="603반">603반</option><option value="701반">701반</option><option value="702반">702반</option><option value="703반">703반</option>
-            </select>
-            <button onclick="importClassData()" class="small-btn gray" style="background: #16a085;">데이터 가져오기</button>
+
+        <div style="display: flex; align-items: center;">
+            <div style="display: inline-block; margin-right: 20px;">
+                <button onclick="location.href='A_Admin.html'" class="small-btn navy" style="background:#2c3e50;">설정(A)</button>
+                <button onclick="location.href='B_Exam.html'" class="small-btn navy" style="background:#2980b9;">응시(B)</button>
+                <button onclick="location.href='C_Result.html'" class="small-btn navy" style="background:#27ae60;">결과(C)</button>
+            </div>
+            <div style="display: inline-block; border-left: 1px solid #ccc; padding-left: 20px;">
+                <select id="importClassSelect" class="small-btn" style="background: white; color: black; height: 28px; vertical-align: middle;">
+                    <option value="">불러올 반 선택</option>
+                    <option value="501반">501반</option><option value="601반">601반</option><option value="602반">602반</option>
+                    <option value="603반">603반</option><option value="701반">701반</option><option value="702반">702반</option><option value="703반">703반</option>
+                </select>
+                <button onclick="importClassData()" class="small-btn gray" style="background: #16a085;">데이터 가져오기</button>
+            </div>
         </div>
     </nav>
 
     <div class="admin-container">
         <h1>🛠 CBT 교육 과정 관리</h1>
+        <div style="margin-bottom: 15px; display: flex; gap: 10px;">
+            <button onclick="undo()" id="undoBtn" class="small-btn gray" style="background: #95a5a6; opacity: 0.5;" disabled>↩️ 실행 취소 (뒤로)</button>
+            <button onclick="redo()" id="redoBtn" class="small-btn gray" style="background: #95a5a6; opacity: 0.5;" disabled>↪️ 다시 실행 (앞으로)</button>
+            <small style="color: #7f8c8d; align-self: center;">* '설정 저장하기'를 누르기 전까지의 작업만 기록됩니다.</small>
+        </div>
         <div class="fixed-info-box">
             <h3 style="margin-top:0; border-bottom:1px solid #ccc; padding-bottom:10px; margin-bottom:20px;">🏫 학급 기본 설정</h3>
             <div class="info-row">
@@ -61,7 +74,24 @@
 
     <script src="A_script.js"></script>
     <script>
-        function checkInputStatus(el) { if (!el) return; if (el.value.trim() === "") { el.classList.add('empty-field'); el.classList.remove('filled-field'); } else { el.classList.add('filled-field'); el.classList.remove('empty-field'); } }
+        function checkInputStatus(el) { 
+    if (!el) return; 
+    
+    // [추가] 직인 등록 파일창(file 타입)은 빈칸 체크 대상에서 제외합니다.
+    if (el.type === 'file') {
+        el.classList.remove('empty-field');
+        el.classList.add('filled-field');
+        return;
+    }
+
+    if (el.value.trim() === "") { 
+        el.classList.add('empty-field'); 
+        el.classList.remove('filled-field'); 
+    } else { 
+        el.classList.add('filled-field'); 
+        el.classList.remove('empty-field'); 
+    } 
+}
         window.addEventListener('load', () => { setTimeout(() => { document.querySelectorAll('input[type="text"], textarea, select').forEach(el => { if(el.id !== 'importClassSelect' && el.id !== 'backupFile') checkInputStatus(el); }); }, 500); });
     </script>
 </body>

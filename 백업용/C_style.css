@@ -112,3 +112,17 @@ td.sticky-3 { position: sticky; left: 115px; z-index: 10; background: #fffdf0 !i
 
     td, th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
+
+/* 인쇄 시 서명 시인성 및 위치 조정 */
+.c-sign-box img {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+@media print {
+    .c-sign-box {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+}

@@ -2,6 +2,21 @@
 const currentClass = sessionStorage.getItem('selectedClass');
 if (!currentClass) { alert("반 선택 정보가 없습니다. 초기 화면으로 이동합니다."); location.href = 'select_class.html'; }
 
+// --- 파이어베이스 연결 부품 추가 ---
+const firebaseConfig = {
+  apiKey: "AIzaSyDs15RTlqQSz4u1Gr6NLQ2Kx25Raey2TtA",
+  authDomain: "khj-teacher-work.firebaseapp.com",
+  databaseURL: "https://khj-teacher-work-default-rtdb.firebaseio.com",
+  projectId: "khj-teacher-work",
+  storageBucket: "khj-teacher-work.firebasestorage.app",
+  messagingSenderId: "384706353235",
+  appId: "1:384706353235:web:9ab057e382bad1010b0ea6"
+};
+
+if (!firebase.apps.length) { firebase.initializeApp(firebaseConfig); }
+const database = firebase.database();
+// --------------------------------
+
 let examQuestions = []; // 실제 화면에 뿌려질 문제 배열
 
 /* [2. 페이지 로드 시 실행] */
@@ -13,34 +28,40 @@ window.onload = function() {
 };
 
 /* [3. 관리자(A) 데이터 연동 핵심 로직] */
-function loadQuestionsFromAdmin() {
-    // A페이지에서 saveAllData()로 저장한 키값과 정확히 일치해야 함
-    const rawData = localStorage.getItem(`${currentClass}_fullConfig`);
-    if (!rawData) { alert("저장된 문제가 없습니다. 관리자 페이지에서 '설정 저장하기'를 먼저 눌러주세요."); return; }
-
+async function loadQuestionsFromAdmin() {
+    // [수정] 콘솔 구조에 맞춰 경로 수정
+    const dbPath = `${currentClass}/fullConfig`;
+    
     try {
-        const config = JSON.parse(rawData);
+        const snapshot = await database.ref(dbPath).once('value');
+        const config = snapshot.val();
+
+        if (!config) { alert("저장된 문제가 없습니다. 관리자 페이지에서 '설정 저장하기'를 먼저 눌러주세요."); return; }
+
         examQuestions = [];
 
-        // NCS와 비NCS 섹션을 모두 합쳐서 순회
         const allMainSubjects = [...(config.ncs || []), ...(config.nonNcs || [])];
         
         allMainSubjects.forEach(main => {
             if (!main.subSubjects) return;
             main.subSubjects.forEach(sub => {
-                // [중요] 관리자 페이지에서 '활성화' 체크박스를 켠 소과목만 가져옴
                 if (sub.isActive === true) { 
                     sub.questions.forEach(q => {
-                        // 문제 텍스트가 비어있지 않은 것만 추가
                         if (q.text && q.text.trim() !== "") {
-                            examQuestions.push({ ...q, mainTitle: main.title, subTitle: sub.name });
+                            examQuestions.push({ 
+                                ...q, 
+                                mainTitle: main.title, 
+                                subTitle: sub.name,
+                                purpose: sub.purpose, 
+                                ncsCode: sub.ncsCode 
+                            });
                         }
                     });
                 }
             });
         });
 
-        renderExamPage(); // 화면에 그리기
+        renderExamPage(); 
     } catch (e) {
         console.error("데이터 로드 오류:", e);
         alert("데이터를 읽어오는 중 오류가 발생했습니다.");
@@ -78,25 +99,49 @@ function renderExamPage() {
 }
 
 /* [5. 시험 제출] */
-function submitExam() {
+async function submitExam() {
     const userName = document.getElementById('userName').value.trim();
     if (!userName) { alert("성명을 입력해야 제출할 수 있습니다."); return; }
     if (!confirm("시험을 종료하시겠습니까?")) return;
 
     let scoreCount = 0;
+    let userAnswers = [];
     examQuestions.forEach((q, idx) => {
         const selected = document.querySelector(`input[name="q_${idx}"]:checked`);
-        if (selected && selected.value == q.answer) scoreCount++;
+        const ansVal = selected ? selected.value : "0";
+        userAnswers.push(ansVal);
+        if (ansVal == q.answer) scoreCount++;
     });
 
     const score = Math.round((scoreCount / examQuestions.length) * 100);
-    const resultData = { name: userName, score: score, date: new Date().toLocaleString() };
+    const activeSubName = examQuestions.length > 0 ? examQuestions[0].subTitle : "미분류";
 
-    // 결과 저장
-    const history = JSON.parse(localStorage.getItem(`${currentClass}_exam_results`)) || [];
-    history.push(resultData);
-    localStorage.setItem(`${currentClass}_exam_results`, JSON.stringify(history));
+    const resultData = { 
+        name: userName, 
+        score: score, 
+        date: new Date().toLocaleString(),
+        examDate: new Date().toLocaleDateString(),
+        className: currentClass,
+        displayTitle: activeSubName, 
+        userAnswers: userAnswers,
+        purpose: examQuestions[0].purpose || "",
+        groupName: localStorage.getItem(`${currentClass}_groupName`) || "",
+        groupPeriod: localStorage.getItem(`${currentClass}_groupPeriod`) || "",
+        teacherName: localStorage.getItem(`${currentClass}_teacherName`) || ""
+    };
 
-    alert(`${userName} 학생 제출 완료! 점수: ${score}점`);
-    location.href = 'C_Result.html';
+    try {
+        // [수정] 결과 저장 경로를 반이름_RESULTS로 변경
+        const resultPath = `${currentClass}_RESULTS`;
+        await database.ref(resultPath).push(resultData);
+        
+        sessionStorage.setItem('lastScore', score);
+        sessionStorage.setItem('lastUserName', userName);
+
+        alert(`${userName} 학생 제출 완료! 점수: ${score}점`);
+        location.href = 'C_Result.html';
+    } catch (e) {
+        console.error("제출 오류:", e);
+        alert("결과 저장 중 오류가 발생했습니다.");
+    }
 }

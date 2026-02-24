@@ -49,10 +49,21 @@ async function renderIntegratedTable() {
     const allResultsRaw = resultsSnapshot.val() || {};
     
     let studentMap = {}; 
-    
+
+    // [정밀 정비 완료] 중복을 제거하고 공백에 강한 매칭 로직 하나로 통합합니다.
     Object.values(allResultsRaw).forEach(res => {
-        if (!studentMap[res.name]) studentMap[res.name] = { name: res.name, scores: {} };
-        const matchedSub = subjects.find(s => res.displayTitle === s.name);
+        // 1. 학생 이름이 처음 나오면 장부에 이름을 먼저 등록합니다.
+        if (!studentMap[res.name]) {
+            studentMap[res.name] = { name: res.name, scores: {} };
+        }
+        
+        // 2. B페이지에서 저장한 과목명(displayTitle)과 C페이지가 만든 목록(subjects)을 대조합니다.
+        // 이때 .replace(/\s+/g, '')를 써서 띄어쓰기 오차를 완전히 무시합니다.
+        const matchedSub = subjects.find(s => 
+            s.name.replace(/\s+/g, '') === (res.displayTitle || "").replace(/\s+/g, '')
+        );
+        
+        // 3. 일치하는 과목을 찾았다면, 그 학생의 점수 칸에 해당 점수를 꽂아넣습니다.
         if (matchedSub) {
             studentMap[res.name].scores[matchedSub.id] = res.score;
         }
@@ -161,26 +172,31 @@ async function showSubjectStudentList(subId, subName) {
 
 /* [3단계] 개별 결과표 화면 */
 async function showIndividualReport(subId, userName, subName) {
+    // 1. 학생의 응시 결과 로드
     const snapshot = await database.ref(`${currentClass}_RESULTS`).once('value');
     const allData = snapshot.val() || {};
-    const data = Object.values(allData).find(r => r.name === userName && r.displayTitle === subName);
+    const data = Object.values(allData).find(r => 
+        r.name === userName && 
+        (r.displayTitle || "").replace(/\s+/g, '') === subName.replace(/\s+/g, '')
+    );
     
+    // 2. 관리자가 설정한 문제 구성 정보 로드 (변수 선언 확인)
     const configSnapshot = await database.ref(`${currentClass}/fullConfig`).once('value');
-    const config = configSnapshot.val();
+    const configData = configSnapshot.val(); // 'config' 대신 'configData'로 명확히 정의
     
     let questions = [];
-    if(config) {
-        [...(config.ncs || []), ...(config.nonNcs || [])].forEach(m => {
+    if(configData) {
+        [...(configData.ncs || []), ...(configData.nonNcs || [])].forEach(m => {
             if(m.subSubjects) {
                 m.subSubjects.forEach(s => { 
-                    const sId = (s.name + s.date).replace(/\s+/g, '');
-                    if (sId === subId) questions = s.questions; 
+                    const currentId = (s.name + (s.date || "")).replace(/\s+/g, '');
+                    if (currentId === subId) questions = s.questions; 
                 });
             }
         });
     }
 
-    if (!data) return;
+    if (!data) { alert("해당 학생의 상세 데이터를 찾을 수 없습니다."); return; }
 
     const headerHtml = `
         <div class="no-print" style="display:flex; justify-content:space-between; margin-bottom:15px; background:#f9f9f9; padding:10px; border-bottom:1px solid #ddd;">
@@ -295,7 +311,7 @@ function generateBTypeHtml(data, questions) {
             <table style="width:100%; border-collapse:collapse; border:2px solid #000; margin-top:-1px; table-layout:fixed;">
                 <colgroup><col style="width:60%;"><col style="width:13.33%;"><col style="width:13.33%;"><col style="width:13.34%;"></colgroup>
                 <tr><td style="${labelStyle}">사전평가 목적</td><td style="${labelStyle}">취득점수</td><td style="${labelStyle}">사전수준</td><td style="${labelStyle}">담당교사</td></tr>
-                <tr><td style="border:1px solid #000; padding:6px; height:45px; vertical-align:top; text-align:left; font-size:11px;">${data.purpose || ''}</td><td style="${redStyle}">${data.score}점</td><td style="${redStyle}">${data.score >= 60 ? '이수전략' : '보충학습'}</td><td style="${contentStyle}">${data.teacherName || ''}</td></tr>
+                <tr><td style="border:1px solid #000; padding:6px; height:45px; vertical-align:top; text-align:left; font-size:11px;">${data.purpose || ''}</td><td style="${redStyle}">${data.score}점</td><td style="${redStyle}">${data.level || ''}</td><td style="${contentStyle}">${data.teacherName || ''}</td></tr>
             </table>
 
             <table style="width:100%; border-collapse:collapse; border:2px solid #000; margin-top:10px; table-layout:fixed;">
@@ -309,20 +325,24 @@ function generateBTypeHtml(data, questions) {
                 </thead>
                 <tbody>
                     ${questions.map((q, idx) => {
-                        const sAns = data.userAnswers ? data.userAnswers[idx] : "0";
-                        const isCorrect = sAns == q.answer;
-                        return `
-                        <tr class="q-row-print">
-                            <td style="border:1px solid #000; padding:4px; text-align:center; font-size:11px;">
-                                ${idx+1}<br><span style="color:${isCorrect?'blue':'red'}; font-weight:bold;">(${isCorrect?'O':'X'})</span>
-                            </td>
-                            <td style="border:1px solid #000; padding:8px; text-align:left;">
-                                <div style="font-weight:bold; font-size:12px; line-height:1.2; margin-bottom:5px;">${q.text}</div>
-                            </td>
-                            <td style="border:1px solid #000; text-align:center; font-size:12px;">${sAns}</td>
-                            <td style="border:1px solid #000; text-align:center; font-weight:bold; color:red; font-size:12px;">${q.answer}</td>
-                        </tr>`;
-                    }).join('')}
+    const sAns = data.userAnswers ? data.userAnswers[idx] : "0";
+    const isCorrect = sAns == q.answer;
+    return `
+    <tr class="q-row-print">
+        <td style="border:1px solid #000; padding:4px; text-align:center; font-size:11px;">
+            ${idx+1}<br><span style="color:${isCorrect?'blue':'red'}; font-weight:bold;">(${isCorrect?'O':'X'})</span>
+        </td>
+        <td style="border:1px solid #000; padding:8px; text-align:left;">
+            <div style="font-weight:bold; font-size:12px; line-height:1.2; margin-bottom:5px;">${q.text}</div>
+            ${q.img ? `<div style="margin-bottom:8px; text-align:center;"><img src="${q.img}" style="max-width:150px; border:1px solid #ccc;"></div>` : ''}
+            <div style="font-size:11px; color:#555;">
+                ${q.options.map((opt, oIdx) => `<div style="margin-bottom:2px;">${oIdx+1}) ${opt}</div>`).join('')}
+            </div>
+        </td>
+        <td style="border:1px solid #000; text-align:center; font-size:12px;">${sAns}</td>
+        <td style="border:1px solid #000; text-align:center; font-weight:bold; color:red; font-size:12px;">${q.answer}</td>
+    </tr>`;
+}).join('')}
                 </tbody>
             </table>
         </div>`;

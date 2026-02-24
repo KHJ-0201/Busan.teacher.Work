@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8"><title>학생 응시 - 자동차 CBT</title><link rel="stylesheet" href="B_style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>학생 응시 - 자동차 CBT</title>
+    <link rel="stylesheet" href="B_style.css">
     <style>
+        /* [기존 디자인 및 모바일 최적화 코드 유지 - 절대 수정 금지] */
         .exam-subject-title { text-align: center; font-size: 24px; font-weight: bold; margin-bottom: 20px; padding: 10px; border-bottom: 3px double #000; color: #2c3e50; }
         .report-table { width: 100%; border-collapse: collapse; table-layout: fixed; border: 2px solid #000; margin-bottom: 20px; }
         .report-table td { border: 1px solid #000; padding: 10px; text-align: center; font-size: 14px; height: 45px; word-break: keep-all; background-color: #ffffff; }
@@ -11,14 +15,17 @@
         .col-bottom-purpose { width: 60%; } .col-bottom-score { width: 13.33%; } .col-bottom-level { width: 13.33%; } .col-bottom-teacher { width: 13.34%; }
         
         #resScore, #resLevel { font-weight: bold; font-size: 20px; color: #e74c3c; } 
+        .mark-o { color: blue; font-weight: bold; } .mark-x { color: red; font-weight: bold; }
 
         .question-table { width: 100%; border-collapse: collapse; table-layout: fixed; border: 2px solid #000; margin-top: 20px; }
         .q-header { background-color: #e3f2fd; font-weight: bold; border: 1px solid #000; padding: 10px; text-align: center; }
         .q-row td { border: 1px solid #000; padding: 15px; vertical-align: middle; background-color: #ffffff; }
+        
         .col-q-no { width: 8%; font-weight: bold; text-align: center; font-size: 16px; }
         .col-q-main { width: 77%; text-align: left; }
         .col-q-ans { width: 7.5%; text-align: center; font-size: 16px; }
         .col-q-chk { width: 7.5%; text-align: center; font-size: 18px; font-weight: bold; color: red; } 
+        
         .q-inner-flex { display: flex; gap: 20px; align-items: flex-start; }
         .q-img-box { flex: 0 0 250px; }
         .q-img-box img { width: 100%; border: 1px solid #ddd; border-radius: 4px; }
@@ -29,24 +36,51 @@
         .q-opt-label { cursor: pointer; display: flex; align-items: center; font-size: 15px; border: none; line-height: 1.2; }
         .q-opt-label::before { content: ''; display: inline-block; width: 18px; height: 18px; border: 1.5px solid #333; margin-right: 8px; background: #fff; text-align: center; line-height: 16px; font-size: 12px; font-weight: bold; }
         input[type="radio"]:checked + .q-opt-label::before { content: '✔'; background: #333; color: #fff; }
-        input[type="radio"]:checked + .q-opt-label { font-weight: bold; color: #000; }
-        #userName { width: 95%; border: none; border-bottom: 2px solid #3498db; font-size: 18px; font-weight: bold; background: #fffdf0; padding: 5px; text-align: center; }
-        #userName:focus { background: #fff; outline: none; border-bottom: 2px solid #e74c3c; }
-        .mark-o { color: blue; } .mark-x { color: red; }
-        .btn-submit { padding: 15px 40px; font-size: 18px; background: #3498db; color: #fff; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; }
+        
+        #userName { width: 100px; border: none; border-bottom: 1px solid #ccc; font-size: 16px; font-weight: bold; background: #fffdf0; padding: 5px; text-align: center; }
+        .name-sign-wrapper { display: flex; align-items: center; justify-content: center; position: relative; }
+        .sign-stamp-box { position: relative; width: 80px; height: 50px; margin-left: 5px; display: flex; align-items: center; justify-content: center; }
+        .sign-in-text { font-size: 16px; color: rgba(0,0,0,0.15); font-weight: bold; z-index: 1; border: 1px solid rgba(0,0,0,0.1); border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; }
+        .sign-stamp-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; z-index: 2; pointer-events: none; }
+
+        @media screen and (max-width: 768px) {
+            .report-table td { font-size: 10px !important; padding: 4px 1px !important; word-break: break-all !important; line-height: 1.1 !important; }
+            .col-label-1 { width: 22% !important; } .col-content-1 { width: 38% !important; }
+            .col-label-2 { width: 18% !important; } .col-content-2 { width: 22% !important; }
+            #userName { width: 80px !important; font-size: 13px !important; }
+            .sign-stamp-box { width: 50px !important; height: 35px !important; margin-left: 2px !important; }
+            .sign-in-text { width: 25px !important; height: 25px !important; font-size: 12px !important; }
+            .col-q-ans, .col-q-chk, [id^="ans_display_"], [id^="chk_display_"], .q-header:nth-child(3), .q-header:nth-child(4) { display: none !important; }
+            .col-q-no { width: 12% !important; font-size: 11px !important; }
+            .col-q-main { width: 88% !important; }
+            .q-row td { padding: 8px 4px !important; }
+            .q-inner-flex { flex-direction: column !important; gap: 6px !important; }
+            .q-img-box { width: 100% !important; flex: none !important; text-align: center !important; }
+            .q-img-box img { max-height: 160px !important; width: auto !important; max-width: 100% !important; }
+            .q-options-list li { margin-bottom: 4px !important; }
+            .q-opt-label { font-size: 13.5px !important; }
+            #classSelectModal > div { width: 94% !important; padding: 20px 10px !important; }
+        }
     </style>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
 </head>
 <body>
     <div id="classSelectModal" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; display:flex; justify-content:center; align-items:center;">
-        <div style="background:white; padding:40px; border-radius:15px; text-align:center; width:350px;">
-            <h2 style="margin-bottom:20px; color:#2c3e50;">🚗 반 선택 및 성명 입력</h2>
-            <select id="studentClassSelect" style="padding:12px; font-size:18px; width:100%; margin-bottom:15px; border:2px solid #3498db; border-radius:8px;">
+        <div style="background:white; padding:30px; border-radius:15px; text-align:center; width:450px;">
+            <h2 style="margin-bottom:15px; color:#2c3e50;">🚗 반 선택 및 성명 입력</h2>
+            <select id="studentClassSelect" style="padding:12px; font-size:18px; width:100%; margin-bottom:12px; border:2px solid #3498db; border-radius:8px;">
                 <option value="">--- 본인 반 선택 ---</option>
                 <option value="501반">501반</option><option value="601반">601반</option><option value="602반">602반</option>
                 <option value="603반">603반</option><option value="701반">701반</option><option value="702반">702반</option><option value="703반">703반</option>
             </select>
-            <input type="text" id="startUserName" placeholder="성명을 입력하세요" style="padding:12px; font-size:18px; width:100%; box-sizing:border-box; border:2px solid #3498db; border-radius:8px; margin-bottom:20px; text-align:center;">
-            <button onclick="startExam()" style="padding:15px; width:100%; font-size:18px; background:#3498db; color:white; border:none; border-radius:8px; cursor:pointer; font-weight:bold;">시험 시작하기</button>
+            <input type="text" id="startUserName" placeholder="성명을 입력하세요" style="padding:12px; font-size:18px; width:100%; box-sizing:border-box; border:2px solid #3498db; border-radius:8px; margin-bottom:12px; text-align:center;">
+            <div style="margin-top: 15px; border: 2px dashed #3498db; border-radius: 8px; padding: 10px; background: #f0f7ff;">
+                <div style="font-size: 14px; color: #2c3e50; margin-bottom: 8px; font-weight: bold;">이름을 정자로 적어주세요.</div>
+                <canvas id="signPad" style="background: white; border: 1px solid #3498db; cursor: crosshair; touch-action: none; border-radius: 4px; width: 100%; display: block;"></canvas>
+                <button onclick="clearSign()" style="font-size: 12px; margin-top: 8px; cursor: pointer; color: #e74c3c; background: white; border: 1px solid #e74c3c; padding: 4px 12px; border-radius: 4px; font-weight: bold;">다시 쓰기</button>
+            </div>
+            <button onclick="startExam()" style="padding:15px; width:100%; font-size:18px; background:#3498db; color:white; border:none; border-radius:8px; cursor:pointer; font-weight:bold; margin-top:15px;">시험 시작하기</button>
         </div>
     </div>
 
@@ -54,97 +88,176 @@
         <div id="displaySubTitle" class="exam-subject-title">능력단위 평가</div>
         <table class="report-table">
             <colgroup><col class="col-label-1"><col class="col-content-1"><col class="col-label-2"><col class="col-content-2"></colgroup>
-            <tr><td class="bg-blue-label">훈련과정</td><td class="text-left" id="infoGroupName"></td><td class="bg-blue-label">훈련기간</td><td id="infoGroupPeriod"></td></tr>
-            <tr><td class="bg-blue-label">훈련생명</td><td class="text-left"><input type="text" id="userName" placeholder="성명을 입력하세요" autocomplete="off" readonly></td><td class="bg-blue-label">시행일자</td><td id="infoExamDate"></td></tr>
+            <tr><td class="bg-blue-label">훈련과정</td><td id="infoGroupName" style="text-align:left;"></td><td class="bg-blue-label">훈련기간</td><td id="infoGroupPeriod"></td></tr>
+            <tr>
+                <td class="bg-blue-label">훈련생명</td>
+                <td>
+                    <div class="name-sign-wrapper">
+                        <input type="text" id="userName" readonly>
+                        <div class="sign-stamp-box">
+                            <span class="sign-in-text">인</span>
+                            <img id="displaySignImg" class="sign-stamp-img" src="" alt="">
+                        </div>
+                    </div>
+                </td>
+                <td class="bg-blue-label">시행일자</td><td id="infoExamDate"></td>
+            </tr>
         </table>
         <table class="report-table" style="margin-top:-1px;">
             <colgroup><col class="col-bottom-purpose"><col class="col-bottom-score"><col class="col-bottom-level"><col class="col-bottom-teacher"></colgroup>
             <tr><td class="bg-blue-label">사전평가 목적</td><td class="bg-blue-label">취득점수</td><td class="bg-blue-label">사전수준</td><td class="bg-blue-label">담당교사</td></tr>
-            <tr><td id="infoExamPurpose" class="text-left" style="height:90px; vertical-align:top; padding:10px;"></td><td id="resScore"></td><td id="resLevel"></td><td id="infoTeacherName" style="font-weight:bold;"></td></tr>
+            <tr><td id="infoExamPurpose" style="text-align:left; vertical-align:top; height:90px; padding:10px;"></td><td id="resScore"></td><td id="resLevel"></td><td id="infoTeacherName" style="font-weight:bold;"></td></tr>
         </table>
         <table class="question-table">
             <thead>
-                <tr><th class="q-header" style="width:8%;">번호</th><th class="q-header" style="width:77%;">문제</th><th class="q-header" style="width:7.5%;">답안</th><th class="q-header" style="width:7.5%;">채점</th></tr>
+                <tr><th class="q-header col-q-no">번호</th><th class="q-header col-q-main">문제</th><th class="q-header col-q-ans">답안</th><th class="q-header col-q-chk">채점</th></tr>
             </thead>
             <tbody id="questionContainer"></tbody>
         </table>
         <div class="submit-area" id="submitArea" style="text-align:center; margin-top:30px; padding-bottom:50px;">
-            <button onclick="submitExam()" class="btn-submit">최종 답안 제출</button>
+            <button onclick="submitExam()" style="padding:15px 40px; background:#3498db; color:white; border:none; border-radius:8px; font-weight:bold; cursor:pointer; font-size:18px;">최종 답안 제출</button>
         </div>
     </div>
 
     <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyDs15RTlqQSz4u1Gr6NLQ2Kx25Raey2TtA",
+            authDomain: "khj-teacher-work.firebaseapp.com",
+            databaseURL: "https://khj-teacher-work-default-rtdb.firebaseio.com",
+            projectId: "khj-teacher-work",
+            storageBucket: "khj-teacher-work.firebasestorage.app",
+            messagingSenderId: "384706353235",
+            appId: "1:384706353235:web:9ab057e382bad1010b0ea6"
+        };
+        if (!firebase.apps.length) { firebase.initializeApp(firebaseConfig); }
+        const database = firebase.database();
+
         let examQuestions = [];
         let currentSubId = ""; 
+        let isDrawing = false;
+        let signCanvas, signCtx;
 
-        function startExam() {
+        window.onload = function() {
+            signCanvas = document.getElementById('signPad');
+            signCtx = signCanvas.getContext('2d');
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+            signCtx.strokeStyle = "#000"; signCtx.lineWidth = 4; signCtx.lineJoin = "round"; signCtx.lineCap = "round";
+            signCanvas.addEventListener('mousedown', startDrawing);
+            signCanvas.addEventListener('mousemove', draw);
+            signCanvas.addEventListener('mouseup', stopDrawing);
+            signCanvas.addEventListener('mouseleave', stopDrawing);
+            signCanvas.addEventListener('touchstart', (e) => { e.preventDefault(); startDrawing(e.touches[0]); });
+            signCanvas.addEventListener('touchmove', (e) => { e.preventDefault(); draw(e.touches[0]); });
+            signCanvas.addEventListener('touchend', stopDrawing);
+        };
+
+        function resizeCanvas() {
+            const container = signCanvas.parentElement;
+            if(container) {
+                signCanvas.width = container.clientWidth;
+                signCanvas.height = 180;
+                signCtx.strokeStyle = "#000"; signCtx.lineWidth = 4; signCtx.lineJoin = "round"; signCtx.lineCap = "round";
+            }
+        }
+
+        function startDrawing(e) { isDrawing = true; draw(e); }
+        function draw(e) {
+            if (!isDrawing) return;
+            const rect = signCanvas.getBoundingClientRect();
+            const x = (e.clientX || e.pageX) - rect.left;
+            const y = (e.clientY || e.pageY) - rect.top;
+            signCtx.lineTo(x, y); signCtx.stroke(); signCtx.beginPath(); signCtx.moveTo(x, y);
+        }
+        function stopDrawing() { isDrawing = false; signCtx.beginPath(); }
+        function clearSign() { signCtx.clearRect(0, 0, signCanvas.width, signCanvas.height); }
+
+        async function startExam() {
             const selected = document.getElementById('studentClassSelect').value;
             const sName = document.getElementById('startUserName').value.trim();
-            if(!selected) { alert("반을 선택해야 합니다."); return; }
-            if(!sName) { alert("성명을 입력해야 합니다."); return; }
+            if(!selected || !sName) { alert("반 선택과 성명을 입력하세요."); return; }
+            if(isSignCanvasEmpty()) { alert("이름을 정자로 서명해 주세요."); return; }
 
+            const signDataUrl = signCanvas.toDataURL();
             sessionStorage.setItem('selectedClass', selected);
             
-            // [추가 배선] 기록 체크 로직
-            const raw = localStorage.getItem(`${selected}_fullConfig`);
-            if(raw) {
-                const config = JSON.parse(raw);
-                let targetId = "";
+            // [정정] A페이지와 동일한 경로로 데이터 로드
+            const snapshot = await database.ref(`${selected}/fullConfig`).once('value');
+            const config = snapshot.val();
+            
+            if(config) {
+                let targetSub = null;
+                let mTitle = "";
                 [...(config.ncs || []), ...(config.nonNcs || [])].forEach(main => {
-                    main.subSubjects.forEach(sub => { if(sub.isActive) targetId = sub.name + sub.date; });
+                    if(main.subSubjects) {
+                        main.subSubjects.forEach(sub => { 
+                            if(sub.isActive) {
+                                targetSub = sub;
+                                mTitle = main.title;
+                            }
+                        });
+                    }
                 });
                 
-                if(targetId) {
-                    const results = JSON.parse(localStorage.getItem(`${selected}_results_${targetId}`) || '[]');
-                    const myResult = results.find(r => r.userName === sName);
+                if(targetSub) {
+                    // 기응시 여부 체크 (결과 저장 경로 수정 반영)
+                    const resultsSnapshot = await database.ref(`${selected}_RESULTS`).once('value');
+                    const allResults = resultsSnapshot.val() || {};
+                    const myResult = Object.values(allResults).find(r => r.name === sName && r.displayTitle === targetSub.name);
+                    
                     if(myResult) {
-                        alert(`${sName} 학생은 이미 응시했습니다. 결과 화면으로 이동합니다.`);
+                        alert(`${sName} 학생은 이미 응시했습니다. 채점 결과 화면으로 이동합니다.`);
                         document.getElementById('classSelectModal').style.display = 'none';
                         document.getElementById('examMainArea').style.display = 'block';
                         document.getElementById('userName').value = sName;
-                        loadActiveQuestions(selected, myResult); // 기록이 있을 때 로드
+                        if(myResult.signData) document.getElementById('displaySignImg').src = myResult.signData;
+                        examQuestions = targetSub.questions;
+                        loadExamInfo(selected, targetSub, mTitle);
+                        renderQuestions(myResult); 
                         return;
                     }
-                }
-            }
 
-            document.getElementById('classSelectModal').style.display = 'none';
-            document.getElementById('examMainArea').style.display = 'block';
-            document.getElementById('userName').value = sName;
-            loadActiveQuestions(selected);
+                    // 신규 응시 시작
+                    document.getElementById('displaySignImg').src = signDataUrl;
+                    document.getElementById('classSelectModal').style.display = 'none';
+                    document.getElementById('examMainArea').style.display = 'block';
+                    document.getElementById('userName').value = sName;
+                    examQuestions = targetSub.questions || [];
+                    loadExamInfo(selected, targetSub, mTitle);
+                    renderQuestions();
+                } else {
+                    alert("현재 활성화된 시험 과목이 없습니다. 관리자 페이지에서 활성화 체크를 확인해 주세요.");
+                }
+            } else {
+                alert("해당 반의 시험 데이터가 없습니다.");
+            }
         }
 
-        function loadActiveQuestions(className, existingData = null) {
-            document.getElementById('infoGroupName').innerText = localStorage.getItem(`${className}_groupName`) || '';
-            document.getElementById('infoGroupPeriod').innerText = localStorage.getItem(`${className}_groupPeriod`) || '';
-            document.getElementById('infoTeacherName').innerText = localStorage.getItem(`${className}_teacherName`) || '';
-            const raw = localStorage.getItem(`${className}_fullConfig`);
-            if(!raw) return;
-            const config = JSON.parse(raw);
-            examQuestions = [];
-            let displayTitle = "";
-            [...(config.ncs || []), ...(config.nonNcs || [])].forEach(main => {
-                main.subSubjects.forEach(sub => {
-                    if(sub.isActive) { 
-                        sub.questions.forEach(q => examQuestions.push({...q}));
-                        displayTitle = `(${main.title}) ${sub.name}`;
-                        currentSubId = sub.name + sub.date; 
-                        document.getElementById('infoExamPurpose').innerText = sub.purpose || "";
-                        document.getElementById('infoExamDate').innerText = sub.date || "";
-                    }
-                });
-            });
-            document.getElementById('displaySubTitle').innerText = displayTitle;
+        async function loadExamInfo(className, sub, mainTitle) {
+            // [정정] 고정 정보(학급명, 교사명 등) 로드
+            const infoSnapshot = await database.ref(`${className}/fixedInfo`).once('value');
+            const info = infoSnapshot.val() || {};
             
-            if(existingData) {
-                renderQuestions(existingData);
-            } else {
-                renderQuestions();
-            }
+            document.getElementById('infoGroupName').innerText = info.groupName || '';
+            document.getElementById('infoGroupPeriod').innerText = info.groupPeriod || '';
+            document.getElementById('infoTeacherName').innerText = info.teacherName || '';
+            document.getElementById('infoExamPurpose').innerText = sub.purpose || "";
+            document.getElementById('infoExamDate').innerText = sub.date || "";
+            document.getElementById('displaySubTitle').innerText = `(${mainTitle}) ${sub.name}`;
+        }
+
+        function isSignCanvasEmpty() {
+            const blank = document.createElement('canvas');
+            blank.width = signCanvas.width; blank.height = signCanvas.height;
+            return signCanvas.toDataURL() === blank.toDataURL();
         }
 
         function renderQuestions(existingData = null) {
             const container = document.getElementById('questionContainer');
+            if(!examQuestions || examQuestions.length === 0) {
+                container.innerHTML = "<tr><td colspan='4'>등록된 문제가 없습니다.</td></tr>";
+                return;
+            }
             container.innerHTML = examQuestions.map((q, idx) => `
                 <tr class="q-row">
                     <td class="col-q-no" id="q_no_${idx}">문제${idx+1}</td>
@@ -164,17 +277,17 @@
                     <td class="col-q-ans" id="ans_display_${idx}"></td>
                     <td class="col-q-chk" id="chk_display_${idx}"></td>
                 </tr>`).join('');
-
-            // [추가 배선] 기록이 있으면 즉시 채점 화면 표시
+            
             if(existingData) {
-                existingData.details.forEach((d, idx) => {
-                    const isCorrect = d.studentVal == d.correctAns;
-                    document.getElementById(`q_no_${idx}`).innerHTML = `문제${idx+1}<br><span class="${isCorrect?'mark-o':'mark-x'}">(${isCorrect?'O':'X'})</span>`;
-                    document.getElementById(`ans_display_${idx}`).innerText = d.studentVal;
-                    document.getElementById(`chk_display_${idx}`).innerText = d.correctAns;
-                    const radios = document.querySelectorAll(`input[name="q_${idx}"]`);
-                    radios.forEach(r => {
-                        if(r.value == d.studentVal) r.checked = true;
+                existingData.userAnswers.forEach((ans, idx) => {
+                    const correctAns = examQuestions[idx].answer;
+                    const isCorrect = ans == correctAns;
+                    const noEl = document.getElementById(`q_no_${idx}`);
+                    if(noEl) noEl.innerHTML = `문제${idx+1}<br><span class="${isCorrect?'mark-o':'mark-x'}">(${isCorrect?'O':'X'})</span>`;
+                    document.getElementById(`ans_display_${idx}`).innerText = (ans === "0" ? "미응답" : ans);
+                    document.getElementById(`chk_display_${idx}`).innerText = correctAns;
+                    document.querySelectorAll(`input[name="q_${idx}"]`).forEach(r => {
+                        if(r.value == ans) r.checked = true;
                         r.disabled = true;
                     });
                 });
@@ -184,48 +297,78 @@
             }
         }
 
-        function updateAnswerDisplay(qIdx, val) { document.getElementById(`ans_display_${qIdx}`).innerText = val; }
+        function updateAnswerDisplay(qIdx, val) { 
+            const el = document.getElementById(`ans_display_${qIdx}`);
+            if(el) el.innerText = val; 
+        }
 
-        function submitExam() {
+        async function submitExam() {
             const name = document.getElementById('userName').value.trim();
             const className = sessionStorage.getItem('selectedClass');
-            if(!name) { alert("성명이 누락되었습니다."); return; }
+            const signData = document.getElementById('displaySignImg').src;
             if(!confirm("최종 답안을 제출하시겠습니까?")) return;
+
             let scoreCount = 0;
-            const studentDetails = []; 
+            const userAnswers = []; 
+            
             examQuestions.forEach((q, idx) => {
                 const sel = document.querySelector(`input[name="q_${idx}"]:checked`);
                 const studentVal = sel ? sel.value : "0";
+                userAnswers.push(studentVal);
                 const isCorrect = studentVal == q.answer;
-                studentDetails.push({ studentVal: studentVal, correctAns: q.answer });
+                
                 const noEl = document.getElementById(`q_no_${idx}`);
-                const chkEl = document.getElementById(`chk_display_${idx}`);
-                if (isCorrect) { noEl.innerHTML = `문제${idx+1}<br><span class="mark-o">(O)</span>`; scoreCount++; }
-                else { noEl.innerHTML = `문제${idx+1}<br><span class="mark-x">(X)</span>`; }
-                chkEl.innerText = q.answer; 
-                document.getElementById(`ans_display_${idx}`).innerText = studentVal;
+                if (isCorrect) { 
+                    if(noEl) noEl.innerHTML = `문제${idx+1}<br><span class="mark-o">(O)</span>`; 
+                    scoreCount++; 
+                } else { 
+                    if(noEl) noEl.innerHTML = `문제${idx+1}<br><span class="mark-x">(X)</span>`; 
+                }
+                document.getElementById(`ans_display_${idx}`).innerText = (studentVal === "0" ? "미응답" : studentVal);
+                document.getElementById(`chk_display_${idx}`).innerText = q.answer;
                 document.querySelectorAll(`input[name="q_${idx}"]`).forEach(i => i.disabled = true);
             });
+
             const finalScore = Math.round((scoreCount / examQuestions.length) * 100);
-            let level = finalScore >= 80 ? "상" : (finalScore >= 60 ? "중" : "하");
+
+// 2. [선생님 의도 반영] 사전수준 판정 로직 수정
+            let level = "";
+             if (finalScore >= 80) {
+                 level = "상";
+                 } else if (finalScore >= 60) {
+                 level = "중";
+                 } else {
+                 level = "하";
+                }
+            
             document.getElementById('resScore').innerText = finalScore + "점";
             document.getElementById('resLevel').innerText = level;
+
             const fullResultData = {
-                userName: name, score: finalScore, level: level, submitTime: new Date().toLocaleString(),
-                displayTitle: document.getElementById('displaySubTitle').innerText,
+                name: name, 
+                score: finalScore, 
+                level: level, 
+                date: new Date().toLocaleDateString(),
+                submitTime: new Date().toLocaleString(),
+                displayTitle: document.getElementById('displaySubTitle').innerText.split(') ')[1],
                 groupName: document.getElementById('infoGroupName').innerText,
                 groupPeriod: document.getElementById('infoGroupPeriod').innerText,
                 examDate: document.getElementById('infoExamDate').innerText,
                 purpose: document.getElementById('infoExamPurpose').innerText,
                 teacherName: document.getElementById('infoTeacherName').innerText,
-                details: studentDetails
+                userAnswers: userAnswers,
+                signData: signData
             };
-            const results = JSON.parse(localStorage.getItem(`${className}_results_${currentSubId}`) || '[]');
-            results.push(fullResultData);
-            localStorage.setItem(`${className}_results_${currentSubId}`, JSON.stringify(results));
-            document.getElementById('submitArea').style.display = 'none';
-            alert(`제출되었습니다. 점수: ${finalScore}점`);
-            window.scrollTo(0, 0);
+
+            try {
+                // [정정] 결과 저장 경로를 반이름_RESULTS로 통일
+                await database.ref(`${className}_RESULTS`).push(fullResultData);
+                document.getElementById('submitArea').style.display = 'none';
+                alert(`제출되었습니다. 점수: ${finalScore}점`);
+                window.scrollTo(0, 0);
+            } catch (e) {
+                alert("데이터 저장 실패: " + e.message);
+            }
         }
     </script>
 </body>

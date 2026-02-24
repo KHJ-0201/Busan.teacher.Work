@@ -120,7 +120,6 @@
     </div>
 
     <script>
-        // --- 파이어베이스 연결 설정 ---
         const firebaseConfig = {
             apiKey: "AIzaSyDs15RTlqQSz4u1Gr6NLQ2Kx25Raey2TtA",
             authDomain: "khj-teacher-work.firebaseapp.com",
@@ -182,26 +181,27 @@
             const signDataUrl = signCanvas.toDataURL();
             sessionStorage.setItem('selectedClass', selected);
             
-            // 파이어베이스에서 설정 로드
-            const snapshot = await database.ref(`CONFIG/${selected}/fullConfig`).once('value');
+            // [정정] A페이지와 동일한 경로로 데이터 로드
+            const snapshot = await database.ref(`${selected}/fullConfig`).once('value');
             const config = snapshot.val();
             
             if(config) {
                 let targetSub = null;
                 let mTitle = "";
                 [...(config.ncs || []), ...(config.nonNcs || [])].forEach(main => {
-                    main.subSubjects.forEach(sub => { 
-                        if(sub.isActive) {
-                            targetSub = sub;
-                            mTitle = main.title;
-                            currentSubId = (sub.name + sub.date).replace(/\s+/g, ''); 
-                        }
-                    });
+                    if(main.subSubjects) {
+                        main.subSubjects.forEach(sub => { 
+                            if(sub.isActive) {
+                                targetSub = sub;
+                                mTitle = main.title;
+                            }
+                        });
+                    }
                 });
                 
                 if(targetSub) {
-                    // 기응시 여부 체크
-                    const resultsSnapshot = await database.ref(`RESULTS/${selected}`).once('value');
+                    // 기응시 여부 체크 (결과 저장 경로 수정 반영)
+                    const resultsSnapshot = await database.ref(`${selected}_RESULTS`).once('value');
                     const allResults = resultsSnapshot.val() || {};
                     const myResult = Object.values(allResults).find(r => r.name === sName && r.displayTitle === targetSub.name);
                     
@@ -222,19 +222,20 @@
                     document.getElementById('classSelectModal').style.display = 'none';
                     document.getElementById('examMainArea').style.display = 'block';
                     document.getElementById('userName').value = sName;
-                    examQuestions = targetSub.questions;
+                    examQuestions = targetSub.questions || [];
                     loadExamInfo(selected, targetSub, mTitle);
                     renderQuestions();
                 } else {
-                    alert("현재 활성화된 시험 과목이 없습니다.");
+                    alert("현재 활성화된 시험 과목이 없습니다. 관리자 페이지에서 활성화 체크를 확인해 주세요.");
                 }
             } else {
-                alert("해당 반의 시험 설정 데이터가 없습니다.");
+                alert("해당 반의 시험 데이터가 없습니다.");
             }
         }
 
         async function loadExamInfo(className, sub, mainTitle) {
-            const infoSnapshot = await database.ref(`CONFIG/${className}/fixedInfo`).once('value');
+            // [정정] 고정 정보(학급명, 교사명 등) 로드
+            const infoSnapshot = await database.ref(`${className}/fixedInfo`).once('value');
             const info = infoSnapshot.val() || {};
             
             document.getElementById('infoGroupName').innerText = info.groupName || '';
@@ -253,6 +254,10 @@
 
         function renderQuestions(existingData = null) {
             const container = document.getElementById('questionContainer');
+            if(!examQuestions || examQuestions.length === 0) {
+                container.innerHTML = "<tr><td colspan='4'>등록된 문제가 없습니다.</td></tr>";
+                return;
+            }
             container.innerHTML = examQuestions.map((q, idx) => `
                 <tr class="q-row">
                     <td class="col-q-no" id="q_no_${idx}">문제${idx+1}</td>
@@ -279,7 +284,7 @@
                     const isCorrect = ans == correctAns;
                     const noEl = document.getElementById(`q_no_${idx}`);
                     if(noEl) noEl.innerHTML = `문제${idx+1}<br><span class="${isCorrect?'mark-o':'mark-x'}">(${isCorrect?'O':'X'})</span>`;
-                    document.getElementById(`ans_display_${idx}`).innerText = ans;
+                    document.getElementById(`ans_display_${idx}`).innerText = (ans === "0" ? "미응답" : ans);
                     document.getElementById(`chk_display_${idx}`).innerText = correctAns;
                     document.querySelectorAll(`input[name="q_${idx}"]`).forEach(r => {
                         if(r.value == ans) r.checked = true;
@@ -301,7 +306,6 @@
             const name = document.getElementById('userName').value.trim();
             const className = sessionStorage.getItem('selectedClass');
             const signData = document.getElementById('displaySignImg').src;
-            if(!name) { alert("성명이 누락되었습니다."); return; }
             if(!confirm("최종 답안을 제출하시겠습니까?")) return;
 
             let scoreCount = 0;
@@ -320,13 +324,22 @@
                 } else { 
                     if(noEl) noEl.innerHTML = `문제${idx+1}<br><span class="mark-x">(X)</span>`; 
                 }
-                document.getElementById(`ans_display_${idx}`).innerText = studentVal;
+                document.getElementById(`ans_display_${idx}`).innerText = (studentVal === "0" ? "미응답" : studentVal);
                 document.getElementById(`chk_display_${idx}`).innerText = q.answer;
                 document.querySelectorAll(`input[name="q_${idx}"]`).forEach(i => i.disabled = true);
             });
 
             const finalScore = Math.round((scoreCount / examQuestions.length) * 100);
-            let level = finalScore >= 80 ? "상" : (finalScore >= 60 ? "중" : "하");
+
+// 2. [선생님 의도 반영] 사전수준 판정 로직 수정
+            let level = "";
+             if (finalScore >= 80) {
+                 level = "상";
+                 } else if (finalScore >= 60) {
+                 level = "중";
+                 } else {
+                 level = "하";
+                }
             
             document.getElementById('resScore').innerText = finalScore + "점";
             document.getElementById('resLevel').innerText = level;
@@ -347,9 +360,9 @@
                 signData: signData
             };
 
-            // 파이어베이스 저장
             try {
-                await database.ref(`RESULTS/${className}`).push(fullResultData);
+                // [정정] 결과 저장 경로를 반이름_RESULTS로 통일
+                await database.ref(`${className}_RESULTS`).push(fullResultData);
                 document.getElementById('submitArea').style.display = 'none';
                 alert(`제출되었습니다. 점수: ${finalScore}점`);
                 window.scrollTo(0, 0);

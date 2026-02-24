@@ -50,3 +50,28 @@ body { background-color: #f4f7f6; font-family: 'Malgun Gothic', sans-serif; marg
     .btn-submit { width: 100%; border-radius: 10px; }
     .correct-answer-text { display: block; margin-left: 0; margin-top: 5px; }
 }
+
+/* [수정] 외부 프레임 간섭 제거 */
+.exam-container { 
+    max-width: 1000px; 
+    margin: 30px auto; 
+    width: 95%; /* 기본 너비 확보 */
+}
+
+/* [핵심] 모바일 화면에서 가로를 꽉 채우지 못하게 막는 범인 검거 및 수정 */
+@media screen and (max-width: 768px) {
+    .exam-container { 
+        width: 100% !important; 
+        margin: 0 !important; 
+        padding: 10px !important; 
+        box-sizing: border-box !important;
+    }
+    
+    /* 모달창이 작게 나오게 만드는 외부 설정 강제 해제 */
+    #classSelectModal > div {
+        width: 94% !important;
+        max-width: 94% !important;
+        min-width: 94% !important;
+        padding: 20px 10px !important;
+    }
+}
