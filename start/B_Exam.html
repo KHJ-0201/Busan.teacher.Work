@@ -78,8 +78,11 @@
             <div style="margin-top: 15px; border: 2px dashed #3498db; border-radius: 8px; padding: 10px; background: #f0f7ff;">
                 <div style="font-size: 14px; color: #2c3e50; margin-bottom: 8px; font-weight: bold;">이름을 정자로 적어주세요.</div>
                 <canvas id="signPad" style="background: white; border: 1px solid #3498db; cursor: crosshair; touch-action: none; border-radius: 4px; width: 100%; display: block;"></canvas>
-                <button onclick="clearSign()" style="font-size: 12px; margin-top: 8px; cursor: pointer; color: #e74c3c; background: white; border: 1px solid #e74c3c; padding: 4px 12px; border-radius: 4px; font-weight: bold;">다시 쓰기</button>
-            </div>
+<div style="display: flex; justify-content: center; gap: 5px; margin-top: 8px;">
+    <button type="button" onclick="undoSign()" style="font-size: 12px; cursor: pointer; color: #6c757d; background: white; border: 1px solid #6c757d; padding: 4px 10px; border-radius: 4px; font-weight: bold;">되돌리기</button>
+    <button type="button" onclick="clearSign()" style="font-size: 12px; cursor: pointer; color: #e74c3c; background: white; border: 1px solid #e74c3c; padding: 4px 10px; border-radius: 4px; font-weight: bold;">다시 쓰기</button>
+    <button type="button" onclick="confirmSign()" style="font-size: 12px; cursor: pointer; color: #28a745; background: white; border: 1px solid #28a745; padding: 4px 10px; border-radius: 4px; font-weight: bold;">서명 확인</button>
+</div>
             <button onclick="startExam()" style="padding:15px; width:100%; font-size:18px; background:#3498db; color:white; border:none; border-radius:8px; cursor:pointer; font-weight:bold; margin-top:15px;">시험 시작하기</button>
         </div>
     </div>
@@ -137,16 +140,25 @@
         let isDrawing = false;
         let signCanvas, signCtx;
 
+        // --- [신규 추가] 서명 기록 저장소 ---
+        let signatureHistory = []; 
+        let currentPath = [];      
+        let confirmedSignData = ""; 
+
         window.onload = function() {
             signCanvas = document.getElementById('signPad');
             signCtx = signCanvas.getContext('2d');
             resizeCanvas();
             window.addEventListener('resize', resizeCanvas);
+            
+            // 초기 셋팅
             signCtx.strokeStyle = "#000"; signCtx.lineWidth = 4; signCtx.lineJoin = "round"; signCtx.lineCap = "round";
+            
             signCanvas.addEventListener('mousedown', startDrawing);
             signCanvas.addEventListener('mousemove', draw);
             signCanvas.addEventListener('mouseup', stopDrawing);
             signCanvas.addEventListener('mouseleave', stopDrawing);
+            
             signCanvas.addEventListener('touchstart', (e) => { e.preventDefault(); startDrawing(e.touches[0]); });
             signCanvas.addEventListener('touchmove', (e) => { e.preventDefault(); draw(e.touches[0]); });
             signCanvas.addEventListener('touchend', stopDrawing);
@@ -157,29 +169,91 @@
             if(container) {
                 signCanvas.width = container.clientWidth;
                 signCanvas.height = 180;
+                // 리사이즈 시 초기화된 속성 재설정
                 signCtx.strokeStyle = "#000"; signCtx.lineWidth = 4; signCtx.lineJoin = "round"; signCtx.lineCap = "round";
+                redrawSign(); // 리사이즈 시에도 그림 유지
             }
         }
 
-        function startDrawing(e) { isDrawing = true; draw(e); }
+        function startDrawing(e) { 
+            isDrawing = true; 
+            currentPath = []; // 새로운 획 시작
+            draw(e); 
+        }
+
         function draw(e) {
             if (!isDrawing) return;
             const rect = signCanvas.getBoundingClientRect();
             const x = (e.clientX || e.pageX) - rect.left;
             const y = (e.clientY || e.pageY) - rect.top;
+            
+            currentPath.push({ x, y }); // 좌표 기록
+
             signCtx.lineTo(x, y); signCtx.stroke(); signCtx.beginPath(); signCtx.moveTo(x, y);
         }
-        function stopDrawing() { isDrawing = false; signCtx.beginPath(); }
-        function clearSign() { signCtx.clearRect(0, 0, signCanvas.width, signCanvas.height); }
+
+        function stopDrawing() { 
+            if (isDrawing && currentPath.length > 0) {
+                signatureHistory.push([...currentPath]); // 한 획 저장
+            }
+            isDrawing = false; 
+            signCtx.beginPath(); 
+        }
+
+        // [기능 1] 다시 쓰기 (전체 삭제)
+        function clearSign() { 
+            signCtx.clearRect(0, 0, signCanvas.width, signCanvas.height); 
+            signatureHistory = []; 
+            currentPath = [];
+            confirmedSignData = ""; // 저장된 데이터도 삭제
+        }
+
+        // [기능 2] 되돌리기 (마지막 획만 삭제)
+        function undoSign() {
+            if (signatureHistory.length > 0) {
+                signatureHistory.pop();
+                redrawSign();
+            }
+        }
+
+        // [기능 3] 다시 그리기
+        function redrawSign() {
+            signCtx.clearRect(0, 0, signCanvas.width, signCanvas.height);
+            signatureHistory.forEach(path => {
+                if (path.length < 2) return;
+                signCtx.beginPath();
+                signCtx.moveTo(path[0].x, path[0].y);
+                for (let i = 1; i < path.length; i++) {
+                    signCtx.lineTo(path[i].x, path[i].y);
+                }
+                signCtx.stroke();
+            });
+        }
+
+        // [기능 4] 서명 확인 (저장)
+        function confirmSign() {
+            if (signatureHistory.length === 0) {
+                alert("서명을 먼저 해주세요.");
+                return;
+            }
+            confirmedSignData = signCanvas.toDataURL(); // 이미지 데이터 추출
+            alert("서명이 확인되었습니다.");
+        }
 
         async function startExam() {
-            const selected = document.getElementById('studentClassSelect').value;
-            const sName = document.getElementById('startUserName').value.trim();
-            if(!selected || !sName) { alert("반 선택과 성명을 입력하세요."); return; }
-            if(isSignCanvasEmpty()) { alert("이름을 정자로 서명해 주세요."); return; }
+    const selected = document.getElementById('studentClassSelect').value;
+    const sName = document.getElementById('startUserName').value.trim();
+    if(!selected || !sName) { alert("반 선택과 성명을 입력하세요."); return; }
+    
+    // --- 여기서부터 수정된 배선입니다 ---
+    if(!confirmedSignData) { 
+        alert("이름을 적고 '서명 확인' 버튼을 꼭 눌러주세요."); 
+        return; 
+    }
+    const signDataUrl = confirmedSignData;
+    // --- 여기까지 ---
 
-            const signDataUrl = signCanvas.toDataURL();
-            sessionStorage.setItem('selectedClass', selected);
+    sessionStorage.setItem('selectedClass', selected);
             
             // [정정] A페이지와 동일한 경로로 데이터 로드
             const snapshot = await database.ref(`${selected}/fullConfig`).once('value');
