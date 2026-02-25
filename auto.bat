@@ -47,7 +47,7 @@ if not exist .git (
     git init
 )
 git remote remove origin 2>nul
-git remote add origin https://github.com/KHJ-0201/teacher.work.git
+git remote add origin https://github.com/KHJ-0201/Busan.teacher.Work.git
 
 :: 충돌 방지를 위해 리베이스 방식으로 가져오기
 git pull origin master --rebase

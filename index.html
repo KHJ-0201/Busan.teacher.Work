@@ -2,115 +2,118 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>자동차 정비 교육 시스템</title>
+    <title>자동차 교사 전용 - 엑셀 교육과정 분석기</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .main-container {
-            background-color: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            text-align: center;
-            width: 350px;
-            border-top: 10px solid #2c3e50;
-        }
-        h1 {
-            color: #2c3e50;
-            margin-bottom: 30px;
-            font-size: 24px;
-        }
-        .btn-group {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        button {
-            padding: 15px;
-            font-size: 18px;
-            cursor: pointer;
-            border: none;
-            border-radius: 8px;
-            transition: 0.3s;
-            font-weight: bold;
-        }
-        .teacher-btn {
-            background-color: #e67e22;
-            color: white;
-        }
-        .teacher-btn:hover {
-            background-color: #d35400;
-        }
-        .student-btn {
-            background-color: #3498db;
-            color: white;
-        }
-        .student-btn:hover {
-            background-color: #2980b9;
-        }
-        #pw-section {
-            display: none;
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid #ddd;
-        }
-        input {
-            padding: 10px;
-            width: 80%;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            text-align: center;
-        }
+        body { font-family: 'Malgun Gothic', sans-serif; padding: 20px; line-height: 1.6; background-color: #f4f7f6; }
+        .container { max-width: 900px; margin: 0 auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        .upload-box { border: 2px dashed #3498db; padding: 20px; text-align: center; border-radius: 8px; margin-bottom: 20px; background: #ebf5fb; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #3498db; color: white; width: 30%; }
+        .subject-list { list-style: none; padding: 0; }
+        .subject-list li { margin-bottom: 5px; padding: 5px; background: #eee; border-radius: 4px; font-size: 14px; }
+        .highlight { font-weight: bold; color: #e74c3c; }
     </style>
 </head>
 <body>
 
-<div class="main-container">
-    <h1>자동차 정비 교육 센터</h1>
-    <div class="btn-group">
-        <button class="student-btn" onclick="goToStudent()">학생 (시험 보기)</button>
-        <button class="teacher-btn" onclick="showPwSection()">교사 (관리자 로그인)</button>
+<div class="container">
+    <h2>🚗 교육과정 엑셀 데이터 분석 (Dashboard)</h2>
+    <div class="upload-box">
+        <p>분석할 엑셀 파일을 선택해주세요 (.xlsx / .xls)</p>
+        <input type="file" id="excelFile" accept=".xlsx, .xls" />
     </div>
 
-    <div id="pw-section">
-        <input type="password" id="teacher-pw" placeholder="비밀번호를 입력하세요" onkeyup="if(window.event.keyCode==13){checkPassword()}">
-        <button onclick="checkPassword()" style="width: 100%; background-color: #2c3e50; color: white;">확인</button>
+    <div id="resultArea" style="display:none;">
+        <table>
+            <tr><th>1. 훈련기간</th><td id="res1">-</td></tr>
+            <tr><th>2. 총 훈련시간</th><td id="res2" class="highlight">-</td></tr>
+            <tr><th>3. 훈련교사</th><td id="res3">-</td></tr>
+            <tr><th>4. 교과목 제목 (중복제외)</th><td id="res4"></td></tr>
+            <tr><th>5. 총 교과목 수</th><td id="res5" class="highlight">-</td></tr>
+            <tr><th>6. 과목별 총 시간</th><td id="res6"></td></tr>
+            <tr><th>7. 요일별 배치 현황</th><td id="res7"></td></tr>
+        </table>
     </div>
 </div>
 
 <script>
-    // 학생 버튼 클릭 시 이동
-    function goToStudent() {
-        location.href = "start/B_Exam.html";
-    }
+document.getElementById('excelFile').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (!file) return;
 
-    // 교사 버튼 클릭 시 비밀번호 입력창 보이기
-    function showPwSection() {
-        document.getElementById('pw-section').style.display = 'block';
-    }
+    const reader = new FileReader();
+    reader.onload = function(event) {
+        const data = new Uint8Array(event.target.result);
+        const workbook = XLSX.read(data, {type: 'array'});
+        
+        // 첫 번째 시트 선택
+        const sheetName = workbook.SheetNames[0];
+        const sheet = workbook.Sheets[sheetName];
+        
+        // 데이터를 JSON 형태로 변환
+        const jsonData = XLSX.utils.sheet_to_json(sheet);
+        
+        analyzeData(jsonData);
+    };
+    reader.readAsArrayBuffer(file);
+});
 
-    // 비밀번호 확인 로직
-    function checkPassword() {
-        const pw = document.getElementById('teacher-pw').value;
-        const correctPw = "1221"; // 선생님! 여기서 원하시는 비밀번호로 수정하세요.
+function analyzeData(data) {
+    document.getElementById('resultArea').style.display = 'block';
 
-        if (pw === correctPw) {
-            alert("확인되었습니다. 관리자 페이지로 이동합니다.");
-            location.href = "start/select_class.html";
-        } else {
-            alert("비밀번호가 틀렸습니다.");
-            document.getElementById('teacher-pw').value = "";
+    // 분석을 위한 변수들
+    let totalHours = data.length; // 각 행이 1시간이라고 가정
+    let teachers = new Set();
+    let subjects = new Map(); // 과목별 시간 합계용
+    let weekDays = { '월': [], '화': [], '수': [], '목': [], '금': [] };
+    let startDate = data[0]?.날짜 || '데이터 없음';
+    let endDate = data[data.length - 1]?.날짜 || '데이터 없음';
+
+    data.forEach(row => {
+        // 엑셀의 헤더(제목)가 '교사', '과목', '요일' 등이라고 가정하고 추출
+        // 선생님의 실제 엑셀 헤더 명칭에 맞춰 수정이 필요할 수 있습니다.
+        if(row.훈련교사) teachers.add(row.훈련교사);
+        if(row.교과목) {
+            subjects.set(row.교과목, (subjects.get(row.교과목) || 0) + 1);
         }
+        if(row.요일 && row.교과목) {
+            if(!weekDays[row.요일]?.includes(row.교과목)) {
+                weekDays[row.요일]?.push(row.교과목);
+            }
+        }
+    });
+
+    // 1. 훈련기간
+    document.getElementById('res1').innerText = `${startDate} ~ ${endDate}`;
+    
+    // 2. 총 훈련시간
+    document.getElementById('res2').innerText = totalHours + " 시간";
+    
+    // 3. 훈련교사
+    document.getElementById('res3').innerText = Array.from(teachers).join(', ');
+
+    // 4 & 5. 교과목 정보
+    const subjectNames = Array.from(subjects.keys());
+    document.getElementById('res4').innerHTML = `<ul class="subject-list">` + subjectNames.map(s => `<li>${s}</li>`).join('') + `</ul>`;
+    document.getElementById('res5').innerText = subjectNames.length + " 개 과목";
+
+    // 6. 각 교과목 당 훈련 시간
+    let subjectHoursHTML = '<ul class="subject-list">';
+    subjects.forEach((hours, name) => {
+        subjectHoursHTML += `<li>${name}: <span class="highlight">${hours}시간</span></li>`;
+    });
+    document.getElementById('res6').innerHTML = subjectHoursHTML + '</ul>';
+
+    // 7. 요일별 교과목
+    let weekHTML = '<ul class="subject-list">';
+    for(let day in weekDays) {
+        weekHTML += `<li><strong>${day}요일:</strong> ${weekDays[day].join(', ') || '수업 없음'}</li>`;
     }
+    document.getElementById('res7').innerHTML = weekHTML + '</ul>';
+}
 </script>
 
 </body>
