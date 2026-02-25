@@ -2,119 +2,165 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>자동차 교사 전용 - 엑셀 교육과정 분석기</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자동차 교육과정 통합 출결 관리 시스템</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    
     <style>
-        body { font-family: 'Malgun Gothic', sans-serif; padding: 20px; line-height: 1.6; background-color: #f4f7f6; }
-        .container { max-width: 900px; margin: 0 auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
-        .upload-box { border: 2px dashed #3498db; padding: 20px; text-align: center; border-radius: 8px; margin-bottom: 20px; background: #ebf5fb; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
-        th { background-color: #3498db; color: white; width: 30%; }
-        .subject-list { list-style: none; padding: 0; }
-        .subject-list li { margin-bottom: 5px; padding: 5px; background: #eee; border-radius: 4px; font-size: 14px; }
-        .highlight { font-weight: bold; color: #e74c3c; }
+        /* [Ctrl + F: MAIN_STYLE] */
+        body { font-family: 'Malgun Gothic', sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; color: #333; }
+        .container { max-width: 1300px; margin: 0 auto; background: white; padding: 25px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
+        .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid #3498db; padding-bottom: 15px; margin-bottom: 25px; }
+        .tab-menu { display: flex; gap: 10px; margin-bottom: 25px; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+        .tab-button { padding: 12px 25px; cursor: pointer; border: 1px solid #ddd; border-radius: 8px 8px 0 0; background: #f9f9f9; font-weight: bold; transition: 0.3s; }
+        .tab-button.active { background: #3498db; color: white; border-color: #3498db; }
+        .section-card { background: #fff; padding: 20px; border-radius: 10px; border: 1px solid #e1e4e8; margin-bottom: 20px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+        .btn { padding: 10px 20px; border-radius: 6px; border: none; cursor: pointer; font-weight: bold; }
+        .btn-blue { background: #3498db; color: white; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 13px; }
+        th, td { border: 1px solid #e1e4e8; padding: 10px; text-align: center; }
+        th { background: #f8f9fa; color: #2c3e50; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h2>🚗 교육과정 엑셀 데이터 분석 (Dashboard)</h2>
-    <div class="upload-box">
-        <p>분석할 엑셀 파일을 선택해주세요 (.xlsx / .xls)</p>
-        <input type="file" id="excelFile" accept=".xlsx, .xls" />
+    <div class="header">
+        <h1>🚗 부산 자동차 교육과정 통합 시스템</h1>
+        <div id="connectionStatus" style="font-weight: bold; font-size: 14px;">연결 확인 중...</div>
     </div>
 
-    <div id="resultArea" style="display:none;">
-        <table>
-            <tr><th>1. 훈련기간</th><td id="res1">-</td></tr>
-            <tr><th>2. 총 훈련시간</th><td id="res2" class="highlight">-</td></tr>
-            <tr><th>3. 훈련교사</th><td id="res3">-</td></tr>
-            <tr><th>4. 교과목 제목 (중복제외)</th><td id="res4"></td></tr>
-            <tr><th>5. 총 교과목 수</th><td id="res5" class="highlight">-</td></tr>
-            <tr><th>6. 과목별 총 시간</th><td id="res6"></td></tr>
-            <tr><th>7. 요일별 배치 현황</th><td id="res7"></td></tr>
-        </table>
+    <div class="tab-menu" id="classTabs">
+        <button class="tab-button active" onclick="switchClass('501반')">501반</button>
+        <button class="tab-button" onclick="switchClass('601반')">601반</button>
+        <button class="tab-button" onclick="switchClass('701반')">701반</button>
+    </div>
+
+    <div class="section-card">
+        <h3>📂 교과목 기준 정보 설정 (시간(h) 단위)</h3>
+        <div class="grid-3">
+            <div>
+                <label>교과목명</label>
+                <input type="text" id="courseName" style="width:90%; padding:8px;" placeholder="예: 가솔린 엔진 정비">
+            </div>
+            <div>
+                <label>능력단위 코드</label>
+                <input type="text" id="courseCode" style="width:90%; padding:8px;" placeholder="예: 150603...">
+            </div>
+            <div>
+                <label>총 훈련시간 (h)</label>
+                <input type="number" id="targetHours" style="width:90%; padding:8px;" placeholder="예: 160">
+            </div>
+        </div>
+        <button class="btn btn-blue" style="margin-top:15px;" onclick="saveBaseInfo()">기준 정보 서버 저장</button>
+    </div>
+
+    <div class="grid-3">
+        <div class="section-card">
+            <h4>📅 메인 시간표 업로드</h4>
+            <input type="file" id="timetableFile" accept=".xlsx, .xls" onchange="processTimetable(this)">
+            <p style="font-size:11px; color:gray;">(날짜 기준 누적 업데이트 지원)</p>
+        </div>
+        <div class="section-card">
+            <h4>📝 일일 출결 업로드</h4>
+            <input type="file" id="attendanceFile" accept=".xlsx, .xls" onchange="processDailyAttendance(this)">
+            <p style="font-size:11px; color:gray;">(일일 출석 데이터 분석)</p>
+        </div>
+        <div class="section-card">
+            <h4>📉 수료 위험군 (75%)</h4>
+            <div id="riskSummary">계산 전</div>
+        </div>
+    </div>
+
+    <div id="resultArea" class="section-card">
+        <h3>📊 통합 출결 분석 현황 (분(min) 단위 정산)</h3>
+        <div id="tableContainer">가져올 데이터가 없습니다.</div>
     </div>
 </div>
 
 <script>
-document.getElementById('excelFile').addEventListener('change', function(e) {
-    const file = e.target.files[0];
-    if (!file) return;
+/* [Ctrl + F: FIREBASE_INIT] */
+const firebaseConfig = {
+    apiKey: "AIzaSyCO37zrsZEjKTokMCNWbIc1C_o5BZMqh8E",
+    authDomain: "busan-teacher-work.firebaseapp.com",
+    databaseURL: "https://busan-teacher-work-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "busan-teacher-work",
+    storageBucket: "busan-teacher-work.firebasestorage.app",
+    messagingSenderId: "613659870343",
+    appId: "1:613659870343:web:375d3c589bc3fc30876422"
+};
 
-    const reader = new FileReader();
-    reader.onload = function(event) {
-        const data = new Uint8Array(event.target.result);
-        const workbook = XLSX.read(data, {type: 'array'});
-        
-        // 첫 번째 시트 선택
-        const sheetName = workbook.SheetNames[0];
-        const sheet = workbook.Sheets[sheetName];
-        
-        // 데이터를 JSON 형태로 변환
-        const jsonData = XLSX.utils.sheet_to_json(sheet);
-        
-        analyzeData(jsonData);
-    };
-    reader.readAsArrayBuffer(file);
+if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
+const database = firebase.database();
+let currentClass = "501반";
+
+// 서버 연결 체크 엔진
+database.ref('.info/connected').on('value', snap => {
+    const el = document.getElementById('connectionStatus');
+    if (snap.val() === true) { 
+        el.innerText = "● 서버 연결됨 (Firebase)"; 
+        el.style.color = "green"; 
+    } else { 
+        el.innerText = "○ 연결 끊김 (재시도 중...)"; 
+        el.style.color = "red"; 
+    }
 });
 
-function analyzeData(data) {
-    document.getElementById('resultArea').style.display = 'block';
-
-    // 분석을 위한 변수들
-    let totalHours = data.length; // 각 행이 1시간이라고 가정
-    let teachers = new Set();
-    let subjects = new Map(); // 과목별 시간 합계용
-    let weekDays = { '월': [], '화': [], '수': [], '목': [], '금': [] };
-    let startDate = data[0]?.날짜 || '데이터 없음';
-    let endDate = data[data.length - 1]?.날짜 || '데이터 없음';
-
-    data.forEach(row => {
-        // 엑셀의 헤더(제목)가 '교사', '과목', '요일' 등이라고 가정하고 추출
-        // 선생님의 실제 엑셀 헤더 명칭에 맞춰 수정이 필요할 수 있습니다.
-        if(row.훈련교사) teachers.add(row.훈련교사);
-        if(row.교과목) {
-            subjects.set(row.교과목, (subjects.get(row.교과목) || 0) + 1);
-        }
-        if(row.요일 && row.교과목) {
-            if(!weekDays[row.요일]?.includes(row.교과목)) {
-                weekDays[row.요일]?.push(row.교과목);
-            }
-        }
+/* [Ctrl + F: SWITCH_CLASS] */
+function switchClass(className) {
+    currentClass = className;
+    document.querySelectorAll('.tab-button').forEach(btn => {
+        btn.classList.remove('active');
+        if(btn.innerText === className) btn.classList.add('active');
     });
-
-    // 1. 훈련기간
-    document.getElementById('res1').innerText = `${startDate} ~ ${endDate}`;
-    
-    // 2. 총 훈련시간
-    document.getElementById('res2').innerText = totalHours + " 시간";
-    
-    // 3. 훈련교사
-    document.getElementById('res3').innerText = Array.from(teachers).join(', ');
-
-    // 4 & 5. 교과목 정보
-    const subjectNames = Array.from(subjects.keys());
-    document.getElementById('res4').innerHTML = `<ul class="subject-list">` + subjectNames.map(s => `<li>${s}</li>`).join('') + `</ul>`;
-    document.getElementById('res5').innerText = subjectNames.length + " 개 과목";
-
-    // 6. 각 교과목 당 훈련 시간
-    let subjectHoursHTML = '<ul class="subject-list">';
-    subjects.forEach((hours, name) => {
-        subjectHoursHTML += `<li>${name}: <span class="highlight">${hours}시간</span></li>`;
-    });
-    document.getElementById('res6').innerHTML = subjectHoursHTML + '</ul>';
-
-    // 7. 요일별 교과목
-    let weekHTML = '<ul class="subject-list">';
-    for(let day in weekDays) {
-        weekHTML += `<li><strong>${day}요일:</strong> ${weekDays[day].join(', ') || '수업 없음'}</li>`;
-    }
-    document.getElementById('res7').innerHTML = weekHTML + '</ul>';
+    loadBaseInfo();
 }
-</script>
 
+/* [Ctrl + F: SAVE_BASE_INFO] */
+function saveBaseInfo() {
+    const data = {
+        name: document.getElementById('courseName').value,
+        code: document.getElementById('courseCode').value,
+        hours: document.getElementById('targetHours').value,
+        updatedAt: new Date().toISOString()
+    };
+    database.ref(`${currentClass}/baseInfo`).set(data).then(() => {
+        alert(currentClass + " 기준 정보가 서버에 안전하게 저장되었습니다.");
+    });
+}
+
+function loadBaseInfo() {
+    database.ref(`${currentClass}/baseInfo`).once('value', snap => {
+        const val = snap.val();
+        if(val) {
+            document.getElementById('courseName').value = val.name || '';
+            document.getElementById('courseCode').value = val.code || '';
+            document.getElementById('targetHours').value = val.hours || '';
+        } else {
+            document.getElementById('courseName').value = '';
+            document.getElementById('courseCode').value = '';
+            document.getElementById('targetHours').value = '';
+        }
+    });
+}
+
+/* [Ctrl + F: PROCESS_TIMETABLE] */
+function processTimetable(input) {
+    // 여기에 선생님의 '시간표 엑셀'을 읽어 분석하는 로직이 들어갈 예정입니다.
+    alert("시간표 분석 엔진 준비 중입니다.");
+}
+
+/* [Ctrl + F: PROCESS_ATTENDANCE] */
+function processDailyAttendance(input) {
+    // 여기에 '일일 출결 엑셀'의 입퇴실/외출/휴가 로직이 들어갈 예정입니다.
+    alert("출결 분석 엔진 준비 중입니다.");
+}
+
+// 초기 로드
+loadBaseInfo();
+</script>
 </body>
 </html>
