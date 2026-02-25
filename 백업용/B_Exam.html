@@ -6,7 +6,7 @@
     <title>학생 응시 - 자동차 CBT</title>
     <link rel="stylesheet" href="B_style.css">
     <style>
-        /* [기존 디자인 및 모바일 최적화 코드 유지 - 절대 수정 금지] */
+        /* [기존 디자인 및 모바일 최적화 코드 유지] */
         .exam-subject-title { text-align: center; font-size: 24px; font-weight: bold; margin-bottom: 20px; padding: 10px; border-bottom: 3px double #000; color: #2c3e50; }
         .report-table { width: 100%; border-collapse: collapse; table-layout: fixed; border: 2px solid #000; margin-bottom: 20px; }
         .report-table td { border: 1px solid #000; padding: 10px; text-align: center; font-size: 14px; height: 45px; word-break: keep-all; background-color: #ffffff; }
@@ -75,14 +75,13 @@
                 <option value="603반">603반</option><option value="701반">701반</option><option value="702반">702반</option><option value="703반">703반</option>
             </select>
             <input type="text" id="startUserName" placeholder="성명을 입력하세요" style="padding:12px; font-size:18px; width:100%; box-sizing:border-box; border:2px solid #3498db; border-radius:8px; margin-bottom:12px; text-align:center;">
+            
             <div style="margin-top: 15px; border: 2px dashed #3498db; border-radius: 8px; padding: 10px; background: #f0f7ff;">
                 <div style="font-size: 14px; color: #2c3e50; margin-bottom: 8px; font-weight: bold;">이름을 정자로 적어주세요.</div>
                 <canvas id="signPad" style="background: white; border: 1px solid #3498db; cursor: crosshair; touch-action: none; border-radius: 4px; width: 100%; display: block;"></canvas>
-<div style="display: flex; justify-content: center; gap: 5px; margin-top: 8px;">
-    <button type="button" onclick="undoSign()" style="font-size: 12px; cursor: pointer; color: #6c757d; background: white; border: 1px solid #6c757d; padding: 4px 10px; border-radius: 4px; font-weight: bold;">되돌리기</button>
-    <button type="button" onclick="clearSign()" style="font-size: 12px; cursor: pointer; color: #e74c3c; background: white; border: 1px solid #e74c3c; padding: 4px 10px; border-radius: 4px; font-weight: bold;">다시 쓰기</button>
-    <button type="button" onclick="confirmSign()" style="font-size: 12px; cursor: pointer; color: #28a745; background: white; border: 1px solid #28a745; padding: 4px 10px; border-radius: 4px; font-weight: bold;">서명 확인</button>
-</div>
+                <button onclick="clearSign()" style="font-size: 12px; margin-top: 8px; cursor: pointer; color: #e74c3c; background: white; border: 1px solid #e74c3c; padding: 4px 12px; border-radius: 4px; font-weight: bold;">다시 쓰기</button>
+            </div>
+            
             <button onclick="startExam()" style="padding:15px; width:100%; font-size:18px; background:#3498db; color:white; border:none; border-radius:8px; cursor:pointer; font-weight:bold; margin-top:15px;">시험 시작하기</button>
         </div>
     </div>
@@ -136,29 +135,20 @@
         const database = firebase.database();
 
         let examQuestions = [];
-        let currentSubId = ""; 
         let isDrawing = false;
         let signCanvas, signCtx;
-
-        // --- [신규 추가] 서명 기록 저장소 ---
-        let signatureHistory = []; 
-        let currentPath = [];      
-        let confirmedSignData = ""; 
 
         window.onload = function() {
             signCanvas = document.getElementById('signPad');
             signCtx = signCanvas.getContext('2d');
             resizeCanvas();
             window.addEventListener('resize', resizeCanvas);
-            
-            // 초기 셋팅
             signCtx.strokeStyle = "#000"; signCtx.lineWidth = 4; signCtx.lineJoin = "round"; signCtx.lineCap = "round";
             
             signCanvas.addEventListener('mousedown', startDrawing);
             signCanvas.addEventListener('mousemove', draw);
             signCanvas.addEventListener('mouseup', stopDrawing);
             signCanvas.addEventListener('mouseleave', stopDrawing);
-            
             signCanvas.addEventListener('touchstart', (e) => { e.preventDefault(); startDrawing(e.touches[0]); });
             signCanvas.addEventListener('touchmove', (e) => { e.preventDefault(); draw(e.touches[0]); });
             signCanvas.addEventListener('touchend', stopDrawing);
@@ -169,161 +159,84 @@
             if(container) {
                 signCanvas.width = container.clientWidth;
                 signCanvas.height = 180;
-                // 리사이즈 시 초기화된 속성 재설정
                 signCtx.strokeStyle = "#000"; signCtx.lineWidth = 4; signCtx.lineJoin = "round"; signCtx.lineCap = "round";
-                redrawSign(); // 리사이즈 시에도 그림 유지
             }
         }
 
-        function startDrawing(e) { 
-            isDrawing = true; 
-            currentPath = []; // 새로운 획 시작
-            draw(e); 
-        }
-
+        function startDrawing(e) { isDrawing = true; draw(e); }
         function draw(e) {
             if (!isDrawing) return;
             const rect = signCanvas.getBoundingClientRect();
             const x = (e.clientX || e.pageX) - rect.left;
             const y = (e.clientY || e.pageY) - rect.top;
-            
-            currentPath.push({ x, y }); // 좌표 기록
-
             signCtx.lineTo(x, y); signCtx.stroke(); signCtx.beginPath(); signCtx.moveTo(x, y);
         }
+        function stopDrawing() { isDrawing = false; signCtx.beginPath(); }
+        function clearSign() { signCtx.clearRect(0, 0, signCanvas.width, signCanvas.height); }
 
-        function stopDrawing() { 
-            if (isDrawing && currentPath.length > 0) {
-                signatureHistory.push([...currentPath]); // 한 획 저장
-            }
-            isDrawing = false; 
-            signCtx.beginPath(); 
-        }
-
-        // [기능 1] 다시 쓰기 (전체 삭제)
-        function clearSign() { 
-            signCtx.clearRect(0, 0, signCanvas.width, signCanvas.height); 
-            signatureHistory = []; 
-            currentPath = [];
-            confirmedSignData = ""; // 저장된 데이터도 삭제
-        }
-
-        // [기능 2] 되돌리기 (마지막 획만 삭제)
-        function undoSign() {
-            if (signatureHistory.length > 0) {
-                signatureHistory.pop();
-                redrawSign();
-            }
-        }
-
-        // [기능 3] 다시 그리기
-        function redrawSign() {
-            signCtx.clearRect(0, 0, signCanvas.width, signCanvas.height);
-            signatureHistory.forEach(path => {
-                if (path.length < 2) return;
-                signCtx.beginPath();
-                signCtx.moveTo(path[0].x, path[0].y);
-                for (let i = 1; i < path.length; i++) {
-                    signCtx.lineTo(path[i].x, path[i].y);
-                }
-                signCtx.stroke();
-            });
-        }
-
-        // [기능 4] 서명 확인 (저장)
-        function confirmSign() {
-            if (signatureHistory.length === 0) {
-                alert("서명을 먼저 해주세요.");
-                return;
-            }
-            confirmedSignData = signCanvas.toDataURL(); // 이미지 데이터 추출
-            alert("서명이 확인되었습니다.");
+        function isSignCanvasEmpty() {
+            const blank = document.createElement('canvas');
+            blank.width = signCanvas.width; blank.height = signCanvas.height;
+            return signCanvas.toDataURL() === blank.toDataURL();
         }
 
         async function startExam() {
-    const selected = document.getElementById('studentClassSelect').value;
-    const sName = document.getElementById('startUserName').value.trim();
-    if(!selected || !sName) { alert("반 선택과 성명을 입력하세요."); return; }
-    
-    // --- 여기서부터 수정된 배선입니다 ---
-    if(!confirmedSignData) { 
-        alert("이름을 적고 '서명 확인' 버튼을 꼭 눌러주세요."); 
-        return; 
-    }
-    const signDataUrl = confirmedSignData;
-    // --- 여기까지 ---
+            const selected = document.getElementById('studentClassSelect').value;
+            const sName = document.getElementById('startUserName').value.trim();
+            if(!selected || !sName) { alert("반 선택과 성명을 입력하세요."); return; }
+            if(isSignCanvasEmpty()) { alert("이름을 정자로 서명해 주세요."); return; }
 
-    sessionStorage.setItem('selectedClass', selected);
+            const signDataUrl = signCanvas.toDataURL();
+            sessionStorage.setItem('selectedClass', selected);
             
-            // [정정] A페이지와 동일한 경로로 데이터 로드
-            const snapshot = await database.ref(`${selected}/fullConfig`).once('value');
-            const config = snapshot.val();
-            
-            if(config) {
-                let targetSub = null;
-                let mTitle = "";
-                [...(config.ncs || []), ...(config.nonNcs || [])].forEach(main => {
-                    if(main.subSubjects) {
-                        main.subSubjects.forEach(sub => { 
-                            if(sub.isActive) {
-                                targetSub = sub;
-                                mTitle = main.title;
-                            }
-                        });
-                    }
-                });
+            try {
+                const snapshot = await database.ref(`${selected}/fullConfig`).once('value');
+                const config = snapshot.val();
                 
-                if(targetSub) {
-                    // 기응시 여부 체크 (결과 저장 경로 수정 반영)
-                    const resultsSnapshot = await database.ref(`${selected}_RESULTS`).once('value');
-                    const allResults = resultsSnapshot.val() || {};
-                    const myResult = Object.values(allResults).find(r => r.name === sName && r.displayTitle === targetSub.name);
-                    
-                    if(myResult) {
-                        alert(`${sName} 학생은 이미 응시했습니다. 채점 결과 화면으로 이동합니다.`);
+                if(config) {
+                    let targetSub = null;
+                    let mTitle = "";
+                    [...(config.ncs || []), ...(config.nonNcs || [])].forEach(main => {
+                        if(main.subSubjects) {
+                            main.subSubjects.forEach(sub => { 
+                                if(sub.isActive) { targetSub = sub; mTitle = main.title; }
+                            });
+                        }
+                    });
+
+                    if(targetSub) {
+                        const resultsSnapshot = await database.ref(`${selected}_RESULTS`).once('value');
+                        const allResults = resultsSnapshot.val() || {};
+                        const myResult = Object.values(allResults).find(r => r.name === sName && r.displayTitle === targetSub.name);
+                        
+                        document.getElementById('displaySignImg').src = signDataUrl;
                         document.getElementById('classSelectModal').style.display = 'none';
                         document.getElementById('examMainArea').style.display = 'block';
                         document.getElementById('userName').value = sName;
-                        if(myResult.signData) document.getElementById('displaySignImg').src = myResult.signData;
-                        examQuestions = targetSub.questions;
+                        
+                        examQuestions = targetSub.questions || [];
                         loadExamInfo(selected, targetSub, mTitle);
                         renderQuestions(myResult); 
-                        return;
+                    } else {
+                        alert("현재 활성화된 시험 과목이 없습니다.");
                     }
-
-                    // 신규 응시 시작
-                    document.getElementById('displaySignImg').src = signDataUrl;
-                    document.getElementById('classSelectModal').style.display = 'none';
-                    document.getElementById('examMainArea').style.display = 'block';
-                    document.getElementById('userName').value = sName;
-                    examQuestions = targetSub.questions || [];
-                    loadExamInfo(selected, targetSub, mTitle);
-                    renderQuestions();
                 } else {
-                    alert("현재 활성화된 시험 과목이 없습니다. 관리자 페이지에서 활성화 체크를 확인해 주세요.");
+                    alert("데이터 로드 실패.");
                 }
-            } else {
-                alert("해당 반의 시험 데이터가 없습니다.");
+            } catch (e) {
+                alert("오류 발생: " + e.message);
             }
         }
 
         async function loadExamInfo(className, sub, mainTitle) {
-            // [정정] 고정 정보(학급명, 교사명 등) 로드
             const infoSnapshot = await database.ref(`${className}/fixedInfo`).once('value');
             const info = infoSnapshot.val() || {};
-            
             document.getElementById('infoGroupName').innerText = info.groupName || '';
             document.getElementById('infoGroupPeriod').innerText = info.groupPeriod || '';
             document.getElementById('infoTeacherName').innerText = info.teacherName || '';
             document.getElementById('infoExamPurpose').innerText = sub.purpose || "";
             document.getElementById('infoExamDate').innerText = sub.date || "";
             document.getElementById('displaySubTitle').innerText = `(${mainTitle}) ${sub.name}`;
-        }
-
-        function isSignCanvasEmpty() {
-            const blank = document.createElement('canvas');
-            blank.width = signCanvas.width; blank.height = signCanvas.height;
-            return signCanvas.toDataURL() === blank.toDataURL();
         }
 
         function renderQuestions(existingData = null) {
@@ -380,68 +293,77 @@
             const name = document.getElementById('userName').value.trim();
             const className = sessionStorage.getItem('selectedClass');
             const signData = document.getElementById('displaySignImg').src;
+            
             if(!confirm("최종 답안을 제출하시겠습니까?")) return;
 
             let scoreCount = 0;
             const userAnswers = []; 
-            
+
+            // [채점 핵심 로직] 문제를 하나씩 돌며 정답 확인 및 화면 표시
             examQuestions.forEach((q, idx) => {
                 const sel = document.querySelector(`input[name="q_${idx}"]:checked`);
                 const studentVal = sel ? sel.value : "0";
                 userAnswers.push(studentVal);
-                const isCorrect = studentVal == q.answer;
                 
+                const isCorrect = (studentVal == q.answer);
                 const noEl = document.getElementById(`q_no_${idx}`);
-                if (isCorrect) { 
-                    if(noEl) noEl.innerHTML = `문제${idx+1}<br><span class="mark-o">(O)</span>`; 
-                    scoreCount++; 
-                } else { 
-                    if(noEl) noEl.innerHTML = `문제${idx+1}<br><span class="mark-x">(X)</span>`; 
+
+                // 1. 문제 번호 옆에 O, X 표시 박기
+                if (isCorrect) {
+                    if(noEl) noEl.innerHTML = `문제${idx+1}<br><span class="mark-o">(O)</span>`;
+                    scoreCount++;
+                } else {
+                    if(noEl) noEl.innerHTML = `문제${idx+1}<br><span class="mark-x">(X)</span>`;
                 }
-                document.getElementById(`ans_display_${idx}`).innerText = (studentVal === "0" ? "미응답" : studentVal);
-                document.getElementById(`chk_display_${idx}`).innerText = q.answer;
+                
+                // 2. 답안 칸에 본인 답과 정답 표시
+                const ansDisplay = document.getElementById(`ans_display_${idx}`);
+                const chkDisplay = document.getElementById(`chk_display_${idx}`);
+                if(ansDisplay) ansDisplay.innerText = (studentVal === "0" ? "미응답" : studentVal);
+                if(chkDisplay) chkDisplay.innerText = q.answer;
+                
+                // 3. 라디오 버튼 잠금 (수정 불가)
                 document.querySelectorAll(`input[name="q_${idx}"]`).forEach(i => i.disabled = true);
             });
 
+            // 4. 점수 계산 및 화면 상단 표에 기록
             const finalScore = Math.round((scoreCount / examQuestions.length) * 100);
-
-// 2. [선생님 의도 반영] 사전수준 판정 로직 수정
-            let level = "";
-             if (finalScore >= 80) {
-                 level = "상";
-                 } else if (finalScore >= 60) {
-                 level = "중";
-                 } else {
-                 level = "하";
-                }
+            let level = finalScore >= 80 ? "상" : (finalScore >= 60 ? "중" : "하");
             
-            document.getElementById('resScore').innerText = finalScore + "점";
-            document.getElementById('resLevel').innerText = level;
+            const resScoreEl = document.getElementById('resScore');
+            const resLevelEl = document.getElementById('resLevel');
+            if(resScoreEl) resScoreEl.innerText = finalScore + "점";
+            if(resLevelEl) resLevelEl.innerText = level;
 
+            // 5. 서버 저장용 데이터 묶기
             const fullResultData = {
-                name: name, 
-                score: finalScore, 
-                level: level, 
+                name: name, score: finalScore, level: level, 
                 date: new Date().toLocaleDateString(),
                 submitTime: new Date().toLocaleString(),
-                displayTitle: document.getElementById('displaySubTitle').innerText.split(') ')[1],
+                displayTitle: document.getElementById('displaySubTitle').innerText.split(') ')[1] || "시험",
                 groupName: document.getElementById('infoGroupName').innerText,
                 groupPeriod: document.getElementById('infoGroupPeriod').innerText,
                 examDate: document.getElementById('infoExamDate').innerText,
                 purpose: document.getElementById('infoExamPurpose').innerText,
                 teacherName: document.getElementById('infoTeacherName').innerText,
-                userAnswers: userAnswers,
-                signData: signData
+                userAnswers: userAnswers, signData: signData
             };
 
             try {
-                // [정정] 결과 저장 경로를 반이름_RESULTS로 통일
+                // 6. 데이터베이스 저장
                 await database.ref(`${className}_RESULTS`).push(fullResultData);
-                document.getElementById('submitArea').style.display = 'none';
+                
+                // 7. 완료 후 인터페이스 정리
+                const submitArea = document.getElementById('submitArea');
+                if(submitArea) submitArea.style.display = 'none'; // 제출 버튼 숨기기
+                
                 alert(`제출되었습니다. 점수: ${finalScore}점`);
-                window.scrollTo(0, 0);
+                
+                // 8. 화면 맨 위로 부드럽게 올리기 (채점표 확인용)
+                window.scrollTo({ top: 0, behavior: 'smooth' }); 
             } catch (e) {
-                alert("데이터 저장 실패: " + e.message);
+                console.error("저장 오류:", e);
+                alert("저장 실패: " + e.message);
             }
         }
     </script>
