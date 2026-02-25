@@ -11,7 +11,15 @@
     <style>
         /* [DESIGN_FIXED] 디자인 절대 고정 및 경계선 강화 */
         body { font-family: 'Malgun Gothic', sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; color: #333; }
-        .container { max-width: 1750px; margin: 0 auto; background: white; padding: 25px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
+        .container { 
+    max-width: 1400px;    /* 1. 다른 페이지와 동일하게 최대 너비를 1400px로 제한하여 통일감 부여 */
+    margin: 30px auto;    /* 2. 상하 30px 여백을 주고 화면 중앙으로 배치 */
+    background: white; 
+    padding: 40px;        /* 3. 내부 여백을 넓혀서 시각적 답답함 해소 */
+    border-radius: 15px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* 4. 그림자를 조금 더 깊게 하여 입체감 강조 */
+    min-height: 90vh;     /* 5. 페이지가 짧아도 전체적인 형태 유지 */
+}
         .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid #3498db; padding-bottom: 15px; margin-bottom: 20px; }
         .class-info-bar { background: #e3f2fd; padding: 12px; border-radius: 10px; margin-bottom: 20px; display: flex; align-items: center; gap: 15px; }
         .btn-home { padding: 6px 12px; cursor: pointer; border: 1px solid #3498db; border-radius: 6px; background: white; color: #3498db; font-weight: bold; text-decoration: none; font-size: 13px; }
