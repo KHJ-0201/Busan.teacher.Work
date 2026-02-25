@@ -318,74 +318,84 @@ function renderWeekly() {
         return;
     }
     const weeklyData = {};
-    
     if (rawTimetable.length === 0) return;
 
-    // [정밀 수리] 시간표 첫 날짜를 가져와서 해당 주의 '일요일'을 기준점으로 잡음
     const firstDateStr = getFixDate(rawTimetable[0].날짜);
     const firstDate = new Date(firstDateStr);
-    
-    // 일요일로 기준점 이동 (일요일=0)
     const startSunday = new Date(firstDate);
     startSunday.setDate(firstDate.getDate() - firstDate.getDay());
     startSunday.setHours(0,0,0,0);
+
+    let grandTotalHours = 0;
+    let totalSubjectsSet = new Set();
 
     rawTimetable.forEach(row => {
         const sub = row.교과목 ? String(row.교과목).trim() : "";
         const period = row.교시 ? String(row.교시).trim() : "";
         const rowDateStr = getFixDate(row.날짜);
         
-        // [필터링] 진짜 수업 데이터만 골라내기
         if(period !== "점심" && sub !== "" && isActualSubject(sub)) {
-            
             const currentDate = new Date(rowDateStr);
             currentDate.setHours(0,0,0,0);
-            
-            // [혁신] 기준 일요일로부터 몇 주가 지났는지 계산
             const diffTime = currentDate - startSunday;
             const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-            const week = Math.floor(diffDays / 7) + 1; // 0~6일차는 1주차(해당 주 일~토)
+            const week = Math.floor(diffDays / 7) + 1;
             
             if(!weeklyData[week]) {
-                weeklyData[week] = { 
-                    totalHours: 0, 
-                    subjects: new Set() 
-                };
+                const weekStart = new Date(startSunday);
+                weekStart.setDate(startSunday.getDate() + (week - 1) * 7);
+                const weekEnd = new Date(weekStart);
+                weekEnd.setDate(weekStart.getDate() + 6);
+                const periodRange = `${weekStart.getMonth() + 1}.${weekStart.getDate()}~${weekEnd.getMonth() + 1}.${weekEnd.getDate()}`;
+                weeklyData[week] = { totalHours: 0, subjectMap: {}, period: periodRange };
             }
-            
-            // 실제 등록된 과목인 경우만 1시간씩 합산
             weeklyData[week].totalHours += 1;
-            weeklyData[week].subjects.add(sub);
+            weeklyData[week].subjectMap[sub] = (weeklyData[week].subjectMap[sub] || 0) + 1;
+            grandTotalHours += 1;
+            totalSubjectsSet.add(sub);
         }
     });
 
-    let tableHtml = `<table class="attendance-table">
-        <thead>
-            <tr>
-                <th width="15%">주차</th>
-                <th width="65%">진행된 교과목</th>
-                <th width="20%">실제 수업 합계</th>
+    const sortedWeeks = Object.keys(weeklyData).sort((a, b) => parseInt(a) - parseInt(b));
+
+    // [수리 핵심] <colgroup>을 사용하여 표의 기틀을 5%/90%/5%에 가깝게 강제 고정합니다.
+    let tableHtml = `<table class="attendance-table" style="text-align: center; table-layout: fixed; width: 100%; min-width: 800px;">
+        <colgroup>
+            <col style="width: 7%;">  <col style="width: 86%;"> <col style="width: 7%;">  </colgroup>
+        <thead style="position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+            <tr style="background-color: #2c3e50; color: #ffffff; font-weight: bold;">
+                <td style="padding:10px 2px; border-bottom: 2px solid #34495e; font-size: 11px;">총 ${sortedWeeks.length}주</td>
+                <td style="padding:10px 2px; border-bottom: 2px solid #34495e;">전체 진행 교과목: ${totalSubjectsSet.size}종</td>
+                <td style="padding:10px 2px; font-size:12px; border-bottom: 2px solid #34495e;">총 ${grandTotalHours}h</td>
+            </tr>
+            <tr style="background-color: #f8f9fa; color: #333;">
+                <th style="padding: 5px 2px; font-size: 11px;">주차</th>
+                <th>진행된 교과목(시간)</th>
+                <th style="padding: 5px 2px; font-size: 11px;">합계</th>
             </tr>
         </thead>
         <tbody>`;
     
-    const sortedWeeks = Object.keys(weeklyData).sort((a, b) => parseInt(a) - parseInt(b));
-
     sortedWeeks.forEach(w => {
         const d = weeklyData[w];
         if(d.totalHours > 0) {
+            const subjectTexts = Object.entries(d.subjectMap).map(([name, hour]) => `${name}(${hour}h)`).join(', ');
             tableHtml += `<tr>
-                <td style="font-weight:bold; background:#f8f9fa; border-left:3px solid #27ae60;">${w}주차</td>
-                <td style="text-align:left; padding-left:15px; white-space:normal;">${Array.from(d.subjects).join(', ')}</td>
-                <td style="font-weight:bold; color:#e67e22; font-size:15px; background:#fff9f0;">${d.totalHours}h</td>
+                <td style="background:#f8f9fa; border-left:4px solid #27ae60; padding:10px 2px; text-align: center;">
+                    <span style="font-weight:bold; font-size:13px;">${w}주</span><br>
+                    <span style="font-size:8px; color:#666; font-weight:normal;">(${d.period})</span>
+                </td>
+                <td style="padding:10px 15px; white-space:normal; line-height:1.6; text-align: center; word-break: keep-all;">
+                    ${subjectTexts}
+                </td>
+                <td style="font-weight:bold; color:#e67e22; font-size:14px; background:#fff9f0; text-align: center; padding: 10px 2px;">
+                    ${d.totalHours}h
+                </td>
             </tr>`;
         }
     });
     
-    if(sortedWeeks.length === 0) {
-        tableHtml += `<tr><td colspan="3" style="padding:100px; text-align:center; color:#999;">진행된 수업 데이터가 없습니다.</td></tr>`;
-    }
-
+    if(sortedWeeks.length === 0) tableHtml += `<tr><td colspan="3" style="padding:100px; color:#999;">진행된 수업 데이터가 없습니다.</td></tr>`;
     tableHtml += `</tbody></table>`;
     viewArea.innerHTML = tableHtml;
 }

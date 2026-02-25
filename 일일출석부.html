@@ -60,6 +60,14 @@ const urlParams = new URLSearchParams(window.location.search);
 let currentClass = urlParams.get('class') || "701";
 document.getElementById('dispClass').innerText = currentClass;
 
+let masterSubjectList = [];
+
+// [추가] 시작 시 교과목 리스트 미리 로드 (휴일 판별용)
+database.ref(`${currentClass}/masterData/courses`).once('value', snap => {
+    const courses = snap.val() || [];
+    masterSubjectList = [...new Set(courses.map(c => c.subject.trim()))];
+});
+
 /* [핵심 기능] 일일 출석 엑셀 업로드 및 DB 저장 */
 function uploadDailyAttendance(input) {
     const file = input.files[0];
@@ -88,23 +96,35 @@ function uploadDailyAttendance(input) {
         // 날짜 형식 정리 (YYYY-MM-DD)
         const formattedDate = attendanceDate.replace(/\./g, '-').substring(0, 10);
 
-        // [데이터 저장] 해당 날짜 경로에 학생별 기록 저장
-        // 데이터 구조: 학급/dailyAttendance/2025-08-04/학생명 = {입실, 퇴실, 상태...}
+        // [정밀 수리] 엑셀 행 데이터 분석 및 저장
         const dailyUpdate = {};
         json.forEach(row => {
             const name = row['훈련생명'] || row['성명'];
             if(name) {
+                // 입실/퇴실 시간 확보
+                let inT = row['입실시간'] || row['입실'] || "";
+                let outT = row['퇴실시간'] || row['퇴실'] || "";
+                let status = row['출결상태'] || row['상태'] || "정상";
+                
+                // [선생님 로직 적용] 엑셀의 교과목이 마스터 리스트에 있는지 확인
+                // 만약 '대체휴일'처럼 리스트에 없는 단어라면 출석 시간을 0으로 처리하거나 비고에 기록 가능
+                const rowSubject = row['교과목'] ? String(row['교과목']).trim() : "";
+                const isHoliday = rowSubject !== "" && !masterSubjectList.includes(rowSubject);
+
                 dailyUpdate[name] = {
-                    inTime: row['입실시간'] || row['입실'] || "",
-                    outTime: row['퇴실시간'] || row['퇴실'] || "",
-                    status: row['출결상태'] || row['상태'] || "정상",
-                    note: row['비고'] || ""
+                    inTime: isHoliday ? "" : inT,
+                    outTime: isHoliday ? "" : outT,
+                    status: isHoliday ? rowSubject : status, // 휴일인 경우 상태창에 휴일명 표시
+                    note: row['비고'] || (isHoliday ? "공식 휴일(수업 없음)" : "")
                 };
             }
         });
 
         database.ref(`${currentClass}/dailyAttendance/${formattedDate}`).set(dailyUpdate)
             .then(() => {
+                // [연동] 능력단위시간표 화면에서도 '체크' 표시가 뜨도록 attendance 날짜 기록
+                database.ref(`${currentClass}/attendance/${formattedDate}`).set(true);
+                
                 alert(`${formattedDate} 출석 데이터가 성공적으로 저장되었습니다.`);
                 document.getElementById('lastDate').innerText = formattedDate;
                 logUpload(formattedDate, Object.keys(dailyUpdate).length);
