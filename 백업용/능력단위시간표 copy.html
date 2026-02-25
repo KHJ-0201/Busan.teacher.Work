@@ -127,13 +127,12 @@ let dailyAttStatus = {};
 let currentMode = 'subject';
 let studentNames = ["강민성", "김남훈", "김민근", "박종현", "안제덕", "양신우", "엄태환", "우정민", "유경곤", "유지훈", "이의준", "이진명", "이태경", "이태권", "이호영", "전법보", "전태민", "정민규", "조윤기", "한도원"];
 let calYear, calMonth;
-/* [정밀 수리] 교과목 리스트 대조 방식 강화 */
+/* [정밀 수리] index.html의 교과목 리스트 대조 방식 */
 function isActualSubject(subName) {
     if (!subName || subName === "undefined" || subName === "") return false;
     
-    // [중요] 리스트가 아직 없으면 수업이 아니라고 판단(false)해야 
-    // 로딩 중에 40h로 뻥튀기되는 것을 막을 수 있습니다.
-    if (typeof masterSubjectList === 'undefined' || masterSubjectList.length === 0) return false;
+    // [보안] 만약 서버에서 아직 리스트를 못 가져왔다면, 필터링을 잠시 유보함 (달력 증발 방지)
+    if (!masterSubjectList || masterSubjectList.length === 0) return true;
     
     return masterSubjectList.some(masterSub => masterSub.trim() === subName.trim());
 }
@@ -180,7 +179,6 @@ async function initialize() {
 
             // [추가] 교과목 리스트를 다 불러왔으니, 이제 달력을 다시 그립니다.
             if(currentMode === 'calendar') renderCalendar();
-            if(currentMode === 'weekly') renderWeekly();
         }
     });
 
@@ -194,7 +192,6 @@ async function initialize() {
             calMonth = parseInt(parts[1]) - 1;
         }
         if(currentMode === 'calendar') renderCalendar();
-        if(currentMode === 'weekly') renderWeekly();
     });
 
     database.ref(`${currentClass}/attendance`).on('value', snap => {
@@ -283,44 +280,28 @@ function renderCalendar() {
 
 function renderWeekly() {
     const viewArea = document.getElementById('viewArea');
-    if (!masterSubjectList || masterSubjectList.length === 0) {
-        viewArea.innerHTML = "<p style='text-align:center; padding:50px;'>교과목 명단을 불러오는 중입니다...</p>";
-        return;
-    }
     const weeklyData = {};
     
     rawTimetable.forEach(row => {
+    const week = row.일수 ? Math.ceil(row.일수 / 5) : "기타";
+    if(!weeklyData[week]) weeklyData[week] = { am: 0, pm: 0, subjects: new Set() };
+    
+    // 1. sub 변수를 먼저 정의해야 합니다.
     const sub = row.교과목 ? String(row.교과목).trim() : "";
     const period = String(row.교시).trim();
     
-    // [수정 핵심] 진짜 수업(isActualSubject)인 경우에만 아래 로직을 태웁니다.
-    // 여기서 광복절 같은 휴일 데이터는 아예 '입구 컷' 당해야 합니다.
-    if(isActualSubject(sub) && period !== "점심" && !isNaN(period)) {
-        
-        // 주차 계산
-        const week = row.일수 ? Math.ceil(row.일수 / 5) : "기타";
-        if(!weeklyData[week]) weeklyData[week] = { am: 0, pm: 0, subjects: new Set() };
-        
-        // 오전/오후 합산
-        if(['1','2','3','4'].includes(period)) weeklyData[week].am += 60;
-        else if(['5','6','7','8'].includes(period)) weeklyData[week].pm += 60;
-        
-        // 과목 리스트 기록
-        weeklyData[week].subjects.add(sub);
-    }
-});
-    let tableHtml = `<table class="attendance-table"><thead><tr><th>주차</th><th>관련 교과목</th><th>오전(분)</th><th>오후(분)</th><th>주간 합계</th></tr></thead><tbody>`;
-    
-    // [정렬 추가] 주차 순서대로 정렬하여 출력
-    const sortedWeeks = Object.keys(weeklyData).sort((a, b) => {
-        if(a === "기타") return 1;
-        if(b === "기타") return -1;
-        return parseInt(a) - parseInt(b);
-    });
+    // 2. 이제 sub를 사용할 수 있습니다.
+    if(!isActualSubject(sub) || period === "점심" || isNaN(period)) return;
 
-    sortedWeeks.forEach(w => {
+    if(['1','2','3','4'].includes(period)) weeklyData[week].am += 60;
+    else if(['5','6','7','8'].includes(period)) weeklyData[week].pm += 60;
+    if(sub) weeklyData[week].subjects.add(sub); // row.교과목 대신 정의한 sub 사용
+});
+
+    let tableHtml = `<table class="attendance-table"><thead><tr><th>주차</th><th>관련 교과목</th><th>오전(분)</th><th>오후(분)</th><th>주간 합계</th></tr></thead><tbody>`;
+    Object.keys(weeklyData).forEach(w => {
         const d = weeklyData[w];
-        tableHtml += `<tr><td>${w === "기타" ? w : w + "주차"}</td><td style="text-align:left;">${Array.from(d.subjects).join(', ')}</td><td>${d.am}</td><td>${d.pm}</td><td>${(d.am+d.pm)/60}h</td></tr>`;
+        tableHtml += `<tr><td>${w}주차</td><td style="text-align:left;">${Array.from(d.subjects).join(', ')}</td><td>${d.am}</td><td>${d.pm}</td><td>${(d.am+d.pm)/60}h</td></tr>`;
     });
     tableHtml += `</tbody></table>`;
     viewArea.innerHTML = tableHtml;
