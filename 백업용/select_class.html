@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반 선택 | 자동차 교육과정 통합 관리 시스템</title>
+    <style>
+        body { font-family: 'Malgun Gothic', sans-serif; background: #2c3e50; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; padding: 20px; }
+        .selector-container { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.2); text-align: center; width: 100%; max-width: 500px; }
+        h1 { color: #2c3e50; margin-bottom: 30px; font-size: 24px; border-bottom: 3px solid #3498db; padding-bottom: 10px; }
+        .class-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .class-btn { 
+            padding: 15px; border: 2px solid #3498db; border-radius: 10px; background: white; 
+            color: #3498db; font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.3s;
+        }
+        .class-btn:hover { background: #3498db; color: white; transform: translateY(-3px); }
+        .btn-test { grid-column: span 2; background: #f8f9fa; border-color: #95a5a6; color: #7f8c8d; }
+        .btn-test:hover { background: #95a5a6; color: white; }
+        .footer { margin-top: 25px; font-size: 12px; color: #7f8c8d; }
+    </style>
+</head>
+<body>
+
+<div class="selector-container">
+    <h1>🚗 관리 학급 선택</h1>
+    <div class="class-grid">
+        <button class="class-btn" onclick="goToMain('501반')">501반</button>
+        <button class="class-btn" onclick="goToMain('601반')">601반</button>
+        <button class="class-btn" onclick="goToMain('602반')">602반</button>
+        <button class="class-btn" onclick="goToMain('603반')">603반</button>
+        <button class="class-btn" onclick="goToMain('701반')">701반</button>
+        <button class="class-btn" onclick="goToMain('702반')">702반</button>
+        <button class="class-btn" onclick="goToMain('703반')">703반</button>
+        <button class="class-btn btn-test" onclick="goToMain('테스트')">🛠️ 테스트 모드</button>
+    </div>
+    <p class="footer">부산 자동차 교육과정 통합 시스템 v1.1</p>
+</div>
+
+<script>
+    function goToMain(className) {
+        window.location.href = `index.html?class=${encodeURIComponent(className)}`;
+    }
+</script>
+
+</body>
+</html>

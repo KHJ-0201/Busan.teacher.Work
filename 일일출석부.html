@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일일 출석 기록 등록 | 자동차 교육과정 통합 시스템</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <style>
+        body { font-family: 'Malgun Gothic', sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; color: #333; }
+        .container { max-width: 900px; margin: 0 auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
+        .header { border-bottom: 3px solid #e67e22; padding-bottom: 15px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; }
+        .upload-section { background: #fff5e6; padding: 20px; border-radius: 10px; border: 1.5px dashed #e67e22; text-align: center; margin-bottom: 30px; }
+        .status-box { background: #f8f9fa; padding: 15px; border-radius: 8px; border: 1px solid #dee2e6; margin-top: 20px; }
+        .btn { padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        .btn-main { background: #e67e22; color: white; }
+        .btn-nav { background: #34495e; color: white; text-decoration: none; font-size: 14px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 13px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: center; }
+        th { background: #f8f9fa; }
+        .highlight { color: #e67e22; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h2 style="margin:0; color:#e67e22;">📅 일일 출석 데이터 등록</h2>
+        <a href="#" class="btn btn-nav" onclick="location.href='index.html?class=' + currentClass">◀ 메인으로</a>
+    </div>
+
+    <div class="upload-section">
+        <p style="margin-top:0;"><strong>[일일 출석부 엑셀 업로드]</strong></p>
+        <input type="file" id="dailyExcel" accept=".xlsx, .xls" onchange="uploadDailyAttendance(this)">
+        <p style="font-size: 12px; color: #666; margin-top: 10px;">※ 학생별 입실/퇴실 시간, 공가, 지각 기록이 담긴 파일을 올려주세요.</p>
+    </div>
+
+    <div class="status-box">
+        <p><strong>현재 학급:</strong> <span id="dispClass" class="highlight">-</span></p>
+        <p><strong>최근 등록된 일자:</strong> <span id="lastDate" class="highlight">없음</span></p>
+        <div id="uploadLog" style="font-size: 12px; color: #555; max-height: 200px; overflow-y: auto;">
+            등록 대기 중...
+        </div>
+    </div>
+</div>
+
+<script>
+// Firebase 설정 (기존 설정 유지)
+const firebaseConfig = {
+    apiKey: "AIzaSyCO37zrsZEjKTokMCNWbIc1C_o5BZMqh8E",
+    authDomain: "busan-teacher-work.firebaseapp.com",
+    databaseURL: "https://busan-teacher-work-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "busan-teacher-work",
+    storageBucket: "busan-teacher-work.firebasestorage.app"
+};
+if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
+const database = firebase.database();
+const urlParams = new URLSearchParams(window.location.search);
+let currentClass = urlParams.get('class') || "701";
+document.getElementById('dispClass').innerText = currentClass;
+
+/* [핵심 기능] 일일 출석 엑셀 업로드 및 DB 저장 */
+function uploadDailyAttendance(input) {
+    const file = input.files[0];
+    if(!file) return;
+
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        const data = new Uint8Array(e.target.result);
+        const workbook = XLSX.read(data, {type: 'array', raw: false});
+        const sheet = workbook.Sheets[workbook.SheetNames[0]];
+        const json = XLSX.utils.sheet_to_json(sheet);
+
+        if(json.length === 0) {
+            alert("파일에 데이터가 없습니다.");
+            return;
+        }
+
+        // 파일 내에 있는 '날짜'를 확인 (첫 번째 행 기준)
+        let attendanceDate = json[0]['날짜'] || json[0]['일자'];
+        if(!attendanceDate) {
+            attendanceDate = prompt("파일에서 날짜를 찾을 수 없습니다. 해당 출석일자를 입력하세요 (예: 2025-08-04)", "");
+        }
+        
+        if(!attendanceDate) return;
+
+        // 날짜 형식 정리 (YYYY-MM-DD)
+        const formattedDate = attendanceDate.replace(/\./g, '-').substring(0, 10);
+
+        // [데이터 저장] 해당 날짜 경로에 학생별 기록 저장
+        // 데이터 구조: 학급/dailyAttendance/2025-08-04/학생명 = {입실, 퇴실, 상태...}
+        const dailyUpdate = {};
+        json.forEach(row => {
+            const name = row['훈련생명'] || row['성명'];
+            if(name) {
+                dailyUpdate[name] = {
+                    inTime: row['입실시간'] || row['입실'] || "",
+                    outTime: row['퇴실시간'] || row['퇴실'] || "",
+                    status: row['출결상태'] || row['상태'] || "정상",
+                    note: row['비고'] || ""
+                };
+            }
+        });
+
+        database.ref(`${currentClass}/dailyAttendance/${formattedDate}`).set(dailyUpdate)
+            .then(() => {
+                alert(`${formattedDate} 출석 데이터가 성공적으로 저장되었습니다.`);
+                document.getElementById('lastDate').innerText = formattedDate;
+                logUpload(formattedDate, Object.keys(dailyUpdate).length);
+            })
+            .catch(err => alert("저장 실패: " + err));
+    };
+    reader.readAsArrayBuffer(file);
+}
+
+function logUpload(date, count) {
+    const log = document.getElementById('uploadLog');
+    const entry = document.createElement('div');
+    entry.style.borderBottom = "1px solid #eee";
+    entry.style.padding = "5px 0";
+    entry.innerText = `[${new Date().toLocaleTimeString()}] ${date} - ${count}명 완료`;
+    log.prepend(entry);
+}
+</script>
+</body>
+</html>

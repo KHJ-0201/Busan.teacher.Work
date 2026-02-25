@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>능력단위 출석부 | 자동차 교육과정 통합 시스템</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    
+    <style>
+        /* [DESIGN_FIXED] 선생님이 요청하신 엑셀 시안성 유지 */
+        body { font-family: 'Malgun Gothic', sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; color: #333; }
+        .excel-container { max-width: 100%; background: white; padding: 30px; border-radius: 5px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .excel-header-title { text-align: center; font-size: 24px; font-weight: bold; text-decoration: underline; margin-bottom: 20px; }
+        .excel-info-table { width: 100%; border: 2px solid #27ae60; background: #fff; margin-bottom: 20px; border-collapse: collapse; }
+        .excel-info-table td { border: 1px solid #ccc; padding: 10px; font-size: 13px; }
+        .info-label { background: #f0faf3; font-weight: bold; width: 120px; text-align: center; }
+        .info-value { color: #27ae60; font-weight: bold; }
+        .scroll-box { max-height: 700px; overflow: auto; border: 1px solid #ccc; position: relative; }
+        .attendance-table { width: 100%; border-collapse: collapse; font-size: 11px; white-space: nowrap; }
+        .attendance-table th { background: #f2f2f2; border: 1px solid #999; padding: 5px; position: sticky; top: 0; z-index: 40; }
+        .sub-header { top: 31px !important; z-index: 35 !important; background: #fafafa !important; }
+        .sticky-col { position: sticky; left: 0; background: #f9f9f9 !important; z-index: 50; border-right: 2px solid #27ae60 !important; font-weight: bold; text-align: center; }
+        .attendance-table td { border: 1px solid #ccc; padding: 6px; text-align: center; }
+        .total-section { background: #fff9f0 !important; font-weight: bold; border-left: 2px solid #e67e22 !important; }
+        .btn-nav { padding: 8px 15px; background: white; border: 1.5px solid #3498db; border-radius: 4px; cursor: pointer; text-decoration: none; color: #3498db; font-weight: bold; font-size: 13px; }
+    </style>
+</head>
+<body>
+
+<div class="excel-container">
+    <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+        <a href="#" class="btn-nav" onclick="location.href='index.html?class=' + currentClass">◀ 교과목 설정(메인)으로</a>
+        <div style="font-weight:bold; color:#27ae60;">[ 학급: <span id="dispClass">-</span> ]</div>
+    </div>
+
+    <div class="excel-header-title">능력단위 출석부</div>
+
+    <table class="excel-info-table">
+        <tr>
+            <td class="info-label">① 훈련과정 :</td><td class="info-value" id="infoCourse">-</td>
+            <td class="info-label">② 훈련기간 :</td><td class="info-value" id="infoPeriod">-</td>
+        </tr>
+        <tr>
+            <td class="info-label">③ 교과목명 :</td>
+            <td class="info-value">
+                <select id="subjectSelect" onchange="filterTimetable(this.value)" style="width:100%; padding:5px; font-weight:bold; border:1px solid #27ae60;">
+                    <option value="">교과목을 선택하세요</option>
+                </select>
+            </td>
+            <td class="info-label">④ 담당교사 :</td><td class="info-value" id="infoTeacher">-</td>
+        </tr>
+    </table>
+
+    <div style="background:#f0f7ff; padding:15px; border-radius:5px; border:1px solid #3498db; margin-bottom:20px;">
+        <strong>📂 시간표(행수정.xlsx) 업로드: </strong>
+        <input type="file" id="timetableFile" accept=".xlsx, .xls" onchange="processFile(this)">
+        <p style="margin-top:5px; font-size:11px; color:#666;">※ 메인 설정에서 확정된 교과목 리스트를 기준으로 잡음(휴일 등)을 필터링합니다.</p>
+    </div>
+
+    <div class="scroll-box">
+        <table class="attendance-table">
+            <thead id="sheetHead"></thead>
+            <tbody id="sheetBody">
+                <tr><td colspan="10" style="padding:100px; color:#999; text-align:center;">교과목을 선택하고 시간표 파일을 업로드해 주세요.</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+const firebaseConfig = {
+    apiKey: "AIzaSyCO37zrsZEjKTokMCNWbIc1C_o5BZMqh8E",
+    authDomain: "busan-teacher-work.firebaseapp.com",
+    databaseURL: "https://busan-teacher-work-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "busan-teacher-work",
+    storageBucket: "busan-teacher-work.firebasestorage.app"
+};
+if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
+const database = firebase.database();
+const urlParams = new URLSearchParams(window.location.search);
+let currentClass = urlParams.get('class') || "701";
+document.getElementById('dispClass').innerText = currentClass;
+
+let masterSubjectList = []; // index.html에서 허가한 교과목 리스트
+let rawTimetable = [];
+let studentNames = ["강민성", "김남훈", "김민근", "박종현", "안제덕", "양신우", "엄태환", "우정민", "유경곤", "유지훈", "이의준", "이진명", "이태경", "이태권", "이호영", "전법보", "전태민", "정민규", "조윤기", "한도원"];
+/* [수정] 페이지 로드 시 서버에서 박제된 시간표 자동 동기화 */
+document.addEventListener('DOMContentLoaded', () => {
+    // 서버에서 시간표 원본을 가져옵니다.
+    database.ref(`${currentClass}/fullTimetable`).once('value', snap => {
+        const data = snap.val();
+        if(data) {
+            rawTimetable = data; // 서버 데이터를 전역 변수에 저장
+            console.log("✅ 서버 시간표 동기화 완료");
+        } else {
+            console.log("❌ 저장된 시간표가 없습니다.");
+        }
+    });
+});
+/* [필터 연동] index.html의 확정 데이터 로드 */
+function loadMasterConfig() {
+    database.ref(`${currentClass}/masterData`).once('value', snap => {
+        const d = snap.val() || {};
+        document.getElementById('infoCourse').innerText = d.name || "-";
+        document.getElementById('infoPeriod').innerText = d.period || "-";
+        document.getElementById('infoTeacher').innerText = d.teacher || "-";
+        
+        // index.html에서 저장한 교과목들만 추출 (필터 역할)
+        if(d.courses) {
+            masterSubjectList = [...new Set(d.courses.map(c => c.subject))];
+            const select = document.getElementById('subjectSelect');
+            select.innerHTML = '<option value="">분석할 교과목 선택</option>';
+            masterSubjectList.forEach(sub => {
+                const opt = document.createElement('option');
+                opt.value = sub; opt.innerText = sub;
+                select.appendChild(opt);
+            });
+        }
+    });
+}
+loadMasterConfig();
+
+/* [수정] 데이터 스캔: 날짜 시차 오류를 잡기 위해 텍스트 그대로 가져오도록 설정 */
+function processFile(input) {
+    const file = input.files[0];
+    if(!file) return;
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        const data = new Uint8Array(e.target.result);
+        // cellDates: false (기본값)를 사용하여 엑셀이 날짜를 Date 객체로 멋대로 바꾸지 않게 합니다.
+        const workbook = XLSX.read(data, {type: 'array'});
+        const sheet = workbook.Sheets[workbook.SheetNames[0]];
+        // raw: false 설정을 통해 엑셀 셀에 보이는 '텍스트' 그대로를 강제로 가져옵니다.
+        rawTimetable = XLSX.utils.sheet_to_json(sheet, { raw: false });
+        alert("시간표 분석 완료! 교과목을 선택하면 필터링된 결과가 나타납니다.");
+    };
+    reader.readAsArrayBuffer(file);
+}
+
+/* [최종 교정] 날짜를 계산하지 않고 텍스트 그대로 쪼개서 년-월-일로 조립하는 방식 */
+function filterTimetable(selectedSub) {
+    if(!selectedSub || rawTimetable.length === 0) {
+        alert("시간표 데이터가 없습니다. 메인에서 먼저 등록하거나 파일을 업로드하세요.");
+        return;
+    }
+
+    const filteredRows = rawTimetable.filter(r => r['교과목'] === selectedSub);
+    const dateMap = {};
+
+    filteredRows.forEach(row => {
+        let dateKey = "날짜미상";
+        
+        if (row['날짜']) {
+            // 엑셀에서 가져온 텍스트 그대로를 사용합니다 (계산 절대 금지)
+            let s = String(row['날짜']).trim();
+            
+            // 1. 월/일/년(미국식) 혹은 일/월/년 형식일 경우 대비
+            if (s.includes('/')) {
+                let parts = s.split('/');
+                if (parts.length === 3) {
+                    let mm = parts[0].padStart(2, '0');
+                    let dd = parts[1].padStart(2, '0');
+                    let yy = parts[2];
+                    if (yy.length === 2) yy = "20" + yy; // 25 -> 2025 보정
+                    // 미국식(MM/DD/YYYY)이라고 가정하고 YYYY-MM-DD로 재조립
+                    dateKey = `${yy}-${mm}-${dd}`;
+                }
+            } 
+            // 2. 년.월.일 형식인 경우
+            else if (s.includes('.')) {
+                dateKey = s.replace(/\./g, '-').substring(0, 10);
+            }
+            // 3. 이미 년-월-일 형식인 경우
+            else if (s.includes('-')) {
+                // 시차 계산으로 인해 T15:00:00Z 등이 붙었을 경우를 대비해 앞 10자만 자름
+                dateKey = s.substring(0, 10);
+            }
+            else {
+                dateKey = s;
+            }
+        }
+        
+        if(!dateMap[dateKey]) dateMap[dateKey] = { am: 0, pm: 0 };
+        
+        const period = String(row['교시']).trim();
+        if(['1','2','3','4'].includes(period)) {
+            dateMap[dateKey].am += 60;
+        } else if(['5','6','7','8'].includes(period)) {
+            dateMap[dateKey].pm += 60;
+        }
+    });
+
+    // 날짜별로 정렬 (YYYY-MM-DD 형식이라 문자열 정렬만으로도 순서가 맞습니다)
+    const targetDates = Object.keys(dateMap).sort();
+    renderExcelSheet(targetDates, dateMap);
+}
+
+function renderExcelSheet(dates, info) {
+    const thead = document.getElementById('sheetHead');
+    const tbody = document.getElementById('sheetBody');
+
+    // 헤더 (날짜 + 오전/오후 2단 구조)
+    let h1 = `<tr><th rowspan="2" class="sticky-col">훈련생명</th>`;
+    let h2 = `<tr>`;
+    dates.forEach(d => {
+        h1 += `<th colspan="2">${d}</th>`;
+        h2 += `<th class="sub-header">오전</th><th class="sub-header">오후</th>`;
+    });
+    h1 += `<th colspan="2" class="total-section">누계</th><th rowspan="2" class="total-section">이수여부</th></tr>`;
+    h2 += `<th class="sub-header total-section">분</th><th class="sub-header total-section">시간</th></tr>`;
+    thead.innerHTML = h1 + h2;
+
+    tbody.innerHTML = '';
+    studentNames.forEach(name => {
+        let rowHtml = `<td class="sticky-col">${name}</td>`;
+        let totalMin = 0;
+        dates.forEach(d => {
+            const am = info[d].am || 0;
+            const pm = info[d].pm || 0;
+            rowHtml += `<td>${am || ""}</td><td>${pm || ""}</td>`;
+            totalMin += (am + pm);
+        });
+        rowHtml += `<td class="total-section">${totalMin}</td><td class="total-section">${(totalMin/60).toFixed(1)}h</td><td class="total-section">이수</td>`;
+        const tr = document.createElement('tr');
+        tr.innerHTML = rowHtml;
+        tbody.appendChild(tr);
+    });
+}
+</script>
+</body>
+</html>
