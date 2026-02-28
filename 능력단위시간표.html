@@ -510,7 +510,7 @@ async function loadDetailInto(selectedSub, headId, bodyId, mode = 'real') {
 
 function renderFinalTable(dates, results, masterSchedule, dateWithDay, headId, bodyId, selectedSub, mode) {
     const thead = document.getElementById(headId), tbody = document.getElementById(bodyId);
-    if (!thead || !tbody) return; // 요소가 없으면 중단
+    if (!thead || !tbody) return;
 
     // [중요] 인쇄/엑셀용 표인 경우 버튼 생성 로직 건너뛰기
     if (headId !== 'pHead') { 
@@ -541,7 +541,20 @@ function renderFinalTable(dates, results, masterSchedule, dateWithDay, headId, b
     let masterTotal = 0;
     dates.forEach(d => masterTotal += (masterSchedule[d].am + masterSchedule[d].pm));
 
-    let html = studentNames.map(name => {
+    // [복구] 최상단 편성 시간(기준 시간) 행 생성
+    let masterRowHtml = `<tr style="background:#f1f8e9; font-weight:bold; color:#2e7d32;">
+        <td class="sticky-col">[편성 시간]</td>`;
+    dates.forEach(d => {
+        masterRowHtml += `<td>${masterSchedule[d].am}</td><td>${masterSchedule[d].pm}</td>`;
+    });
+    masterRowHtml += `<td style="background:#e8f5e9;">-</td>
+        <td>${masterTotal}</td>
+        <td>${(masterTotal/60).toFixed(1)}h</td>
+        <td style="color:#2e7d32;">100%</td>
+    </tr>`;
+
+    // 학생 데이터 생성
+    let studentHtml = studentNames.map(name => {
         let rowTotalMin = 0;
         let dateCells = "";
         
@@ -573,7 +586,6 @@ function renderFinalTable(dates, results, masterSchedule, dateWithDay, headId, b
         const percent = ((finalTotalMin / masterTotal) * 100).toFixed(1);
         const statusStyle = percent < 75 ? "color:red;" : "color:green;";
 
-        // 인쇄/엑셀 모드일 때는 input 대신 텍스트로 출력 (가독성 향상)
         const makeupDisplay = (headId === 'pHead') ? makeupMin : `<input type="number" class="edit-input makeup-input makeup-${name}" data-name="${name}" data-sub="${selectedSub}" value="${makeupMin}" oninput="this.classList.add('manual-modified'); calculateRowPercent('${name}', ${masterTotal})" style="width:100%;">`;
 
         return `<tr>
@@ -586,7 +598,8 @@ function renderFinalTable(dates, results, masterSchedule, dateWithDay, headId, b
         </tr>`;
     }).join('');
 
-    tbody.innerHTML = html;
+    // [편성 시간] 행과 학생 데이터 합쳐서 출력
+    tbody.innerHTML = masterRowHtml + studentHtml;
 }
 
 
