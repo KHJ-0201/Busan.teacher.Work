@@ -8,8 +8,46 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
     <style>
-        body { font-family: 'Malgun Gothic', sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; color: #333; }
-        .container { max-width: 1200px; margin: 0 auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
+        body { 
+            font-family: 'Malgun Gothic', sans-serif; 
+            background-color: #f4f7f6; 
+            margin: 0; 
+            padding: 0; /* 바디 자체 여백은 제거하고 컨테이너에서 조절 */
+            color: #333; 
+        }
+
+        /* 2. 메인 컨테이너: 좌우 여백 및 중앙 정렬 핵심 */
+        .container { 
+            /* 최대 너비를 1200px로 설정 (표가 길기 때문에 약간 넉넉히 잡았습니다) */
+            max-width: 1200px; 
+            /* 위아래 40px 여백, 좌우는 자동으로 중앙 배치 (좌우 여백 생성) */
+            margin: 40px auto; 
+            background: white; 
+            /* 박스 내부 안쪽 여백 */
+            padding: 40px; 
+            border-radius: 15px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+            /* 내용물이 박스를 넘치지 않게 보호 */
+            box-sizing: border-box; 
+        }
+
+        /* 3. 모바일/작은 화면 대응 (반응형 여백) */
+        @media (max-width: 1240px) {
+            .container {
+                margin: 20px; /* 화면이 작아지면 좌우 여백을 고정 수치로 변경 */
+                max-width: calc(100% - 40px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 20px; /* 모바일에서는 내부 여백을 줄여 공간 확보 */
+                max-width: calc(100% - 20px);
+            }
+            .header { flex-direction: column; gap: 15px; align-items: flex-start; }
+            .header-btns { width: 100%; justify-content: space-between; flex-wrap: wrap; }
+        }
         .header { border-bottom: 3px solid #e67e22; padding-bottom: 15px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; }
         .header-btns { display: flex; gap: 10px; align-items: center; }
         .info-bar { background: #fff5e6; padding: 15px; border-radius: 10px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #e67e22; }
@@ -46,8 +84,7 @@
 </head>
 <body>
 
-<div class="container">
-    <div class="header">
+<div class="container"> <div class="header">
         <h2 style="margin:0; color:#e67e22;">📅 일일 출석 데이터 관리</h2>
         <div class="header-btns">
             <button class="btn btn-info" onclick="scrollToFirstEmpty()">🔍 출석부 미등록 찾기</button>
@@ -60,7 +97,6 @@
         <span style="font-size: 11px; color: #999; margin-right: 10px;">데이터를 모두 지워야 할 경우만 사용하세요 ➔</span>
         <button class="btn btn-danger-outline" onclick="clearAllAttendance()">🧹 전체 데이터 초기화</button>
     </div>
-</div>
 
     <div class="info-bar">
         <div><strong>학급:</strong> <span id="dispClass" class="highlight">-</span></div>
@@ -89,9 +125,7 @@
             </table>
         </div>
     </div>
-</div>
-
-<input type="file" id="hiddenFileInput" accept=".xlsx, .xls" onchange="handleFileSelect(this)">
+</div> <input type="file" id="hiddenFileInput" accept=".xlsx, .xls" onchange="handleFileSelect(this)">
 
 <script>
 const firebaseConfig = {
