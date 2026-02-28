@@ -440,7 +440,8 @@ function toggleDetail(boxId, subName) {
     }
 }
 
-async function loadDetailInto(selectedSub, headId, bodyId, mode = 'real') {
+async function loadDetailInto(selectedSub, headId, bodyId) {
+    // 현재 모드(과목/능력단위)에 따라 선택된 항목과 일치하는 날짜들만 추출합니다.
     const dates = [...new Set(rawTimetable.filter(r => {
         const targetVal = currentMode === 'subject' ? String(r.교과목 || "") : String(r.능력단위 || "");
         return targetVal.trim() === selectedSub;
@@ -450,123 +451,94 @@ async function loadDetailInto(selectedSub, headId, bodyId, mode = 'real') {
     const manualData = manualSnap.val() || {};
     
     const studentResults = {}, masterSchedule = {}, dateWithDay = {}, weekDays = ['일','월','화','수','목','금','토'];
-    studentNames.forEach(name => studentResults[name] = { dates: {}, totalMin: 0, makeupMin: 0 });
-
+    
+    studentNames.forEach(name => studentResults[name] = { dates: {}, totalMin: 0 });
+    
     dates.forEach(date => {
         dateWithDay[date] = date + " (" + weekDays[new Date(date).getDay()] + ")";
-        masterSchedule[date] = calculateParticipation(date, "09:00", "17:30", selectedSub, "", "");
+        masterSchedule[date] = calculateParticipation(date, "09:00", "17:30", selectedSub, "", ""); // 규정 시간으로 편성 시간 산출
         
         studentNames.forEach(name => {
             const att = (fullAttendanceData[date] && fullAttendanceData[date][name]) ? fullAttendanceData[date][name] : null;
-            let calc = { am: 0, pm: 0, isFuture: !att }; 
-
-            if (att && att.inTime && att.outTime) {
-                calc = calculateParticipation(date, att.inTime, att.outTime, selectedSub, att.leaveTime || "", att.returnTime || "");
-                calc.isFuture = false;
+            
+            // [대소문자/띄어쓰기 정밀 수리] 일일출석부 송신 규격과 완벽 일치
+            let inT = att ? (att.inTime || "") : "";
+            let outT = att ? (att.outTime || "") : "";
+            let leaveT = att ? (att.leaveTime || "") : "";
+            let returnT = att ? (att.returnTime || "") : "";
+            
+            let calc = { am: 0, pm: 0 };
+            if (inT && outT) {
+                // selectedSub가 과목명일수도, 능력단위명일수도 있으므로 엔진에 그대로 전달합니다.
+                calc = calculateParticipation(date, inT, outT, selectedSub, leaveT, returnT);
             }
+            
             if (manualData[name] && manualData[name][date]) {
                 if (manualData[name][date].am !== undefined) { calc.am = manualData[name][date].am; calc.am_manual = true; }
                 if (manualData[name][date].pm !== undefined) { calc.pm = manualData[name][date].pm; calc.pm_manual = true; }
-                calc.isFuture = false;
-            }
-            if (manualData[name] && manualData[name][`makeup_${selectedSub}`]) {
-                studentResults[name].makeupMin = parseInt(manualData[name][`makeup_${selectedSub}`]) || 0;
             }
             studentResults[name].dates[date] = calc; 
+            studentResults[name].totalMin += (calc.am + calc.pm);
         });
     });
-    // 여기서 headId와 bodyId가 인쇄용 아이디(pHead, pBody)인지 확인하고 출력합니다.
-    renderFinalTable(dates, studentResults, masterSchedule, dateWithDay, headId, bodyId, selectedSub, mode);
+    renderFinalTable(dates, studentResults, masterSchedule, dateWithDay, headId, bodyId);
 }
 
-function renderFinalTable(dates, results, masterSchedule, dateWithDay, headId, bodyId, selectedSub, mode) {
+function renderFinalTable(dates, results, masterSchedule, dateWithDay, headId, bodyId) {
     const thead = document.getElementById(headId), tbody = document.getElementById(bodyId);
-    if (!thead || !tbody) return; // 요소가 없으면 중단
-
-    // [중요] 인쇄/엑셀용 표인 경우 버튼 생성 로직 건너뛰기
-    if (headId !== 'pHead') { 
-        const parentBox = thead.closest('.detail-view');
-        if (parentBox) {
-            const legendArea = parentBox.querySelector('div[style*="justify-content: flex-end"]');
-            if (legendArea) {
-                const btnHtml = mode === 'real' 
-                    ? `<button class="ctrl-btn" onclick="loadDetailInto('${selectedSub}', '${headId}', '${bodyId}', 'sim')" style="background:#8e44ad; font-size:11px; padding:5px 10px; margin-right:10px;">🔮 남은일수 출결률 보기</button>`
-                    : `<button class="ctrl-btn" onclick="loadDetailInto('${selectedSub}', '${headId}', '${bodyId}', 'real')" style="background:#34495e; font-size:11px; padding:5px 10px; margin-right:10px;">⏪ 실제 출결만 보기</button>`;
-
-                const existingBtn = legendArea.querySelector('.ctrl-btn:not([onclick*="saveManualAttendance"])');
-                if(existingBtn) existingBtn.remove();
-                legendArea.insertAdjacentHTML('afterbegin', btnHtml);
-            }
-        }
-    }
-
-    // 테이블 헤더 구성 (누계 및 출석률 포함)
+    const cellWidth = 60; 
+    let colHtml = `<colgroup><col style="width: 100px;">`;
+    dates.forEach(() => colHtml += `<col style="width: ${cellWidth}px;"><col style="width: ${cellWidth}px;">`);
+    colHtml += `<col style="width: 60px;"><col style="width: 60px;"></colgroup>`;
     let h1 = `<tr><th rowspan="2" class="sticky-col">훈련생명</th>`;
     let h2 = `<tr>`;
     dates.forEach(d => { h1 += `<th colspan="2" style="background:#f8f9fa;">${dateWithDay[d]}</th>`; h2 += `<th>오전</th><th>오후</th>`; });
-    h1 += `<th rowspan="2" style="background:#e3f2fd; width:55px;">보강(분)</th>`;
-    h1 += `<th colspan="2">누계</th><th rowspan="2" style="width:70px;">출석률</th></tr>`; 
-    h2 += `<th>분</th><th>시간</th></tr>`;
-    thead.innerHTML = h1 + h2;
-
+    h1 += `<th colspan="2">누계</th></tr>`; h2 += `<th>분</th><th>시간</th></tr>`;
+    thead.innerHTML = colHtml + h1 + h2;
+    let masterRow = `<tr style="background:#fff9f0; font-weight:bold; color:#e67e22;"><td class="sticky-col">[편성 시간]</td>`;
     let masterTotal = 0;
-    dates.forEach(d => masterTotal += (masterSchedule[d].am + masterSchedule[d].pm));
-
-    let html = studentNames.map(name => {
-        let rowTotalMin = 0;
-        let dateCells = "";
-        
+    dates.forEach(d => { masterRow += `<td>${masterSchedule[d].am}</td><td>${masterSchedule[d].pm}</td>`; masterTotal += (masterSchedule[d].am + masterSchedule[d].pm); });
+    masterRow += `<td>${masterTotal}</td><td>${(masterTotal/60).toFixed(1)}h</td></tr>`;
+    let studentRows = studentNames.map(name => {
+        let row = `<td class="sticky-col">${name}</td>`;
         dates.forEach(d => {
-            const res = results[name].dates[d];
+            // 1. 파이어베이스에서 해당 날짜와 학생의 출결 정보를 먼저 가져옵니다.
             const attInfo = (fullAttendanceData[d] && fullAttendanceData[d][name]) ? fullAttendanceData[d][name] : {};
-            let amV = res.am;
-            let pmV = res.pm;
-            let cellClass = "";
+            
+            // 2. 상태(st)와 입실시간(inT)을 정의합니다.
+            const st = attInfo.status || "";
+            let inT = attInfo.inTime || "00:00:00";
+            
+            // [지각 판독 엔진] 09:00:00보다 1초라도 늦으면 노란색을 입히기 위한 계산
+            // "09:07:00" -> 90700 처럼 숫자로 바꿔서 비교합니다.
+            const inTimeValue = parseInt(inT.replace(/:/g, '')) || 0;
+            const isLateIn = inTimeValue > 90000 && inTimeValue < 130000; 
 
-            if (mode === 'sim' && res.isFuture) {
-                amV = masterSchedule[d].am;
-                pmV = masterSchedule[d].pm;
-                cellClass = "status-special"; 
-            } else {
-                const st = attInfo.status || "";
-                const inT = attInfo.inTime || "00:00:00";
-                if (st.includes("지각") || st.includes("조퇴") || (parseInt(inT.replace(/:/g, '')) > 90000 && parseInt(inT.replace(/:/g, '')) < 130000)) cellClass = "status-late";
-                else if (st.includes("외출")) cellClass = "status-out";
-                else if (st.includes("결석")) cellClass = "status-absent";
-                else if (st.includes("휴가") || st.includes("공가") || st.includes("기타")) cellClass = "status-special";
+            // 3. 상태별 색상 클래스 결정
+            let colorClass = "";
+            if (st.includes("지각") || st.includes("조퇴") || isLateIn) {
+                colorClass = "status-late"; // 노란색 적용
+            } else if (st.includes("외출")) {
+                colorClass = "status-out";
+            } else if (st.includes("결석")) {
+                colorClass = "status-absent";
+            } else if (st.includes("휴가") || st.includes("공가") || st.includes("기타") || st.includes("경조사") || st.includes("출석인정")) {
+                colorClass = "status-special";
             }
-            rowTotalMin += (amV + pmV);
-            dateCells += `<td class="${cellClass}">${amV}</td><td class="${cellClass}">${pmV}</td>`;
+
+            const amValue = (results[name].dates[d] && results[name].dates[d].am !== undefined) ? results[name].dates[d].am : "";
+            const pmValue = (results[name].dates[d] && results[name].dates[d].pm !== undefined) ? results[name].dates[d].pm : "";
+            
+            const isAmManual = (results[name].dates[d] && results[name].dates[d].am_manual) ? "manual-modified" : "";
+            const isPmManual = (results[name].dates[d] && results[name].dates[d].pm_manual) ? "manual-modified" : "";
+
+            row += `<td class="${colorClass}"><input type="number" class="edit-input am-input-${name} ${isAmManual}" data-name="${name}" data-date="${d}" data-type="am" value="${amValue}" oninput="updateStudentTotal('${name}', this)"></td>`;
+            row += `<td class="${colorClass}"><input type="number" class="edit-input pm-input-${name} ${isPmManual}" data-name="${name}" data-date="${d}" data-type="pm" value="${pmValue}" oninput="updateStudentTotal('${name}', this)"></td>`;
         });
-
-        const makeupMin = results[name].makeupMin;
-        const finalTotalMin = rowTotalMin + makeupMin;
-        const percent = ((finalTotalMin / masterTotal) * 100).toFixed(1);
-        const statusStyle = percent < 75 ? "color:red;" : "color:green;";
-
-        // 인쇄/엑셀 모드일 때는 input 대신 텍스트로 출력 (가독성 향상)
-        const makeupDisplay = (headId === 'pHead') ? makeupMin : `<input type="number" class="edit-input makeup-input makeup-${name}" data-name="${name}" data-sub="${selectedSub}" value="${makeupMin}" oninput="this.classList.add('manual-modified'); calculateRowPercent('${name}', ${masterTotal})" style="width:100%;">`;
-
-        return `<tr>
-            <td class="sticky-col">${name}</td>
-            ${dateCells}
-            <td style="background:#fff3e0; width:55px;">${makeupDisplay}</td>
-            <td id="totalMin_${name}" style="font-weight:bold;">${finalTotalMin}</td>
-            <td id="totalHour_${name}" style="color:#27ae60; font-weight:bold;">${(finalTotalMin/60).toFixed(1)}h</td>
-            <td id="percent_${name}" style="font-weight:bold; ${statusStyle}">${percent}%</td>
-        </tr>`;
+        row += `<td id="totalMin_${name}" style="font-weight:bold;">${results[name].totalMin}</td><td id="totalHour_${name}" style="color:#27ae60; font-weight:bold;">${(results[name].totalMin/60).toFixed(1)}h</td>`;
+        return `<tr>${row}</tr>`;
     }).join('');
-
-    tbody.innerHTML = html;
-}
-
-
-// 시뮬레이션 버튼 클릭 시 다시 그리기 위한 헬퍼
-function renderSimulation(sub, hId, bId, mode) {
-    loadDetailInto(sub, hId, bId).then(() => {
-        // 기존 draw 함수를 찾기 위해 다시 호출하거나 로직 분리 필요
-        // 간단하게 위해 loadDetailInto 내부에 mode 파라미터를 추가하는 것이 깔끔함
-    });
+    tbody.innerHTML = masterRow + studentRows;
 }
 
 function updateStudentTotal(name, inputEl) {
@@ -682,7 +654,7 @@ function renderWeekly() {
             <button onclick="weeklySubMode='subject'; renderWeekly();" class="tab-btn ${weeklySubMode === 'subject' ? 'active' : ''}" style="border-radius:4px; padding:6px 15px;">교과목별</button>
             <button onclick="weeklySubMode='ncs'; renderWeekly();" class="tab-btn ${weeklySubMode === 'ncs' ? 'active' : ''}" style="border-radius:4px; padding:6px 15px;">능력단위별</button>
         </div>
-        <div style="margin-bottom:15px; font-weight:bold; color:#2c3e50;">💡 과목명을 클릭하면 해당 주차 바로 아래에 상세 정보가 표시됩니다.</div>`;
+        <div style="margin-bottom:15px; font-weight:bold; color:#2c3e50;">💡 과목명을 클릭하면 해당 주차의 상세 시간이 표시됩니다.</div>`;
 
     rawTimetable.forEach(row => {
         const sub = (weeklySubMode === 'subject' ? row.교과목 : row.능력단위) ? String(weeklySubMode === 'subject' ? row.교과목 : row.능력단위).trim() : "";
@@ -702,55 +674,25 @@ function renderWeekly() {
     });
 
     const sortedWeeks = Object.keys(weeklyData).sort((a, b) => parseInt(a) - parseInt(b));
-    html += `<table class="attendance-table" style="table-layout: fixed; width: 100%; border-collapse: collapse;">
-                <colgroup><col style="width: 10%;"><col style="width: 80%;"><col style="width: 10%;"></colgroup>
-                <thead><tr style="background:#2c3e50; color:white;"><th>주차</th><th>진행 ${weeklySubMode === 'subject' ? '교과목' : '능력단위'}(시간)</th><th>합계</th></tr></thead>
-                <tbody>`;
-
+    html += `<table class="attendance-table" style="table-layout: fixed; width: 100%;"><colgroup><col style="width: 10%;"><col style="width: 80%;"><col style="width: 10%;"></colgroup><thead><tr style="background:#2c3e50; color:white;"><th>주차</th><th>진행 ${weeklySubMode === 'subject' ? '교과목' : '능력단위'}(시간)</th><th>합계</th></tr></thead><tbody>`;
     sortedWeeks.forEach(w => { 
         const d = weeklyData[w]; 
         const dateList = Array.from(d.dates).join(','); 
-        const subTexts = Object.entries(d.subjectMap).sort((a, b) => a[0].localeCompare(b[0], 'ko')).map(([n, h]) => 
-            `<span style="color:#3498db; cursor:pointer; text-decoration:underline; font-weight:bold; margin-right:10px; display:inline-block;" 
-             onclick="showWeeklySubjectDetail('${n}', '${dateList}', '${w}')">${n}(${h}h)</span>`
-        ).join(' '); 
-
-        // [핵심] 주차 데이터 행
-        html += `<tr style="border-bottom: 1px solid #ddd;">
-                    <td style="background:#f8f9fa;"><strong>${w}주</strong><br><small>${d.period}</small></td>
-                    <td style="text-align:left; padding:12px 15px;">${subTexts}</td>
-                    <td style="color:#e67e22; font-weight:bold;">${d.totalHours}h</td>
-                 </tr>`;
-        // [핵심] 상세 창이 들어갈 '숨겨진 행' 미리 확보 (id는 주차별로 생성)
-        html += `<tr id="weeklyDetailRow_${w}" style="display:none;">
-                    <td colspan="3" id="weeklyDetailArea_${w}" style="padding:15px; background-color:#f1f4f7; border: 1px solid #3498db;"></td>
-                 </tr>`;
+        const subTexts = Object.entries(d.subjectMap).sort((a, b) => a[0].localeCompare(b[0], 'ko')).map(([n, h]) => `<span style="color:#3498db; cursor:pointer; text-decoration:underline; font-weight:bold;" onclick="showWeeklySubjectDetail('${n}', '${dateList}', '${w}')">${n}(${h}h)</span>`).join(', '); 
+        html += `<tr><td style="background:#f8f9fa;"><strong>${w}주</strong><br><small>${d.period}</small></td><td style="text-align:left; padding-left:15px;">${subTexts}</td><td style="color:#e67e22; font-weight:bold;">${d.totalHours}h</td></tr>`; 
     });
-    html += `</tbody></table>`;
+    html += `</tbody></table><div id="weeklyDetailArea" style="margin-top:30px;"></div>`;
     viewArea.innerHTML = html;
 }
 
 async function saveManualAttendance() {
     const allInputs = document.querySelectorAll('.edit-input'), manualUpdate = {}; let hasChange = false;
-    
     allInputs.forEach(input => {
-        if (input.classList.contains('manual-modified')) {
-            const name = input.getAttribute('data-name');
-            const date = input.getAttribute('data-date');
-            const type = input.getAttribute('data-type');
-            const sub = input.getAttribute('data-sub'); // 보강 데이터용 과목명
-
-            if (!manualUpdate[name]) manualUpdate[name] = {};
-
-            if (input.classList.contains('makeup-input')) {
-                // 보강 시간 저장
-                manualUpdate[name][`makeup_${sub}`] = parseInt(input.value) || 0;
-            } else {
-                // 일반 출결 수정 저장
-                if (!manualUpdate[name][date]) manualUpdate[name][date] = {};
-                manualUpdate[name][date][type] = parseInt(input.value);
-                manualUpdate[name][date][type + "_manual"] = true;
-            }
+        if (input.classList.contains('manual-modified') || input.value === "") {
+            const name = input.getAttribute('data-name'), date = input.getAttribute('data-date'), type = input.getAttribute('data-type');
+            if (!manualUpdate[name]) manualUpdate[name] = {}; if (!manualUpdate[name][date]) manualUpdate[name][date] = {};
+            if (input.value === "") { manualUpdate[name][date][type] = null; manualUpdate[name][date][type + "_manual"] = null; }
+            else { manualUpdate[name][date][type] = parseInt(input.value); manualUpdate[name][date][type + "_manual"] = true; }
             hasChange = true;
         }
     });
@@ -761,21 +703,12 @@ async function saveManualAttendance() {
 // 주차별 특정 과목 클릭 시 상세 내역 출력 함수
 async function showWeeklySubjectDetail(subName, dateListStr, weekNum) {
     const targetDates = dateListStr.split(',').sort();
-    
-    // 모든 상세 행을 먼저 닫고, 현재 클릭한 주차의 상세 행만 엽니다.
-    document.querySelectorAll('[id^="weeklyDetailRow_"]').forEach(el => el.style.display = 'none');
-    const detailRow = document.getElementById(`weeklyDetailRow_${weekNum}`);
-    const detailArea = document.getElementById(`weeklyDetailArea_${weekNum}`);
-    
-    detailRow.style.display = 'table-row';
-    detailArea.innerHTML = `<div style="padding:15px; text-align:center;">⌛ [${subName}] 데이터를 분석 중입니다...</div>`;
+    const area = document.getElementById('weeklyDetailArea');
+    area.innerHTML = `<div style="padding:20px; text-align:center; background:#fff; border:1px solid #ccc; border-radius:8px;">⌛ ${weekNum}주차 데이터를 분석 중입니다...</div>`;
 
     const manualSnap = await database.ref(`${currentClass}/manualAttendance`).once('value');
     const manualData = manualSnap.val() || {};
     const studentResults = {}, dateWithDay = {}, weekDays = ['일','월','화','수','목','금','토'];
-    
-    let maxWeekMin = 0;
-    const weekSchedule = {};
     studentNames.forEach(name => studentResults[name] = { dates: {}, totalMin: 0 });
 
     const actualSubjectDates = targetDates.filter(date => {
@@ -787,15 +720,11 @@ async function showWeeklySubjectDetail(subName, dateListStr, weekNum) {
 
     actualSubjectDates.forEach(date => {
         dateWithDay[date] = date + " (" + weekDays[new Date(date).getDay()] + ")";
-        const daySched = calculateParticipation(date, "09:00", "17:30", subName, "", "", weeklySubMode);
-        const dayTotal = daySched.am + daySched.pm;
-        weekSchedule[date] = dayTotal;
-        maxWeekMin += dayTotal;
-
         studentNames.forEach(name => {
             const att = (fullAttendanceData[date] && fullAttendanceData[date][name]) ? fullAttendanceData[date][name] : null;
             let calc = { am: 0, pm: 0 };
             if (att && att.inTime && att.outTime) {
+                // weeklySubMode를 7번째 인자로 전달하여 정확한 칸을 뒤지게 함
                 calc = calculateParticipation(date, att.inTime, att.outTime, subName, att.leaveTime || "", att.returnTime || "", weeklySubMode);
             }
             if (manualData[name] && manualData[name][date]) {
@@ -807,80 +736,31 @@ async function showWeeklySubjectDetail(subName, dateListStr, weekNum) {
         });
     });
 
-    const formatMin = (m) => {
-        if (m === 0) return "0분";
-        const h = Math.floor(m / 60); const min = m % 60;
-        return h > 0 ? `${h}시간 ${min}분` : `${min}분`;
-    };
-
-    let html = `<div style="background:#fff; padding:15px; border:1px solid #3498db; border-radius:4px; box-shadow: inset 0 0 10px rgba(0,0,0,0.05);">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
-            <div style="font-weight:bold; color:#2980b9; font-size:16px;">🔍 ${weekNum}주차 상세: ${subName} <span style="margin-left:15px; color:#e67e22; font-size:13px;">(주간 편성: ${formatMin(maxWeekMin)})</span></div>
-            <button onclick="document.getElementById('weeklyDetailRow_${weekNum}').style.display='none'" style="padding:3px 8px; cursor:pointer; background:#95a5a6; color:white; border:none; border-radius:3px; font-size:12px;">창 닫기 ✖</button>
+    let html = `<div style="background:#fff; padding:20px; border:2px solid #3498db; border-radius:8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+            <h3 style="margin:0; color:#2980b9;">🔍 ${weekNum}주차 상세 (${weeklySubMode === 'subject' ? '교과목' : '능력단위'}): ${subName}</h3>
+            <button onclick="document.getElementById('weeklyDetailArea').innerHTML=''" style="padding:5px 10px; cursor:pointer; background:#95a5a6; color:white; border:none; border-radius:4px;">창 닫기 ✖</button>
         </div>
-        <div class="scroll-box" style="max-height: 850px !important;"> 
-            <table class="attendance-table" style="background:white;">
-                <thead>
-                    <tr style="background:#f8f9fa;">
-                        <th rowspan="2" style="width:100px;">훈련생명</th>
-                        <th rowspan="2" style="background:#e8f5e9; width:120px; color:#2c3e50;">주간 합계</th>`;
-    actualSubjectDates.forEach(d => html += `<th colspan="2">${dateWithDay[d]}<br><small>(${weekSchedule[d]}분)</small></th>`);
-    html += `<th rowspan="2" style="background:#e8f5e9; width:80px;">상태</th></tr>
-                    <tr style="background:#f8f9fa;">`;
+        <div class="scroll-box">
+            <table class="attendance-table">
+                <thead><tr style="background:#f8f9fa;"><th style="width:100px;">훈련생명</th>`;
+    actualSubjectDates.forEach(d => html += `<th colspan="2">${dateWithDay[d]}</th>`);
+    html += `<th colspan="2" style="background:#e8f5e9;">주간 합계</th></tr><tr style="background:#f8f9fa;"><th></th>`;
     actualSubjectDates.forEach(() => html += `<th>오전</th><th>오후</th>`);
-    html += `</tr></thead><tbody>`;
+    html += `<th>분</th><th>시간</th></tr></thead><tbody>`;
 
     studentNames.forEach(name => {
-        const tMin = studentResults[name].totalMin;
-        const rowStyle = (tMin < maxWeekMin) ? `background-color: #fff9c4;` : ``;
-        const statusText = (tMin < maxWeekMin) ? `<span style="color:#d35400; font-weight:bold;">부족</span>` : `<span style="color:#27ae60;">이수</span>`;
-
-        html += `<tr style="${rowStyle}">
-                    <td style="font-weight:bold;">${name}</td>
-                    <td style="font-weight:bold; color:#2c3e50;">${formatMin(tMin)}</td>`;
+        html += `<tr><td style="font-weight:bold; background:#fafafa;">${name}</td>`;
         actualSubjectDates.forEach(d => {
             const res = studentResults[name].dates[d] || { am: 0, pm: 0 };
             html += `<td>${res.am}</td><td>${res.pm}</td>`;
         });
-        html += `<td>${statusText}</td></tr>`;
+        const tMin = studentResults[name].totalMin;
+        html += `<td style="font-weight:bold; color:#27ae60;">${tMin}</td><td style="font-weight:bold; color:#27ae60;">${(tMin/60).toFixed(1)}h</td></tr>`;
     });
     html += `</tbody></table></div></div>`;
-    
-    detailArea.innerHTML = html;
-    detailRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
-}
-
-// 보강 시간 입력 시 실시간으로 출석률을 계산하는 함수
-function calculateRowPercent(name, masterTotal) {
-    // 1. 해당 학생의 모든 오전/오후 입력값 합산
-    const amInputs = document.querySelectorAll(`.am-input-${name}`);
-    const pmInputs = document.querySelectorAll(`.pm-input-${name}`);
-    let rowSum = 0;
-    
-    // 만약 일반 출결 입력 칸이 없는 모드라면 results 데이터나 현재 텍스트에서 추출
-    if(amInputs.length > 0) {
-        amInputs.forEach(i => rowSum += (parseInt(i.value) || 0));
-        pmInputs.forEach(i => rowSum += (parseInt(i.value) || 0));
-    } else {
-        // 상세 보기 모드 등 입력칸이 아닌 일반 텍스트일 경우 누계 ID에서 기본값 가져오기
-        // (이 부분은 현재 렌더링 방식에 맞춰 유동적으로 작동합니다)
-        const currentTotal = parseInt(document.getElementById(`totalMin_${name}`).innerText) 
-                             - (parseInt(document.querySelector(`.makeup-${name}`).defaultValue) || 0);
-        rowSum = currentTotal;
-    }
-
-    // 2. 보강 시간 합산
-    const makeupValue = parseInt(document.querySelector(`.makeup-${name}`).value) || 0;
-    const finalSum = rowSum + makeupValue;
-
-    // 3. 화면 즉시 업데이트
-    const percent = ((finalSum / masterTotal) * 100).toFixed(1);
-    const percentEl = document.getElementById(`percent_${name}`);
-    
-    document.getElementById(`totalMin_${name}`).innerText = finalSum;
-    document.getElementById(`totalHour_${name}`).innerText = (finalSum / 60).toFixed(1) + "h";
-    percentEl.innerText = percent + "%";
-    percentEl.style.color = percent < 75 ? "red" : "green";
+    area.innerHTML = html;
+    area.scrollIntoView({ behavior: 'smooth' });
 }
 
 initialize();

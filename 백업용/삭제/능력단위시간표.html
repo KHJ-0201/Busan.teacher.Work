@@ -475,36 +475,32 @@ async function loadDetailInto(selectedSub, headId, bodyId, mode = 'real') {
             studentResults[name].dates[date] = calc; 
         });
     });
-    // 여기서 headId와 bodyId가 인쇄용 아이디(pHead, pBody)인지 확인하고 출력합니다.
+    // mode 파라미터를 추가하여 renderFinalTable을 호출합니다.
     renderFinalTable(dates, studentResults, masterSchedule, dateWithDay, headId, bodyId, selectedSub, mode);
 }
 
 function renderFinalTable(dates, results, masterSchedule, dateWithDay, headId, bodyId, selectedSub, mode) {
     const thead = document.getElementById(headId), tbody = document.getElementById(bodyId);
-    if (!thead || !tbody) return; // 요소가 없으면 중단
+    
+    // [버튼 위치 조정] 상단 범례 영역을 찾아서 버튼을 삽입합니다.
+    const parentBox = thead.closest('.detail-view');
+    const legendArea = parentBox.querySelector('div[style*="justify-content: flex-end"]');
+    
+    // 버튼 HTML 생성 (토글 방식)
+    const btnHtml = mode === 'real' 
+        ? `<button class="ctrl-btn" onclick="loadDetailInto('${selectedSub}', '${headId}', '${bodyId}', 'sim')" style="background:#8e44ad; font-size:11px; padding:5px 10px; margin-right:10px;">🔮 남은일수 출결률 보기</button>`
+        : `<button class="ctrl-btn" onclick="loadDetailInto('${selectedSub}', '${headId}', '${bodyId}', 'real')" style="background:#34495e; font-size:11px; padding:5px 10px; margin-right:10px;">⏪ 실제 출결만 보기</button>`;
 
-    // [중요] 인쇄/엑셀용 표인 경우 버튼 생성 로직 건너뛰기
-    if (headId !== 'pHead') { 
-        const parentBox = thead.closest('.detail-view');
-        if (parentBox) {
-            const legendArea = parentBox.querySelector('div[style*="justify-content: flex-end"]');
-            if (legendArea) {
-                const btnHtml = mode === 'real' 
-                    ? `<button class="ctrl-btn" onclick="loadDetailInto('${selectedSub}', '${headId}', '${bodyId}', 'sim')" style="background:#8e44ad; font-size:11px; padding:5px 10px; margin-right:10px;">🔮 남은일수 출결률 보기</button>`
-                    : `<button class="ctrl-btn" onclick="loadDetailInto('${selectedSub}', '${headId}', '${bodyId}', 'real')" style="background:#34495e; font-size:11px; padding:5px 10px; margin-right:10px;">⏪ 실제 출결만 보기</button>`;
+    // 기존 버튼이 있다면 제거하고 새로 삽입
+    const existingBtn = legendArea.querySelector('.ctrl-btn:not([onclick*="saveManualAttendance"])');
+    if(existingBtn) existingBtn.remove();
+    legendArea.insertAdjacentHTML('afterbegin', btnHtml);
 
-                const existingBtn = legendArea.querySelector('.ctrl-btn:not([onclick*="saveManualAttendance"])');
-                if(existingBtn) existingBtn.remove();
-                legendArea.insertAdjacentHTML('afterbegin', btnHtml);
-            }
-        }
-    }
-
-    // 테이블 헤더 구성 (누계 및 출석률 포함)
+    // 테이블 헤더 구성
     let h1 = `<tr><th rowspan="2" class="sticky-col">훈련생명</th>`;
     let h2 = `<tr>`;
     dates.forEach(d => { h1 += `<th colspan="2" style="background:#f8f9fa;">${dateWithDay[d]}</th>`; h2 += `<th>오전</th><th>오후</th>`; });
-    h1 += `<th rowspan="2" style="background:#e3f2fd; width:55px;">보강(분)</th>`;
+    h1 += `<th rowspan="2" style="background:#e3f2fd; width:70px;">보강(분)</th>`;
     h1 += `<th colspan="2">누계</th><th rowspan="2" style="width:70px;">출석률</th></tr>`; 
     h2 += `<th>분</th><th>시간</th></tr>`;
     thead.innerHTML = h1 + h2;
@@ -523,6 +519,7 @@ function renderFinalTable(dates, results, masterSchedule, dateWithDay, headId, b
             let pmV = res.pm;
             let cellClass = "";
 
+            // 시뮬레이션 모드 적용
             if (mode === 'sim' && res.isFuture) {
                 amV = masterSchedule[d].am;
                 pmV = masterSchedule[d].pm;
@@ -535,6 +532,7 @@ function renderFinalTable(dates, results, masterSchedule, dateWithDay, headId, b
                 else if (st.includes("결석")) cellClass = "status-absent";
                 else if (st.includes("휴가") || st.includes("공가") || st.includes("기타")) cellClass = "status-special";
             }
+
             rowTotalMin += (amV + pmV);
             dateCells += `<td class="${cellClass}">${amV}</td><td class="${cellClass}">${pmV}</td>`;
         });
@@ -544,17 +542,22 @@ function renderFinalTable(dates, results, masterSchedule, dateWithDay, headId, b
         const percent = ((finalTotalMin / masterTotal) * 100).toFixed(1);
         const statusStyle = percent < 75 ? "color:red;" : "color:green;";
 
-        // 인쇄/엑셀 모드일 때는 input 대신 텍스트로 출력 (가독성 향상)
-        const makeupDisplay = (headId === 'pHead') ? makeupMin : `<input type="number" class="edit-input makeup-input makeup-${name}" data-name="${name}" data-sub="${selectedSub}" value="${makeupMin}" oninput="this.classList.add('manual-modified'); calculateRowPercent('${name}', ${masterTotal})" style="width:100%;">`;
-
         return `<tr>
-            <td class="sticky-col">${name}</td>
-            ${dateCells}
-            <td style="background:#fff3e0; width:55px;">${makeupDisplay}</td>
-            <td id="totalMin_${name}" style="font-weight:bold;">${finalTotalMin}</td>
-            <td id="totalHour_${name}" style="color:#27ae60; font-weight:bold;">${(finalTotalMin/60).toFixed(1)}h</td>
-            <td id="percent_${name}" style="font-weight:bold; ${statusStyle}">${percent}%</td>
-        </tr>`;
+    <td class="sticky-col">${name}</td>
+    ${dateCells}
+    <td style="background:#fff3e0; width:55px;">
+        <input type="number" 
+               class="edit-input makeup-input makeup-${name}" 
+               data-name="${name}" 
+               data-sub="${selectedSub}" 
+               value="${makeupMin}" 
+               oninput="this.classList.add('manual-modified'); calculateRowPercent('${name}', ${masterTotal})" 
+               style="width:100%;">
+    </td>
+    <td id="totalMin_${name}" style="font-weight:bold;">${finalTotalMin}</td>
+    <td id="totalHour_${name}" style="color:#27ae60; font-weight:bold;">${(finalTotalMin/60).toFixed(1)}h</td>
+    <td id="percent_${name}" style="font-weight:bold; ${statusStyle}">${percent}%</td>
+</tr>`;
     }).join('');
 
     tbody.innerHTML = html;

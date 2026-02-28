@@ -9,29 +9,20 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
     <style>
         body { font-family: 'Malgun Gothic', sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; color: #333; }
-        /* 선생님 요청대로 좌우 여백을 준 컨테이너 설정 */
         .container { max-width: 1200px; margin: 0 auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
         .header { border-bottom: 3px solid #e67e22; padding-bottom: 15px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; }
-        
         .info-bar { background: #fff5e6; padding: 15px; border-radius: 10px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #e67e22; }
-        
-        /* 날짜 목록 테이블 스타일 */
         .date-list-table { width: 100%; border-collapse: collapse; margin-top: 10px; background: white; }
         .date-list-table th, .date-list-table td { border: 1px solid #eee; padding: 12px; text-align: center; }
         .date-list-table th { background: #f8f9fa; font-weight: bold; position: sticky; top: 0; }
-        
-        /* 업로드 상태 표시 */
         .status-badge { padding: 4px 10px; border-radius: 15px; font-size: 12px; font-weight: bold; }
         .status-none { background: #ffebee; color: #c62828; border: 1px solid #ef9a9a; }
         .status-done { background: #e8f5e9; color: #2e7d32; border: 1px solid #a5d6a7; }
-        
         .btn { padding: 8px 15px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; font-size: 13px; }
         .btn-upload { background: #e67e22; color: white; }
         .btn-nav { background: #34495e; color: white; text-decoration: none; display: inline-block; }
-        
-        /* 숨겨진 파일 인풋 */
+        .btn-danger { background: #c0392b; color: white; margin-left: 10px; }
         #hiddenFileInput { display: none; }
-        
         .scroll-area { max-height: 600px; overflow-y: auto; border: 1px solid #ddd; border-radius: 8px; }
         .highlight { color: #e67e22; font-weight: bold; }
     </style>
@@ -41,7 +32,10 @@
 <div class="container">
     <div class="header">
         <h2 style="margin:0; color:#e67e22;">📅 일일 출석 데이터 관리 (훈련일자별)</h2>
-        <a href="#" class="btn btn-nav" onclick="location.href='index.html?class=' + currentClass">◀ 메인으로</a>
+        <div>
+            <button class="btn btn-danger" onclick="clearAllAttendance()">🧹 전체 데이터 초기화</button>
+            <a href="#" class="btn btn-nav" onclick="location.href='index.html?class=' + currentClass">◀ 메인으로</a>
+        </div>
     </div>
 
     <div class="info-bar">
@@ -52,7 +46,7 @@
 
     <div class="section-card">
         <p style="margin-bottom: 10px; font-size: 14px; color: #555;">
-            ※ 아래 목록은 <strong>시간표(index.html)</strong>에 등록된 실제 수업 날짜들입니다. 해당 날짜의 엑셀 파일을 업로드하세요.
+            ※ 공가, 휴가, 경조사 등은 입/퇴실 시간이 없어도 <strong>자동으로 풀타임 출석 처리</strong>됩니다.
         </p>
         <div class="scroll-area">
             <table class="date-list-table">
@@ -66,7 +60,7 @@
                     </tr>
                 </thead>
                 <tbody id="dateListBody">
-                    <tr><td colspan="5" style="padding:50px;">시간표 데이터를 불러오고 있습니다...</td></tr>
+                    <tr><td colspan="5" style="padding:50px;">데이터를 불러오고 있습니다...</td></tr>
                 </tbody>
             </table>
         </div>
@@ -90,60 +84,87 @@ let currentClass = urlParams.get('class') || "테스트";
 document.getElementById('dispClass').innerText = currentClass;
 
 let rawTimetable = [];
-let uploadedDates = {}; // 이미 업로드된 날짜 목록
-let selectedTargetDate = ""; // 현재 업로드 중인 날짜 고정용
+let uploadedDates = {};
+let selectedTargetDate = "";
 
-// 날짜 포맷팅 함수
+function formatExcelTime(val) {
+    if (!val || val === "-" || val === "") return "00:00:00";
+    if (typeof val === 'number') {
+        let totalSeconds = Math.round(val * 86400);
+        let h = Math.floor(totalSeconds / 3600);
+        let m = Math.floor((totalSeconds % 3600) / 60);
+        let s = totalSeconds % 60;
+        return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+    return String(val).trim();
+}
+// 1. [날짜 정밀 교정] 어떤 형식이 들어와도 YYYY-MM-DD로 변환합니다.
 function getFixDate(rawDate) {
     if (!rawDate) return "";
     let s = String(rawDate).trim();
+    
+    // 2025.08.13 -> 2025-08-13 (마침표 제거)
+    s = s.replace(/\./g, '-');
+    
+    // 08/13/25 (엑셀 날짜 형식) 처리
     if (s.includes('/')) {
         let parts = s.split('/');
         if (parts.length === 3) {
-            return `${parts[2].length === 2 ? "20"+parts[2] : parts[2]}-${parts[0].padStart(2, '0')}-${parts[1].padStart(2, '0')}`;
+            // 연도가 2글자(25)면 20을 붙여 4글자(2025)로 만듬
+            let year = parts[2].length === 2 ? "20" + parts[2] : parts[2];
+            let month = parts[0].padStart(2, '0');
+            let day = parts[1].padStart(2, '0');
+            s = `${year}-${month}-${day}`;
         }
     }
-    return s.replace(/\./g, '-').substring(0, 10);
+    
+    // 최종적으로 10글자(YYYY-MM-DD)만 남깁니다.
+    return s.substring(0, 10);
 }
 
-// 1. 초기 로드: 시간표와 업로드 현황 동시 로드
+// 2. [초기화 로직] 실시간 수신기를 안정화합니다.
 function initialize() {
-    // 마스터 정보 로드
+    // 과정 정보 로드
     database.ref(`${currentClass}/masterData`).once('value', snap => {
         const d = snap.val() || {};
         document.getElementById('courseInfo').innerText = `${d.name || ""} (${d.period || ""})`;
     });
 
-    // 업로드된 날짜 현황 감시
+    // 업로드된 날짜 목록 실시간 감시 (표준화된 날짜로 가져옴)
     database.ref(`${currentClass}/dailyAttendance`).on('value', snap => {
         uploadedDates = snap.val() || {};
-        renderDateList(); // 현황이 바뀔 때마다 목록 갱신
+        renderDateList();
     });
 
-    // 전체 시간표 로드
+    // 전체 시간표 로드 (표준화된 날짜로 목록 생성)
     database.ref(`${currentClass}/fullTimetable`).once('value', snap => {
         rawTimetable = snap.val() || [];
         renderDateList();
     });
 }
 
-// 2. 날짜별 목록 생성
+// 3. [목록 출력] 표준화된 날짜 규격으로 표를 그립니다.
 function renderDateList() {
     const tbody = document.getElementById('dateListBody');
     if (rawTimetable.length === 0) return;
 
-    // 날짜별로 교과목 묶기
     const dayMap = {};
     rawTimetable.forEach(row => {
+        // [핵심] 시간표의 날짜를 가져올 때 무조건 getFixDate로 세척합니다.
         const d = getFixDate(row.날짜);
         if(!d) return;
-        if(!dayMap[d]) dayMap[d] = { 
-            date: d, 
-            dayNum: row.일수 || "-", 
-            weekday: row.요일 || "", 
-            subjects: new Set() 
-        };
-        if(row.교과목 && row.교시 !== "점심") dayMap[d].subjects.add(row.교과목);
+
+        if(!dayMap[d]) {
+            dayMap[d] = { 
+                date: d, 
+                dayNum: row.일수 || "-", 
+                weekday: row.요일 || "", 
+                subjects: new Set() 
+            };
+        }
+        if(row.교과목 && row.교시 !== "점심") {
+            dayMap[d].subjects.add(row.교과목);
+        }
     });
 
     const sortedDates = Object.keys(dayMap).sort();
@@ -151,34 +172,35 @@ function renderDateList() {
 
     tbody.innerHTML = sortedDates.map(dKey => {
         const info = dayMap[dKey];
+        // [핵심] 업로드된 데이터 역시 dKey(YYYY-MM-DD) 형식으로 대조합니다.
         const isDone = uploadedDates[dKey] ? true : false;
-        const statusHtml = isDone 
-            ? `<span class="status-badge status-done">✔ 등록완료</span>` 
-            : `<span class="status-badge status-none">미등록</span>`;
         
         return `
             <tr>
                 <td>${info.dayNum}회차</td>
                 <td><strong>${info.date}</strong> (${info.weekday})</td>
                 <td style="text-align:left; font-size:12px;">${Array.from(info.subjects).join(', ')}</td>
-                <td>${statusHtml}</td>
-                <td>
-                    <button class="btn btn-upload" onclick="triggerUpload('${info.date}')">
-                        ${isDone ? '재업로드' : '파일찾기'}
-                    </button>
-                </td>
-            </tr>
-        `;
+                <td><span class="status-badge ${isDone ? 'status-done' : 'status-none'}">${isDone ? '✔ 등록완료' : '미등록'}</span></td>
+                <td><button class="btn btn-upload" onclick="triggerUpload('${info.date}')">${isDone ? '재업로드' : '파일찾기'}</button></td>
+            </tr>`;
     }).join('');
 }
 
-// 3. 업로드 버튼 클릭 시 날짜 고정 및 파일창 열기
 function triggerUpload(date) {
     selectedTargetDate = date;
     document.getElementById('hiddenFileInput').click();
 }
 
-// 4. 파일 선택 시 처리
+// [데이터 삭제 기능]
+function clearAllAttendance() {
+    if(confirm("❗ 주의: 현재 학급의 모든 일일 출석 데이터가 삭제됩니다.\n이 작업은 되돌릴 수 없습니다. 진행하시겠습니까?")) {
+        database.ref(`${currentClass}/dailyAttendance`).remove()
+            .then(() => alert("✅ 모든 데이터가 초기화되었습니다. 엑셀을 다시 업로드해 주세요."))
+            .catch(err => alert("삭제 실패: " + err));
+    }
+}
+
+// [수리 핵심] 엑셀 데이터 추출 로직 (외출/복귀 배선 연결)
 function handleFileSelect(input) {
     const file = input.files[0];
     if(!file || !selectedTargetDate) return;
@@ -188,35 +210,56 @@ function handleFileSelect(input) {
         const data = new Uint8Array(e.target.result);
         const workbook = XLSX.read(data, {type: 'array'});
         const sheet = workbook.Sheets[workbook.SheetNames[0]];
-        const json = XLSX.utils.sheet_to_json(sheet);
+        const rows = XLSX.utils.sheet_to_json(sheet, {header: 1});
 
-        if(json.length === 0) {
-            alert("파일에 데이터가 없습니다.");
+        if(rows.length < 3) {
+            alert("파일 양식이 올바르지 않습니다.");
             return;
         }
 
         const dailyUpdate = {};
-        json.forEach(row => {
-            const name = (row['훈련생명'] || row['성명'] || "").trim();
-            if(name) {
-                dailyUpdate[name] = {
-                    inTime: row['입실시간'] || row['입실'] || "",
-                    outTime: row['퇴실시간'] || row['퇴실'] || "",
-                    status: row['출결상태'] || row['상태'] || "정상",
-                    note: row['비고'] || ""
-                };
-            }
-        });
+        
+        for(let i = 2; i < rows.length; i++) {
+    const row = rows[i];
+    if (!row || row.length < 2) continue;
 
-        // 지정된 날짜 하위에 데이터 저장
-        database.ref(`${currentClass}/dailyAttendance/${selectedTargetDate}`).set(dailyUpdate)
-            .then(() => {
-                // 능력단위시간표와 연동하기 위한 체크 기록
-                database.ref(`${currentClass}/attendance/${selectedTargetDate}`).set(true);
-                alert(`[${selectedTargetDate}] 출석 데이터 저장 완료!`);
-                input.value = ""; // 파일 초기화
-            })
-            .catch(err => alert("저장 실패: " + err));
+    const name = row[1] ? String(row[1]).trim() : ""; 
+    if(!name || name === "성명") continue;
+
+    let status = row[6] ? String(row[6]).trim() : "-"; 
+    let inTime = formatExcelTime(row[7]);  
+    let outTime = formatExcelTime(row[8]); 
+    let leaveTime = formatExcelTime(row[9]);
+    let returnTime = formatExcelTime(row[10]);
+
+    // 특수 출결(공가 등) 시 09:00~17:30 강제 주입
+    const specialAttendance = ["공가", "휴가", "경조사", "훈련수당", "기타", "출석인정"];
+    const isSpecial = specialAttendance.some(keyword => status.includes(keyword));
+
+    if (isSpecial) {
+        inTime = "09:00:00"; outTime = "17:30:00";
+        leaveTime = ""; returnTime = "";
+    } else if (status === "-" || status.includes("결석") || inTime === "-" || inTime === "") {
+        inTime = "00:00:00"; outTime = "00:00:00";
+        leaveTime = ""; returnTime = "";
+        if(status === "-") status = "결석";
+    }
+
+    // [표준 규격 송신]
+    dailyUpdate[name] = {
+        inTime, outTime, leaveTime, returnTime, status,
+        note: row[14] || "" 
+    };
+}
+
+        if(confirm(`[${selectedTargetDate}] 데이터를 저장하시겠습니까?`)) {
+            database.ref(`${currentClass}/dailyAttendance/${selectedTargetDate}`).set(dailyUpdate)
+                .then(() => {
+                    alert(`✅ [${selectedTargetDate}] 저장 완료!`);
+                    input.value = "";
+                })
+                .catch(err => alert("저장 실패: " + err));
+        }
     };
     reader.readAsArrayBuffer(file);
 }

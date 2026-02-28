@@ -48,6 +48,7 @@
         .file-upload-label:hover { background: #2980b9; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
         #timetableFile { position: absolute; left: 0; top: 0; opacity: 0; width: 100%; height: 100%; cursor: pointer; }
 
+        /* 연결 상태 디자인 추가 */
         #connectionStatus { font-size: 12px; font-weight: bold; padding: 5px 10px; border-radius: 5px; }
         .status-online { color: #27ae60; background: #e8f5e9; }
         .status-offline { color: #e74c3c; background: #fdeaea; }
@@ -111,7 +112,6 @@
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
             <h3>📂 교과목 상세 현황</h3>
             <div style="display: flex; gap: 8px;">
-                <button class="btn btn-blue" style="background: #27ae60;" onclick="downloadCourseTableExcel()">💾 현황 엑셀 다운</button>
                 <button class="btn btn-orange" onclick="clearAndDefault()">초기화</button>
                 <button class="btn btn-blue" onclick="addCourseRow()">+ 수동 행 추가</button>
                 <button class="btn btn-green" onclick="saveAllDataWithAlert()">💾 서버 저장</button>
@@ -139,6 +139,7 @@ const firebaseConfig = {
 if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
 
+// [추가] 실시간 연결 상태 감지 로직
 const connectedRef = database.ref(".info/connected");
 connectedRef.on("value", (snap) => {
     const statusDiv = document.getElementById("connectionStatus");
@@ -351,40 +352,6 @@ function downloadSavedTimetable() {
             XLSX.utils.book_append_sheet(wb, ws, "시간표");
             XLSX.writeFile(wb, info.fileName || `시간표_${currentClass}.xlsx`);
         } else { alert("서버에 저장된 시간표가 없습니다."); }
-    });
-}
-
-// [기능 추가] 교과목 상세 현황 전용 엑셀 다운로드 기능
-async function downloadCourseTableExcel() {
-    database.ref(`${currentClass}/masterData`).once('value', snap => {
-        const d = snap.val();
-        if(!d || !d.courses) return alert("다운로드할 데이터가 없습니다.");
-
-        const teacher = d.teacher || "-";
-        const exportList = [];
-        const headerOrder = ["연번", "교과목", "능력단위명", "세부교과", "시간", "총 시간", "훈련강사"];
-
-        d.courses.forEach((c, idx) => {
-            let totalH = 0;
-            c.details.forEach(det => totalH += Number(det.hour));
-            
-            c.details.forEach(det => {
-                exportList.push({
-                    "연번": idx + 1,
-                    "교과목": c.subject,
-                    "능력단위명": c.unit,
-                    "세부교과": det.name,
-                    "시간": det.hour,
-                    "총 시간": totalH,
-                    "훈련강사": teacher
-                });
-            });
-        });
-
-        const ws = XLSX.utils.json_to_sheet(exportList, { header: headerOrder });
-        const wb = XLSX.utils.book_new();
-        XLSX.utils.book_append_sheet(wb, ws, "교과목현황");
-        XLSX.writeFile(wb, `교과목현황_${currentClass}.xlsx`);
     });
 }
 
