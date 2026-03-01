@@ -194,12 +194,18 @@
 
 
 <div class="excel-container">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
         <div style="display: flex; gap: 10px;">
             <a href="#" class="btn-nav" onclick="location.href='index.html?class=' + currentClass">◀ 메인으로</a>
             <a href="#" class="btn-nav" style="border-color: #e67e22; color: #e67e22;" onclick="location.href='일일출석부.html?class=' + currentClass">📝 일일출석부 등록</a>
         </div>
-        <div style="font-weight:bold; color:#27ae60;">[ 학급: <span id="dispClass">-</span> ]</div>
+        <button class="btn-nav" style="border-color: #e74c3c; color: #e74c3c; background: #fff5f5; font-size: 11px;" onclick="resetAllManualData()">⚠️ 모든 데이터 초기화</button>
+    </div>
+
+    <div style="text-align: right; margin-bottom: 15px;">
+        <span style="font-weight:bold; color:#27ae60; background: #e8f5e9; padding: 5px 15px; border-radius: 20px; border: 1px solid #27ae60;">
+            📍 현재 학급: <span id="dispClass">-</span>
+        </span>
     </div>
     <div class="excel-header-title">종합 능력단위 출석 관리 시스템</div>
     <div class="tab-menu">
@@ -271,6 +277,7 @@ let currentClass = urlParams.get('class') || "테스트";
 document.getElementById('dispClass').innerText = currentClass;
 
 let rawTimetable = [], masterSubjectList = [], ncsList = [], studentNames = [], fullAttendanceData = {}, currentMode = 'subject', calYear, calMonth, weeklySubMode = 'subject';
+let evaluationDates = {};
 
 function getFixDate(rawDate) {
     if (!rawDate) return "날짜미상";
@@ -296,6 +303,10 @@ function isActualSubject(subName) {
 }
 
 async function initialize() {
+    database.ref(`${currentClass}/evaluationDates`).on('value', snap => {
+        evaluationDates = snap.val() || {};
+        if(currentMode === 'calendar') renderCalendar(); // 데이터가 바뀌면 달력을 새로 고칩니다.
+    });
     database.ref(`${currentClass}/masterData`).once('value', snap => {
         const d = snap.val() || {};
         document.getElementById('infoCourse').innerText = d.name || "-";
@@ -442,7 +453,7 @@ async function executeAction(type) {
     }, 800); 
 }
 
-function renderSubjectList(sortType) {
+async function renderSubjectList(sortType) {
     const area = document.getElementById('subjectDashboardArea');
     const dashboardTitle = document.getElementById('dashboardTitle'); 
     if(!rawTimetable.length) return;
@@ -451,12 +462,28 @@ function renderSubjectList(sortType) {
     
     let totalAllMin = 0;
 
+    // 2. 보강 데이터를 확인하기 위해 수동 출석 데이터를 가져옵니다.
+    const manualSnap = await database.ref(`${currentClass}/manualAttendance`).once('value');
+    const manualData = manualSnap.val() || {};
+
     let summary = targetBaseList.map(item => {
         const subData = rawTimetable.filter(r => {
             const targetVal = currentMode === 'subject' ? String(r.교과목 || "") : String(r.능력단위 || "");
             return targetVal.trim() === item;
         });
         
+        // [로직] 등록 완료 체크
+        const subDates = [...new Set(subData.map(r => getFixDate(r.날짜)))];
+        const isCompleted = subDates.length > 0 && subDates.every(date => fullAttendanceData[date]);
+        const completeBadge = isCompleted ? `<span style="color:#27ae60; margin-left:8px; font-size:12px;">(완료)</span>` : "";
+
+        // [로직] 보강 데이터 체크 (해당 과목 키값으로 0분보다 큰 데이터가 있는지 확인)
+        let hasMakeup = false;
+        Object.values(manualData).forEach(user => {
+            if (user[`makeup_${item}`] > 0) hasMakeup = true;
+        });
+        const makeupBadge = hasMakeup ? `<span style="color:#e67e22; margin-left:8px; font-size:12px;">(보강)</span>` : "";
+
         let displayTitle = item;
         if (currentMode === 'ncs' && subData.length > 0) {
             const parentSubject = subData[0].교과목 || "미분류";
@@ -472,10 +499,20 @@ function renderSubjectList(sortType) {
             }
         });
         
-        return { name: item, displayTitle: displayTitle, start: dates[0] || "미상", end: dates[dates.length-1] || "미상", min: min, hour: (min/60).toFixed(1) };
+        return { 
+            name: item, 
+            displayTitle: displayTitle, 
+            completeBadge: completeBadge, 
+            makeupBadge: makeupBadge,
+            isCompleted: isCompleted, 
+            start: dates[0] || "미상", 
+            end: dates[dates.length-1] || "미상", 
+            min: min, 
+            hour: (min/60).toFixed(1) 
+        };
     });
 
-    // [수정된 제목 표시 부분]
+    // 상단 통계 수치 업데이트
     const totalAllHour = (totalAllMin / 60).toFixed(1);
     const totalCount = summary.length;
     const countLabel = currentMode === 'subject' ? "과목" : "단위";
@@ -488,14 +525,28 @@ function renderSubjectList(sortType) {
     
     let html = "";
     summary.forEach((item, idx) => {
-        html += `<div class="subject-dashboard-item"><div class="subject-summary-bar" onclick="toggleDetail('detailBox_${idx}', '${item.name}')"><div class="summary-name">${currentMode === 'subject' ? '📘' : '📜'} ${item.displayTitle}</div><div class="summary-period">📅 ${item.start} ~ ${item.end}</div><div class="summary-total">⏱️ ${item.min}분</div><div class="summary-total">📊 ${item.hour}h</div></div><div id="detailBox_${idx}" class="detail-view"><div style="display: flex; justify-content: flex-end; margin-bottom: 10px;">
-            <div style="display: flex; gap: 15px; margin-right: 20px; font-size: 11px; font-weight: bold; align-items: center;">
-    <span style="display: flex; align-items: center;"><i style="width:12px; height:12px; background:#fff176; border:1px solid #f1c40f; display:inline-block; margin-right:4px;"></i>지각/조퇴</span>
-    <span style="display: flex; align-items: center;"><i style="width:12px; height:12px; background:#e8f5e9; border:1px solid #27ae60; display:inline-block; margin-right:4px;"></i>외출</span>
-    <span style="display: flex; align-items: center;"><i style="width:12px; height:12px; background:#ffebee; border:1px solid #e74c3c; display:inline-block; margin-right:4px;"></i>결석</span>
-    <span style="display: flex; align-items: center;"><i style="width:12px; height:12px; background:#e3f2fd; border:1px solid #3498db; display:inline-block; margin-right:4px;"></i>공가/휴가/기타</span>
-</div>
-            <button class="btn-excel" onclick="saveManualAttendance()" style="background-color: #e67e22 !important; font-size: 12px; padding: 8px 15px;">💾 현재 수정사항 이 과목에 저장</button></div><div class="scroll-box"><table class="attendance-table" id="table_${idx}"><thead id="head_${idx}"></thead><tbody id="body_${idx}"></tbody></table></div></div></div>`;
+        const statusIcon = item.isCompleted ? '✅' : (currentMode === 'subject' ? '📘' : '📜');
+        
+        html += `<div class="subject-dashboard-item">
+            <div class="subject-summary-bar" onclick="toggleDetail('detailBox_${idx}', '${item.name}')">
+                <div class="summary-name">${statusIcon} ${item.displayTitle}${item.completeBadge}${item.makeupBadge}</div>
+                <div class="summary-period">📅 ${item.start} ~ ${item.end}</div>
+                <div class="summary-total">⏱️ ${item.min}분</div>
+                <div class="summary-total">📊 ${item.hour}h</div>
+            </div>
+            <div id="detailBox_${idx}" class="detail-view">
+                <div style="display: flex; justify-content: flex-end; margin-bottom: 10px;">
+                    <div style="display: flex; gap: 15px; margin-right: 20px; font-size: 11px; font-weight: bold; align-items: center;">
+                        <span style="display: flex; align-items: center;"><i style="width:12px; height:12px; background:#fff176; border:1px solid #f1c40f; display:inline-block; margin-right:4px;"></i>지각/조퇴</span>
+                        <span style="display: flex; align-items: center;"><i style="width:12px; height:12px; background:#e8f5e9; border:1px solid #27ae60; display:inline-block; margin-right:4px;"></i>외출</span>
+                        <span style="display: flex; align-items: center;"><i style="width:12px; height:12px; background:#ffebee; border:1px solid #e74c3c; display:inline-block; margin-right:4px;"></i>결석</span>
+                        <span style="display: flex; align-items: center;"><i style="width:12px; height:12px; background:#e3f2fd; border:1px solid #3498db; display:inline-block; margin-right:4px;"></i>공가/휴가/기타</span>
+                    </div>
+                    <button class="btn-excel" onclick="saveManualAttendance()" style="background-color: #e67e22 !important; font-size: 12px; padding: 8px 15px;">💾 현재 수정사항 이 과목에 저장</button>
+                </div>
+                <div class="scroll-box"><table class="attendance-table" id="table_${idx}"><thead id="head_${idx}"></thead><tbody id="body_${idx}"></tbody></table></div>
+            </div>
+        </div>`;
     });
     area.innerHTML = html;
 }
@@ -751,13 +802,22 @@ let calendarSubMode = 'subject'; // 달력 전용 분류 모드 변수 추가
 function renderCalendar() {
     const viewArea = document.getElementById('viewArea');
     if (rawTimetable.length === 0) { viewArea.innerHTML = "<p style='text-align:center; padding:50px;'>데이터 로드 중...</p>"; return; }
-    
-    // [1. 상단 분류 기준 버튼 추가]
+    const lastDateMap = {};
+    rawTimetable.forEach(r => {
+        const sub = (calendarSubMode === 'subject' ? r.교과목 : r.능력단위) ? 
+                    String(calendarSubMode === 'subject' ? r.교과목 : r.능력단위).trim() : "";
+        if (sub !== "" && isActualSubject(sub)) {
+            const d = getFixDate(r.날짜);
+            if (!lastDateMap[sub] || d > lastDateMap[sub]) { lastDateMap[sub] = d; }
+        }
+    });
+
     let calHtml = `
         <div style="background:#fff; padding:15px; border-radius:8px; border:1px solid #ddd; margin-bottom:20px; display:flex; align-items:center; gap:15px; justify-content: center;">
             <span style="font-weight:bold; color:#1b5e20;">🔎 달력 표시 기준:</span>
             <button onclick="calendarSubMode='subject'; renderCalendar();" class="tab-btn ${calendarSubMode === 'subject' ? 'active' : ''}" style="border-radius:4px; padding:6px 15px;">교과목별</button>
             <button onclick="calendarSubMode='ncs'; renderCalendar();" class="tab-btn ${calendarSubMode === 'ncs' ? 'active' : ''}" style="border-radius:4px; padding:6px 15px;">능력단위별</button>
+            <div style="margin-left:20px; font-size:12px; color:#666;">💡 <b style="color:#f39c12;">날짜 숫자</b>를 클릭하면 평가 일정을 관리할 수 있습니다.</div>
         </div>
         <div class="calendar-ctrl">
             <button class="ctrl-btn" onclick="moveMonth(-1)">◀ 이전 달</button>
@@ -777,12 +837,17 @@ function renderCalendar() {
     for(let i = firstDay - 1; i >= 0; i--) { calHtml += `<div class="calendar-day" style="opacity: 0.4; background: #f9f9f9;"><div class="day-num">${prevLastDate - i}</div></div>`; }
     
     for(let d=1; d<=lastDate; d++) {
-        const currentDate = new Date(calYear, calMonth, d), targetDate = `${calYear}-${String(calMonth+1).padStart(2, '0')}-${String(d).padStart(2, '0')}`, dayType = currentDate.getDay(), classNames = `calendar-day ${dayType === 0 ? 'sun' : dayType === 6 ? 'sat' : ''}`;
+        const currentDate = new Date(calYear, calMonth, d), targetDate = `${calYear}-${String(calMonth+1).padStart(2, '0')}-${String(d).padStart(2, '0')}`, dayType = currentDate.getDay();
+        
+        // [수정] 평가일 배경색 및 강조 로직
+        const isEvalDay = evaluationDates[targetDate];
+        const evalStyle = isEvalDay ? `background-color: #fffde7 !important; border: 2px solid #f1c40f !important;` : ``;
+        const evalBadge = isEvalDay ? `<span style="font-size:10px; color:#e67e22; font-weight:bold; margin-left:5px;">📢 평가일</span>` : "";
+
+        const classNames = `calendar-day ${dayType === 0 ? 'sun' : dayType === 6 ? 'sat' : ''}`;
         let weekBadge = ""; if(dayType === 0) { currentDate.setHours(0,0,0,0); if(currentDate >= startSunday && currentDate <= endSunday) { const weekNum = Math.floor((currentDate - startSunday) / (1000 * 60 * 60 * 24 * 7)) + 1; weekBadge = `<div style="font-size:10px; color:#27ae60; background:#e8f5e9; padding:2px 4px; border-radius:3px; display:inline-block; margin-left:5px;">(${weekNum}주차)</div>`; } }
         
         const subjectHours = {}; const holidays = new Set();
-        
-        // [2. 현재 선택된 기준(calendarSubMode)에 맞춰 필터링]
         rawTimetable.forEach(r => { 
             if(getFixDate(r.날짜) === targetDate) { 
                 const sub = (calendarSubMode === 'subject' ? r.교과목 : r.능력단위) ? String(calendarSubMode === 'subject' ? r.교과목 : r.능력단위).trim() : "";
@@ -795,14 +860,24 @@ function renderCalendar() {
 
         const attBadge = fullAttendanceData[targetDate] ? `<span style="font-size:10px; color:#27ae60; background:#e8f5e9; padding:2px 5px; border-radius:10px; border:1px solid #27ae60; margin-left:5px; vertical-align:middle;">✔️ 완료</span>` : "";
         
-        // [3. 클릭 이벤트 시 calendarSubMode를 함께 전달]
-        let dayContent = Object.entries(subjectHours).map(([s, h]) => 
-    `<span class="subject-tag" style="cursor:pointer; font-weight:bold; border:1px solid #3498db;" 
-      onclick="openSubjectFromCalendar('${s}', '${calendarSubMode}', '${targetDate}')">🔍 ${s} ${h}h</span>`
-).join('');
+        let dayContent = Object.entries(subjectHours).map(([s, h]) => {
+            const isLastDay = (lastDateMap[s] === targetDate);
+            const lastStatus = isLastDay ? ` <span style="color:#c0392b; font-weight:bold;">[종료]</span>` : "";
+            return `<span class="subject-tag" style="cursor:pointer; font-weight:bold; border:1px solid #3498db;" 
+                      onclick="openSubjectFromCalendar('${s}', '${calendarSubMode}', '${targetDate}')">
+                      🔍 ${s} ${h}h${lastStatus}
+                    </span>`;
+        }).join('');
         
         dayContent += Array.from(holidays).map(h => `<span class="holiday-tag">${h}</span>`).join('');
-        calHtml += `<div class="${classNames}"><div class="day-num">${d}${weekBadge}${attBadge}</div>${dayContent}</div>`;
+
+        // [수정] 날짜 숫자 클릭 시 평가일 토글 함수 호출
+        calHtml += `<div class="${classNames}" style="${evalStyle}">
+            <div class="day-num" style="cursor:pointer;" onclick="toggleEvaluationDate('${targetDate}')">
+                ${d}${weekBadge}${attBadge}${evalBadge}
+            </div>
+            ${dayContent}
+        </div>`;
     }
     const nextCells = (firstDay + lastDate) % 7 === 0 ? 0 : 7 - ((firstDay + lastDate) % 7);
     for(let i = 1; i <= nextCells; i++) { calHtml += `<div class="calendar-day" style="opacity: 0.4; background: #f9f9f9;"><div class="day-num">${i}</div></div>`; }
@@ -1069,6 +1144,54 @@ function closeCalendarModal(e) {
     }
 }
 
+async function toggleEvaluationDate(date) {
+    const isExists = evaluationDates[date];
+    if (!isExists) {
+        if (confirm(`📅 [${date}]\n평가 일정을 등록하시겠습니까?\n달력 배경이 노란색으로 강조됩니다.`)) {
+            try {
+                await database.ref(`${currentClass}/evaluationDates/${date}`).set({
+                    timestamp: new Date().getTime(),
+                    type: '평가'
+                });
+            } catch (e) { alert("저장 실패: " + e.message); }
+        }
+    } else {
+        if (confirm(`🗑️ [${date}]\n이미 등록된 평가 일정입니다.\n삭제하시겠습니까?`)) {
+            try {
+                await database.ref(`${currentClass}/evaluationDates/${date}`).remove();
+            } catch (e) { alert("삭제 실패: " + e.message); }
+        }
+    }
+}
+
+// [추가] 수동 데이터 전체 초기화 함수
+async function resetAllManualData() {
+    // 1단계 확인
+    const firstCheck = confirm("❗ 정말 모든 수동 입력 기록(보강 시간, 수동 출결 수정, 평가일 등)을 삭제하시겠습니까?\n이 작업은 절대 복구할 수 없습니다.");
+    
+    if (!firstCheck) return;
+
+    // 2단계 확인 (직접 입력)
+    const secondCheck = prompt('위험한 작업입니다. 삭제를 원하시면 아래에 "삭제합니다"를 정확히 입력해주세요.');
+
+    if (secondCheck === "삭제합니다") {
+        try {
+            // 삭제 대상 리스트
+            const updates = {};
+            updates[`${currentClass}/manualAttendance`] = null; // 보강 및 수동 수정 데이터 삭제
+            updates[`${currentClass}/evaluationDates`] = null;  // 평가일 일정 삭제
+
+            await database.ref().update(updates);
+            
+            alert("✅ 모든 수동 입력 데이터가 초기화되었습니다.");
+            location.reload(); // 화면 새로고침
+        } catch (e) {
+            alert("❌ 초기화 중 오류가 발생했습니다: " + e.message);
+        }
+    } else {
+        alert('문구가 일치하지 않습니다. 초기화가 취소되었습니다.');
+    }
+}
 initialize();
 </script>
 </body>

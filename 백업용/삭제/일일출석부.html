@@ -8,51 +8,109 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
     <style>
-        body { font-family: 'Malgun Gothic', sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; color: #333; }
-        /* 선생님 요청대로 좌우 여백을 준 컨테이너 설정 */
-        .container { max-width: 1200px; margin: 0 auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
+        body { 
+            font-family: 'Malgun Gothic', sans-serif; 
+            background-color: #f4f7f6; 
+            margin: 0; 
+            padding: 0; /* 바디 자체 여백은 제거하고 컨테이너에서 조절 */
+            color: #333; 
+        }
+
+        /* 2. 메인 컨테이너: 좌우 여백 및 중앙 정렬 핵심 */
+        .container { 
+            /* 최대 너비를 1200px로 설정 (표가 길기 때문에 약간 넉넉히 잡았습니다) */
+            max-width: 1200px; 
+            /* 위아래 40px 여백, 좌우는 자동으로 중앙 배치 (좌우 여백 생성) */
+            margin: 40px auto; 
+            background: white; 
+            /* 박스 내부 안쪽 여백 */
+            padding: 40px; 
+            border-radius: 15px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+            /* 내용물이 박스를 넘치지 않게 보호 */
+            box-sizing: border-box; 
+        }
+
+        /* 3. 모바일/작은 화면 대응 (반응형 여백) */
+        @media (max-width: 1240px) {
+            .container {
+                margin: 20px; /* 화면이 작아지면 좌우 여백을 고정 수치로 변경 */
+                max-width: calc(100% - 40px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 20px; /* 모바일에서는 내부 여백을 줄여 공간 확보 */
+                max-width: calc(100% - 20px);
+            }
+            .header { flex-direction: column; gap: 15px; align-items: flex-start; }
+            .header-btns { width: 100%; justify-content: space-between; flex-wrap: wrap; }
+        }
         .header { border-bottom: 3px solid #e67e22; padding-bottom: 15px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; }
-        
+        .header-btns { display: flex; gap: 10px; align-items: center; }
         .info-bar { background: #fff5e6; padding: 15px; border-radius: 10px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #e67e22; }
-        
-        /* 날짜 목록 테이블 스타일 */
         .date-list-table { width: 100%; border-collapse: collapse; margin-top: 10px; background: white; }
         .date-list-table th, .date-list-table td { border: 1px solid #eee; padding: 12px; text-align: center; }
         .date-list-table th { background: #f8f9fa; font-weight: bold; position: sticky; top: 0; }
-        
-        /* 업로드 상태 표시 */
         .status-badge { padding: 4px 10px; border-radius: 15px; font-size: 12px; font-weight: bold; }
         .status-none { background: #ffebee; color: #c62828; border: 1px solid #ef9a9a; }
         .status-done { background: #e8f5e9; color: #2e7d32; border: 1px solid #a5d6a7; }
-        
         .btn { padding: 8px 15px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; font-size: 13px; }
         .btn-upload { background: #e67e22; color: white; }
+        .btn-secondary { background: #27ae60; color: white; text-decoration: none; } /* 능력단위 버튼용 */
+        .btn-info { background: #2980b9; color: white; } /* 미등록 찾기용 */
         .btn-nav { background: #34495e; color: white; text-decoration: none; display: inline-block; }
-        
-        /* 숨겨진 파일 인풋 */
+        .btn-danger { background: #c0392b; color: white; margin-left: 10px; }
         #hiddenFileInput { display: none; }
-        
         .scroll-area { max-height: 600px; overflow-y: auto; border: 1px solid #ddd; border-radius: 8px; }
         .highlight { color: #e67e22; font-weight: bold; }
+        .danger-zone { 
+    margin-top: 30px; 
+    padding: 20px; 
+    border-top: 1px dashed #c0392b; 
+    text-align: right; 
+}
+.btn-danger-outline { 
+    background: transparent; 
+    color: #c0392b; 
+    border: 1px solid #c0392b; 
+    padding: 5px 12px; 
+    font-size: 11px; 
+}
+.btn-danger-outline:hover { background: #c0392b; color: white; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="header">
-        <h2 style="margin:0; color:#e67e22;">📅 일일 출석 데이터 관리 (훈련일자별)</h2>
-        <a href="#" class="btn btn-nav" onclick="location.href='index.html?class=' + currentClass">◀ 메인으로</a>
+<div class="container"> <div class="header">
+        <h2 style="margin:0; color:#e67e22;">📅 일일 출석 데이터 관리</h2>
+        <div class="header-btns">
+            <button class="btn btn-info" onclick="scrollToFirstEmpty()">🔍 출석부 미등록 찾기</button>
+            <a href="#" class="btn btn-secondary" onclick="location.href='능력단위시간표.html?class=' + currentClass">📜 능력단위 출석부 보기</a>
+            <a href="#" class="btn btn-nav" onclick="location.href='index.html?class=' + currentClass">◀ 메인으로</a>
+        </div>
+    </div>
+
+    <div class="danger-zone">
+        <span style="font-size: 11px; color: #999; margin-right: 10px;">데이터를 모두 지워야 할 경우만 사용하세요 ➔</span>
+        <button class="btn btn-danger-outline" onclick="clearAllAttendance()">🧹 전체 데이터 초기화</button>
     </div>
 
     <div class="info-bar">
         <div><strong>학급:</strong> <span id="dispClass" class="highlight">-</span></div>
         <div id="courseInfo" style="font-size: 14px; color: #666;">훈련 기간 로딩 중...</div>
-        <div><strong>총 훈련일수:</strong> <span id="totalWorkDays" class="highlight">0</span>일</div>
+        <div style="display: flex; gap: 20px;">
+    <div><strong>총 훈련일수:</strong> <span id="totalWorkDays" class="highlight">0</span>일</div>
+    <div style="color: #2e7d32;"><strong>등록:</strong> <span id="doneWorkDays">0</span>일</div>
+    <div style="color: #c0392b;"><strong>미등록:</strong> <span id="noneWorkDays">0</span>일</div>
+</div>
     </div>
 
     <div class="section-card">
         <p style="margin-bottom: 10px; font-size: 14px; color: #555;">
-            ※ 아래 목록은 <strong>시간표(index.html)</strong>에 등록된 실제 수업 날짜들입니다. 해당 날짜의 엑셀 파일을 업로드하세요.
+            ※ 공가, 휴가, 경조사 등은 입/퇴실 시간이 없어도 <strong>자동으로 풀타임 출석 처리</strong>됩니다.
         </p>
         <div class="scroll-area">
             <table class="date-list-table">
@@ -66,14 +124,12 @@
                     </tr>
                 </thead>
                 <tbody id="dateListBody">
-                    <tr><td colspan="5" style="padding:50px;">시간표 데이터를 불러오고 있습니다...</td></tr>
+                    <tr><td colspan="5" style="padding:50px;">데이터를 불러오고 있습니다...</td></tr>
                 </tbody>
             </table>
         </div>
     </div>
-</div>
-
-<input type="file" id="hiddenFileInput" accept=".xlsx, .xls" onchange="handleFileSelect(this)">
+</div> <input type="file" id="hiddenFileInput" accept=".xlsx, .xls" onchange="handleFileSelect(this)">
 
 <script>
 const firebaseConfig = {
@@ -90,95 +146,190 @@ let currentClass = urlParams.get('class') || "테스트";
 document.getElementById('dispClass').innerText = currentClass;
 
 let rawTimetable = [];
-let uploadedDates = {}; // 이미 업로드된 날짜 목록
-let selectedTargetDate = ""; // 현재 업로드 중인 날짜 고정용
+let uploadedDates = {};
+let selectedTargetDate = "";
+window.masterSubjectList = [];
+window.ncsList = [];
 
-// 날짜 포맷팅 함수
+function formatExcelTime(val) {
+    if (!val || val === "-" || val === "") return "00:00:00";
+    if (typeof val === 'number') {
+        let totalSeconds = Math.round(val * 86400);
+        let h = Math.floor(totalSeconds / 3600);
+        let m = Math.floor((totalSeconds % 3600) / 60);
+        let s = totalSeconds % 60;
+        return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+    return String(val).trim();
+}
+// 1. [날짜 정밀 교정] 어떤 형식이 들어와도 YYYY-MM-DD로 변환합니다.
 function getFixDate(rawDate) {
     if (!rawDate) return "";
     let s = String(rawDate).trim();
+    
+    // 2025.08.13 -> 2025-08-13 (마침표 제거)
+    s = s.replace(/\./g, '-');
+    
+    // 08/13/25 (엑셀 날짜 형식) 처리
     if (s.includes('/')) {
         let parts = s.split('/');
         if (parts.length === 3) {
-            return `${parts[2].length === 2 ? "20"+parts[2] : parts[2]}-${parts[0].padStart(2, '0')}-${parts[1].padStart(2, '0')}`;
+            // 연도가 2글자(25)면 20을 붙여 4글자(2025)로 만듬
+            let year = parts[2].length === 2 ? "20" + parts[2] : parts[2];
+            let month = parts[0].padStart(2, '0');
+            let day = parts[1].padStart(2, '0');
+            s = `${year}-${month}-${day}`;
         }
     }
-    return s.replace(/\./g, '-').substring(0, 10);
+    
+    // 최종적으로 10글자(YYYY-MM-DD)만 남깁니다.
+    return s.substring(0, 10);
 }
 
-// 1. 초기 로드: 시간표와 업로드 현황 동시 로드
+// 2. [초기화 로직] 실시간 수신기를 안정화합니다.
 function initialize() {
-    // 마스터 정보 로드
+    // 과정 정보 로드
     database.ref(`${currentClass}/masterData`).once('value', snap => {
         const d = snap.val() || {};
         document.getElementById('courseInfo').innerText = `${d.name || ""} (${d.period || ""})`;
     });
 
-    // 업로드된 날짜 현황 감시
+    // 업로드된 날짜 목록 실시간 감시 (표준화된 날짜로 가져옴)
     database.ref(`${currentClass}/dailyAttendance`).on('value', snap => {
         uploadedDates = snap.val() || {};
-        renderDateList(); // 현황이 바뀔 때마다 목록 갱신
+        renderDateList();
     });
 
-    // 전체 시간표 로드
+    // 전체 시간표 로드 (표준화된 날짜로 목록 생성)
     database.ref(`${currentClass}/fullTimetable`).once('value', snap => {
         rawTimetable = snap.val() || [];
         renderDateList();
     });
 }
 
-// 2. 날짜별 목록 생성
+// [추가] 능력단위시간표.html에서 사용하는 실제 과목 판별 로직 이식
+function isActualSubject(subName) {
+    if (!subName || subName === "") return false;
+    // 마스터 데이터에 등록된 교과목이나 능력단위 명칭이 포함되어 있는지 확인
+    const cleanSubName = String(subName).replace(/\s+/g, "");
+    return masterSubjectList.some(m => m.replace(/\s+/g, "").includes(cleanSubName)) || 
+           ncsList.some(n => n.replace(/\s+/g, "").includes(cleanSubName));
+}
+
+// [수정] 목록 출력 로직 - 능력단위시간표의 필터링 방식을 적용
 function renderDateList() {
     const tbody = document.getElementById('dateListBody');
     if (rawTimetable.length === 0) return;
 
-    // 날짜별로 교과목 묶기
     const dayMap = {};
     rawTimetable.forEach(row => {
         const d = getFixDate(row.날짜);
         if(!d) return;
-        if(!dayMap[d]) dayMap[d] = { 
-            date: d, 
-            dayNum: row.일수 || "-", 
-            weekday: row.요일 || "", 
-            subjects: new Set() 
-        };
-        if(row.교과목 && row.교시 !== "점심") dayMap[d].subjects.add(row.교과목);
+
+        // 1. 회차(일수) 정보 세척 (기존 로직 유지)
+        const dayNumRaw = row.일수;
+        const dayNumStr = dayNumRaw ? String(dayNumRaw).trim() : "";
+        
+        // 2. 과목명 확인 (능력단위시간표 방식 적용)
+        const subjectName = row.교과목 ? String(row.교과목).trim() : "";
+        
+        // [핵심 필터] 
+        // - 회차가 숫자가 아니거나(-, 빈칸)
+        // - 과목명이 실제 등록된 과목이 아니거나(공휴일 텍스트 등)
+        // - 교시가 점심인 경우
+        // 위 조건에 해당하면 목록에서 제외합니다.
+        if (dayNumStr === "" || dayNumStr === "-" || !isActualSubject(subjectName) || row.교시 === "점심") {
+            return; 
+        }
+
+        if(!dayMap[d]) {
+            dayMap[d] = { 
+                date: d, 
+                dayNum: dayNumStr, 
+                weekday: row.요일 || "", 
+                subjects: new Set() 
+            };
+        }
+        dayMap[d].subjects.add(subjectName);
     });
 
     const sortedDates = Object.keys(dayMap).sort();
-    document.getElementById('totalWorkDays').innerText = sortedDates.length;
+    
+    const totalDays = sortedDates.length;
+let doneCount = 0;
+
+sortedDates.forEach(dKey => {
+    if (uploadedDates[dKey]) doneCount++; // 등록된 날짜 카운트
+});
+
+const noneCount = totalDays - doneCount; // 미등록 날짜 계산
+
+// 화면 데이터 업데이트
+document.getElementById('totalWorkDays').innerText = totalDays;
+document.getElementById('doneWorkDays').innerText = doneCount;
+document.getElementById('noneWorkDays').innerText = noneCount;
+
+    if (sortedDates.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="5" style="padding:50px; color:#999;">표시할 실제 훈련일이 없습니다.</td></tr>`;
+        return;
+    }
 
     tbody.innerHTML = sortedDates.map(dKey => {
         const info = dayMap[dKey];
         const isDone = uploadedDates[dKey] ? true : false;
-        const statusHtml = isDone 
-            ? `<span class="status-badge status-done">✔ 등록완료</span>` 
-            : `<span class="status-badge status-none">미등록</span>`;
         
         return `
             <tr>
                 <td>${info.dayNum}회차</td>
                 <td><strong>${info.date}</strong> (${info.weekday})</td>
                 <td style="text-align:left; font-size:12px;">${Array.from(info.subjects).join(', ')}</td>
-                <td>${statusHtml}</td>
-                <td>
-                    <button class="btn btn-upload" onclick="triggerUpload('${info.date}')">
-                        ${isDone ? '재업로드' : '파일찾기'}
-                    </button>
-                </td>
-            </tr>
-        `;
+                <td><span class="status-badge ${isDone ? 'status-done' : 'status-none'}">${isDone ? '✔ 등록완료' : '미등록'}</span></td>
+                <td><button class="btn btn-upload" onclick="triggerUpload('${info.date}')">${isDone ? '재업로드' : '파일찾기'}</button></td>
+            </tr>`;
     }).join('');
 }
 
-// 3. 업로드 버튼 클릭 시 날짜 고정 및 파일창 열기
+// initialize 함수 내부에 masterSubjectList와 ncsList를 뽑아내는 로직도 추가되어야 합니다.
+async function initialize() {
+    // 1. 과목 리스트 먼저 로드
+    await database.ref(`${currentClass}/masterData`).once('value', snap => {
+        const d = snap.val() || {};
+        document.getElementById('courseInfo').innerText = `${d.name || ""} (${d.period || ""})`;
+        
+        if(d.courses) {
+            window.masterSubjectList = [...new Set(d.courses.map(c => c.subject))];
+            window.ncsList = [...new Set(d.courses.filter(c => c.unit).map(c => c.unit))];
+        }
+    });
+
+    // 2. 출석 데이터 감시
+    database.ref(`${currentClass}/dailyAttendance`).on('value', snap => {
+        uploadedDates = snap.val() || {};
+        if(rawTimetable.length > 0) renderDateList(); // 시간표가 있을 때만 실행
+    });
+
+    // 3. 시간표 로드
+    database.ref(`${currentClass}/fullTimetable`).once('value', snap => {
+        rawTimetable = snap.val() || [];
+        renderDateList();
+    });
+}
+
 function triggerUpload(date) {
     selectedTargetDate = date;
     document.getElementById('hiddenFileInput').click();
 }
 
-// 4. 파일 선택 시 처리
+// [데이터 삭제 기능]
+function clearAllAttendance() {
+    if(confirm("❗ 주의: 현재 학급의 모든 일일 출석 데이터가 삭제됩니다.\n이 작업은 되돌릴 수 없습니다. 진행하시겠습니까?")) {
+        database.ref(`${currentClass}/dailyAttendance`).remove()
+            .then(() => alert("✅ 모든 데이터가 초기화되었습니다. 엑셀을 다시 업로드해 주세요."))
+            .catch(err => alert("삭제 실패: " + err));
+    }
+}
+
+// [수리 핵심] 엑셀 데이터 추출 로직 (외출/복귀 배선 연결)
 function handleFileSelect(input) {
     const file = input.files[0];
     if(!file || !selectedTargetDate) return;
@@ -188,37 +339,83 @@ function handleFileSelect(input) {
         const data = new Uint8Array(e.target.result);
         const workbook = XLSX.read(data, {type: 'array'});
         const sheet = workbook.Sheets[workbook.SheetNames[0]];
-        const json = XLSX.utils.sheet_to_json(sheet);
+        const rows = XLSX.utils.sheet_to_json(sheet, {header: 1});
 
-        if(json.length === 0) {
-            alert("파일에 데이터가 없습니다.");
+        if(rows.length < 3) {
+            alert("파일 양식이 올바르지 않습니다.");
             return;
         }
 
         const dailyUpdate = {};
-        json.forEach(row => {
-            const name = (row['훈련생명'] || row['성명'] || "").trim();
-            if(name) {
-                dailyUpdate[name] = {
-                    inTime: row['입실시간'] || row['입실'] || "",
-                    outTime: row['퇴실시간'] || row['퇴실'] || "",
-                    status: row['출결상태'] || row['상태'] || "정상",
-                    note: row['비고'] || ""
-                };
-            }
-        });
+        
+        for(let i = 2; i < rows.length; i++) {
+    const row = rows[i];
+    if (!row || row.length < 2) continue;
 
-        // 지정된 날짜 하위에 데이터 저장
-        database.ref(`${currentClass}/dailyAttendance/${selectedTargetDate}`).set(dailyUpdate)
-            .then(() => {
-                // 능력단위시간표와 연동하기 위한 체크 기록
-                database.ref(`${currentClass}/attendance/${selectedTargetDate}`).set(true);
-                alert(`[${selectedTargetDate}] 출석 데이터 저장 완료!`);
-                input.value = ""; // 파일 초기화
-            })
-            .catch(err => alert("저장 실패: " + err));
+    const name = row[1] ? String(row[1]).trim() : ""; 
+    if(!name || name === "성명") continue;
+
+    let status = row[6] ? String(row[6]).trim() : "-"; 
+    let inTime = formatExcelTime(row[7]);  
+    let outTime = formatExcelTime(row[8]); 
+    let leaveTime = formatExcelTime(row[9]);
+    let returnTime = formatExcelTime(row[10]);
+
+    // 특수 출결(공가 등) 시 09:00~17:30 강제 주입
+    const specialAttendance = ["공가", "휴가", "경조사", "훈련수당", "기타", "출석인정"];
+    const isSpecial = specialAttendance.some(keyword => status.includes(keyword));
+
+    if (isSpecial) {
+        inTime = "09:00:00"; outTime = "17:30:00";
+        leaveTime = ""; returnTime = "";
+    } else if (status === "-" || status.includes("결석") || inTime === "-" || inTime === "") {
+        inTime = "00:00:00"; outTime = "00:00:00";
+        leaveTime = ""; returnTime = "";
+        if(status === "-") status = "결석";
+    }
+
+    // [표준 규격 송신]
+    dailyUpdate[name] = {
+        inTime, outTime, leaveTime, returnTime, status,
+        note: row[14] || "" 
+    };
+}
+
+        if(confirm(`[${selectedTargetDate}] 데이터를 저장하시겠습니까?`)) {
+            database.ref(`${currentClass}/dailyAttendance/${selectedTargetDate}`).set(dailyUpdate)
+                .then(() => {
+                    alert(`✅ [${selectedTargetDate}] 저장 완료!`);
+                    input.value = "";
+                })
+                .catch(err => alert("저장 실패: " + err));
+        }
     };
     reader.readAsArrayBuffer(file);
+}
+// [기능 추가] 미등록 데이터 중 가장 첫 번째(오름차순) 위치로 이동
+function scrollToFirstEmpty() {
+    // 1. 모든 행을 가져옵니다.
+    const rows = document.querySelectorAll('#dateListBody tr');
+    let targetRow = null;
+
+    // 2. 위에서부터 순차적으로 '미등록' 뱃지가 있는 행을 찾습니다.
+    for (let row of rows) {
+        if (row.querySelector('.status-none')) {
+            targetRow = row;
+            break;
+        }
+    }
+
+    if (targetRow) {
+        // 3. 해당 행으로 부드럽게 스크롤 이동
+        targetRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        
+        // 4. 시각적 강조 효과 (잠깐 반짝임)
+        targetRow.style.backgroundColor = "#fff9c4";
+        setTimeout(() => { targetRow.style.backgroundColor = ""; }, 2000);
+    } else {
+        alert("🎉 모든 회차의 출석부가 등록되어 있습니다!");
+    }
 }
 
 initialize();

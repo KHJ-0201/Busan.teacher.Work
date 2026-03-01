@@ -101,7 +101,11 @@
     <div class="info-bar">
         <div><strong>학급:</strong> <span id="dispClass" class="highlight">-</span></div>
         <div id="courseInfo" style="font-size: 14px; color: #666;">훈련 기간 로딩 중...</div>
-        <div><strong>총 훈련일수:</strong> <span id="totalWorkDays" class="highlight">0</span>일</div>
+        <div style="display: flex; gap: 20px;">
+    <div><strong>총 훈련일수:</strong> <span id="totalWorkDays" class="highlight">0</span>일</div>
+    <div style="color: #2e7d32;"><strong>등록:</strong> <span id="doneWorkDays">0</span>일</div>
+    <div style="color: #c0392b;"><strong>미등록:</strong> <span id="noneWorkDays">0</span>일</div>
+</div>
     </div>
 
     <div class="section-card">
@@ -251,8 +255,19 @@ function renderDateList() {
 
     const sortedDates = Object.keys(dayMap).sort();
     
-    // 필터링된 실제 훈련일수 카운트 업데이트
-    document.getElementById('totalWorkDays').innerText = sortedDates.length;
+    const totalDays = sortedDates.length;
+let doneCount = 0;
+
+sortedDates.forEach(dKey => {
+    if (uploadedDates[dKey]) doneCount++; // 등록된 날짜 카운트
+});
+
+const noneCount = totalDays - doneCount; // 미등록 날짜 계산
+
+// 화면 데이터 업데이트
+document.getElementById('totalWorkDays').innerText = totalDays;
+document.getElementById('doneWorkDays').innerText = doneCount;
+document.getElementById('noneWorkDays').innerText = noneCount;
 
     if (sortedDates.length === 0) {
         tbody.innerHTML = `<tr><td colspan="5" style="padding:50px; color:#999;">표시할 실제 훈련일이 없습니다.</td></tr>`;
