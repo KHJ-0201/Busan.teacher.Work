@@ -174,6 +174,7 @@
             .print-page-break { page-break-after: always; } /* 이 클래스가 붙은 div 뒤에서 페이지 넘김 */
         }
         #printOnlyArea { display: none; }
+        .btn-rate { padding: 8px 15px; border: 1.5px solid #8e44ad; border-radius: 4px; cursor: pointer; text-decoration: none; color: #8e44ad; font-weight: bold; }
     </style>
 
 <div id="calendarModal" class="modal-overlay" onclick="closeCalendarModal(event)">
@@ -197,8 +198,9 @@
 <div class="excel-container">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
         <div style="display: flex; gap: 10px;">
-            <a href="#" class="btn-nav" onclick="location.href='index.html?class=' + currentClass">◀ 메인으로</a>
-            <a href="#" class="btn-nav" style="border-color: #e67e22; color: #e67e22;" onclick="location.href='일일출석부.html?class=' + currentClass">📝 일일출석부 등록</a>
+             <a href="#" class="btn-nav" onclick="location.href='index.html?class=' + currentClass">◀ 메인으로</a>
+             <a href="#" class="btn-rate" onclick="location.href='단위개월출석부.html?class=' + currentClass">📈 단위개월 출석부 보기</a>
+             <a href="#" class="btn-nav" style="border-color: #e67e22; color: #e67e22;" onclick="location.href='일일출석부.html?class=' + currentClass">📝 일일출석부 등록</a>
         </div>
         <button class="btn-nav" style="border-color: #e74c3c; color: #e74c3c; background: #fff5f5; font-size: 11px;" onclick="resetAllManualData()">⚠️ 모든 데이터 초기화</button>
     </div>
@@ -692,10 +694,17 @@ function renderFinalTable(dates, results, masterSchedule, dateWithDay, headId, b
             } else {
                 const st = attInfo.status || "";
                 const inT = attInfo.inTime || "00:00:00";
-                if (st.includes("지각") || st.includes("조퇴") || (parseInt(inT.replace(/:/g, '')) > 90000 && parseInt(inT.replace(/:/g, '')) < 130000)) cellClass = "status-late";
-                else if (st.includes("외출")) cellClass = "status-out";
-                else if (st.includes("결석")) cellClass = "status-absent";
-                else if (st.includes("휴가") || st.includes("공가") || st.includes("기타")) cellClass = "status-special";
+                
+                // [수정 부위] '미편입'인 경우에도 '결석(status-absent)' 색상을 적용하여 빨간색으로 표시합니다.
+                if (st.includes("지각") || st.includes("조퇴") || (parseInt(inT.replace(/:/g, '')) > 90000 && parseInt(inT.replace(/:/g, '')) < 130000)) {
+                    cellClass = "status-late";
+                } else if (st.includes("외출")) {
+                    cellClass = "status-out";
+                } else if (st.includes("결석") || st === "미편입") { // 이 부분에 '미편입'을 추가했습니다.
+                    cellClass = "status-absent";
+                } else if (st.includes("휴가") || st.includes("공가") || st.includes("기타")) {
+                    cellClass = "status-special";
+                }
             }
 
             rowTotalMin += (amV + pmV);

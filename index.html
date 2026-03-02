@@ -51,6 +51,7 @@
         #connectionStatus { font-size: 12px; font-weight: bold; padding: 5px 10px; border-radius: 5px; }
         .status-online { color: #27ae60; background: #e8f5e9; }
         .status-offline { color: #e74c3c; background: #fdeaea; }
+        .btn-purple { background: #8e44ad; color: white; } /* 단위개월 출석률 버튼용 */
     </style>
 </head>
 <body>
@@ -83,9 +84,10 @@
         <div class="section-card" style="border-top: 4px solid #27ae60;">
             <h4 style="margin-top:0;">📝 출결 관리 및 분석</h4>
             <div style="display: flex; flex-direction: column; gap: 10px;">
-                <button class="btn btn-orange" onclick="location.href='일일출석부.html?class=' + currentClass">📅 일일출석부 등록</button>
-                <button class="btn btn-green" onclick="location.href='능력단위시간표.html?class=' + currentClass">📊 능력단위별 분석기</button>
-            </div>
+                  <button class="btn btn-orange" onclick="location.href='일일출석부.html?class=' + currentClass">📅 일일출석부 등록</button>
+                  <button class="btn btn-green" onclick="location.href='능력단위시간표.html?class=' + currentClass">📊 능력단위별 분석기</button>
+                  <button class="btn btn-purple" onclick="location.href='단위개월출석부.html?class=' + currentClass">📈 단위개월 출석률 보기</button>
+             </div>
         </div>
     </div>
 

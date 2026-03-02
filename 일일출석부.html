@@ -80,6 +80,55 @@
     font-size: 11px; 
 }
 .btn-danger-outline:hover { background: #c0392b; color: white; }
+/* 팝업 모달 스타일 */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0; top: 0; 
+    width: 100%; height: 100%; 
+    background-color: rgba(0,0,0,0.5); 
+}
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 25px;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 900px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #e67e22;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+.close-btn { font-size: 28px; font-weight: bold; cursor: pointer; color: #666; }
+.modal-table { width: 100%; border-collapse: collapse; font-size: 12px; } 
+
+/* 행 높이를 결정하는 padding(여백)을 10px에서 2px로 대폭 줄였습니다 */
+.modal-table th, .modal-table td { 
+    border: 1px solid #ddd; 
+    padding: 2px 4px; 
+    text-align: center; 
+    line-height: 1.2;
+}
+.modal-table th { background: #f8f9fa; }
+.status-late { background: #fff9c4; color: #f57f17; border: 1px solid #fff176; } /* 노랑: 지각/조퇴 */
+.status-special { background: #e3f2fd; color: #1976d2; border: 1px solid #bbdefb; } /* 파랑: 외출/휴가/공가 */
+.status-badge { 
+    padding: 1px 6px; 
+    border-radius: 10px; 
+    font-size: 11px; 
+    font-weight: bold; 
+    display: inline-block;
+}
+.btn-rate { background: #8e44ad; color: white; text-decoration: none; } /* 단위개월 출석률 버튼용 */
     </style>
 </head>
 <body>
@@ -89,6 +138,7 @@
         <div class="header-btns">
             <button class="btn btn-info" onclick="scrollToFirstEmpty()">🔍 출석부 미등록 찾기</button>
             <a href="#" class="btn btn-secondary" onclick="location.href='능력단위시간표.html?class=' + currentClass">📜 능력단위 출석부 보기</a>
+            <a href="#" class="btn btn-rate" onclick="location.href='단위개월출석부.html?class=' + currentClass">📈 단위개월 출석률 보기</a>
             <a href="#" class="btn btn-nav" onclick="location.href='index.html?class=' + currentClass">◀ 메인으로</a>
         </div>
     </div>
@@ -130,6 +180,32 @@
         </div>
     </div>
 </div> <input type="file" id="hiddenFileInput" accept=".xlsx, .xls" onchange="handleFileSelect(this)">
+
+<div id="detailModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 id="modalTitle" style="margin:0; color:#e67e22;">📅 일자별 상세 출결 현황</h3>
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+        </div>
+        <div id="modalBody">
+            <table class="modal-table">
+                <thead>
+                    <tr>
+                        <th>성명</th>
+                        <th>상태</th>
+                        <th>실제출석(분)</th>
+                        <th>입실시간</th>
+                        <th>퇴실시간</th>
+                        <th>외출</th>
+                        <th>복귀</th>
+                        <th>사유</th>
+                    </tr>
+                </thead>
+                <tbody id="detailTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
 
 <script>
 const firebaseConfig = {
@@ -280,7 +356,9 @@ document.getElementById('noneWorkDays').innerText = noneCount;
         
         return `
             <tr>
-                <td>${info.dayNum}회차</td>
+                <td onclick="showDayDetail('${dKey}', '${info.dayNum}')" style="cursor:pointer; text-decoration:underline; color:#2980b9; font-weight:bold;">
+    ${info.dayNum}회차
+</td>
                 <td><strong>${info.date}</strong> (${info.weekday})</td>
                 <td style="text-align:left; font-size:12px;">${Array.from(info.subjects).join(', ')}</td>
                 <td><span class="status-badge ${isDone ? 'status-done' : 'status-none'}">${isDone ? '✔ 등록완료' : '미등록'}</span></td>
@@ -355,7 +433,13 @@ function handleFileSelect(input) {
     const name = row[1] ? String(row[1]).trim() : ""; 
     if(!name || name === "성명") continue;
 
-    let status = row[6] ? String(row[6]).trim() : "-"; 
+    // [수정 전] if (status === "" || status === "-") continue;
+    // [수정 후] 데이터가 없으면 '미편입'으로 상태를 정의하여 명단을 유지합니다.
+    let status = row[6] ? String(row[6]).trim() : ""; 
+    if (status === "" || status === "-") {
+        status = "미편입";
+    }
+
     let inTime = formatExcelTime(row[7]);  
     let outTime = formatExcelTime(row[8]); 
     let leaveTime = formatExcelTime(row[9]);
@@ -368,7 +452,8 @@ function handleFileSelect(input) {
     if (isSpecial) {
         inTime = "09:00:00"; outTime = "17:30:00";
         leaveTime = ""; returnTime = "";
-    } else if (status === "-" || status.includes("결석") || inTime === "-" || inTime === "") {
+    } else if (status === "미편입" || status === "-" || status.includes("결석") || inTime === "-" || inTime === "") {
+        // [수정] '미편입' 상태인 경우에도 시간을 0분으로 처리하여 결석과 동일하게 경고등이 켜지게 합니다.
         inTime = "00:00:00"; outTime = "00:00:00";
         leaveTime = ""; returnTime = "";
         if(status === "-") status = "결석";
@@ -377,7 +462,7 @@ function handleFileSelect(input) {
     // [표준 규격 송신]
     dailyUpdate[name] = {
         inTime, outTime, leaveTime, returnTime, status,
-        note: row[14] || "" 
+        note: row[13] || "" 
     };
 }
 
@@ -416,6 +501,121 @@ function scrollToFirstEmpty() {
     } else {
         alert("🎉 모든 회차의 출석부가 등록되어 있습니다!");
     }
+}
+
+// 팝업 열기 함수
+function showDayDetail(date, dayNum) {
+    const dayData = uploadedDates[date];
+    if (!dayData) { alert("데이터가 없습니다."); return; }
+
+    const tbody = document.getElementById('detailTableBody');
+    tbody.innerHTML = "";
+
+    // 1. [6교시 인식 로직] 실제 과목이 등록된 행만 필터링 (NaN 데이터 무시)
+    const daySchedule = rawTimetable.filter(row => {
+        const rowDate = getFixDate(row.날짜);
+        const subjectName = row.교과목 ? String(row.교과목).trim() : "";
+        return rowDate === date && isActualSubject(subjectName);
+    });
+
+    let maxSchedEnd = 1050; // 기본 17:30
+    let lastPeriod = 8;
+
+    if (daySchedule.length > 0) {
+        const periods = daySchedule.map(s => {
+            const pVal = s.교시 || 0;
+            return parseInt(pVal) || 0;
+        }).filter(p => p > 0);
+
+        if (periods.length > 0) {
+            lastPeriod = Math.max(...periods);
+        }
+
+        // 교시별 종료 시간 배선
+        if (lastPeriod <= 6) maxSchedEnd = 930;       // 15:30
+        else if (lastPeriod === 7) maxSchedEnd = 990;  // 16:30
+        else maxSchedEnd = 1050;                       // 17:30
+    }
+
+    document.getElementById('modalTitle').innerText = `📅 ${dayNum}회차 (${date}) 상세 [${lastPeriod}교시 기준]`;
+
+    // 그날의 기준 수업 시간 (예: 6교시 360분, 8교시 450분)
+    const standardTotalMin = (maxSchedEnd - 540) - 30;
+    const sortedNames = Object.keys(dayData).sort();
+    
+    sortedNames.forEach(name => {
+        const info = dayData[name];
+        const st = info.status || "";
+        
+        const toMin = (t) => {
+            if (!t || !t.includes(':') || t === "00:00:00") return 0;
+            const p = t.split(':');
+            return parseInt(p[0]) * 60 + parseInt(p[1]);
+        };
+
+        const sIn = toMin(info.inTime), sOut = toMin(info.outTime);
+        const lIn = toMin(info.leaveTime), rIn = toMin(info.returnTime);
+        const isSpecial = ["공가", "휴가", "경조사", "훈련수당", "기타", "출석인정"].some(k => st.includes(k));
+
+        let actualMin = 0;
+        if (isSpecial) {
+            actualMin = standardTotalMin; 
+        } else if (sIn > 0 && sOut > 0) {
+            const aStart = Math.max(sIn, 540); 
+            const aEnd = Math.min(sOut, maxSchedEnd); 
+            
+            if (aEnd > aStart) {
+                actualMin = aEnd - aStart;
+                const lS = 780, lE = 810; 
+                const overlapLunch = Math.max(0, Math.min(aEnd, lE) - Math.max(aStart, lS));
+                actualMin -= overlapLunch;
+                
+                if (lIn > 0 && rIn > 0) {
+                    const oL = Math.max(0, Math.min(rIn, lE) - Math.max(lIn, lS));
+                    actualMin -= ((rIn - lIn) - oL);
+                }
+            }
+        }
+        actualMin = Math.max(0, Math.round(actualMin));
+
+        // [수정 1] 실제 출석(분) 칸만 노란색 강조 (기준 시간과 다를 때)
+        const timeHighlight = (actualMin !== standardTotalMin) ? 'background-color: #fff9c4;' : '';
+
+        // [수정 2] 상태별 색상 규정 적용
+        let statusClass = "status-done"; // 기본 초록: 출석
+        if (st.includes("결석") || st === "미편입") statusClass = "status-none"; // 빨강: 결석 또는 미편입
+        else if (st.includes("지각") || st.includes("조퇴")) statusClass = "status-late"; // 노랑: 지각/조퇴
+        else if (st.includes("외출") || isSpecial) statusClass = "status-special"; // 파랑: 외출/공가/휴가 등
+
+        // [수정 3] 외출 시간 정보가 있을 때만 표시
+        const leaveDisp = (lIn > 0) ? info.leaveTime : "-";
+        const returnDisp = (rIn > 0) ? info.returnTime : "-";
+
+        tbody.innerHTML += `
+            <tr>
+                <td><strong>${name}</strong></td>
+                <td><span class="status-badge ${statusClass}">${st}</span></td>
+                <td style="font-weight:bold; color:#e67e22; ${timeHighlight}">${actualMin}분</td>
+                <td>${info.inTime || '-'}</td>
+                <td>${info.outTime || '-'}</td>
+                <td>${leaveDisp}</td>
+                <td>${returnDisp}</td>
+                <td style="text-align:left;">${info.note || '-'}</td>
+            </tr>
+        `;
+    });
+    document.getElementById('detailModal').style.display = "block";
+}
+
+// 팝업 닫기 함수
+function closeModal() {
+    document.getElementById('detailModal').style.display = "none";
+}
+
+// 팝업 바깥쪽 클릭 시 닫기
+window.onclick = function(event) {
+    const modal = document.getElementById('detailModal');
+    if (event.target == modal) modal.style.display = "none";
 }
 
 initialize();

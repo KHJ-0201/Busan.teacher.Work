@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단위개월 정밀 출석 분석 시스템</title>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <style>
+/* [1. 공통 기반 및 전체 누적 스타일] - 기존 정상 작동 버전 유지 */
+body { font-family: 'Malgun Gothic', sans-serif; background-color: #f8f9fa; margin: 0; padding: 20px; color: #333; }
+.container { max-width: 100%; margin: 0 auto; background: white; padding: 10px 20px; border-radius: 12px; box-shadow: 0 5px 25px rgba(0,0,0,0.05); }
+.header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #27ae60; padding: 0 0 8px 0; margin-bottom: 10px; }
+.header-btns { display: flex; gap: 10px; }
+.btn-nav { padding: 8px 16px; border-radius: 6px; cursor: pointer; text-decoration: none; font-weight: bold; font-size: 13px; transition: 0.2s; border: 1px solid #ddd; background: #fff; color: #444; }
+.period-criteria { background: #2c3e50; color: white; padding: 6px 15px; border-radius: 8px; margin-bottom: 15px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; text-align: center; }
+.criteria-item { display: flex; align-items: center; justify-content: center; gap: 8px; } /* 가로 정렬을 위한 flex 설정 */
+.criteria-item h4 { margin: 0; font-size: 11px; opacity: 0.7; font-weight: normal; white-space: nowrap; }
+.criteria-item div { font-size: 13px; font-weight: bold; color: #ecf0f1; white-space: nowrap; }
+.tab-menu { display: flex; gap: 8px; margin-bottom: 8px; overflow-x: auto; padding-bottom: 5px; }
+.tab-btn { padding: 6px 12px; cursor: pointer; border: 1px solid #ddd; background: #fff; border-radius: 6px; font-weight: bold; font-size: 12px; white-space: nowrap; color: #666; }
+.tab-btn.active { background: #27ae60; color: white; border-color: #27ae60; box-shadow: 0 4px 10px rgba(39, 174, 96, 0.2); }
+.legend-bar { display: flex; gap: 12px; margin-bottom: 5px; justify-content: flex-end; padding-right: 5px; }
+.legend-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: #666; }
+.legend-box { width: 12px; height: 12px; border-radius: 2px; border: 1px solid #ddd; }
+.top-scroll-wrapper { width: 100%; overflow-x: auto; overflow-y: hidden; height: 18px; margin-bottom: 2px; }
+.top-scroll-content { height: 1px; }
+.table-wrapper { background: white; border: 1px solid #d1d8dd; border-radius: 0 0 8px 8px; overflow: auto; position: relative; max-height: 70vh; }
+table { border-collapse: separate; border-spacing: 0; width: auto; table-layout: fixed; }
+th, td { border-right: 1px solid #e1e8ed; border-bottom: 1px solid #e1e8ed; padding: 2px 1px; text-align: center; box-sizing: border-box; font-size: 11px; }
+th { position: sticky; z-index: 100; background-color: #f8fafc !important; color: #334155; }
+.tr-top th { top: 0; height: 20px; z-index: 120; font-size: 10px; color: #94a3b8; }
+.tr-month th { top: 20px; height: 24px; z-index: 115; border-bottom: 2px solid #cbd5e1 !important; }
+.tr-label-day th { top: 44px; height: 32px; z-index: 110; border-bottom: 2px solid #475569 !important; }
+.sticky-col { position: sticky; z-index: 150 !important; background-color: #ffffff !important; }
+th.sticky-col { z-index: 200 !important; background-color: #f1f5f9 !important; }
+.col-name { left: 0; width: 85px; min-width: 85px; border-right: 2px solid #27ae60 !important; }
+.col-name strong { font-size: 11px; display: block; line-height: 1.1; }
+.enroll-date { font-size: 8px; color: #64748b; display: block; margin-top: 0; transform: scale(0.9); }
+.col-r1 { left: 85px; width: 60px; min-width: 60px; } 
+.col-r2 { left: 145px; width: 60px; min-width: 60px; }
+.col-s1 { left: 205px; width: 45px; min-width: 45px; }
+.col-s2 { left: 250px; width: 45px; min-width: 45px; }
+.col-s3 { left: 295px; width: 45px; min-width: 45px; }
+.col-p1 { left: 340px; width: 32px; min-width: 32px; }
+.col-p2 { left: 372px; width: 32px; min-width: 32px; }
+.col-p3 { left: 404px; width: 32px; min-width: 32px; border-right: 2px solid #475569 !important; }
+.mode-total .col-day { width: 14px; min-width: 14px; font-size: 8px; }
+.mode-total td { height: 26px !important; }
+.mode-unit { margin: 0 auto !important; display: table; width: auto !important; }
+.mode-unit .col-day { width: 35px; min-width: 35px; font-size: 11px; }
+.mode-unit td { height: 28px !important; padding: 2px 0 !important; line-height: 1 !important; font-size: 10px !important; }
+.mode-unit td.sticky-col { height: 28px !important; }
+.mode-unit .enroll-date { display: none !important; }
+.bg-attend { background-color: #ffffff; } 
+.bg-absent { background-color: #fee2e2 !important; color: #b91c1c; font-weight: bold; }
+.bg-late { background-color: #fef9c3 !important; color: #854d0e; }
+.bg-early { background-color: #e0f2fe !important; color: #0369a1; }
+.bg-out { background-color: #dcfce7 !important; color: #166534; }
+.bg-none { background-color: #f1f5f9 !important; color: #94a3b8; }
+.status-danger { color: #ef4444; font-weight: bold; } 
+.status-warning { color: #f59e0b; font-weight: bold; } 
+.status-safe { color: #10b981; font-weight: bold; }
+.summary-val { font-weight: 600; color: #334155; }
+.month-header { color: #166534; font-weight: bold; background-color: #f0fdf4 !important; font-size: 12px; }
+.day-header { background-color: #f8fafc !important; color: #475569; font-weight: bold; }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h2 style="margin:0; color:#1e293b; font-size: 22px;">📊 단위개월 정밀 출석 분석</h2>
+        <div class="header-btns">
+            <a href="#" class="btn-nav btn-orange" onclick="location.href='일일출석부.html?class=' + currentClass">📝 일일출석부 등록</a>
+            <a href="#" class="btn-nav btn-green" onclick="location.href='능력단위시간표.html?class=' + currentClass">📜 능력단위 출석부 보기</a>
+            <a href="#" class="btn-nav" onclick="location.href='index.html?class=' + currentClass">◀ 메인으로</a>
+        </div>
+    </div>
+
+    <div class="period-criteria" id="criteriaHeader">
+    <div class="criteria-item"><h4>분석 대상 기간</h4><div id="infoRange">-</div></div>
+    <div class="criteria-item"><h4>수업일수</h4><div id="infoTotalDays">-</div></div>
+    <div class="criteria-item"><h4>80% 이수기준</h4><div id="infoMinDays">-</div></div>
+    <div class="criteria-item"><h4>허용 결석일</h4><div id="infoAllowAbsent" style="color:#f1c40f;">-</div></div>
+</div>
+
+    
+    <div class="tab-wrap" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+    <div class="tab-menu" id="tabMenu" style="margin-bottom: 0;">
+        <button class="tab-btn active" onclick="changePeriod('total')">전체 누적</button>
+    </div>
+
+    <div class="legend-bar" style="margin-bottom: 0;">
+        <div class="legend-item"><div class="legend-box bg-none"></div><span>미편입</span></div>
+        <div class="legend-item"><div class="legend-box bg-attend" style="background:#fff;"></div><span>정상</span></div>
+        <div class="legend-item"><div class="legend-box bg-absent"></div><span>결석</span></div>
+        <div class="legend-item"><div class="legend-box bg-late"></div><span>지각</span></div>
+        <div class="legend-item"><div class="legend-box bg-early"></div><span>조퇴</span></div>
+        <div class="legend-item"><div class="legend-box bg-out"></div><span>외출</span></div>
+    </div>
+</div>
+
+    <div class="top-scroll-wrapper" id="topScrollWrapper">
+        <div class="top-scroll-content" id="topScrollContent"></div>
+    </div>
+
+    <div class="table-wrapper" id="tableWrapper">
+        <table id="mainTable" class="mode-total">
+            <thead id="tableHead"></thead>
+            <tbody id="attendanceTableBody">
+                <tr><td colspan="15" style="padding:60px; font-size:14px; color:#94a3b8;">데이터를 정밀 분석 중입니다...</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+// [로직 보존: 절대 수정 금지]
+const firebaseConfig = {
+    apiKey: "AIzaSyCO37zrsZEjKTokMCNWbIc1C_o5BZMqh8E",
+    authDomain: "busan-teacher-work.firebaseapp.com",
+    databaseURL: "https://busan-teacher-work-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "busan-teacher-work",
+    storageBucket: "busan-teacher-work.firebasestorage.app"
+};
+if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
+const database = firebase.database();
+const urlParams = new URLSearchParams(window.location.search);
+let currentClass = urlParams.get('class') || "테스트";
+
+let rawTimetable = [], fullAttendanceData = {}, masterSubjectList = [], ncsList = [], unitMonths = [], studentNames = [], validTrainingDays = [];
+
+function getFixDate(rawDate) {
+    if (!rawDate) return "";
+    let s = String(rawDate).trim().replace(/\./g, '-');
+    if (s.includes('/')) {
+        let p = s.split('/');
+        if (p.length === 3) {
+            let year = p[2].length === 2 ? "20" + p[2] : p[2];
+            s = `${year}-${p[0].padStart(2, '0')}-${p[1].padStart(2, '0')}`;
+        }
+    }
+    return s.substring(0, 10);
+}
+
+function isActualSubject(subName) {
+    if (!subName) return false;
+    const clean = String(subName).replace(/\s+/g, "");
+    return masterSubjectList.some(m => m.replace(/\s+/g, "").includes(clean)) || 
+           ncsList.some(n => n.replace(/\s+/g, "").includes(clean));
+}
+
+async function initialize() {
+    const masterSnap = await database.ref(`${currentClass}/masterData`).once('value');
+    const master = masterSnap.val() || {};
+    if(master.courses) {
+        masterSubjectList = [...new Set(master.courses.map(c => c.subject))];
+        ncsList = [...new Set(master.courses.filter(c => c.unit).map(c => c.unit))];
+    }
+    const timeSnap = await database.ref(`${currentClass}/fullTimetable`).once('value');
+    rawTimetable = timeSnap.val() || [];
+
+    database.ref(`${currentClass}/dailyAttendance`).on('value', snap => {
+        fullAttendanceData = snap.val() || {};
+        if(rawTimetable.length > 0) {
+            processBaseData();
+            renderTabs();
+            changePeriod(window.currentPeriodTarget || 'total');
+            syncScrollWidth();
+        }
+    });
+}
+
+function syncScrollWidth() {
+    const table = document.getElementById('mainTable');
+    const topContent = document.getElementById('topScrollContent');
+    const tableWrapper = document.getElementById('tableWrapper');
+    const topWrapper = document.getElementById('topScrollWrapper');
+    if(table && topContent) {
+        topContent.style.width = table.offsetWidth + 'px';
+        topWrapper.onscroll = () => { tableWrapper.scrollLeft = topWrapper.scrollLeft; };
+        tableWrapper.onscroll = () => { topWrapper.scrollLeft = tableWrapper.scrollLeft; };
+    }
+}
+
+function processBaseData() {
+    validTrainingDays = [];
+    const dayCheck = new Set();
+    rawTimetable.forEach(row => {
+        const d = getFixDate(row.날짜);
+        if(d && isActualSubject(row.교과목) && !dayCheck.has(d)) {
+            validTrainingDays.push(d);
+            dayCheck.add(d);
+        }
+    });
+    validTrainingDays.sort();
+
+    let allStudents = new Set();
+    Object.values(fullAttendanceData).forEach(day => {
+        Object.keys(day).forEach(name => {
+            if(name !== "성명") allStudents.add(name);
+        });
+    });
+    studentNames = Array.from(allStudents).sort();
+
+    unitMonths = [];
+    if(validTrainingDays.length === 0) return;
+    const start = new Date(validTrainingDays[0]);
+    const end = new Date(validTrainingDays[validTrainingDays.length - 1]);
+    let tempStart = new Date(start);
+    while (tempStart <= end) {
+        let uStart = new Date(tempStart);
+        let uEnd = new Date(tempStart);
+        uEnd.setMonth(uEnd.getMonth() + 1); uEnd.setDate(uEnd.getDate() - 1);
+        const sStr = uStart.toISOString().split('T')[0];
+        const eStr = uEnd.toISOString().split('T')[0];
+        unitMonths.push({ label: `${unitMonths.length + 1}회 단위`, start: sStr, end: eStr, days: validTrainingDays.filter(d => d >= sStr && d <= eStr) });
+        tempStart.setMonth(tempStart.getMonth() + 1);
+    }
+}
+
+function renderTabs() {
+    const menu = document.getElementById('tabMenu');
+    const existingBtns = menu.querySelectorAll('.tab-btn:not([onclick*="total"])');
+    existingBtns.forEach(b => b.remove());
+    unitMonths.forEach((u, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'tab-btn'; btn.innerText = u.label; btn.onclick = () => changePeriod(idx);
+        menu.appendChild(btn);
+    });
+}
+
+function changePeriod(target) {
+    window.currentPeriodTarget = target;
+    const btns = document.querySelectorAll('.tab-btn');
+    const table = document.getElementById('mainTable');
+    if(target === 'total') table.className = 'mode-total';
+    else table.className = 'mode-unit';
+
+    btns.forEach((btn, idx) => {
+        if(target === 'total' && idx === 0) btn.classList.add('active');
+        else if(target === idx - 1) btn.classList.add('active');
+        else btn.classList.remove('active');
+    });
+
+    let targetDays = [], range = "";
+    if(target === 'total') {
+        targetDays = validTrainingDays;
+        range = targetDays.length > 0 ? `${targetDays[0]} ~ ${targetDays[targetDays.length-1]}` : "-";
+    } else {
+        const u = unitMonths[target]; targetDays = u.days; range = `${u.start} ~ ${u.end}`;
+    }
+
+    const totalCount = targetDays.length;
+    const minPassDays = Math.ceil(totalCount * 0.8);
+    document.getElementById('infoRange').innerText = range;
+    document.getElementById('infoTotalDays').innerText = totalCount + "일";
+    document.getElementById('infoMinDays').innerText = minPassDays + "일";
+    document.getElementById('infoAllowAbsent').innerText = (totalCount - minPassDays) + "일";
+
+    renderDetailTable(targetDays, target === 'total');
+    setTimeout(syncScrollWidth, 150);
+}
+
+// [헤더 재배치 수정 영역]
+function renderDetailTable(targetDays, isTotalMode) {
+    const thead = document.getElementById('tableHead');
+    const tbody = document.getElementById('attendanceTableBody');
+    const todayStr = new Date().toISOString().split('T')[0];
+
+    // 월별 병합 계산 (2층용)
+    let monthHeaders = "";
+    if (targetDays.length > 0) {
+        let currentMonth = "";
+        let spanCount = 0;
+        targetDays.forEach((d, idx) => {
+            const m = d.split('-')[1] + "월";
+            if (idx === 0) { currentMonth = m; spanCount = 1; }
+            else if (currentMonth === m) { spanCount++; }
+            else {
+                monthHeaders += `<th colspan="${spanCount}" class="month-header">${currentMonth}</th>`;
+                currentMonth = m; spanCount = 1;
+            }
+            if (idx === targetDays.length - 1) {
+                monthHeaders += `<th colspan="${spanCount}" class="month-header">${currentMonth}</th>`;
+            }
+        });
+    }
+
+    // 일 표시 (3층용)
+    let dateHeaders = targetDays.map(d => `<th class="col-day day-header">${parseInt(d.split('-')[2])}</th>`).join('');
+
+    let headHtml = `
+        <tr class="tr-top">
+            <th colspan="9" class="sticky-col" style="left:0;">실시간 출석 분석 데이터</th>
+            <th colspan="${targetDays.length}">일자별 출결 현황</th>
+        </tr>
+        <tr class="tr-month">
+            <th colspan="9" class="sticky-col" style="left:0; border-bottom:1px solid #ddd;">(분석 기준: 단위 개월)</th>
+            ${monthHeaders}
+        </tr>
+        <tr class="tr-label-day">
+            <th class="sticky-col col-name">성명</th>
+            <th class="sticky-col col-r1">전체(%)</th>
+            <th class="sticky-col col-r2">편입(%)</th>
+            <th class="sticky-col col-s1">출석</th>
+            <th class="sticky-col col-s2">수업</th>
+            <th class="sticky-col col-s3">결석</th>
+            <th class="sticky-col col-p1">지</th>
+            <th class="sticky-col col-p2">조</th>
+            <th class="sticky-col col-p3">외</th>
+            ${dateHeaders}
+        </tr>
+    `;
+    thead.innerHTML = headHtml;
+
+    // [데이터 로직: 절대 보존]
+    const rows = studentNames.map(name => {
+        let enrollDate = "";
+        for (let d of validTrainingDays) {
+            const dayData = fullAttendanceData[d] ? fullAttendanceData[d][name] : null;
+            if (dayData && dayData.status && dayData.status !== "미편입" && dayData.status !== "" && dayData.status !== "-") {
+                enrollDate = d; break;
+            }
+        }
+        let pureAbsent = 0, lCount = 0, eCount = 0, oCount = 0, personalTrainingDaysCount = 0, dayGridHtml = "";
+
+        targetDays.forEach(d => {
+            const att = (fullAttendanceData[d] && fullAttendanceData[d][name]) ? fullAttendanceData[d][name] : null;
+            if (enrollDate && d < enrollDate) { dayGridHtml += `<td class="col-day bg-none"></td>`; return; }
+            personalTrainingDaysCount++;
+            if(!att) {
+                if(d <= todayStr) { pureAbsent++; dayGridHtml += `<td class="col-day bg-absent">×</td>`; }
+                else { dayGridHtml += `<td class="col-day"></td>`; }
+            } else {
+                const st = att.status || "";
+                if(st.includes("결석") || st === "미편입") { pureAbsent++; dayGridHtml += `<td class="col-day bg-absent">×</td>`; }
+                else if(st.includes("출석") || st === "정상" || st === "") { dayGridHtml += `<td class="col-day bg-attend">${isTotalMode ? '' : '○'}</td>`; }
+                else {
+                    let cls = "bg-attend", sym = "";
+                    if(st.includes("지각")) { lCount++; cls = "bg-late"; sym = "지"; }
+                    else if(st.includes("조퇴")) { eCount++; cls = "bg-early"; sym = "조"; }
+                    else if(st.includes("외출")) { oCount++; cls = "bg-out"; sym = "외"; }
+                    else { cls = "bg-attend"; sym = "◎"; }
+                    dayGridHtml += `<td class="col-day ${cls}">${isTotalMode ? '' : sym}</td>`;
+                }
+            }
+        });
+
+        const totalPenalty = lCount + eCount + oCount;
+        const penaltyAbs = Math.floor(totalPenalty / 3);
+        const finalAbsent = pureAbsent + penaltyAbs;
+        const courseRate = targetDays.length > 0 ? ((targetDays.length - finalAbsent) / targetDays.length * 100).toFixed(1) : "0.0";
+        const personalRate = personalTrainingDaysCount > 0 ? ((personalTrainingDaysCount - finalAbsent) / personalTrainingDaysCount * 100).toFixed(1) : "0.0";
+        function getRateClass(r) { const v = parseFloat(r); return v < 80 ? "status-danger" : (v <= 85 ? "status-warning" : "status-safe"); }
+
+        return `
+            <tr>
+                <td class="sticky-col col-name"><strong>${name}</strong><span class="enroll-date">${enrollDate || '미기록'}</span></td>
+                <td class="sticky-col col-r1 ${getRateClass(courseRate)}">${courseRate}%</td>
+                <td class="sticky-col col-r2 ${getRateClass(personalRate)}">${personalRate}%</td>
+                <td class="sticky-col col-s1 summary-val">${personalTrainingDaysCount - finalAbsent}</td>
+                <td class="sticky-col col-s2 summary-val">${personalTrainingDaysCount}</td>
+                <td class="sticky-col col-s3" style="background:#fffcfc !important; color:#ef4444; font-weight:bold;">${finalAbsent}</td>
+                <td class="sticky-col col-p1 summary-val">${lCount}</td>
+                <td class="sticky-col col-p2 summary-val">${eCount}</td>
+                <td class="sticky-col col-p3 summary-val">${oCount}</td>
+                ${dayGridHtml}
+            </tr>
+        `;
+    });
+    tbody.innerHTML = rows.join('');
+}
+initialize();
+</script>
+</body>
+</html>
