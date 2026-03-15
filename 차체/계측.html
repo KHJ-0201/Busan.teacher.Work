@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>차체 정밀 진단 시스템</title>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+
+    <style>
+        /* [1] 순정 베이스 레이아웃 */
+        html, body { margin: 0; padding: 0; width: 100%; height: 100%; background-color: #ecf0f1; display: flex; justify-content: center; align-items: center; overflow: hidden; }
+        
+        .master-grid {
+            display: grid;
+            grid-template-columns: repeat(50, 1fr);
+            grid-template-rows: repeat(40, 1fr);
+            position: relative;
+            aspect-ratio: 60 / 40; 
+            height: 100vh;
+            visibility: hidden; 
+        }
+
+        .master-grid::before {
+            content: ""; position: absolute;
+            grid-column: 11 / 41; grid-row: 4 / 34;
+            background-image: url('계측.webp'); background-size: 100% 100%; background-repeat: no-repeat;
+            z-index: 0; pointer-events: none; width: 100%; height: 100%;
+        }
+
+        .cell { border: none !important; display: flex; justify-content: center; align-items: center; background-color: transparent; }
+        .margin-space { background-color: #ecf0f1; z-index: 2; }
+
+        /* [2] 1페이지 측정 박스 */
+        .measure-box {
+            position: absolute; width: 20px; height: 20px;
+            background-color: white; border: 2px solid black; transform: translate(-50%, -50%); 
+            cursor: default; z-index: 5; display: flex; justify-content: center; align-items: center;
+            color: black; font-size: 11px; font-weight: 900;
+        }
+
+        /* [3] 1페이지 상/하단 디스플레이 */
+        .top-zone-engine { grid-column: 11 / 41; grid-row: 1 / 4; background-color: white; display: flex; flex-direction: column; justify-content: space-evenly; box-sizing: border-box; z-index: 10; padding: 0 10px; }
+        .top-row-1 { display: grid; grid-template-columns: repeat(5, 1fr); align-items: center; text-align: center; }
+        .top-col-merged { grid-column: 2 / 5; font-size: 1.6rem; font-weight: 900; color: #2f3542; letter-spacing: 2px; }
+        .top-col-day { grid-column: 5 / 6; font-size: 1.2rem; font-weight: bold; color: #1e90ff; border: 2px solid #1e90ff; border-radius: 4px; padding: 2px; background-color: white; margin-left: auto; width: 60%; }
+
+        .action-btn { width: 45px; height: 26px; font-size: 0.8rem; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; }
+        .btn-save { background-color: #2ed573; color: #2f3542; }
+        .btn-edit { background-color: #ff4757; }
+
+        .top-row-2 { display: flex; width: 100%; justify-content: center; }
+        .top-info-table { width: 100%; border-collapse: collapse; text-align: center; border: 2px solid #2f3542; background-color: white; }
+        .top-info-table th { background-color: #f1f2f6; border: 1px solid #2f3542; padding: 4px; font-size: 0.9rem; font-weight: 900; color: #2f3542; width: 15%; }
+        .top-info-table td { border: 1px solid #2f3542; padding: 4px; font-size: 0.95rem; font-weight: bold; color: #2f3542; width: 35%; }
+
+        .bottom-zone-engine { grid-column: 11 / 41; grid-row: 34 / 41; margin: 2px 0; background-color: white; border-radius: 8px; padding: 10px; box-sizing: border-box; z-index: 10; display: flex; flex-direction: column; justify-content: center; }
+        .dashboard-container { display: flex; justify-content: center; gap: 8px; align-items: stretch; width: 100%; }
+        .day-selector { display: flex; flex-direction: column; gap: 2px; padding-right: 8px; border-right: 1px solid #57606f; }
+        .day-btn { width: 35px; flex: 1; font-size: 0.75rem; background-color: #4b6584; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; }
+        .day-btn.active { background-color: #ffa502; color: #1e272e; }
+
+        .wheel-card { background-color: #f1f2f6; color: #2f3542; border-radius: 6px; padding: 8px; flex: 1; }
+        .wheel-card table { width: 100%; border-collapse: collapse; }
+        .wheel-plate { background-color: #1e90ff; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; display: inline-block; font-weight: 900; }
+        .rear-plate { background-color: #ffa502 !important; }
+        .center-plate { background-color: #2ed573; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; display: inline-block; font-weight: 900; }
+        th { font-size: 0.7rem; padding-bottom: 4px; border-bottom: 2px solid #2f3542; color: #2f3542; text-align: center; }
+        td { padding: 4px 2px; text-align: center; color: #2f3542; font-size: 0.8rem; font-weight: bold; }
+        input { width: 90%; display: block; margin: 0 auto; height: 25px; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; font-weight: 900; text-align: center; box-sizing: border-box; }
+        .measure-input { color: #000000 !important; }
+        .standard-input { color: #ff0000 !important; }
+        input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+        input[type="number"] { -moz-appearance: textfield; }
+
+        /* [4] 우측 관제 센터 (리모컨) */
+        .right-control-panel { position: fixed; right: 20px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 10px; z-index: 100; }
+        .right-control-panel button { padding: 12px 15px; font-size: 1rem; font-weight: 900; color: white; background-color: #2f3542; border: 2px solid #57606f; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.2); transition: 0.2s; }
+        .right-control-panel button:hover { background-color: #1e90ff; border-color: white; }
+        .right-control-panel .btn-print { background-color: #ffa502; color: #1e272e; border-color: #ff9f43; margin-top: 10px; }
+
+        /* [5] 2페이지 캔버스 및 고정 박스 */
+        #page2-panel {
+            display: none; 
+            grid-column: 11 / 41; grid-row: 1 / 41; 
+            background-image: url('계측치수도.webp'); background-size: 100% 100%; background-repeat: no-repeat;
+            background-color: white; 
+            z-index: 50; position: relative; overflow: hidden;
+        }
+
+        .p2-measure-box {
+            position: absolute; background-color: white; border: 2px solid black;
+            transform: translate(-50%, -50%); display: flex; justify-content: center; align-items: center;
+            color: #ff4757; font-size: 14px; font-weight: 900; z-index: 55;
+        }
+        /* [신규] 좌측 상단 뒤로가기 제어 패널 */
+.left-control-panel { position: fixed; left: 20px; top: 20px; z-index: 100; }
+.btn-back { 
+    padding: 12px 15px; font-size: 1rem; font-weight: 900; color: white; 
+    background-color: #8e44ad; border: 2px solid #9b59b6; border-radius: 8px; 
+    cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.2); 
+}
+.btn-back:hover { background-color: #9b59b6; border-color: white; }
+
+/* 프린트 시 버튼 숨김 (기존 @media print 내부에 추가하거나 따로 작성) */
+@media print { .left-control-panel, .right-control-panel, .action-btn-group { display: none !important; } }
+
+
+        /* [선생님의 순정 프린트 세팅 보존 구역] */
+        @media print {
+            @page { size: A4 portrait; margin: 15mm; } 
+            body, html { width: 100%; height: 100%; background: white; margin: 0; padding: 0; display: block; overflow: hidden; }
+            .right-control-panel, .action-btn-group { display: none !important; }
+            * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+            
+            .master-grid {
+                /* =======================================================
+                  [프린트 화면 가로/세로 조절기 (선생님 전용 컨트롤 패널)]
+                  =======================================================
+                  1. width (가로 폭): 아래 '130%' 숫자를 늘리면 프린트 내용이 좌우로 커지고, 줄이면 작아집니다.
+                  2. height (세로 폭): 반드시 'auto' 로 두셔야 합니다.
+                  3. aspect-ratio (비율 핀): 도면 배경 이미지와 네모 좌표들이 이탈하지 않게 묶어줍니다. 절대 건드리지 마세요!
+                */
+                width: 160% !important;   
+                height: 101% !important;  
+                aspect-ratio: 40 / 40 !important; 
+                
+                position: relative !important;
+                left: 50% !important;
+                transform: translateX(-50%) !important; 
+                visibility: visible !important; display: grid !important;
+            }
+        }
+    
+    
+    /* =======================================================
+   [모바일 전용 커스텀 대시보드 - 순정 상태 보존 모드]
+   ======================================================= */
+.mobile-top-bar { display: none; } /* 기본 상태(PC)에서는 숨김 */
+
+/* =======================================================
+   [모바일 전용: 전체 화면 통째로 축소 모드]
+   ======================================================= */
+@media screen and (max-width: 768px) {
+    /* 1. HTML 및 BODY 스크롤 물리적 차단 */
+    html, body {
+        margin: 0; padding: 0;
+        width: 100vw; height: 100vh;
+        /* 가로/세로 스크롤바 생성 및 작동 금지 */
+        overflow: hidden !important; 
+        /* 모바일 터치로 인한 화면 밀림(바운스) 방지 */
+        overscroll-behavior: none;
+        /* 바디 자체를 화면에 고정 */
+        position: fixed; 
+    }
+
+    /* 2. 기존 사이드 패널 숨김 */
+    .left-control-panel, .right-control-panel { display: none !important; }
+
+    /* [선생님 전용 컨트롤러] : 수치 100% 보존 */
+    :root {
+        --m-scale: 0.65;      
+        --m-width: 100vw;     
+        --m-height: 100vh;    
+        --m-top-bar: 50px;    
+    }
+
+    /* 3. 모바일 최상단 1줄 관제바 : 위치 고정 */
+    .mobile-top-bar {
+        display: flex !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: var(--m-top-bar);
+        background-color: #2f3542;
+        z-index: 10001;
+        align-items: center; padding: 0 10px; gap: 5px;
+        box-sizing: border-box;
+        /* 상단바 영역 내에서도 스크롤 금지 */
+        overflow: hidden !important;
+    }
+
+    /* 4. PC 화면 통째로 축소 엔진 (master-grid) : 선생님 수치 100% 보존 */
+    .master-grid {
+        display: grid !important; 
+        visibility: visible !important;
+        position: absolute !important; 
+        
+        top: var(--m-top-bar) !important;
+        left: 50%;
+        
+        /* 선생님이 직접 맞추신 커스텀 수치 유지 */
+        width: 130vh !important; 
+        height: 127vh !important; 
+
+        transform: translateX(-50%) scale(var(--m-scale)) !important;
+        transform-origin: top center;
+        
+        margin: 0 !important;
+        z-index: 1;
+        
+        /* 그리드 내부 내용이 넘쳐도 스크롤 생성 금지 */
+        overflow: hidden !important;
+    }
+}
+    </style>
+</head>
+<body>
+<div class="mobile-top-bar">
+    <button class="m-btn m-btn-back" onclick="location.href='../start/데이터자료.html'">자료</button>
+    <div style="width: 1px; height: 20px; background: #57606f; margin: 0 2px;"></div>
+    <button class="m-btn m-btn-save" onclick="saveAllData()">저장</button>
+    <button class="m-btn m-btn-edit" onclick="unlockData()">수정</button>
+    <div class="m-time-info">
+        <span>수정일</span>
+        <span id="m-time-val" style="color:white;">-</span>
+    </div>
+    <div style="width: 1px; height: 20px; background: #57606f; margin: 0 2px;"></div>
+    <button class="m-btn m-btn-page" onclick="switchPage(1)">1P</button>
+    <button class="m-btn m-btn-page" onclick="switchPage(2)">2P</button>
+    <div id="m-day-display" class="m-day-indicator">월요일</div>
+</div>
+
+
+    <div class="left-control-panel">
+        <button class="btn-back" onclick="location.href='../start/데이터자료.html'">◀ 데이터 자료</button>
+    </div>
+    
+    <div class="right-control-panel">
+        <div id="last-modified-display" style="font-size: 0.75rem; color: #ff4757; text-align: center; background: white; padding: 6px; border-radius: 4px; border: 2px solid #ff4757; font-weight: bold; margin-bottom: 5px;">
+            수정일자<br><span id="last-modified-time" style="color: #2f3542; font-size: 0.85rem;">동기화 중...</span>
+        </div>
+        
+        <button onclick="switchPage(1)">1페이지</button>
+        <button onclick="switchPage(2)">2페이지</button>
+        <button class="btn-print" onclick="smartPrint()">🖨️ 프린트</button>
+    </div>
+
+    <div class="master-grid" id="gridContainer">
+        
+        <div class="top-zone-engine">
+            <div class="top-row-1">
+                <div class="action-btn-group" style="grid-column: 1 / 2; display: flex; gap: 4px; justify-content: flex-start; align-items: center;">
+                    <button class="action-btn btn-save" onclick="saveAllData()">저장</button>
+                    <button class="action-btn btn-edit" onclick="unlockData()">수정</button>
+                </div>
+                <div class="top-col-merged">[공개도면]</div>
+                <div class="top-col-day" id="topDayDisplay">월요일</div> 
+            </div>
+            <div class="top-row-2">
+                <table class="top-info-table">
+                    <tr>
+                        <th>자격종목</th><td>자동차차체수리기능사</td>
+                        <th>작품명</th><td>자동차차체수리작업</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="bottom-zone-engine">
+            <div class="dashboard-container">
+                <div class="day-selector">
+                    <button class="day-btn" onclick="changeDay('일')">일</button>
+                    <button class="day-btn active" onclick="changeDay('월')">월</button>
+                    <button class="day-btn" onclick="changeDay('화')">화</button>
+                    <button class="day-btn" onclick="changeDay('수')">수</button>
+                    <button class="day-btn" onclick="changeDay('목')">목</button>
+                    <button class="day-btn" onclick="changeDay('금')">금</button>
+                    <button class="day-btn" onclick="changeDay('토')">토</button>
+                </div>
+                <div id="wheelCards" style="display: flex; gap: 8px; flex: 1;"></div>
+            </div>
+        </div>
+
+        <div id="page2-panel"></div>
+
+    </div>
+
+    <script>
+
+        const container = document.getElementById('gridContainer');
+    const p2Panel = document.getElementById('page2-panel');
+    let currentDay = '월';
+    let isSystemLocked = true; // 한 번만 선언
+
+    let measureData = {};
+    let standardData = { '일':{}, '월':{}, '화':{}, '수':{}, '목':{}, '금':{}, '토':{} };
+
+    const masterConfig = {
+    apiKey: "AIzaSyDnADuHu0mq4GIlqBm_VHfv7y6RarabGhU",
+    authDomain: "busan-teacher-workall.firebaseapp.com",
+    databaseURL: "https://busan-teacher-workall-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "busan-teacher-workall"
+};
+if (!firebase.apps.length) firebase.initializeApp(masterConfig);
+const database = firebase.database();
+
+
+
+// [2] 페이지 이동 및 요일 변경 시 '세이프티 가드' 함수
+function confirmNavigation(targetAction) {
+    if (!isSystemLocked) {
+        if (confirm("⚠ 수정 중인 데이터가 저장되지 않았습니다.\n저장하지 않고 이동하시겠습니까?")) {
+            // [정밀 수리] 이동에 동의했으므로 수정 모드를 강제 종료하고 시스템을 잠급니다.
+            isSystemLocked = true; 
+            applyLockState(true); 
+            targetAction();
+        }
+    } else {
+        targetAction();
+    }
+}
+
+// 요일 변경 로직에 가드 장착
+function changeDay(day) {
+    confirmNavigation(() => {
+        currentDay = day;
+        document.querySelectorAll('.day-btn').forEach(b => b.classList.toggle('active', b.innerText === day));
+        document.getElementById('topDayDisplay').innerText = day + '요일'; 
+        if(document.getElementById('m-day-display')) document.getElementById('m-day-display').innerText = day + '요일';
+        renderCards(); 
+    });
+}
+
+// 페이지 전환 로직에 가드 장착
+function switchPage(pageNum) {
+    confirmNavigation(() => {
+        if (pageNum === 1) {
+            p2Panel.style.display = 'none';
+        } else {
+            p2Panel.style.display = 'block';
+        }
+    });
+}
+
+
+    
+   
+
+
+
+// 잠금 상태 시각화 및 입력 차단
+function applyLockState(isLocked) {
+    const inputs = document.querySelectorAll('.wheel-card input[type="number"]');
+    inputs.forEach(el => {
+        el.readOnly = isLocked;
+        el.style.backgroundColor = isLocked ? '#e0e0e0' : 'white';
+        el.style.pointerEvents = isLocked ? 'none' : 'auto';
+    });
+}
+
+    
+
+    
+    // [선생님의 순정 좌표 보존 구역] 1페이지 60개
+    const fixedBoxData = [
+        {id: 1, x: 50.2, y: 20.4}, {id: 2, x: 50.2, y: 23.9}, {id: 3, x: 50.2, y: 29.1},
+        {id: 4, x: 52.5, y: 20.4}, {id: 5, x: 52.5, y: 23.9}, {id: 6, x: 52.5, y: 29.1},
+        {id: 7, x: 44.9, y: 20.4}, {id: 8, x: 44.9, y: 23.9}, {id: 9, x: 44.9, y: 29.1},
+        {id: 10, x: 47.3, y: 20.4}, {id: 11, x: 47.3, y: 23.9}, {id: 12, x: 47.3, y: 29.1},
+        {id: 13, x: 25.6, y: 23.9}, {id: 14, x: 25.6, y: 26.8}, {id: 15, x: 25.6, y: 29.9},
+        {id: 16, x: 28.0, y: 23.9}, {id: 17, x: 28.0, y: 26.8}, {id: 18, x: 28.0, y: 29.9},
+        {id: 19, x: 50.2, y: 64.0}, {id: 20, x: 50.2, y: 69.0}, {id: 21, x: 52.5, y: 64.0},
+        {id: 22, x: 52.5, y: 69.0}, {id: 23, x: 44.9, y: 64.0}, {id: 24, x: 44.9, y: 69.0},
+        {id: 25, x: 47.3, y: 64.0}, {id: 26, x: 47.3, y: 69.0}, {id: 27, x: 25.6, y: 64.0},
+        {id: 28, x: 25.6, y: 69.7}, {id: 29, x: 28.0, y: 64.0}, {id: 30, x: 28.0, y: 69.7},
+        {id: 31, x: 25.6, y: 33.3}, {id: 32, x: 28.0, y: 33.3}, {id: 33, x: 25.6, y: 36.8},
+        {id: 34, x: 28.0, y: 36.8}, {id: 35, x: 25.6, y: 42.7}, {id: 36, x: 28.0, y: 42.7},
+        {id: 37, x: 25.6, y: 53.3}, {id: 38, x: 28.0, y: 53.3}, {id: 39, x: 25.6, y: 57.9},
+        {id: 40, x: 28.0, y: 57.9}, {id: 41, x: 44.9, y: 32.6}, {id: 42, x: 47.3, y: 32.6},
+        {id: 43, x: 50.2, y: 32.6}, {id: 44, x: 52.5, y: 32.6}, {id: 45, x: 44.9, y: 35.9},
+        {id: 46, x: 47.3, y: 35.9}, {id: 47, x: 50.2, y: 35.9}, {id: 48, x: 52.5, y: 35.9},
+        {id: 49, x: 44.9, y: 42.5}, {id: 50, x: 47.3, y: 42.5}, {id: 51, x: 50.2, y: 42.5},
+        {id: 52, x: 52.5, y: 42.5}, {id: 53, x: 44.9, y: 54.4}, {id: 54, x: 47.3, y: 54.4},
+        {id: 55, x: 50.2, y: 54.4}, {id: 56, x: 52.5, y: 54.4}, {id: 57, x: 44.9, y: 59.0},
+        {id: 58, x: 47.3, y: 59.0}, {id: 59, x: 50.2, y: 59.0}, {id: 60, x: 52.5, y: 59.0}
+    ];
+
+    // 2페이지 9개 좌표
+    const p2FixedBoxData = [
+        {id:1, x:"85.43", y:"23.29", w:"40px", h:"20px"},
+        {id:2, x:"73.58", y:"23.29", w:"40px", h:"20px"},
+        {id:3, x:"74.06", y:"88.90", w:"40px", h:"20px"},
+        {id:4, x:"84.94", y:"88.90", w:"40px", h:"20px"},
+        {id:5, x:"15.42", y:"18.06", w:"40px", h:"20px"},
+        {id:6, x:"16.27", y:"82.05", w:"40px", h:"20px"},
+        {id:7, x:"52.18", y:"15.02", w:"20px", h:"50px"},
+        {id:8, x:"55.93", y:"87.92", w:"20px", h:"50px"},
+        {id:9, x:"46.01", y:"49.08", w:"40px", h:"80px"}
+    ];
+
+    function resizeGrid() {
+        container.style.height = window.innerHeight + 'px';
+        container.style.width = 'auto'; 
+        container.style.visibility = 'visible';
+    }
+
+
+    function renderCards() {
+    const cardContainer = document.getElementById('wheelCards');
+    if (!cardContainer) return; // 엔진 룸(컨테이너) 확인
+
+    // [정밀 진단] 데이터가 없는 요일이라도 에러가 나지 않도록 빈 부품({})을 즉시 공급합니다.
+    const sData = standardData[currentDay] || {}; 
+    
+    // 기준값(Standard) 변수들: sData가 비어있어도 에러 없이 공백('')을 출력합니다.
+    const f_w_s = sData['F-width'] || '';
+    const f_l_s = sData['F-length'] || '';
+    const f_h_s = sData['F-height'] || '';
+    
+    const r_w_s = sData['R-width'] || '';
+    const r_l_s = sData['R-length'] || '';
+    const r_h_s = sData['R-height'] || '';
+
+    // 측정값(Measure) 변수들
+    const fl_w_m = measureData['FL-width'] || ''; const fr_w_m = measureData['FR-width'] || '';
+    const fl_l_m = measureData['FL-length'] || ''; const fr_l_m = measureData['FR-length'] || '';
+    const fl_h_m = measureData['FL-height'] || ''; const fr_h_m = measureData['FR-height'] || '';
+
+    const rl_w_m = measureData['RL-width'] || ''; const rr_w_m = measureData['RR-width'] || '';
+    const rl_l_m = measureData['RL-length'] || ''; const rr_l_m = measureData['RR-length'] || '';
+    const rl_h_m = measureData['RL-height'] || ''; const rr_h_m = measureData['RR-height'] || '';
+
+    // [표 구조 출력] 이 부분이 실행되어야 화면에 표가 나타납니다.
+    cardContainer.innerHTML = `
+        <div class="wheel-card front" style="flex: 1;">
+            <table>
+                <thead>
+                    <tr>
+                        <th><div class="wheel-plate">FL</div></th>
+                        <th>측정</th>
+                        <th><div class="center-plate">기준</div></th>
+                        <th>측정</th>
+                        <th><div class="wheel-plate">FR</div></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>폭</td>
+                        <td><input type="number" id="FL-width-m" class="measure-input" value="${fl_w_m}" oninput="calculateArrows()"></td>
+                        <td><input type="number" id="F-width-s" class="standard-input" value="${f_w_s}" oninput="calculateArrows()"></td>
+                        <td><input type="number" id="FR-width-m" class="measure-input" value="${fr_w_m}" oninput="calculateArrows()"></td>
+                        <td>폭</td>
+                    </tr>
+                    <tr>
+                        <td>길이</td>
+                        <td><input type="number" id="FL-length-m" class="measure-input" value="${fl_l_m}" oninput="calculateArrows()"></td>
+                        <td><input type="number" id="F-length-s" class="standard-input" value="${f_l_s}" oninput="calculateArrows()"></td>
+                        <td><input type="number" id="FR-length-m" class="measure-input" value="${fr_l_m}" oninput="calculateArrows()"></td>
+                        <td>길이</td>
+                    </tr>
+                    <tr>
+                        <td>높이</td>
+                        <td><input type="number" id="FL-height-m" class="measure-input" value="${fl_h_m}" oninput="calculateArrows()"></td>
+                        <td><input type="number" id="F-height-s" class="standard-input" value="${f_h_s}" oninput="calculateArrows()"></td>
+                        <td><input type="number" id="FR-height-m" class="measure-input" value="${fr_h_m}" oninput="calculateArrows()"></td>
+                        <td>높이</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="wheel-card rear" style="flex: 1;">
+            <table>
+                <thead>
+                    <tr>
+                        <th><div class="wheel-plate rear-plate">RL</div></th>
+                        <th>측정</th>
+                        <th><div class="center-plate">기준</div></th>
+                        <th>측정</th>
+                        <th><div class="wheel-plate rear-plate">RR</div></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>폭</td>
+                        <td><input type="number" id="RL-width-m" class="measure-input" value="${rl_w_m}" oninput="calculateArrows()"></td>
+                        <td><input type="number" id="R-width-s" class="standard-input" value="${r_w_s}" oninput="calculateArrows()"></td>
+                        <td><input type="number" id="RR-width-m" class="measure-input" value="${rr_w_m}" oninput="calculateArrows()"></td>
+                        <td>폭</td>
+                    </tr>
+                    <tr>
+                        <td>길이</td>
+                        <td><input type="number" id="RL-length-m" class="measure-input" value="${rl_l_m}" oninput="calculateArrows()"></td>
+                        <td><input type="number" id="R-length-s" class="standard-input" value="${r_l_s}" oninput="calculateArrows()"></td>
+                        <td><input type="number" id="RR-length-m" class="measure-input" value="${rr_l_m}" oninput="calculateArrows()"></td>
+                        <td>길이</td>
+                    </tr>
+                    <tr>
+                        <td>높이</td>
+                        <td><input type="number" id="RL-height-m" class="measure-input" value="${rl_h_m}" oninput="calculateArrows()"></td>
+                        <td><input type="number" id="R-height-s" class="standard-input" value="${r_h_s}" oninput="calculateArrows()"></td>
+                        <td><input type="number" id="RR-height-m" class="measure-input" value="${rr_h_m}" oninput="calculateArrows()"></td>
+                        <td>높이</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    `;
+    calculateArrows(); 
+    applyLockState(isSystemLocked);
+}
+
+    // [서버로 전송 엔진]
+    function saveAllData() {
+    const inputs = document.querySelectorAll('.wheel-card input[type="number"]');
+    
+    // 1. 요일별 기준값 저장 공간이 비어있는지 먼저 점검 (안전 장치)
+    if (!standardData[currentDay]) {
+        standardData[currentDay] = {};
+    }
+
+    inputs.forEach(el => {
+        const idParts = el.id.split('-'); // 예: ["FL", "width", "m"]
+        if (idParts.length < 3) return;   // 비정상적인 ID 스킵
+
+        const key = idParts[0] + '-' + idParts[1]; // 예: "FL-width" 또는 "F-width"
+        const type = idParts[2];                  // "m" (측정치) 또는 "s" (기준치)
+
+        if (type === 'm') { 
+            measureData[key] = el.value; 
+        } else if (type === 's') { 
+            standardData[currentDay][key] = el.value; 
+        }
+    });
+    
+    // 현재 시간을 굽기 (기존 로직 유지)
+    const now = new Date();
+    const timeStr = now.getFullYear() + '.' + (now.getMonth() + 1) + '.' + now.getDate() + ' ' + now.getHours() + ':' + String(now.getMinutes()).padStart(2, '0');
+    
+    // 파이어베이스 DB로 일괄 전송
+    database.ref('carBodyMeasurement').set({
+        measureData: measureData,
+        standardData: standardData,
+        lockState: 'locked',
+        lastModified: timeStr
+    }).then(() => {
+        document.getElementById('last-modified-time').innerText = timeStr;
+        if(document.getElementById('m-time-val')) document.getElementById('m-time-val').innerText = timeStr.split(' ')[1]; // 시간만 표시
+        isSystemLocked = true; 
+        applyLockState(true);
+        calculateArrows(); 
+        alert("✅ 클라우드 저장소에 안전하게 기록되었습니다. 시스템을 잠급니다.");
+    }).catch(err => {
+        console.error("저장 오류 상세:", err);
+        alert("❌ 저장 실패: " + err.message);
+    });
+}
+
+    function unlockData() {
+    const pwd = prompt("🔧 [정비사 인증] 수정을 위해 비밀번호를 입력하십시오.");
+    if (pwd === "0936") {
+        isSystemLocked = false; // [핵심] 로컬 잠금 해제
+        database.ref('carBodyMeasurement/lockState').set('unlocked').then(() => {
+            applyLockState(false);
+            alert("🔓 수정 모드 가동. 이동 시 데이터 유실에 주의하십시오.");
+        });
+    } else if (pwd !== null) {
+        alert("❌ 비밀번호가 일치하지 않습니다.");
+    }
+}
+
+    
+
+    function renderFixedBoxes() {
+        fixedBoxData.forEach(data => {
+            const box = document.createElement('div');
+            box.id = 'box-' + data.id; 
+            box.className = 'measure-box';
+            box.style.left = data.x + '%';
+            box.style.top = data.y + '%';
+            box.innerText = data.id;
+            container.appendChild(box);
+        });
+    }
+
+    function renderP2FixedBoxes() {
+        p2Panel.innerHTML = ''; 
+        p2FixedBoxData.forEach(data => {
+            const box = document.createElement('div');
+            box.id = 'p2-box-' + data.id; 
+            box.className = 'p2-measure-box';
+            box.style.left = data.x + '%';
+            box.style.top = data.y + '%';
+            box.style.width = data.w;
+            box.style.height = data.h;
+            p2Panel.appendChild(box);
+        });
+    }
+
+    function updateBoxDisplay(boxId, m, s, rule) {
+        const boxEl = document.getElementById('box-' + boxId);
+        if (!boxEl) return;
+        
+        if (m === '' || s === '') {
+            boxEl.innerHTML = boxId;
+            boxEl.style.color = 'black'; 
+            return;
+        }
+        
+        const measure = parseFloat(m);
+        const standard = parseFloat(s);
+        const formatRed = (char) => `<span style="color: #ff4757; font-weight: 900; font-size: 15px;">${char}</span>`;
+        
+        const redCircle = `<div style="box-sizing: border-box; width: 13px; height: 13px; border: 3px solid #ff4757; border-radius: 50%;"></div>`;
+        
+        if (measure === standard) {
+            boxEl.innerHTML = redCircle; 
+            return;
+        }
+        
+        let arrow = '';
+        if (rule === 'FL-width' || rule === 'RL-width') {
+            arrow = measure > standard ? '←' : '→';
+        } else if (rule === 'FR-width' || rule === 'RR-width') {
+            arrow = measure < standard ? '←' : '→';
+        } else if (rule === 'FL-length' || rule === 'FR-length') {
+            arrow = measure > standard ? '↑' : '↓';
+        } else if (rule === 'RL-length' || rule === 'RR-length') {
+            arrow = measure > standard ? '↓' : '↑';
+        } else if (rule === 'height') { 
+            arrow = measure > standard ? '→' : '←';
+        }
+        
+        boxEl.innerHTML = formatRed(arrow);
+    }
+
+    function updatePage2Values() {
+        const sData = standardData[currentDay] || {};
+        
+        const f_w = sData['F-width'] || '';
+        const r_w = sData['R-width'] || '';
+        const f_l = sData['F-length'] || '';
+        const r_l = sData['R-length'] || '';
+        const f_h = sData['F-height'] || '';
+        const r_h = sData['R-height'] || '';
+
+        const setP2Box = (id, val) => {
+            const el = document.getElementById('p2-box-' + id);
+            if(el) el.innerText = val;
+        };
+
+        const setP2BoxRotated = (id, val) => {
+            const el = document.getElementById('p2-box-' + id);
+            if(el) el.innerHTML = `<span style="transform: rotate(90deg); display: block;">${val}</span>`;
+        };
+
+        setP2Box(1, f_w); setP2Box(2, f_w);
+        setP2Box(3, r_w); setP2Box(4, r_w);
+        setP2BoxRotated(7, f_l); setP2BoxRotated(8, r_l);
+        setP2Box(5, f_h); setP2Box(6, r_h);
+
+        const box9 = document.getElementById('p2-box-9');
+        if(box9) {
+            box9.style.border = 'none';
+            box9.style.backgroundColor = 'transparent';
+            box9.innerHTML = `<div style="transform: rotate(90deg); border: 2px solid #1e90ff; border-radius: 4px; padding: 4px 10px; color: #1e90ff; font-weight: 900; font-size: 14px; background-color: white; white-space: nowrap;">${currentDay}요일</div>`;
+        }
+    }
+
+    function calculateArrows() {
+        const getValue = (id) => document.getElementById(id) ? document.getElementById(id).value : '';
+
+        const F_w_s = getValue('F-width-s'), F_l_s = getValue('F-length-s'), F_h_s = getValue('F-height-s');
+        const R_w_s = getValue('R-width-s'), R_l_s = getValue('R-length-s'), R_h_s = getValue('R-height-s');
+
+        const FL_w_m = getValue('FL-width-m'), FR_w_m = getValue('FR-width-m');
+        const FL_l_m = getValue('FL-length-m'), FR_l_m = getValue('FR-length-m');
+        const FL_h_m = getValue('FL-height-m'), FR_h_m = getValue('FR-height-m');
+
+        const RL_w_m = getValue('RL-width-m'), RR_w_m = getValue('RR-width-m');
+        const RL_l_m = getValue('RL-length-m'), RR_l_m = getValue('RR-length-m');
+        const RL_h_m = getValue('RL-height-m'), RR_h_m = getValue('RR-height-m');
+
+        [1,2,3].forEach(id => updateBoxDisplay(id, FL_w_m, F_w_s, 'FL-width'));
+        [4,5,6].forEach(id => updateBoxDisplay(id, FR_w_m, F_w_s, 'FR-width'));
+        [7,8,9].forEach(id => updateBoxDisplay(id, FL_l_m, F_l_s, 'FL-length'));
+        [10,11,12].forEach(id => updateBoxDisplay(id, FR_l_m, F_l_s, 'FR-length'));
+        [13,14,15].forEach(id => updateBoxDisplay(id, FL_h_m, F_h_s, 'height'));
+        [16,17,18].forEach(id => updateBoxDisplay(id, FR_h_m, F_h_s, 'height'));
+
+        [19,20].forEach(id => updateBoxDisplay(id, RL_w_m, R_w_s, 'RL-width'));
+        [21,22].forEach(id => updateBoxDisplay(id, RR_w_m, R_w_s, 'RR-width'));
+        [23,24].forEach(id => updateBoxDisplay(id, RL_l_m, R_l_s, 'RL-length'));
+        [25,26].forEach(id => updateBoxDisplay(id, RR_l_m, R_l_s, 'RR-length'));
+        [27,28].forEach(id => updateBoxDisplay(id, RL_h_m, R_h_s, 'height'));
+        [29,30].forEach(id => updateBoxDisplay(id, RR_h_m, R_h_s, 'height'));
+
+        const blackCircle = `<div style="box-sizing: border-box; width: 13px; height: 13px; border: 3px solid black; border-radius: 50%;"></div>`;
+        for (let i = 31; i <= 60; i++) {
+            const boxEl = document.getElementById('box-' + i);
+            if (boxEl) boxEl.innerHTML = blackCircle;
+        }
+
+        updatePage2Values();
+    }
+
+    // [부팅 시 파이어베이스에서 영구 데이터 수신]
+    // [수정 후] 데이터 로드 즉시 물리적 잠금 공정 강제 집행
+function loadFirebaseData() {
+    // 시작하자마자 일단 잠금 유지
+    isSystemLocked = true; 
+    
+    database.ref('carBodyMeasurement').once('value', (snap) => {
+        const data = snap.val();
+        if (data) {
+            measureData = data.measureData || {};
+            standardData = data.standardData || { '일':{}, '월':{}, '화':{}, '수':{}, '목':{}, '금':{}, '토':{} };
+            // 서버에 저장된 값이 'locked'일 때만 true, 아니면 false
+            isSystemLocked = (data.lockState === 'locked'); 
+            document.getElementById('last-modified-time').innerText = data.lastModified || '기록 없음';
+        }
+        
+        currentDay = '월';
+        document.querySelectorAll('.day-btn').forEach(b => b.classList.toggle('active', b.innerText === '월'));
+        document.getElementById('topDayDisplay').innerText = '월요일'; 
+        
+        renderCards(); 
+        
+        // [정밀 수리] 데이터를 다 불러온 즉시, 판독된 잠금 상태를 물리적으로 적용합니다.
+        applyLockState(isSystemLocked); 
+        
+    }).catch(err => {
+        console.error("DB 연동 실패:", err);
+        alert("데이터를 불러오지 못했습니다.");
+    });
+}
+
+    window.addEventListener('resize', resizeGrid);
+    window.onload = function() {
+        resizeGrid();
+        renderFixedBoxes(); 
+        renderP2FixedBoxes(); 
+        
+        // 1. 보안 키 확인 (데이터자료.html 에서 로그인할 때 발급받은 키)
+        const savedPw = localStorage.getItem('adminPw');
+        if (!savedPw) {
+            alert("보안 인증이 필요합니다. 메인 화면으로 이동합니다.");
+            location.href = '../index.html'; // 경로가 다르면 조절하십시오
+            return;
+        }
+
+        // 2. 파이어베이스 서버 로그인 (히든 스위치로 진입한 관리자 권한 확인)
+        firebase.auth().signInWithEmailAndPassword('ghlwns0201@naver.com', savedPw)
+            .then(() => {
+                // 3. 권한 확인 완료 후 데이터 다운로드
+                loadFirebaseData();
+            })
+            .catch(err => {
+                alert("서버 연결 실패. 인증 정보가 만료되었습니다.");
+            });
+    };
+
+    window.onload = function() {
+        resizeGrid();
+        renderFixedBoxes(); 
+        renderP2FixedBoxes(); 
+        
+        const savedPw = localStorage.getItem('adminPw');
+        if (!savedPw) {
+            alert("보안 인증이 필요합니다. 메인 화면으로 이동합니다.");
+            location.href = '../index.html'; 
+            return;
+        }
+
+        firebase.auth().signInWithEmailAndPassword('ghlwns0201@naver.com', savedPw)
+            .then(() => {
+                loadFirebaseData();
+            })
+            .catch(err => {
+                alert("서버 연결 실패. 인증 정보가 만료되었습니다.");
+            });
+    }; // window.onload가 끝나는 중괄호
+
+    
+    function smartPrint() {
+    // 1. 현재 페이지 판별 및 요일 정보 (순정 요일만 추출)
+    const isPage2 = (p2Panel.style.display === 'block');
+    const dayInfo = currentDay + "요일"; // 예: "화요일"
+    
+    // 2. 현재 날짜 정보 추출 (YYYY-MM-DD 형식)
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const date = String(now.getDate()).padStart(2, '0');
+    const dateStr = `${year}-${month}-${date}`; 
+    
+    // 3. 파일명 조립 (선생님 요청 순서: 명칭(요일)_수정일 날짜)
+    let fileName = "";
+    if (!isPage2) {
+        // 예: 계측답안(화요일)_수정일 2026-03-15
+        fileName = `계측답안(${dayInfo})_수정일 ${dateStr}`;
+    } else {
+        // 예: 계측 기준값(화요일)_수정일 2026-03-15
+        fileName = `계측 기준값(${dayInfo})_수정일 ${dateStr}`;
+    }
+
+    // 4. 브라우저 타이틀 임시 변경 및 출력 실행
+    const originalTitle = document.title;
+    document.title = fileName;
+
+    window.print();
+
+    // 5. 출력 완료 후 타이틀 복구
+    setTimeout(() => {
+        document.title = originalTitle;
+    }, 1000);
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단위개월 정밀 출석 분석 시스템</title>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <style>
+/* [1. 공통 기반 및 전체 누적 스타일] - 기존 정상 작동 버전 유지 */
+body { font-family: 'Malgun Gothic', sans-serif; background-color: #f8f9fa; margin: 0; padding: 20px; color: #333; }
+.container { max-width: 100%; margin: 0 auto; background: white; padding: 10px 20px; border-radius: 12px; box-shadow: 0 5px 25px rgba(0,0,0,0.05); }
+.header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #27ae60; padding: 0 0 8px 0; margin-bottom: 10px; }
+.header-btns { display: flex; gap: 10px; }
+.btn-nav { padding: 8px 16px; border-radius: 6px; cursor: pointer; text-decoration: none; font-weight: bold; font-size: 13px; transition: 0.2s; border: 1px solid #ddd; background: #fff; color: #444; }
+.period-criteria { background: #2c3e50; color: white; padding: 6px 15px; border-radius: 8px; margin-bottom: 15px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; text-align: center; }
+.criteria-item { display: flex; align-items: center; justify-content: center; gap: 8px; } /* 가로 정렬을 위한 flex 설정 */
+.criteria-item h4 { margin: 0; font-size: 11px; opacity: 0.7; font-weight: normal; white-space: nowrap; }
+.criteria-item div { font-size: 13px; font-weight: bold; color: #ecf0f1; white-space: nowrap; }
+.tab-menu { display: flex; gap: 8px; margin-bottom: 8px; overflow-x: auto; padding-bottom: 5px; }
+.tab-btn { padding: 6px 12px; cursor: pointer; border: 1px solid #ddd; background: #fff; border-radius: 6px; font-weight: bold; font-size: 12px; white-space: nowrap; color: #666; }
+.tab-btn.active { background: #27ae60; color: white; border-color: #27ae60; box-shadow: 0 4px 10px rgba(39, 174, 96, 0.2); }
+.legend-bar { display: flex; gap: 12px; margin-bottom: 5px; justify-content: flex-end; padding-right: 5px; }
+.legend-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: #666; }
+.legend-box { width: 12px; height: 12px; border-radius: 2px; border: 1px solid #ddd; }
+.top-scroll-wrapper { width: 100%; overflow-x: auto; overflow-y: hidden; height: 18px; margin-bottom: 2px; }
+.top-scroll-content { height: 1px; }
+.table-wrapper { background: white; border: 1px solid #d1d8dd; border-radius: 0 0 8px 8px; overflow: auto; position: relative; max-height: 70vh; }
+table { border-collapse: separate; border-spacing: 0; width: auto; table-layout: fixed; }
+th, td { border-right: 1px solid #e1e8ed; border-bottom: 1px solid #e1e8ed; padding: 2px 1px; text-align: center; box-sizing: border-box; font-size: 11px; }
+th { position: sticky; z-index: 100; background-color: #f8fafc !important; color: #334155; }
+.tr-top th { top: 0; height: 20px; z-index: 120; font-size: 10px; color: #94a3b8; }
+.tr-month th { top: 20px; height: 24px; z-index: 115; border-bottom: 2px solid #cbd5e1 !important; }
+.tr-label-day th { top: 44px; height: 32px; z-index: 110; border-bottom: 2px solid #475569 !important; }
+.sticky-col { position: sticky; z-index: 150 !important; background-color: #ffffff !important; }
+th.sticky-col { z-index: 200 !important; background-color: #f1f5f9 !important; }
+.col-name { left: 0; width: 85px; min-width: 85px; border-right: 2px solid #27ae60 !important; }
+.col-name strong { font-size: 11px; display: block; line-height: 1.1; }
+.enroll-date { font-size: 8px; color: #64748b; display: block; margin-top: 0; transform: scale(0.9); }
+.col-r1 { left: 85px; width: 60px; min-width: 60px; } 
+.col-r2 { left: 145px; width: 60px; min-width: 60px; }
+.col-s1 { left: 205px; width: 45px; min-width: 45px; }
+.col-s2 { left: 250px; width: 45px; min-width: 45px; }
+.col-s3 { left: 295px; width: 45px; min-width: 45px; }
+.col-p1 { left: 340px; width: 32px; min-width: 32px; }
+.col-p2 { left: 372px; width: 32px; min-width: 32px; }
+.col-p3 { left: 404px; width: 32px; min-width: 32px; border-right: 2px solid #475569 !important; }
+.mode-total .col-day { width: 14px; min-width: 14px; font-size: 8px; }
+.mode-total td { height: 26px !important; }
+.mode-unit { margin: 0 auto !important; display: table; width: auto !important; }
+.mode-unit .col-day { width: 35px; min-width: 35px; font-size: 11px; }
+.mode-unit td { height: 28px !important; padding: 2px 0 !important; line-height: 1 !important; font-size: 10px !important; }
+.mode-unit td.sticky-col { height: 28px !important; }
+.mode-unit .enroll-date { display: none !important; }
+.bg-attend { background-color: #ffffff; } 
+.bg-absent { background-color: #fee2e2 !important; color: #b91c1c; font-weight: bold; }
+.bg-late { background-color: #fef9c3 !important; color: #854d0e; }
+.bg-early { background-color: #e0f2fe !important; color: #0369a1; }
+.bg-out { background-color: #dcfce7 !important; color: #166534; }
+.bg-none { background-color: #f1f5f9 !important; color: #94a3b8; }
+.status-danger { color: #ef4444; font-weight: bold; } 
+.status-warning { color: #f59e0b; font-weight: bold; } 
+.status-safe { color: #10b981; font-weight: bold; }
+.summary-val { font-weight: 600; color: #334155; }
+.month-header { color: #166534; font-weight: bold; background-color: #f0fdf4 !important; font-size: 12px; }
+.day-header { background-color: #f8fafc !important; color: #475569; font-weight: bold; }
+
+/* 📍 모바일 전용 정밀 튜닝 (768px 이하) */
+@media (max-width: 768px) {
+    body { padding: 5px; }
+    .container { padding: 10px 8px; border-radius: 0; }
+    
+    /* [기본 헤더 및 요약 정보 - 유지] */
+    .header { flex-direction: column; gap: 8px; align-items: flex-start; }
+    .header h2 { font-size: 18px !important; }
+    .header-btns { width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+    .btn-nav { padding: 6px 2px; font-size: 10px; text-align: center; }
+    .btn-nav:last-child { grid-column: span 2; }
+    .period-criteria { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; padding: 8px; margin-bottom: 10px; }
+    .period-criteria .criteria-item:nth-child(1) { grid-column: span 3; border-bottom: 1px dashed rgba(255,255,255,0.3); padding-bottom: 4px; margin-bottom: 2px; flex-direction: row; justify-content: space-between; }
+    .criteria-item { flex-direction: column; gap: 1px; }
+    .criteria-item h4 { font-size: 8px; }
+    .criteria-item div { font-size: 10px; }
+
+    /* [탭 메뉴 & 범례 초슬림 2단 구조 - 유지] */
+    .tab-wrap { flex-direction: column !important; align-items: flex-start !important; gap: 4px; margin-bottom: 6px; }
+    .tab-menu { width: 100%; display: flex; overflow-x: auto; gap: 3px; padding-bottom: 4px; justify-content: flex-start; -webkit-overflow-scrolling: touch; }
+    .tab-btn { flex: 1 1 auto; min-width: 42px; max-width: 80px; padding: 4px 2px !important; font-size: 8.5px !important; height: 22px; border-radius: 4px; letter-spacing: -0.8px; text-align: center; border: 1px solid #ddd; }
+    .legend-bar { width: 100%; display: flex; flex-wrap: nowrap; overflow-x: auto; gap: 6px; justify-content: flex-start; padding: 4px 0; border-top: 1px solid #f0f0f0; -webkit-overflow-scrolling: touch; }
+    .legend-item { font-size: 8px; white-space: nowrap; flex-shrink: 0; letter-spacing: -0.5px; }
+    .legend-box { width: 8px; height: 8px; }
+
+    /* 📍 [절대 유지] 표(Table) 헤더 틈새 및 겹침 방지 셋업 */
+    .table-wrapper { max-height: 60vh; }
+    th, td { padding: 2px 1px !important; font-size: 9px !important; line-height: 1.1 !important; background-clip: padding-box; }
+    .tr-top th { top: 0 !important; height: 16px !important; z-index: 220 !important; background: #f8fafc !important; }
+    .tr-month th { top: 16px !important; height: 20px !important; z-index: 215 !important; background: #f0fdf4 !important; }
+    .tr-label-day th { top: 36px !important; height: 28px !important; z-index: 210 !important; background: #f1f5f9 !important; border-bottom: 2px solid #475569 !important; }
+
+    /* [절대 유지] 성명 ~ 지/조/외 데이터 전체 고정 */
+    .sticky-col { position: sticky !important; z-index: 250 !important; background: #ffffff !important; opacity: 1 !important; }
+    th.sticky-col { z-index: 300 !important; background: #f1f5f9 !important; }
+    .col-name { width: 52px !important; min-width: 52px !important; left: 0 !important; }
+    .col-r1 { width: 40px !important; min-width: 40px !important; left: 52px !important; }
+    .col-r2 { width: 40px !important; min-width: 40px !important; left: 92px !important; }
+    .col-s1 { width: 24px !important; min-width: 24px !important; left: 132px !important; }
+    .col-s2 { width: 24px !important; min-width: 24px !important; left: 156px !important; }
+    .col-s3 { width: 24px !important; min-width: 24px !important; left: 180px !important; }
+    .col-p1 { width: 24px !important; min-width: 24px !important; left: 204px !important; }
+    .col-p2 { width: 24px !important; min-width: 24px !important; left: 228px !important; }
+    .col-p3 { width: 24px !important; min-width: 24px !important; left: 252px !important; border-right: 2px solid #475569 !important; }
+
+    /* 📍 [수정] 단위 개월 모드에서 날짜 칸 너비를 전체 누적과 동일하게 촘촘히 조정 */
+    .mode-unit .col-day { width: 14px !important; min-width: 14px !important; }
+    .day-header { font-size: 8.5px !important; }
+
+    .col-name strong { font-size: 9.5px !important; }
+    .enroll-date { display: block; font-size: 7px !important; transform: scale(0.85); transform-origin: left; margin-top: -1px; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h2 style="margin:0; color:#1e293b; font-size: 22px;">📊 단위개월 정밀 출석 분석</h2>
+        <div class="header-btns">
+            <a href="#" class="btn-nav btn-orange" onclick="location.href='일일출석부.html?class=' + currentClass">📝 일일출석부 등록</a>
+            <a href="#" class="btn-nav btn-green" onclick="location.href='능력단위시간표.html?class=' + currentClass">📜 능력단위 출석부 보기</a>
+            <a href="#" class="btn-nav" onclick="location.href='index1.html?class=' + currentClass">◀ 메인으로</a>
+        </div>
+    </div>
+
+    <div class="period-criteria" id="criteriaHeader">
+    <div class="criteria-item"><h4>분석 대상 기간</h4><div id="infoRange">-</div></div>
+    <div class="criteria-item"><h4>수업일수</h4><div id="infoTotalDays">-</div></div>
+    <div class="criteria-item"><h4>80% 이수기준</h4><div id="infoMinDays">-</div></div>
+    <div class="criteria-item"><h4>허용 결석일</h4><div id="infoAllowAbsent" style="color:#f1c40f;">-</div></div>
+</div>
+
+    
+    <div class="tab-wrap" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+    <div class="tab-menu" id="tabMenu" style="margin-bottom: 0;">
+        <button class="tab-btn active" onclick="changePeriod('total')">전체 누적</button>
+    </div>
+
+    <div class="legend-bar" style="margin-bottom: 0;">
+        <div class="legend-item"><div class="legend-box bg-none"></div><span>미편입</span></div>
+        <div class="legend-item"><div class="legend-box bg-attend" style="background:#fff;"></div><span>정상</span></div>
+        <div class="legend-item"><div class="legend-box bg-absent"></div><span>결석</span></div>
+        <div class="legend-item"><div class="legend-box bg-late"></div><span>지각</span></div>
+        <div class="legend-item"><div class="legend-box bg-early"></div><span>조퇴</span></div>
+        <div class="legend-item"><div class="legend-box bg-out"></div><span>외출</span></div>
+    </div>
+</div>
+
+    <div class="top-scroll-wrapper" id="topScrollWrapper">
+        <div class="top-scroll-content" id="topScrollContent"></div>
+    </div>
+
+    <div class="table-wrapper" id="tableWrapper">
+        <table id="mainTable" class="mode-total">
+            <thead id="tableHead"></thead>
+            <tbody id="attendanceTableBody">
+                <tr><td colspan="15" style="padding:60px; font-size:14px; color:#94a3b8;">데이터를 정밀 분석 중입니다...</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="단위개월출석부.js"></script>
+</body>
+</html>

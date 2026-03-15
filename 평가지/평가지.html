@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>평가지 관리 시스템 (지능형 뷰 연동)</title>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js"></script>
+
+    <style>
+        /* 1. 전체 레이아웃 및 좌측 네비게이션 */
+        body { margin: 0; padding: 0; background-color: #455a64; font-family: 'Malgun Gothic', sans-serif; display: flex; height: 100vh; overflow: hidden; }
+        .sidebar { width: 280px; min-width: 280px; background-color: #2c3e50; color: white; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; overflow: hidden; z-index: 10; box-shadow: 2px 0 10px rgba(0,0,0,0.3); }
+        .btn-home { display: block; width: 100%; padding: 12px; margin-bottom: 20px; background-color: #3498db; color: white; border: 2px solid #2980b9; text-align: center; cursor: pointer; border-radius: 6px; font-weight: bold; font-size: 14px; text-decoration: none; transition: 0.2s; box-sizing: border-box; }
+        .btn-home:hover { background-color: #2980b9; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+        .unit-list-area { flex: 1; overflow-y: auto; border-bottom: 2px solid #34495e; margin-bottom: 20px; padding-bottom: 10px; }
+        .unit-list-area::-webkit-scrollbar { width: 6px; } .unit-list-area::-webkit-scrollbar-thumb { background: #7f8c8d; border-radius: 3px; }
+        .unit-list-area h2 { font-size: 16px; color: #f1c40f; margin-top: 0; border-bottom: 1px solid #f1c40f; padding-bottom: 8px; display: flex; justify-content: space-between; align-items: center; }
+        .view-mode-badge { background-color: #e67e22; color: white; padding: 2px 6px; border-radius: 4px; font-size: 11px; }
+        .unit-btn { display: block; width: 100%; padding: 10px; margin-bottom: 5px; background-color: #34495e; color: white; border: 1px solid #455a64; text-align: left; cursor: pointer; border-radius: 4px; font-size: 13px; transition: 0.2s; line-height: 1.4; }
+        .unit-btn:hover { background-color: #3b5998; } .unit-btn.active { background-color: #e67e22; border-color: #d35400; font-weight: bold; }
+        .unit-subject-label { font-size: 11px; color: #bdc3c7; display: block; margin-bottom: 3px; }
+        .doc-menu-area { height: auto; } .doc-menu-area h2 { font-size: 16px; color: #2ecc71; margin-top: 0; border-bottom: 1px solid #2ecc71; padding-bottom: 8px; }
+        .nav-btn { display: block; width: 100%; padding: 10px; margin-bottom: 5px; background-color: #27ae60; color: white; border: none; text-align: left; cursor: pointer; border-radius: 4px; font-size: 13px; opacity: 0.5; pointer-events: none; transition: 0.2s; }
+        .nav-btn.ready { opacity: 1; pointer-events: auto; } .nav-btn.ready:hover { background-color: #219653; } .nav-btn.active { background-color: #f1c40f; color: #2c3e50; font-weight: bold; box-shadow: inset 4px 0 0 #e67e22; }
+
+        /* 2. 우측 출력 영역 공통 및 A4 뷰어 */
+        .main-content { flex-grow: 1; overflow-y: auto; display: flex; justify-content: center; align-items: flex-start; padding: 20px; box-sizing: border-box; background-color: #ecf0f1; }
+        .main-content::-webkit-scrollbar { width: 8px; } .main-content::-webkit-scrollbar-thumb { background: #bdc3c7; border-radius: 4px; }
+        .page-frame { display: none; width: 100%; } .page-frame.active { display: block; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        .a4-page { width: 210mm !important; max-width: 210mm; min-height: 297mm; padding: 20mm 20mm 25mm 20mm; background-color: white; box-shadow: 0 10px 20px rgba(0,0,0,0.3); box-sizing: border-box; margin: 0 auto; position: relative; color: #000; }
+
+        /* 3. 0.설정 제어판 와이드 바디 및 내부 디자인 */
+        .settings-panel { width: 100%; max-width: 100%; margin: 0; background-color: white; padding: 15px 20px; border-radius: 0; box-shadow: none; box-sizing: border-box; min-height: 100vh; overflow-y: auto; }
+        .settings-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 15px; }
+        .doc-title { text-align: center; font-size: 24px; font-weight: bold; margin-bottom: 15px; }
+        .id-marker { background: #fff; color: #e74c3c; border: 1px solid #f5b7b1; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; display: inline-block; margin-right: 8px; }
+        .setting-group { padding: 15px; border: 1px solid #e1e4e8; background-color: #f8f9fa; border-radius: 8px; box-shadow: inset 0 0 10px rgba(0,0,0,0.02); height: 100%; box-sizing: border-box; }
+        .setting-group h3 { margin-top: 0; font-size: 14px; color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 8px; margin-bottom: 12px; display: flex; align-items: center; }
+        .input-row { margin-bottom: 8px; display: flex; align-items: center; } .input-row:last-child { margin-bottom: 0; }
+        .input-row label { width: 90px; min-width: 90px; font-weight: bold; font-size: 12px; color: #555; }
+        .input-box { padding: 6px 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 12px; transition: 0.3s; flex-grow: 1; width: 100%; box-sizing: border-box; }
+        .input-box:focus { border-color: #3498db; outline: none; box-shadow: 0 0 5px rgba(52, 152, 219, 0.3); }
+        .input-box.readonly { background-color: #e9ecef; color: #495057; cursor: not-allowed; border-color: #dee2e6; font-weight: bold; }
+
+        /* 4. S4 평가 항목 테이블 */
+        .eval-item-table { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 10px; background: white; }
+        .eval-item-table th { background: #e3f2fd; color: #2c3e50; padding: 8px; border: 1px solid #bdc3c7; font-weight: bold; text-align: center; }
+        .eval-item-table td { padding: 6px; border: 1px solid #bdc3c7; vertical-align: middle; }
+        .eval-item-table .item-name { background: #f8f9fa; font-weight: bold; color: #333; line-height: 1.4; }
+        .eval-input { width: 100%; padding: 6px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; text-align: center; font-size: 12px; font-family: inherit; }
+        .eval-input:focus { border-color: #3498db; outline: none; background-color: #fffde7; }
+        
+        /* 평가 방식 토글 버튼 스타일 */
+        .toggle-group { display: flex; gap: 4px; justify-content: center; }
+        .toggle-btn { flex: 1; padding: 6px 0; border: 1px solid #bdc3c7; background-color: #ecf0f1; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; color: #7f8c8d; transition: 0.2s; }
+        .toggle-btn:hover { background-color: #e0e6ed; }
+        .toggle-btn.active { background-color: #3498db; color: white; border-color: #2980b9; box-shadow: inset 0 0 5px rgba(0,0,0,0.1); }
+
+        /* 5. 제어판 상단 버튼 및 탭 */
+        .btn-save-settings { background-color: #27ae60; color: white; border: none; padding: 6px 12px; border-radius: 4px; font-weight: bold; cursor: pointer; transition: 0.2s; font-size: 12px; }
+        .btn-save-settings:hover { background-color: #219150; transform: translateY(-1px); }
+        .btn-edit-settings { background-color: #f39c12; color: white; border: none; padding: 6px 12px; border-radius: 4px; font-weight: bold; cursor: pointer; transition: 0.2s; font-size: 12px; margin-left: 5px; }
+        .btn-edit-settings:hover { background-color: #d68910; transform: translateY(-1px); }
+        .eval-type-tabs { margin-bottom: 10px; display: flex; gap: 5px; padding: 4px; background: #f8f9fa; border-radius: 6px; border: 1px solid #e1e4e8; }
+        .tab-btn { flex: 1; padding: 6px; background: #ecf0f1; border: 1px solid #bdc3c7; border-radius: 4px; cursor: pointer; font-weight: bold; color: #7f8c8d; transition: 0.2s; font-size: 12px; }
+        .tab-btn:hover { background: #e0e6ed; } .tab-btn.active { background: #3498db; color: white; border-color: #2980b9; box-shadow: inset 0 0 5px rgba(0,0,0,0.1); }
+
+        /* 6. [1. 표지] 전용 A4 문서 스타일 */
+        .cover-page-inner { display: flex; flex-direction: column; min-height: 250mm; width: 100%; position: relative; z-index: 2; font-family: 'Malgun Gothic', '맑은 고딕', sans-serif; }
+        #watermark_logo { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 500px; height: 500px; background-size: contain; background-repeat: no-repeat; background-position: center; opacity: 0.08; z-index: 1; pointer-events: none; }
+        .cover-top { text-align: center; margin-top: 50px; }
+        .cover-course-name { font-size: 26px; font-weight: 900; line-height: 1.5; word-break: keep-all; margin-bottom: 15px; letter-spacing: -0.5px; }
+        .cover-period { font-size: 22px; font-weight: bold; font-family: 'Arial', sans-serif; }
+        .cover-middle { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: 80px; margin-bottom: 80px; }
+        .cover-title { font-size: 34px; font-weight: 900; letter-spacing: 5px; margin-bottom: 40px; min-height: 100px; display: flex; flex-direction: column; justify-content: center; align-items: center; line-height: 1.3; }
+        .cover-table-wrapper { width: 90%; margin: 0 auto; }
+        .cover-table-info { display: flex; justify-content: space-between; font-size: 15px; font-weight: bold; margin-bottom: 8px; color: #333; }
+        .cover-table { width: 100%; border-collapse: collapse; border: 2px solid #000; font-size: 13px; }
+        .cover-table th, .cover-table td { border: 1px solid #000; padding: 12px 8px; text-align: center; vertical-align: middle; }
+        .cover-table th { background-color: #eaf8f9; font-weight: bold; color: #111; }
+        .cover-bottom { position: absolute; bottom: 10mm; left: 0; right: 0; text-align: center; margin: 0; }
+        .cover-school { font-size: 28px; font-weight: 900; margin-bottom: 40px; letter-spacing: 2px; }
+        .cover-page-num { font-size: 14px; color: #555; }
+        
+        .input-box.highlight-date {
+            background-color: #fffde7 !important;
+            border-color: #f1c40f !important;
+            box-shadow: 0 0 5px rgba(241, 196, 15, 0.3);
+            transition: 0.3s;
+        }
+
+        /* 상세 문제 입력칸 스타일 */
+        .eval-question-row td { padding: 4px 6px 12px 6px; border-bottom: 2px solid #bdc3c7; background-color: #f8f9fa; }
+        .eval-question-input { width: 100%; box-sizing: border-box; padding: 8px 10px; border: 1px dashed #95a5a6; border-radius: 4px; font-size: 13px; font-family: inherit; resize: vertical; min-height: 45px; line-height: 1.4; color: #2c3e50; }
+        .eval-question-input:focus { border-color: #3498db; outline: none; background-color: #fff; box-shadow: 0 0 5px rgba(52, 152, 219, 0.3); border-style: solid; }
+
+        /* 1. 평가서류 (서브 페이지 공통 및 디자인) */
+        .page1-container { background: transparent; box-shadow: none; padding: 0; display: none; flex-direction: column; gap: 30px; align-items: center; width: 100%; }
+        .page1-container.active { display: flex; animation: fadeIn 0.3s ease; }
+        .doc-cyan-table { width: 100%; border-collapse: collapse; border: 2px solid #000; font-size: 13px; text-align: center; margin-bottom: 25px; }
+        .doc-cyan-table th, .doc-cyan-table td { border: 1px solid #000; padding: 8px; vertical-align: middle; }
+        .doc-cyan-bg { background-color: #e0ffff; font-weight: bold; } /* 청록색 헤더 */
+
+        /* 근거사진 그리드 전용 */
+        .photo-grid-table { width: 100%; border-collapse: collapse; border: 2px solid #000; text-align: center; font-size: 13px; table-layout: fixed; }
+        .photo-grid-table td { border: 1px solid #000; }
+        .photo-header { background-color: #e6e6e6; font-weight: bold; padding: 6px; height: 35px; overflow: hidden; word-break: keep-all; } 
+        .photo-box { height: 250px; position: relative; }
+        .crossed-out { background: linear-gradient(to top right, transparent calc(50% - 1px), #333, transparent calc(50% + 1px)), linear-gradient(to bottom right, transparent calc(50% - 1px), #333, transparent calc(50% + 1px)); }
+
+        /* 4. 평가 항목 S4 구역의 '핵심 작업' 전용 스타일 */
+        .eval-core-task-input { width: 100%; height: 100%; box-sizing: border-box; padding: 8px; border: 1px dashed #95a5a6; border-radius: 4px; font-size: 12px; font-family: inherit; resize: none; text-align: center; background-color: #fff; line-height: 1.4; color: #d35400; font-weight: bold; }
+        .eval-core-task-input:focus { border-color: #e67e22; outline: none; box-shadow: 0 0 5px rgba(230, 126, 34, 0.3); border-style: solid; background-color: #fdf2e9; }
+
+        @media print {
+            .no-print { display: none !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <a href="#" id="backLink" class="btn-home">◀ 관리 메인으로 이동</a>
+
+        <div class="unit-list-area">
+            <h2>평가 대상 선택 <span id="viewModeBadge" class="view-mode-badge">분석 중...</span></h2>
+            <div id="unitListContainer">
+                <p style="font-size: 12px; color: #ccc;">데이터 및 설정값을 불러오는 중입니다...</p>
+            </div>
+        </div>
+
+        <div class="doc-menu-area">
+            <h2>평가 문서 작성</h2>
+            <button class="nav-btn active" id="btnPage0" onclick="showPage('page0', this)">0. 설정 (제어판)</button>
+            <button class="nav-btn" id="btnPage1" onclick="showPage('page1', this)">1. 평가서류</button>
+            <button class="nav-btn" id="btnPage2" onclick="showPage('page2', this)">2. 평가지</button>
+            <button class="nav-btn" id="btnPage3" onclick="showPage('page3', this)">3. 채점기준</button>
+            <button class="nav-btn" id="btnPage4" onclick="showPage('page4', this)">4. 최종결과표</button>
+        </div>
+    </div>
+
+    <div class="main-content">
+
+        <div id="page0" class="page-frame active settings-panel">
+            <div class="doc-title" style="margin-top: 0; text-align: left; border-bottom: 2px solid #2c3e50; padding-bottom: 8px; margin-bottom: 10px; font-size: 18px; color: #2c3e50; display: flex; justify-content: space-between; align-items: center;">
+                <div>⚙️ 평가 기본 설정 (Control Panel)</div>
+                <div style="display: flex; gap: 5px;">
+    <button class="btn-save-settings" onclick="executeSave()">💾 저장</button>
+    <button style="background-color: #8e44ad; color: white; border: none; padding: 6px 12px; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 12px; margin-left: 5px;" onclick="uploadCommonEval()">☁️ 공용 올리기</button>
+    <button style="background-color: #2980b9; color: white; border: none; padding: 6px 12px; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 12px; margin-left: 5px;" onclick="downloadCommonEval()">📥 공용 불러오기</button>
+    <button style="background-color: #e74c3c; color: white; border: none; padding: 6px 12px; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 12px; margin-left: 5px;" onclick="resetEvalData()">🔄 초기화</button>
+</div>
+            </div>
+
+            <div style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px; background: #fff3e0; padding: 10px; border-radius: 6px; border: 1px solid #f39c12; flex-wrap: wrap;">
+                <label style="font-weight: bold; color: #d35400; font-size: 13px;">📚 대표 훈련기준 :</label>
+                <select id="ncsVersionSelect" style="padding: 5px; border-radius: 4px; border: 1px solid #ccc; font-weight: bold; outline: none; cursor: pointer;" onchange="changeNcsVersion()">
+                    <option value="legacy">데이터 로딩중...</option>
+                </select>
+                
+                <label style="font-weight: bold; color: #2980b9; font-size: 13px; margin-left: 15px;">🎯 이 과목만 :</label>
+                <select id="individualNcsSelect" style="padding: 5px; border-radius: 4px; border: 1px solid #ccc; font-weight: bold; outline: none; cursor: pointer; transition: 0.3s;" onchange="changeIndividualNcs()">
+                    <option value="">대표 버전 따름</option>
+                </select>
+                
+                <span style="font-size: 11px; color: #7f8c8d; margin-left: auto;">(※ 버전 변경 시 기존 저장 데이터는 보호됨)</span>
+            </div>
+
+            <div class="eval-type-tabs">
+                <button class="tab-btn active" onclick="switchEvalType('본평가', this)">📌 본평가</button>
+                <button class="tab-btn" onclick="switchEvalType('추가평가', this)">➕ 추가평가</button>
+                <button class="tab-btn" onclick="switchEvalType('재평가', this)">🔄 재평가</button>
+            </div>
+
+            <div style="color: #7f8c8d; font-size: 12px; margin-bottom: 15px; line-height: 1.2;">
+                💡 [안내] 선택된 평가 모드에 맞춰 데이터가 저장되며, 이후 모든 양식에 자동 동기화됩니다.
+            </div>
+
+            <div class="settings-grid">
+                <div class="setting-group" id="S_Group0">
+                    <h3><span class="id-marker">[S0_INFO]</span>0. 훈련 과정 개요 (DB 연동)</h3>
+                    <div class="input-row"><label>훈련과정명 :</label><input type="text" id="S0_CourseName" class="input-box readonly" readonly></div>
+                    <div class="input-row"><label>훈련기간 :</label><input type="text" id="S0_Period" class="input-box readonly" readonly></div>
+                    <div class="input-row"><label>담당교사 :</label><input type="text" id="S0_Teacher" class="input-box readonly" readonly></div>
+                </div>
+
+                <div class="setting-group" id="S_Group1">
+                    <h3><span class="id-marker">[S1]</span>1. 대상 교과 (메뉴 연동)</h3>
+                    <div class="input-row"><label>교과목명 :</label><input type="text" id="S1_1" class="input-box readonly" readonly></div>
+                    <div class="input-row" id="rowUnitCode"><label>단위코드 :</label><input type="text" id="S1_Code" class="input-box readonly" readonly></div>
+                    <div class="input-row" id="rowUnitName"><label>능력단위명 :</label><input type="text" id="S1_2" class="input-box readonly" readonly></div>
+                </div>
+
+                <div class="setting-group" id="S_Group2">
+                    <h3><span class="id-marker">[S2]</span>2. 평가 방법 및 시간</h3>
+                    <div class="input-row"><label>평가 방법 :</label><input type="text" id="S2_1" class="input-box readonly" readonly></div>
+                    <div class="input-row"><label>총 훈련시간 :</label>
+                        <div style="display: flex; align-items: center; width: 100%; gap: 5px;">
+                            <input type="text" id="S2_2" class="input-box readonly" style="text-align: right; flex: 1; min-width: 0;" readonly>
+                            <span style="font-weight: bold; white-space: nowrap; flex-shrink: 0;">시간</span>
+                        </div>
+                    </div>
+                    <div class="input-row"><label>평가 시간 :</label>
+                        <div style="display: flex; align-items: center; width: 100%; gap: 5px;">
+                            <input type="number" id="S2_3" class="input-box" style="text-align: right; flex: 1; min-width: 0; background-color: #fffde7; border-color: #f1c40f;" placeholder="예: 60">
+                            <span style="font-weight: bold; white-space: nowrap; flex-shrink: 0;">분</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <h3><span class="id-marker">[S3]</span>3. 평가 일자 설정</h3>
+                    <div class="input-row"><label>본평가 일자 :</label><input type="date" id="S3_1" class="input-box highlight-date"></div>
+                    <div class="input-row"><label>추가평가일자:</label><input type="date" id="S3_2" class="input-box"></div>
+                    <div class="input-row"><label>재평가 일자 :</label><input type="date" id="S3_3" class="input-box"></div>
+                </div>
+            </div>
+
+            <div class="setting-group" style="margin-top: 15px; grid-column: 1 / -1;">
+                <h3><span class="id-marker">[S4]</span>4. 평가 항목 및 배점 설정 (NCS 자동 매핑)</h3>
+                <div style="overflow-x: auto;">
+                    <table class="eval-item-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 40%;">평가항목 (능력단위요소)</th>
+                                <th style="width: 20%;">평가 방식</th> 
+                                <th style="width: 20%;">배점 (총점 80점 기준)</th> 
+                                <th style="width: 20%;">출제난이도</th>
+                            </tr>
+                        </thead>
+                        <tbody id="evalItemTbody">
+                            <tr><td colspan="4" style="text-align:center; padding: 20px; color:#999;">좌측에서 평가 대상을 선택하면 요소가 자동으로 생성됩니다.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="page1" class="page1-container">
+            <div class="a4-page">
+                <div id="watermark_logo"></div>
+                <div class="cover-page-inner">
+                    <div class="cover-top">
+                        <div id="cover_courseName" class="cover-course-name">[훈련과정명 출력 대기]</div>
+                        <div id="cover_period" class="cover-period">(훈련기간 출력 대기)</div>
+                    </div>
+                    <div class="cover-middle">
+                        <div class="cover-title">능력단위별 내부평가서</div>
+                        <div class="cover-table-wrapper">
+                            <div class="cover-table-info">
+                                <span id="cover_courseType">NCS 전공교과</span>
+                                <span>담당교사 : <span id="cover_teacher">홍길동</span></span>
+                            </div>
+                            <table class="cover-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 25%;">교과목명<br>(능력단위명)</th>
+                                        <th style="width: 25%;">능력단위코드</th>
+                                        <th style="width: 35%;">능력단위요소명</th>
+                                        <th style="width: 15%;">훈련시간</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="cover_tbody">
+                                    <tr><td colspan="4" style="padding:30px;">과목을 선택하시면 표지가 생성됩니다.</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="cover-bottom">
+                        <div class="cover-school">부산자동차직업학교</div>
+                        <div class="cover-page-num">- 1 -</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="a4-page" style="padding: 25mm 20mm;">
+                <div id="exam_header_container"></div> 
+                <div style="font-size: 17px; font-weight: bold; margin-top: 30px;">1. 지식·기술평가 요구사항</div>
+                <div style="font-size: 14px; margin-top: 10px; margin-bottom: 30px; font-weight: bold;">※ 지급된 재료 및 장비를 사용하여 아래 작업을 완성하시오.</div>
+                <div id="exam_questions_container"></div> 
+                <div style="margin-top: 40px; font-weight: bold; font-size: 15px;">※ 내부 평가 시험문제지는 평가종료 후 본인이 가져갈 수 있습니다.</div>
+                <div class="cover-bottom" style="margin-top: 50px;"><div class="cover-page-num">- 2 -</div></div>
+            </div>
+
+            <div class="a4-page" style="padding: 25mm 20mm;">
+                <div style="font-size: 17px; font-weight: bold; margin-bottom: 25px;">2. 유의사항</div>
+                <div style="font-size: 14px; line-height: 1.9; color: #111; word-break: keep-all;">
+                    1) 평가자의 지시에 따라 수행평가에 임하며, 모든 작업은 안전 사항을 준수합니다.<br>
+                    2) 요구사항의 작업시간은 평가자의 지시에 따라 시행됩니다.<br>
+                    3) 모든 측정기 또는 시험기 등의 설치 및 조작은 평가자의 지시가 없는 경우 훈련생 본인이 직접 실시하며 필요한 특수공구는 평가장에서 제공된 것 중 훈련생이 직접 선택하여 사용합니다.<br>
+                    4) 회로도와 내부 평가 근거자료(기록표)의 규정(정비 한계, 기준)값은 평가장에서 제공하는 평가자가 주어진 값, 작업매뉴얼, 정비지침서, 측정 장비(스캐너 포함) 등에서 훈련생이 직접 찾아 참조 및 기록합니다.<br>
+                    5) 자동차 검사에 관련된 기준값은 제시하지 않습니다.<br>
+                    6) 내부 평가 근거자료(기록표) 작성에서 다음 각 항에 해당하는 경우는 틀린 것으로 합니다.<br>
+                    <div style="margin-left: 15px;">
+                        ▪ 단위가 없거나 틀린 경우<br>
+                        ▪ 의미가 달라질 수 있는 단위 접두어의 대소문자가 틀린 경우<br>
+                        ▪ 근거자료(기록표) 기재사항에서 평가자의 정정 날인 없이 정정된 개소<br>
+                    </div>
+                    7) 다음 각 항에 해당하는 경우 해당 항목을 "0"점 처리합니다.<br>
+                    <div style="margin-left: 15px;">
+                        ▪ 요구사항 또는 평가자의 지시사항과 다른 작업한 경우<br>
+                        ▪ 작업 미숙으로 안전사고, 기재 손상 등이 우려되어 "기능 미숙"에 해당하는 경우<br>
+                    </div>
+                    8) 다음 사항에 대해서는 채점 대상에서 제외하니 특히 유의하시기 바랍니다.<br>
+                    <div style="margin-left: 15px;">
+                        ▪ 훈련생 본인이 평가 도중 기권 의사를 표시하는 경우<br>
+                        ▪ 타인의 결과기록표를 보고 기록하거나 보여주는 경우<br>
+                        ▪ 기타 시험과 관련된 부정행위를 하는 경우<br>
+                    </div>
+                    9) 시험 중 평가대상자(훈련생)는 반드시 안전수칙을 준수해야 하며, 작업 복장 상태, 정리 정돈 상태, 안전 사항 등이 채점 대상이 됩니다.<br>
+                </div>
+                <div style="font-weight: bold; font-size: 15px; margin-top: 40px;">※ 평가 시작 전 간단한 몸풀기(스트레칭) 동작으로 긴장을 풀고 평가에 임하십시오.</div>
+                <div class="cover-bottom" style="margin-top: 50px;"><div class="cover-page-num">- 3 -</div></div>
+            </div>
+
+            <div class="a4-page" style="padding: 25mm 20mm;">
+                <div id="photo_header_container"></div> 
+                <div style="font-size: 17px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">■ 내부 평가 근거 사진</div>
+                <div id="photo_grid_container"></div> 
+                <div class="cover-bottom" style="margin-top: 50px;"><div class="cover-page-num">- 4 -</div></div>
+            </div>
+        </div>
+
+        <div id="page2" class="page-frame a4-page"><div class="doc-title">2. 평가지</div></div>
+        <div id="page3" class="page-frame a4-page"><div class="doc-title">3. 채점기준</div></div>
+        <div id="page4" class="page-frame a4-page"><div class="doc-title">4. 최종결과표</div></div>
+    </div>
+
+    <script>
+        let currentDbKey = "";
+        const storedConfig = localStorage.getItem('firebaseConfig');
+        const firebaseConfig = storedConfig ? JSON.parse(storedConfig) : {
+            apiKey: "AIzaSyCO37zrsZEjKTokMCNWbIc1C_o5BZMqh8E",
+            databaseURL: "https://busan-teacher-work-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "busan-teacher-work"
+        };
+        if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+
+        const masterConfig = {
+            apiKey: "AIzaSyDnADuHu0mq4GIlqBm_VHfv7y6RarabGhU",
+            databaseURL: "https://busan-teacher-workall-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "busan-teacher-workall"
+        };
+        const masterApp = !firebase.apps.find(app => app.name === "masterApp") 
+            ? firebase.initializeApp(masterConfig, "masterApp") 
+            : firebase.app("masterApp");
+        const masterDatabase = masterApp.database();
+        const auth = firebase.auth();
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const currentClass = urlParams.get('class') || "테스트";
+        document.getElementById('backLink').href = '../start/index1.html?class=' + currentClass;
+        const defaultViewMode = localStorage.getItem('defaultViewMode_' + currentClass) || 'subject';
+
+        let globalCoursesData = [];
+        let globalStandards = []; 
+
+        const adminPw = localStorage.getItem('adminPw');
+        const masterAuth = masterApp.auth(); // 📍 [신규 배선] 마스터 관제탑 전용 인증 모터
+
+        auth.onAuthStateChanged(async (user) => {
+            if (user) { 
+                // 📍 기본 개별반은 로그인되어 있지만, 마스터 관제탑은 꺼져있을 수 있으므로 확인 후 동시 시동
+                if (!masterAuth.currentUser && adminPw) {
+                    try { 
+                        await masterAuth.signInWithEmailAndPassword('ghlwns0201@naver.com', adminPw); 
+                    } catch(e) { 
+                        console.warn("마스터 인증 지연:", e); 
+                    }
+                }
+                fetchMasterData(); 
+            } 
+            else if (adminPw) {
+                try {
+                    // 📍 [핵심 정비] 양쪽 데이터베이스에 동시 로그인 (쌍발 엔진 가동)
+                    await auth.signInWithEmailAndPassword('ghlwns0201@naver.com', adminPw);
+                    await masterAuth.signInWithEmailAndPassword('ghlwns0201@naver.com', adminPw);
+                    fetchMasterData();
+                } catch (err) {
+                    alert("인증 실패"); location.href = '../index.html';
+                }
+            } else { 
+                alert("보안 인증이 필요합니다."); location.href = '../index.html'; 
+            }
+        });
+
+        let allVersionsData = {};
+
+        async function fetchMasterData() {
+            try {
+                const cacheKey = `dev_cache_master_${currentClass}`;
+                const ttCacheKey = `dev_cache_tt_${currentClass}`;
+
+                const cachedData = sessionStorage.getItem(cacheKey);
+                const cachedTt = sessionStorage.getItem(ttCacheKey);
+
+                let masterData = {}; let fullTimetable = [];
+
+                if (cachedData) masterData = JSON.parse(cachedData);
+                else {
+                    const snap = await database.ref(`${currentClass}/masterData`).once('value');
+                    masterData = snap.val() || {};
+                    sessionStorage.setItem(cacheKey, JSON.stringify(masterData));
+                }
+
+                if (cachedTt) fullTimetable = JSON.parse(cachedTt);
+                else {
+                    const ttSnap = await database.ref(`${currentClass}/fullTimetable`).once('value');
+                    fullTimetable = ttSnap.val() || [];
+                    sessionStorage.setItem(ttCacheKey, JSON.stringify(fullTimetable));
+                }
+
+                const vSnap = await masterDatabase.ref('ncsVersions').once('value');
+                allVersionsData = vSnap.val() || {};
+                
+                const vSelect = document.getElementById('ncsVersionSelect');
+                let optionsHtml = `<option value="legacy">[기존 공통] 훈련기준</option>`;
+                
+                const keys = Object.keys(allVersionsData).sort((a, b) => allVersionsData[a].timestamp - allVersionsData[b].timestamp);
+                keys.forEach((vId, idx) => {
+                    optionsHtml += `<option value="${vId}">${idx + 1}.과평 버전: ${allVersionsData[vId].name}</option>`;
+                });
+                vSelect.innerHTML = optionsHtml;
+
+                let indOptionsHtml = `<option value="">대표 버전 따름</option><option value="legacy">[기존 공통] 훈련기준</option>`;
+                keys.forEach((vId, idx) => {
+                    indOptionsHtml += `<option value="${vId}">${idx + 1}.과평 버전: ${allVersionsData[vId].name}</option>`;
+                });
+                document.getElementById('individualNcsSelect').innerHTML = indOptionsHtml;
+
+                const savedVersionPref = localStorage.getItem(`selectedVersion_${currentClass}`) || "legacy";
+                if (vSelect.querySelector(`option[value="${savedVersionPref}"]`)) {
+                    vSelect.value = savedVersionPref;
+                }
+                
+                await loadStandardsForVersion(vSelect.value);
+
+                document.getElementById('S0_CourseName').value = masterData.name || "데이터 없음";
+                document.getElementById('S0_Period').value = masterData.period || "데이터 없음";
+                document.getElementById('S0_Teacher').value = masterData.teacher || "데이터 없음";
+
+                const courses = masterData.courses || [];
+        if (courses.length > 0) {
+            globalCoursesData = courses;
+            
+            // 📍 [신규 배선] 마스터 관제탑(commonEvaluations)을 스캔하여 이미 올라간 과목 목록을 확보합니다.
+            const commonSnap = await masterDatabase.ref('commonEvaluations').once('value');
+            const commonData = commonSnap.val() || {};
+            const uploadedKeys = Object.keys(commonData); // 클라우드에 존재하는 과목+코드 키 모음
+
+            // renderList에 이 목록을 넘겨주어 색칠하도록 엔진 업그레이드
+            renderListBasedOnMode(courses, defaultViewMode, fullTimetable, uploadedKeys);
+        } else { 
+            document.getElementById('unitListContainer').innerHTML = "<p style='color:red;'>등록된 교과목 데이터가 없습니다.</p>"; 
+        }
+    } catch (e) {
+                console.error("데이터 로드 실패:", e);
+                document.getElementById('unitListContainer').innerHTML = "<p style='color:red;'>데이터 통신 에러 발생</p>";
+            }
+        }
+
+        async function loadStandardsForVersion(versionId) {
+            globalStandards = [];
+            let targetPath = versionId === 'legacy' ? 'commonStandards' : `ncsVersions/${versionId}/data`;
+            
+            const parts = ['electronics', 'engine', 'chassis', 'ev'];
+            const stdPromises = parts.map(p => masterDatabase.ref(`${targetPath}/${p}`).once('value'));
+            const stdSnaps = await Promise.all(stdPromises);
+            
+            stdSnaps.forEach(snap => {
+                const result = snap.val();
+                if(result) {
+                    const dataArray = Array.isArray(result.data) ? result.data : Object.values(result.data || result);
+                    globalStandards.push(...dataArray);
+                }
+            });
+        }
+
+        async function changeNcsVersion() {
+            const vId = document.getElementById('ncsVersionSelect').value;
+            localStorage.setItem(`selectedVersion_${currentClass}`, vId); 
+            
+            const badge = document.getElementById('viewModeBadge');
+            const oldText = badge.innerText;
+            badge.innerText = "기준 교체 중...";
+            
+            await loadStandardsForVersion(vId); 
+            
+            badge.innerText = oldText;
+            
+            const activeBtn = document.querySelector('.unit-btn.active');
+            if (activeBtn) activeBtn.click();
+        }
+
+        async function resetEvalData() {
+            const subject = document.getElementById('S1_1').value;
+            const unitName = document.getElementById('S1_2').value;
+            if (!subject) return;
+
+            const displayName = unitName ? unitName : subject;
+            if(!confirm(`⚠️ [경고] 현재 탭(${currentEvalMode})에 저장된 '${displayName}'의 평가 내용을 삭제하고,\n현재 선택된 훈련기준 버전으로 화면을 초기화하시겠습니까?`)) return;
+
+            const dbKey = (subject + "_" + (unitName || "종합")).replace(/[\.\#\$\/\[\]]/g, '');
+            try {
+                await database.ref(`${currentClass}/evalPlans/${currentEvalMode}/${dbKey}`).remove();
+                alert("✅ 초기화 완료! 현재 선택된 버전의 순정 훈련기준으로 다시 불러옵니다.");
+                
+                const activeBtn = document.querySelector('.unit-btn.active');
+                if (activeBtn) activeBtn.click();
+            } catch(e) {
+                alert("❌ 초기화 실패: " + e.message);
+            }
+        }
+
+        function renderListBasedOnMode(courses, mode, fullTimetable = [], uploadedKeys = []) {
+            const container = document.getElementById('unitListContainer');
+            const badge = document.getElementById('viewModeBadge');
+            container.innerHTML = ""; 
+
+            const shortDate = (d) => {
+                if(!d) return "미정";
+                let s = String(d).replace(/[\.\/]/g,'-').replace(/\s/g,'');
+                let p = s.split('-'); return p.length >= 2 ? `${p[1]}-${p[2]}` : s;
+            };
+
+            if (mode === 'subject') {
+                badge.innerText = "교과목별 모드"; badge.style.backgroundColor = "#27ae60"; 
+                const subjectGroups = {};
+                courses.forEach(c => {
+                    const courseType = c.type || "미분류";
+                    let determinedEval = c.evalMethod || c.eval || "작업장평가";
+                    if (courseType.includes("비NCS") || courseType.includes("소양")) { determinedEval = "기타(선다형)"; }
+
+                    if (!subjectGroups[c.subject]) {
+                        subjectGroups[c.subject] = { subject: c.subject, type: courseType, evalMethod: determinedEval, totalHours: 0, endDate: "" };
+                    }
+                    if (c.details) { c.details.forEach(d => subjectGroups[c.subject].totalHours += Number(d.hour || 0)); }
+                });
+
+                let groupArray = Object.values(subjectGroups);
+                groupArray.forEach(group => {
+                    let maxDate = "";
+                    fullTimetable.forEach(row => {
+                        if (row['교과목'] && row['교과목'].trim() === group.subject && row['날짜']) {
+                            if (row['날짜'] > maxDate) maxDate = row['날짜'];
+                        }
+                    });
+                    group.endDate = maxDate;
+                });
+
+                groupArray.sort((a, b) => {
+                    if (!a.endDate && !b.endDate) return 0;
+                    if (!a.endDate) return 1; 
+                    if (!b.endDate) return -1;
+                    return a.endDate.localeCompare(b.endDate);
+                });
+
+groupArray.forEach(group => {
+            const btn = document.createElement('button');
+            btn.className = 'unit-btn';
+            
+            // 📍 [수정] 공백과 기호를 날린 뒤, 클라우드 키에 이름이 '포함'되어 있는지 스마트 검사
+            const cleanSubject = group.subject.replace(/[\s\.\#\$\/\[\]]/g, '');
+            const isUploaded = uploadedKeys.some(k => k.includes(cleanSubject));
+            const textColor = isUploaded ? "#2ecc71" : "white";
+
+            btn.innerHTML = `<span class="unit-subject-label" style="display:flex; justify-content:space-between;"><span>[${group.type}]</span> <span style="color:#f1c40f;">종료: ${shortDate(group.endDate)}</span></span><b style="color:${textColor};">${group.subject}</b>`;
+            btn.onclick = function() { selectUnit(this, group.subject, "", "", group.evalMethod, group.totalHours, 'subject', group.endDate); };
+                    container.appendChild(btn);
+                });
+
+            } else {
+                badge.innerText = "능력단위별 모드"; badge.style.backgroundColor = "#e67e22"; 
+                let renderArray = courses.map(c => {
+                    let unitCode = ""; let unitNameOnly = String(c.unit || "");
+                    const codePatternMatch = unitNameOnly.match(/[0-9]{8,}_[0-9]+v[0-9]+/i);
+                    const bracketMatch = unitNameOnly.match(/\[(.*?)\]/); 
+
+                    if (codePatternMatch) { unitCode = codePatternMatch[0]; unitNameOnly = unitNameOnly.replace(codePatternMatch[0], "").trim(); } 
+                    else if (bracketMatch) { unitCode = bracketMatch[1]; unitNameOnly = unitNameOnly.replace(bracketMatch[0], "").trim(); }
+                    unitNameOnly = unitNameOnly.replace(/^[\[\]\s]+/, "").trim();
+
+                    let totalHours = 0;
+                    if (c.details) { c.details.forEach(d => totalHours += Number(d.hour || 0)); }
+
+                    let maxDate = "";
+                    fullTimetable.forEach(row => {
+                        let rowUnit = String(row['능력단위'] || "").trim();
+                        const bMatch = rowUnit.match(/\[(.*?)\]/);
+                        if (bMatch) rowUnit = rowUnit.replace(bMatch[0], "").trim();
+
+                        if (row['교과목'] && row['교과목'].trim() === c.subject && rowUnit === unitNameOnly && row['날짜']) {
+                            if (row['날짜'] > maxDate) maxDate = row['날짜'];
+                        }
+                    });
+
+                    const courseType = c.type || "미분류";
+                    let determinedEval = c.evalMethod || c.eval || "작업장평가";
+                    if (courseType.includes("비NCS") || courseType.includes("소양")) { determinedEval = "기타(선다형)"; }
+
+                    return { subject: c.subject, unitCode: unitCode, unitNameOnly: unitNameOnly, determinedEval: determinedEval, totalHours: totalHours, courseType: courseType, endDate: maxDate };
+                });
+
+                renderArray.sort((a, b) => {
+                    if (!a.endDate && !b.endDate) return 0;
+                    if (!a.endDate) return 1;
+                    if (!b.endDate) return -1;
+                    return a.endDate.localeCompare(b.endDate);
+                });
+
+renderArray.forEach(item => {
+            const btn = document.createElement('button');
+            btn.className = 'unit-btn';
+
+            // 📍 [수정] 공백/기호를 날린 뒤, 클라우드 키에 '이름'과 '코드'가 모두 포함되어 있는지 스마트 검사
+            const targetSubject = (item.unitNameOnly && item.unitNameOnly !== "") ? item.unitNameOnly : item.subject;
+            const cleanName = targetSubject.replace(/[\s\.\#\$\/\[\]]/g, '');
+            const cleanCode = item.unitCode.replace(/[\s\.\#\$\/\[\]]/g, '');
+            
+            const isUploaded = uploadedKeys.some(k => k.includes(cleanName) && k.includes(cleanCode));
+            const textColor = isUploaded ? "#2ecc71" : "white";
+
+            btn.innerHTML = `<span class="unit-subject-label" style="display:flex; justify-content:space-between;"><span>[${item.courseType}] ${item.subject}</span> <span style="color:#f1c40f;">종료: ${shortDate(item.endDate)}</span></span><b style="color:${textColor};">${item.unitNameOnly || '단위명 없음'}</b>`;
+            btn.onclick = function() { selectUnit(this, item.subject, item.unitCode, item.unitNameOnly, item.determinedEval, item.totalHours, 'ncs', item.endDate); };
+                    container.appendChild(btn);
+                });
+            }
+        }
+
+        async function selectUnit(clickedBtn, subject, code, name, evalMethod, hours, mode, endDate) {
+            document.getElementById('individualNcsSelect').value = "";
+            document.getElementById('individualNcsSelect').style.backgroundColor = "";
+            
+            const allBtns = document.querySelectorAll('.unit-btn');
+            allBtns.forEach(b => b.classList.remove('active'));
+            clickedBtn.classList.add('active');
+
+            const docBtns = document.querySelectorAll('.nav-btn');
+            docBtns.forEach(b => b.classList.add('ready'));
+
+            showPage('page0', document.getElementById('btnPage0'));
+
+            currentDbKey = (subject + "_" + (name || "종합")).replace(/[\.\#\$\/\[\]]/g, '');
+            const snap = await database.ref(`${currentClass}/evalPlans/${currentEvalMode}/${currentDbKey}`).once('value');
+            const savedData = snap.val();
+
+            const indSelect = document.getElementById('individualNcsSelect');
+            const mainVersion = document.getElementById('ncsVersionSelect').value;
+            
+            if (savedData && savedData.ncsVersion) {
+                indSelect.value = savedData.ncsVersion;
+                if (savedData.ncsVersion !== mainVersion) {
+                    indSelect.style.backgroundColor = "#ffeaa7";
+                    indSelect.style.borderColor = "#e67e22";
+                    indSelect.style.color = "#d35400";
+                } else {
+                    indSelect.style.backgroundColor = "";
+                    indSelect.style.borderColor = "#ccc";
+                    indSelect.style.color = "";
+                }
+            } else {
+                indSelect.value = "";
+                indSelect.style.backgroundColor = "";
+                indSelect.style.borderColor = "#ccc";
+                indSelect.style.color = "";
+            }
+
+            document.getElementById('S1_1').value = subject;
+            document.getElementById('S2_1').value = evalMethod || "작업장평가";
+            document.getElementById('S2_2').value = hours;
+            document.getElementById('S2_3').value = savedData ? (savedData.evalTestTime || "") : "";
+
+            const rowUnitCode = document.getElementById('rowUnitCode');
+            const rowUnitName = document.getElementById('rowUnitName');
+            const S1_Code = document.getElementById('S1_Code');
+            const S1_2 = document.getElementById('S1_2');
+            const evalTbody = document.getElementById('evalItemTbody');
+            evalTbody.innerHTML = "<tr><td colspan='4' style='text-align:center; padding:20px;'>⏳ 데이터를 불러오는 중입니다...</td></tr>";
+
+            let fmtDate = "";
+            if(endDate){ let dStr=String(endDate).replace(/[\.\/]/g,'-').replace(/\s/g,'').replace(/-$/,''); let p=dStr.split('-'); if(p.length===3) fmtDate=`${p[0]}-${p[1].padStart(2,'0')}-${p[2].padStart(2,'0')}`; }
+            
+            document.getElementById('S3_1').value = savedData ? (savedData.dateMain || "") : fmtDate; 
+            document.getElementById('S3_2').value = savedData ? (savedData.dateAdd || "") : ""; 
+            document.getElementById('S3_3').value = savedData ? (savedData.dateRe || "") : "";
+
+            let stdData = null; 
+            let finalCode = code;
+
+            if (finalCode) { 
+                const cleanCode = finalCode.replace(/\s+/g, ''); 
+                stdData = globalStandards.find(s => s.code && s.code.replace(/\s+/g, '') === cleanCode); 
+            }
+
+            const textFilter = /[\s·ㆍ\.\_]/g; 
+
+            if (!stdData) {
+                if (mode === 'subject') {
+                    const cleanSubject = subject.replace(textFilter, ''); 
+                    stdData = globalStandards.find(s => s.subjectName && s.subjectName.replace(textFilter, '') === cleanSubject);
+                } else {
+                    if (name) {
+                        const cleanName = name.replace(textFilter, ''); 
+                        stdData = globalStandards.find(s => s.subjectName && s.subjectName.replace(textFilter, '') === cleanName);
+                    }
+                    if (!stdData && subject) {
+                        const cleanSubject = subject.replace(textFilter, ''); 
+                        stdData = globalStandards.find(s => s.subjectName && s.subjectName.replace(textFilter, '') === cleanSubject);
+                    }
+                }
+            }
+
+            if (stdData && stdData.code) { finalCode = stdData.code; }
+
+            if (savedData && savedData.unitCode) { 
+                finalCode = savedData.unitCode; 
+            }
+
+            rowUnitCode.style.display = 'flex'; 
+            S1_Code.value = finalCode || "코드 없음 (DB 미등록)";
+            
+            if (mode === 'subject') {
+                rowUnitName.style.display = 'none'; S1_2.value = "";
+            } else {
+                rowUnitName.style.display = 'flex'; S1_2.value = name || subject;
+            }
+
+            if (savedData && savedData.items) {
+                let html = "";
+                savedData.items.forEach(item => {
+                    html += `<tr class="eval-main-row">
+                                <td class="item-name">${item.name}</td>
+                                <td>
+                                    <div class="toggle-group type-selector" data-value="${item.type || '평가자 체크'}">
+                                        <button type="button" class="toggle-btn ${(!item.type || item.type==='평가자 체크') ? 'active' : ''}" onclick="changeEvalType(this, '평가자 체크')">교사</button>
+                                        <button type="button" class="toggle-btn ${item.type==='훈련생작성' ? 'active' : ''}" onclick="changeEvalType(this, '훈련생작성')">훈련생</button>
+                                    </div>
+                                </td>
+                                <td><input type="number" class="eval-input" placeholder="배점" value="${item.score}"></td>
+                                <td><select class="eval-input">
+                                        <option value="상" ${item.diff==='상' ? 'selected' : ''}>상</option>
+                                        <option value="중" ${item.diff==='중' ? 'selected' : ''}>중</option>
+                                        <option value="하" ${item.diff==='하' ? 'selected' : ''}>하</option>
+                                    </select></td>
+                            </tr>
+                            <tr class="eval-question-row">
+                                <td colspan="3">
+                                    <textarea class="eval-question-input" placeholder="○ 여기에 출제할 문제(상세 지시사항)를 입력하세요.">${item.question || ''}</textarea>
+                                </td>
+                                <td colspan="1" style="vertical-align: top; padding-bottom: 12px;">
+                                    <textarea class="eval-core-task-input" placeholder="근거사진용&#13;&#10;핵심작업명">${item.coreTask || ''}</textarea>
+                                </td>
+                            </tr>`;
+                });
+                evalTbody.innerHTML = html;
+            } 
+            else if (stdData && stdData.elements && stdData.elements.length > 0) {
+                let html = "";
+                stdData.elements.forEach((el, index) => {
+                    if(!el) return;
+                    html += `<tr class="eval-main-row">
+                        <td class="item-name">${index + 1}. ${el.name}</td>
+                        <td>
+                            <div class="toggle-group type-selector" data-value="평가자 체크">
+                                <button type="button" class="toggle-btn active" onclick="changeEvalType(this, '평가자 체크')">교사</button>
+                                <button type="button" class="toggle-btn" onclick="changeEvalType(this, '훈련생작성')">훈련생</button>
+                            </div>
+                        </td>
+                        <td><input type="number" class="eval-input" placeholder="배점 (예: 20)"></td>
+                        <td><select class="eval-input"><option value="상">상</option><option value="중" selected>중</option><option value="하">하</option></select></td>
+                    </tr>
+                    <tr class="eval-question-row">
+                        <td colspan="3"><textarea class="eval-question-input" placeholder="○ 여기에 출제할 문제(상세 지시사항)를 입력하세요."></textarea></td>
+                        <td colspan="1" style="vertical-align: top; padding-bottom: 12px;"><textarea class="eval-core-task-input" placeholder="근거사진용&#13;&#10;핵심작업명"></textarea></td>
+                    </tr>`;
+                });
+                evalTbody.innerHTML = html;
+            } 
+            else {
+                evalTbody.innerHTML = `<tr><td colspan="4" style="text-align:center; color:#e74c3c; padding: 20px; font-weight:bold;">⚠️ '${subject}'에 해당하는 훈련기준(코드/요소)을 DB에서 찾을 수 없습니다.</td></tr>
+                <tr class="eval-main-row">
+                    <td class="item-name"><input type="text" class="eval-input" style="width:90%; background:transparent; border:none; font-weight:bold; color:#333;" value="${subject} 종합평가"></td>
+                    <td><div class="toggle-group type-selector" data-value="평가자 체크"><button type="button" class="toggle-btn active" onclick="changeEvalType(this, '평가자 체크')">교사</button><button type="button" class="toggle-btn" onclick="changeEvalType(this, '훈련생작성')">훈련생</button></div></td>
+                    <td><input type="number" class="eval-input" placeholder="배점" value="80"></td>
+                    <td><select class="eval-input"><option value="상">상</option><option value="중" selected>중</option><option value="하">하</option></select></td>
+                </tr>
+                <tr class="eval-question-row">
+                    <td colspan="3"><textarea class="eval-question-input" placeholder="○ 여기에 출제할 문제(상세 지시사항)를 입력하세요."></textarea></td>
+                    <td colspan="1" style="vertical-align: top; padding-bottom: 12px;"><textarea class="eval-core-task-input" placeholder="근거사진용&#13;&#10;핵심작업명"></textarea></td>
+                </tr>`;
+            }
+
+            let currentCourseType = "NCS 전공교과";
+            const typeSpan = clickedBtn.querySelector('.unit-subject-label span');
+            if (typeSpan) currentCourseType = typeSpan.innerText.replace(/[\[\]]/g, '');
+            renderCoverPage(stdData, subject, S1_2.value, finalCode, hours, currentCourseType);
+        }
+
+        function showPage(pageId, btnElement) {
+            const pages = document.querySelectorAll('.page-frame, .page1-container'); 
+            pages.forEach(page => page.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+            
+            const btns = document.querySelectorAll('.nav-btn');
+            btns.forEach(btn => btn.classList.remove('active'));
+            btnElement.classList.add('active');
+
+            if(pageId === 'page1') {
+                buildEvaluationDocs();
+            }
+        }
+
+        let currentEvalMode = '본평가'; 
+        function switchEvalType(type, btnElement) {
+            currentEvalMode = type;
+            const tabs = document.querySelectorAll('.tab-btn');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            btnElement.classList.add('active');
+            
+            document.getElementById('S3_1').classList.remove('highlight-date');
+            document.getElementById('S3_2').classList.remove('highlight-date');
+            document.getElementById('S3_3').classList.remove('highlight-date');
+            
+            if (type === '본평가') document.getElementById('S3_1').classList.add('highlight-date');
+            else if (type === '추가평가') document.getElementById('S3_2').classList.add('highlight-date');
+            else if (type === '재평가') document.getElementById('S3_3').classList.add('highlight-date');
+
+            const activeUnitBtn = document.querySelector('.unit-btn.active');
+            if(activeUnitBtn) activeUnitBtn.click();
+        }
+
+        async function executeSave() {
+            const subject = document.getElementById('S1_1').value;
+            const unitName = document.getElementById('S1_2').value;
+            if (!subject) return alert("⚠️ 좌측에서 평가 대상을 먼저 선택해 주십시오.");
+
+            const displayName = unitName ? unitName : subject;
+            const dbKey = (subject + "_" + (unitName || "종합")).replace(/[\.\#\$\/\[\]]/g, '');
+
+            const rows = document.querySelectorAll('#evalItemTbody tr.eval-main-row');
+            let totalScore = 0;
+            const evalItems = [];
+
+            if (rows.length === 0) return alert("⚠️ 저장할 요소 데이터가 없습니다.");
+
+            rows.forEach(tr => {
+                const nameTd = tr.querySelector('.item-name');
+                if(!nameTd) return; 
+                let name = "";
+                const nameInput = nameTd.querySelector('input');
+                if(nameInput) name = nameInput.value;
+                else name = nameTd.innerText;
+
+                const typeGroup = tr.querySelector('.toggle-group.type-selector');
+                const type = typeGroup ? typeGroup.getAttribute('data-value') : "평가자 체크"; 
+                
+                const inputs = tr.querySelectorAll('input[type="number"]');
+                const score = inputs[0] ? Number(inputs[0].value) : 0;
+                
+                const selects = tr.querySelectorAll('select');
+                const diff = selects[0] ? selects[0].value : "";
+
+                let questionText = "";
+                let coreTaskText = "";
+                const questionRow = tr.nextElementSibling;
+                if (questionRow && questionRow.classList.contains('eval-question-row')) {
+                    const qInput = questionRow.querySelector('.eval-question-input');
+                    if (qInput) questionText = qInput.value;
+                    const cInput = questionRow.querySelector('.eval-core-task-input');
+                    if (cInput) coreTaskText = cInput.value;
+                }
+                totalScore += score;
+                evalItems.push({ name, type, score, diff, question: questionText, coreTask: coreTaskText }); 
+            });
+
+            if (totalScore !== 80) {
+                alert(`⚠️ [안내] 현재 배점 총합이 80점이 아닙니다. (현재: ${totalScore}점)\n입력된 내용으로 저장을 진행합니다.`);
+            }
+
+            const indVersion = document.getElementById('individualNcsSelect').value;
+
+            const saveData = {
+                subject: subject, unitCode: document.getElementById('S1_Code').value, unitName: unitName,
+                evalMethod: document.getElementById('S2_1').value, 
+                totalHours: document.getElementById('S2_2').value,
+                evalTestTime: document.getElementById('S2_3').value, 
+                dateMain: document.getElementById('S3_1').value, dateAdd: document.getElementById('S3_2').value, dateRe: document.getElementById('S3_3').value,
+                ncsVersion: indVersion,
+                items: evalItems
+            };
+
+            if(!confirm(`[${currentEvalMode}] '${displayName}'\n해당 설정 내용으로 저장(업데이트) 하시겠습니까?`)) return;
+
+            try {
+                await database.ref(`${currentClass}/evalPlans/${currentEvalMode}/${dbKey}`).set(saveData);
+                alert(`✅ [${currentEvalMode}] '${displayName}' 저장이 완료되었습니다!`);
+            } catch(e) { alert("❌ 저장 실패: " + e.message); }
+        }
+
+        function renderCoverPage(stdData, subject, unitName, unitCode, hours, courseType) {
+            try {
+                const coverTitleEl = document.querySelector('.cover-title');
+                if (currentEvalMode === '재평가') {
+                    coverTitleEl.innerHTML = `능력단위별 내부평가서<br><span style="font-size: 24px; letter-spacing: 2px;">(재평가)</span>`;
+                } else if (currentEvalMode === '추가평가') {
+                    coverTitleEl.innerHTML = `능력단위별 내부평가서<br><span style="font-size: 24px; letter-spacing: 2px;">(추가평가)</span>`;
+                } else {
+                    coverTitleEl.innerHTML = `능력단위별 내부평가서`;
+                }
+                document.getElementById('cover_courseName').innerText = document.getElementById('S0_CourseName').value;
+                document.getElementById('cover_period').innerText = "(" + document.getElementById('S0_Period').value + ")";
+                document.getElementById('cover_teacher').innerText = document.getElementById('S0_Teacher').value;
+                
+                let typeStr = courseType || "NCS 전공교과";
+                if (typeStr.includes('NCS') && !typeStr.includes('비')) typeStr = "NCS 전공교과";
+                else if (typeStr.includes('소양')) typeStr = "소양교과";
+                else typeStr = "비NCS 전공교과";
+                document.getElementById('cover_courseType').innerText = typeStr;
+
+                const tbody = document.getElementById('cover_tbody');
+                
+                let elements = [];
+                if (stdData && stdData.elements && stdData.elements.length > 0) {
+                    elements = stdData.elements.filter(el => el !== null && el !== undefined);
+                }
+
+                const rowspan = elements.length > 0 ? elements.length : 1;
+    let html = "";
+
+    if (elements.length > 0) {
+        elements.forEach((el, index) => {
+            let elementCode = unitCode ? `${unitCode}.${index + 1}` : "-";
+            html += `<tr>`;
+            // 📍 ${levelStr} 변수를 제거하고 깔끔하게 여백만 남깁니다.
+            if (index === 0) html += `<td rowspan="${rowspan}"><b>${subject}</b><br><br>${unitName || subject}</td>`;
+            html += `<td>${elementCode}</td><td>${el.name || "이름 없음"}</td>`;
+            if (index === 0) html += `<td rowspan="${rowspan}">${hours}</td>`;
+            html += `</tr>`;
+        });
+    } else {
+        html = `<tr><td><b>${subject}</b><br><br>${unitName || subject}</td><td>${unitCode || "-"}</td><td>(능력단위요소 없음)</td><td>${hours}</td></tr>`;
+    }
+    tbody.innerHTML = html;
+                console.log("✅ 표지 렌더링 완료:", subject);
+            } catch (error) { console.error("표지 렌더링 중 오류 발생:", error); }
+        }
+
+        function changeEvalType(btn, value) {
+            const group = btn.closest('.toggle-group');
+            group.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            group.setAttribute('data-value', value);
+        }
+
+        // 📍 [1] 문서 렌더링 메인 엔진 (백지 현상 완벽 수리 및 사진 DB 탑재)
+        async function buildEvaluationDocs() {
+            const subject = document.getElementById('S1_1').value || "";
+            const unitCode = document.getElementById('S1_Code').value || "";
+            const unitName = document.getElementById('S1_2').value || "";
+            const evalMethod = document.getElementById('S2_1').value || "";
+            const evalTestTime = document.getElementById('S2_3').value || ""; 
+            const dateMain = document.getElementById('S3_1').value || "";
+            const dateAdd = document.getElementById('S3_2').value || "";
+            const dateRe = document.getElementById('S3_3').value || "";
+
+            // 🚨 [안전장치 추가] 과목이 선택되지 않았을 때는 렌더링 엔진을 안전하게 중지
+            if (!subject) {
+                document.getElementById('exam_header_container').innerHTML = "<p style='padding:20px; color:red;'>⚠️ 좌측에서 평가 대상을 먼저 선택해 주십시오.</p>";
+                document.getElementById('photo_header_container').innerHTML = "";
+                document.getElementById('photo_grid_container').innerHTML = "";
+                return;
+            }
+
+            // currentDbKey가 비어있을 경우 화면의 값을 토대로 강제 조립
+            if (!currentDbKey) {
+                currentDbKey = (subject + "_" + (unitName || "종합")).replace(/[\.\#\$\/\[\]]/g, '');
+            }
+
+            const items = [];
+            document.querySelectorAll('#evalItemTbody tr.eval-main-row').forEach(tr => {
+                let name = tr.querySelector('.item-name input') ? tr.querySelector('.item-name input').value : tr.querySelector('.item-name').innerText;
+                name = name.replace(/^\d+\.\s*/, '').trim();
+                let questionText = ""; let coreTaskText = "";
+                const qRow = tr.nextElementSibling;
+                if (qRow && qRow.classList.contains('eval-question-row')) {
+                    const qInput = qRow.querySelector('.eval-question-input'); if(qInput) questionText = qInput.value;
+                    const cInput = qRow.querySelector('.eval-core-task-input'); if(cInput) coreTaskText = cInput.value;
+                }
+                items.push({ name, question: questionText, coreTask: coreTaskText });
+            });
+
+            let photoData = {};
+            if (currentDbKey) {
+                const snap = await database.ref(`${currentClass}/evalPhotos/${currentEvalMode}/${currentDbKey}`).once('value');
+                photoData = snap.val() || {};
+            }
+
+            let dateRows = [];
+            if (currentEvalMode === '본평가') {
+                dateRows.push({ label: '본 평 가', value: dateMain }); dateRows.push({ label: '재 평 가', value: '-' });
+            } else if (currentEvalMode === '추가평가') {
+                dateRows.push({ label: '본 평 가', value: dateMain }); dateRows.push({ label: '추가평가', value: dateAdd });
+            } else if (currentEvalMode === '재평가') {
+                dateRows.push({ label: '본 평 가', value: dateMain });
+                if (dateAdd && dateAdd.trim() !== "") dateRows.push({ label: '추가평가', value: dateAdd });
+                dateRows.push({ label: '재 평 가', value: dateRe });
+            }
+            const rowspan = dateRows.length;
+            const baseHeight = rowspan === 3 ? "24px" : "26px"; 
+            const totalHeight = rowspan === 3 ? "72px" : "52px"; 
+            let unitDisplay = (unitCode && !unitCode.includes("없음")) ? `${unitCode} ${unitName || subject}` : (unitName || subject);
+
+            let dateRowsHtml = `
+                <tr style="height: ${baseHeight};">
+                    <td class="doc-cyan-bg" rowspan="${rowspan}">평가방법</td><td rowspan="${rowspan}">${evalMethod}</td>
+                    <td class="doc-cyan-bg" rowspan="${rowspan}">평가시간</td><td rowspan="${rowspan}">${evalTestTime} 분</td>
+                    <td class="doc-cyan-bg" style="width:12%">${dateRows[0].label}</td><td style="width:15%">${dateRows[0].value}</td>
+                </tr>`;
+            for(let i = 1; i < dateRows.length; i++) { dateRowsHtml += `<tr style="height: ${baseHeight};"><td class="doc-cyan-bg">${dateRows[i].label}</td><td>${dateRows[i].value}</td></tr>`; }
+
+            const makeHeaderHtml = (isTrainee) => `
+                <table class="doc-cyan-table">
+                    <tr><td colspan="6" class="doc-cyan-bg" style="font-size: 22px; padding: 12px; letter-spacing: 2px;">
+                        ${isTrainee ? '내부 평가 시험문제 <span style="color:#bdc3c7; font-size:22px;">(훈련생용)</span>' : '내부 평가 근거 사진'}
+                    </td></tr>
+                    <tr style="height: ${totalHeight};">
+                        <td class="doc-cyan-bg" style="width:12%">교 과 목</td><td style="width:21%">${subject}</td>
+                        <td class="doc-cyan-bg" style="width:12%">능력단위</td><td colspan="3">${unitDisplay}</td>
+                    </tr>
+                    ${dateRowsHtml}
+                </table>
+            `;
+
+            document.getElementById('exam_header_container').innerHTML = makeHeaderHtml(true);
+            let questionsHtml = "";
+            items.forEach((item, index) => {
+                questionsHtml += `<div style="margin-bottom: 25px;"><div style="font-weight: bold; font-size: 15px; margin-bottom: 8px;">[제${index+1} 평가항목] ${item.name}</div><div style="font-size: 14.5px; line-height: 1.6; word-break: keep-all; display: flex;"><span style="margin-right: 6px;">○</span><span style="white-space: pre-wrap;">${item.question || '문제가 입력되지 않았습니다.'}</span></div></div>`;
+            });
+            document.getElementById('exam_questions_container').innerHTML = questionsHtml || "<p>평가 항목이 없습니다.</p>";
+
+            document.getElementById('photo_header_container').innerHTML = makeHeaderHtml(false);
+            let photoGridHtml = `<table class="photo-grid-table">`;
+            for(let i=0; i<items.length; i+=2) {
+                let item1 = items[i].coreTask || items[i].name;
+                let item2 = items[i+1] ? (items[i+1].coreTask || items[i+1].name) : null;
+                
+                let img1 = photoData[`img_${i}`] ? photoData[`img_${i}`].imageData : '';
+                let img2 = photoData[`img_${i+1}`] ? photoData[`img_${i+1}`].imageData : '';
+
+                let uploadBtn1 = `<button class="btn-save-settings no-print" style="margin-top:5px; background:#3498db; width:80px;" onclick="document.getElementById('file_eval_${i}').click()">사진 등록</button><input type="file" id="file_eval_${i}" style="display:none" accept="image/*,.heic" onchange="uploadEvalPhoto(${i}, this)">`;
+                let uploadBtn2 = item2 ? `<button class="btn-save-settings no-print" style="margin-top:5px; background:#3498db; width:80px;" onclick="document.getElementById('file_eval_${i+1}').click()">사진 등록</button><input type="file" id="file_eval_${i+1}" style="display:none" accept="image/*,.heic" onchange="uploadEvalPhoto(${i+1}, this)">` : '';
+
+                let action1 = img1 ? `<button class="no-print" style="margin-top:5px; font-size:11px; color:#e74c3c; cursor:pointer; border:1px solid #e74c3c; background:white; border-radius:4px; padding:2px 8px;" onclick="deleteEvalPhoto(${i})">삭제</button>` : uploadBtn1;
+                let action2 = img2 ? `<button class="no-print" style="margin-top:5px; font-size:11px; color:#e74c3c; cursor:pointer; border:1px solid #e74c3c; background:white; border-radius:4px; padding:2px 8px;" onclick="deleteEvalPhoto(${i+1})">삭제</button>` : uploadBtn2;
+
+                photoGridHtml += `
+                    <tr><td class="photo-header">${item1}</td><td class="photo-header">${item2 ? item2 : ''}</td></tr>
+                    <tr>
+                        <td class="photo-box" style="vertical-align: middle; padding:10px;">
+                            <img id="preview_eval_${i}" src="${img1}" style="max-width:100%; max-height:220px; object-fit:contain; ${img1 ? '' : 'display:none;'}">
+                            <div id="btn_wrap_${i}">${action1}</div>
+                        </td>
+                        <td class="photo-box ${!item2 ? 'crossed-out' : ''}" style="vertical-align: middle; padding:10px;">
+                            ${item2 ? `<img id="preview_eval_${i+1}" src="${img2}" style="max-width:100%; max-height:220px; object-fit:contain; ${img2 ? '' : 'display:none;'}">` : ''}
+                            ${item2 ? `<div id="btn_wrap_${i+1}">${action2}</div>` : ''}
+                        </td>
+                    </tr>
+                `;
+            }
+            photoGridHtml += `</table>`;
+            document.getElementById('photo_grid_container').innerHTML = photoGridHtml || "<p>평가 항목이 없습니다.</p>";
+        }
+
+        // 📍 [2] 보강수업.js에서 이식한 HEIC 대응 사진 변환 엔진
+        function processEvalImage(input, callback) {
+            if (input.files && input.files[0]) {
+                const file = input.files[0];
+                const isHeic = file.name.toLowerCase().endsWith('.heic') || file.name.toLowerCase().endsWith('.heif');
+
+                const runOriginalEngine = (targetFile) => {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        const img = new Image();
+                        img.onload = function () {
+                            const canvas = document.createElement('canvas');
+                            let width = img.width, height = img.height;
+                            const max_size = 1200; 
+                            if (width > height) { if (width > max_size) { height *= max_size / width; width = max_size; } } 
+                            else { if (height > max_size) { width *= max_size / height; height = max_size; } }
+                            canvas.width = width; canvas.height = height;
+                            canvas.getContext('2d').drawImage(img, 0, 0, width, height);
+                            callback(canvas.toDataURL('image/jpeg', 0.8)); 
+                        };
+                        img.src = e.target.result;
+                    };
+                    reader.readAsDataURL(targetFile);
+                };
+
+                if (isHeic) {
+                    if (typeof heic2any === 'undefined') return alert("HEIC 변환 엔진이 로드되지 않았습니다. 인터넷 연결을 확인해주세요.");
+                    heic2any({ blob: file, toType: "image/jpeg", quality: 0.8 })
+                        .then(convertedBlob => runOriginalEngine(convertedBlob))
+                        .catch(error => alert("HEIC 변환 오류: " + error.message));
+                } else {
+                    runOriginalEngine(file);
+                }
+            }
+        }
+
+        // 📍 [3] Firebase 업로드 통신
+        async function uploadEvalPhoto(index, input) {
+            if (!input.files || !input.files[0]) return;
+            if (!currentDbKey) return alert("❌ 좌측에서 평가 대상을 먼저 선택해 주세요.");
+
+            const btnWrap = document.getElementById(`btn_wrap_${index}`);
+            const originalHtml = btnWrap.innerHTML;
+            btnWrap.innerHTML = `<span class="no-print" style="color:#2980b9; font-size:12px; font-weight:bold;">업로드 중 ⏳</span>`;
+
+            processEvalImage(input, async (base64Data) => {
+                try {
+                    await database.ref(`${currentClass}/evalPhotos/${currentEvalMode}/${currentDbKey}/img_${index}`).set({
+                        imageData: base64Data, timestamp: new Date().getTime()
+                    });
+                    const imgEl = document.getElementById(`preview_eval_${index}`);
+                    imgEl.src = base64Data; imgEl.style.display = 'inline-block';
+                    
+                    btnWrap.innerHTML = `<button class="no-print" style="margin-top:5px; font-size:11px; color:#e74c3c; cursor:pointer; border:1px solid #e74c3c; background:white; border-radius:4px; padding:2px 8px;" onclick="deleteEvalPhoto(${index})">삭제</button>`;
+                } catch (e) {
+                    alert("❌ 업로드 실패: " + e.message);
+                    btnWrap.innerHTML = originalHtml;
+                }
+            });
+        }
+
+        // 📍 [4] 등록된 사진 삭제 통신
+        async function deleteEvalPhoto(index) {
+            if(!confirm("해당 사진을 삭제하시겠습니까?")) return;
+            try {
+                await database.ref(`${currentClass}/evalPhotos/${currentEvalMode}/${currentDbKey}/img_${index}`).remove();
+                
+                const imgEl = document.getElementById(`preview_eval_${index}`);
+                imgEl.src = ""; imgEl.style.display = 'none';
+                
+                document.getElementById(`btn_wrap_${index}`).innerHTML = `<button class="btn-save-settings no-print" style="margin-top:5px; background:#3498db; width:80px;" onclick="document.getElementById('file_eval_${index}').click()">사진 등록</button><input type="file" id="file_eval_${index}" style="display:none" accept="image/*,.heic" onchange="uploadEvalPhoto(${index}, this)">`;
+            } catch(e) {
+                alert("❌ 삭제 실패: " + e.message);
+            }
+        }
+
+        // ---------------------------------------------------------
+// ---------------------------------------------------------
+// 📍 [신규 모터 1] 고급형 비밀번호 팝업 제어 엔진
+// ---------------------------------------------------------
+let pendingUploadData = null; // 비밀번호 입력 대기용 임시 화물칸
+
+function openPwModal(subject, unitCode) {
+    const pwModal = document.getElementById('pwModal');
+    const pwInput = document.getElementById('commonPwInput');
+    
+    document.getElementById('pwSubjectInfo').innerHTML = `[${subject}]<br><span style="font-size:11px; color:#555;">${unitCode}</span>`;
+    pwInput.value = "";
+    pwModal.style.display = 'flex';
+    pwInput.focus();
+
+    // 📍 6자리 자동 감지 엔진 장착
+    pwInput.oninput = function() {
+        if (this.value.length === 6) { // 🚨 8이 아니라 6으로 락다운!
+            if (this.value === "122100") { 
+                closePwModal();
+                executeUploadCommonEval(); 
+            } else {
+                alert("❌ 비밀번호가 틀렸습니다.");
+                this.value = "";
+                this.focus();
+            }
+        }
+    };
+}
+
+function closePwModal() {
+    document.getElementById('pwModal').style.display = 'none';
+    pendingUploadData = null;
+}
+
+// ---------------------------------------------------------
+// 📍 [신규 모터 2] 공용 평가지 클라우드 업로드 (마스터 관제탑 타겟팅)
+// ---------------------------------------------------------
+async function uploadCommonEval() {
+    const rawSubject = document.getElementById('S1_1').value.trim();
+    const unitName = document.getElementById('S1_2').value.trim();
+    const unitCode = document.getElementById('S1_Code').value.trim();
+    const targetSubject = (unitName && unitName !== "") ? unitName : rawSubject;
+
+    if (!targetSubject || !unitCode || unitCode.includes("없음")) {
+        return alert("⚠️ 과목이 선택되지 않았거나 화면에 올바른 단위코드가 표시되지 않았습니다.\n(공용 클라우드는 NCS 코드가 있어야만 공유할 수 있습니다.)");
+    }
+
+    const rows = document.querySelectorAll('#evalItemTbody tr.eval-main-row');
+    if (rows.length === 0) return alert("⚠️ 올릴 평가 항목 데이터가 없습니다.");
+
+    const evalItems = [];
+    rows.forEach(tr => {
+        let name = tr.querySelector('.item-name input') ? tr.querySelector('.item-name input').value : tr.querySelector('.item-name').innerText;
+        name = name.replace(/^\d+\.\s*/, '').trim();
+        const typeGroup = tr.querySelector('.toggle-group.type-selector');
+        const type = typeGroup ? typeGroup.getAttribute('data-value') : "평가자 체크"; 
+        const inputs = tr.querySelectorAll('input[type="number"]');
+        const score = inputs[0] ? Number(inputs[0].value) : 0;
+        const selects = tr.querySelectorAll('select');
+        const diff = selects[0] ? selects[0].value : "";
+        
+        let questionText = ""; let coreTaskText = "";
+        const qRow = tr.nextElementSibling;
+        if (qRow && qRow.classList.contains('eval-question-row')) {
+            const qInput = qRow.querySelector('.eval-question-input'); if(qInput) questionText = qInput.value;
+            const cInput = qRow.querySelector('.eval-core-task-input'); if(cInput) coreTaskText = cInput.value;
+        }
+        evalItems.push({ name, type, score, diff, question: questionText, coreTask: coreTaskText });
+    });
+
+    pendingUploadData = { targetSubject, unitCode, evalItems };
+    openPwModal(targetSubject, unitCode);
+}
+
+// 📍 비밀번호 통과 시 실제로 작동하는 업로드 엔진
+async function executeUploadCommonEval() {
+    if (!pendingUploadData) return;
+    const { targetSubject, unitCode, evalItems } = pendingUploadData;
+    
+    // 📍 [추가] 업로드 직전, 불러오기와 동일하게 과목명과 코드를 보여주며 최종 확인
+    if (!confirm(`☁️ [${targetSubject}] (코드: ${unitCode})\n\n해당 과목의 평가지를 마스터 공용 데이터베이스에 업로드하시겠습니까?\n(기존에 동일한 과목/코드로 올라간 데이터가 있다면 최신 내용으로 덮어씌워집니다.)`)) {
+        pendingUploadData = null; // 취소하면 화물칸 비우고 정지
+        return;
+    }
+
+    const commonKey = (targetSubject + "_" + unitCode).replace(/[\s\.\#\$\/\[\]]/g, '');
+    
+    try {
+        await masterDatabase.ref(`commonEvaluations/${commonKey}`).set({
+            subject: targetSubject, unitCode: unitCode, items: evalItems, timestamp: new Date().getTime()
+        });
+        alert(`✅ [${targetSubject}] 과목 (${unitCode})\n평가지가 마스터 공용 데이터베이스에 성공적으로 등록되었습니다!`);
+        
+        fetchMasterData(); // 리스트 초록색 동기화 리로드
+    } catch(e) {
+        alert("❌ 등록 실패: " + e.message);
+    } finally {
+        pendingUploadData = null; 
+    }
+}
+
+// ---------------------------------------------------------
+// 📍 [신규 모터 3] 공용 평가지 클라우드 불러오기 (마스터 관제탑 타겟팅)
+// ---------------------------------------------------------
+async function downloadCommonEval() {
+    const rawSubject = document.getElementById('S1_1').value.trim();
+    const unitName = document.getElementById('S1_2').value.trim();
+    const unitCode = document.getElementById('S1_Code').value.trim();
+    const targetSubject = (unitName && unitName !== "") ? unitName : rawSubject;
+
+    if (!targetSubject || !unitCode || unitCode.includes("없음")) {
+        return alert("⚠️ 좌측에서 과목을 먼저 선택해 주세요. (단위코드가 화면에 떠 있어야 가능)");
+    }
+
+    const commonKey = (targetSubject + "_" + unitCode).replace(/[\s\.\#\$\/\[\]]/g, '');
+    
+    const snap = await masterDatabase.ref(`commonEvaluations/${commonKey}`).once('value');
+    const data = snap.val();
+
+    if (!data || !data.items) {
+        return alert(`⚠️ 마스터 공용 데이터베이스에 [${targetSubject}] 과목 (${unitCode}) 의 평가지가 아직 없습니다.\n※ 과목명과 코드가 둘 다 완벽히 일치해야 불러올 수 있습니다.`);
+    }
+
+    // 📍 불러오기 안내창에도 교과목과 코드 정보 표출
+    if (!confirm(`📥 [${targetSubject}] (코드: ${unitCode})\n\n마스터 공용 평가지를 화면으로 불러오시겠습니까?\n현재 화면의 내용이 공용 데이터로 덮어씌워집니다.\n(가져온 후 반드시 [💾 저장]을 눌러야 내 반에 적용됩니다.)`)) return;
+
+    let html = "";
+    data.items.forEach(item => {
+        html += `<tr class="eval-main-row">
+            <td class="item-name">${item.name}</td>
+            <td>
+                <div class="toggle-group type-selector" data-value="${item.type || '평가자 체크'}">
+                    <button type="button" class="toggle-btn ${(!item.type || item.type==='평가자 체크') ? 'active' : ''}" onclick="changeEvalType(this, '평가자 체크')">교사</button>
+                    <button type="button" class="toggle-btn ${item.type==='훈련생작성' ? 'active' : ''}" onclick="changeEvalType(this, '훈련생작성')">훈련생</button>
+                </div>
+            </td>
+            <td><input type="number" class="eval-input" placeholder="배점" value="${item.score || ''}"></td>
+            <td><select class="eval-input">
+                    <option value="상" ${item.diff==='상' ? 'selected' : ''}>상</option>
+                    <option value="중" ${item.diff==='중' ? 'selected' : ''}>중</option>
+                    <option value="하" ${item.diff==='하' ? 'selected' : ''}>하</option>
+                </select></td>
+        </tr>
+        <tr class="eval-question-row">
+            <td colspan="3"><textarea class="eval-question-input" placeholder="○ 여기에 출제할 문제(상세 지시사항)를 입력하세요.">${item.question || ''}</textarea></td>
+            <td colspan="1" style="vertical-align: top; padding-bottom: 12px;"><textarea class="eval-core-task-input" placeholder="근거사진용&#13;&#10;핵심작업명">${item.coreTask || ''}</textarea></td>
+        </tr>`;
+    });
+    document.getElementById('evalItemTbody').innerHTML = html;
+    alert("✅ 마스터 공용 평가지를 화면에 성공적으로 불러왔습니다.\n수정할 부분이 있다면 수정 후 상단의 [💾 저장] 버튼을 눌러 확정해 주세요.");
+}
+
+        // ---------------------------------------------------------
+        // 📍 [신규 모터 3] 개별 과목 훈련기준 강제 덮어쓰기 엔진
+        // ---------------------------------------------------------
+        async function changeIndividualNcs() {
+            const indSelect = document.getElementById('individualNcsSelect');
+            const indVersion = indSelect.value;
+            const mainVersion = document.getElementById('ncsVersionSelect').value;
+            
+            if (indVersion !== "" && indVersion !== mainVersion) {
+                indSelect.style.backgroundColor = "#ffeaa7"; 
+                indSelect.style.borderColor = "#e67e22";
+                indSelect.style.color = "#d35400";
+            } else {
+                indSelect.style.backgroundColor = ""; 
+                indSelect.style.borderColor = "#ccc";
+                indSelect.style.color = "";
+            }
+
+            const subject = document.getElementById('S1_1').value;
+            const unitCode = document.getElementById('S1_Code').value;
+            const unitName = document.getElementById('S1_2').value;
+            
+            if (!subject) {
+                indSelect.value = ""; indSelect.style.backgroundColor = "";
+                return alert("⚠️ 좌측에서 평가 대상 과목을 먼저 선택해주세요.");
+            }
+
+            if (indVersion === "") {
+                const activeBtn = document.querySelector('.unit-btn.active');
+                if (activeBtn) activeBtn.click();
+                return;
+            }
+
+            const evalTbody = document.getElementById('evalItemTbody');
+            evalTbody.innerHTML = "<tr><td colspan='4' style='text-align:center; padding:20px; font-weight:bold;'>⏳ 관제탑에서 선택한 개별 버전의 훈련기준을 불러오는 중입니다...</td></tr>";
+
+            let targetPath = indVersion === 'legacy' ? 'commonStandards' : `ncsVersions/${indVersion}/data`;
+            let tempStandards = [];
+            try {
+                const parts = ['electronics', 'engine', 'chassis', 'ev'];
+                const stdPromises = parts.map(p => masterDatabase.ref(`${targetPath}/${p}`).once('value'));
+                const stdSnaps = await Promise.all(stdPromises);
+                stdSnaps.forEach(snap => {
+                    const result = snap.val();
+                    if(result) {
+                        const dataArray = Array.isArray(result.data) ? result.data : Object.values(result.data || result);
+                        tempStandards.push(...dataArray);
+                    }
+                });
+
+                let stdData = null;
+                const cleanCode = unitCode.replace(/\s+/g, '');
+                if (cleanCode && cleanCode !== "코드없음(DB미등록)") {
+                    stdData = tempStandards.find(s => s.code && s.code.replace(/\s+/g, '') === cleanCode);
+                }
+                if (!stdData) {
+                    const textFilter = /[\s·ㆍ\.\_]/g; 
+                    const cleanName = (unitName || subject).replace(textFilter, '');
+                    stdData = tempStandards.find(s => s.subjectName && s.subjectName.replace(textFilter, '') === cleanName);
+                }
+
+                if (stdData && stdData.code) { 
+                    document.getElementById('S1_Code').value = stdData.code; 
+                } else {
+                    document.getElementById('S1_Code').value = "코드 없음 (DB 미등록)";
+                }
+
+                if (stdData && stdData.elements && stdData.elements.length > 0) {
+                    let html = "";
+                    stdData.elements.forEach((el, index) => {
+                        if(!el) return;
+                        html += `<tr class="eval-main-row">
+                                <td class="item-name">${index + 1}. ${el.name}</td>
+                                <td>
+                                    <div class="toggle-group type-selector" data-value="평가자 체크">
+                                        <button type="button" class="toggle-btn active" onclick="changeEvalType(this, '평가자 체크')">교사</button>
+                                        <button type="button" class="toggle-btn" onclick="changeEvalType(this, '훈련생작성')">훈련생</button>
+                                    </div>
+                                </td>
+                                <td><input type="number" class="eval-input" placeholder="배점 (예: 20)"></td>
+                                <td><select class="eval-input"><option value="상">상</option><option value="중" selected>중</option><option value="하">하</option></select></td>
+                            </tr>
+                            <tr class="eval-question-row">
+                                <td colspan="3"><textarea class="eval-question-input" placeholder="○ 여기에 출제할 문제(상세 지시사항)를 입력하세요."></textarea></td>
+                                <td colspan="1" style="vertical-align: top; padding-bottom: 12px;"><textarea class="eval-core-task-input" placeholder="근거사진용&#13;&#10;핵심작업명"></textarea></td>
+                            </tr>`;
+                    });
+                    evalTbody.innerHTML = html;
+                } else {
+                    evalTbody.innerHTML = `<tr><td colspan="4" style="text-align:center; color:#e74c3c; padding: 20px; font-weight:bold;">⚠️ 해당 개별 버전(${indVersion})에는 이 과목의 훈련기준(코드/요소)이 등록되어 있지 않습니다.</td></tr>`;
+                }
+            } catch(e) {
+                evalTbody.innerHTML = `<tr><td colspan="4" style="text-align:center; color:#e74c3c; padding: 20px; font-weight:bold;">❌ 개별 훈련기준 로드 실패: ${e.message}</td></tr>`;
+            }
+        }
+    </script>
+    <div id="pwModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:40000; justify-content:center; align-items:center;">
+    <div style="background:white; padding:25px; border-radius:8px; text-align:center; width:340px; box-shadow:0 5px 20px rgba(0,0,0,0.4);">
+        <h3 style="margin-top:0; color:#c0392b;">🔒 보안 인증</h3>
+        <p style="font-size:13px; color:#555; margin-bottom:15px;">공용 평가지로 등록하시려면<br>관리자 비밀번호 <b>6자리</b>를 입력하세요.</p>
+        <div id="pwSubjectInfo" style="font-size:13px; font-weight:bold; color:#2980b9; margin-bottom:15px; padding:10px; background:#ebf5fb; border-radius:4px; word-break: keep-all;"></div>
+        <input type="password" id="commonPwInput" maxlength="6" style="width:80%; padding:12px; font-size:24px; text-align:center; border:2px solid #ccc; border-radius:4px; letter-spacing:8px;" placeholder="******">
+        <div style="margin-top:15px;">
+            <button style="background:#666; color:white; border:none; padding:8px 25px; border-radius:4px; cursor:pointer; font-weight:bold;" onclick="closePwModal()">취소</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

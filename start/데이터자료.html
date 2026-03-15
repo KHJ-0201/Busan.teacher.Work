@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데이터 및 이미지 통합 관리 | 자동차 교육과정 시스템</title>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    
+    <style>
+        body { font-family: 'Malgun Gothic', sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; border-bottom: 3px solid #8e44ad; padding-bottom: 15px; margin-bottom: 30px; display: flex; align-items: center; gap: 10px; font-size: 22px; }
+        h3 { color: #34495e; border-left: 5px solid #8e44ad; padding-left: 10px; margin-top: 40px; display: flex; justify-content: space-between; align-items: center; font-size: 18px; }
+
+        .btn-nav { padding: 8px 16px; background: #34495e; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 13px; }
+        .btn-add { padding: 6px 12px; background: #8e44ad; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 12px; font-weight: bold; }
+
+        .data-section { margin-bottom: 40px; }
+        .seal-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; margin-top: 15px; }
+        .seal-card { background: #fff; border: 1px solid #dee2e6; border-radius: 10px; padding: 12px; text-align: center; }
+        .seal-card h4 { margin: 0 0 10px 0; color: #2c3e50; font-size: 14px; background: #f8f9fa; padding: 4px; border-radius: 4px; }
+
+        /* 📍 DB 경로 표시 라벨 스타일 */
+        .db-path-label { font-size: 9px; color: #8e44ad; background: #f3e5f5; padding: 2px 4px; border-radius: 3px; display: block; margin-top: 8px; font-family: monospace; word-break: break-all; }
+
+        .seal-preview { width: 80px; height: 80px; margin: 0 auto 10px; border: 2px dashed #ddd; border-radius: 8px; display: flex; align-items: center; justify-content: center; background: #fafafa; overflow: hidden; }
+        .seal-preview img { max-width: 95%; max-height: 95%; object-fit: contain; }
+        .file-label { display: block; padding: 6px; background: #3498db; color: white; border-radius: 5px; font-size: 11px; cursor: pointer; font-weight: bold; }
+        
+        .etc-list { display: flex; flex-direction: column; gap: 10px; margin-top: 15px; }
+        .etc-item { display: flex; align-items: center; gap: 15px; padding: 10px; background: #f8f9fa; border-radius: 10px; border: 1px solid #eee; }
+        .etc-info { flex: 1; }
+        .etc-name-input { width: 100%; padding: 6px; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 3px; font-weight: bold; font-size: 13px; }
+        .btn-delete { background: #e74c3c; color: white; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 11px; }
+
+        @media (max-width: 768px) {
+            .seal-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid #8e44ad; padding-bottom: 15px; margin-bottom: 20px;">
+        <h1 onclick="triggerSecretDoor()" style="cursor: default; user-select: none;">📂 공통 이미지 및 직인 관리</h1>
+
+<script>
+    let secretClickCount = 0;
+    let secretClickTimer;
+
+    function triggerSecretDoor() {
+        secretClickCount++;
+        clearTimeout(secretClickTimer);
+        // 2초 내에 연속으로 안 누르면 초기화
+        secretClickTimer = setTimeout(() => { secretClickCount = 0; }, 2000); 
+
+        if (secretClickCount >= 5) {
+            secretClickCount = 0; // 카운터 리셋
+            const pwd = prompt("🔧 [엔지니어 모드] 진단 시스템 접근: 비밀번호 입력");
+            if (pwd === "0936") {
+                location.href = '../차체/계측.html'; // 차체 폴더로 점프
+            } else if (pwd !== null) {
+                alert("❌ 접근 권한이 없습니다.");
+            }
+        }
+    }
+</script>
+        <a href="select_class.html" class="btn-nav">◀ 메인으로 이동</a>
+    </div>
+
+    <div class="data-section">
+        <h3>👨‍🏫 담임 교사 직인 관리</h3>
+        <div class="seal-grid" id="teacherSealGrid"></div>
+    </div>
+
+    <div class="data-section">
+        <h3>🏢 결재권자(교감/교장) 직인 관리</h3>
+        <div class="seal-grid">
+            <div class="seal-card">
+                <h4>교감 선생님</h4>
+                <div class="seal-preview" id="preview_vicePrincipal"><span>미등록</span></div>
+                <label class="file-label">📂 직인 업로드<input type="file" class="file-input" style="display:none;" onchange="uploadCommonImage('vicePrincipal', this)"></label>
+                <code class="db-path-label">commonSeals/vicePrincipal</code>
+            </div>
+            <div class="seal-card">
+                <h4>교장 선생님</h4>
+                <div class="seal-preview" id="preview_principal"><span>미등록</span></div>
+                <label class="file-label" style="background: #95a5a6;">📂 직인 업로드<input type="file" class="file-input" style="display:none;" onchange="uploadCommonImage('principal', this)"></label>
+                <code class="db-path-label">commonSeals/principal</code>
+            </div>
+        </div>
+    </div>
+
+    <div class="data-section">
+        <h3>🎨 기타 이미지 자료 <button class="btn-add" onclick="addNewEtcSlot()">➕ 항목 추가</button></h3>
+        <div class="etc-list" id="etcImageArea"></div>
+    </div>
+</div>
+
+<script src="데이터자료.js"></script>
+</body>
+</html>

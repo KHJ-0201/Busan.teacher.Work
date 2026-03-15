@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일일 출석 기록 등록 | 자동차 교육과정 통합 시스템</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+<style>
+        body { font-family: 'Malgun Gothic', sans-serif; background-color: #f4f7f6; margin: 0; padding: 0; color: #333; }
+.container { max-width: 1200px; margin: 40px auto; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); box-sizing: border-box; }
+.header { border-bottom: 3px solid #e67e22; padding-bottom: 15px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; }
+.header-btns { display: flex; gap: 10px; align-items: center; }
+.info-bar { background: #fff5e6; padding: 15px; border-radius: 10px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #e67e22; }
+.date-list-table { width: 100%; border-collapse: collapse; margin-top: 10px; background: white; }
+.date-list-table th, .date-list-table td { border: 1px solid #eee; padding: 12px; text-align: center; }
+.date-list-table th { background: #f8f9fa; font-weight: bold; position: sticky; top: 0; }
+.status-badge { padding: 0.8px 3px; border-radius: 15px; font-size: 12px; font-weight: bold; }
+.status-none { background: #ffebee; color: #c62828; border: 1px solid #ef9a9a; }
+.status-done { background: #e8f5e9; color: #2e7d32; border: 1px solid #a5d6a7; }
+.btn { padding: 8px 15px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; font-size: 13px; }
+.btn-upload { background: #e67e22; color: white; }
+.btn-secondary { background: #27ae60; color: white; text-decoration: none; }
+.btn-info { background: #2980b9; color: white; }
+.btn-nav { background: #34495e; color: white; text-decoration: none; display: inline-block; }
+.btn-danger { background: #c0392b; color: white; margin-left: 10px; }
+#hiddenFileInput { display: none; }
+.scroll-area { max-height: 600px; overflow-y: auto; border: 1px solid #ddd; border-radius: 8px; }
+.highlight { color: #e67e22; font-weight: bold; }
+.danger-zone { margin-top: 30px; padding: 20px; border-top: 1px dashed #c0392b; text-align: right; }
+.btn-danger-outline { background: transparent; color: #c0392b; border: 1px solid #c0392b; padding: 5px 12px; font-size: 11px; }
+.btn-danger-outline:hover { background: #c0392b; color: white; }
+
+/* [2. 모달 스타일] */
+.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); }
+.modal-content { background-color: white; margin: 5% auto; padding: 25px; border-radius: 15px; width: 80%; max-width: 900px; max-height: 80vh; overflow-y: auto; box-shadow: 0 5px 20px rgba(0,0,0,0.3); }
+.modal-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e67e22; padding-bottom: 10px; margin-bottom: 15px; }
+.close-btn { font-size: 28px; font-weight: bold; cursor: pointer; color: #666; }
+.modal-table { width: 100%; border-collapse: collapse; font-size: 12px; } 
+.modal-table th, .modal-table td { border: 1px solid #ddd; padding: 2px 4px; text-align: center; line-height: 1.2; }
+.modal-table th { background: #f8f9fa; }
+.status-late { background: #fff9c4; color: #f57f17; border: 1px solid #fff176; }
+.status-special { background: #e3f2fd; color: #1976d2; border: 1px solid #bbdefb; }
+.btn-rate { background: #8e44ad; color: white; text-decoration: none; }
+
+/* 📍 날짜 가이드 영역 스타일링 */
+.upload-guide {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 38px; /* 버튼 높이와 일치 (사용 중인 버튼 높이에 맞춰 조정) */
+    padding: 0 15px;
+    margin-left: 8px;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px; /* 글씨 크기 확대 */
+    font-weight: bold;
+    color: #444;
+    vertical-align: middle;
+    
+    /* 은은한 반짝임 효과 (애니메이션) */
+    animation: glow-pulse 2s infinite ease-in-out;
+    box-shadow: 0 0 5px rgba(0,0,0,0.05);
+}
+
+/* 반짝임 애니메이션 회로 */
+@keyframes glow-pulse {
+    0% { background-color: #f8f9fa; box-shadow: 0 0 5px rgba(0,0,0,0.05); }
+    50% { background-color: #e3f2fd; box-shadow: 0 0 12px rgba(52, 152, 219, 0.3); color: #2980b9; }
+    100% { background-color: #f8f9fa; box-shadow: 0 0 5px rgba(0,0,0,0.05); }
+}
+
+
+/* [3. 모바일 통합 스타일 (768px 이하)] */
+@media (max-width: 768px) {
+    body { padding: 5px; }
+    .container { margin: 5px auto; padding: 12px; width: 98%; max-width: 98%; }
+    .header { flex-direction: column; gap: 8px; padding-bottom: 8px; margin-bottom: 10px; border-bottom: 2px solid #e67e22; position: relative; }
+    .header h2 { font-size: 15px; width: 100%; text-align: left; margin: 0; padding-right: 95px; box-sizing: border-box; }
+    #classBox { position: absolute !important; right: 25px; top: 25px; font-size: 10px; font-weight: bold; color: #333; z-index: 10; }
+    #dispClass { color: #27ae60 !important; margin-left: 2px; font-weight: bold; }
+    .header-btns { display: flex; flex-wrap: wrap; gap: 4px; justify-content: center; width: 100%; }
+    .header-btns .btn:nth-child(4) { order: 1; }
+    .header-btns .btn:nth-child(1) { order: 2; }
+    .header-btns .btn:nth-child(2) { order: 3; }
+    .header-btns .btn:nth-child(3) { order: 4; }
+    .header-btns .btn, .header-btns a { padding: 8px 0 !important; font-size: 10px; flex: 1 1 calc(50% - 4px); text-align: center; box-sizing: border-box; min-width: calc(50% - 4px); }
+    .info-bar { display: flex; flex-direction: column; gap: 0px; padding: 6px 8px; background: #fff5e6; border-radius: 10px; margin-top: 5px; margin-bottom: 3px !important; }
+    
+    /* 📍 [모바일 스위치 압축 부품 추가] */
+    .danger-zone > div:first-child { display: none !important; } /* 균형용 빈 공간 철거 */
+    #viewModeControl { font-size: 9px !important; padding: 4px 6px !important; border-radius: 5px !important; margin-right: 5px; }
+    #viewModeControl span { margin-right: 4px !important; font-size: 9px !important; }
+    #viewModeControl label { margin-right: 4px !important; font-size: 9px !important; }
+    #viewModeControl input[type="radio"] { transform: scale(0.7); margin: 0; vertical-align: top; }
+    #courseInfo { font-size: 11px !important; color: #777; text-align: center; border-bottom: 1px solid #fceadc; padding-bottom: 3px; width: 100%; margin: 0; display: block !important; font-weight: bold; }
+    #summaryBox { display: flex !important; justify-content: space-around !important; align-items: center; padding-top: 3px; width: 100%; gap: 0 !important; }
+    #summaryBox div { flex: 1; text-align: center; font-size: 10px; white-space: nowrap; }
+    .danger-zone { margin-top: 10px; padding: 5px; display: flex; align-items: center; justify-content: space-between; border-top: 1px dashed #ccc; }
+    .danger-zone span { display: inline-block; margin-bottom: 0; font-size: 9px; color: #999; flex: 1; text-align: left; }
+    .btn-danger-outline { width: auto !important; padding: 4px 8px; font-size: 9px; flex: 0 0 auto; }
+    .section-card p { font-size: 10px; line-height: 1; margin: 2px 0; color: #aaa; letter-spacing: -0.5px; white-space: nowrap; transform: scale(0.7); transform-origin: left center; width: 142%; }
+    .scroll-area { max-height: 450px; }
+    .date-list-table { font-size: 10px; table-layout: fixed; width: 100%; }
+    .date-list-table th:nth-child(1), .date-list-table td:nth-child(1) { width: 45px !important; }
+    .date-list-table th:nth-child(2), .date-list-table td:nth-child(2) { width: 80px !important; }
+    .date-list-table th:nth-child(3), .date-list-table td:nth-child(3) { width: auto !important; }
+    .date-list-table th:nth-child(4), .date-list-table td:nth-child(4) { display: table-cell !important; width: 55px !important; }
+    .date-list-table th:nth-child(5), .date-list-table td:nth-child(5) { display: none !important; }
+    .date-list-table th { padding: 5px 2px !important; line-height: 1.2; font-size: 10px; }
+    .date-list-table td { padding: 4px 2px !important; line-height: 1.1; font-size: 8px !important; letter-spacing: -0.3px; }
+    .date-list-table td:nth-child(1) { font-size: 12px !important; font-weight: bold; color: #2980b9; }
+    .status-badge { font-size: 8px; padding: 1px 3px; }
+
+    /* [Section: 상세 모달] 세로 높이 최대 확장 및 수평 정렬 */
+    .modal-content { 
+        width: 98.5%; 
+        padding: 12px 4px; 
+        margin: 2% auto; 
+        max-height: 92vh; /* 화면의 거의 전체 세로를 사용 */
+        box-sizing: border-box;
+    }
+    .modal-header { padding-bottom: 8px; margin-bottom: 10px; }
+    .modal-header h3 { font-size: 13px; }
+    .modal-table { font-size: 8.5px !important; table-layout: fixed; width: 100%; }
+    .modal-table th, .modal-table td { display: table-cell !important; } /* 모든 칸 보이기 */
+
+.modal-table th:nth-child(1), .modal-table td:nth-child(1) { width: 20px !important; } /* 연번 */
+.modal-table th:nth-child(2), .modal-table td:nth-child(2) { width: 35px !important; } /* 성명 */
+.modal-table th:nth-child(3), .modal-table td:nth-child(3) { width: 32px !important; } /* 상태 */
+.modal-table th:nth-child(4), .modal-table td:nth-child(4) { width: 38px !important; } /* 출석(분) */
+.modal-table th:nth-child(5), .modal-table td:nth-child(5),
+.modal-table th:nth-child(6), .modal-table td:nth-child(6),
+.modal-table th:nth-child(7), .modal-table td:nth-child(7),
+.modal-table th:nth-child(8), .modal-table td:nth-child(8) { width: 34px !important; } /* 시간들(HH:mm) */
+.modal-table th:nth-child(9), .modal-table td:nth-child(9) { width: 45px !important; } /* 사유 */
+
+/* 가독성 향상을 위해 글자 크기 미세 조정 */
+.modal-table { font-size: 8px !important; letter-spacing: -0.5px !important; }
+}
+    </style>
+</head>
+<body>
+
+<div class="container"> <div class="header">
+        <h2 style="margin:0; color:#e67e22;">📅 일일 출석 데이터 관리</h2>
+        <div class="header-btns">
+    <button class="btn btn-info" onclick="scrollToFirstEmpty()">🔍 출석부 미등록 찾기</button>
+    
+    <button class="btn btn-upload" style="background-color: #d35400;" onclick="triggerMultiUpload()">📤 시간표 한번에 올리기</button>
+    
+    <span style="font-size: 11px; color: #666; margin-left: 5px; background: #eee; padding: 4px 8px; border-radius: 4px;">
+        ※ 가능형식: 2026.03.18 / 2026-03-18 / 20260318 / 260318
+    </span>
+
+    <a href="#" class="btn btn-secondary" onclick="location.href='능력단위시간표.html?class=' + currentClass">📜 능력단위 출석부 보기</a>
+    <a href="#" class="btn btn-nav" onclick="location.href='index1.html?class=' + currentClass">◀ 메인으로</a>
+</div>
+
+<input type="file" id="hiddenFileInput" accept=".xlsx, .xls" multiple onchange="handleFileSelect(this)">
+    </div>
+
+    <div class="danger-zone" style="display: flex; justify-content: space-between; align-items: center;">
+    <div></div> 
+
+    <div id="viewModeControl" style="display: inline-block; font-size: 12px; background: #fff; padding: 6px 12px; border-radius: 8px; border: 1px solid #27ae60; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+        <span style="font-weight: bold; color: #27ae60; margin-right: 10px;">⚙️ 기본 보기 고정:</span>
+        
+        <label style="cursor:pointer; margin-right:8px;">
+            <input type="radio" name="defaultView" value="subject" onclick="saveDefaultView('subject')"> 교과목별
+        </label>
+        
+        <label style="cursor:pointer;">
+            <input type="radio" name="defaultView" value="ncs" onclick="saveDefaultView('ncs')"> 능력단위별
+        </label>
+    </div>
+
+    <button class="btn btn-danger-outline" onclick="clearAllAttendance()">🧹 전체 데이터 초기화</button>
+</div>
+        
+
+    <div class="info-bar">
+    <div id="classBox"><strong>학급:</strong> <span id="dispClass" class="highlight">-</span></div>
+    
+    <div id="courseInfo" style="font-size: 14px; color: #666;">훈련 기간 로딩 중...</div>
+    
+    <div id="summaryBox" style="display: flex; gap: 20px;">
+        <div><strong>총 훈련일수:</strong> <span id="totalWorkDays" class="highlight">0</span>일</div>
+        <div style="color: #2e7d32;"><strong>등록:</strong> <span id="doneWorkDays">0</span>일</div>
+        <div style="color: #c0392b;"><strong>미등록:</strong> <span id="noneWorkDays">0</span>일</div>
+    </div>
+</div>
+
+    <div class="section-card">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 10px;">
+            <p style="margin: 0; font-size: 14px; color: #555;">
+                ※ 공가, 휴가, 경조사 등은 입/퇴실 시간이 없어도 <strong>자동으로 풀타임 출석 처리</strong>됩니다.
+            </p>
+        </div>
+        <div class="scroll-area">
+            <table class="date-list-table">
+                <thead>
+                    <tr>
+                        <th width="15%">훈련일수</th>
+                        <th width="20%">날짜(요일)</th>
+                        <th width="40%">진행 과목</th>
+                        <th width="10%">상태</th>
+                        <th width="15%">작업</th>
+                    </tr>
+                </thead>
+                <tbody id="dateListBody">
+                    <tr><td colspan="5" style="padding:50px;">데이터를 불러오고 있습니다...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div> <input type="file" id="hiddenFileInput" accept=".xlsx, .xls" onchange="handleFileSelect(this)">
+
+<div id="detailModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 id="modalTitle" style="margin:0; color:#e67e22;">📅 일자별 상세 출결 현황</h3>
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+        </div>
+        <div id="modalBody">
+            <table class="modal-table">
+                <thead>
+                    <tr>
+                        <th>연번</th> <th>성명</th>
+                        <th>상태</th>
+                        <th>실제출석(분)</th>
+                        <th>입실시간</th>
+                        <th>퇴실시간</th>
+                        <th>외출</th>
+                        <th>복귀</th>
+                        <th>사유</th>
+                    </tr>
+                </thead>
+                <tbody id="detailTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="일일출석부.js"></script>
+</body>
+</html>
