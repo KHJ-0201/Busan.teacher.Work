@@ -1,0 +1,410 @@
+/**
+ * common-ui.css — PC·태블릿 가독성 통합 스타일
+ * - 레이아웃/기능 변경 없음 (버튼·텍스트 시인성만 개선)
+ * - @media (max-width: 768px) 규칙 없음 → 기존 모바일 디자인 보존
+ */
+
+:root {
+    --ui-font: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+    --ui-text: #2c3e50;
+    --ui-text-muted: #5d6d7e;
+    --ui-primary: #3498db;
+    --ui-success: #27ae60;
+    --ui-warning: #e67e22;
+    --ui-danger: #e74c3c;
+    --ui-radius: 6px;
+    --ui-radius-lg: 8px;
+    --ui-btn-min-h: 36px;
+    --ui-btn-font: 13px;
+    --ui-btn-font-sm: 12px;
+    --ui-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --ui-shadow-md: 0 2px 8px rgba(0, 0, 0, 0.12);
+    --ui-focus-ring: 0 0 0 2px rgba(52, 152, 219, 0.35);
+}
+
+/* ── PC·태블릿 공통 (769px 이상) ── */
+@media (min-width: 769px) {
+    body {
+        font-family: var(--ui-font);
+        -webkit-font-smoothing: antialiased;
+    }
+
+    /* 통합 버튼 */
+    .btn,
+    button.btn,
+    .btn-nav,
+    .btn-detail,
+    .btn-save,
+    .btn-excel,
+    .btn-blue,
+    .btn-green,
+    .btn-orange,
+    .btn-red,
+    .btn-purple,
+    .btn-secondary,
+    .btn-info,
+    .btn-upload,
+    .btn-home,
+    .btn-rate,
+    .btn-add-version,
+    .btn-page-nav,
+    .class-btn,
+    .ctrl-btn,
+    .tab-btn,
+    .panel-btn,
+    .attendance-alert-action,
+    .nav-btn,
+    .unit-btn,
+    .sidebar-toggle-btn,
+    .file-upload-label,
+    .banner-item,
+    .btn-standards,
+    .btn-save-active,
+    .btn-danger-outline {
+        box-sizing: border-box;
+        min-height: var(--ui-btn-min-h);
+        font-size: var(--ui-btn-font);
+        font-weight: 700;
+        line-height: 1.35;
+        border-radius: var(--ui-radius);
+        cursor: pointer;
+        transition: filter 0.15s ease, box-shadow 0.15s ease, transform 0.12s ease;
+    }
+
+    .btn:hover,
+    .btn-nav:hover,
+    .btn-detail:hover,
+    .btn-save:hover,
+    .btn-excel:hover,
+    .btn-blue:hover,
+    .btn-green:hover,
+    .btn-orange:hover,
+    .btn-red:hover,
+    .btn-purple:hover,
+    .btn-secondary:hover,
+    .btn-info:hover,
+    .btn-upload:hover,
+    .btn-home:hover,
+    .btn-rate:hover,
+    .btn-add-version:hover,
+    .class-btn:hover,
+    .ctrl-btn:hover,
+    .tab-btn:hover,
+    .panel-btn:hover,
+    .nav-btn.ready:hover,
+    .unit-btn:hover,
+    .banner-item:hover,
+    .file-upload-label:hover {
+        filter: brightness(1.06);
+        box-shadow: var(--ui-shadow-md);
+    }
+
+    .btn:active,
+    .btn-nav:active,
+    .btn-detail:active,
+    .ctrl-btn:active,
+    .class-btn:active,
+    .nav-btn-global:active {
+        transform: translateY(1px);
+    }
+
+    .btn:focus-visible,
+    .btn-nav:focus-visible,
+    .btn-detail:focus-visible,
+    .ctrl-btn:focus-visible,
+    .tab-btn:focus-visible,
+    .class-btn:focus-visible,
+    .nav-btn-global:focus-visible,
+    select:focus-visible,
+    input:focus-visible {
+        outline: none;
+        box-shadow: var(--ui-focus-ring);
+    }
+
+    /* 탭·정렬 버튼 */
+    .tab-btn {
+        min-height: 38px;
+        padding: 9px 18px;
+    }
+
+    .tab-btn.active {
+        box-shadow: var(--ui-shadow-sm);
+    }
+
+    .sort-control .ctrl-btn {
+        min-height: 34px;
+        padding: 7px 16px;
+        font-size: var(--ui-btn-font-sm);
+    }
+
+    .sort-control .ctrl-btn.active {
+        box-shadow: var(--ui-shadow-sm);
+    }
+
+    /* 네비·엑셀 등 */
+    .btn-nav,
+    .btn-rate {
+        padding: 8px 16px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn-excel {
+        min-height: 34px;
+        padding: 7px 14px;
+        font-size: var(--ui-btn-font-sm);
+    }
+
+    .btn-detail {
+        min-height: 34px;
+        padding: 7px 12px;
+        font-size: var(--ui-btn-font-sm);
+    }
+
+    /* 입력·선택 */
+    select,
+    .info-item input,
+    .version-input,
+    input[type="text"],
+    input[type="number"],
+    input[type="date"],
+    input[type="password"] {
+        font-size: var(--ui-btn-font);
+        min-height: 36px;
+        border-radius: var(--ui-radius);
+    }
+
+    select {
+        min-height: 38px;
+        padding: 6px 10px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    /* 본문 텍스트 */
+    h1, h2, h3, h4 {
+        color: var(--ui-text);
+        letter-spacing: -0.02em;
+    }
+
+    label {
+        color: var(--ui-text-muted);
+    }
+
+    /* 상단 하네스 기본 (전체 PC) — 하네스 전용, 일반 버튼 규격과 분리 */
+    #globalMainHarness .nav-btn-global {
+        min-height: 30px;
+        font-size: 11px;
+        font-weight: 700;
+        line-height: 1.25;
+        box-shadow: var(--ui-shadow-sm);
+    }
+
+    #globalMainHarness #harnessLeftBank .btn,
+    #globalMainHarness .nav-btn-global {
+        min-height: 30px !important;
+    }
+}
+
+/* ── 절반 화면·좁은 PC (769 ~ 1400px) ── */
+@media (min-width: 769px) and (max-width: 1400px) {
+    body {
+        padding-left: 14px;
+        padding-right: 14px;
+        padding-bottom: 14px;
+    }
+
+    .container,
+    .excel-container,
+    .selector-container {
+        padding: 24px;
+    }
+
+    /* 하네스: 1줄 컴팩트 우선 (버튼·HUD 축소) */
+    #globalMainHarness {
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        padding: 5px 8px !important;
+        row-gap: 4px !important;
+    }
+
+    #harnessLeftBank {
+        order: unset;
+        flex-shrink: 0;
+    }
+
+    #harnessRightBank {
+        order: unset;
+        flex: 0 1 auto;
+        display: flex;
+        justify-content: flex-end;
+        min-width: 0;
+    }
+
+    #navButtonBank {
+        order: unset !important;
+        flex: 1 1 auto !important;
+        width: auto !important;
+        margin: 0 6px !important;
+        flex-wrap: nowrap !important;
+        gap: 3px !important;
+        justify-content: center !important;
+        min-width: 0;
+    }
+
+    #globalMainHarness .nav-btn-global {
+        flex: 1 1 auto !important;
+        max-width: 82px !important;
+        min-width: 38px !important;
+        min-height: 26px !important;
+        height: 26px !important;
+        padding: 2px 2px !important;
+        font-size: 9.5px !important;
+        letter-spacing: -0.65px !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+        line-height: 1.2 !important;
+        box-shadow: none !important;
+        transform: none !important;
+    }
+
+    #globalMainHarness #harnessLeftBank .btn {
+        min-height: 26px !important;
+        height: 26px !important;
+        font-size: 10px !important;
+        width: 72px !important;
+        padding: 2px 0 !important;
+    }
+
+    /* 하네스 내부 버튼은 페이지 공통 .btn 최소높이 규칙 제외 */
+    #globalMainHarness .btn,
+    #globalMainHarness .nav-btn-global {
+        min-height: 26px !important;
+    }
+
+    #harnessRightBank > div {
+        padding: 4px 8px !important;
+        font-size: 11px !important;
+        line-height: 1.2 !important;
+        white-space: nowrap !important;
+        max-width: 160px !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
+
+    #harnessRightBank > div > span:first-child {
+        font-size: 10px !important;
+        margin-right: 3px !important;
+    }
+
+    #currentClassDisplay {
+        font-size: 12px !important;
+        text-shadow: none !important;
+    }
+
+    /* padding-top은 common-harness.js가 실측 높이로 설정 (미적용 시 fallback) */
+    body[style*="padding-top"] {
+        padding-top: var(--harness-offset, 88px) !important;
+    }
+
+    .attendance-alert-panel {
+        top: calc(var(--harness-offset, 88px) + 8px) !important;
+    }
+
+    /* 페이지 버튼·탭 */
+    .tab-btn {
+        min-height: 36px;
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+
+    .btn,
+    button.btn,
+    .btn-nav,
+    .btn-detail,
+    .ctrl-btn,
+    .btn-excel {
+        min-height: 36px;
+        font-size: 13px;
+    }
+
+    .page-top-actions,
+    .header-btns,
+    .top-action-grid,
+    .upload-action-bar {
+        gap: 8px;
+    }
+
+    .section-card .btn,
+    .panel-btn {
+        min-height: 36px;
+        font-size: 12px;
+    }
+
+    .class-btn {
+        min-height: 44px;
+        font-size: 15px;
+        padding: 12px 10px;
+    }
+
+    .unit-btn,
+    .nav-btn.ready {
+        min-height: 40px;
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .btn-home {
+        min-height: 42px;
+        font-size: 14px;
+    }
+}
+
+/* ── 더 좁은 PC 분할 화면 (769 ~ 980px): 2줄 하네스 ── */
+@media (min-width: 769px) and (max-width: 980px) {
+    #globalMainHarness {
+        flex-wrap: wrap !important;
+    }
+
+    #navButtonBank {
+        order: 3 !important;
+        flex: 1 1 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        flex-wrap: wrap !important;
+        gap: 3px !important;
+    }
+
+    #globalMainHarness .nav-btn-global {
+        flex: 1 1 calc(25% - 3px) !important;
+        max-width: none !important;
+        min-width: 52px !important;
+    }
+
+    body[style*="padding-top"] {
+        padding-top: var(--harness-offset, 112px) !important;
+    }
+
+    .attendance-alert-panel {
+        top: calc(var(--harness-offset, 112px) + 8px) !important;
+    }
+}
+
+/* ── 로그인·반 선택 (769px+) ── */
+@media (min-width: 769px) {
+    .login-container button,
+    .login-container input {
+        min-height: 48px;
+        font-size: 16px;
+    }
+
+    .selector-container .class-btn {
+        letter-spacing: -0.02em;
+    }
+
+    .version-header h2 {
+        font-size: 15px;
+    }
+}

@@ -1,0 +1,175 @@
+/* common-dialog.css — PC·태블릿 통합 확인/안내 창 (모바일: 시스템 창) */
+
+.app-dialog-root {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.app-dialog-root.is-open {
+    display: flex;
+}
+
+.app-dialog-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(26, 37, 47, 0.55);
+    backdrop-filter: blur(2px);
+}
+
+.app-dialog-box {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
+    border: 1px solid #dfe6ee;
+    overflow: hidden;
+    animation: appDialogIn 0.22s ease-out;
+}
+
+@keyframes appDialogIn {
+    from { opacity: 0; transform: translateY(12px) scale(0.97); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.app-dialog-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 20px 10px;
+    border-bottom: 1px solid #eef2f6;
+}
+
+.app-dialog-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.app-dialog-root.type-info .app-dialog-icon { background: #e3f2fd; color: #1976d2; }
+.app-dialog-root.type-success .app-dialog-icon { background: #e8f5e9; color: #27ae60; }
+.app-dialog-root.type-confirm .app-dialog-icon { background: #fff8e1; color: #f39c12; }
+.app-dialog-root.type-danger .app-dialog-icon { background: #ffebee; color: #c0392b; }
+
+.app-dialog-title {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 800;
+    color: #2c3e50;
+    letter-spacing: -0.02em;
+}
+
+.app-dialog-body {
+    padding: 14px 20px 8px;
+}
+
+.app-dialog-message {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.55;
+    color: #34495e;
+    white-space: pre-line;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
+.app-dialog-input {
+    display: none;
+    width: 100%;
+    margin-top: 12px;
+    padding: 10px 12px;
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.app-dialog-input.is-visible {
+    display: block;
+}
+
+.app-dialog-input:focus {
+    outline: none;
+    border-color: #2980b9;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.25);
+}
+
+.app-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 14px 20px 18px;
+}
+
+.app-dialog-btn {
+    min-width: 88px;
+    min-height: 38px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    transition: filter 0.15s ease, transform 0.1s ease;
+}
+
+.app-dialog-btn:active {
+    transform: translateY(1px);
+}
+
+.app-dialog-btn-cancel {
+    background: #ecf0f1;
+    color: #5d6d7e;
+}
+
+.app-dialog-btn-cancel:hover {
+    background: #dfe6e9;
+}
+
+.app-dialog-btn-confirm {
+    background: #3498db;
+    color: #ffffff;
+}
+
+.app-dialog-btn-confirm:hover {
+    filter: brightness(1.06);
+}
+
+.app-dialog-root.type-danger .app-dialog-btn-confirm {
+    background: #e74c3c;
+}
+
+.app-dialog-root.type-success .app-dialog-btn-confirm {
+    background: #27ae60;
+}
+
+.app-dialog-root.mode-alert .app-dialog-btn-cancel {
+    display: none;
+}
+
+.app-dialog-root.mode-alert .app-dialog-btn-confirm {
+    min-width: 110px;
+}
+
+@media (min-width: 769px) and (max-width: 1100px) {
+    .app-dialog-box {
+        max-width: 400px;
+    }
+    .app-dialog-message {
+        font-size: 13px;
+    }
+}

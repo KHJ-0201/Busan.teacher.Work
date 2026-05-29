@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>?��?지 관�??�스??(지?�형 �??�동)</title>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <style>
+        /* 1. ?�체 ?�이?�웃 �?좌측 ?�비게이??*/
+        body { margin: 0; padding: 0; background-color: #455a64; font-family: 'Malgun Gothic', sans-serif; display: flex; height: 100vh; overflow: hidden; }
+        .sidebar { width: 280px; min-width: 280px; background-color: #2c3e50; color: white; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; overflow: hidden; z-index: 10; box-shadow: 2px 0 10px rgba(0,0,0,0.3); }
+        .btn-home { display: block; width: 100%; padding: 12px; margin-bottom: 20px; background-color: #3498db; color: white; border: 2px solid #2980b9; text-align: center; cursor: pointer; border-radius: 6px; font-weight: bold; font-size: 14px; text-decoration: none; transition: 0.2s; box-sizing: border-box; }
+        .btn-home:hover { background-color: #2980b9; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+        .unit-list-area { flex: 1; overflow-y: auto; border-bottom: 2px solid #34495e; margin-bottom: 20px; padding-bottom: 10px; }
+        .unit-list-area::-webkit-scrollbar { width: 6px; } .unit-list-area::-webkit-scrollbar-thumb { background: #7f8c8d; border-radius: 3px; }
+        .unit-list-area h2 { font-size: 16px; color: #f1c40f; margin-top: 0; border-bottom: 1px solid #f1c40f; padding-bottom: 8px; display: flex; justify-content: space-between; align-items: center; }
+        .view-mode-badge { background-color: #e67e22; color: white; padding: 2px 6px; border-radius: 4px; font-size: 11px; }
+        .unit-btn { display: block; width: 100%; padding: 10px; margin-bottom: 5px; background-color: #34495e; color: white; border: 1px solid #455a64; text-align: left; cursor: pointer; border-radius: 4px; font-size: 13px; transition: 0.2s; line-height: 1.4; }
+        .unit-btn:hover { background-color: #3b5998; } .unit-btn.active { background-color: #e67e22; border-color: #d35400; font-weight: bold; }
+        .unit-subject-label { font-size: 11px; color: #bdc3c7; display: block; margin-bottom: 3px; }
+        .doc-menu-area { height: auto; } .doc-menu-area h2 { font-size: 16px; color: #2ecc71; margin-top: 0; border-bottom: 1px solid #2ecc71; padding-bottom: 8px; }
+        .nav-btn { display: block; width: 100%; padding: 10px; margin-bottom: 5px; background-color: #27ae60; color: white; border: none; text-align: left; cursor: pointer; border-radius: 4px; font-size: 13px; opacity: 0.5; pointer-events: none; transition: 0.2s; }
+        .nav-btn.ready { opacity: 1; pointer-events: auto; } .nav-btn.ready:hover { background-color: #219653; } .nav-btn.active { background-color: #f1c40f; color: #2c3e50; font-weight: bold; box-shadow: inset 4px 0 0 #e67e22; }
+
+        /* 2. ?�측 출력 ?�역 공통 �?A4 뷰어 */
+.main-content { 
+    flex-grow: 1; 
+    overflow-y: auto; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: center; /* ?�� ?�평 중앙 ?�렬 강제 */
+    padding: 20px; 
+    box-sizing: border-box; 
+    background-color: #ecf0f1; 
+}
+        .main-content::-webkit-scrollbar { width: 8px; } .main-content::-webkit-scrollbar-thumb { background: #bdc3c7; border-radius: 4px; }
+        .page-frame { display: none; width: 100%; } .page-frame.active { display: block; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+.a4-page { 
+            width: 210mm !important; max-width: 210mm; min-height: 297mm; 
+            padding: 20mm 20mm 20mm 20mm !important; /* ?�하좌우 2cm ?�백 ?��?�?100% ?�일 */
+            background-color: white; box-shadow: 0 10px 20px rgba(0,0,0,0.3); 
+            box-sizing: border-box; margin: 0 auto; position: relative; color: #000; 
+        }
+        /* 3. 0.?�정 ?�어???�?�드 바디 �??��? ?�자??*/
+        .settings-panel { width: 100%; max-width: 100%; margin: 0; background-color: white; padding: 15px 20px; border-radius: 0; box-shadow: none; box-sizing: border-box; min-height: 100vh; overflow-y: auto; }
+        .settings-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 15px; }
+        .doc-title { text-align: center; font-size: 24px; font-weight: bold; margin-bottom: 15px; }
+        .id-marker { background: #fff; color: #e74c3c; border: 1px solid #f5b7b1; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; display: inline-block; margin-right: 8px; }
+        .setting-group { padding: 15px; border: 1px solid #e1e4e8; background-color: #f8f9fa; border-radius: 8px; box-shadow: inset 0 0 10px rgba(0,0,0,0.02); height: 100%; box-sizing: border-box; }
+        .setting-group h3 { margin-top: 0; font-size: 14px; color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 8px; margin-bottom: 12px; display: flex; align-items: center; }
+        .input-row { margin-bottom: 8px; display: flex; align-items: center; } .input-row:last-child { margin-bottom: 0; }
+        .input-row label { width: 90px; min-width: 90px; font-weight: bold; font-size: 12px; color: #555; }
+        .input-box { padding: 6px 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 12px; transition: 0.3s; flex-grow: 1; width: 100%; box-sizing: border-box; }
+        .input-box:focus { border-color: #3498db; outline: none; box-shadow: 0 0 5px rgba(52, 152, 219, 0.3); }
+        .input-box.readonly { background-color: #e9ecef; color: #495057; cursor: not-allowed; border-color: #dee2e6; font-weight: bold; }
+
+        /* 4. S4 ?��? ??�� ?�이�?*/
+        .eval-item-table { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 10px; background: white; }
+        .eval-item-table th { background: #e3f2fd; color: #2c3e50; padding: 8px; border: 1px solid #bdc3c7; font-weight: bold; text-align: center; }
+        .eval-item-table td { padding: 6px; border: 1px solid #bdc3c7; vertical-align: middle; }
+        .eval-item-table .item-name { background: #f8f9fa; font-weight: bold; color: #333; line-height: 1.4; }
+        .eval-input { width: 100%; padding: 6px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; text-align: center; font-size: 12px; font-family: inherit; }
+        .eval-input:focus { border-color: #3498db; outline: none; background-color: #fffde7; }
+        
+        /* ?��? 방식 ?��? 버튼 ?��???*/
+        .toggle-group { display: flex; gap: 4px; justify-content: center; }
+        .toggle-btn { flex: 1; padding: 6px 0; border: 1px solid #bdc3c7; background-color: #ecf0f1; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; color: #7f8c8d; transition: 0.2s; }
+        .toggle-btn:hover { background-color: #e0e6ed; }
+        .toggle-btn.active { background-color: #3498db; color: white; border-color: #2980b9; box-shadow: inset 0 0 5px rgba(0,0,0,0.1); }
+
+        /* 5. ?�어???�단 버튼 �???*/
+        .btn-save-settings { background-color: #27ae60; color: white; border: none; padding: 6px 12px; border-radius: 4px; font-weight: bold; cursor: pointer; transition: 0.2s; font-size: 12px; }
+        .btn-save-settings:hover { background-color: #219150; transform: translateY(-1px); }
+        .btn-edit-settings { background-color: #f39c12; color: white; border: none; padding: 6px 12px; border-radius: 4px; font-weight: bold; cursor: pointer; transition: 0.2s; font-size: 12px; margin-left: 5px; }
+        .btn-edit-settings:hover { background-color: #d68910; transform: translateY(-1px); }
+        .eval-type-tabs { margin-bottom: 10px; display: flex; gap: 5px; padding: 4px; background: #f8f9fa; border-radius: 6px; border: 1px solid #e1e4e8; }
+        .tab-btn { flex: 1; padding: 6px; background: #ecf0f1; border: 1px solid #bdc3c7; border-radius: 4px; cursor: pointer; font-weight: bold; color: #7f8c8d; transition: 0.2s; font-size: 12px; }
+        .tab-btn:hover { background: #e0e6ed; } .tab-btn.active { background: #3498db; color: white; border-color: #2980b9; box-shadow: inset 0 0 5px rgba(0,0,0,0.1); }
+
+        /* 6. [1. ?��?] ?�용 A4 문서 ?��???*/
+        .cover-page-inner { display: flex; flex-direction: column; min-height: 250mm; width: 100%; position: relative; z-index: 2; font-family: 'Malgun Gothic', '맑�? 고딕', sans-serif; }
+        
+        #watermark_logo { 
+            position: absolute; 
+            z-index: 1; 
+            pointer-events: none; /* ???�릭 방해 금�? (?��? ?�수) */
+            background-repeat: no-repeat; 
+            background-position: top left; /* 기�??�을 좌측 ?�단?�로 변경하???�치 조향 직�????�보 */
+            
+            /* 1. ?�명???�닝 (0.0 ?�전?�명 ~ 1.0 ?�전불투�? */
+            opacity: 1.3; 
+
+            /* 2. ?�기 ?�닝 (가로세�?비율 고정 ?��?) */
+            background-size: contain; 
+            width: 100mm;  /* ???�치�??�리거나 줄이�?비율???��???�??�기가 변?�니??*/
+            height: 257mm; /* width??맞춰 종횡비�? 고정?��?�? 박스 ?�체??최�? ?�이�??�한?�니??*/
+
+            /* 3. ?�치 ?�닝 (중앙 강제 고정 ?�제, X/Y�??�동 ?�동) */
+            top: 140mm;  /* ?�에?��????�래�??�리??거리 (?�자�??�리�?밑으�??�려갑니?? */
+            left: 50mm; /* ?�쪽?�서부???�측?�로 미는 거리 (?�자�??�리�??�측?�로 ?�동?�니?? */
+        }
+
+        .cover-top { text-align: center; margin-top: calc(50px + 10mm); } /* ?�� 기존 ?�치?�서 10mm ?�강 */
+        .cover-course-name { font-size: 34px; font-weight: 900; line-height: 1.4; word-break: keep-all; margin-bottom: 15px; letter-spacing: -0.5px; } /* ?�� 26px -> 34px (?�기 교체) */
+        .cover-period { font-size: 26px; font-weight: bold; font-family: 'Arial', sans-serif; } /* ?�� 22px -> 26px (비율 맞춰 ?��?) */
+        .cover-middle { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: calc(80px - 5mm); margin-bottom: 80px; } /* ?�� 기존 ?�치?�서 5mm ?�승 */
+        .cover-title { font-size: 26px; font-weight: 900; letter-spacing: 5px; margin-bottom: 40px; min-height: 100px; display: flex; flex-direction: column; justify-content: center; align-items: center; line-height: 1.3; } /* ?�� 34px -> 26px (?�기 교체) */
+        .cover-table-wrapper { width: 90%; margin: 0 auto; }
+        .cover-table-info { display: flex; justify-content: space-between; font-size: 15px; font-weight: bold; margin-bottom: 8px; color: #333; }
+        
+.cover-table { width: 100%; border-collapse: collapse; border: 1px solid #000; font-size: 13px; }        
+        .cover-table th, .cover-table td { border: 1px solid #000; padding: 12px 8px; text-align: center; vertical-align: middle; }
+        .cover-table th { background-color: #eaf8f9; font-weight: bold; color: #111; }
+        .cover-bottom { position: absolute; bottom: 10mm; left: 0; right: 0; text-align: center; margin: 0; }
+        .cover-school { font-size: 28px; font-weight: 900; margin-bottom: 40px; letter-spacing: 2px; }
+        .cover-page-num { font-size: 14px; color: #555; }
+        
+        .input-box.highlight-date {
+            background-color: #fffde7 !important;
+            border-color: #f1c40f !important;
+            box-shadow: 0 0 5px rgba(241, 196, 15, 0.3);
+            transition: 0.3s;
+        }
+
+        /* ?�세 문제 ?�력�??��???*/
+        .eval-question-row td { padding: 4px 6px 12px 6px; border-bottom: 2px solid #bdc3c7; background-color: #f8f9fa; }
+        .eval-question-input { width: 100%; box-sizing: border-box; padding: 8px 10px; border: 1px dashed #95a5a6; border-radius: 4px; font-size: 13px; font-family: inherit; resize: vertical; min-height: 45px; line-height: 1.4; color: #2c3e50; }
+        .eval-question-input:focus { border-color: #3498db; outline: none; background-color: #fff; box-shadow: 0 0 5px rgba(52, 152, 219, 0.3); border-style: solid; }
+
+        /* 1. ?��??�류 (?�브 ?�이지 공통 �??�자?? */
+        .page1-container { background: transparent; box-shadow: none; padding: 0; display: none; flex-direction: column; gap: 30px; align-items: center; width: 100%; }
+        .page1-container.active { display: flex; animation: fadeIn 0.3s ease; }
+        
+.doc-cyan-table { width: 100%; border-collapse: collapse; border: 1px solid #000; font-size: 13px; text-align: center; margin-bottom: 25px; }        
+        .doc-cyan-table th, .doc-cyan-table td { border: 1px solid #000; padding: 8px; vertical-align: middle; }
+        .doc-cyan-bg { background-color: #e0ffff; font-weight: bold; } /* �?��???�더 */
+
+        /* 근거?�진 그리???�용 */
+        
+.photo-grid-table { width: 100%; border-collapse: collapse; border: 1px solid #000; text-align: center; font-size: 13px; table-layout: fixed; }        
+        .photo-grid-table td { border: 1px solid #000; }
+        .photo-header { background-color: #e6e6e6; font-weight: bold; padding: 6px; height: 35px; overflow: hidden; word-break: keep-all; } 
+        .photo-box { height: 250px; position: relative; }
+        
+.crossed-out { background: linear-gradient(to top right, transparent calc(50% - 1px), #d3d3d3, transparent calc(50% + 1px)), linear-gradient(to bottom right, transparent calc(50% - 1px), #d3d3d3, transparent calc(50% + 1px)); }
+        /* 4. ?��? ??�� S4 구역??'?�심 ?�업' ?�용 ?��???*/
+        .eval-core-task-input { width: 100%; height: 100%; box-sizing: border-box; padding: 8px; border: 1px dashed #95a5a6; border-radius: 4px; font-size: 12px; font-family: inherit; resize: none; text-align: center; background-color: #fff; line-height: 1.4; color: #d35400; font-weight: bold; }
+        .eval-core-task-input:focus { border-color: #e67e22; outline: none; box-shadow: 0 0 5px rgba(230, 126, 34, 0.3); border-style: solid; background-color: #fdf2e9; }
+
+        /* 7. [2. ?��?지] ?�용 ?��???*/
+        .eval-paper-container { display: none; flex-direction: column; gap: 30px; align-items: center; width: 100%; background: transparent; padding: 0; }
+        .eval-paper-container.active { display: flex; animation: fadeIn 0.3s ease; }
+        .ep-title { text-align: center; font-size: 26px; font-weight: 900; margin-top: 30px; margin-bottom: 20px; letter-spacing: 2px; color: #111; display: flex; justify-content: center; align-items: center; gap: 10px; }
+        .ep-title-badge { font-size: 20px; color: #bdc3c7; font-weight: bold; }
+        
+.ep-top-table { width: 100%; border-collapse: collapse; border: 1px solid #000; font-size: 13px; text-align: center; margin-bottom: 30px; }        
+        .ep-top-table th, .ep-top-table td { border: 1px solid #000; padding: 8px; vertical-align: middle; }
+        .ep-cyan-bg { background-color: #ccffff; font-weight: bold; color: #111; }
+        
+        .ep-section-title { font-size: 16px; font-weight: bold; margin-top: 10px; margin-bottom: 15px; }
+        .ep-item-header { font-size: 13px; font-weight: bold; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .ep-item-subtitle { font-size: 12px; font-weight: bold; color: #2980b9; }
+        .ep-item-subtitle.teacher { color: #c0392b; }
+        
+.ep-table { width: 100%; border-collapse: collapse; border: 1px solid #000; font-size: 12px; text-align: center; margin-bottom: 5px; }        
+        .ep-table th, .ep-table td { border: 1px solid #000; padding: 6px; vertical-align: middle; }
+        .ep-table th { background-color: #f2f2f2; font-weight: bold; }
+        .ep-table td { height: 35px; }
+        
+        .editable-cell { cursor: text; transition: 0.2s; }
+        .editable-cell:hover { background-color: #fffde7; }
+        .editable-cell:focus { outline: 2px solid #f39c12; background-color: #fff; }
+        .btn-add-row { background: #ecf0f1; border: 1px solid #bdc3c7; padding: 4px 8px; font-size: 11px; cursor: pointer; border-radius: 4px; display: block; margin-left: auto; margin-bottom: 30px; color: #7f8c8d; }
+        .btn-add-row:hover { background: #e0e6ed; color: #2c3e50; }
+        
+/* 8. ?�련????커스?�(?�닝) ?�용 ?��???*/
+        .active-custom-cell { background-color: #ffeaa7 !important; outline: 3px solid #e67e22 !important; outline-offset: -2px; z-index: 10; position: relative; }
+        .btn-custom { background: #34495e; color: white; border: none; padding: 6px 12px; font-size: 12px; cursor: pointer; border-radius: 4px; transition: 0.2s; font-weight: bold; }
+        .btn-custom:hover { background: #2c3e50; transform: translateY(-1px); }
+        .btn-custom:disabled { background: #bdc3c7; cursor: not-allowed; opacity: 0.6; transform: none; color: #7f8c8d; }
+
+/* 9. [3. 채점기�?] ?�용 ?��???*/
+.ans-table { width: 100%; border-collapse: collapse; border: 1px solid #000; font-size: 12px; text-align: center; margin-bottom: 25px; table-layout: fixed; background: white; }   
+   .ans-table th, .ans-table td { border: 1px solid #000; padding: 6px; vertical-align: middle; word-break: keep-all; }
+   .ans-title-bg { background-color: #cceeff; font-size: 16px; font-weight: bold; letter-spacing: 1px; padding: 10px !important; color: #111; }
+   .ans-cyan-bg { background-color: #e0ffff; font-weight: bold; color: #111; }
+   .ans-input { width: 90%; padding: 4px; border: 1px dashed #e74c3c; color: #c0392b; font-weight: bold; text-align: center; background: transparent; font-family: inherit; }
+   .ans-input:focus { border-style: solid; outline: none; background: #fffde7; }
+   .ans-rubric-text { text-align: left; font-size: 11.5px; line-height: 1.5; padding: 8px !important; vertical-align: top; }
+   .ans-rubric-text ul { padding-left: 15px; margin: 0; }
+   .ans-rubric-text li { margin-bottom: 4px; }
+   .ans-custom-wrapper .editable-cell {
+    word-break: break-all !important;      /* ?� 밖으�??�져?�감 방�? */
+    overflow-wrap: break-word !important;
+    white-space: pre-wrap !important;      /* ?�터 줄바�??�상 ?�식 */
+    line-height: 1.4 !important;           /* 좁고 ?��???줄간�?강제 */
+    font-size: 13px !important;            /* 고정 글???�기 강제 */
+    max-width: 100%;
+}
+
+/* 10. [4. 최종결과?? ?�용 ?��? 매핑 ?��???*/
+        .result-title { text-align: center; font-size: 26px; font-weight: 900; margin-top: 10px; margin-bottom: 20px; letter-spacing: 2px; }
+        
+.result-table { width: 100%; border-collapse: collapse; border: 1px solid #000; font-size: 13px; text-align: center; margin-bottom: 20px; }        
+        .result-table th, .result-table td { border: 1px solid #000; padding: 6px; vertical-align: middle; }
+        
+        .cyan-th { background-color: #E0FFFF; font-weight: bold; color: #000; }
+        .white-td { background-color: #FFFFFF; color: #000; }
+
+.score-table { width: 100%; border-collapse: collapse; border: 1px solid #000; font-size: 13px; text-align: center; margin-bottom: 30px; }        
+        .score-table th, .score-table td { border: 1px solid #000; padding: 6px; vertical-align: middle; }
+
+        .page-indicator { position: absolute; top: 5px; left: 5px; background: #2c3e50; color: #f1c40f; padding: 4px 8px; font-size: 12px; font-weight: bold; border-radius: 4px; z-index: 100; letter-spacing: 0.5px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+
+/* ?���?PDF ?�두�??�괄 ?�게 ?�어 (마스???�위�? */
+.a4-page table,
+.a4-page th,
+.a4-page td {
+    border-width: 1px !important;
+}
+
+        @media print {
+            .no-print { display: none !important; }
+        }
+
+
+/* ?���??�두�?굵기 �??�도 마스??컨트롤러 */
+:root {
+    /* ?�� [?�류 ?�리 ?�료] ?��????�정 ?�두리처??가???�고 ?�명??검?�??1px ?�선?�로 ?�복 */
+    --pdf-border-width: 1px; 
+    --pdf-border-color: #000000; 
+}
+
+/* PDF??A4 ?�이지 ?�의 모든 ??�??�두�?강제 ?�수?�색 */
+
+.a4-page table, 
+.a4-page th, 
+.a4-page td,
+.doc-cyan-table, 
+.doc-cyan-table th, 
+.doc-cyan-table td,
+.ep-table, 
+.ep-table th, 
+.ep-table td,
+.ans-table, 
+.ans-table th, 
+.ans-table td,
+.result-table, 
+.result-table th, 
+.result-table td,
+.score-table, 
+.score-table th, 
+.score-table td {
+    border-width: var(--pdf-border-width) !important;
+    border-style: solid !important;
+    /* ?�� 기존 #000 ?�??변?�로 ?�도�??�어?�여 출력 ???�고 ?�프???�낌??줍니??*/
+    border-color: var(--pdf-border-color) !important; 
+
+    
+    
+    /* ?�� 브라?��?가 ?�을 그릴 ??배경?�이 ?�을 침범?�여 ?�꺼?��????�상??방어?�니??*/
+    background-clip: padding-box !important; 
+}
+
+/* ?�� 모바???�더 PC ?�?�용 (PC?�서???�명?? */
+.mobile-top-header { display: none; }
+
+/* ?�� [모바???�로 ?�용 V8] PC ?�정 보존 + 모바???�더 ?�재 */
+@media screen and (max-width: 850px) and (orientation: portrait) { 
+    body { 
+        flex-direction: column !important; 
+        height: 100vh; 
+        overflow: hidden; 
+        /* ?�� body ?�딩 건드리�? ?�음 (PC ?�괴 방�?) */
+    } 
+
+    /* ?�� 모바???�용 30px ?�더 (최상??고정) */
+    .mobile-top-header {
+        display: flex !important;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 30px;
+        background-color: #2c3e50;
+        color: white; padding: 0 10px; box-sizing: border-box;
+        z-index: 10000; box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    .mobile-back-btn { background: #34495e; border: 1px solid #7f8c8d; color: white; border-radius: 4px; padding: 3px 8px; font-size: 11px; font-weight: bold; cursor: pointer; }
+    .mobile-class-text { font-size: 12px; font-weight: bold; color: #f1c40f; }
+
+    /* ?�� ?�이?�바�??�더 ?�이(30px)만큼 ?�리�?무한 ?�창 방�? */
+    .sidebar { 
+        width: 100% !important; min-width: 100% !important; 
+        height: 25vh !important; max-height: 240px !important; 
+        margin-top: 30px !important; /* ?�더 공간 ?�보 */
+        flex-direction: row !important; padding: 5px !important; box-sizing: border-box; z-index: 100; border-bottom: 2px solid #34495e !important; box-shadow: 0 2px 5px rgba(0,0,0,0.3) !important; flex-shrink: 0 !important; 
+    } 
+    
+    .btn-home { display: none !important; } 
+    .unit-list-area { width: 50% !important; height: 100% !important; margin: 0 !important; padding: 0 5px 0 0 !important; border-bottom: none !important; border-right: 1px solid #34495e !important; overflow-y: auto !important; } 
+    .doc-menu-area { width: 50% !important; height: 100% !important; padding: 0 0 0 5px !important; overflow-y: auto !important; display: flex !important; flex-direction: column !important; gap: 2px !important; } 
+    .unit-list-area h2, .doc-menu-area h2 { font-size: 11px !important; margin-bottom: 5px !important; padding-bottom: 3px !important; } 
+    .unit-btn, .nav-btn { padding: 6px !important; font-size: 11px !important; margin-bottom: 3px !important; line-height: 1.2 !important; width: 100% !important; display: block !important; border-radius: 4px !important; } 
+    .nav-btn::after { display: none !important; } 
+    .unit-subject-label { font-size: 9px !important; margin-bottom: 1px !important; } 
+    
+    button[onclick="executeSave()"], button[onclick^="saveAllFinal"], button[onclick^="saveIndividualFinal"], button[onclick="uploadCommonEval()"], button[onclick="downloadCommonEval()"], button[onclick^="resetEval"], button[onclick^="resetAll"], button[onclick="deleteCommonEval()"], button[onclick^="downloadPDF"], button[onclick^="downloadWord"], button[onclick^="executeAutoGrade"] { width: 36px !important; height: 36px !important; padding: 0 !important; font-size: 0 !important; display: inline-flex !important; justify-content: center !important; align-items: center !important; border-radius: 6px !important; flex-shrink: 0 !important; } 
+    button[onclick="executeSave()"]::after, button[onclick^="saveAllFinal"]::after, button[onclick^="saveIndividualFinal"]::after { content: "?��"; font-size: 16px !important; } 
+    button[onclick="uploadCommonEval()"]::after { content: "?�️"; font-size: 16px !important; } 
+    button[onclick="downloadCommonEval()"]::after { content: "?��"; font-size: 16px !important; } 
+    button[onclick^="resetEval"]::after, button[onclick^="resetAll"]::after { content: "?��"; font-size: 16px !important; } 
+    button[onclick="deleteCommonEval()"]::after { content: "?���?; font-size: 16px !important; } 
+    button[onclick="downloadPDF_1()"]::after { content: "?��"; font-size: 16px !important; } 
+    button[onclick="downloadPDF_2()"]::after { content: "?��"; font-size: 16px !important; } 
+    button[onclick="downloadPDF_3()"]::after { content: "?��"; font-size: 16px !important; } 
+    button[onclick="downloadPDF_4_All()"]::after { content: "??"; font-size: 16px !important; } 
+    button[onclick="downloadWord_1()"]::after { content: "?��"; font-size: 16px !important; } 
+    button[onclick="downloadWord_2()"]::after { content: "?��"; font-size: 16px !important; } 
+    button[onclick="downloadWord_3()"]::after { content: "?���?; font-size: 16px !important; } 
+    button[onclick^="executeAutoGrade"]::after { content: "?��"; font-size: 16px !important; } 
+    
+    .main-content { width: 100% !important; flex: 1 !important; padding: 15px 0 50px 0 !important; overflow: auto !important; display: block !important; background-color: #546e7a !important; margin-top: 0 !important; text-align: center !important; } 
+    .page-frame.active, .page1-container.active, .eval-paper-container.active { width: 100% !important; transform: none !important; margin: 0 !important; } 
+    .a4-page { zoom: calc(100vw / 820px) !important; margin: 0 auto 30px auto !important; box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important; display: inline-block !important; text-align: left !important; } 
+    .settings-panel { zoom: 1 !important; width: 100% !important; height: auto !important; margin: 0 !important; padding: 5px !important; text-align: left !important; } 
+    .settings-grid { grid-template-columns: 1fr !important; gap: 8px !important; } 
+    #page0 .doc-title { margin-bottom: 6px !important; padding-bottom: 6px !important; font-size: 13px !important; flex-direction: column !important; gap: 4px !important; } 
+    #page0 > div[style*="margin-bottom: 15px"] { padding: 5px 8px !important; margin-bottom: 6px !important; gap: 4px !important; border-width: 1px !important; justify-content: flex-start !important; } 
+    #page0 > div[style*="margin-bottom: 15px"] > span, #page0 > div[style*="margin-bottom: 15px"] > label { font-size: 11px !important; flex-basis: 100% !important; margin-bottom: 2px !important; } 
+    #page0 > div[style*="margin-bottom: 15px"] button { width: 30px !important; height: 30px !important; border-radius: 4px !important; } 
+    #page0 > div[style*="margin-bottom: 15px"] button::after { font-size: 14px !important; } 
+}
+
+
+    </style>
+</head>
+<body style="padding-top: 80px; box-sizing: border-box;"> <!-- ?�� ?�네??천장 밀�?�?100vh Flex ?�이?�웃 ?�손 방�? ?�진 가??-->
+
+<!-- ?�� [메인 ?�네??V5 (반응???�전�?] ?�면 최상??고정 ?�합 버스�?(?��?지.html ?�용 ?�수 배선) -->
+<style>
+    /* ?? ?�네???�용 반응???�축 ?�진 (PC ?�반 ?�면 ?�?? */
+    #globalMainHarness { flex-wrap: nowrap !important; }
+    #navButtonBank { flex-wrap: nowrap !important; }
+    
+    .nav-btn-global {
+        color: #ffffff;
+        border: none;
+        border-radius: 6px;
+        text-align: center;
+        box-sizing: border-box;
+        transition: 0.3s;
+        cursor: pointer;
+        /* ?�심: 고정 ?�비�??��??�연???�축 ?�용 */
+        flex: 1 1 auto; 
+        max-width: 100px;
+        min-width: 45px;
+        padding: 6px 2px !important;
+        font-size: 11px;
+        font-weight: bold;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; /* 공간 부�???글???�져?�옴 방�? */
+        letter-spacing: -0.5px;
+    }
+
+    /* ?�� ?�반 PC ?�면 (??1100px ?�하) ?�닝 */
+    @media (max-width: 1100px) {
+        #globalMainHarness { padding: 8px 10px !important; }
+        #navButtonBank { gap: 4px !important; margin: 0 10px !important; }
+        .nav-btn-global { font-size: 10px !important; letter-spacing: -1px; }
+        #harnessRightBank div { padding: 6px 12px !important; font-size: 13px !important; }
+        #currentClassDisplay { font-size: 15px !important; }
+    }
+
+    /* ?�� ?�마?�폰 모바???�면 (768px ?�하) ?�닝 */
+    @media (max-width: 768px) {
+        #globalMainHarness { flex-wrap: wrap !important; gap: 8px; }
+        #harnessLeftBank { order: 1; flex: 1; }
+        #harnessRightBank { order: 2; flex: 1; display: flex; justify-content: flex-end; }
+        #navButtonBank { order: 3; flex-wrap: wrap !important; width: 100%; margin: 0 !important; }
+        .nav-btn-global { max-width: calc(25% - 4px); font-size: 9px !important; }
+    }
+
+    /* ?�� [비NCS/?�양 ?�용] 배점 칸의 ?�아??조절 ?�살???�피?? 강제 ?�거 */
+        .non-ncs-score::-webkit-outer-spin-button,
+        .non-ncs-score::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .non-ncs-score {
+            -moz-appearance: textfield; /* Firefox 브라?��? ?�??*/
+        }
+</style>
+
+<div id="globalMainHarness" style="position: fixed; top: 0; left: 0; width: 100%; background: #1a252f; z-index: 9999; padding: 10px 20px; box-sizing: border-box; box-shadow: 0 4px 15px rgba(0,0,0,0.3); border-bottom: 3px solid #e67e22; display: flex; justify-content: space-between; align-items: center;">
+    
+    <!-- [좌측 뱅크] �??�택 모듈 -->
+    <div id="harnessLeftBank" style="flex-shrink: 0;">
+        <!-- ?�� ?��?지 ?�더?�서 밖으�??��? start ?�더??select_class.html�?진입 -->
+        <button class="btn" style="background: transparent; color: #f1c40f; border: 1px solid #f1c40f; width: 90px; padding: 6px 0; font-size: 12px; font-weight: bold; box-sizing: border-box; cursor: pointer;" onclick="location.href='../start/select_class.html'">?� �??�택</button>
+    </div>
+
+    <!-- [중앙 뱅크] 공통 ?�비게이??모듈 (?��?지 ?��????�수 ?�회 경로 ?�용 ?�료) -->
+    <div id="navButtonBank" style="display: flex; justify-content: center; gap: 6px; flex-grow: 1; margin: 0 15px;">
+        <button class="nav-btn-global" style="background: #3498db;" onclick="location.href='../start/index1.html?class=' + currentClass">?�� 메인</button>
+        <button class="nav-btn-global" style="background: #e67e22;" onclick="location.href='../start/?�일출석부.html?class=' + currentClass">?�� ?�일</button>
+        <button class="nav-btn-global" style="background: #27ae60;" onclick="location.href='../start/?�력?�위?�간??html?class=' + currentClass">?�� ?�력/?��?</button>
+        <button class="nav-btn-global" style="background: #8e44ad;" onclick="location.href='../start/?�위개월출석부.html?class=' + currentClass">?�� ?�위개월</button>
+        <button class="nav-btn-global" style="background: #2c3e50;" onclick="location.href='../start/?��?계획??html?class=' + currentClass">?�� ?��?계획</button>
+        
+        <!-- ?�� ?��??��?(?��?지) 버튼?� ?�자리에 머무르�?�?경로 ?�회가 ?�요 ?�습?�다 -->
+        <button class="nav-btn-global" style="background: #16a085;" onclick="location.href='?��?지.html?class=' + currentClass">?�� ?��??��?</button>
+        
+        <button class="nav-btn-global" style="background: #d35400;" onclick="location.href='../start/?�담?��?.html?class=' + currentClass">?�� ?�담?��?</button>
+    </div>
+
+    <!-- [?�측 뱅크] ?�재 ?�급 ?�태�?(HUD 계기???��??? -->
+    <div id="harnessRightBank" style="flex-shrink: 0;">
+        <div style="background: #000000; color: #f1c40f; padding: 8px 22px; border-radius: 6px; border: 2px solid #f1c40f; font-weight: 900; font-size: 16px; box-shadow: 0 0 12px rgba(241, 196, 15, 0.8); white-space: nowrap; letter-spacing: 1px;">
+            <span style="color: #ffffff; font-size: 14px; margin-right: 5px;">???�재 ?�급:</span>
+            <span id="currentClassDisplay" style="font-size: 19px; text-shadow: 0 0 5px #f1c40f;">로딩 �?..</span>
+        </div>
+    </div>
+
+    <!-- ?�� [?�립 ECU ?�서] ?��? JS ?�일???�존?��? ?�고 ?�체?�으�??�급 ?�보 �??�재 기어 ?�치�?감�??�니?? -->
+    <script>
+        setTimeout(() => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const activeClass = urlParams.get('class') || "?�스??;
+            const hudDisplay = document.getElementById('currentClassDisplay');
+            if (hudDisplay) {
+                hudDisplay.innerText = activeClass;
+            }
+
+            const currentFileName = decodeURIComponent(window.location.pathname.split('/').pop()) || 'index1.html';
+            const navButtons = document.querySelectorAll('#navButtonBank .nav-btn-global');
+            
+            navButtons.forEach(btn => {
+                const action = btn.getAttribute('onclick') || "";
+                if (action.includes(currentFileName)) {
+                    btn.style.border = '2px solid #f1c40f';
+                    btn.style.boxShadow = '0 0 12px rgba(241, 196, 15, 1)';
+                    btn.style.transform = 'scale(1.08)';
+                    btn.style.fontWeight = 'bold';
+                    btn.style.filter = 'brightness(1.2)';
+                    btn.style.opacity = '1';
+                } else {
+                    btn.style.border = 'none';
+                    btn.style.boxShadow = 'none';
+                    btn.style.transform = 'scale(1)';
+                    btn.style.fontWeight = 'normal';
+                    btn.style.filter = 'none';
+                    btn.style.opacity = '1'; 
+                }
+            });
+        }, 50);
+    </script>
+</div>
+
+<!-- ?�� JS 경고??방�?�??�해 구형 ?�동 버튼 �?모바???�더 ?�텔???��?) 처리 -->
+<div style="display: none !important;">
+    <div id="mobileTopHeader" class="mobile-top-header">
+        <button id="btn_mobile_back" class="mobile-back-btn">?� ?�전</button>
+        <div id="mobileClassDisplay" class="mobile-class-text">�??�보 로딩�?..</div>
+    </div>
+    <a href="#" id="backLink" class="btn-home">?� 관�?메인?�로 ?�동</a>
+</div>
+
+<div class="sidebar" style="margin-top: 0 !important;"> <!-- ?�� 모바???�경 ?�백 붕괴 방�???마진 0 강제 주입 -->
+    <!-- ?�� [?�규 배선] ??과목 ?�균 ?�약 ?�이지 버튼 (?�심 기능?��?�?보존 �??�이?�웃 ?�단 ?�배�? -->
+    <button id="btn_show_average" class="btn-home" style="background-color: #8e44ad; border-color: #9b59b6; margin-top: 0; margin-bottom: 20px;" onclick="showAverageScores()">?�� ??과목 ?�균</button>
+
+        <div class="unit-list-area">
+            <h2 id="btn_secret_door">?��? ?�???�택 <span id="viewModeBadge" class="view-mode-badge" style="display:none;">분석 �?..</span></h2>
+            
+            <div style="display:flex; gap:5px; margin-bottom:10px;">
+                <button id="btnModeSubject" style="flex:1; padding:6px; font-size:11.5px; background:#34495e; color:white; border:1px solid #2c3e50; border-radius:4px; cursor:pointer; font-weight:bold; transition:0.2s;">교과목별</button>
+                <button id="btnModeNcs" style="flex:1; padding:6px; font-size:11.5px; background:#34495e; color:white; border:1px solid #2c3e50; border-radius:4px; cursor:pointer; font-weight:bold; transition:0.2s;">?�력?�위�?/button>
+            </div>
+
+            <div id="unitListContainer">
+                <p style="font-size: 12px; color: #ccc;">?�이??�??�정값을 불러?�는 중입?�다...</p>
+            </div>
+        </div>
+
+        <div class="doc-menu-area" id="docMenuArea">
+            <h2>?��? 문서 ?�성</h2>
+            <!-- ?�� [?�규 배선] 초기 ?�속 ??active ?�위�??�제 -->
+            <button class="nav-btn dynamic-show-page" id="btnPage0" data-page="page0">0. ?�정 (?�어??</button>
+            <button class="nav-btn dynamic-show-page" id="btnPage1" data-page="page1">1. ?��??�장</button>
+            <div style="display:flex; gap:5px; margin-bottom:5px;">
+                <button class="nav-btn dynamic-show-page" id="btnPage2" data-page="page2" style="margin-bottom:0; flex:1;">2-1. ?��?지</button>
+                <button class="nav-btn dynamic-show-page" id="btnPage3" data-page="page3" style="margin-bottom:0; flex:1;">2-2. 채점기�?</button>
+            </div>
+            <button class="nav-btn dynamic-show-page" id="btnPage6" data-page="page6">3. 근거?�료</button>
+            <button class="nav-btn dynamic-show-page" id="btnPage4" data-page="page4">4. 최종결과??/button>
+            <button class="nav-btn dynamic-show-page" id="btnPage5" data-page="page5">5. 개인?��??��???/button>
+        </div>
+    </div>
+
+    <div class="main-content">
+
+                <div id="globalModeBar" class="no-print" style="display: none; width: 100%; max-width: 210mm; margin-bottom: 20px; background: white; padding: 15px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 2px solid #f1c40f; flex-shrink: 0;">
+            <div style="font-weight: bold; color: #d35400; margin-bottom: 10px; font-size: 14px; display: flex; justify-content: space-between; align-items: center;">
+                <span>?�� ?��? 모드 빠른 ?�환 <span style="font-size: 11px; color: #7f8c8d; font-weight: normal;">(???�릭 ???�재 ?�면??모드 ?�이?�로 즉시 갱신?�니??</span></span>
+            </div>
+            <div class="eval-type-tabs" id="globalEvalTypeTabs" style="margin-bottom: 0;">
+                <button class="tab-btn active dynamic-switch-eval" data-type="본평가">?�� 본평가</button>
+                <button class="tab-btn dynamic-switch-eval" data-type="추�??��?">??추�??��?</button>
+                <button class="tab-btn dynamic-switch-eval" data-type="?�평가">?�� ?�평가</button>
+            </div>
+        </div>
+
+        <!-- ?�� [?�규 배선] 초기 ?�속 ??active ?�위�??�제 (?�면???�보?�게 처리) -->
+        <div id="page0" class="page-frame settings-panel">
+            <div class="doc-title" style="margin-top: 0; text-align: left; border-bottom: 2px solid #2c3e50; padding-bottom: 8px; margin-bottom: 10px; font-size: 18px; color: #2c3e50; display: flex; justify-content: space-between; align-items: center;">
+                <div>?�️ ?��? 기본 ?�정 (Control Panel)</div>
+                <div style="display: flex; gap: 5px;">
+    <button id="btn_execute_save" class="btn-save-settings">?�� ?�??/button>
+    <button id="btn_upload_common" style="background-color: #8e44ad; color: white; border: none; padding: 6px 12px; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 12px; margin-left: 5px;">?�️ 공용 ?�리�?/button>
+    <button id="btn_download_common" style="background-color: #2980b9; color: white; border: none; padding: 6px 12px; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 12px; margin-left: 5px;">?�� 공용 불러?�기</button>
+    <button id="btn_reset_eval" style="background-color: #e74c3c; color: white; border: none; padding: 6px 12px; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 12px; margin-left: 5px;">?�� 초기??/button>
+    <button id="btn_delete_common" style="background-color: #c0392b; color: white; border: none; padding: 6px 12px; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 12px; margin-left: 5px;">?���?공용 ??��</button>
+</div>
+      </div>
+
+            <div style="margin-bottom: 15px; padding: 12px; background: #e8f8f5; border: 2px solid #1abc9c; border-radius: 8px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+        <span style="font-weight: bold; color: #16a085; font-size: 14px;">?���??�합 PDF ?�린??:</span>
+        <button id="btn_pdf_1" style="background-color: #34495e; color: white; border: none; padding: 8px 12px; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 12px; transition: 0.2s;" onmouseover="this.style.background='#2c3e50'" onmouseout="this.style.background='#34495e'">?�� (1) ?��? ?�장</button>
+        <button id="btn_pdf_2" style="background-color: #34495e; color: white; border: none; padding: 8px 12px; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 12px; transition: 0.2s;" onmouseover="this.style.background='#2c3e50'" onmouseout="this.style.background='#34495e'">?�� (2) 최종결과??/button>
+        <button id="btn_pdf_evidence" style="background-color: #34495e; color: white; border: none; padding: 8px 12px; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 12px; transition: 0.2s;" onmouseover="this.style.background='#2c3e50'" onmouseout="this.style.background='#34495e'">?�� (3) 근거?�진</button>
+        <button id="btn_pdf_3" style="background-color: #34495e; color: white; border: none; padding: 8px 12px; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 12px; transition: 0.2s;" onmouseover="this.style.background='#2c3e50'" onmouseout="this.style.background='#34495e'">?�� (4) 개인?��??��???/button>
+        <button id="btn_pdf_all" style="background-color: #e74c3c; color: white; border: 2px solid #c0392b; padding: 8px 15px; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 12px; margin-left: auto; transition: 0.2s;" onmouseover="this.style.background='#c0392b'" onmouseout="this.style.background='#e74c3c'">?? (5) ?�체?�류 ?�괄 ?�운</button>
+      </div>
+
+
+
+      <div style="margin-bottom: 15px; display: none; align-items: center; gap: 10px; background: #fff3e0; padding: 10px; border-radius: 6px; border: 1px solid #f39c12; flex-wrap: wrap;">
+        <label style="font-weight: bold; color: #d35400; font-size: 13px;">?�� ?�???�련기�? :</label>
+                <select id="ncsVersionSelect" style="padding: 5px; border-radius: 4px; border: 1px solid #ccc; font-weight: bold; outline: none; cursor: pointer;">
+                    <option value="legacy">?�이??로딩�?..</option>
+                </select>
+                
+                <label style="font-weight: bold; color: #2980b9; font-size: 13px; margin-left: 15px;">?�� ??과목�?:</label>
+                <select id="individualNcsSelect" style="padding: 5px; border-radius: 4px; border: 1px solid #ccc; font-weight: bold; outline: none; cursor: pointer; transition: 0.3s;">
+                    <option value="">?�??버전 ?�름</option>
+                </select>
+                
+                <span style="font-size: 11px; color: #7f8c8d; margin-left: auto;">(??버전 변�???기존 ?�???�이?�는 보호??</span>
+            </div>
+
+            <div class="eval-type-tabs" id="settingEvalTypeTabs">
+                <button class="tab-btn active dynamic-switch-eval" data-type="본평가">?�� 본평가</button>
+                <button class="tab-btn dynamic-switch-eval" data-type="추�??��?">??추�??��?</button>
+                <button class="tab-btn dynamic-switch-eval" data-type="?�평가">?�� ?�평가</button>
+            </div>
+
+            <div style="color: #7f8c8d; font-size: 12px; margin-bottom: 15px; line-height: 1.2;">
+                ?�� [?�내] ?�택???��? 모드??맞춰 ?�이?��? ?�?�되�? ?�후 모든 ?�식???�동 ?�기?�됩?�다.
+            </div>
+
+            <div class="settings-grid">
+                <div class="setting-group" id="S_Group0">
+                    <h3><span class="id-marker">[S0_INFO]</span>0. ?�련 과정 개요 (DB ?�동)</h3>
+                    <div class="input-row"><label>?�련과정�?:</label><input type="text" id="S0_CourseName" class="input-box readonly" readonly></div>
+                    <div class="input-row"><label>?�련기간 :</label><input type="text" id="S0_Period" class="input-box readonly" readonly></div>
+                    <div class="input-row"><label>?�당교사 :</label><input type="text" id="S0_Teacher" class="input-box readonly" readonly></div>
+                </div>
+
+                <div class="setting-group" id="S_Group1">
+                    <h3><span class="id-marker">[S1]</span>1. ?�??교과 (메뉴 ?�동)</h3>
+                    <div class="input-row"><label>교과목명 :</label><input type="text" id="S1_1" class="input-box readonly" readonly></div>
+                    <div class="input-row" id="rowUnitCode"><label>?�위코드 :</label><input type="text" id="S1_Code" class="input-box readonly" readonly></div>
+                    <div class="input-row" id="rowUnitName"><label>?�력?�위�?:</label><input type="text" id="S1_2" class="input-box readonly" readonly></div>
+                </div>
+
+                <div class="setting-group" id="S_Group2">
+                    <h3><span class="id-marker">[S2]</span>2. ?��? 방법 �??�간</h3>
+                    <div class="input-row"><label>?��? 방법 :</label><input type="text" id="S2_1" class="input-box readonly" readonly></div>
+                    
+                    <div class="input-row" style="gap: 5px;">
+                        <label>과목?�간 :</label>
+                        <div style="display: flex; align-items: center; flex: 1; gap: 4px;">
+                            <input type="text" id="S2_2" class="input-box readonly" style="text-align: right; flex: 1; min-width: 0; padding: 6px 4px;" title="�??�련?�간" readonly>
+                            <span style="font-weight: bold; font-size: 11px; margin-right: 5px;">H</span>
+                            
+                            <span style="font-weight: bold; font-size: 12px; color: #555; white-space: nowrap; margin-left: 5px;">?��??�간 :</span>
+                            <input type="number" id="S2_3" class="input-box" style="text-align: right; flex: 1; min-width: 0; background-color: #fffde7; border-color: #f1c40f; padding: 6px 4px;" title="?��? ?�간(�?" placeholder="?? 60">
+                            <span style="font-weight: bold; font-size: 11px;">M</span>
+                        </div>
+                    </div>
+                    
+                    <div class="input-row"><label>?��? ?�소 :</label><input type="text" id="S2_4" class="input-box" style="background-color: #fffde7; border-color: #f1c40f;" placeholder="?? ???�습??></div>
+                </div>
+
+                <div class="setting-group">
+                    <h3><span class="id-marker">[S3]</span>3. ?��? ?�자 ?�정</h3>
+                    <div class="input-row"><label>본평가 ?�자 :</label><input type="date" id="S3_1" class="input-box highlight-date"></div>
+                    <div class="input-row"><label>추�??��??�자:</label><input type="date" id="S3_2" class="input-box"></div>
+                    <div class="input-row"><label>?�평가 ?�자 :</label><input type="date" id="S3_3" class="input-box"></div>
+                </div>
+            </div>
+
+            <!-- ?�� [?�리 ?�료] S4 ?�역??75%�??�???�장, S5 ?�역??23%�?축소 -->
+            <div style="margin-top: 15px; grid-column: 1 / -1; display: grid; grid-template-columns: 75% 23%; gap: 2%;">
+                
+                <div class="setting-group" style="margin-top: 0; padding: 15px;">
+                    <h3 style="display:flex; justify-content:space-between; align-items:center; margin-top:0; border-bottom:2px solid #3498db; padding-bottom:8px; margin-bottom:12px;">
+                        <div><span class="id-marker">[S4]</span>4. ?��? ??�� �?배점 ?�정 (NCS ?�동 매핑)</div>
+                        <button id="btnToggleInputMode" type="button" class="btn-custom no-print" style="display:none; padding:4px 10px; font-size:11px; background:#8e44ad; border:none; color:white; font-weight:bold; box-shadow:0 2px 4px rgba(0,0,0,0.2);" onclick="toggleNonNcsInputMode()">?? ?�합 ?�력 모드 OFF</button>
+                    </h3>
+                    <div style="overflow-x: auto;">
+                        <table class="eval-item-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 40%;">?��???�� (?�력?�위?�소) <span style="font-size:11px; color:#e67e22; font-weight:normal;">[??복제 가??</span></th>
+                                    <th style="width: 20%;">?��? 방식</th> 
+                                    <th style="width: 20%;">배점 (총점 80??기�?)</th> 
+                                    <th style="width: 20%;">출제?�이??/th>
+                                </tr>
+                            </thead>
+                            <tbody id="evalItemTbody">
+                                <tr><td colspan="4" style="text-align:center; padding: 20px; color:#999;">좌측?�서 ?��? ?�?�을 ?�택?�면 ?�소가 ?�동?�로 ?�성?�니??</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="setting-group" id="S_Group5" style="margin-top: 0; padding: 15px; background-color: #fdfefe; border: 2px solid #f1c40f; height: 100%; box-sizing: border-box; display: flex; flex-direction: column; gap: 10px;">
+                    <h3 style="margin-top:0; border-bottom:2px solid #f39c12; color:#d35400; padding-bottom:8px; margin-bottom:5px;"><span class="id-marker">[S5]</span>5. ?��?계획관�?<span style="font-size:11px; font-weight:normal; color:#7f8c8d; margin-left:auto;">(?�릭 ???�동 복사)</span></h3>
+                    
+                    <div style="display:flex; flex-direction:column; flex: 0 1 auto; max-height: 350px;">
+                        <div style="font-size:12px; font-weight:bold; color:#2c3e50; margin-bottom:4px;">???�비 목록</div>
+                        <div id="s5_equip_list" style="border:1px solid #ccc; border-radius:4px; background:#fff; overflow-y:auto; padding:5px; font-size:11px;">
+                            <div style="text-align:center; color:#999; padding:10px;">좌측?�서 과목???�택?�세??</div>
+                        </div>
+                    </div>
+
+                    <div style="display:flex; flex-direction:column; flex: 1 1 auto; min-height: 100px;">
+                        <div style="font-size:12px; font-weight:bold; color:#2c3e50; margin-bottom:4px; display:flex; justify-content:space-between;">
+                            <span>???��???구성</span>
+                            <span style="font-size:10px; color:#3498db; cursor:pointer;" onclick="copyS5Text('s5_eval_config', '?��???구성')">[복사?�기]</span>
+                        </div>
+                        <div id="s5_eval_config" onclick="copyS5Text('s5_eval_config', '?��???구성')" style="flex:1; border:1px dashed #3498db; border-radius:4px; background:#f4fbfd; overflow-y:auto; padding:8px; font-size:11.5px; white-space:pre-wrap; line-height:1.4; cursor:pointer; transition:0.2s;" onmouseover="this.style.backgroundColor='#e8f6f9'" onmouseout="this.style.backgroundColor='#f4fbfd'">??지급된 ?�료 �??�비�??�용?�여 ?�래 ?�업???�성?�시??</div>
+                    </div>
+
+                    <div style="display:flex; flex-direction:column; flex: 0 0 auto; min-height: 60px;">
+                        <div style="font-size:12px; font-weight:bold; color:#2c3e50; margin-bottom:4px; display:flex; justify-content:space-between;">
+                            <span>???�점 ?�출 방법</span>
+                            <span style="font-size:10px; color:#e67e22; cursor:pointer;" onclick="copyS5Text('s5_score_method', '?�점 ?�출 방법')">[복사?�기]</span>
+                        </div>
+                        <div id="s5_score_method" onclick="copyS5Text('s5_score_method', '?�점 ?�출 방법')" data-copy-text="측정 �?분해조립???�???��? 채점?�에 준?�여 ?��??��? 채점?�다." style="border:1px dashed #e67e22; border-radius:4px; background:#fdf3e8; padding:8px; font-size:11.5px; white-space:pre-wrap; line-height:1.4; cursor:pointer; transition:0.2s;" onmouseover="this.style.backgroundColor='#fae5d3'" onmouseout="this.style.backgroundColor='#fdf3e8'">측정 �?분해조립???�???��? 채점?�에 준?�여 ?��??��? 채점?�다.</div>
+                    </div>
+                </div> </div> </div> <div id="page1" class="page1-container">
+            <div class="a4-page">
+                <div class="no-print page-indicator">[1.?��??�류] - ???��?</div>
+                <div id="watermark_logo"></div>
+                <div class="cover-page-inner">
+                    <div class="cover-top">
+                        <div id="cover_courseName" class="cover-course-name">[?�련과정�?출력 ?��?</div>
+                        <div id="cover_period" class="cover-period">(?�련기간 출력 ?��?</div>
+                    </div>
+                    <div class="cover-middle">
+                        <div class="cover-title">?�력?�위�??��??��???/div>
+                        <div class="cover-table-wrapper">
+                            <div class="cover-table-info">
+                                <span id="cover_courseType">NCS ?�공교과</span>
+                                <span>?�당교사 : <span id="cover_teacher">?�길??/span></span>
+                            </div>
+                            <table class="cover-table">
+                                <thead>
+                                    <tr>
+                                        <th id="cover_th_1" style="width: 25%;">교과목명<br>(?�력?�위�?</th>
+                                        <th id="cover_th_2" style="width: 25%;">?�력?�위코드</th>
+                                        <th id="cover_th_3" style="width: 35%;">?�력?�위?�소�?/th>
+                                        <th id="cover_th_4" style="width: 15%;">?�련?�간</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="cover_tbody">
+                                    <tr><td colspan="4" style="padding:30px;">과목???�택?�시�??��?가 ?�성?�니??</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="cover-bottom">
+                        <div class="cover-school">부?�자?�차직업?�교</div>
+                        <div class="cover-page-num">- 1 -</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="a4-page" style="padding: 25mm 20mm;">
+                <div class="no-print page-indicator">[1.?��??�류] - ??지?�·기?�평가 ?�구?�항</div>
+                <div id="exam_header_container"></div> 
+                <div style="font-size: 17px; font-weight: bold; margin-top: 30px;">1. 지?�·기?�평가 ?�구?�항</div>
+                <div style="font-size: 14px; margin-top: 10px; margin-bottom: 30px; font-weight: bold;">??지급된 ?�료 �??�비�??�용?�여 ?�래 ?�업???�성?�시??</div>
+                <div id="exam_questions_container"></div> 
+                <div style="margin-top: 40px; font-weight: bold; font-size: 15px;">???��? ?��? ?�험문제지???��?종료 ??본인??가?�갈 ???�습?�다.</div>
+                <div class="cover-bottom" style="margin-top: 50px;"><div class="cover-page-num">- 2 -</div></div>
+            </div>
+
+            <div class="a4-page" style="padding: 25mm 20mm;">
+                <div class="no-print page-indicator">[1.?��??�류] - ???�의?�항</div>
+                <div style="font-size: 17px; font-weight: bold; margin-bottom: 25px;">2. ?�의?�항</div>
+                <div style="font-size: 14px; line-height: 1.9; color: #111; word-break: keep-all;">
+                    1) ?��??�의 지?�에 ?�라 ?�행?��????�하�? 모든 ?�업?� ?�전 ?�항??준?�합?�다.<br>
+                    2) ?�구?�항???�업?�간?� ?��??�의 지?�에 ?�라 ?�행?�니??<br>
+                    3) 모든 측정�??�는 ?�험�??�의 ?�치 �?조작?� ?��??�의 지?��? ?�는 경우 ?�련??본인??직접 ?�시?�며 ?�요???�수공구???��??�에???�공??�?�??�련?�이 직접 ?�택?�여 ?�용?�니??<br>
+                    4) ?�로?��? ?��? ?��? 근거?�료(기록????규정(?�비 ?�계, 기�?)값�? ?��??�에???�공?�는 ?��??��? 주어�?�? ?�업매뉴?? ?�비지침서, 측정 ?�비(?�캐???�함) ?�에???�련?�이 직접 찾아 참조 �?기록?�니??<br>
+                    5) ?�동�?검?�에 관?�된 기�?값�? ?�시?��? ?�습?�다.<br>
+                    6) ?��? ?��? 근거?�료(기록?? ?�성?�서 ?�음 �???�� ?�당?�는 경우???��?것으�??�니??<br>
+                    <div style="margin-left: 15px;">
+                        ???�위가 ?�거???��?경우<br>
+                        ???��?가 ?�라�????�는 ?�위 ?�두?�의 ?�?�문?��? ?��?경우<br>
+                        ??근거?�료(기록?? 기재?�항?�서 ?��??�의 ?�정 ?�인 ?�이 ?�정??개소<br>
+                    </div>
+                    7) ?�음 �???�� ?�당?�는 경우 ?�당 ??��??"0"??처리?�니??<br>
+                    <div style="margin-left: 15px;">
+                        ???�구?�항 ?�는 ?��??�의 지?�사??�� ?�른 ?�업??경우<br>
+                        ???�업 미숙?�로 ?�전?�고, 기재 ?�상 ?�이 ?�려?�어 "기능 미숙"???�당?�는 경우<br>
+                    </div>
+                    8) ?�음 ?�항???�?�서??채점 ?�?�에???�외?�니 ?�히 ?�의?�시�?바랍?�다.<br>
+                    <div style="margin-left: 15px;">
+                        ???�련??본인???��? ?�중 기권 ?�사�??�시?�는 경우<br>
+                        ???�?�의 결과기록?��? 보고 기록?�거??보여주는 경우<br>
+                        ??기�? ?�험�?관?�된 부?�행?��? ?�는 경우<br>
+                    </div>
+                    9) ?�험 �??��??�?�자(?�련????반드???�전?�칙??준?�해???�며, ?�업 복장 ?�태, ?�리 ?�돈 ?�태, ?�전 ?�항 ?�이 채점 ?�?�이 ?�니??<br>
+                </div>
+                <div style="font-weight: bold; font-size: 15px; margin-top: 40px;">???��? ?�작 ??간단??몸�?�??�트?�칭) ?�작?�로 긴장???��??��????�하??��??</div>
+                <div class="cover-bottom" style="margin-top: 50px;"><div class="cover-page-num">- 3 -</div></div>
+            </div>
+
+            <!-- ?�� 추�?: [1. ?��??�장] ?�용 �??�식 근거?�진 ?�이지 -->
+            <div class="a4-page" style="padding: 25mm 20mm;">
+                <div class="no-print page-indicator">[1.?��??�장] - ??근거?�진(�??�식)</div>
+                <div id="photo_header_container_blank"></div> 
+                <div style="font-size: 17px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">???��? ?��? 근거 ?�진</div>
+                <div id="photo_grid_container_blank"></div> 
+                <div class="cover-bottom" style="margin-top: 50px;"><div class="cover-page-num">- 4 -</div></div>
+            </div>
+        </div>
+
+        <div id="page6" class="page1-container">
+            <div class="a4-page" style="padding: 25mm 20mm;">
+                <div class="no-print page-indicator">[3.근거?�료] - ??근거?�진</div>
+                <div id="photo_header_container"></div> 
+                <div style="font-size: 17px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">???��? ?��? 근거 ?�진</div>
+                <div id="photo_grid_container"></div> 
+                <div class="cover-bottom" style="margin-top: 50px;"><div class="cover-page-num">- 4 -</div></div>
+            </div>
+        </div>
+
+        <div id="page2" class="eval-paper-container">
+            </div>
+        <div id="page3" class="page-frame" style="background: transparent; padding: 0;"></div>
+        <div id="page4" class="page-frame" style="background: transparent; padding: 0;"></div>
+        
+        <div id="page5" class="page-frame" style="background: transparent; padding: 0;">
+            <div class="a4-page" style="display:flex; align-items:center; justify-content:center; font-family:'Malgun Gothic', sans-serif;">
+                <p style="padding:20px; color:#7f8c8d; font-weight:bold;">좌측?�서 ?��? ?�?�을 ?�택????5. 개인?��??��??��? ?�면 ?�동 ?�성?�니??</p>
+            </div>
+        </div>
+        
+        <!-- ?�� [?�규 배선] ??과목 ?�균 ?�더�?컨테?�너 (page7) -->
+        <!-- ?�속 0.001�?만에 바로 로딩 ?�면???�도�?active ?�위�??�구 ?�착 -->
+        <div id="page7" class="page-frame settings-panel active" style="background: transparent; padding: 0;">
+            <div class="a4-page" style="width: 100% !important; max-width: 95%; margin: 20px auto; padding: 30px !important;">
+                <div style="text-align:center; font-size:18px; font-weight:bold; color:#2980b9; padding:50px;">????과목 ?��? ?�균 불러?�는 �?..</div>
+            </div>
+        </div>
+        
+        </div>
+
+    <div id="pwModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:40000; justify-content:center; align-items:center;">
+    <div style="background:white; padding:25px; border-radius:8px; text-align:center; width:340px; box-shadow:0 5px 20px rgba(0,0,0,0.4);">
+        <h3 style="margin-top:0; color:#c0392b;">?�� 보안 ?�증</h3>
+        <p style="font-size:13px; color:#555; margin-bottom:15px;">공용 ?��?지�??�록?�시?�면<br>관리자 비�?번호 <b>6?�리</b>�??�력?�세??</p>
+        <div id="pwSubjectInfo" style="font-size:13px; font-weight:bold; color:#2980b9; margin-bottom:15px; padding:10px; background:#ebf5fb; border-radius:4px; word-break: keep-all;"></div>
+        <input type="password" id="commonPwInput" maxlength="6" style="width:80%; padding:12px; font-size:24px; text-align:center; border:2px solid #ccc; border-radius:4px; letter-spacing:8px;" placeholder="******">
+        <div style="margin-top:15px;">
+            <button id="btn_pw_cancel" style="background:#666; color:white; border:none; padding:8px 25px; border-radius:4px; cursor:pointer; font-weight:bold;">취소</button>
+        </div>
+    </div>
+</div>
+<script src="?��?지.js"></script><script src="?��?지??��.js"></script>
+</body>
+</html>
