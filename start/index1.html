@@ -1,0 +1,559 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>정비 관리 | 자동차 교육과정 통합 시스템</title><script src="https://cdn.jsdelivr.net/npm/xlsx-js-style@1.2.0/dist/xlsx.bundle.js"></script><script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script><script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script><script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script><style>/* [DESIGN_FIXED] 기존 디자인 규격 100% 유지 */
+        body { font-family: 'Malgun Gothic', sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; color: #333; }
+        .container { max-width: 1400px; margin: 30px auto; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); min-height: 90vh; }
+        .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid #3498db; padding-bottom: 15px; margin-bottom: 20px; }
+        .class-info-bar { background: #e3f2fd; padding: 12px; border-radius: 10px; margin-bottom: 20px; display: flex; align-items: center; gap: 15px; }
+        .btn-home { padding: 6px 12px; cursor: pointer; border: 1px solid #3498db; border-radius: 6px; background: white; color: #3498db; font-weight: bold; text-decoration: none; font-size: 13px; }
+        .current-badge { background: #2c3e50; color: white; padding: 4px 12px; border-radius: 15px; font-size: 13px; font-weight: bold; }
+        .section-card { background: #fff; padding: 15px; border-radius: 10px; border: 1px solid #e1e4e8; margin-bottom: 20px; }
+        .top-action-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+        .info-grid { display: grid; grid-template-columns: 2fr 1.5fr 1fr 1fr; gap: 15px; margin-top: 10px; }
+        .info-item label { display: block; font-size: 12px; color: #666; margin-bottom: 5px; font-weight: bold; }
+        .info-item input { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; font-size: 13px; }
+        #trainingPeriod { background: #fff; color: #e67e22; font-weight: bold; border: 2px solid #e67e22; }
+        .scroll-box { max-height: 600px; overflow-y: auto; border: 1px solid #dee2e6; border-radius: 8px; position: relative; }
+        .course-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 12px; table-layout: fixed; border-left: 1px solid #dee2e6; border-top: 1px solid #dee2e6; background-color: white; }
+        .course-table th { background: #f8f9fa; position: sticky; top: 0; z-index: 30; padding: 14px 10px; border-bottom: 1px solid #dee2e6; border-right: 1px solid #dee2e6; font-weight: 800; }
+        .summary-row td { background-color: #2c3e50 !important; color: #ffffff !important; font-weight: bold; position: sticky; top: 45px; z-index: 25; border-bottom: 3px solid #3498db; border-right: 1px solid #dee2e6; padding: 10px; }
+        .course-table td { border-bottom: 1px solid #a2d2ff; border-right: 1px solid #a2d2ff; text-align: center; vertical-align: middle; background: white; line-height: 1.4; padding: 0; }
+        .subject-cell { background-color: #f0f7ff; font-weight: bold; color: #2c3e50; border-right: 3px solid #3498db !important; border-left: 3px solid #3498db !important; border-bottom: 1px solid #dee2e6; padding: 5px !important; }
+        .subject-total-cell { background-color: #fff9f0; font-weight: bold; color: #e67e22; border-left: 3px solid #e67e22 !important; padding: 5px !important; }
+        .top-border-thick { border-top: 3px solid #3498db !important; }
+        .sub-item-container { display: flex; flex-direction: column; width: 100%; height: 100%; }
+        .top-border-thick td { border-top: 3px solid #3498db !important; }
+        .sub-item-row { display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #eee; min-height: 35px; box-sizing: border-box; }
+        .sub-item-row:last-child { border-bottom: none; }
+        .editable-input { width: 100%; height: 100%; border: none; text-align: center; font-size: 12px; font-family: inherit; transition: background 0.3s; }
+        .editable-input:focus { background: #fffde7; outline: none; }
+        .text-left { text-align: left; padding-left: 10px; }
+        .btn { padding: 9px 18px; border-radius: 6px; border: none; cursor: pointer; font-weight: bold; font-size: 12px; transition: 0.2s; }
+        .btn-blue { background: #3498db; color: white; }
+        .btn-green { background: #27ae60; color: white; }
+        .btn-orange { background: #e67e22; color: white; }
+        .btn-red { background: #e74c3c; color: white; }
+        .upload-action-bar { display: flex; align-items: center; gap: 10px; background: #fffef0; padding: 10px; border: 1px dashed #e67e22; border-radius: 8px; margin-top: 5px; }
+
+        .file-upload-wrapper { position: relative; display: inline-block; width: 100%; }
+        .file-upload-label { display: block; background: #3498db; color: white; padding: 12px; text-align: center; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s; border: 2px solid #2980b9; }
+        .file-upload-label:hover { background: #2980b9; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
+        #timetableFile { display: none; }
+        button.file-upload-label { width: 100%; box-sizing: border-box; font-family: inherit; }
+
+        #connectionStatus { font-size: 12px; font-weight: bold; padding: 5px 10px; border-radius: 5px; }
+        .status-online { color: #27ae60; background: #e8f5e9; }
+        .status-offline { color: #e74c3c; background: #fdeaea; }
+        .btn-purple { background: #8e44ad; color: white; } /* 단위개월 출석률 버튼용 */
+
+        .header-right-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        .header-tool-group {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 5px 6px;
+            background: linear-gradient(180deg, #f7fcfb 0%, #eef8f5 100%);
+            border: 1px solid #cfe9e1;
+            border-radius: 10px;
+            flex-wrap: wrap;
+        }
+        .header-tool-label {
+            font-size: 10px;
+            font-weight: 900;
+            color: #117a65;
+            padding: 0 4px 0 6px;
+            white-space: nowrap;
+            letter-spacing: -0.3px;
+        }
+        .header-tool-divider {
+            width: 1px;
+            height: 22px;
+            background: #b8ddd3;
+            margin: 0 2px;
+            flex-shrink: 0;
+        }
+        .header-tool-btn {
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: 1px solid transparent;
+            font-size: 11px;
+            font-weight: bold;
+            cursor: pointer;
+            font-family: inherit;
+            white-space: nowrap;
+            line-height: 1.2;
+            transition: background 0.15s, border-color 0.15s, transform 0.1s;
+        }
+        .header-tool-btn:hover { transform: translateY(-1px); }
+        .header-tool-btn:active { transform: translateY(0); }
+        .header-tool-btn-primary {
+            background: #16a085;
+            color: #fff;
+            border-color: #138d75;
+        }
+        .header-tool-btn-primary:hover { background: #138d75; }
+        .header-tool-btn-outline {
+            background: #fff;
+            color: #16a085;
+            border-color: #8fd4c5;
+        }
+        .header-tool-btn-outline:hover { background: #e8f8f4; }
+        .header-tool-btn-contact {
+            background: #8e44ad;
+            color: #fff;
+            border-color: #732d91;
+        }
+        .header-tool-btn-contact:hover { background: #732d91; }
+        .header-tool-status {
+            font-size: 10px;
+            color: #888;
+            white-space: nowrap;
+        }
+
+        /* 📍 [추가] 좌우 패널 버튼/배너 밸런스 튜닝 (V형 엔진 뱅크 정렬) */
+        .panel-item {
+            min-height: 42px; /* 규격화된 최소 높이 확정 */
+            box-sizing: border-box; 
+            margin-top: 0 !important; /* 개별 불규칙 유격 제거, 컨테이너 gap으로만 간격 통제 */
+        }
+        .panel-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .main-dashboard-layout {
+            max-width: 1740px;
+            margin: 30px auto;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 22px;
+        }
+        .main-dashboard-layout .container {
+            flex: 1 1 1400px;
+            min-width: 0;
+            margin: 0;
+        }
+        .attendance-alert-panel {
+            width: 300px;
+            flex: 0 0 300px;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.10);
+            border: 1px solid #e9eef3;
+            border-top: 5px solid #e67e22;
+            position: sticky;
+            top: 95px;
+            overflow: hidden;
+        }
+        .attendance-alert-head {
+            padding: 14px 16px 12px;
+            background: linear-gradient(135deg, #fff7ed 0%, #ffffff 70%);
+            border-bottom: 1px solid #f2e4d5;
+        }
+        .attendance-alert-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            font-weight: 900;
+            color: #2c3e50;
+            font-size: 16px;
+        }
+        .attendance-alert-count {
+            min-width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #e67e22;
+            color: #fff;
+            font-size: 15px;
+            box-shadow: 0 6px 14px rgba(230,126,34,0.28);
+        }
+        .attendance-alert-summary {
+            margin-top: 8px;
+            color: #7f8c8d;
+            font-size: 12px;
+            line-height: 1.45;
+        }
+        .attendance-alert-body {
+            padding: 12px;
+        }
+        .attendance-missing-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            max-height: 145px;
+            overflow-y: auto;
+        }
+        .alert-section {
+            border: 1px solid #edf0f2;
+            border-radius: 12px;
+            background: #ffffff;
+            padding: 9px;
+            margin-bottom: 10px;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.8);
+        }
+        .alert-section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 900;
+            color: #2c3e50;
+            margin-bottom: 7px;
+        }
+        .alert-section-count {
+            min-width: 22px;
+            height: 22px;
+            border-radius: 11px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            background: #e67e22;
+            font-size: 11px;
+            padding: 0 6px;
+            box-sizing: border-box;
+        }
+        .today-log-section { border-color: #d6eaf8; background: #f4f9fd; }
+        .today-log-section .alert-section-count { background: #3498db; }
+        .today-log-summary-line {
+            color: #2980b9;
+            background: #ebf5fb;
+            border-color: #d6eaf8;
+        }
+        .eval-alert-section .alert-section-count { background: #16a085; }
+        .makeup-alert-section .alert-section-count { background: #27ae60; }
+        .consult-alert-section .alert-section-count { background: #d35400; }
+        .consult-unit-badge {
+            margin-left: 4px;
+            font-size: 10px;
+            font-weight: 800;
+            color: #d35400;
+            background: #fff7ed;
+            border: 1px solid #f5cba7;
+            border-radius: 10px;
+            padding: 1px 6px;
+            white-space: nowrap;
+        }
+        .consult-dday-badge {
+            margin-left: 4px;
+            font-size: 10px;
+            font-weight: 900;
+            color: #c0392b;
+            background: #fff5f5;
+            border: 1px solid #f5b7b1;
+            border-radius: 10px;
+            padding: 1px 6px;
+            white-space: nowrap;
+        }
+        .eval-next-date {
+            margin-left: 4px;
+            font-size: 10px;
+            font-weight: 800;
+            color: #16a085;
+            background: #e8f8f5;
+            border: 1px solid #b2dfdb;
+            border-radius: 10px;
+            padding: 1px 6px;
+            white-space: nowrap;
+        }
+        .eval-dday-badge {
+            margin-left: 4px;
+            font-size: 10px;
+            font-weight: 900;
+            color: #d35400;
+            background: #fff7ed;
+            border: 1px solid #f5cba7;
+            border-radius: 10px;
+            padding: 1px 6px;
+            white-space: nowrap;
+        }
+        .alert-section-empty-line {
+            color: #27ae60;
+            background: #f4fbf7;
+            border: 1px solid #d8f1e1;
+            border-radius: 8px;
+            padding: 7px 9px;
+            font-size: 11px;
+            font-weight: bold;
+            line-height: 1.2;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .attendance-missing-item {
+            border: 1px solid #ffd8b5;
+            background: #fffaf4;
+            border-radius: 9px;
+            padding: 7px 9px;
+            font-size: 11px;
+            line-height: 1.35;
+        }
+        .attendance-missing-date {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+            font-weight: 900;
+            color: #d35400;
+        }
+        .attendance-missing-day {
+            color: #2c3e50;
+            font-size: 10px;
+            background: #ffffff;
+            border: 1px solid #f5cba7;
+            border-radius: 12px;
+            padding: 1px 6px;
+            white-space: nowrap;
+        }
+        .attendance-missing-subject {
+            margin-top: 3px;
+            color: #555;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .attendance-alert-empty {
+            padding: 22px 10px;
+            color: #27ae60;
+            text-align: center;
+            font-weight: bold;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        .attendance-alert-action {
+            width: 100%;
+            margin-top: 8px;
+            background: #e67e22;
+            color: #fff;
+        }
+        .today-log-action { background: #3498db; }
+        .today-log-action:disabled { background: #a9cce3; cursor: not-allowed; opacity: 0.85; }
+        .eval-alert-action { background: #16a085; }
+        .makeup-alert-action { background: #27ae60; }
+        .consult-alert-action { background: #d35400; }
+        .direct-auth-alert-section .alert-section-count { background: #8e44ad; }
+        .direct-auth-unit-badge {
+            margin-left: 4px;
+            font-size: 10px;
+            font-weight: 800;
+            color: #8e44ad;
+            background: #f8f4fc;
+            border: 1px solid #e8daf5;
+            border-radius: 10px;
+            padding: 1px 6px;
+            white-space: nowrap;
+        }
+        .direct-auth-dday-badge {
+            margin-left: 4px;
+            font-size: 10px;
+            font-weight: 900;
+            color: #8e44ad;
+            background: #f3ebfa;
+            border: 1px solid #e8daf5;
+            border-radius: 10px;
+            padding: 1px 6px;
+            white-space: nowrap;
+        }
+        .direct-auth-alert-action { background: #8e44ad; }
+        .direct-auth-table-wrap {
+            overflow-x: auto;
+            border: 1px solid #eceff1;
+            border-radius: 8px;
+            background: #fff;
+        }
+        .direct-auth-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 9px;
+            min-width: 520px;
+        }
+        .direct-auth-table-compact th,
+        .direct-auth-table-compact td {
+            border: 1px solid #eceff1;
+            padding: 4px 3px;
+            text-align: center;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+        .direct-auth-table-compact th {
+            background: #f8f9fa;
+            font-weight: 800;
+            color: #2c3e50;
+        }
+        .direct-auth-table-compact .direct-auth-reason {
+            text-align: left;
+            max-width: 72px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .direct-auth-empty-line {
+            color: #27ae60;
+            background: #f4fbf7;
+            border: 1px solid #d8f1e1;
+            border-radius: 8px;
+            padding: 7px 9px;
+            font-size: 11px;
+            font-weight: bold;
+            line-height: 1.2;
+        }
+        .direct-auth-more-line {
+            margin-top: 6px;
+            color: #8e44ad;
+            background: #f8f4fc;
+            border: 1px solid #e8daf5;
+            border-radius: 8px;
+            padding: 6px 8px;
+            font-size: 10px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .direct-auth-reason-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            border: 1px solid #e8daf5;
+            background: #f8f4fc;
+            border-radius: 9px;
+            padding: 7px 6px;
+        }
+        .direct-auth-reason-row {
+            display: flex;
+            gap: 4px;
+            align-items: stretch;
+        }
+        .direct-auth-reason-cell {
+            flex: 1 1 0;
+            min-width: 0;
+            text-align: center;
+            border: 1px solid #e8daf5;
+            background: #fff;
+            border-radius: 8px;
+            padding: 4px 2px;
+            font-size: 10px;
+            line-height: 1.25;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .direct-auth-reason-label {
+            font-weight: 800;
+            color: #6c3483;
+            background: #f3ebfa;
+        }
+        .direct-auth-reason-count {
+            font-weight: 900;
+            color: #8e44ad;
+            font-size: 11px;
+            padding: 5px 2px;
+        }
+        
+        /* ============================================================
+           [MOBILE_STYLING] 기존 PC 디자인을 보존하며 모바일 가변 화면 추가
+           작동 원리: 화면 너비가 768px 이하일 때만 기존 설정을 보조함
+           ============================================================ */
+@media (max-width: 768px) {
+    body { padding: 10px; }
+    .container { margin: 10px auto; padding: 15px; min-height: auto; width: 95%; }
+    .main-dashboard-layout { display: block; margin: 10px auto; }
+    .attendance-alert-panel { width: 95%; margin: 0 auto 10px; position: static; }
+    .header { margin-bottom: 5px; border-bottom: 2px solid #3498db; }
+    .header h1 { font-size: 13px; margin: 3px 0; text-align: center; } /* 타이틀만 중앙 배치 */
+    .header-right-group { width: 100%; justify-content: center; margin-top: 4px; }
+    .header-tool-group { width: 100%; justify-content: center; gap: 4px; padding: 4px; }
+    .header-tool-label { display: none; }
+    .header-tool-divider { height: 18px; }
+    .header-tool-btn { padding: 5px 7px; font-size: 9px; flex: 1 1 auto; min-width: 0; }
+    .header-tool-status { width: 100%; text-align: center; }
+    #connectionStatus { position: absolute; top: 12px; right: 10px; font-size: 8px; padding: 1px 4px; } /* 서버 정보를 상단 바로 이동 배치 */
+    .class-info-bar { position: relative; flex-direction: row; justify-content: flex-start; gap: 8px; padding: 5px; margin-bottom: 5px; } /* 한 줄 레이아웃 강제 */
+    .class-info-bar div { font-size: 10px; white-space: nowrap; } /* 글자 줄바꿈 방지 및 크기 축소 */
+    .top-action-grid { grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px; }
+    .section-card { padding: 8px !important; margin-bottom: 0 !important; min-height: auto !important; }
+    .section-card h4 { font-size: 10px !important; margin-top: 0 !important; margin-bottom: 4px !important; color: #555; }
+    .section-card .btn { padding: 4px 2px !important; font-size: 9px !important; min-height: 28px !important; line-height: 1.2; margin-bottom: 2px !important; width: 100%; }
+    .file-upload-label { padding: 4px 2px !important; font-size: 10px !important; min-height: 28px !important; display: flex; align-items: center; justify-content: center; margin-bottom: 3px !important; }
+    #downloadBtn { display: none !important; }
+    #fileStatusBox { display: block !important; }
+    .upload-action-bar { padding: 3px !important; gap: 1px !important; flex-direction: column; border: 1px dashed #ccc; }
+    .upload-action-bar span { font-size: 9px !important; }
+    .upload-action-bar .btn { padding: 2px !important; min-height: 20px !important; font-size: 8px !important; margin-bottom: 1px !important; }
+    .section-card div[style*="flex-direction: column"] { gap: 2px !important; }
+    .section-card h3 { font-size: 9px !important; margin-bottom: 5px !important; }
+    .info-grid { grid-template-columns: 1fr 1fr; gap: 4px !important; margin-top: 5px !important; }
+    .info-item label { font-size: 8px !important; margin-bottom: 1px !important; color: #888; }
+    .info-item input { padding: 2px 5px !important; height: 22px !important; font-size: 9px !important; border-radius: 3px; }
+    .scroll-box { overflow-x: hidden; }
+    .course-table { width: 100% !important; min-width: 100% !important; table-layout: fixed !important; font-size: 9px !important; border-collapse: collapse !important; }
+    .course-table tr { height: 1px !important; }
+    .course-table th:nth-child(1), .course-table td:nth-child(1) { width: 30% !important; }
+    .course-table th:nth-child(2), .course-table td:nth-child(2) { width: 55% !important; }
+    .course-table th:nth-child(6), .course-table td:nth-child(6) { width: 15% !important; display: table-cell !important; }
+.course-table th:nth-child(3), .course-table td:nth-child(3), .course-table th:nth-child(4), .course-table td:nth-child(4), .course-table th:nth-child(5), .course-table td:nth-child(5) { display: none !important; visibility: collapse !important; width: 0 !important; }
+.course-table th, .course-table td { padding: 4px 2px !important; height: 1px !important; overflow: hidden; text-overflow: ellipsis; white-space: normal !important; }
+.sub-item-container, .sub-item-row { display: none !important; height: 0 !important; }
+.subject-cell div { font-size: 9px !important; line-height: 1.1 !important; margin: 1px 0 !important; padding: 0 !important; }
+.course-table td div { display: inline-block !important; font-size: 9px !important; margin-right: 5px !important; vertical-align: middle; }
+.summary-row td:nth-child(3), .summary-row td:nth-child(4), .summary-row td:nth-child(5) { display: none !important; }
+    .summary-row td { position: relative; top: 0; font-size: 9px !important; height: auto !important; }
+    .subject-card .std-table th:nth-child(n+2), .subject-card .std-table td:nth-child(n+2) { display: none !important; }
+    .subject-card .std-table th:nth-child(1), .subject-card .std-table td:nth-child(1) { width: 100% !important; font-size: 13px !important; }
+    /* 📍 [추가 1] 모바일 화면에서 개요 저장 버튼 정밀 축소 */
+    .section-card .btn-green[onclick="saveOverviewOnly()"] { padding: 2px 8px !important; font-size: 9px !important; min-height: 22px !important; width: auto !important; margin-bottom: 0 !important;}
+   /* 📍 [추가 2] 개요 제목과 버튼 사이 간격 조정 */
+   .section-card div[style*="justify-content: space-between"] { margin-bottom: 5px !important; }
+   #uploadGuide, #guideText { display: none !important; } /* 📍 가이드 표 및 텍스트 숨김 처리 */
+
+}</style></head><body style="padding-top: 80px;"><style>/* 🚀 하네스 전용 반응형 압축 엔진 (PC 절반 화면 대응) */
+    #globalMainHarness { flex-wrap: nowrap !important; }
+    #navButtonBank { flex-wrap: nowrap !important; }
+    
+    .nav-btn-global {
+        color: #ffffff;
+        border: none;
+        border-radius: 6px;
+        text-align: center;
+        box-sizing: border-box;
+        transition: 0.3s;
+        cursor: pointer;
+        /* 핵심: 고정 너비를 풀고 유연한 압축 허용 */
+        flex: 1 1 auto; 
+        max-width: 100px;
+        min-width: 45px;
+        padding: 6px 2px !important;
+        font-size: 11px;
+        font-weight: bold;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; /* 공간 부족 시 글자 삐져나옴 방지 */
+        letter-spacing: -0.5px;
+    }
+
+    /* 💻 절반 PC 화면 (약 1100px 이하) 튜닝 */
+    @media (max-width: 1100px) {
+        #globalMainHarness { padding: 8px 10px !important; }
+        #navButtonBank { gap: 4px !important; margin: 0 10px !important; }
+        .nav-btn-global { font-size: 10px !important; letter-spacing: -1px; }
+        #harnessRightBank div { padding: 6px 12px !important; font-size: 13px !important; }
+        #currentClassDisplay { font-size: 15px !important; }
+    }
+
+    /* 📱 스마트폰 모바일 화면 (768px 이하) 튜닝 */
+    @media (max-width: 768px) {
+        #globalMainHarness { flex-wrap: wrap !important; gap: 8px; }
+        #harnessLeftBank { order: 1; flex: 1; }
+        #harnessRightBank { order: 2; flex: 1; display: flex; justify-content: flex-end; }
+        #navButtonBank { order: 3; flex-wrap: wrap !important; width: 100%; margin: 0 !important; }
+        .nav-btn-global { max-width: calc(25% - 4px); font-size: 9px !important; }
+    }</style><div id="globalMainHarness" style="position: fixed; top: 0; left: 0; width: 100%; background: #1a252f; z-index: 9999; padding: 10px 20px; box-sizing: border-box; box-shadow: 0 4px 15px rgba(0,0,0,0.3); border-bottom: 3px solid #e67e22; display: flex; justify-content: space-between; align-items: center;"><div id="harnessLeftBank" style="flex-shrink: 0;"><button class="btn" style="background: transparent; color: #f1c40f; border: 1px solid #f1c40f; width: 90px; padding: 6px 0; font-size: 12px; font-weight: bold; box-sizing: border-box; cursor: pointer;" onclick='location.href="select_class.html"'>◀ 반 선택</button></div><div id="navButtonBank" style="display: flex; justify-content: center; gap: 6px; flex-grow: 1; margin: 0 15px;"><button class="nav-btn-global" style="background: #3498db;" onclick='location.href=classNavHref("index1.html")'>🏠 메인화면</button> <button class="nav-btn-global" style="background: #e67e22;" onclick='location.href=classNavHref("일일출석부.html")'>📅 일일출석부</button> <button class="nav-btn-global" style="background: #27ae60;" onclick='location.href=classNavHref("능력단위시간표.html")'>📊 출석률/보강</button> <button class="nav-btn-global" style="background: #8e44ad;" onclick='location.href=classNavHref("단위개월출석부.html")'>📈 단위출석부</button> <button class="nav-btn-global" style="background: #2c3e50;" onclick='location.href=classNavHref("평가계획서.html")'>📄 시작서류</button> <button class="nav-btn-global" style="background: #16a085;" onclick='location.href=classNavHref("../평가지/평가지.html")'>📋 내부평가</button> <button class="nav-btn-global" style="background: #d35400;" onclick='location.href=classNavHref("상담일지.html")'>🤝 상담일지</button></div><div id="harnessRightBank" style="flex-shrink: 0;"><div style="background: #000000; color: #f1c40f; padding: 8px 22px; border-radius: 6px; border: 2px solid #f1c40f; font-weight: 900; font-size: 16px; box-shadow: 0 0 12px rgba(241, 196, 15, 0.8); white-space: nowrap; letter-spacing: 1px;"><span style="color: #ffffff; font-size: 14px; margin-right: 5px;">▶ 현재 학급:</span> <span id="currentClassDisplay" style="font-size: 19px; text-shadow: 0 0 5px #f1c40f;">로딩 중...</span></div></div><script>setTimeout(()=>{let t=decodeURIComponent(window.location.pathname.split("/").pop())||"index1.html";document.querySelectorAll("#navButtonBank .nav-btn-global").forEach(e=>{(e.getAttribute("onclick")||"").includes(t)?(e.style.border="2px solid #f1c40f",e.style.boxShadow="0 0 12px rgba(241, 196, 15, 1)",e.style.transform="scale(1.08)",e.style.fontWeight="bold",e.style.filter="brightness(1.2)"):(e.style.border="none",e.style.boxShadow="none",e.style.transform="scale(1)",e.style.fontWeight="normal",e.style.filter="none"),e.style.opacity="1"})},50)</script></div><div class="main-dashboard-layout"><div class="container"><div class="header" style="position: relative;"><h1>🚗 부산자동차직교 통합 시스템</h1><div id="headerRightGroup" class="header-right-group"><div class="header-tool-group"><span class="header-tool-label">훈련생</span> <button type="button" id="btnCopyStudentLink" class="header-tool-btn header-tool-btn-primary">📋 배포 링크 복사</button> <button type="button" id="btnReissueStudentLink" class="header-tool-btn header-tool-btn-outline">🔗 재발급</button> <button type="button" id="btnNavStudentViewer" class="header-tool-btn header-tool-btn-primary">👁 미리보기</button> <span class="header-tool-divider" aria-hidden="true"></span> <button type="button" id="btnNavContacts" class="header-tool-btn header-tool-btn-contact" onclick='location.href=classNavHref("연락처.html")'>📇 연락처</button></div><span id="studentLinkStatus" class="header-tool-status"></span><div id="connectionStatus">⏳ 연결 확인 중...</div></div></div><div class="top-action-grid"><div class="section-card" style="border-top: 4px solid #3498db;"><div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; gap: 15px;"><h4 style="margin: 0; white-space: nowrap;">📅 시간표 및 RD 등록</h4><div id="uploadGuide" style="flex-grow: 1; max-width: 650px; overflow-x: auto; font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;"><table id="excelGuideTable" style="width: 100%; border-collapse: collapse; font-size: 8px; table-layout: fixed; border: 1px solid #dee2e6;"><tr style="background: #f8f9fa; height: 20px;"><td style="border: 1px solid #dee2e6; text-align: center; font-weight: bold;">일수</td><td style="border: 1px solid #dee2e6; text-align: center; font-weight: bold;">날짜</td><td style="border: 1px solid #dee2e6; text-align: center; font-weight: bold;">요일</td><td style="border: 1px solid #dee2e6; text-align: center; font-weight: bold;">교시</td><td style="border: 1px solid #dee2e6; text-align: center; font-weight: bold;">훈련시간</td><td style="border: 1px solid #dee2e6; text-align: center; font-weight: bold;">교과목</td><td style="border: 1px solid #dee2e6; text-align: center; font-weight: bold;">능력단위명</td><td style="border: 1px solid #dee2e6; text-align: center; font-weight: bold;">세부교과</td><td style="border: 1px solid #dee2e6; text-align: center; font-weight: bold;">훈련교사</td><td style="border: 1px solid #dee2e6; text-align: center; font-weight: bold;">훈련장소</td></tr></table></div></div><div style="display: flex; flex-direction: column; gap: 10px;"><div class="file-upload-wrapper"><button type="button" id="btnPickTimetable" class="file-upload-label panel-item panel-btn">📁 시간표 등록 (Excel)</button> <input type="file" id="timetableFile" accept=".xlsx, .xls"></div><div class="file-upload-wrapper"><label for="rdExcelFile" class="file-upload-label panel-item panel-btn" style="background:#8e44ad; border-color:#732d91;">📊 훈련기준 등록 (RD Excel)</label> <input type="file" id="rdExcelFile" accept=".xlsx, .xls, .csv" style="position:absolute; left:0; top:0; opacity:0; width:100%; height:100%; cursor:pointer;"></div><div id="rdStatusBox" class="panel-item" style="display: none; padding: 6px 8px; background: #f5eef8; border: 1px dashed #8e44ad; border-radius: 8px; font-size: 11px; color: #6c3483; font-weight: bold; text-align: center;">✅ 훈련기준(RD) 업로드 완료<br><span id="rdFileName" style="color:#e67e22; font-size:10px;"></span></div><div id="fileStatusBox" style="display: none;"><div class="upload-action-bar panel-item"><span style="font-size: 12px; color: #2c3e50; font-weight: bold;">📄 파일: <span id="savedFileName">-</span></span> <button id="btnConfirmTimetableSave" class="btn btn-green" style="padding: 5px 10px; font-size: 11px;">💾 서버 확정 저장</button> <button id="btnDeleteTimetable" class="btn btn-red" style="padding: 5px 10px; font-size: 11px;">❌ 전체 삭제</button></div></div><button id="downloadBtn" class="btn btn-blue panel-item panel-btn" style="display:none; width: 100%;">📥 등록된 시간표 다운</button></div></div><div class="section-card" style="border-top: 4px solid #27ae60;"><h4 style="margin-top:0;">📝 출결 관리 및 분석</h4><div style="display: flex; flex-direction: column; gap: 10px;"><button id="btnNavDaily" class="btn btn-orange panel-item panel-btn">📅 일일출석부 등록(매일 엑셀시간표 등록)</button> <button id="btnNavUnit" class="btn btn-green panel-item panel-btn">📊 능력단위별출석부+평가일정+주차별출석+보강수업</button> <button id="btnNavMonth" class="btn btn-purple panel-item panel-btn">📈 단위개월 출석부</button> <button id="btnNavEvalPlan" class="btn btn-blue panel-item panel-btn" style="background: #2c3e50;">📄 사전평가계획서+평가계획서+필수/선택수정 엑셀다운</button> <button id="btnNavEval" class="btn btn-blue panel-item panel-btn" style="background: #16a085;">📋 내부평가지+최종결과표+개인내부평가표</button> <button id="btnNavConsult" class="btn btn-blue panel-item panel-btn" style="background: #d35400;">🤝 학생별 상담일지</button></div></div></div><div class="section-card"><div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;"><h3 style="margin:0;">📋 훈련 과정 개요</h3><button id="btnSaveOverview" class="btn btn-green" style="padding: 5px 15px;">💾 개요 정보만 저장</button></div><div class="info-grid"><div class="info-item"><label>훈련명</label><input type="text" id="trainingName"></div><div class="info-item"><label>훈련기간</label><input type="text" id="trainingPeriod"></div><div class="info-item"><label>총 일수</label><input type="text" id="totalDays" readonly="readonly" style="background:#f8f9fa;"></div><div class="info-item"><label>담당교사</label><input type="text" id="teacherName" style="background:#fff;"></div></div></div><div class="section-card"><div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;"><h3>📂 교과목 상세 현황</h3><div style="display: flex; gap: 8px;"></div></div><div class="scroll-box"><table class="course-table"><thead><tr><th width="15%">교과목</th><th width="20%">능력단위명</th><th width="12%">RD코드</th><th width="33%">세부교과 및 이론/실기</th><th width="10%">시간(h)</th><th width="10%">총 시간</th></tr></thead><tbody id="courseTableBody"></tbody></table></div></div></div><aside class="attendance-alert-panel" id="attendanceAlertPanel"><div class="attendance-alert-head"><div class="attendance-alert-title"><span>📌 알림 센터</span> <span class="attendance-alert-count" id="attendanceAlertCount">0</span></div><div class="attendance-alert-summary" id="attendanceAlertSummary">오늘 이전 날짜의 출석부와 평가완료 상태를 확인합니다.</div></div><div class="attendance-alert-body"><div class="alert-section today-log-section"><div class="alert-section-header"><span>📚 오늘시간표</span> <span class="alert-section-count" id="todayLogDateBadge">오늘</span></div><div class="attendance-missing-list" id="todayLogSummary" style="max-height: none;"><div class="alert-section-empty-line today-log-summary-line">오늘 수업 정보 확인 중...</div></div><button id="btnOpenTodayTrainingLog" class="btn attendance-alert-action today-log-action">오늘수업내용 보기</button></div><div class="alert-section attendance-alert-section"><div class="alert-section-header"><span>📅 일일출석부 알림</span> <span class="alert-section-count" id="attendanceSectionCount">0</span></div><div class="attendance-missing-list" id="attendanceMissingList"><div class="alert-section-empty-line">데이터 확인 중...</div></div><button id="btnOpenDailyAttendanceAlert" class="btn attendance-alert-action">미등록 출석부 이동</button></div><div class="alert-section eval-alert-section"><div class="alert-section-header"><span>📋 평가지 알림<span class="eval-next-date" id="evalNextDateLabel"></span><span class="eval-dday-badge" id="evalDdayLabel"></span></span> <span class="alert-section-count" id="evalSectionCount">0</span></div><div class="attendance-missing-list" id="evalMissingList"><div class="alert-section-empty-line">데이터 확인 중...</div></div><button id="btnOpenEvalAlert" class="btn attendance-alert-action eval-alert-action">평가지로 이동</button></div><div class="alert-section makeup-alert-section"><div class="alert-section-header"><span>📚 보강수업 알림</span> <span class="alert-section-count" id="makeupSectionCount">0</span></div><div class="attendance-missing-list" id="makeupMissingList"><div class="alert-section-empty-line">데이터 확인 중...</div></div><button id="btnOpenMakeupAlert" class="btn attendance-alert-action makeup-alert-action">보강수업으로 이동</button></div><div class="alert-section consult-alert-section"><div class="alert-section-header"><span>🤝 상담일지 알림<span class="consult-unit-badge" id="consultUnitLabel"></span><span class="consult-dday-badge" id="consultDdayLabel"></span></span> <span class="alert-section-count" id="consultSectionCount">0</span></div><div class="attendance-missing-list" id="consultMissingList"><div class="alert-section-empty-line">데이터 확인 중...</div></div><button id="btnOpenConsultAlert" class="btn attendance-alert-action consult-alert-action">상담일지로 이동</button></div><div class="alert-section direct-auth-alert-section"><div class="alert-section-header"><span>📋 이번달 직권 신청<span class="direct-auth-unit-badge" id="directAuthUnitLabel"></span><span class="direct-auth-dday-badge" id="directAuthDdayLabel"></span></span> <span class="alert-section-count" id="directAuthSectionCount">0</span></div><div class="attendance-missing-list" id="directAuthList" style="max-height: none;"><div class="alert-section-empty-line">데이터 확인 중...</div></div><button id="btnOpenDirectAuthAlert" class="btn attendance-alert-action direct-auth-alert-action">직권신청 전체보기</button></div></div></aside></div><link rel="stylesheet" href="../common-dialog.css"><script src="../common-dialog.js"></script><script src="../common-class-db.js"></script><script src="../common-training-log.js"></script><script src="직권신청.js"></script><script src="index1.js"></script></body></html>

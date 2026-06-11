@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#e8f4f8"/>
+  <rect x="40" y="40" width="720" height="420" rx="12" fill="#fff" stroke="#0077b6" stroke-width="4" stroke-dasharray="12 8"/>
+  <text x="400" y="200" text-anchor="middle" font-family="Malgun Gothic,sans-serif" font-size="28" font-weight="700" fill="#003049">08-tire-coin.jpg</text>
+  <text x="400" y="250" text-anchor="middle" font-family="Malgun Gothic,sans-serif" font-size="22" fill="#415a77">100Ð Ù Àt´ H Ux</text>
+</svg>

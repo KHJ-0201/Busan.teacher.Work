@@ -1,0 +1,116 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>단위개월별 직권 신청 | 자동차 교육과정 통합 시스템</title><script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script><script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script><script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script><style>body { font-family: 'Malgun Gothic', sans-serif; background: #f4f7f6; margin: 0; padding: 20px; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; background: #fff; padding: 28px 32px; border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+        .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid #8e44ad; padding-bottom: 14px; margin-bottom: 18px; gap: 12px; flex-wrap: wrap; }
+        .header h1 { margin: 0; font-size: 22px; color: #2c3e50; }
+        .btn-nav { padding: 8px 14px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 13px; border: 1px solid #ddd; background: #fff; color: #444; }
+        .info-bar {
+            background: #f8f4fc;
+            border: 1px solid #e8daf5;
+            border-radius: 10px;
+            padding: 10px 14px;
+            margin-bottom: 16px;
+        }
+        .info-bar strong { color: #8e44ad; }
+        .info-bar-grid {
+            display: grid;
+            gap: 5px 6px;
+            align-items: stretch;
+            width: 100%;
+        }
+        .info-bar-meta-cell {
+            font-size: 13px;
+            font-weight: 700;
+            color: #2c3e50;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            padding-right: 10px;
+        }
+        .info-bar-meta-cell .summary-total-label {
+            color: #6c3483;
+            margin-right: 6px;
+        }
+        .info-bar-meta-cell .summary-total-count {
+            color: #8e44ad;
+            font-size: 15px;
+            font-weight: 900;
+        }
+        .direct-auth-reason-cell {
+            text-align: center;
+            border: 1px solid #e8daf5;
+            background: #fff;
+            border-radius: 8px;
+            padding: 5px 4px;
+            font-size: 11px;
+            line-height: 1.25;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            box-sizing: border-box;
+        }
+        .direct-auth-reason-label {
+            font-weight: 800;
+            color: #6c3483;
+            background: #f3ebfa;
+        }
+        .direct-auth-reason-count {
+            font-weight: 900;
+            color: #8e44ad;
+            font-size: 12px;
+        }
+        .direct-auth-table-wrap { overflow-x: auto; border: 1px solid #e5e7eb; border-radius: 10px; }
+        .direct-auth-table { width: 100%; border-collapse: collapse; font-size: 12px; min-width: 860px; }
+        .direct-auth-table th, .direct-auth-table td { border: 1px solid #eceff1; padding: 8px 6px; text-align: center; vertical-align: middle; }
+        .direct-auth-table th { background: #f8f9fa; font-weight: 800; color: #2c3e50; position: sticky; top: 0; }
+        .direct-auth-table tbody tr:nth-child(even) { background: #fcfcfd; }
+        .direct-auth-reason { text-align: left; max-width: 220px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .direct-auth-empty-line { color: #27ae60; background: #f4fbf7; border: 1px solid #d8f1e1; border-radius: 8px; padding: 18px; font-size: 13px; font-weight: bold; text-align: center; }
+        .direct-auth-reason-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .direct-auth-reason-row {
+            display: flex;
+            gap: 4px;
+            align-items: stretch;
+        }
+        .unit-select-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+        .unit-select-btn {
+            border: 1px solid #e8daf5;
+            background: #fff;
+            color: #6c3483;
+            border-radius: 999px;
+            padding: 7px 14px;
+            font-size: 12px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .unit-select-btn:hover {
+            background: #f8f4fc;
+            border-color: #d7bde2;
+        }
+        .unit-select-btn.active {
+            background: #8e44ad;
+            border-color: #8e44ad;
+            color: #fff;
+            box-shadow: 0 4px 10px rgba(142, 68, 173, 0.25);
+        }
+        .unit-select-btn.past {
+            color: #7f8c8d;
+        }
+        .unit-select-btn.past.active {
+            color: #fff;
+        }
+        .unit-select-hint {
+            width: 100%;
+            font-size: 11px;
+            color: #7f8c8d;
+            margin-top: -2px;
+        }</style></head><body><div class="container"><div class="header"><h1 id="directAuthPageTitle">단위개월별 직권 신청</h1><div style="display:flex; gap:8px; flex-wrap:wrap;"><a href="#" id="btn_nav_main" class="btn-nav">🏠 메인화면</a> <a href="#" id="btn_nav_daily" class="btn-nav">📅 일일출석부</a></div></div><div class="unit-select-bar" id="directAuthUnitSelectBar"><div class="unit-select-hint">단위개월을 선택하면 해당 기간 직권 신청 내역을 볼 수 있습니다.</div></div><div class="info-bar"><div id="directAuthInfoGrid" class="info-bar-grid"><div class="info-bar-meta-cell"><strong>단위기간</strong> <span id="directAuthPeriodLabel">확인 중...</span></div><div class="info-bar-meta-cell"><span class="summary-total-label">총 신청</span> <span class="summary-total-count" id="directAuthPageCount">0</span></div></div></div><div id="directAuthTableArea"><div class="direct-auth-empty-line">데이터 확인 중...</div></div></div><link rel="stylesheet" href="../common-dialog.css"><script src="../common-dialog.js"></script><script src="../common-class-db.js"></script><script src="직권신청.js"></script><script>let storedConfig=localStorage.getItem("firebaseConfig"),firebaseConfig=storedConfig?JSON.parse(storedConfig):{apiKey:"AIzaSyCO37zrsZEjKTokMCNWbIc1C_o5BZMqh8E",databaseURL:"https://busan-teacher-work-default-rtdb.asia-southeast1.firebasedatabase.app",projectId:"busan-teacher-work"},auth=(firebase.apps.length||firebase.initializeApp(firebaseConfig),firebase.auth());initClassContext(),auth.onAuthStateChanged(async e=>{var a=localStorage.getItem("adminPw");e?DirectAuthAPI.initStandalonePage():a?auth.signInWithEmailAndPassword("ghlwns0201@naver.com",a).catch(async()=>{await appAlert("인증 정보가 만료되었습니다. 다시 로그인해주세요."),location.href="../index.html"}):(await appAlert("보안 인증이 필요한 페이지입니다."),location.href="../index.html")}),document.getElementById("btn_nav_main").addEventListener("click",e=>{e.preventDefault(),location.href=classNavHref("index1.html")}),document.getElementById("btn_nav_daily").addEventListener("click",e=>{e.preventDefault(),location.href=classNavHref("일일출석부.html")})</script></body></html>

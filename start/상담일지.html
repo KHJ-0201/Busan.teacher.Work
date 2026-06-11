@@ -1,0 +1,168 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>학생별 상담일지 시스템</title><script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script><script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script><script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script><style>body { font-family: 'Malgun Gothic', sans-serif; background-color: #f8f9fa; margin: 0; padding: 20px; color: #333; }
+
+/* 📍 3단 패널을 모두 품기 위해 메인 컨테이너 너비 확장 */
+.container { max-width: 1500px; margin: 0 auto; background: white; padding: 20px 30px; border-radius: 12px; box-shadow: 0 5px 25px rgba(0,0,0,0.05); position: relative; }
+.header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #2980b9; padding: 0 0 8px 0; margin-bottom: 15px; }
+.header-btns { display: flex; gap: 10px; }
+.btn-nav { padding: 8px 16px; border-radius: 6px; cursor: pointer; text-decoration: none; font-weight: bold; font-size: 13px; transition: 0.2s; border: 1px solid #ddd; background: #fff; color: #444; }
+.tab-btn.active { background: #2980b9; color: white; border-color: #2980b9; box-shadow: 0 4px 10px rgba(41, 128, 185, 0.2); }
+
+/* 📍 [2단 분할 엔진] 우측 날개를 좌측으로 통합하고 중앙을 넓게 씁니다 */
+.log-layout { 
+    display: flex; 
+    gap: 20px; 
+    align-items: flex-start; 
+}
+
+/* 📍 좌측 통합 패널 (명단 + 요약달력) */
+.left-panel {
+    width: 270px; /* 명단과 달력이 넉넉히 들어갈 너비 */
+    flex-shrink: 0;
+    position: sticky; top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-height: 90vh; /* 뷰포트 높이에 맞춤 */
+}
+
+/* 📍 메인(우측) 작업 공간 (남은 공간 100% 독식) */
+.right-panel {
+    flex-grow: 1;
+    min-width: 0; /* Flex 넘침 버그 방지 관절 */
+    display: flex;
+    flex-direction: column;
+}
+
+/* 좌측 내부: 학생 명단 */
+.student-list { 
+    width: 100%; border: 1px solid #e1e8ed; border-radius: 8px; overflow: hidden; 
+    background: #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.05); z-index: 1000; 
+    flex: 1; /* 남은 높이를 모두 차지하되... */
+    overflow-y: auto; 
+    max-height: 55vh; /* ...요약 달력을 위해 하단 공간을 양보합니다 */
+}
+
+/* 좌측 내부: 요약 달력 */
+.summary-panel { 
+    width: 100%; background: #fff; border: 1px solid #e1e8ed; border-radius: 8px; padding: 15px; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); z-index: 1000; box-sizing: border-box;
+    flex-shrink: 0; /* 요약 달력이 찌그러지지 않도록 방어 */
+}
+
+/* 📱 반응형 1단계: 태블릿 및 좁은 PC 화면 (1100px 이하) */
+@media (max-width: 1100px) {
+    .log-layout { 
+        flex-direction: column; 
+        align-items: stretch; /* 📍 내용물이 적어도 상자를 가로 끝까지 팽팽하게 당김 */
+    }
+    
+    .left-panel { 
+        width: 100%; 
+        position: relative; 
+        top: 0; 
+        max-height: none; 
+        flex-direction: row; 
+        align-items: stretch; 
+    }
+    
+    /* 📍 우측 메인 작업 공간이 내용물에 맞춰 찌그러지지 않고 100% 너비를 꽉 채우도록 강제 배선 */
+    .right-panel {
+        width: 100%; 
+        box-sizing: border-box;
+    }
+    
+    .student-list { 
+        flex: 1; 
+        max-height: 350px; 
+    }
+    
+    .summary-panel { 
+        flex: 1; 
+        width: auto; 
+        overflow-x: auto; 
+    }
+}
+
+/* 📱 반응형 2단계: 스마트폰 화면 (768px 이하) */
+@media (max-width: 768px) {
+    .left-panel {
+        gap: 10px; 
+    }
+    
+    .form-panel div[style*="display: grid"] {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+    }
+}
+
+.form-panel { background: #fff; border: 1px solid #e1e8ed; border-radius: 8px; padding: 20px; box-shadow: inset 0 0 10px rgba(0,0,0,0.02); }
+.dashboard-panel { background: #fff; border: 1px solid #e1e8ed; border-radius: 8px; padding: 20px; box-shadow: inset 0 0 10px rgba(0,0,0,0.02); margin-bottom: 15px; }
+.tab-menu { display: flex; gap: 8px; margin-bottom: 15px; overflow-x: auto; padding-bottom: 5px; }
+.tab-btn { padding: 6px 12px; cursor: pointer; border: 1px solid #ddd; background: #fff; border-radius: 6px; font-weight: bold; font-size: 12px; white-space: nowrap; color: #666; }
+.tab-btn-main { background: #f0f9ff; border-color: #bae6fd; color: #0369a1; }
+.tab-btn-main.active { background: #0ea5e9; color: white; border-color: #0ea5e9; box-shadow: 0 4px 10px rgba(14, 165, 233, 0.25); }
+.student-item { padding: 8px 12px; border-bottom: 1px solid #e1e8ed; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 12px; transition: background 0.2s; }
+.student-item:hover { background: #f1f5f9; }
+.student-item.active { background: #ebf5ff; border-left: 4px solid #3498db; font-weight: bold; }
+.status-badge { font-size: 10px; padding: 2px 6px; border-radius: 4px; background: #e2e8f0; color: #475569; }
+.status-badge.done { background: #dcfce7; color: #166534; }
+.status-badge.done-multi { background: #ede9fe; color: #6d28d9; font-weight: bold; }
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; font-size: 12px; font-weight: bold; color: #475569; margin-bottom: 5px; }
+.form-control { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-family: 'Malgun Gothic', sans-serif; font-size: 13px; box-sizing: border-box; transition: background-color 0.2s; }
+textarea.form-control { resize: vertical; min-height: 120px; line-height: 1.5; }
+textarea[readonly], input.form-control[readonly] { background-color: #f8fafc; cursor: pointer; border-style: dashed; }
+textarea[readonly]:hover, input.form-control[readonly]:hover { background-color: #e2e8f0; }
+.btn-edit { background: none; border: 1px solid #cbd5e1; border-radius: 4px; padding: 3px 8px; font-size: 10px; cursor: pointer; color: #334155; font-weight: bold; transition: 0.2s; }
+.btn-edit:hover { background: #f1f5f9; border-color: #94a3b8; }
+.btn-save { background: #27ae60; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; font-weight: bold; width: 100%; font-size: 14px; margin-top: 10px; }
+.btn-save:hover { background: #219653; }
+.guide-text { font-size: 11px; color: #94a3b8; margin-top: 5px; display: block; }
+.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; text-align: center; margin-top: 5px; }
+.cal-header { font-size: 9px; font-weight: bold; color: #64748b; padding-bottom: 3px; border-bottom: 1px solid #cbd5e1; }
+.cal-day { padding: 2px 0; font-size: 9px; border-radius: 4px; border: 1px solid #e2e8f0; background: #f1f5f9; color: #94a3b8; cursor: not-allowed; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 28px; }
+.cal-day.active { background: #fff; color: #334155; border-color: #cbd5e1; cursor: pointer; font-weight: bold; transition: 0.2s; }
+.cal-day.active:hover { background: #e0f2fe; border-color: #7dd3fc; }
+.cal-day.selected { background: #3498db; color: #fff; border-color: #3498db; }
+.cal-status { font-size: 9px; line-height: 1; margin-top: 1px; }</style></head><body style="padding-top: 80px;"><style>/* 🚀 하네스 전용 반응형 압축 엔진 (PC 절반 화면 대응) */
+    #globalMainHarness { flex-wrap: nowrap !important; }
+    #navButtonBank { flex-wrap: nowrap !important; }
+    
+    .nav-btn-global {
+        color: #ffffff;
+        border: none;
+        border-radius: 6px;
+        text-align: center;
+        box-sizing: border-box;
+        transition: 0.3s;
+        cursor: pointer;
+        /* 핵심: 고정 너비를 풀고 유연한 압축 허용 */
+        flex: 1 1 auto; 
+        max-width: 100px;
+        min-width: 45px;
+        padding: 6px 2px !important;
+        font-size: 11px;
+        font-weight: bold;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; /* 공간 부족 시 글자 삐져나옴 방지 */
+        letter-spacing: -0.5px;
+    }
+
+    /* 💻 절반 PC 화면 (약 1100px 이하) 튜닝 */
+    @media (max-width: 1100px) {
+        #globalMainHarness { padding: 8px 10px !important; }
+        #navButtonBank { gap: 4px !important; margin: 0 10px !important; }
+        .nav-btn-global { font-size: 10px !important; letter-spacing: -1px; }
+        #harnessRightBank div { padding: 6px 12px !important; font-size: 13px !important; }
+        #currentClassDisplay { font-size: 15px !important; }
+    }
+
+    /* 📱 스마트폰 모바일 화면 (768px 이하) 튜닝 */
+    @media (max-width: 768px) {
+        #globalMainHarness { flex-wrap: wrap !important; gap: 8px; }
+        #harnessLeftBank { order: 1; flex: 1; }
+        #harnessRightBank { order: 2; flex: 1; display: flex; justify-content: flex-end; }
+        #navButtonBank { order: 3; flex-wrap: wrap !important; width: 100%; margin: 0 !important; }
+        .nav-btn-global { max-width: calc(25% - 4px); font-size: 9px !important; }
+    }</style><div id="globalMainHarness" style="position: fixed; top: 0; left: 0; width: 100%; background: #1a252f; z-index: 9999; padding: 10px 20px; box-sizing: border-box; box-shadow: 0 4px 15px rgba(0,0,0,0.3); border-bottom: 3px solid #e67e22; display: flex; justify-content: space-between; align-items: center;"><div id="harnessLeftBank" style="flex-shrink: 0;"><button class="btn" style="background: transparent; color: #f1c40f; border: 1px solid #f1c40f; width: 90px; padding: 6px 0; font-size: 12px; font-weight: bold; box-sizing: border-box; cursor: pointer;" onclick='location.href="select_class.html"'>◀ 반 선택</button></div><div id="navButtonBank" style="display: flex; justify-content: center; gap: 6px; flex-grow: 1; margin: 0 15px;"><button class="nav-btn-global" style="background: #3498db;" onclick='location.href=classNavHref("index1.html")'>🏠 메인화면</button> <button class="nav-btn-global" style="background: #e67e22;" onclick='location.href=classNavHref("일일출석부.html")'>📅 일일출석부</button> <button class="nav-btn-global" style="background: #27ae60;" onclick='location.href=classNavHref("능력단위시간표.html")'>📊 출석률/보강</button> <button class="nav-btn-global" style="background: #8e44ad;" onclick='location.href=classNavHref("단위개월출석부.html")'>📈 단위출석부</button> <button class="nav-btn-global" style="background: #2c3e50;" onclick='location.href=classNavHref("평가계획서.html")'>📄 시작서류</button> <button class="nav-btn-global" style="background: #16a085;" onclick='location.href=classNavHref("../평가지/평가지.html")'>📋 내부평가</button> <button class="nav-btn-global" style="background: #d35400;" onclick='location.href=classNavHref("상담일지.html")'>🤝 상담일지</button></div><div id="harnessRightBank" style="flex-shrink: 0;"><div style="background: #000000; color: #f1c40f; padding: 8px 22px; border-radius: 6px; border: 2px solid #f1c40f; font-weight: 900; font-size: 16px; box-shadow: 0 0 12px rgba(241, 196, 15, 0.8); white-space: nowrap; letter-spacing: 1px;"><span style="color: #ffffff; font-size: 14px; margin-right: 5px;">▶ 현재 학급:</span> <span id="currentClassDisplay" style="font-size: 19px; text-shadow: 0 0 5px #f1c40f;">로딩 중...</span></div></div><script>setTimeout(()=>{let t=decodeURIComponent(window.location.pathname.split("/").pop())||"index1.html";document.querySelectorAll("#navButtonBank .nav-btn-global").forEach(e=>{(e.getAttribute("onclick")||"").includes(t)?(e.style.border="2px solid #f1c40f",e.style.boxShadow="0 0 12px rgba(241, 196, 15, 1)",e.style.transform="scale(1.08)",e.style.fontWeight="bold",e.style.filter="brightness(1.2)"):(e.style.border="none",e.style.boxShadow="none",e.style.transform="scale(1)",e.style.fontWeight="normal",e.style.filter="none"),e.style.opacity="1"})},50)</script></div><div class="container"><div class="header"><h2 style="margin:0; color:#1e293b; font-size: 22px;">🤝 학생별 상담일지</h2><div class="header-btns" style="display: none;"><a href="#" id="btn_nav_month" class="btn-nav">📊 단위개월 분석</a> <a href="#" id="btn_nav_main" class="btn-nav">◀ 메인으로</a></div></div><div class="log-layout"><div class="left-panel"><div class="student-list" id="studentList"><div style="padding: 20px; text-align: center; color: #94a3b8; font-size: 12px;">데이터를 불러오는 중입니다...</div></div><div class="summary-panel" id="summaryPanel" style="display: none;"><h3 style="margin-top: 0; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px; color: #0f172a; font-size: 15px;">📊 단위개월 상담일 중복 횟수</h3><div id="summaryCalendarArea" style="border:1px solid #e1e8ed; border-radius:8px; padding:10px; background:#f8fafc; margin-top:5px;"></div></div></div><div class="right-panel"><div class="tab-menu" id="tabMenu"></div><div class="dashboard-panel" id="dashboardPanel" style="display: none;"></div><div class="form-panel" id="formPanel" style="display: none;"><h3 id="formTitle" style="margin-top: 0; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px; color: #0f172a;">학생을 선택하세요</h3><div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;"><div style="background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e1e8ed;"><div class="form-group" style="margin-bottom: 20px;"><label>상담일자 <span style="color:#2980b9; font-weight:normal; margin-left:5px;">(달력을 눌러 여러 날짜 선택/해제 가능)</span></label><div id="calendarArea" style="border:1px solid #cbd5e1; border-radius:8px; padding:10px; background:#fff; margin-top:5px;"></div></div><button id="btn_save_log" class="btn-save" style="margin-top: 10px; height: 50px; font-size: 16px;">💾 선택된 날짜 기록 저장</button><p style="color: #94a3b8; font-size: 11px; text-align: center; margin-top: 10px;">※ 하단의 저장 버튼을 눌러야 최종 반영됩니다.</p></div><div id="dynamicFormsArea" style="display: flex; flex-direction: column; gap: 15px; max-height: 600px; overflow-y: auto; padding-right: 5px;"></div></div></div></div></div><div class="summary-panel" id="summaryPanel" style="display: none;"><h3 style="margin-top: 0; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px; color: #0f172a; font-size: 15px;">📊 단위개월 상담일 중복 횟수</h3><div id="summaryCalendarArea" style="border:1px solid #e1e8ed; border-radius:8px; padding:10px; background:#f8fafc; margin-top:5px;"></div></div></div><link rel="stylesheet" href="../common-dialog.css"><script src="../common-dialog.js"></script><script src="../common-class-db.js"></script><script src="상담일지조치.js?v=1"></script><script src="상담일지.js?v=1"></script></body></html>
