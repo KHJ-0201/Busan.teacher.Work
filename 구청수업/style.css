@@ -3041,3 +3041,81 @@ html.pdf-capturing .slide-inner {
   max-height: none !important;
   box-shadow: none !important;
 }
+
+/* 슬라이드 사진 — 클릭 시 확대 */
+.deck .slide img.img-zoomable {
+  cursor: zoom-in;
+}
+
+html.text-edit-on .deck .slide img.img-zoomable {
+  cursor: default;
+}
+
+.img-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 300000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.9);
+  box-sizing: border-box;
+}
+
+.img-lightbox[hidden] {
+  display: none !important;
+}
+
+.img-lightbox-photo {
+  width: 85vw;
+  height: 85vh;
+  max-width: 85vw;
+  max-height: 85vh;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 8px;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.55);
+  pointer-events: none;
+  user-select: none;
+}
+
+.img-lightbox-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 16px;
+  margin: 0;
+  padding: 0 24px;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 1rem;
+  text-align: center;
+  pointer-events: none;
+}
+
+.img-lightbox-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.img-lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+body.img-lightbox-open {
+  overflow: hidden;
+}
+
+html.pdf-capturing .img-lightbox {
+  display: none !important;
+}
