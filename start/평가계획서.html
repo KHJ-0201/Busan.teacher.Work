@@ -103,10 +103,10 @@
 
         /* 7. 세부 항목 컨테이너 숨김 (index.html 정책 계승) */
         .sub-item-container, .sub-item-row { display: none !important; height: 0 !important; }
-    }</style></head><body style="padding-top: 80px;"><style>/* 🚀 하네스 전용 반응형 압축 엔진 (PC 절반 화면 대응) */
+    }</style></head><body style="padding-top: 80px;"><style>/* 🚀 하네스 레이아웃 (PC 버튼 크기·여백은 common-harness.css) */
     #globalMainHarness { flex-wrap: nowrap !important; }
     #navButtonBank { flex-wrap: nowrap !important; }
-    
+
     .nav-btn-global {
         color: #ffffff;
         border: none;
@@ -115,24 +115,17 @@
         box-sizing: border-box;
         transition: 0.3s;
         cursor: pointer;
-        /* 핵심: 고정 너비를 풀고 유연한 압축 허용 */
-        flex: 1 1 auto; 
-        max-width: 100px;
-        min-width: 45px;
-        padding: 6px 2px !important;
-        font-size: 11px;
+        flex: 1 1 auto;
         font-weight: bold;
         white-space: nowrap;
         overflow: hidden;
-        text-overflow: ellipsis; /* 공간 부족 시 글자 삐져나옴 방지 */
-        letter-spacing: -0.5px;
+        text-overflow: ellipsis;
     }
 
-    /* 💻 절반 PC 화면 (약 1100px 이하) 튜닝 */
-    @media (max-width: 1100px) {
+    /* 💻 절반 PC (769~1100px) — 하네스 패딩·HUD만 */
+    @media (max-width: 1100px) and (min-width: 769px) {
         #globalMainHarness { padding: 8px 10px !important; }
         #navButtonBank { gap: 4px !important; margin: 0 10px !important; }
-        .nav-btn-global { font-size: 10px !important; letter-spacing: -1px; }
         #harnessRightBank div { padding: 6px 12px !important; font-size: 13px !important; }
         #currentClassDisplay { font-size: 15px !important; }
     }
@@ -144,4 +137,4 @@
         #harnessRightBank { order: 2; flex: 1; display: flex; justify-content: flex-end; }
         #navButtonBank { order: 3; flex-wrap: wrap !important; width: 100%; margin: 0 !important; }
         .nav-btn-global { max-width: calc(25% - 4px); font-size: 9px !important; }
-    }</style><div id="globalMainHarness" style="position: fixed; top: 0; left: 0; width: 100%; background: #1a252f; z-index: 9999; padding: 10px 20px; box-sizing: border-box; box-shadow: 0 4px 15px rgba(0,0,0,0.3); border-bottom: 3px solid #e67e22; display: flex; justify-content: space-between; align-items: center;"><div id="harnessLeftBank" style="flex-shrink: 0;"><button class="btn" style="background: transparent; color: #f1c40f; border: 1px solid #f1c40f; width: 90px; padding: 6px 0; font-size: 12px; font-weight: bold; box-sizing: border-box; cursor: pointer;" onclick='location.href="select_class.html"'>◀ 반 선택</button></div><div id="navButtonBank" style="display: flex; justify-content: center; gap: 6px; flex-grow: 1; margin: 0 15px;"><button class="nav-btn-global" style="background: #3498db;" onclick='location.href=classNavHref("index1.html")'>🏠 메인화면</button> <button class="nav-btn-global" style="background: #e67e22;" onclick='location.href=classNavHref("일일출석부.html")'>📅 일일출석부</button> <button class="nav-btn-global" style="background: #27ae60;" onclick='location.href=classNavHref("능력단위시간표.html")'>📊 출석률/보강</button> <button class="nav-btn-global" style="background: #8e44ad;" onclick='location.href=classNavHref("단위개월출석부.html")'>📈 단위출석부</button> <button class="nav-btn-global" style="background: #2c3e50;" onclick='location.href=classNavHref("평가계획서.html")'>📄 시작서류</button> <button class="nav-btn-global" style="background: #16a085;" onclick='location.href=classNavHref("../평가지/평가지.html")'>📋 내부평가</button> <button class="nav-btn-global" style="background: #d35400;" onclick='location.href=classNavHref("상담일지.html")'>🤝 상담일지</button></div><div id="harnessRightBank" style="flex-shrink: 0;"><div style="background: #000000; color: #f1c40f; padding: 8px 22px; border-radius: 6px; border: 2px solid #f1c40f; font-weight: 900; font-size: 16px; box-shadow: 0 0 12px rgba(241, 196, 15, 0.8); white-space: nowrap; letter-spacing: 1px;"><span style="color: #ffffff; font-size: 14px; margin-right: 5px;">▶ 현재 학급:</span> <span id="currentClassDisplay" style="font-size: 19px; text-shadow: 0 0 5px #f1c40f;">로딩 중...</span></div></div><script>setTimeout(()=>{let t=decodeURIComponent(window.location.pathname.split("/").pop())||"index1.html";document.querySelectorAll("#navButtonBank .nav-btn-global").forEach(e=>{(e.getAttribute("onclick")||"").includes(t)?(e.style.border="2px solid #f1c40f",e.style.boxShadow="0 0 12px rgba(241, 196, 15, 1)",e.style.transform="scale(1.08)",e.style.fontWeight="bold",e.style.filter="brightness(1.2)"):(e.style.border="none",e.style.boxShadow="none",e.style.transform="scale(1)",e.style.fontWeight="normal",e.style.filter="none"),e.style.opacity="1"})},50)</script></div><div class="container"><div class="class-info-bar" style="display: none !important;"><a href="index1.html" id="backLink" class="btn-home">◀ 관리 메인으로 이동</a><div style="margin-left: auto;"><span>현재 학급: </span><span>로딩 중...</span></div></div><div class="header"><h1>📋 평가계획서 및 엑셀 출력 센터</h1></div><div class="section-card"><div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;"><h3 style="margin:0;">📂 불러온 교과목 데이터 현황</h3><div style="display: flex; gap: 8px;"><button id="btn_download_pre_eval" class="btn btn-orange">💾 사전평가 계획 다운</button> <button id="btn_download_course_table" class="btn btn-green">💾 교과목 편성내용 다운</button> <button id="btn_download_eval_method" class="btn btn-purple">💾 평가방법 및 내용 다운</button> <button id="btn_save_all_data" class="btn btn-blue">💾 변경사항 서버 저장</button></div></div><div class="scroll-box"><table class="course-table"><thead><tr><th width="15%">교과목</th><th width="20%">능력단위명</th><th width="35%">세부교과</th><th width="10%">시간(h)</th><th width="10%">총 시간</th><th width="8%">관리</th></tr></thead><tbody id="courseTableBody"></tbody></table></div></div></div><link rel="stylesheet" href="../common-dialog.css"><script src="../common-class-db.js"></script><script src="../common-dialog.js"></script><script src="평가계획서.js"></script></body></html>
+    }</style><link rel="stylesheet" href="../common-harness.css"><script src="../common-harness.js"></script><div id="globalMainHarness" style="position: fixed; top: 0; left: 0; width: 100%; background: #1a252f; z-index: 9999; padding: 10px 20px; box-sizing: border-box; box-shadow: 0 4px 15px rgba(0,0,0,0.3); border-bottom: 3px solid #e67e22; display: flex; justify-content: space-between; align-items: center;"><div id="harnessLeftBank" style="flex-shrink: 0;"><button class="btn" style="background: transparent; color: #f1c40f; border: 1px solid #f1c40f; width: 90px; padding: 6px 0; font-size: 12px; font-weight: bold; box-sizing: border-box; cursor: pointer;" onclick='location.href="select_class.html"'>◀ 반 선택</button></div><div id="navButtonBank" style="display: flex; justify-content: center; gap: 6px; flex-grow: 1; margin: 0 15px;"><button class="nav-btn-global" style="background: #3498db;" onclick='location.href=classNavHref("index1.html")'>🏠 메인화면</button> <button class="nav-btn-global" style="background: #e67e22;" onclick='location.href=classNavHref("일일출석부.html")'>📅 일일출석부</button> <button class="nav-btn-global" style="background: #27ae60;" onclick='location.href=classNavHref("능력단위시간표.html")'>📊 출석률/보강</button> <button class="nav-btn-global" style="background: #8e44ad;" onclick='location.href=classNavHref("단위개월출석부.html")'>📈 단위출석부</button> <button class="nav-btn-global" style="background: #2c3e50;" onclick='location.href=classNavHref("평가계획서.html")'>📄 계획서류</button> <button class="nav-btn-global" style="background: #16a085;" onclick='location.href=classNavHref("../평가지/평가지.html")'>📋 내부평가</button> <button class="nav-btn-global" style="background: #d35400;" onclick='location.href=classNavHref("상담일지.html")'>🤝 상담일지</button></div><div id="harnessRightBank" style="flex-shrink: 0;"><div style="background: #000000; color: #f1c40f; padding: 8px 22px; border-radius: 6px; border: 2px solid #f1c40f; font-weight: 900; font-size: 16px; box-shadow: 0 0 12px rgba(241, 196, 15, 0.8); white-space: nowrap; letter-spacing: 1px;"><span style="color: #ffffff; font-size: 14px; margin-right: 5px;">▶ 현재 학급:</span> <span id="currentClassDisplay" style="font-size: 19px; text-shadow: 0 0 5px #f1c40f;">로딩 중...</span></div></div></div><div class="container"><div class="class-info-bar" style="display: none !important;"><a href="index1.html" id="backLink" class="btn-home">◀ 관리 메인으로 이동</a><div style="margin-left: auto;"><span>현재 학급: </span><span>로딩 중...</span></div></div><div class="header"><h1>📋 평가계획서 및 엑셀 출력 센터</h1></div><div class="section-card"><div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;"><h3 style="margin:0;">📂 불러온 교과목 데이터 현황</h3><div style="display: flex; gap: 8px;"><button id="btn_download_pre_eval" class="btn btn-orange">💾 사전평가 계획 다운</button> <button id="btn_download_course_table" class="btn btn-green">💾 교과목 편성내용 다운</button> <button id="btn_download_eval_method" class="btn btn-purple">💾 평가방법 및 내용 다운</button> <button id="btn_save_all_data" class="btn btn-blue">💾 변경사항 서버 저장</button></div></div><div class="scroll-box"><table class="course-table"><thead><tr><th width="15%">교과목</th><th width="20%">능력단위명</th><th width="35%">세부교과</th><th width="10%">시간(h)</th><th width="10%">총 시간</th><th width="8%">관리</th></tr></thead><tbody id="courseTableBody"></tbody></table></div></div></div><link rel="stylesheet" href="../common-dialog.css"><script src="../common-class-db.js"></script><script src="../common-dialog.js"></script><script src="평가계획서.js"></script></body></html>

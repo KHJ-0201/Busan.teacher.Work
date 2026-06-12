@@ -192,18 +192,10 @@
         color: var(--ui-text-muted);
     }
 
-    /* 상단 하네스 기본 (전체 PC) — 하네스 전용, 일반 버튼 규격과 분리 */
+    /* 상단 하네스 — PC 버튼 크기는 common-harness.css */
     #globalMainHarness .nav-btn-global {
-        min-height: 30px;
-        font-size: 11px;
         font-weight: 700;
-        line-height: 1.25;
         box-shadow: var(--ui-shadow-sm);
-    }
-
-    #globalMainHarness #harnessLeftBank .btn,
-    #globalMainHarness .nav-btn-global {
-        min-height: 30px !important;
     }
 }
 
@@ -255,33 +247,9 @@
 
     #globalMainHarness .nav-btn-global {
         flex: 1 1 auto !important;
-        max-width: 82px !important;
-        min-width: 38px !important;
-        min-height: 26px !important;
-        height: 26px !important;
-        padding: 2px 2px !important;
-        font-size: 9.5px !important;
-        letter-spacing: -0.65px !important;
         overflow: hidden !important;
         text-overflow: ellipsis !important;
         white-space: nowrap !important;
-        line-height: 1.2 !important;
-        box-shadow: none !important;
-        transform: none !important;
-    }
-
-    #globalMainHarness #harnessLeftBank .btn {
-        min-height: 26px !important;
-        height: 26px !important;
-        font-size: 10px !important;
-        width: 72px !important;
-        padding: 2px 0 !important;
-    }
-
-    /* 하네스 내부 버튼은 페이지 공통 .btn 최소높이 규칙 제외 */
-    #globalMainHarness .btn,
-    #globalMainHarness .nav-btn-global {
-        min-height: 26px !important;
     }
 
     #harnessRightBank > div {
@@ -379,8 +347,6 @@
 
     #globalMainHarness .nav-btn-global {
         flex: 1 1 calc(25% - 3px) !important;
-        max-width: none !important;
-        min-width: 52px !important;
     }
 
     body[style*="padding-top"] {
