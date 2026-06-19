@@ -1,0 +1,325 @@
+/**
+ * common-unit-attendance-modal.css
+ * start/능력단위시간표.html — 요일별(달력) 보기 #calendarModal 디자인과 동일
+ */
+#calendarModal.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2500;
+    justify-content: center;
+    align-items: center;
+}
+
+#calendarModal .scroll-box {
+    max-height: 800px;
+    overflow-x: auto;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    position: relative;
+    background: #fff;
+}
+
+#calendarModal .attendance-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: clamp(9px, 0.8vw, 11px);
+    table-layout: fixed;
+}
+
+#calendarModal .attendance-table th,
+#calendarModal .attendance-table td {
+    border: 1px solid #ccc;
+    padding: 4px 2px;
+    text-align: center;
+    word-break: break-all;
+    white-space: normal !important;
+    overflow: hidden;
+    line-height: 1.2;
+}
+
+#calendarModal .sticky-no {
+    position: sticky !important;
+    left: 0 !important;
+    z-index: 60 !important;
+    background: #f1f1f1 !important;
+    width: 18px !important;
+    min-width: 18px !important;
+    max-width: 18px !important;
+    text-align: center !important;
+    font-size: 9px !important;
+    border-right: 1px solid #ddd !important;
+    padding: 0 !important;
+}
+
+#calendarModal .attendance-table .sticky-col {
+    position: sticky !important;
+    left: 18px !important;
+    z-index: 50 !important;
+    background: #f9f9f9 !important;
+    border-right: 2.5px solid #27ae60 !important;
+    font-weight: bold;
+}
+
+#calendarModal .edit-input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    text-align: center;
+    font-size: 11px;
+    padding: 2px 0;
+    font-family: inherit;
+}
+
+#calendarModal .edit-input:focus {
+    background-color: #fffde7;
+    outline: 1px solid #27ae60;
+}
+
+#calendarModal .edit-input::-webkit-inner-spin-button,
+#calendarModal .edit-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#calendarModal .manual-modified {
+    background-color: #fff3e0 !important;
+    font-weight: bold;
+    color: #e67e22;
+}
+
+#calendarModal .status-late {
+    background-color: #fff176 !important;
+    color: #856404 !important;
+    font-weight: bold;
+}
+
+#calendarModal .status-out {
+    background-color: #e8f5e9 !important;
+    color: #27ae60;
+    font-weight: bold;
+}
+
+#calendarModal .status-absent {
+    background-color: #ffebee !important;
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+#calendarModal .status-special {
+    background-color: #e3f2fd !important;
+    color: #3498db;
+    font-weight: bold;
+}
+
+#calendarModal .status-dropout {
+    background-color: #e0e0e0 !important;
+    color: #7f8c8d !important;
+    font-weight: bold;
+}
+
+#calendarModal .attendance-table tr:hover {
+    background-color: rgba(39, 174, 96, 0.05) !important;
+}
+
+#calendarModal .status-late,
+#calendarModal .status-out,
+#calendarModal .status-absent,
+#calendarModal .status-special {
+    z-index: 1;
+    position: relative;
+}
+
+#calendarModal .btn-excel {
+    background-color: #1d6f42 !important;
+    color: white !important;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 11px;
+    margin-right: 5px;
+}
+
+#calendarModal .ctrl-btn {
+    padding: 5px 15px;
+    cursor: pointer;
+    background: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+/* [달력 상세 모달 디자인 - 물리 버튼 결속] */
+#calendarModal .modal-content {
+    position: fixed !important;
+    top: 3% !important;
+    left: 3% !important;
+    width: 94% !important;
+    max-height: 94% !important;
+    height: auto !important;
+    z-index: 2501 !important;
+    background: #fff !important;
+    padding: 10px !important;
+    border: 2px solid #27ae60 !important;
+    border-radius: 12px !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+    display: block !important;
+}
+
+#calendarModal .calendar-close-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 35px;
+    height: 35px;
+    background: #e74c3c !important;
+    color: #fff !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 3000 !important;
+    border: 1.5px solid #fff !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+#calendarModal .close-modal {
+    display: none !important;
+}
+
+#calendarModal h3 {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 5px !important;
+    margin-bottom: 8px !important;
+    padding-top: 35px !important;
+    font-size: 14px !important;
+}
+
+#calendarModal .scroll-box {
+    max-height: 75vh !important;
+    overflow: auto !important;
+}
+
+#calendarModal .attendance-table {
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    min-width: 600px !important;
+    table-layout: fixed !important;
+}
+
+#calendarModal .attendance-table td {
+    font-size: 8px !important;
+    white-space: nowrap !important;
+}
+
+#calendarModal .attendance-table th:first-child,
+#calendarModal .attendance-table td:first-child {
+    position: sticky !important;
+    left: 0;
+    background: #eee !important;
+    z-index: 150 !important;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    width: 60px !important;
+    min-width: 60px !important;
+    max-width: 60px !important;
+}
+
+#calendarModal .attendance-table thead tr th,
+#calendarModal .attendance-table tbody tr td:nth-last-child(-n+4) {
+    background: #fff !important;
+    z-index: 140 !important;
+}
+
+#calendarModal .attendance-table tr th:last-child,
+#calendarModal .attendance-table tr td:last-child {
+    position: sticky !important;
+    right: 0;
+    width: 40px !important;
+    min-width: 40px !important;
+    max-width: 40px !important;
+    font-weight: bold;
+    box-shadow: -1px 0 0 #ddd;
+}
+
+#calendarModal .attendance-table thead tr:first-child th[colspan="2"] {
+    position: sticky !important;
+    right: 40px;
+    width: 50px !important;
+    min-width: 50px !important;
+    max-width: 50px !important;
+    text-align: center !important;
+    box-shadow: -1px 0 0 #ddd;
+}
+
+#calendarModal .attendance-table thead tr:nth-child(2) th:last-child,
+#calendarModal .attendance-table tbody tr td:nth-last-child(2) {
+    position: sticky !important;
+    right: 40px;
+    width: 25px !important;
+    min-width: 25px !important;
+    max-width: 25px !important;
+    box-shadow: -1px 0 0 #ddd;
+}
+
+#calendarModal .attendance-table thead tr:nth-child(2) th:nth-last-child(2),
+#calendarModal .attendance-table tbody tr td:nth-last-child(3) {
+    position: sticky !important;
+    right: 65px;
+    width: 25px !important;
+    min-width: 25px !important;
+    max-width: 25px !important;
+    box-shadow: -1px 0 0 #ddd;
+}
+
+#calendarModal .attendance-table thead tr:first-child th[rowspan="2"]:nth-last-child(3),
+#calendarModal .attendance-table tbody tr td:nth-last-child(4) {
+    position: sticky !important;
+    right: 90px;
+    width: 15px !important;
+    min-width: 15px !important;
+    max-width: 15px !important;
+    z-index: 141 !important;
+    border-left: 2px solid #27ae60 !important;
+}
+
+#calendarModal .sim-input::-webkit-inner-spin-button,
+#calendarModal .sim-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#calendarModal .sim-input {
+    -moz-appearance: textfield;
+}
+
+@media (max-width: 768px) {
+    #calendarModal .sticky-no {
+        display: none !important;
+    }
+
+    #calendarModal .attendance-table .sticky-col,
+    #calendarModal .attendance-table th:nth-child(2),
+    #calendarModal .attendance-table td:nth-child(2) {
+        position: sticky !important;
+        left: 0 !important;
+        z-index: 150 !important;
+        background: #eee !important;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1) !important;
+        border-right: 2px solid #27ae60 !important;
+        display: table-cell !important;
+    }
+}

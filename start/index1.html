@@ -122,7 +122,13 @@
             border: 1px solid #b8d4f0;
             border-radius: 8px;
             background: linear-gradient(135deg, #f0f7ff 0%, #e8f4fd 100%);
-            overflow: hidden;
+            overflow: visible;
+            cursor: pointer;
+            transition: box-shadow 0.2s, border-color 0.2s;
+        }
+        .timetable-rd-progress:hover {
+            border-color: #8e44ad;
+            box-shadow: 0 2px 8px rgba(142, 68, 173, 0.18);
         }
         .training-progress-head {
             flex-shrink: 0;
@@ -141,7 +147,49 @@
             align-items: center;
             justify-content: center;
             gap: 6px;
-            padding: 6px 10px 8px;
+            padding: 8px 14px 10px;
+            overflow: visible;
+        }
+        .training-progress-ring-wrap {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            flex-shrink: 0;
+            overflow: visible;
+            margin: 4px 6px;
+        }
+        .training-progress-markers {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: visible;
+        }
+        .training-progress-marker {
+            stroke-width: 2.2;
+            stroke-linecap: round;
+            pointer-events: stroke;
+        }
+        .training-progress-marker--70 {
+            stroke: #8b5cf6;
+        }
+        .training-progress-marker--80 {
+            stroke: #ec4899;
+        }
+        .training-progress-marker-label {
+            font-size: 10px;
+            font-weight: 900;
+            pointer-events: none;
+            text-anchor: middle;
+            dominant-baseline: middle;
+            letter-spacing: -0.02em;
+        }
+        .training-progress-marker-label--70 {
+            fill: #8b5cf6;
+        }
+        .training-progress-marker-label--80 {
+            fill: #ec4899;
         }
         .training-progress-ring {
     --progress: 0%;
@@ -185,9 +233,10 @@
         .timetable-rd-progress.is-complete .training-progress-percent { color: #27ae60; }
         .timetable-rd-progress.is-before .training-progress-percent { color: #e67e22; }
         .training-progress-meta {
-            font-size: 10px;
+            font-size: 12px;
+            font-weight: 600;
             color: #5d6d7e;
-            line-height: 1.35;
+            line-height: 1.4;
             text-align: center;
             max-width: 100%;
             word-break: keep-all;
@@ -268,6 +317,12 @@
             border-color: #732d91;
         }
         .header-tool-btn-contact:hover { background: #732d91; }
+        .header-tool-btn-preeval {
+            background: #d35400;
+            color: #fff;
+            border-color: #ba4a00;
+        }
+        .header-tool-btn-preeval:hover { background: #ba4a00; }
         .header-tool-status {
             font-size: 10px;
             color: #888;
@@ -511,6 +566,31 @@
             color: #2980b9;
             background: #ebf5fb;
             border-color: #d6eaf8;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 10px;
+            white-space: normal;
+            overflow: visible;
+            text-overflow: unset;
+        }
+        .today-log-period-subject {
+            flex: 1 1 auto;
+            min-width: 0;
+        }
+        .today-log-place {
+            flex-shrink: 0;
+            color: #1a5276;
+        }
+        .today-log-summary-line.is-clickable {
+            cursor: pointer;
+            transition: background 0.15s ease, border-color 0.15s ease;
+        }
+        .today-log-summary-line.is-clickable:hover,
+        .today-log-summary-line.is-clickable:focus {
+            background: #d6eaf8;
+            border-color: #3498db;
+            outline: none;
         }
         .eval-alert-section .alert-section-count { background: #16a085; }
         .makeup-alert-section .alert-section-count { background: #27ae60; }
@@ -559,6 +639,27 @@
             padding: 1px 6px;
             white-space: nowrap;
         }
+        .eval-nearest-summary-line {
+            color: #16a085;
+            background: #f0faf8;
+            border-color: #b2dfdb;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 10px;
+            white-space: normal;
+            overflow: visible;
+            text-overflow: unset;
+        }
+        .eval-nearest-subject {
+            flex: 1 1 auto;
+            min-width: 0;
+        }
+        .eval-nearest-slot {
+            flex-shrink: 0;
+            color: #117a65;
+            font-weight: 900;
+        }
         .alert-section-empty-line {
             color: #27ae60;
             background: #f4fbf7;
@@ -571,6 +672,15 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+        }
+        .alert-section-empty-line.eval-nearest-summary-line.eval-nearest-summary-line--today {
+            color: #d35400;
+            background: #fff7ed;
+            border-color: #f5cba7;
+        }
+        .alert-section-empty-line.eval-nearest-summary-line.eval-nearest-summary-line--today .eval-nearest-subject,
+        .alert-section-empty-line.eval-nearest-summary-line.eval-nearest-summary-line--today .eval-nearest-slot {
+            color: #d35400;
         }
         .attendance-missing-item {
             border: 1px solid #ffd8b5;
@@ -623,6 +733,37 @@
         .eval-alert-action { background: #16a085; }
         .makeup-alert-action { background: #27ae60; }
         .consult-alert-action { background: #d35400; }
+        .consult-alert-item-line {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #d35400;
+            background: #fff7ed;
+            border-color: #f5cba7;
+            line-height: 1.2;
+            padding: 7px 9px;
+        }
+        .consult-alert-item-line .consult-alert-student {
+            flex: 1 1 auto;
+            min-width: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .consult-alert-item-line .consult-alert-badge {
+            flex-shrink: 0;
+            font-size: 10px;
+            font-weight: 900;
+            color: #2c3e50;
+            background: #ffffff;
+            border: 1px solid #f5cba7;
+            border-radius: 12px;
+            padding: 0 6px;
+            line-height: 1.2;
+        }
         .direct-auth-alert-section .alert-section-count { background: #8e44ad; }
         .direct-auth-unit-badge {
             margin-left: 4px;
@@ -778,6 +919,7 @@
     .top-action-grid { grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px; }
     .section-card { padding: 8px !important; margin-bottom: 0 !important; min-height: auto !important; }
     .timetable-rd-panel { grid-template-rows: auto auto; height: auto; }
+    .training-progress-ring-wrap { width: 64px; height: 64px; margin: 3px 4px; }
     .training-progress-ring { width: 64px; height: 64px; }
     .training-progress-ring-inner { width: 50px; height: 50px; }
     .training-progress-percent { font-size: 12px !important; }
@@ -849,4 +991,4 @@
         #harnessRightBank { order: 2; flex: 1; display: flex; justify-content: flex-end; }
         #navButtonBank { order: 3; flex-wrap: wrap !important; width: 100%; margin: 0 !important; }
         .nav-btn-global { max-width: calc(25% - 4px); font-size: 9px !important; }
-    }</style><link rel="stylesheet" href="../common-harness.css"><script src="../common-harness.js"></script><div id="globalMainHarness" style="position: fixed; top: 0; left: 0; width: 100%; background: #1a252f; z-index: 9999; padding: 10px 20px; box-sizing: border-box; box-shadow: 0 4px 15px rgba(0,0,0,0.3); border-bottom: 3px solid #e67e22; display: flex; justify-content: space-between; align-items: center;"><div id="harnessLeftBank" style="flex-shrink: 0;"><button class="btn" style="background: transparent; color: #f1c40f; border: 1px solid #f1c40f; width: 90px; padding: 6px 0; font-size: 12px; font-weight: bold; box-sizing: border-box; cursor: pointer;" onclick='location.href="select_class.html"'>◀ 반 선택</button></div><div id="navButtonBank" style="display: flex; justify-content: center; gap: 6px; flex-grow: 1; margin: 0 15px;"><button class="nav-btn-global" style="background: #3498db;" onclick='location.href=classNavHref("index1.html")'>🏠 메인화면</button> <button class="nav-btn-global" style="background: #e67e22;" onclick='location.href=classNavHref("일일출석부.html")'>📅 일일출석부</button> <button class="nav-btn-global" style="background: #27ae60;" onclick='location.href=classNavHref("능력단위시간표.html")'>📊 출석률/보강</button> <button class="nav-btn-global" style="background: #8e44ad;" onclick='location.href=classNavHref("단위개월출석부.html")'>📈 단위출석부</button> <button class="nav-btn-global" style="background: #2c3e50;" onclick='location.href=classNavHref("평가계획서.html")'>📄 계획서류</button> <button class="nav-btn-global" style="background: #16a085;" onclick='location.href=classNavHref("../평가지/평가지.html")'>📋 내부평가</button> <button class="nav-btn-global" style="background: #d35400;" onclick='location.href=classNavHref("상담일지.html")'>🤝 상담일지</button></div><div id="harnessRightBank" style="flex-shrink: 0;"><div style="background: #000000; color: #f1c40f; padding: 8px 22px; border-radius: 6px; border: 2px solid #f1c40f; font-weight: 900; font-size: 16px; box-shadow: 0 0 12px rgba(241, 196, 15, 0.8); white-space: nowrap; letter-spacing: 1px;"><span style="color: #ffffff; font-size: 14px; margin-right: 5px;">▶ 현재 학급:</span> <span id="currentClassDisplay" style="font-size: 19px; text-shadow: 0 0 5px #f1c40f;">로딩 중...</span></div></div></div><div class="main-dashboard-layout"><div class="container"><div class="header" style="position: relative;"><h1>부산자동차직교 통합 시스템</h1><div id="headerRightGroup" class="header-right-group"><div class="header-tool-group"><span class="header-tool-label">훈련생</span> <button type="button" id="btnCopyStudentLink" class="header-tool-btn header-tool-btn-primary">📋 배포 링크 복사</button> <button type="button" id="btnReissueStudentLink" class="header-tool-btn header-tool-btn-outline">🔗 재발급</button> <button type="button" id="btnNavStudentViewer" class="header-tool-btn header-tool-btn-primary">👁 미리보기</button> <span class="header-tool-divider" aria-hidden="true"></span> <button type="button" id="btnNavContacts" class="header-tool-btn header-tool-btn-contact" onclick='location.href=classNavHref("연락처.html")'>📇 연락처</button></div><span id="studentLinkStatus" class="header-tool-status"></span><div id="connectionStatus">⏳ 연결 확인 중...</div></div></div><div class="top-action-grid"><div class="section-card timetable-rd-panel" style="border-top: 4px solid #3498db;"><div class="timetable-rd-top"><div class="timetable-rd-head"><h4>📅 시간표 및 RD 등록</h4></div><div class="timetable-rd-actions"><div class="file-upload-wrapper"><button type="button" id="btnPickTimetable" class="file-upload-label panel-item panel-btn">📁 시간표 등록 (Excel)</button> <input type="file" id="timetableFile" accept=".xlsx, .xls"></div><div class="file-upload-wrapper"><label for="rdExcelFile" class="file-upload-label panel-item panel-btn" style="background:#8e44ad; border-color:#732d91;">RD등록</label> <input type="file" id="rdExcelFile" accept=".xlsx, .xls, .csv" style="position:absolute; left:0; top:0; opacity:0; width:100%; height:100%; cursor:pointer;"></div><div id="rdStatusBox" class="panel-item" style="display: none; padding: 6px 8px; background: #f5eef8; border: 1px dashed #8e44ad; border-radius: 8px; font-size: 11px; color: #6c3483; font-weight: bold; text-align: center;">✅ 훈련기준(RD) 업로드 완료<br><span id="rdFileName" style="color:#e67e22; font-size:10px;"></span></div><div id="fileStatusBox" style="display: none;"><div class="upload-action-bar panel-item"><span class="timetable-file-label" style="font-size: 12px; color: #2c3e50; font-weight: bold;">📄 파일: <span id="savedFileName">-</span></span> <button id="btnConfirmTimetableSave" class="btn btn-green timetable-action-btn">저장</button> <button id="btnDeleteTimetable" class="btn btn-red timetable-action-btn">삭제</button></div></div><button id="downloadBtn" class="btn btn-blue panel-item panel-btn" style="display:none; width: 100%;">📥 등록된 시간표 다운</button></div></div><div class="timetable-rd-progress" id="trainingProgressPanel"><div class="training-progress-head">📊 훈련 총 진행률</div><div class="training-progress-body"><div class="training-progress-ring" id="trainingProgressRing"><div class="training-progress-ring-inner"><span class="training-progress-percent" id="trainingProgressPercent">-</span></div></div><div class="training-progress-meta" id="trainingProgressMeta">시간표 등록 후 진행률이 표시됩니다.</div></div></div></div><div class="section-card attendance-alert-panel attendance-alert-panel--embedded" id="attendanceAlertPanel" style="border-top: 4px solid #27ae60;"><div class="attendance-alert-head"><div class="attendance-alert-title"><span class="attendance-alert-title-text">📝 출결 관리 및 분석</span> <span class="attendance-alert-summary" id="attendanceAlertSummary">오늘 이전 날짜의 출석부와 평가완료 상태를 확인합니다.</span> <span class="attendance-alert-count" id="attendanceAlertCount">0</span></div></div><div class="attendance-alert-body attendance-alert-grid"><div class="alert-section today-log-section"><div class="alert-section-header"><span>📚 오늘시간표</span> <span class="alert-section-count" id="todayLogDateBadge">오늘</span></div><div class="attendance-missing-list" id="todayLogSummary"><div class="alert-section-empty-line today-log-summary-line">오늘 수업 정보 확인 중...</div></div><button id="btnOpenTodayTrainingLog" class="btn attendance-alert-action today-log-action">오늘수업내용 보기</button></div><div class="alert-section attendance-alert-section"><div class="alert-section-header"><span>📅 일일출석부</span> <span class="alert-section-count" id="attendanceSectionCount">0</span></div><div class="attendance-missing-list" id="attendanceMissingList"><div class="alert-section-empty-line">데이터 확인 중...</div></div><button id="btnOpenDailyAttendanceAlert" class="btn attendance-alert-action">미등록 출석부 이동</button></div><div class="alert-section eval-alert-section"><div class="alert-section-header"><span>📋 평가지<span class="eval-next-date" id="evalNextDateLabel"></span><span class="eval-dday-badge" id="evalDdayLabel"></span></span> <span class="alert-section-count" id="evalSectionCount">0</span></div><div class="attendance-missing-list" id="evalMissingList"><div class="alert-section-empty-line">데이터 확인 중...</div></div><button id="btnOpenEvalAlert" class="btn attendance-alert-action eval-alert-action">평가지로 이동</button></div><div class="alert-section makeup-alert-section"><div class="alert-section-header"><span>📚 보강수업</span> <span class="alert-section-count" id="makeupSectionCount">0</span></div><div class="attendance-missing-list" id="makeupMissingList"><div class="alert-section-empty-line">데이터 확인 중...</div></div><button id="btnOpenMakeupAlert" class="btn attendance-alert-action makeup-alert-action">보강수업으로 이동</button></div><div class="alert-section consult-alert-section"><div class="alert-section-header"><span>🤝 상담일지<span class="consult-unit-badge" id="consultUnitLabel"></span><span class="consult-dday-badge" id="consultDdayLabel"></span></span> <span class="alert-section-count" id="consultSectionCount">0</span></div><div class="attendance-missing-list" id="consultMissingList"><div class="alert-section-empty-line">데이터 확인 중...</div></div><button id="btnOpenConsultAlert" class="btn attendance-alert-action consult-alert-action">상담일지로 이동</button></div><div class="alert-section direct-auth-alert-section"><div class="alert-section-header"><span>📋 이번달 직권 신청<span class="direct-auth-unit-badge" id="directAuthUnitLabel"></span><span class="direct-auth-dday-badge" id="directAuthDdayLabel"></span></span> <span class="alert-section-count" id="directAuthSectionCount">0</span></div><div class="attendance-missing-list" id="directAuthList"><div class="alert-section-empty-line">데이터 확인 중...</div></div><button id="btnOpenDirectAuthAlert" class="btn attendance-alert-action direct-auth-alert-action">직권신청 전체보기</button></div></div></div></div><div class="section-card"><div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;"><h3 style="margin:0;">📋 훈련 과정 개요</h3><button id="btnSaveOverview" class="btn btn-green" style="padding: 5px 15px;">💾 개요 정보만 저장</button></div><div class="info-grid"><div class="info-item"><label>훈련명</label><input type="text" id="trainingName"></div><div class="info-item"><label>훈련기간</label><input type="text" id="trainingPeriod"></div><div class="info-item"><label>총 일수</label><input type="text" id="totalDays" readonly="readonly" style="background:#f8f9fa;"></div><div class="info-item"><label>담당교사</label><input type="text" id="teacherName" style="background:#fff;"></div></div></div><div class="section-card"><div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;"><h3>📂 교과목 상세 현황</h3><div style="display: flex; gap: 8px;"></div></div><div class="scroll-box"><table class="course-table"><thead><tr><th width="15%">교과목</th><th width="20%">능력단위명</th><th width="12%">RD코드</th><th width="33%">세부교과 및 이론/실기</th><th width="10%">시간(h)</th><th width="10%">총 시간</th></tr></thead><tbody id="courseTableBody"></tbody></table></div></div></div></div><link rel="stylesheet" href="../common-dialog.css"><script src="../common-dialog.js"></script><script src="../common-class-db.js"></script><script src="../common-ncs-required.js"></script><script src="../common-training-log.js"></script><script src="직권신청.js"></script><script src="index1.js"></script></body></html>
+    }</style><link rel="stylesheet" href="../common-harness.css"><script src="../common-harness.js"></script><div id="globalMainHarness" style="position: fixed; top: 0; left: 0; width: 100%; background: #1a252f; z-index: 9999; padding: 10px 20px; box-sizing: border-box; box-shadow: 0 4px 15px rgba(0,0,0,0.3); border-bottom: 3px solid #e67e22; display: flex; justify-content: space-between; align-items: center;"><div id="harnessLeftBank" style="flex-shrink: 0;"><button class="btn" style="background: transparent; color: #f1c40f; border: 1px solid #f1c40f; width: 90px; padding: 6px 0; font-size: 12px; font-weight: bold; box-sizing: border-box; cursor: pointer;" onclick='location.href="select_class.html"'>◀ 반 선택</button></div><div id="navButtonBank" style="display: flex; justify-content: center; gap: 6px; flex-grow: 1; margin: 0 15px;"><button class="nav-btn-global" style="background: #3498db;" onclick='location.href=classNavHref("index1.html")'>🏠 메인화면</button> <button class="nav-btn-global" style="background: #e67e22;" onclick='location.href=classNavHref("일일출석부.html")'>📅 일일출석부</button> <button class="nav-btn-global" style="background: #27ae60;" onclick='location.href=classNavHref("능력단위시간표.html")'>📊 출석률/보강</button> <button class="nav-btn-global" style="background: #8e44ad;" onclick='location.href=classNavHref("단위개월출석부.html")'>📈 단위출석부</button> <button class="nav-btn-global" style="background: #2c3e50;" onclick='location.href=classNavHref("평가계획서.html")'>📄 계획서류</button> <button class="nav-btn-global" style="background: #16a085;" onclick='location.href=classNavHref("../평가지/평가지.html")'>📋 내부평가</button> <button class="nav-btn-global" style="background: #d35400;" onclick='location.href=classNavHref("상담일지.html")'>🤝 상담일지</button></div><div id="harnessRightBank" style="flex-shrink: 0;"><div style="background: #000000; color: #f1c40f; padding: 8px 22px; border-radius: 6px; border: 2px solid #f1c40f; font-weight: 900; font-size: 16px; box-shadow: 0 0 12px rgba(241, 196, 15, 0.8); white-space: nowrap; letter-spacing: 1px;"><span style="color: #ffffff; font-size: 14px; margin-right: 5px;">▶ 현재 학급:</span> <span id="currentClassDisplay" style="font-size: 19px; text-shadow: 0 0 5px #f1c40f;">로딩 중...</span></div></div></div><div class="main-dashboard-layout"><div class="container"><div class="header" style="position: relative;"><h1>부산자동차직교 통합 시스템</h1><div id="headerRightGroup" class="header-right-group"><div class="header-tool-group"><span class="header-tool-label">훈련생</span> <button type="button" id="btnCopyStudentLink" class="header-tool-btn header-tool-btn-primary">📋 배포 링크 복사</button> <button type="button" id="btnReissueStudentLink" class="header-tool-btn header-tool-btn-outline">🔗 재발급</button> <button type="button" id="btnNavStudentViewer" class="header-tool-btn header-tool-btn-primary">👁 미리보기</button> <span class="header-tool-divider" aria-hidden="true"></span> <button type="button" id="btnNavContacts" class="header-tool-btn header-tool-btn-contact" onclick='location.href=classNavHref("연락처.html")'>📇 연락처</button> <button type="button" id="btnNavPreEval" class="header-tool-btn header-tool-btn-preeval">📝 사전능력평가</button></div><span id="studentLinkStatus" class="header-tool-status"></span><div id="connectionStatus">⏳ 연결 확인 중...</div></div></div><div class="top-action-grid"><div class="section-card timetable-rd-panel" style="border-top: 4px solid #3498db;"><div class="timetable-rd-top"><div class="timetable-rd-head"><h4>📅 시간표 및 RD 등록</h4></div><div class="timetable-rd-actions"><div class="file-upload-wrapper"><button type="button" id="btnPickTimetable" class="file-upload-label panel-item panel-btn">📁 시간표 등록 (Excel)</button> <input type="file" id="timetableFile" accept=".xlsx, .xls"></div><div class="file-upload-wrapper"><label for="rdExcelFile" class="file-upload-label panel-item panel-btn" style="background:#8e44ad; border-color:#732d91;">RD등록</label> <input type="file" id="rdExcelFile" accept=".xlsx, .xls, .csv" style="position:absolute; left:0; top:0; opacity:0; width:100%; height:100%; cursor:pointer;"></div><div id="rdStatusBox" class="panel-item" style="display: none; padding: 6px 8px; background: #f5eef8; border: 1px dashed #8e44ad; border-radius: 8px; font-size: 11px; color: #6c3483; font-weight: bold; text-align: center;">✅ 훈련기준(RD) 업로드 완료<br><span id="rdFileName" style="color:#e67e22; font-size:10px;"></span></div><div id="fileStatusBox" style="display: none;"><div class="upload-action-bar panel-item"><span class="timetable-file-label" style="font-size: 12px; color: #2c3e50; font-weight: bold;">📄 파일: <span id="savedFileName">-</span></span> <button id="btnConfirmTimetableSave" class="btn btn-green timetable-action-btn">저장</button> <button id="btnDeleteTimetable" class="btn btn-red timetable-action-btn">삭제</button></div></div><button id="downloadBtn" class="btn btn-blue panel-item panel-btn" style="display:none; width: 100%;">📥 등록된 시간표 다운</button></div></div><div class="timetable-rd-progress" id="trainingProgressPanel" title="단위개월출석부로 이동"><div class="training-progress-head">📊 훈련 총 진행률</div><div class="training-progress-body"><div class="training-progress-ring-wrap"><div class="training-progress-ring" id="trainingProgressRing"><div class="training-progress-ring-inner"><span class="training-progress-percent" id="trainingProgressPercent">-</span></div></div><svg class="training-progress-markers" id="trainingProgressMarkers" viewBox="0 0 100 100" aria-hidden="true"><line id="trainingProgressMarker70" class="training-progress-marker training-progress-marker--70"></line><line id="trainingProgressMarker80" class="training-progress-marker training-progress-marker--80"></line><text id="trainingProgressLabel70" class="training-progress-marker-label training-progress-marker-label--70">70%</text><text id="trainingProgressLabel80" class="training-progress-marker-label training-progress-marker-label--80">80%</text></svg></div><div class="training-progress-meta" id="trainingProgressMeta">시간표 등록 후 진행률이 표시됩니다.</div></div></div></div><div class="section-card attendance-alert-panel attendance-alert-panel--embedded" id="attendanceAlertPanel" style="border-top: 4px solid #27ae60;"><div class="attendance-alert-head"><div class="attendance-alert-title"><span class="attendance-alert-title-text">📝 출결 관리 및 분석</span> <span class="attendance-alert-summary" id="attendanceAlertSummary">오늘 이전 날짜의 출석부와 평가완료 상태를 확인합니다.</span> <span class="attendance-alert-count" id="attendanceAlertCount">0</span></div></div><div class="attendance-alert-body attendance-alert-grid"><div class="alert-section today-log-section"><div class="alert-section-header"><span>📚 오늘시간표</span> <span class="alert-section-count" id="todayLogDateBadge">오늘</span></div><div class="attendance-missing-list" id="todayLogSummary"><div class="alert-section-empty-line today-log-summary-line">오늘 수업 정보 확인 중...</div></div><button id="btnOpenTodayTrainingLog" class="btn attendance-alert-action today-log-action">오늘수업내용 보기</button></div><div class="alert-section attendance-alert-section"><div class="alert-section-header"><span>📅 일일출석부</span> <span class="alert-section-count" id="attendanceSectionCount">0</span></div><div class="attendance-missing-list" id="attendanceMissingList"><div class="alert-section-empty-line">데이터 확인 중...</div></div><button id="btnOpenDailyAttendanceAlert" class="btn attendance-alert-action">미등록 출석부 이동</button></div><div class="alert-section eval-alert-section"><div class="alert-section-header"><span>📋 평가지<span class="eval-next-date" id="evalNextDateLabel"></span><span class="eval-dday-badge" id="evalDdayLabel"></span></span> <span class="alert-section-count" id="evalSectionCount">0</span></div><div class="attendance-missing-list" id="evalMissingList"><div class="alert-section-empty-line">데이터 확인 중...</div></div><button id="btnOpenEvalAlert" class="btn attendance-alert-action eval-alert-action">평가지로 이동</button></div><div class="alert-section makeup-alert-section"><div class="alert-section-header"><span>📚 보강수업</span> <span class="alert-section-count" id="makeupSectionCount">0</span></div><div class="attendance-missing-list" id="makeupMissingList"><div class="alert-section-empty-line">데이터 확인 중...</div></div><button id="btnOpenMakeupAlert" class="btn attendance-alert-action makeup-alert-action">보강수업으로 이동</button></div><div class="alert-section consult-alert-section"><div class="alert-section-header"><span>🤝 상담일지<span class="consult-unit-badge" id="consultUnitLabel"></span><span class="consult-dday-badge" id="consultDdayLabel"></span></span> <span class="alert-section-count" id="consultSectionCount">0</span></div><div class="attendance-missing-list" id="consultMissingList"><div class="alert-section-empty-line">데이터 확인 중...</div></div><button id="btnOpenConsultAlert" class="btn attendance-alert-action consult-alert-action">상담일지로 이동</button></div><div class="alert-section direct-auth-alert-section"><div class="alert-section-header"><span>📋 이번달 직권 신청<span class="direct-auth-unit-badge" id="directAuthUnitLabel"></span><span class="direct-auth-dday-badge" id="directAuthDdayLabel"></span></span> <span class="alert-section-count" id="directAuthSectionCount">0</span></div><div class="attendance-missing-list" id="directAuthList"><div class="alert-section-empty-line">데이터 확인 중...</div></div><button id="btnOpenDirectAuthAlert" class="btn attendance-alert-action direct-auth-alert-action">직권신청 전체보기</button></div></div></div></div><div class="section-card"><div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;"><h3 style="margin:0;">📋 훈련 과정 개요</h3><button id="btnSaveOverview" class="btn btn-green" style="padding: 5px 15px;">💾 개요 정보만 저장</button></div><div class="info-grid"><div class="info-item"><label>훈련명</label><input type="text" id="trainingName"></div><div class="info-item"><label>훈련기간</label><input type="text" id="trainingPeriod"></div><div class="info-item"><label>총 일수</label><input type="text" id="totalDays" readonly="readonly" style="background:#f8f9fa;"></div><div class="info-item"><label>담당교사</label><input type="text" id="teacherName" style="background:#fff;"></div></div></div><div class="section-card"><div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;"><h3>📂 교과목 상세 현황</h3><div style="display: flex; gap: 8px;"></div></div><div class="scroll-box"><table class="course-table"><thead><tr><th width="15%">교과목</th><th width="20%">능력단위명</th><th width="12%">RD코드</th><th width="33%">세부교과 및 이론/실기</th><th width="10%">시간(h)</th><th width="10%">총 시간</th></tr></thead><tbody id="courseTableBody"></tbody></table></div></div></div></div><div id="calendarModal" class="modal-overlay"><div class="modal-content" id="calendarModalContent"><div class="calendar-close-btn" id="btn_modal_close">✕</div><h3 id="modalTitle" style="color: #27ae60; border-bottom: 2px solid #27ae60; padding-bottom: 10px;">과목 상세 정보</h3><div id="modalActionArea" style="display: flex; justify-content: flex-end; margin-bottom: 10px; gap: 10px;"></div><div class="scroll-box"><table class="attendance-table"><thead id="modalHead"></thead><tbody id="modalBody"></tbody></table></div></div></div><link rel="stylesheet" href="../common-dialog.css"><link rel="stylesheet" href="../common-unit-attendance-modal.css"><script src="../common-dialog.js"></script><script src="../common-class-db.js"></script><script src="../common-ncs-required.js"></script><script src="../common-training-log.js"></script><script src="../common-unit-attendance-modal.js"></script><script src="직권신청.js"></script><script src="index1.js"></script></body></html>
