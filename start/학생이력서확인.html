@@ -1,0 +1,158 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>학생 이력서 확인</title><script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script><script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script><script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script><style>body { font-family: 'Malgun Gothic', sans-serif; background: #f8f9fa; margin: 0; padding: 20px; color: #333; }
+        .container { max-width: 1500px; margin: 0 auto; background: #fff; padding: 20px 30px; border-radius: 12px; box-shadow: 0 5px 25px rgba(0,0,0,0.05); }
+        .header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; border-bottom: 2px solid #2980b9; padding-bottom: 12px; margin-bottom: 18px; }
+        .header h2 { margin: 0; color: #1e293b; font-size: 22px; }
+        .btn-nav { padding: 8px 16px; border-radius: 6px; cursor: pointer; text-decoration: none; font-weight: bold; font-size: 13px; border: 1px solid #2980b9; background: #fff; color: #2980b9; }
+        .btn-nav:hover { background: #ebf5ff; }
+        .layout { display: flex; gap: 20px; align-items: flex-start; }
+        .left-panel { width: 272px; flex-shrink: 0; position: sticky; top: 20px; max-height: 85vh; overflow: auto; border: 1px solid #e1e8ed; border-radius: 8px; background: #fff; }
+        .region-filter-panel { padding: 20px 24px; border: 1px solid #bfdbfe; border-radius: 12px; background: linear-gradient(180deg, #eff6ff 0%, #f8fafc 100%); }
+        .region-filter-panel-main { width: 100%; max-width: none; margin: 0; box-sizing: border-box; }
+        .region-filter-title { font-size: 18px; font-weight: 800; color: #1e40af; margin-bottom: 6px; }
+        .region-filter-desc { font-size: 13px; color: #64748b; margin: 0 0 14px; line-height: 1.5; }
+        .region-filter-toolbar { display: flex; align-items: flex-end; gap: 10px; flex-wrap: nowrap; }
+        .region-filter-field { display: flex; flex-direction: column; gap: 5px; font-size: 12px; font-weight: bold; color: #475569; flex: 1 1 0; min-width: 0; max-width: 240px; }
+        .region-filter-select { width: 100%; padding: 9px 10px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 13px; font-family: inherit; background: #fff; box-sizing: border-box; }
+        .region-filter-reset { flex-shrink: 0; padding: 9px 14px; font-size: 12px; font-weight: bold; border: 1px solid #93c5fd; background: #fff; color: #2563eb; border-radius: 8px; cursor: pointer; white-space: nowrap; height: 38px; box-sizing: border-box; }
+        .region-filter-reset:hover { background: #dbeafe; }
+        .filter-summary { flex-shrink: 0; font-size: 14px; color: #1d4ed8; font-weight: 800; white-space: nowrap; padding-bottom: 9px; margin-left: auto; }
+        .korea-map-explorer { display: none; }
+        .main-explore-row { display: flex; flex-direction: column; gap: 18px; width: 100%; }
+        .main-map-column { width: 100%; min-width: 0; }
+        .main-region-column { width: 100%; min-width: 0; display: flex; flex-direction: column; gap: 16px; }
+        .korea-map-explorer-inner { border: 1px solid #dbeafe; border-radius: 14px; background: linear-gradient(180deg, #f8fbff 0%, #fff 100%); padding: 18px 20px 22px; box-sizing: border-box; }
+        .korea-map-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
+        .korea-map-kicker { font-size: 12px; font-weight: 800; color: #2563eb; margin-bottom: 4px; }
+        .korea-map-breadcrumb { font-size: 18px; font-weight: 800; color: #1e293b; }
+        .korea-map-guide { margin: 0 0 14px; font-size: 12px; color: #64748b; line-height: 1.5; }
+        .korea-map-back { flex-shrink: 0; padding: 8px 12px; border: 1px solid #cbd5e1; background: #fff; border-radius: 8px; font-size: 12px; font-weight: bold; color: #475569; cursor: pointer; }
+        .korea-map-back:hover { background: #f1f5f9; }
+        .korea-d3-map-host { width: 100%; min-height: 420px; border: 1px solid #e2e8f0; border-radius: 12px; background: #f8fafc; overflow: hidden; }
+        .korea-d3-svg { width: 100%; height: auto; display: block; }
+        .korea-d3-region { transition: fill 0.15s ease, stroke 0.15s ease; }
+        .korea-d3-region.is-unmapped { opacity: 0.45; }
+        .korea-map-sejong-note { margin-top: 10px; text-align: center; }
+        .korea-map-sejong-btn, .korea-map-sejong-select { padding: 8px 14px; border: 1px solid #93c5fd; background: #fff; color: #2563eb; border-radius: 8px; font-size: 12px; font-weight: bold; cursor: pointer; }
+        .korea-map-sejong-btn:hover, .korea-map-sejong-select:hover { background: #dbeafe; }
+        .korea-map-sejong-select.is-active { background: #2563eb; color: #fff; }
+        .korea-map-sejong-panel { padding: 40px 20px; text-align: center; }
+        .korea-map-table-hint { padding: 20px 16px; }
+        @media (min-width: 901px) {
+            .korea-map-explorer { display: block; }
+            .main-explore-row { flex-direction: row; align-items: stretch; gap: 20px; }
+            .main-map-column { flex: 1 1 52%; min-width: 0; }
+            .main-region-column { flex: 1 1 48%; min-width: 0; }
+            .main-region-column .region-filter-toolbar { flex-wrap: wrap; align-items: stretch; }
+            .main-region-column .region-filter-field { max-width: none; flex: 1 1 calc(50% - 5px); }
+            .main-region-column .region-filter-reset { width: auto; }
+            .main-region-column .filter-summary { width: 100%; margin-left: 0; text-align: right; padding-bottom: 0; }
+        }
+        .resume-main-view { min-height: 420px; padding: 12px 0 24px; width: 100%; box-sizing: border-box; }
+        .region-student-grid { width: 100%; margin: 0; overflow-x: auto; }
+        .student-list-table { border-collapse: collapse; font-size: 11px; table-layout: fixed; width: 254px; margin: 0 auto; }
+        .student-list-table col.col-no { width: 24px; }
+        .student-list-table col.col-name { width: 44px; }
+        .student-list-table col.col-age { width: 24px; }
+        .student-list-table col.col-addr { width: 62px; }
+        .student-list-table col.col-att { width: 38px; }
+        .student-list-table col.col-employ { width: 36px; }
+        .student-list-table th { position: sticky; top: 0; z-index: 1; background: #f1f5f9; color: #475569; font-size: 10px; font-weight: 800; padding: 6px 2px; border-bottom: 2px solid #e2e8f0; text-align: center; white-space: nowrap; }
+        .student-list-table td { padding: 6px 2px; border-bottom: 1px solid #eef2f6; vertical-align: middle; text-align: center; line-height: 1.35; }
+        .student-list-table .col-no { color: #64748b; }
+        .student-list-table .col-name { font-weight: 700; color: #1e293b; text-align: center; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .student-list-table .col-age { white-space: nowrap; font-size: 10px; }
+        .student-list-table .col-addr { text-align: center; color: #475569; font-size: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .student-list-table .col-att { white-space: nowrap; font-size: 10px; font-weight: 700; color: #27ae60; }
+        .student-list-table .col-employ { white-space: nowrap; font-size: 10px; }
+        .col-employ-toggle { cursor: pointer; user-select: none; }
+        .col-employ-toggle:hover { text-decoration: underline; }
+        .student-list-table tbody tr { cursor: pointer; transition: background 0.12s; }
+        .student-list-table tbody tr:hover { background: #f8fafc; }
+        .student-list-table tbody tr.active { background: #ebf5ff; }
+        .student-list-table tbody tr.active td { font-weight: 700; }
+        .student-list-table tbody tr.active .col-name { color: #1d4ed8; }
+        .employ-yes { color: #166534; font-weight: 700; }
+        .employ-no { color: #94a3b8; }
+        .student-list-table-main { width: 100%; margin: 0; font-size: 12px; }
+        .student-list-table-main col.col-no { width: 8%; }
+        .student-list-table-main col.col-name { width: 14%; }
+        .student-list-table-main col.col-age { width: 9%; }
+        .student-list-table-main col.col-addr { width: 30%; }
+        .student-list-table-main col.col-att { width: 16%; }
+        .student-list-table-main col.col-employ { width: 13%; }
+        .student-list-table-main th { font-size: 11px; padding: 8px 6px; }
+        .student-list-table-main td { padding: 8px 6px; font-size: 12px; }
+        .student-list-table-main .col-name { text-align: left; }
+        .student-list-table-main .col-addr { text-align: left; }
+        .main-view-hint { text-align: center; padding: 28px 16px; color: #94a3b8; font-size: 13px; width: 100%; margin: 0; box-sizing: border-box; }
+        .resume-detail-view[hidden] { display: none !important; }
+        .resume-main-view[hidden] { display: none !important; }
+        .right-panel { flex: 1; min-width: 0; }
+        .empty-state { text-align: center; padding: 48px 20px; color: #94a3b8; }
+        .submission-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+        .submission-card { border: 1px solid #e1e8ed; border-radius: 10px; overflow: hidden; background: #fafbfc; }
+        .submission-card-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 12px 14px; background: #f1f5f9; cursor: pointer; }
+        .submission-card-head:hover { background: #e2e8f0; }
+        .submission-date { font-weight: 800; color: #1e293b; font-size: 14px; }
+        .submission-actions { display: flex; gap: 8px; align-items: center; }
+        .btn-del { padding: 4px 10px; font-size: 11px; border: 1px solid #fca5a5; background: #fff; color: #dc2626; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        .btn-del:hover { background: #fef2f2; }
+        .submission-body { display: none; padding: 16px; border-top: 1px solid #e1e8ed; background: #fff; }
+        .submission-card.is-open .submission-body { display: block; }
+        .resume-view-section { margin-bottom: 18px; }
+        .resume-view-section h4 { margin: 0 0 10px; font-size: 14px; color: #2980b9; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px; }
+        .resume-copy-grid { display: grid; grid-template-columns: 120px 1fr; gap: 8px 12px; font-size: 13px; }
+        .resume-basic-layout { display: flex; flex-direction: column; gap: 10px; font-size: 13px; }
+        .resume-basic-row-triple { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+        .resume-basic-row-double { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+        .resume-basic-row-full { display: block; }
+        .resume-basic-field { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+        .resume-basic-field .resume-copy-label { font-size: 12px; }
+        .resume-copy-label { color: #64748b; font-weight: bold; }
+        .resume-copy-val { padding: 8px 10px; border: 1px dashed #cbd5e1; border-radius: 6px; background: #f8fafc; cursor: pointer; word-break: break-all; line-height: 1.45; }
+        .resume-copy-val:hover { background: #e2e8f0; }
+        .resume-copy-val.is-copied { background: #dcfce7; border-color: #86efac; }
+        .resume-view-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+        .resume-view-table th, .resume-view-table td { border: 1px solid #e2e8f0; padding: 8px; text-align: left; vertical-align: top; }
+        .resume-view-table th { background: #f1f5f9; font-weight: bold; }
+        .resume-view-table th.resume-date-th { width: 56px; text-align: center; }
+        .resume-view-table td.resume-date-td { width: 56px; text-align: center; vertical-align: middle; padding: 6px 4px; }
+        .resume-copy-val.resume-date-part { display: block; min-width: 44px; padding: 6px 4px; text-align: center; font-weight: bold; }
+        .rate-highlight { font-size: 22px; font-weight: 900; color: #27ae60; }
+        @media (max-width: 900px) {
+            .layout { flex-direction: column; }
+            .left-panel { width: 100%; position: relative; max-height: 280px; }
+            .region-filter-toolbar { flex-wrap: wrap; align-items: stretch; }
+            .region-filter-field { max-width: none; flex: 1 1 calc(50% - 5px); }
+            .region-filter-reset { width: 100%; height: auto; }
+            .filter-summary { margin-left: 0; width: 100%; text-align: center; padding-bottom: 0; }
+            .resume-basic-row-triple, .resume-basic-row-double { grid-template-columns: 1fr; }
+        }</style></head><body style="padding-top: 80px;"><style>#globalMainHarness { flex-wrap: nowrap !important; }
+    #navButtonBank { flex-wrap: nowrap !important; }
+    .nav-btn-global {
+        color: #ffffff;
+        border: none;
+        border-radius: 6px;
+        text-align: center;
+        box-sizing: border-box;
+        transition: 0.3s;
+        cursor: pointer;
+        flex: 1 1 auto;
+        font-weight: bold;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    @media (max-width: 1100px) and (min-width: 769px) {
+        #globalMainHarness { padding: 8px 10px !important; }
+        #navButtonBank { gap: 4px !important; margin: 0 10px !important; }
+        #harnessRightBank div { padding: 6px 12px !important; font-size: 13px !important; }
+        #currentClassDisplay { font-size: 15px !important; }
+    }
+    @media (max-width: 768px) {
+        #globalMainHarness { flex-wrap: wrap !important; gap: 8px; }
+        #harnessLeftBank { order: 1; flex: 1; }
+        #harnessRightBank { order: 2; flex: 1; display: flex; justify-content: flex-end; }
+        #navButtonBank { order: 3; flex-wrap: wrap !important; width: 100%; margin: 0 !important; }
+        .nav-btn-global { max-width: calc(25% - 4px); font-size: 9px !important; }
+    }</style><link rel="stylesheet" href="../common-harness.css"><script src="../common-harness.js"></script><div id="globalMainHarness" style="position: fixed; top: 0; left: 0; width: 100%; background: #1a252f; z-index: 9999; padding: 10px 20px; box-sizing: border-box; box-shadow: 0 4px 15px rgba(0,0,0,0.3); border-bottom: 3px solid #e67e22; display: flex; justify-content: space-between; align-items: center;"><div id="harnessLeftBank" style="flex-shrink: 0;"><button class="btn" style="background: transparent; color: #f1c40f; border: 1px solid #f1c40f; width: 90px; padding: 6px 0; font-size: 12px; font-weight: bold; box-sizing: border-box; cursor: pointer;" onclick='location.href="select_class.html"'>◀ 반 선택</button></div><div id="navButtonBank" style="display: flex; justify-content: center; gap: 6px; flex-grow: 1; margin: 0 15px;"><button class="nav-btn-global" style="background: #3498db;" onclick='location.href=classNavHref("index1.html")'>🏠 메인화면</button> <button class="nav-btn-global" style="background: #e67e22;" onclick='location.href=classNavHref("일일출석부.html")'>📅 일일출석부</button> <button class="nav-btn-global" style="background: #27ae60;" onclick='location.href=classNavHref("능력단위시간표.html")'>📊 출석률/보강</button> <button class="nav-btn-global" style="background: #8e44ad;" onclick='location.href=classNavHref("단위개월출석부.html")'>📈 단위출석부</button> <button class="nav-btn-global" style="background: #2c3e50;" onclick='location.href=classNavHref("평가계획서.html")'>📄 계획서류</button> <button class="nav-btn-global" style="background: #16a085;" onclick='location.href=classNavHref("../평가지/평가지.html")'>📋 내부평가</button> <button class="nav-btn-global" style="background: #d35400;" onclick='location.href=classNavHref("상담일지.html")'>🤝 상담/이력서</button></div><div id="harnessRightBank" style="flex-shrink: 0;"><div style="background: #000000; color: #f1c40f; padding: 8px 22px; border-radius: 6px; border: 2px solid #f1c40f; font-weight: 900; font-size: 16px; box-shadow: 0 0 12px rgba(241, 196, 15, 0.8); white-space: nowrap; letter-spacing: 1px;"><span style="color: #ffffff; font-size: 14px; margin-right: 5px;">▶ 현재 학급:</span> <span id="currentClassDisplay" style="font-size: 19px; text-shadow: 0 0 5px #f1c40f;">로딩 중...</span></div></div></div><div class="container"><div class="header"><h2>📄 학생 이력서 확인</h2><a href="#" id="btnBackCounsel" class="btn-nav">◀ 상담일지로</a></div><div class="layout"><div class="left-panel" id="studentList"><div style="padding:20px;text-align:center;color:#94a3b8;font-size:12px;">불러오는 중...</div></div><div class="right-panel"><div id="resumeMainView" class="resume-main-view"><div class="main-explore-row"><div class="main-map-column"><div id="koreaMapExplorer" class="korea-map-explorer"></div></div><div class="main-region-column"><div class="region-filter-panel region-filter-panel-main" id="regionFilterPanel"><div class="region-filter-title">📍 지역별 보기</div><p class="region-filter-desc">시·도와 시·군·구를 선택하면 아래 목록에 해당 지역 학생만 표시됩니다. 좌측 명단은 전체 학생이며, 학생을 클릭하면 이력서를 확인할 수 있습니다.</p><div class="region-filter-toolbar"><label class="region-filter-field"><span>시·도</span> <select id="filterSido" class="region-filter-select"><option value="">전체</option></select></label> <label class="region-filter-field"><span>시·군·구</span> <select id="filterSigungu" class="region-filter-select" disabled="disabled"><option value="">전체</option></select></label> <button type="button" id="btnFilterReset" class="region-filter-reset">필터 초기화</button><div id="filterSummary" class="filter-summary"></div></div></div><div id="regionStudentGrid" class="region-student-grid"></div></div></div></div><div id="resumeDetailArea" class="resume-detail-view" hidden></div></div></div></div><link rel="stylesheet" href="../common-dialog.css"><script src="https://cdn.jsdelivr.net/npm/d3@7"></script><script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script><script src="../common-dialog.js"></script><script src="../common-class-db.js"></script><script src="kr-regions-data.js"></script><script src="korea-gadm-sido-map.js"></script><script src="korea-gadm-sigungu-overrides.js"></script><script src="korea-map-picker.js"></script><script src="student-resume-shared.js"></script><script src="학생이력서확인.js"></script></body></html>
