@@ -78,15 +78,24 @@
         return cred.user;
     }
 
-    function resumeSubmitErrorHint(err) {
+    function resumeSubmitErrorHint(err, step) {
         const code = String(err?.code || err?.message || '');
         if (code.includes('PERMISSION_DENIED') || code.includes('permission_denied')) {
-            return '서버에서 이력서 전송 권한이 막혀 있습니다. 담임선생님께 Firebase DB 규칙(firebase-student-resume-rules.json) 적용을 요청해 주세요.';
+            if (step === 'count') {
+                return '전송 횟수(studentResumeSubmitCounts) DB 권한 오류입니다. Firebase 규칙을 다시 게시했는지 확인해 주세요.';
+            }
+            if (step === 'resume') {
+                return '이력서(studentResumes) DB 권한 오류입니다. 익명 로그인 ON + Firebase 규칙 게시를 확인해 주세요.';
+            }
+            return '서버 DB 권한 오류입니다. 익명 로그인 ON · Firebase 규칙 게시 · 테스트 중인 반 DB가 맞는지 확인해 주세요.';
         }
         if (code.includes('auth/operation-not-allowed')) {
             return 'Firebase Console → Authentication → Sign-in method → 익명(Anonymous) 사용 설정이 필요합니다.';
         }
-        return '네트워크를 확인 후 다시 시도해 주세요.';
+        if (code.includes('auth/')) {
+            return 'Firebase 로그인 오류: ' + code;
+        }
+        return (code || '네트워크를 확인 후 다시 시도해 주세요.');
     }
 
     function getAttendanceRateForStudent(name) {
@@ -376,9 +385,28 @@
                 statusEl.textContent = '전송 중...';
                 statusEl.classList.remove('is-success');
             }
-            await ensureStudentResumeAuth();
 
-            const slot = await reserveDailySubmitSlot(selectedStudentName);
+            try {
+                await ensureStudentResumeAuth();
+            } catch (authErr) {
+                console.error('이력서 익명 로그인 실패:', authErr);
+                const hint = resumeSubmitErrorHint(authErr, 'auth');
+                if (statusEl) statusEl.textContent = '❌ 전송에 실패했습니다. ' + hint;
+                await appAlert('Firebase 로그인에 실패했습니다.\n' + hint);
+                return;
+            }
+
+            let slot;
+            try {
+                slot = await reserveDailySubmitSlot(selectedStudentName);
+            } catch (countErr) {
+                console.error('전송 횟수 확인 실패:', countErr);
+                const hint = resumeSubmitErrorHint(countErr, 'count');
+                if (statusEl) statusEl.textContent = '❌ 전송에 실패했습니다. ' + hint;
+                await appAlert('전송 횟수 확인에 실패했습니다.\n' + hint);
+                return;
+            }
+
             if (!slot.ok) {
                 const limitMsg = `오늘은 이미 ${RESUME_DAILY_SUBMIT_LIMIT}회 전송하셨습니다.\n내일(한국 시간 기준) 다시 시도해 주세요.`;
                 if (statusEl) statusEl.textContent = '❌ ' + limitMsg.replace('\n', ' ');
@@ -389,11 +417,16 @@
             slotReserved = true;
 
             const ref = classDbRef(`studentResumes/${selectedStudentName}`).push();
-            await ref.set({
-                ...payload,
-                submissionId: ref.key,
-                studentName: selectedStudentName
-            });
+            try {
+                await ref.set({
+                    ...payload,
+                    submissionId: ref.key,
+                    studentName: selectedStudentName
+                });
+            } catch (resumeErr) {
+                console.error('이력서 DB 저장 실패:', resumeErr);
+                throw Object.assign(resumeErr, { _resumeStep: 'resume' });
+            }
             slotReserved = false;
 
             const toStore = {
@@ -416,7 +449,8 @@
                 try { await releaseDailySubmitSlot(selectedStudentName); } catch (_) { /* ignore */ }
             }
             console.error('이력서 전송 실패:', e);
-            const hint = resumeSubmitErrorHint(e);
+            const step = e?._resumeStep || 'unknown';
+            const hint = resumeSubmitErrorHint(e, step);
             if (statusEl) {
                 statusEl.textContent = '❌ 전송에 실패했습니다. ' + hint;
                 statusEl.classList.remove('is-success');
