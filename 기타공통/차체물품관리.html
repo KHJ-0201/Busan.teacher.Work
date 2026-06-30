@@ -1,0 +1,81 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>자동차 차체/도장 실습장 통합 자산·재고 관리 시스템 (2022-2026)</title><script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script><style>:root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --success-color: #2ecc71;
+            --warning-color: #e67e22;
+            --danger-color: #e74c3c;
+            --light-bg: #f8f9fa;
+            --border-color: #dee2e6;
+        }
+
+        body { font-family: 'Malgun Gothic', '맑은 고딕', Arial, sans-serif; margin: 0; padding: 20px; background-color: #f4f6f9; color: #333; line-height: 1.6; }
+        .container { max-width: 1500px; margin: 0 auto; }
+        header { background-color: var(--primary-color); color: white; padding: 20px; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); display: flex; justify-content: space-between; align-items: center; }
+        header h1 { margin: 0; font-size: 24px; font-weight: 600; }
+        header p { margin: 5px 0 0 0; opacity: 0.8; font-size: 14px; }
+        .year-selector { background: white; color: var(--primary-color); padding: 8px 15px; border-radius: 4px; font-weight: bold; border: 2px solid var(--accent-color); font-size: 16px; outline: none; }
+        
+        .grid-layout { display: grid; grid-template-columns: 420px 1fr; gap: 25px; }
+        .card { background: white; border-radius: 8px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border: 1px solid var(--border-color); margin-bottom: 25px; }
+        .card-title { font-size: 16px; font-weight: bold; margin-top: 0; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid var(--primary-color); color: var(--primary-color); }
+        
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; font-size: 13px; font-weight: bold; margin-bottom: 5px; color: var(--secondary-color); }
+        .form-control { width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 4px; font-size: 14px; box-sizing: border-box; }
+        .form-control:focus { border-color: var(--accent-color); outline: none; }
+        
+        .btn { display: inline-block; width: 100%; padding: 10px; background-color: var(--accent-color); color: white; border: none; border-radius: 4px; font-size: 14px; font-weight: bold; cursor: pointer; transition: background 0.2s; }
+        .btn:hover { background-color: #2980b9; }
+        .btn-success { background-color: var(--success-color); }
+        .btn-success:hover { background-color: #27ae60; }
+        
+        .btn-group { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 15px; }
+        .btn-export { font-size: 12px; padding: 8px 5px; background-color: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        .btn-export:hover { background-color: #5a6268; }
+        
+        .tabs { display: flex; border-bottom: 1px solid var(--border-color); margin-bottom: 15px; }
+        .tab-btn { padding: 10px 20px; background: none; border: none; font-size: 14px; font-weight: bold; cursor: pointer; color: #666; border-bottom: 3px solid transparent; }
+        .tab-btn.active { color: var(--accent-color); border-bottom-color: var(--accent-color); }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        
+        .table-responsive { overflow-x: auto; max-height: 650px; }
+        table { width: 100%; border-collapse: collapse; font-size: 12px; text-align: center; background: white; white-space: nowrap; }
+        th, td { padding: 6px 8px; border: 1px solid var(--border-color); }
+        th { background-color: var(--light-bg); color: var(--primary-color); font-weight: bold; position: sticky; top: 0; z-index: 10; }
+        tr:nth-child(even) { background-color: #fdfdfd; }
+        
+        .badge { display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; color: white; }
+        .bg-purchase { background-color: var(--success-color); }
+        .bg-repair { background-color: var(--accent-color); }
+        .bg-damage { background-color: var(--warning-color); }
+        .bg-loss { background-color: var(--danger-color); }
+        .bg-disposal { background-color: #7f8c8d; }
+        .bg-survey { background-color: #17a2b8; }
+        
+        .gap-notice { background-color: #d1ecf1; color: #0c5460; padding: 10px; border-radius: 4px; margin-bottom: 15px; font-size: 13px; border-left: 4px solid #17a2b8; }
+
+        .survey-scroll { max-height: 280px; overflow-y: auto; border: 1px solid var(--border-color); border-radius: 6px; margin-bottom: 12px; }
+        .survey-header, .survey-row { display: grid; grid-template-columns: 1fr 36px 44px 64px; gap: 4px; align-items: center; padding: 5px 8px; font-size: 11px; }
+        .survey-header { background: var(--light-bg); font-weight: bold; color: var(--primary-color); position: sticky; top: 0; z-index: 2; border-bottom: 1px solid var(--border-color); }
+        .survey-row { border-bottom: 1px solid #f0f0f0; }
+        .survey-row:nth-child(even) { background: #fafafa; }
+        .survey-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: left; }
+        .survey-unit, .survey-base { text-align: center; color: #666; }
+        .survey-qty { width: 100%; padding: 4px; border: 1px solid var(--border-color); border-radius: 3px; text-align: right; font-size: 12px; box-sizing: border-box; }
+        .survey-qty:focus { border-color: var(--accent-color); outline: none; }
+        .survey-section-label { font-size: 12px; font-weight: bold; color: var(--secondary-color); margin: 10px 0 6px; }
+        .btn-toggle { background: none; border: none; color: var(--accent-color); font-size: 12px; font-weight: bold; cursor: pointer; padding: 0; margin-top: 8px; text-align: left; width: 100%; }
+        #eventFormPanel { display: none; margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--border-color); }
+        .month-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 12px; }
+        .month-toolbar label { font-size: 13px; font-weight: bold; color: var(--secondary-color); }
+        .month-toolbar select { padding: 6px 10px; border: 1px solid var(--border-color); border-radius: 4px; font-size: 14px; }
+        .survey-date-badge { font-size: 12px; color: #666; background: #f0f0f0; padding: 4px 10px; border-radius: 4px; }
+        .btn-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; }
+        .btn-preview { background-color: #6f42c1; }
+        .btn-preview:hover { background-color: #5a32a3; }
+        #previewBanner { display: none; background: #fff3cd; color: #856404; padding: 10px 12px; border-radius: 4px; margin-bottom: 12px; font-size: 13px; border-left: 4px solid #ffc107; }
+        .btn-preview-action { margin-left: 8px; padding: 4px 10px; border: none; border-radius: 4px; font-size: 12px; font-weight: bold; cursor: pointer; background: var(--success-color); color: white; }
+        .btn-preview-cancel { background: #6c757d; }
+        .workflow-hint { font-size: 11px; color: #555; background: #f8f9fa; border: 1px dashed var(--border-color); border-radius: 4px; padding: 8px; margin: -4px 0 12px; line-height: 1.5; }</style></head><body><div class="container"><header><div><h1>자동차 실습장 자산·재고 통합 연동 시스템</h1><p>2022년 원본 데이터 구조 이식 및 다년간(Multi-Year) 자동 이월 보정 알고리즘 적용</p></div><div class="header-actions" style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;"><a href="차체물품관리-추이.html" style="padding:8px 14px;background:#8e44ad;color:white;text-decoration:none;border-radius:4px;font-weight:bold;font-size:13px;">📈 수량 추이</a> <label for="globalYear" style="font-size: 14px; margin-right: 10px;">기준 연도 선택:</label> <select id="globalYear" class="year-selector" onchange="calculateAndRender()"><option value="2022">2022년도</option><option value="2023">2023년도</option><option value="2024">2024년도</option><option value="2025">2025년도</option><option value="2026" selected="selected">2026년도</option></select></div></header><div class="grid-layout"><div class="sidebar"><div class="card"><div class="card-title">① 최신 재고 실측 일괄 입력</div><div class="workflow-hint"><strong>엑셀과의 대응:</strong> 소모품은 <strong>2번 월별 조사표</strong>의 「현월재고」를, 장비는 <strong>1번 분기별 대장</strong>의 분기말 재고를 한 번에 넣는 화면입니다.<br>입력 내용은 내부적으로 <strong>실측 기록</strong>으로 저장되며, 2·1번 표는 자동 계산됩니다. 3번 일지는 장비 <strong>구입·파손·수리</strong> 등 이벤트용입니다.</div><p style="font-size:12px;color:#666;margin:-8px 0 12px;">전 품목의 <strong>지금 실측 수량</strong>을 입력하세요. 먼저 「가상 미리보기」로 결과를 확인한 뒤 확정할 수 있습니다.</p><div class="form-group"><label for="surveyDate">실측 기준일</label> <input type="date" id="surveyDate" class="form-control" value="2026-06-30"></div><div class="survey-section-label">장비 및 기자재 (1번 연동) · 27종</div><div class="survey-scroll"><div class="survey-header"><span>품명</span><span>단위</span><span>22기준</span><span>실측</span></div><div id="surveyListEquipment"></div></div><div class="survey-section-label">소모성 도장용구 (2번 연동) · 31종</div><div class="survey-scroll"><div class="survey-header"><span>품명</span><span>단위</span><span>22기준</span><span>실측</span></div><div id="surveyListConsumable"></div></div><div class="btn-row"><button type="button" id="btnPreviewSurvey" class="btn btn-preview">가상 미리보기</button> <button type="button" id="btnApplySurvey" class="btn btn-success">실제 등록 및 보정</button></div><div id="previewBanner"></div><button type="button" id="btnToggleEvent" class="btn-toggle" onclick="toggleEventForm()">▼ 개별 이벤트 추가 (구입·파손 등)</button><div id="eventFormPanel"><form id="logForm"><div class="form-group"><label for="logDate">일시</label> <input type="date" id="logDate" class="form-control" required value="2026-06-30"></div><div class="form-group"><label for="itemType">분류</label> <select id="itemType" class="form-control" onchange="updateItemDropdown()"><option value="equipment">장비 및 기자재</option><option value="consumable">소모성 도장용구</option></select></div><div class="form-group"><label for="itemName">품명</label> <select id="itemName" class="form-control" required></select></div><div class="form-group"><label for="logQty">수량</label> <input type="number" id="logQty" class="form-control" min="0" step="0.1" value="1" required></div><div class="form-group"><label for="logStatus">상태</label> <select id="logStatus" class="form-control" required><option value="구입">구입</option><option value="파손">파손</option><option value="분실">분실</option><option value="수리">수리</option><option value="폐기">폐기</option></select></div><div class="form-group"><label for="logMemo">기타</label> <input type="text" id="logMemo" class="form-control" placeholder="사유/업체명"></div><button type="submit" class="btn">이벤트 등록</button></form></div></div><div class="card"><div class="card-title">② 선택 연도 엑셀 다운로드</div><p style="font-size: 12px; color: #666; margin-top: -10px;">상단에서 선택된 <strong id="lblDlYear" style="color:var(--accent-color)">2026</strong>년도의 정산 결과를 원본 서식 그대로 내보냅니다.</p><div class="btn-group"><button class="btn btn-export" onclick="exportFile1()">1번 장비대장<br>(분기별)</button> <button class="btn btn-export" onclick="exportFile2()">2번 종합대장<br>(월별재고)</button> <button class="btn btn-export" onclick="exportFile2Monthly()">2번 조사표<br>(월별시트)</button> <button class="btn btn-export" onclick="exportFile3()">3번 현황일지<br>(원천로그)</button></div></div></div><div class="main-content"><div class="tabs"><button class="tab-btn active" onclick='switchTab("tab3",this)'>3번 현황 일지</button> <button class="tab-btn" onclick='switchTab("tab2",this)'>2번 월별 종합</button> <button class="tab-btn" onclick='switchTab("tab2m",this)'>2번 월별 조사표</button> <button class="tab-btn" onclick='switchTab("tab1",this)'>1번 장비 분기별 대장</button></div><div id="gapNotice" class="gap-notice"><strong>💡 Multi-Year 연동 엔진 가동:</strong> 2022년 최초 재고를 기준으로 현재 선택된 연도까지 모든 공백월 및 연도 전환(Carry-Forward) 데이터가 자동 보정되었습니다.</div><div id="tab3" class="tab-content active"><div class="card"><div class="card-title"><span class="titleTabYear"></span>년도 장비 및 기자재 관리현황 (실시간 로그)</div><div class="table-responsive"><table id="tableLog"><thead><tr><th width="60">번호</th><th width="100">일시</th><th>품명</th><th width="80">수량</th><th width="100">상태</th><th>기타 (사유 및 내역)</th></tr></thead><tbody></tbody></table></div></div></div><div id="tab2" class="tab-content"><div class="card"><div class="card-title"><span class="titleTabYear"></span>년도 소모성 도장용구 월별 재고종합 대장</div><div class="table-responsive"><table id="tableConsumable"><thead><tr><th>번호</th><th>품명</th><th>단위</th><th>기준수량</th><th>전년도이월</th><th>1월</th><th>2월</th><th>3월</th><th>4월</th><th>5월</th><th>6월</th><th>7월</th><th>8월</th><th>9월</th><th>10월</th><th>11월</th><th>12월</th></tr></thead><tbody></tbody></table></div></div></div><div id="tab2m" class="tab-content"><div class="card"><div class="card-title"><span class="titleTabYear"></span>년도 소모성 도장용구 월별 조사표 (엑셀 1~12월 시트)</div><div class="month-toolbar"><label for="surveyMonthSelect">조사 월</label> <select id="surveyMonthSelect" class="form-control" style="width:auto;min-width:90px;" onchange="calculateAndRender()"><option value="1">1월</option><option value="2">2월</option><option value="3">3월</option><option value="4">4월</option><option value="5">5월</option><option value="6">6월</option><option value="7">7월</option><option value="8" selected="selected">8월</option><option value="9">9월</option><option value="10">10월</option><option value="11">11월</option><option value="12">12월</option></select> <span id="monthlySurveyDateLabel" class="survey-date-badge">실지재고조사일</span> <span style="font-size:12px;color:#888;">3번 실측·구입 입력 시 공백 월은 자동 증감(노란색=추정)</span></div><div class="table-responsive"><table id="tableMonthlySurvey"><thead><tr><th>번호</th><th>품명</th><th>단위</th><th>이월재고</th><th>현월재고</th><th>차이수량</th><th>구입수량</th><th>비고</th></tr></thead><tbody></tbody></table></div></div></div><div id="tab1" class="tab-content"><div class="card"><div class="card-title"><span class="titleTabYear"></span>년도 차체 장비 및 기자재 관리대장 (분기별)</div><div class="table-responsive"><table id="tableEquipment"><thead><tr><th rowspan="2">순번</th><th rowspan="2">품명</th><th rowspan="2">단위</th><th colspan="4">1/4 분기</th><th colspan="4">2/4 분기</th><th colspan="4">3/4 분기</th><th colspan="4">4/4 분기</th></tr><tr><th>구입</th><th>파손</th><th>분실</th><th>재고</th><th>구입</th><th>파손</th><th>분실</th><th>재고</th><th>구입</th><th>파손</th><th>분실</th><th>재고</th><th>구입</th><th>파손</th><th>분실</th><th>재고</th></tr></thead><tbody></tbody></table></div></div></div></div></div></div><script src="data-2022-baseline.js"></script><script src="data-2022-monthly-sheets.js"></script><script src="차체물품관리.js"></script></body></html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>재고 수량 추이 대시보드 | 차체 물품관리</title><script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script><style>:root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --success-color: #2ecc71;
+            --warning-color: #f39c12;
+            --border-color: #dee2e6;
+            --light-bg: #f8f9fa;
+        }
+        * { box-sizing: border-box; }
+        body { font-family: 'Malgun Gothic', '맑은 고딕', Arial, sans-serif; margin: 0; padding: 20px; background: #eef2f6; color: #333; }
+        .container { max-width: 1600px; margin: 0 auto; }
+        header {
+            background: linear-gradient(135deg, #1a252f 0%, #2c3e50 100%);
+            color: white; padding: 22px 24px; border-radius: 10px; margin-bottom: 20px;
+            display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+        }
+        header h1 { margin: 0 0 6px 0; font-size: 22px; }
+        header p { margin: 0; opacity: 0.85; font-size: 13px; }
+        .header-actions { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+        .btn-nav {
+            padding: 9px 16px; background: white; color: var(--primary-color); text-decoration: none;
+            border-radius: 6px; font-weight: bold; font-size: 13px; border: none; cursor: pointer;
+        }
+        .btn-nav:hover { background: #ecf0f1; }
+        .btn-refresh { background: var(--accent-color); color: white; }
+        .btn-refresh:hover { background: #2980b9; }
+        .toolbar {
+            background: white; border-radius: 8px; padding: 14px 18px; margin-bottom: 16px;
+            border: 1px solid var(--border-color); display: flex; flex-wrap: wrap; gap: 12px; align-items: center;
+        }
+        .toolbar label { font-size: 13px; font-weight: bold; color: #555; }
+        .toolbar select, .toolbar input {
+            padding: 7px 10px; border: 1px solid var(--border-color); border-radius: 5px; font-size: 14px;
+        }
+        .toolbar input { min-width: 200px; }
+        .period-badge {
+            margin-left: auto; font-size: 13px; font-weight: bold; color: var(--primary-color);
+            background: var(--light-bg); padding: 6px 12px; border-radius: 20px;
+        }
+        .legend-bar {
+            display: flex; flex-wrap: wrap; gap: 16px; font-size: 12px; color: #555; margin-bottom: 16px;
+            background: white; padding: 10px 16px; border-radius: 8px; border: 1px solid var(--border-color);
+        }
+        .legend-item { display: flex; align-items: center; gap: 6px; }
+        .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+        .legend-line { width: 22px; height: 3px; border-radius: 2px; }
+        .detail-card {
+            background: white; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px;
+            border: 2px solid var(--accent-color); box-shadow: 0 2px 8px rgba(52,152,219,0.15);
+        }
+        .detail-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; margin-bottom: 12px; }
+        .detail-head h2 { margin: 0; font-size: 18px; color: var(--primary-color); }
+        .detail-meta { font-size: 13px; color: #666; }
+        .detail-chart-wrap { height: 320px; position: relative; }
+        .chart-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px;
+        }
+        .chart-card {
+            background: white; border-radius: 8px; border: 1px solid var(--border-color);
+            padding: 12px 12px 8px; cursor: pointer; transition: box-shadow 0.15s, border-color 0.15s;
+        }
+        .chart-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-color: var(--accent-color); }
+        .chart-card.selected { border-color: var(--accent-color); box-shadow: 0 0 0 2px rgba(52,152,219,0.25); }
+        .chart-card-head { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; min-height: 22px; }
+        .chart-card-head strong { font-size: 13px; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .badge-type {
+            font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; color: white; flex-shrink: 0;
+        }
+        .badge-equipment { background: #8e44ad; }
+        .badge-consumable { background: #16a085; }
+        .chart-unit { font-size: 11px; color: #888; }
+        .mini-chart-wrap { height: 140px; position: relative; }
+        .chart-card-foot { font-size: 11px; color: #777; margin-top: 4px; text-align: right; }
+        .empty-msg { text-align: center; padding: 40px; color: #888; grid-column: 1 / -1; }
+        @media (max-width: 700px) {
+            .period-badge { margin-left: 0; width: 100%; text-align: center; }
+            .detail-chart-wrap { height: 240px; }
+        }</style></head><body><div class="container"><header><div><h1>📈 재고 수량 추이 대시보드</h1><p>2022년 1월부터 현재 월까지 · 소모품·기자재 항목별 월말 재고 변화</p></div><div class="header-actions"><button type="button" class="btn-nav btn-refresh" id="btnRefreshCharts">새로고침</button> <a href="차체물품관리.html" class="btn-nav">🛠️ 물품관리 입력</a> <a href="index.html" class="btn-nav">◀ 기타공통 메뉴</a></div></header><div class="toolbar"><label for="filterType">분류</label> <select id="filterType"><option value="all">전체 (58종)</option><option value="consumable">소모성 도장용구 (31)</option><option value="equipment">장비 및 기자재 (27)</option></select> <label for="searchItem">품명 검색</label> <input type="search" id="searchItem" placeholder="품명 일부 입력..."> <span class="period-badge" id="periodLabel">기간 로딩 중...</span></div><div class="legend-bar"><span class="legend-item"><span class="legend-line" style="background:#3498db;"></span> 확정·실측 반영 구간</span> <span class="legend-item"><span class="legend-dot" style="background:#f39c12;"></span> 추정 구간 (소모품=변동, 장비=수량 고정)</span> <span class="legend-item"><span class="legend-line" style="background:#ccc;border-top:2px dashed #999;height:0;"></span> 데이터 없음(공백)</span></div><div class="detail-card" id="detailCard"><div class="detail-head"><h2 id="detailTitle">품목을 선택하세요</h2><span class="detail-meta" id="detailMeta"></span></div><div class="detail-chart-wrap"><canvas id="detailChart"></canvas></div></div><div class="chart-grid" id="chartGrid"></div></div><script src="data-2022-baseline.js"></script><script src="data-2022-monthly-sheets.js"></script><script src="차체물품관리.js"></script><script src="차체물품관리-추이.js"></script></body></html>

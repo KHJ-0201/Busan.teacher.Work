@@ -1,0 +1,248 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>자동차 차체/도장 실습장 통합 자산·재고 관리 시스템</title><script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script><style>:root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --success-color: #2ecc71;
+            --warning-color: #e67e22;
+            --danger-color: #e74c3c;
+            --light-bg: #f8f9fa;
+            --border-color: #dee2e6;
+        }
+
+        body {
+            font-family: 'Malgun Gothic', '맑은 고딕', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        header p {
+            margin: 5px 0 0 0;
+            opacity: 0.8;
+            font-size: 14px;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+            margin-bottom: 25px;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* 폼 스타일 */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: var(--secondary-color);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        .form-control:focus {
+            border-color: var(--accent-color);
+            outline: none;
+        }
+
+        .btn {
+            display: inline-block;
+            width: 100%;
+            padding: 10px;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+
+        .btn-success { background-color: var(--success-color); }
+        .btn-success:hover { background-color: #27ae60; }
+        
+        .btn-group {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .btn-export {
+            font-size: 12px;
+            padding: 8px 5px;
+            background-color: #6c757d;
+        }
+        .btn-export:hover { background-color: #5a6268; }
+
+        /* 탭 스타일 */
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 15px;
+        }
+
+        .tab-btn {
+            padding: 10px 20px;
+            background: none;
+            border: none;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #666;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab-btn.active {
+            color: var(--accent-color);
+            border-bottom-color: var(--accent-color);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* 테이블 스타일 */
+        .table-responsive {
+            overflow-x: auto;
+            max-height: 550px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            text-align: center;
+            background: white;
+        }
+
+        th, td {
+            padding: 8px 10px;
+            border: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--light-bg);
+            color: var(--primary-color);
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        tr:nth-child(even) {
+            background-color: #fdfdfd;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: bold;
+            color: white;
+        }
+        .bg-purchase { background-color: var(--success-color); }
+        .bg-repair { background-color: var(--accent-color); }
+        .bg-damage { background-color: var(--warning-color); }
+        .bg-loss { background-color: var(--danger-color); }
+        .bg-disposal { background-color: #7f8c8d; }
+
+        .text-right { text-align: right; }
+        .gap-notice {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            font-size: 13px;
+            border-left: 4px solid #ffeeba;
+        }</style></head><body><div class="container"><header><h1>자동차 실습장 자산·재고 전산화 시스템</h1><p>VS Code + JavaScript 기반 원천 데이터(3번) 입력 및 1, 2번 대장 자동 연동 파이프라인 (공백월 자동 이월 보정 기능 탑재)</p></header><div class="grid-layout"><div class="sidebar"><div class="card"><div class="card-title">① 신규 현황 입력 (3번 대장)</div><form id="logForm"><div class="form-group"><label for="logDate">일시 (날짜)</label> <input type="date" id="logDate" class="form-control" required value="2026-06-30"></div><div class="form-group"><label for="itemType">기자재 분류</label> <select id="itemType" class="form-control" onchange="updateItemDropdown()"><option value="equipment">장비 및 기자재 (1번 연동)</option><option value="consumable">소모성 도장용구 (2번 연동)</option></select></div><div class="form-group"><label for="itemName">품명</label> <select id="itemName" class="form-control" required></select></div><div class="form-group"><label for="logQty">수량</label> <input type="number" id="logQty" class="form-control" min="1" value="1" required></div><div class="form-group"><label for="logStatus">상태 (이벤트 종류)</label> <select id="logStatus" class="form-control" required><option value="구입">구입 (재고 증가)</option><option value="파손">파손 (재고 감소 / 교체 필요)</option><option value="분실">분실 (재고 감소)</option><option value="수리">수리 (상태 유지 / 정비 로그)</option><option value="폐기">폐기 (자산 완전 제외)</option></select></div><div class="form-group"><label for="logMemo">기타 (사유/업체명)</label> <input type="text" id="logMemo" class="form-control" placeholder="예: 메인 PCB 교체, 학생 실습 중 파손"></div><button type="submit" class="btn btn-success">실시간 데이터 등록</button></form></div><div class="card"><div class="card-title">② 원본 엑셀 형식 다운로드</div><p style="font-size: 12px; color: #666; margin-top: -10px;">현재까지 자동 연산된 데이터를 기존 엑셀 레이아웃 그대로 내보냅니다.</p><div class="btn-group"><button class="btn btn-export" onclick="exportFile1()">1번 대장<br>(분기별)</button> <button class="btn btn-export" onclick="exportFile2()">2번 대장<br>(월별종합)</button> <button class="btn btn-export" onclick="exportFile3()">3번 대장<br>(원천일지)</button></div></div></div><div class="main-content"><div class="tabs"><button class="tab-btn active" onclick='switchTab("tab3")'>3번 원천 현황 일지</button> <button class="tab-btn" onclick='switchTab("tab2")'>2번 소모품 월별 재고현황</button> <button class="tab-btn" onclick='switchTab("tab1")'>1번 장비 분기별 관리대장</button></div><div id="gapNotice" class="gap-notice" style="display: none;"><strong>💡 시스템 알림:</strong> 데이터가 입력되지 않은 공백월이 감지되어, 직전월 재고를 기준으로 <strong>자동 이월(Carry-Forward) 및 정산</strong>이 수행되었습니다.</div><div id="tab3" class="tab-content active"><div class="card"><div class="card-title">3번 장비 및 기자재 관리현황 (실시간 로그)</div><div class="table-responsive"><table id="tableLog"><thead><tr><th width="60">번호</th><th width="100">일시</th><th>품명</th><th width="80">수량</th><th width="100">상태</th><th>기타 (사유 및 내역)</th></tr></thead><tbody></tbody></table></div></div></div><div id="tab2" class="tab-content"><div class="card"><div class="card-title">2번 소모성 도장용구 월별 재고종합 대장</div><div class="table-responsive"><table id="tableConsumable"><thead><tr><th>번호</th><th>품명</th><th>단위</th><th>기준수량</th><th>1월</th><th>2월</th><th>3월</th><th>4월</th><th>5월</th><th>6월</th><th>7월</th><th>8월</th><th>9월</th><th>10월</th><th>11월</th><th>12월</th></tr></thead><tbody></tbody></table></div></div></div><div id="tab1" class="tab-content"><div class="card"><div class="card-title">1번 차체 장비 및 기자재 관리대장 (분기별 결산)</div><div class="table-responsive"><table id="tableEquipment"><thead><tr><th rowspan="2">순번</th><th rowspan="2">품명</th><th rowspan="2">단위</th><th colspan="4">1/4 분기</th><th colspan="4">2/4 분기</th><th colspan="4">3/4 분기</th><th colspan="4">4/4 분기</th></tr><tr><th>구입</th><th>파손</th><th>분실</th><th>재고</th><th>구입</th><th>파손</th><th>분실</th><th>재고</th><th>구입</th><th>파손</th><th>분실</th><th>재고</th><th>구입</th><th>파손</th><th>분실</th><th>재고</th></tr></thead><tbody></tbody></table></div></div></div></div></div></div><script>let equipmentMaster=[{id:1,name:"측정장비",unit:"대",baseQty:6},{id:2,name:"차체교정기",unit:"대",baseQty:1},{id:3,name:"화이트 바디(보디라이너)",unit:"대",baseQty:2},{id:4,name:"연삭기(그라인더)",unit:"대",baseQty:3},{id:5,name:"STUD(인출기)",unit:"대",baseQty:3},{id:6,name:"MIG AL용접기",unit:"대",baseQty:5},{id:7,name:"MIG 씨오투 용접기",unit:"대",baseQty:14},{id:8,name:"절단기(플라즈마)",unit:"대",baseQty:4}],consumableMaster=[{id:1,name:"전기용접봉",unit:"EA",baseQty:5,initialStock:8},{id:2,name:"용접와이어",unit:"EA",baseQty:5,initialStock:11},{id:3,name:"용접장갑",unit:"짝",baseQty:15,initialStock:15},{id:4,name:"탄산가스",unit:"통",baseQty:10,initialStock:18},{id:5,name:"사각연마지 (P40)",unit:"묶음",baseQty:20,initialStock:25},{id:6,name:"원형연마지 (P80)",unit:"Box",baseQty:10,initialStock:12},{id:7,name:"원형연마지 (P120)",unit:"Box",baseQty:10,initialStock:15}],transactionLogs=[{id:1,date:"2026-01-24",name:"MIG 씨오투 용접기",type:"equipment",qty:1,status:"수리",memo:"메인 PCB 교체"},{id:2,date:"2026-01-26",name:"연삭기(그라인더)",type:"equipment",qty:2,status:"파손",memo:"학생 실습 중 모터 소손"},{id:3,date:"2026-02-14",name:"전기용접봉",type:"consumable",qty:2,status:"파손",memo:"보관 습기로 인한 폐기"},{id:4,date:"2026-02-20",name:"탄산가스",type:"consumable",qty:4,status:"구입",memo:"실습 대비 추가 충전"}];function updateItemDropdown(){var t=document.getElementById("itemType").value;let a=document.getElementById("itemName");a.innerHTML="",("equipment"===t?equipmentMaster:consumableMaster).forEach(t=>{var e=document.createElement("option");e.value=t.name,e.textContent=t.name,a.appendChild(e)})}function switchTab(t){document.querySelectorAll(".tab-content").forEach(t=>t.classList.remove("active")),document.querySelectorAll(".tab-btn").forEach(t=>t.classList.remove("active")),document.getElementById(t).classList.add("active"),event.currentTarget.classList.add("active")}function calculateAndRender(){let n=document.querySelector("#tableLog tbody"),o=(n.innerHTML="",transactionLogs.sort((t,e)=>new Date(t.date)-new Date(e.date)),transactionLogs.forEach((t,e)=>{var a=`<span class="badge ${getStatusClass(t.status)}">${t.status}</span>`,e=`<tr>
+                <td>${e+1}</td>
+                <td>${t.date.substring(5)}</td>
+                <td style="text-align:left;">${t.name}</td>
+                <td>${t.qty}</td>
+                <td>${a}</td>
+                <td style="text-align:left;">${t.memo||"-"}</td>
+            </tr>`;n.insertAdjacentHTML("beforeend",e)}),document.querySelector("#tableConsumable tbody")),d=(o.innerHTML="",!1),a=(consumableMaster.forEach(n=>{var t=new Array(13).fill(0);let e=n.initialStock;for(let a=1;a<=12;a++){var s=transactionLogs.filter(t=>{var e=new Array(t.date)[0]?new Date(t.date).getMonth()+1:0;return"consumable"===t.type&&t.name===n.name&&e===a});0===s.length?(t[a]=e,a<(new Date).getMonth()+1&&(d=!0)):(s.forEach(t=>{"구입"===t.status&&(e+=t.qty),"파손"!==t.status&&"분실"!==t.status&&"폐기"!==t.status||(e-=t.qty)}),t[a]=e)}var a=`<tr>
+                <td>${n.id}</td>
+                <td style="text-align:left; font-weight:bold;">${n.name}</td>
+                <td>${n.unit}</td>
+                <td>${n.baseQty}</td>
+                ${t.slice(1).map(t=>`<td>${t}</td>`).join("")}
+            </tr>`;o.insertAdjacentHTML("beforeend",a)}),document.getElementById("gapNotice").style.display=d?"block":"none",document.querySelector("#tableEquipment tbody"));a.innerHTML="",equipmentMaster.forEach(t=>{let n={q1:{purchase:0,damage:0,loss:0,stock:t.baseQty},q2:{purchase:0,damage:0,loss:0,stock:t.baseQty},q3:{purchase:0,damage:0,loss:0,stock:t.baseQty},q4:{purchase:0,damage:0,loss:0,stock:t.baseQty}};transactionLogs.forEach(e=>{if("equipment"===e.type&&e.name===t.name){var a=new Date(e.date).getMonth()+1;let t=10<=a&&a<=12?"q4":7<=a&&a<=9?"q3":4<=a&&a<=6?"q2":"q1";"구입"===e.status&&(n[t].purchase+=e.qty),"파손"===e.status&&(n[t].damage+=e.qty),"분실"===e.status&&(n[t].loss+=e.qty)}}),n.q1.stock=t.baseQty+n.q1.purchase-(n.q1.damage+n.q1.loss),n.q2.stock=n.q1.stock+n.q2.purchase-(n.q2.damage+n.q2.loss),n.q3.stock=n.q2.stock+n.q3.purchase-(n.q3.damage+n.q3.loss),n.q4.stock=n.q3.stock+n.q4.purchase-(n.q4.damage+n.q4.loss);var e=`<tr>
+                <td>${t.id}.0</td>
+                <td style="text-align:left; font-weight:bold;">${t.name}</td>
+                <td>${t.unit}</td>
+                <!-- 1/4 -->
+                <td>${n.q1.purchase||"ㆍ"}</td><td>${n.q1.damage||"ㆍ"}</td><td>${n.q1.loss||"ㆍ"}</td><td style="background-color:#f1f3f5; font-weight:bold;">${n.q1.stock}.0</td>
+                <!-- 2/4 -->
+                <td>${n.q2.purchase||"ㆍ"}</td><td>${n.q2.damage||"ㆍ"}</td><td>${n.q2.loss||"ㆍ"}</td><td style="background-color:#f1f3f5; font-weight:bold;">${n.q2.stock}.0</td>
+                <!-- 3/4 -->
+                <td>${n.q3.purchase||"ㆍ"}</td><td>${n.q3.damage||"ㆍ"}</td><td>${n.q3.loss||"ㆍ"}</td><td style="background-color:#f1f3f5; font-weight:bold;">${n.q3.stock}.0</td>
+                <!-- 4/4 -->
+                <td>${n.q4.purchase||"ㆍ"}</td><td>${n.q4.damage||"ㆍ"}</td><td>${n.q4.loss||"ㆍ"}</td><td style="background-color:#f1f3f5; font-weight:bold;">${n.q4.stock}.0</td>
+            </tr>`;a.insertAdjacentHTML("beforeend",e)})}function getStatusClass(t){switch(t){case"구입":return"bg-purchase";case"수리":return"bg-repair";case"파손":return"bg-damage";case"분실":return"bg-loss";case"폐기":return"bg-disposal";default:return""}}function exportFile1(){var t=document.getElementById("tableEquipment"),t=XLSX.utils.table_to_book(t,{sheet:"장비,기자재관리대장"});XLSX.writeFile(t,"1.분기별 차체용품 관리대장(자동연동).xlsx")}function exportFile2(){var t=document.getElementById("tableConsumable"),t=XLSX.utils.table_to_book(t,{sheet:"월별재고종합"});XLSX.writeFile(t,"2.월별소모성도장용구(자동연동).xlsx")}function exportFile3(){var t=document.getElementById("tableLog"),t=XLSX.utils.table_to_book(t,{sheet:"현황일지"});XLSX.writeFile(t,"3.장비및기자재관리현황(원천데이터).xlsx")}window.onload=function(){updateItemDropdown(),calculateAndRender()},document.getElementById("logForm").submit=function(t){t.preventDefault()},document.getElementById("logForm").addEventListener("submit",function(t){t.preventDefault();t={id:transactionLogs.length+1,date:document.getElementById("logDate").value,name:document.getElementById("itemName").value,type:document.getElementById("itemType").value,qty:parseInt(document.getElementById("logQty").value),status:document.getElementById("logStatus").value,memo:document.getElementById("logMemo").value};transactionLogs.push(t),calculateAndRender(),document.getElementById("logQty").value=1,document.getElementById("logMemo").value="",alert("원천 데이터가 성공적으로 등록되었으며, 1번과 2번 대장이 실시간 갱신되었습니다.")})</script></body></html>automotive_inventory_system.html automotive_inventory_system.html 항목을 표시하는 중입니다.
