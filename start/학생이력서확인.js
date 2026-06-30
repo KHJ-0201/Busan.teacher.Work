@@ -27,6 +27,7 @@ let filterSigungu = '';
 let regionFilterReady = false;
 let koreaMapReady = false;
 let employmentStatusByStudent = {};
+let submitCountsByStudent = {};
 
 auth.onAuthStateChanged(async user => {
     const savedPw = localStorage.getItem('adminPw');
@@ -51,13 +52,14 @@ document.getElementById('btnBackCounsel')?.addEventListener('click', e => {
 
 async function bootstrap() {
     try {
-        const [attSnap, resumeSnap, employmentSnap, timeSnap, dropSnap, masterSnap] = await Promise.all([
+        const [attSnap, resumeSnap, employmentSnap, timeSnap, dropSnap, masterSnap, countSnap] = await Promise.all([
             classDbRef('dailyAttendance').once('value'),
             classDbRef('studentResumes').once('value'),
             classDbRef('studentEmploymentStatus').once('value'),
             classDbRef('fullTimetable').once('value'),
             classDbRef('dropouts').once('value'),
-            classDbRef('masterData').once('value')
+            classDbRef('masterData').once('value'),
+            classDbRef('studentResumeSubmitCounts').once('value')
         ]);
         fullAttendanceData = attSnap.val() || {};
         dropoutData = dropSnap.val() || {};
@@ -76,6 +78,7 @@ async function bootstrap() {
         studentNames = Array.from(allStudents).sort();
 
         employmentStatusByStudent = employmentSnap.val() || {};
+        submitCountsByStudent = countSnap.val() || {};
 
         resumeDataByStudent = {};
         const raw = resumeSnap.val() || {};
@@ -433,26 +436,90 @@ function selectStudent(name) {
     }
 }
 
+function getResumeDailySubmitLimit() {
+    return window.StudentResumeShared?.RESUME_DAILY_SUBMIT_LIMIT ?? 5;
+}
+
+function getTodaySubmitCountForStudent(name) {
+    const dateKey = StudentResumeShared.getTodayStrKst();
+    const raw = submitCountsByStudent?.[name]?.[dateKey];
+    const n = Number(raw);
+    return Number.isFinite(n) && n >= 0 ? n : 0;
+}
+
+function buildSubmitLimitPanelHtml(studentName) {
+    const limit = getResumeDailySubmitLimit();
+    const used = getTodaySubmitCountForStudent(studentName);
+    const left = Math.max(0, limit - used);
+    const dateKey = StudentResumeShared.getTodayStrKst();
+    const resetDisabled = used === 0 ? ' disabled' : '';
+    return `
+        <div class="resume-submit-limit-panel">
+            <div class="resume-submit-limit-info">
+                <span class="resume-submit-limit-label">📨 오늘 이력서 전송 (한국시간 ${escHtml(dateKey)})</span>
+                <span class="resume-submit-limit-count${used >= limit ? ' is-exhausted' : ''}">사용 ${used}/${limit}회 · <strong>남은 ${left}회</strong></span>
+            </div>
+            <button type="button" id="btnResetSubmitCount" class="btn-reset-submit-count"${resetDisabled} title="학생이 오늘 다시 전송할 수 있도록 횟수를 0으로 되돌립니다">오늘 횟수 초기화</button>
+        </div>`;
+}
+
+async function resetTodaySubmitCount(studentName) {
+    const used = getTodaySubmitCountForStudent(studentName);
+    if (used === 0) {
+        await appAlert('오늘 사용한 전송 횟수가 없습니다.');
+        return;
+    }
+    const limit = getResumeDailySubmitLimit();
+    const dateKey = StudentResumeShared.getTodayStrKst();
+    if (!(await appConfirm(`${studentName} 학생의 오늘(${dateKey}) 이력서 전송 횟수(${used}/${limit}회)를 초기화하시겠습니까?\n\n학생은 다시 오늘 ${limit}회까지 전송할 수 있습니다.`))) return;
+    try {
+        await classDbRef(`studentResumeSubmitCounts/${studentName}/${dateKey}`).remove();
+        if (submitCountsByStudent[studentName]) {
+            delete submitCountsByStudent[studentName][dateKey];
+            if (!Object.keys(submitCountsByStudent[studentName]).length) {
+                delete submitCountsByStudent[studentName];
+            }
+        }
+        renderSubmissions();
+        await appAlert('오늘 전송 횟수가 초기화되었습니다.');
+    } catch (err) {
+        console.error(err);
+        await appAlert('초기화에 실패했습니다. Firebase 규칙에 담임 초기화 권한이 있는지 확인하세요.');
+    }
+}
+
+function bindSubmitLimitPanel(area) {
+    area.querySelector('#btnResetSubmitCount')?.addEventListener('click', async () => {
+        if (!selectedStudent) return;
+        await resetTodaySubmitCount(selectedStudent);
+    });
+}
+
 function renderSubmissions() {
     const area = document.getElementById('resumeDetailArea');
     if (!area || !selectedStudent) return;
 
     const list = resumeDataByStudent[selectedStudent] || [];
+    const limitPanel = buildSubmitLimitPanelHtml(selectedStudent);
     if (!list.length) {
         area.innerHTML = `
             <button type="button" id="btnBackToMain" class="region-filter-reset" style="margin-bottom:14px;">← 지역별 보기</button>
+            ${limitPanel}
             <div class="empty-state"><strong>${escHtml(selectedStudent)}</strong> 학생의 제출된 이력서가 없습니다.</div>`;
         document.getElementById('btnBackToMain')?.addEventListener('click', () => selectStudent(''));
+        bindSubmitLimitPanel(area);
         return;
     }
 
     area.innerHTML = `
         <button type="button" id="btnBackToMain" class="region-filter-reset" style="margin-bottom:14px;">← 지역별 보기</button>
+        ${limitPanel}
         <h3 style="margin:0 0 14px;color:#1e293b;">${escHtml(selectedStudent)} — 제출 이력 (${list.length}건)</h3>
         <p style="font-size:12px;color:#64748b;margin:0 0 14px;">텍스트를 클릭하면 클립보드에 복사됩니다. · 최신순</p>
         <div class="submission-list">${list.map(item => buildSubmissionCard(item)).join('')}</div>`;
 
     document.getElementById('btnBackToMain')?.addEventListener('click', () => selectStudent(''));
+    bindSubmitLimitPanel(area);
 
     area.querySelectorAll('.submission-card-head').forEach(head => {
         head.addEventListener('click', e => {
@@ -517,7 +584,8 @@ function buildResumeDetailHtml(item) {
     const studentName = b.name || item.studentName || selectedStudent;
     const birthDate = StudentResumeShared.getStudentBirthDateFromAttendance(studentName, fullAttendanceData)
         || b.birthDate || '';
-    const edu = StudentResumeShared.sortResumeRowsByDate(item.educationCareer || [], true);
+    const career = StudentResumeShared.sortResumeRowsByDate(item.careerHistory || item.educationCareer || [], true);
+    const finalEdu = StudentResumeShared.sortResumeRowsByDate(item.finalEducation || [], true);
     const skills = StudentResumeShared.sortResumeRowsByDate(item.skillsCerts || [], true);
     const rate = item.totalAttendanceRate != null ? `${item.totalAttendanceRate}%` : '-';
 
@@ -527,15 +595,19 @@ function buildResumeDetailHtml(item) {
             ${buildBasicInfoHtml(b, birthDate)}
         </div>
         <div class="resume-view-section">
-            <h4>2. 학력 및 경력사항</h4>
-            ${buildRowsTable(edu, '학력 및 경력사항')}
+            <h4>2. 경력사항</h4>
+            ${buildRowsTable(career, '회사명 (퇴사일)')}
         </div>
         <div class="resume-view-section">
-            <h4>3. 특기사항 · 자격증 · 상장수상</h4>
-            ${buildRowsTable(skills, '내용')}
+            <h4>3. 최종학력</h4>
+            ${buildRowsTable(finalEdu, '학교명 (졸업일)')}
         </div>
         <div class="resume-view-section">
-            <h4>4. 현재까지 총 출석률</h4>
+            <h4>4. 특기사항.자격증.상장수상</h4>
+            ${buildRowsTable(skills, '특기사항 · 자격증 · 상장수상')}
+        </div>
+        <div class="resume-view-section">
+            <h4>5. 현재까지 총 출석률</h4>
             <div class="resume-copy-val rate-highlight" data-copy="${escAttr(rate)}">${escHtml(rate)}</div>
         </div>`;
 }

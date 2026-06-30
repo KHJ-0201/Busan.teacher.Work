@@ -144,13 +144,17 @@
                 addressDetail: '',
                 address: ''
             },
-            educationCareer: [emptyResumeRow()],
+            careerHistory: [emptyResumeRow()],
+            finalEducation: [emptyResumeRow()],
             skillsCerts: [emptyResumeRow()],
             totalAttendanceRate: attendanceRate != null ? attendanceRate : ''
         };
     }
 
+    const RESUME_DAILY_SUBMIT_LIMIT = 5;
+
     global.StudentResumeShared = {
+        RESUME_DAILY_SUBMIT_LIMIT,
         getTodayStrKst: resolveTodayStrKst,
         calculateUnitMonthPersonalRate,
         getStudentBirthDateFromAttendance,

@@ -1512,13 +1512,19 @@
     .resume-mini-btn-qnet { background: #e3f2fd; border-color: #64b5f6; color: #1565c0; text-decoration: none; display: inline-flex; align-items: center; }
     .resume-mini-btn-qnet:active { background: #bbdefb; }
     .resume-basic-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
-    .resume-field { display: flex; flex-direction: column; gap: 4px; font-size: 12px; font-weight: bold; color: #475569; }
+    .resume-field { display: flex; flex-direction: column; gap: 4px; font-size: 12px; font-weight: bold; color: #475569; min-width: 0; }
     .resume-field-full { grid-column: 1 / -1; }
+    .resume-required-mark { color: #c0392b; font-style: normal; font-weight: 900; }
+    .resume-field.is-required-missing .form-resume-input,
+    .resume-field.is-required-missing .form-resume-select { border-color: #e74c3c; box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.15); }
     .form-resume-input, .form-resume-text, .form-resume-select { width: 100%; padding: 9px 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-family: inherit; font-size: 13px; box-sizing: border-box; background: #fff; }
-    .resume-address-block { margin-top: 2px; }
-    .resume-address-heading { display: block; font-size: 12px; font-weight: bold; color: #475569; margin-bottom: 6px; }
-    .resume-address-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
     .form-resume-input[readonly] { background: #f1f5f9; color: #334155; cursor: default; }
+    .resume-panel .form-resume-input::placeholder,
+    .resume-panel .form-resume-text::placeholder,
+    .resume-panel .resume-date-input::placeholder {
+        color: #b0bec9;
+        opacity: 1;
+    }
     .form-resume-text { resize: vertical; min-height: 52px; }
     .resume-table-wrap { overflow-x: auto; border: 1px solid #e2e8f0; border-radius: 8px; background: #fff; }
     .resume-table { width: 100%; border-collapse: collapse; font-size: 12px; }
@@ -1528,6 +1534,17 @@
     .resume-date-input { width: 3.2em; padding: 6px 4px; text-align: center; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 12px; }
     .resume-date-sep { color: #94a3b8; font-size: 11px; }
     .resume-row-del { width: 28px; height: 28px; border: none; background: #fee2e2; color: #dc2626; border-radius: 6px; cursor: pointer; font-weight: bold; }
+    .resume-quick-certs { margin: 0 0 12px; padding: 10px 12px; border: 1px dashed #a5d6a7; border-radius: 8px; background: #f1f8e9; }
+    .resume-quick-certs-label { margin: 0 0 8px; font-size: 11px; font-weight: bold; color: #558b2f; }
+    .resume-quick-certs-btns { display: flex; flex-wrap: wrap; gap: 6px; }
+    .resume-quick-cert-btn {
+        padding: 7px 12px; font-size: 11px; font-weight: bold; border: 1px solid #81c784;
+        background: #fff; color: #2e7d32; border-radius: 999px; cursor: pointer; line-height: 1.3;
+    }
+    .resume-quick-cert-btn:active { background: #c8e6c9; }
+    .resume-quick-cert-btn-other { background: #e8f5e9; border-style: dashed; }
+    .resume-quick-cert-btn-other:active { background: #c8e6c9; }
+    .resume-quick-cert-label-short { display: none; }
     .resume-rate-note { font-size: 11px; color: #64748b; margin: 6px 0 10px; }
     .resume-rate-box { font-size: 28px; font-weight: 900; color: #27ae60; padding: 12px; text-align: center; background: #e8f5e9; border-radius: 10px; border: 2px solid #27ae60; }
     .resume-submit-btn { width: 100%; padding: 14px; border: none; border-radius: 10px; background: #27ae60; color: #fff; font-size: 16px; font-weight: 800; cursor: pointer; box-shadow: 0 4px 12px rgba(39,174,96,0.25); margin-top: 8px; }
@@ -1538,9 +1555,12 @@
     .resume-daily-limit-hint.is-exhausted { color: #c0392b; }
     .resume-submit-btn:disabled { opacity: 0.55; cursor: not-allowed; }
     @media (max-width: 768px) {
-        .resume-basic-grid { grid-template-columns: 1fr; }
-        .resume-address-grid { grid-template-columns: 1fr; }
+        .resume-basic-grid { gap: 8px; }
         .tab-menu .tab-btn { font-size: 9px; padding: 8px 4px; }
+        .resume-quick-cert-label-full { display: none; }
+        .resume-quick-cert-label-short { display: inline; }
+        .resume-quick-cert-btn { padding: 6px 9px; font-size: 10px; }
+        .resume-quick-certs-btns { gap: 5px; }
     }
 
     </style>

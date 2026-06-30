@@ -9,6 +9,12 @@
 
     const SRS = () => window.StudentResumeShared;
     const RESUME_DAILY_SUBMIT_LIMIT = 5;
+    const QUICK_SKILL_CERTS = [
+        { full: '자동차정비기능사', short: '정비기능사' },
+        { full: '자동차정비산업기사', short: '정비산업기사' },
+        { full: '자동차차체수리기능사', short: '차체수리' },
+        { full: '자동차보수도장기능사', short: '보수도장' }
+    ];
 
     function getDailySubmitCountRef(studentName) {
         const dateKey = SRS().getTodayStrKst();
@@ -138,11 +144,34 @@
             ...addressParts,
             address: SRS().formatFullAddress(addressParts)
         };
-        const educationCareer = collectDynamicRows('resumeEduBody');
+        const careerHistory = collectDynamicRows('resumeCareerBody');
+        const finalEducation = collectDynamicRows('resumeFinalEduBody');
         const skillsCerts = collectDynamicRows('resumeSkillBody');
         const rateEl = document.getElementById('resumeAttendanceRate');
         const totalAttendanceRate = rateEl ? parseFloat(rateEl.dataset.value || rateEl.textContent) || 0 : 0;
-        return { basic, educationCareer, skillsCerts, totalAttendanceRate };
+        return { basic, careerHistory, finalEducation, skillsCerts, totalAttendanceRate };
+    }
+
+    const REQUIRED_ADDRESS_FIELDS = [
+        { key: 'addressSido', label: '시·도', id: 'resumeAddressSido' },
+        { key: 'addressSigungu', label: '시·군·구', id: 'resumeAddressSigungu' },
+        { key: 'addressDetail', label: '상세주소', id: 'resumeBasicAddressDetail' }
+    ];
+
+    function getMissingRequiredAddressFields(basic) {
+        return REQUIRED_ADDRESS_FIELDS.filter(f => !String(basic?.[f.key] || '').trim()).map(f => f.label);
+    }
+
+    function setAddressRequiredErrors(missingLabels) {
+        REQUIRED_ADDRESS_FIELDS.forEach(f => {
+            const el = document.getElementById(f.id);
+            const wrap = el?.closest('.resume-field');
+            if (wrap) wrap.classList.toggle('is-required-missing', missingLabels.includes(f.label));
+        });
+    }
+
+    function clearAddressRequiredErrors() {
+        setAddressRequiredErrors([]);
     }
 
     function collectDynamicRows(tbodyId) {
@@ -163,8 +192,17 @@
         tbody.innerHTML = list.map((row, idx) => buildDynamicRowHtml(tbodyId, row, idx)).join('');
     }
 
+    function getResumeContentPlaceholder(tbodyId) {
+        if (tbodyId === 'resumeCareerBody') return 'ex) 00회사 근무. 00년 00월 퇴사';
+        if (tbodyId === 'resumeFinalEduBody') return 'ex) 00학교. 00년 00월 졸업';
+        return '내용을 입력하세요';
+    }
+
     function buildDynamicRowHtml(tbodyId, row, idx) {
-        const prefix = tbodyId === 'resumeEduBody' ? 'edu' : 'skill';
+        const prefix = tbodyId === 'resumeCareerBody' ? 'career'
+            : tbodyId === 'resumeFinalEduBody' ? 'finaledu'
+            : 'skill';
+        const contentPh = escAttr(getResumeContentPlaceholder(tbodyId));
         return `<tr data-row-idx="${idx}">
             <td class="resume-date-cell">
                 <input type="text" class="resume-y resume-date-input" maxlength="4" placeholder="년" value="${escAttr(row.year)}" inputmode="numeric">
@@ -173,7 +211,7 @@
                 <span class="resume-date-sep">/</span>
                 <input type="text" class="resume-d resume-date-input" maxlength="2" placeholder="일" value="${escAttr(row.day)}" inputmode="numeric">
             </td>
-            <td><textarea class="resume-content form-resume-text" rows="2" placeholder="내용을 입력하세요">${escHtml(row.content)}</textarea></td>
+            <td><textarea class="resume-content form-resume-text" rows="2" placeholder="${contentPh}">${escHtml(row.content)}</textarea></td>
             <td class="resume-row-action"><button type="button" class="resume-row-del" data-target="${prefix}" aria-label="행 삭제">✕</button></td>
         </tr>`;
     }
@@ -206,7 +244,8 @@
             rateEl.dataset.value = String(liveRate);
         }
 
-        fillDynamicRows('resumeEduBody', data?.educationCareer);
+        fillDynamicRows('resumeCareerBody', data?.careerHistory ?? data?.educationCareer);
+        fillDynamicRows('resumeFinalEduBody', data?.finalEducation);
         fillDynamicRows('resumeSkillBody', data?.skillsCerts);
     }
 
@@ -279,51 +318,66 @@
                 <h4 class="resume-section-title">1. 기초자료</h4>
                 <div class="resume-basic-grid">
                     <label class="resume-field"><span>이름</span><input type="text" id="resumeBasicName" class="form-resume-input" readonly></label>
-                    <label class="resume-field"><span>e-mail</span><input type="email" id="resumeBasicEmail" class="form-resume-input" placeholder="example@email.com"></label>
                     <label class="resume-field"><span>연락처</span><input type="tel" id="resumeBasicPhone" class="form-resume-input" placeholder="010-0000-0000"></label>
-                    <div class="resume-address-block resume-field-full">
-                        <span class="resume-address-heading">주소</span>
-                        <div class="resume-address-grid">
-                            <label class="resume-field"><span>시·도</span><select id="resumeAddressSido" class="form-resume-select"></select></label>
-                            <label class="resume-field"><span>시·군·구</span><select id="resumeAddressSigungu" class="form-resume-select" disabled></select></label>
-                            <label class="resume-field resume-field-full"><span>상세주소</span><input type="text" id="resumeBasicAddressDetail" class="form-resume-input" placeholder="동·호수 등 상세주소"></label>
-                        </div>
-                    </div>
+                    <label class="resume-field resume-field-full"><span>e-mail</span><input type="email" id="resumeBasicEmail" class="form-resume-input" placeholder="example@email.com"></label>
+                    <label class="resume-field"><span>시·도 <em class="resume-required-mark" aria-hidden="true">*</em></span><select id="resumeAddressSido" class="form-resume-select" required></select></label>
+                    <label class="resume-field"><span>시·군·구 <em class="resume-required-mark" aria-hidden="true">*</em></span><select id="resumeAddressSigungu" class="form-resume-select" disabled required></select></label>
+                    <label class="resume-field resume-field-full"><span>상세주소 <em class="resume-required-mark" aria-hidden="true">*</em></span><input type="text" id="resumeBasicAddressDetail" class="form-resume-input" placeholder="동·호수 등 상세주소" required></label>
                 </div>
             </section>
             <section class="resume-section">
                 <div class="resume-section-head">
-                    <h4 class="resume-section-title">2. 학력 및 경력사항</h4>
+                    <h4 class="resume-section-title">2. 경력사항</h4>
                     <div class="resume-section-btns">
-                        <button type="button" id="btnResumeSortEdu" class="resume-mini-btn">📅 날짜순 정렬</button>
-                        <button type="button" id="btnResumeAddEdu" class="resume-mini-btn resume-mini-btn-add">＋ 추가</button>
+                        <button type="button" id="btnResumeSortCareer" class="resume-mini-btn">📅 날짜순 정렬</button>
+                        <button type="button" id="btnResumeAddCareer" class="resume-mini-btn resume-mini-btn-add">＋ 추가</button>
                     </div>
                 </div>
                 <div class="resume-table-wrap">
                     <table class="resume-table">
-                        <thead><tr><th style="width:38%">년 / 월 / 일</th><th>학력 및 경력사항</th><th style="width:36px"></th></tr></thead>
-                        <tbody id="resumeEduBody"></tbody>
+                        <thead><tr><th style="width:38%">년 / 월 / 일 (입사일)</th><th>회사명 (퇴사일)</th><th style="width:36px"></th></tr></thead>
+                        <tbody id="resumeCareerBody"></tbody>
                     </table>
                 </div>
             </section>
             <section class="resume-section">
                 <div class="resume-section-head">
-                    <h4 class="resume-section-title">3. 특기사항 · 자격증 · 상장수상</h4>
+                    <h4 class="resume-section-title">3. 최종학력</h4>
                     <div class="resume-section-btns">
-                        <a href="https://www.q-net.or.kr/" target="_blank" rel="noopener noreferrer" class="resume-mini-btn resume-mini-btn-qnet" title="한국산업인력공단 큐넷(자격증 조회)">🔗 큐넷 새창</a>
-                        <button type="button" id="btnResumeSortSkill" class="resume-mini-btn">📅 날짜순 정렬</button>
-                        <button type="button" id="btnResumeAddSkill" class="resume-mini-btn resume-mini-btn-add">＋ 추가</button>
+                        <button type="button" id="btnResumeAddFinalEdu" class="resume-mini-btn resume-mini-btn-add">＋ 추가</button>
                     </div>
                 </div>
                 <div class="resume-table-wrap">
                     <table class="resume-table">
-                        <thead><tr><th style="width:38%">년 / 월 / 일</th><th>특기사항, 자격증취득현황, 상장수상내역</th><th style="width:36px"></th></tr></thead>
+                        <thead><tr><th style="width:38%">년 / 월 / 일 (입학일)</th><th>학교명 (졸업일)</th><th style="width:36px"></th></tr></thead>
+                        <tbody id="resumeFinalEduBody"></tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="resume-section">
+                <div class="resume-section-head">
+                    <h4 class="resume-section-title">4. 특기사항.자격증.상장수상</h4>
+                    <div class="resume-section-btns">
+                        <a href="https://www.q-net.or.kr/" target="_blank" rel="noopener noreferrer" class="resume-mini-btn resume-mini-btn-qnet" title="한국산업인력공단 큐넷(자격증 조회)">🔗 큐넷 새창</a>
+                        <button type="button" id="btnResumeSortSkill" class="resume-mini-btn">📅 날짜순 정렬</button>
+                    </div>
+                </div>
+                <div class="resume-quick-certs">
+                    <p class="resume-quick-certs-label">자주 취득하는 자격증 — 클릭하면 아래 목록에 추가됩니다</p>
+                    <div class="resume-quick-certs-btns">
+                        ${QUICK_SKILL_CERTS.map(cert => `<button type="button" class="resume-quick-cert-btn" data-cert="${escAttr(cert.full)}"><span class="resume-quick-cert-label-full">${escHtml(cert.full)}</span><span class="resume-quick-cert-label-short">${escHtml(cert.short)}</span></button>`).join('')}
+                        <button type="button" id="btnResumeAddSkill" class="resume-quick-cert-btn resume-quick-cert-btn-other">기타 추가</button>
+                    </div>
+                </div>
+                <div class="resume-table-wrap">
+                    <table class="resume-table">
+                        <thead><tr><th style="width:38%">년 / 월 / 일 (취득일)</th><th>특기사항 · 자격증 · 상장수상</th><th style="width:36px"></th></tr></thead>
                         <tbody id="resumeSkillBody"></tbody>
                     </table>
                 </div>
             </section>
             <section class="resume-section">
-                <h4 class="resume-section-title">4. 현재까지 총 출석률</h4>
+                <h4 class="resume-section-title">5. 현재까지 총 출석률</h4>
                 <p class="resume-rate-note">단위개월출석부와 동일한 <strong>편입(%)</strong> 기준 · 현재까지 출석 완료 시 100%</p>
                 <div class="resume-rate-box"><span id="resumeAttendanceRate">-</span></div>
             </section>
@@ -333,14 +387,21 @@
     }
 
     function bindResumeFormEvents() {
-        document.getElementById('btnResumeAddEdu')?.addEventListener('click', () => addDynamicRow('resumeEduBody'));
+        document.getElementById('btnResumeAddCareer')?.addEventListener('click', () => addDynamicRow('resumeCareerBody'));
+        document.getElementById('btnResumeAddFinalEdu')?.addEventListener('click', () => addDynamicRow('resumeFinalEduBody'));
         document.getElementById('btnResumeAddSkill')?.addEventListener('click', () => addDynamicRow('resumeSkillBody'));
-        document.getElementById('btnResumeSortEdu')?.addEventListener('click', () => sortSectionRows('resumeEduBody'));
+        document.getElementById('btnResumeSortCareer')?.addEventListener('click', () => sortSectionRows('resumeCareerBody'));
         document.getElementById('btnResumeSortSkill')?.addEventListener('click', () => sortSectionRows('resumeSkillBody'));
         document.getElementById('btnSubmitResume')?.addEventListener('click', submitResume);
+        document.querySelectorAll('.resume-quick-cert-btn').forEach(btn => {
+            btn.addEventListener('click', () => addQuickSkillCert(btn.dataset.cert || ''));
+        });
         document.getElementById('resumeAddressSido')?.addEventListener('change', function () {
             fillSigunguSelect(document.getElementById('resumeAddressSigungu'), this.value, '');
+            clearAddressRequiredErrors();
         });
+        document.getElementById('resumeAddressSigungu')?.addEventListener('change', clearAddressRequiredErrors);
+        document.getElementById('resumeBasicAddressDetail')?.addEventListener('input', clearAddressRequiredErrors);
 
         const wrap = document.getElementById('resumeFormWrap');
         wrap?.addEventListener('click', e => {
@@ -364,6 +425,33 @@
         tbody.insertAdjacentHTML('beforeend', buildDynamicRowHtml(tbodyId, SRS().emptyResumeRow(), idx));
     }
 
+    function isResumeRowEmpty(tr) {
+        if (!tr) return true;
+        const y = tr.querySelector('.resume-y')?.value?.trim();
+        const m = tr.querySelector('.resume-m')?.value?.trim();
+        const d = tr.querySelector('.resume-d')?.value?.trim();
+        const c = tr.querySelector('.resume-content')?.value?.trim();
+        return !y && !m && !d && !c;
+    }
+
+    function addQuickSkillCert(certName) {
+        const tbody = document.getElementById('resumeSkillBody');
+        if (!tbody || !certName) return;
+        const rows = tbody.querySelectorAll('tr');
+        const lastTr = rows[rows.length - 1];
+        if (lastTr && isResumeRowEmpty(lastTr)) {
+            const contentEl = lastTr.querySelector('.resume-content');
+            if (contentEl) contentEl.value = certName;
+            contentEl?.focus();
+            return;
+        }
+        const idx = rows.length;
+        tbody.insertAdjacentHTML('beforeend', buildDynamicRowHtml('resumeSkillBody', {
+            year: '', month: '', day: '', content: certName
+        }, idx));
+        tbody.querySelector('tr:last-child .resume-content')?.focus();
+    }
+
     function sortSectionRows(tbodyId) {
         const rows = collectDynamicRows(tbodyId);
         if (!rows.length) return;
@@ -379,6 +467,22 @@
         payload.submittedAt = new Date().toISOString();
 
         const statusEl = document.getElementById('resumeSubmitStatus');
+        const missingAddress = getMissingRequiredAddressFields(payload.basic);
+        if (missingAddress.length) {
+            setAddressRequiredErrors(missingAddress);
+            const msg = '다음 필수 항목을 입력해 주세요.\n\n· ' + missingAddress.join('\n· ');
+            if (statusEl) {
+                statusEl.textContent = '❌ 시·도, 시·군·구, 상세주소는 필수입니다.';
+                statusEl.classList.remove('is-success');
+            }
+            await appAlert(msg);
+            document.getElementById(missingAddress[0] === '시·도' ? 'resumeAddressSido'
+                : missingAddress[0] === '시·군·구' ? 'resumeAddressSigungu'
+                : 'resumeBasicAddressDetail')?.focus();
+            return;
+        }
+        clearAddressRequiredErrors();
+
         let slotReserved = false;
         try {
             if (statusEl) {
@@ -431,7 +535,8 @@
 
             const toStore = {
                 basic: payload.basic,
-                educationCareer: payload.educationCareer,
+                careerHistory: payload.careerHistory,
+                finalEducation: payload.finalEducation,
                 skillsCerts: payload.skillsCerts,
                 totalAttendanceRate: payload.totalAttendanceRate,
                 lastSubmittedAt: payload.submittedAt
