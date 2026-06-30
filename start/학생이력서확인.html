@@ -73,6 +73,21 @@
         .student-list-table tbody tr.active .col-name { color: #1d4ed8; }
         .employ-yes { color: #166534; font-weight: 700; }
         .employ-no { color: #94a3b8; }
+        .student-list-table tbody tr.status-inactive td {
+            background-color: #f4f4f5 !important;
+            color: #a1a1aa !important;
+        }
+        .student-list-table tbody tr.status-inactive .col-name,
+        .student-list-table tbody tr.status-inactive .col-att,
+        .student-list-table tbody tr.status-inactive .col-employ.employ-yes,
+        .student-list-table tbody tr.status-inactive .col-employ.employ-no {
+            color: #a1a1aa !important;
+        }
+        .student-list-table tbody tr.status-inactive:hover td { background-color: #eceff1 !important; }
+        .student-list-table tbody tr.status-inactive.active td {
+            background-color: #e8eaed !important;
+            color: #94a3b8 !important;
+        }
         .student-list-table-main { width: 100%; margin: 0; font-size: 12px; }
         .student-list-table-main col.col-no { width: 8%; }
         .student-list-table-main col.col-name { width: 14%; }
