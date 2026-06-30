@@ -1,1 +1,513 @@
-const a10_0x3032c6=a10_0x5dab;function a10_0x1702(){const _0x54b886=['C3rHDhvZlwrHBMDLCG','phrKignSyxnZpsjJB2WTzgf5ia','zxjYB3i','phnWyw4Gy2XHC3m9iM04mc1ZEw0IpG','zgfPBhLbDhrLBMrHBMnL','C2vHCMnO','CgfKu3rHCNq','pc90zd4kicaGicaGicaGicaGicaGidX0zcbJBgfZCZ0IC3rPy2T5lwnVBcbJB2WTCZiGC3vTBwfYEs12ywWIihn0EwXLpsi','i3rHyK1LBNuGpIaUDgfIlwj0BG','zNvSBfrPBwv0ywjSzq','mc4W','yMCTywjZzw50','A2v5CW','yMCTyxr0zw5K','mZuYmuvsq3Hprq','yxbWBhK','C2HVDY1T','BwfW','ChjLDMvUDerLzMf1Bhq','Bw9Kzs11BML0','C3rHDhvZ','z2v0sxrLBq','phnWyw4Gy2XHC3m9iMrLzMf1BhqTC3LTiJ4','zgf5CW','ih4G','phrKignSyxnZpsjZDgLJA3KTy29SignVBc1YmYa','DgfIlwj0BG','64QL66cL64UO7jYe7iUC6Rce7zgClMH0BwW','Aw5Uzxjive1m','y3jLyxrLrwXLBwvUDa','zw5K','y2XHC3noyw1L','DhjPBq','pc90zd4kicaGicaGicaGicaGicaGia','z2v0rgf0zq','z2v0tw9UDgG','zgL2','Aw5MB1jHBMDL','iIbJBgfZCZ0IBw9UDgGTAgvHzgvYiJ4','iJ48C3rYB25NpG','phnWyw4Gy2XHC3m9iM03mc1ZEw0IpG','pc90zd4kicaGicaGicaGicaGicaGidX0zcbJBgfZCZ0IC3rPy2T5lwnVBcbJB2WTCdeGC3vTBwfYEs12ywWIihn0EwXLpsi','CMvTB3zL','C3vIC3rYAw5N','AgfZ','mtKXotj2uNLRB24','66+47y647j6f','zNvUy3rPB24','kcGOlISPkYKRksSK','Aw5MB0fSBg93qwjZzw50','C3rHCNq','C2nYB2XSvg8','Aw5JBhvKzxm','nteYn1LnAvHVqq','z2v0rgf5','yMfJA2DYB3vUzc1JB2XVCJOJzJrMngy1icfPBxbVCNrHBNq7ignVBg9YoInHmweXyweGiwLTCg9YDgfUDdS','yNrUx25HDL9JB25ZDwX0','iIbVBM1VDxnLB3zLCJ0IAgLNAgXPz2H0q29SkcC','yMCTB3v0','quL6yvn5q08Zn3PYC1PfAKTuB2Tnq05xyKLJmunFBZvcwK1XAdHf','BgfZDc1YzwnVCMqTy29S','jtWVDgq+cIaGicaGicaGicaGicaGica8DgqGy2XHC3m9iNn0AwnREs1JB2WGy29SlxiYia','pc90zd4kicaGicaGicaGicaGicaGidX0zcbJBgfZCZ0IC3rPy2T5lwnVBcbJB2WTCdmGC3vTBwfYEs12ywWIihn0EwXLpsi','iJ7SNBZSNPdRS4qG7lAC6RkWio2yHo2zQtWVDgG+cIaGicaGicaGpc90CJ4kicaGicaGica8DhiGy2XHC3m9iNrYlw1VBNrOiJ4kicaGicaGicaGicaGphrOignVBhnWyw49iG','iIbZDhLSzt0I','y29UDgfPBNm','Dw5KzwzPBMvK','phrOignSyxnZpsjZDgLJA3KTy29SignVBc1YmYi+7zIe7j6SkcuPpc90Ad4','Dw5PDa','ywrK','ntC0otyWog9brwDPDa','Aw5MB01PBKrHExm','y291CNnLCW','pc90zd4kicaGicaGicaGicaGicaGidX0zcbJBgfZCZ0IC3rPy2T5lwnVBcbJB2WTCdiGC3vTBwfYEs12ywWIihn0EwXLpsi','C29YDa','lMrHDguTy29Slq','iIbJBgfZCZ0IC3rPy2T5lwnVBciGC3r5Bgu9iMXLzNq6mdSGyM9YzgvYlwjVDhrVBtOXChGGC29SAwqGi2rKzdSIpIJRTOtSHj0G6RIW7ksaoIdRI6JSNiqG6RcC7jUuktWVDgG+cIaGicaGicaGicaGia','C21VB3rO','pc9ZDhjVBMC+phnWyw4Gy2XHC3m9iMvUCM9SBc1KyxrLiJ4','yMfJA2DYB3vUzdOJzMzMy2zJicfPBxbVCNrHBNq7ignVBg9YoInLzJq0ndq7','Dg90ywW','y2fJAgvFyxr0zw5Kyw5Jzq','y2XPy2S','yNrUttCW','DgfIBgvizwfK','y29UC3rYDwn0B3i','yxbWCW','C3bSAxq','mtK1nefPtM5OzW','BgvUz3rO','C2nYB2XStgvMDa','ywrKrxzLBNrmAxn0zw5LCG','jYKIig9UBw91C2vVDxq9iMnSzwfYq29SsgLNAgXPz2H0kcC','yNv0Dg9U','C3r5Bgu9iMnVBg9YoInHmweXywe7igzVBNqTD2vPz2H0oMjVBgq7igjHy2TNCM91BMqTy29SB3i6i2y0zJrMnsaHAw1WB3j0yw50oYi','Dg9gAxHLza','jtWVDgq+','BwfZDgvYrgf0yq','cIaGicaGicaGicaGidX0CJ4kicaGicaGicaGicaGicaGidX0zcbJBgfZCZ0IC3rPy2T5lwnVBcbJB2WTBNvTiIbZDhLSzt0I','C2v0tw9UDgG','B25Jzq','yNrUx25HDL91BML0','7kcv67caioU2HoYeNsdROzZRK5WG7iUK7yYOoG','re9nq29UDgvUDeXVywrLza','lNrHyI1IDg46BM90kcnIDg5FDgfIx3rVDgfSkq','4PQHifVSL7dRUytRQQJRK5XDioUHNoY7RcdRJBdSNBtTHldRPBWG7kAj7iUCioU2IoUFRoYzLoYkTEUlIoUlPc4','ChvZAa','zgf0ywjHC2u','7j287j287lAC7isD67AalMH0BwW','Aw5PDgLHBgL6zufWCa','ywXS','phrOignSyxnZpsjJB2WTzgf5igrHEs1OzwfKzxiGzgf0zs1JB2WT','DMfSDwvZ','CMvWBgfJzq','Ag92zxiTy29S','cIaGicaGicaGpc90CJ4kicaGicaGica8DhiGy2XHC3m9iNrYlwXHyMvSlwrHEsi+cIaGicaGicaGicaGidX0AcbJBgfZCZ0IC3rPy2T5lwnVBcbJB2WTBNvTiJ7RSOJTMlG8l3rOpGOGicaGicaGicaGica8DgGGy2XHC3m9iNn0AwnREs1JB2WGy29Slw5HBwuIpUYeSEUQHtWVDgG+cIaGicaGicaGicaGidX0AcbJBgfZCZ0IC3rPy2T5lwnVBcbJB2WTCJeIpUYGHoYYTcGLktWVDgG+cIaGicaGicaGicaGidX0AcbJBgfZCZ0IC3rPy2T5lwnVBcbJB2WTCJiIpU2oUoYEHsGLktWVDgG+cIaGicaGicaGicaGia','CgfYC2u','6Rwq6Ro866QP','7zQmioUlQoYCHa','yxbWzw5Kq2HPBgq','iIbJBgfZCZ0IC3rPy2T5lwnVBciGC3r5Bgu9iMXLzNq6mdSIpUYlPoYlNoQWHcdSTPZSHj0G67Ae7isDioUnSoYDTo2eSdWVDgG+cIaGicaGicaGicaGidX0AcbJB2XZCgfUpsi','C2HVDY1Toda','C2HVDY1TnZa','y3vYCMvUDenSyxnZ','zMLYzwjHC2vdB25MAwC','y2XHC3nmAxn0','pc9ZCgfUpG','yMCTBM9Uzq','zMLSDgvY','Bg9N','zM9YrwfJAa','yNrUx25HDL9TywLU','yNrUx25HDL9KywLSEq','DgfIBgvxCMfWCgvY','z2v0rwXLBwvUDej5swq','pc90Ad4','y2vPBa','yMCTBgf0zq','nJu1mZi2ofbot1Dhtq','CxvLCNLtzwXLy3rVCKfSBa','B25JBgLJAW','igzVBNqTD2vPz2H0oMjVBgq7iJ4','y29SB3i6iZy0nZq4yJS','yNrUx3rHyL90B3rHBa','jtWVDgq+cIaGicaGicaGicaGicaGica','zxzHBerHDgvZ','phrOignVBhnWyw49iG','66+46RIW66gD','pc9ZCgfUpJWVDgq+cIaGicaGicaGicaGicaGica8DgqGy2XHC3m9iNn0AwnREs1JB2WGy29SlxiXia','cIaGicaGicaGicaGicaGica8DgqGy2XHC3m9iNn0AwnREs1JB2WGy29SlxmXihn1Bw1HCNKTDMfSiIbZDhLSzt0I','C2v0sxrLBq','yxr0zw5Kyw5JzvrHyMXLqM9KEq','y3vYCMvUDfbLCMLVzfrHCMDLDa','zMXVB3i','AhjLzG','ywn0AxzL','C3rHDhvZlxnHzMu','y2XLyxjdB2XiAwDOBgLNAhq','ig1PBgvZDg9Uzs04ma','lM1PBgvZDg9Uzs13CMfW','DMfS','ndC4mtaXtwPNywLg','C29Tzq','Dg9tDhjPBMC','DMfSDwu','yNrUtq','C2v0rgf0zq','Aw5UzxjuzxH0','Aw5MB1rVDgfSrgf5CW','Aw5KzxGXlMH0BwW','cIaGicaGicaGicaGidX0AcbJBgfZCZ0IC3rPy2T5lwnVBcbJB2WTCZeIpUY2NoYeNtWVDgG+cIaGicaGicaGicaGidX0AcbJBgfZCZ0IC3rPy2T5lwnVBcbJB2WTCZiIpUYiMoYxHtWVDgG+cIaGicaGicaGicaGidX0AcbJBgfZCZ0IC3rPy2T5lwnVBcbJB2WTCZmIpUQYSoYeNtWVDgG+cIaGicaGicaGicaGidX0AcbJBgfZCZ0IC3rPy2T5lwnVBcbJB2WTCdeIpUYNGdWVDgG+cIaGicaGicaGicaGidX0AcbJBgfZCZ0IC3rPy2T5lwnVBcbJB2WTCdiIpUYHSdWVDgG+cIaGicaGicaGicaGidX0AcbJBgfZCZ0IC3rPy2T5lwnVBcbJB2WTCdmIpUYzUdWVDgG+cIaGicaGicaGicaGia','Dg9Nz2XLtwLSzxn0B25L','Dg9ju09tDhjPBMC','mZm3mdqWmfLpwxb0AG','zhjVCg91Dhm','nta3ote1otbwzhLpsMC','cIaGicaGicaGphrYignSyxnZpsj0CI10B3aIpGOGicaGicaGicaGica8DgGGy29SC3bHBJ0I','Aw5KzxHpzG','BwfPBLrHyMXL'];a10_0x1702=function(){return _0x54b886;};return a10_0x1702();}(function(_0x222815,_0x4fba03){const _0x36723e=a10_0x5dab,_0xdaa33b=_0x222815();while(!![]){try{const _0x4633c6=-parseInt(_0x36723e(0x16b))/0x1+-parseInt(_0x36723e(0x122))/0x2*(parseInt(_0x36723e(0x1b2))/0x3)+-parseInt(_0x36723e(0x154))/0x4+-parseInt(_0x36723e(0x177))/0x5+parseInt(_0x36723e(0x1c3))/0x6+-parseInt(_0x36723e(0x18b))/0x7*(parseInt(_0x36723e(0x1aa))/0x8)+parseInt(_0x36723e(0x179))/0x9;if(_0x4633c6===_0x4fba03)break;else _0xdaa33b['push'](_0xdaa33b['shift']());}catch(_0x100551){_0xdaa33b['push'](_0xdaa33b['shift']());}}}(a10_0x1702,0xe43ea));const storedConfig=localStorage[a10_0x3032c6(0x192)](a10_0x3032c6(0x146)),firebaseConfig=storedConfig?JSON['parse'](storedConfig):{'apiKey':a10_0x3032c6(0x1b8),'databaseURL':'https://busan-teacher-work-default-rtdb.asia-southeast1.firebasedatabase.app','projectId':'busan-teacher-work'};function a10_0x5dab(_0x49ecaf,_0x4e1e93){_0x49ecaf=_0x49ecaf-0x112;const _0x42c7d7=a10_0x1702();let _0x5715d9=_0x42c7d7[_0x49ecaf];if(a10_0x5dab['zBpuEZ']===undefined){var _0x1fb0d8=function(_0x5cc45b){const _0x5ce9d4='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x4f50d3='',_0x58ceae='',_0x146e60=_0x4f50d3+_0x1fb0d8;for(let _0x120d3d=0x0,_0x4c680f,_0x4bdcf0,_0x5de361=0x0;_0x4bdcf0=_0x5cc45b['charAt'](_0x5de361++);~_0x4bdcf0&&(_0x4c680f=_0x120d3d%0x4?_0x4c680f*0x40+_0x4bdcf0:_0x4bdcf0,_0x120d3d++%0x4)?_0x4f50d3+=_0x146e60['charCodeAt'](_0x5de361+0xa)-0xa!==0x0?String['fromCharCode'](0xff&_0x4c680f>>(-0x2*_0x120d3d&0x6)):_0x120d3d:0x0){_0x4bdcf0=_0x5ce9d4['indexOf'](_0x4bdcf0);}for(let _0x263686=0x0,_0x173b00=_0x4f50d3['length'];_0x263686<_0x173b00;_0x263686++){_0x58ceae+='%'+('00'+_0x4f50d3['charCodeAt'](_0x263686)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x58ceae);};a10_0x5dab['xrKLoR']=_0x1fb0d8,a10_0x5dab['WETBab']={},a10_0x5dab['zBpuEZ']=!![];}const _0x170269=_0x42c7d7[0x0],_0x5dabd9=_0x49ecaf+_0x170269,_0x1199eb=a10_0x5dab['WETBab'][_0x5dabd9];if(!_0x1199eb){const _0x5c6c1d=function(_0x1f2b20){this['bSVETL']=_0x1f2b20,this['RxwRux']=[0x1,0x0,0x0],this['gFGIRD']=function(){return'newState';},this['fSFHIB']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['YLwMGa']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x5c6c1d['prototype']['aEkZkP']=function(){const _0x52c5ca=new RegExp(this['fSFHIB']+this['YLwMGa']),_0x1ed009=_0x52c5ca['test'](this['gFGIRD']['toString']())?--this['RxwRux'][0x1]:--this['RxwRux'][0x0];return this['aOhGCn'](_0x1ed009);},_0x5c6c1d['prototype']['aOhGCn']=function(_0x262fcc){if(!Boolean(~_0x262fcc))return _0x262fcc;return this['AaNApw'](this['bSVETL']);},_0x5c6c1d['prototype']['AaNApw']=function(_0x2d6060){for(let _0x3deee0=0x0,_0x219023=this['RxwRux']['length'];_0x3deee0<_0x219023;_0x3deee0++){this['RxwRux']['push'](Math['round'](Math['random']())),_0x219023=this['RxwRux']['length'];}return _0x2d6060(this['RxwRux'][0x0]);},new _0x5c6c1d(a10_0x5dab)['aEkZkP'](),_0x5715d9=a10_0x5dab['xrKLoR'](_0x5715d9),a10_0x5dab['WETBab'][_0x5dabd9]=_0x5715d9;}else _0x5715d9=_0x1199eb;return _0x5715d9;}if(!firebase[a10_0x3032c6(0x120)][a10_0x3032c6(0x123)])firebase[a10_0x3032c6(0x137)](firebaseConfig);const database=firebase[a10_0x3032c6(0x135)]();initClassContext();let currentClass=window[a10_0x3032c6(0x145)],rawTimetable=[],fullAttendanceData={},masterSubjectList=[],ncsList=[],unitMonths=[],studentNames=[],validTrainingDays=[],evalDatesSet=new Set();function getFixDate(_0x120d3d){const _0x163b9e=a10_0x3032c6;if(!_0x120d3d)return'';let _0x4c680f=String(_0x120d3d)[_0x163b9e(0x19d)]()[_0x163b9e(0x13b)](/\./g,'-');if(_0x4c680f[_0x163b9e(0x1b1)]('/')){let _0x4bdcf0=_0x4c680f[_0x163b9e(0x121)]('/');if(_0x4bdcf0[_0x163b9e(0x123)]===0x3){let _0x5de361=_0x4bdcf0[0x2][_0x163b9e(0x123)]===0x2?'20'+_0x4bdcf0[0x2]:_0x4bdcf0[0x2];_0x4c680f=_0x5de361+'-'+_0x4bdcf0[0x0][_0x163b9e(0x183)](0x2,'0')+'-'+_0x4bdcf0[0x1][_0x163b9e(0x183)](0x2,'0');}}return _0x4c680f[_0x163b9e(0x1a8)](0x0,0xa);}function isActualSubject(_0x263686){const _0x248650=a10_0x3032c6;if(!_0x263686)return![];const _0x173b00=String(_0x263686)[_0x248650(0x13b)](/\s+/g,'');return masterSubjectList[_0x248650(0x16c)](_0x5c6c1d=>_0x5c6c1d[_0x248650(0x13b)](/\s+/g,'')[_0x248650(0x1b1)](_0x173b00))||ncsList[_0x248650(0x16c)](_0x1f2b20=>_0x1f2b20[_0x248650(0x13b)](/\s+/g,'')[_0x248650(0x1b1)](_0x173b00));}let dropoutData={};async function initialize(){const _0x462b79=a10_0x3032c6,_0x52c5ca=(function(){let _0x3deee0=!![];return function(_0x219023,_0x128c8a){const _0x10fb37=_0x3deee0?function(){const _0x53007f=a10_0x5dab;if(_0x128c8a){const _0x2bd7d2=_0x128c8a[_0x53007f(0x18c)](_0x219023,arguments);return _0x128c8a=null,_0x2bd7d2;}}:function(){};return _0x3deee0=![],_0x10fb37;};}()),_0x1ed009=_0x52c5ca(this,function(){const _0x306073=a10_0x5dab;return _0x1ed009[_0x306073(0x16d)]()[_0x306073(0x182)](_0x306073(0x1ad))[_0x306073(0x16d)]()[_0x306073(0x11f)](_0x1ed009)['search'](_0x306073(0x1ad));});_0x1ed009();const _0x262fcc=classStorageKey(_0x462b79(0x11b)),_0x2d6060=localStorage[_0x462b79(0x192)](_0x262fcc);_0x2d6060&&(fullAttendanceData=JSON[_0x462b79(0x13e)](_0x2d6060),console[_0x462b79(0x14b)](_0x462b79(0x133)));try{const [_0x47f657,_0x567b97,_0x10bb5f,_0x2d87b4]=await Promise[_0x462b79(0x138)]([classDbRef(_0x462b79(0x12b))[_0x462b79(0x12e)](_0x462b79(0x16e)),classDbRef(_0x462b79(0x186))[_0x462b79(0x12e)](_0x462b79(0x16e)),classDbRef(_0x462b79(0x181))[_0x462b79(0x12e)](_0x462b79(0x16e)),classDbRef(_0x462b79(0x178))['once'](_0x462b79(0x16e))]),_0x2f0d10=_0x47f657['val']()||{};evalDatesSet['clear'](),_0x2f0d10[_0x462b79(0x112)]&&(masterSubjectList=[...new Set(_0x2f0d10[_0x462b79(0x112)][_0x462b79(0x18e)](_0x176065=>_0x176065['subject']))],ncsList=[...new Set(_0x2f0d10[_0x462b79(0x112)][_0x462b79(0x14a)](_0xf6f10a=>_0xf6f10a[_0x462b79(0x1c1)])[_0x462b79(0x18e)](_0x25b4c0=>_0x25b4c0[_0x462b79(0x1c1)]))],_0x2f0d10[_0x462b79(0x112)][_0x462b79(0x14c)](_0x16e72e=>{const _0x835bc=_0x462b79;_0x16e72e[_0x835bc(0x15b)]&&Array['isArray'](_0x16e72e[_0x835bc(0x15b)])&&_0x16e72e[_0x835bc(0x15b)]['forEach'](_0x195dd5=>evalDatesSet['add'](_0x195dd5['date']));})),rawTimetable=_0x567b97[_0x462b79(0x16a)]()||[],fullAttendanceData=_0x10bb5f['val']()||{},dropoutData=_0x2d87b4[_0x462b79(0x16a)]()||{},localStorage[_0x462b79(0x160)](_0x262fcc,JSON['stringify'](fullAttendanceData)),rawTimetable[_0x462b79(0x123)]>0x0&&(processBaseData(),renderTabs(),changePeriod(window[_0x462b79(0x162)]||'total'));}catch(_0x46dc6b){console[_0x462b79(0x17f)](_0x462b79(0x130),_0x46dc6b),await appAlert('데이터를\x20불러오는\x20데\x20실패했습니다.');}}function processBaseData(){const _0x9282f6=a10_0x3032c6;validTrainingDays=[];const _0x591f3f=new Set();rawTimetable['forEach'](_0x759acb=>{const _0x4cf7bd=a10_0x5dab,_0x16fbc5=getFixDate(_0x759acb['날짜']);_0x16fbc5&&isActualSubject(_0x759acb[_0x4cf7bd(0x13f)])&&!_0x591f3f[_0x4cf7bd(0x1a9)](_0x16fbc5)&&(validTrainingDays[_0x4cf7bd(0x134)](_0x16fbc5),_0x591f3f[_0x4cf7bd(0x1c2)](_0x16fbc5));}),validTrainingDays['sort']();let _0x29a5be=new Set();Object[_0x9282f6(0x13a)](fullAttendanceData)['forEach'](_0x1ce44f=>{const _0x42165d=_0x9282f6;Object['keys'](_0x1ce44f)[_0x42165d(0x14c)](_0x1637ec=>{const _0x1191e1=_0x42165d;_0x1637ec!=='성명'&&_0x1637ec!=='_metadata'&&_0x1637ec!==_0x1191e1(0x15d)&&_0x29a5be[_0x1191e1(0x1c2)](_0x1637ec);});}),studentNames=Array['from'](_0x29a5be)['sort'](),unitMonths=[];if(validTrainingDays[_0x9282f6(0x123)]===0x0)return;const _0x110f0f=new Date(validTrainingDays[0x0]),_0x4d35c1=new Date(validTrainingDays[validTrainingDays[_0x9282f6(0x123)]-0x1]);let _0x1e9ab1=new Date(_0x110f0f);while(_0x1e9ab1<=_0x4d35c1){let _0xeb5374=new Date(_0x1e9ab1),_0x409fa5=new Date(_0x1e9ab1);_0x409fa5[_0x9282f6(0x12d)](_0x409fa5[_0x9282f6(0x1a0)]()+0x1),_0x409fa5[_0x9282f6(0x170)](_0x409fa5[_0x9282f6(0x19f)]()-0x1);const _0x32434=_0xeb5374[_0x9282f6(0x176)]()['split']('T')[0x0],_0x1e9366=_0x409fa5[_0x9282f6(0x176)]()[_0x9282f6(0x121)]('T')[0x0];unitMonths[_0x9282f6(0x134)]({'label':unitMonths['length']+0x1+_0x9282f6(0x140),'start':_0x32434,'end':_0x1e9366,'days':validTrainingDays['filter'](_0x306e06=>_0x306e06>=_0x32434&&_0x306e06<=_0x1e9366)}),_0x1e9ab1[_0x9282f6(0x12d)](_0x1e9ab1[_0x9282f6(0x1a0)]()+0x1);}}function renderTabs(){const _0x38e0f0=a10_0x3032c6,_0x585a76=document['getElementById']('tabMenu'),_0x7e77fa=_0x585a76[_0x38e0f0(0x155)](_0x38e0f0(0x132));_0x7e77fa[_0x38e0f0(0x14c)](_0x3148d7=>_0x3148d7[_0x38e0f0(0x1a7)]()),_0x585a76[_0x38e0f0(0x155)](_0x38e0f0(0x169))[_0x38e0f0(0x14c)](_0xcb1811=>_0xcb1811['remove']()),unitMonths[_0x38e0f0(0x14c)]((_0x509246,_0x383ad0)=>{const _0x4d5e4f=_0x38e0f0,_0x2ed280=document[_0x4d5e4f(0x19a)](_0x4d5e4f(0x127));_0x2ed280[_0x4d5e4f(0x19c)]=_0x4d5e4f(0x197),_0x2ed280[_0x4d5e4f(0x171)]=_0x509246['label'],_0x2ed280[_0x4d5e4f(0x156)]=()=>changePeriod(_0x383ad0),_0x585a76[_0x4d5e4f(0x141)](_0x2ed280);});if(window[_0x38e0f0(0x162)]===_0x38e0f0(0x11a)||typeof window[_0x38e0f0(0x162)]===_0x38e0f0(0x1bf)){const _0x362729=document[_0x38e0f0(0x19a)](_0x38e0f0(0x1a1));_0x362729[_0x38e0f0(0x19c)]='milestone-wrap';const _0x3ab4c1=document[_0x38e0f0(0x19a)](_0x38e0f0(0x127));_0x3ab4c1[_0x38e0f0(0x19c)]='tab-btn\x20btn-m70',_0x3ab4c1['id']=_0x38e0f0(0x11d),_0x3ab4c1[_0x38e0f0(0x171)]='🎯\x2070%\x20도달',_0x3ab4c1[_0x38e0f0(0x156)]=()=>toggleMilestone('70');const _0x5ee292=document['createElement'](_0x38e0f0(0x127));_0x5ee292[_0x38e0f0(0x19c)]='tab-btn\x20btn-m80',_0x5ee292['id']='btnM80',_0x5ee292[_0x38e0f0(0x171)]='🎯\x2080%\x20도달',_0x5ee292[_0x38e0f0(0x156)]=()=>toggleMilestone('80'),_0x362729['appendChild'](_0x3ab4c1),_0x362729['appendChild'](_0x5ee292),_0x585a76[_0x38e0f0(0x141)](_0x362729);}}function changePeriod(_0x3f1857){const _0x380ecb=a10_0x3032c6;window[_0x380ecb(0x162)]=_0x3f1857;const _0x45a498=document[_0x380ecb(0x150)](_0x380ecb(0x17c));_0x45a498[_0x380ecb(0x147)][_0x380ecb(0x1a7)](_0x380ecb(0x144),'show-m80');if(_0x3f1857===_0x380ecb(0x11a))_0x45a498[_0x380ecb(0x19c)]='mode-total';else _0x45a498[_0x380ecb(0x19c)]=_0x380ecb(0x190);renderTabs();const _0x5878ed=document['querySelectorAll'](_0x380ecb(0x185));_0x5878ed[_0x380ecb(0x14c)]((_0x17d6c7,_0x4d673a)=>{const _0x312aff=_0x380ecb;if(_0x3f1857===_0x312aff(0x11a)&&_0x4d673a===0x0)_0x17d6c7[_0x312aff(0x147)][_0x312aff(0x1c2)](_0x312aff(0x165));else{if(_0x3f1857===_0x4d673a-0x1)_0x17d6c7[_0x312aff(0x147)][_0x312aff(0x1c2)](_0x312aff(0x165));else _0x17d6c7[_0x312aff(0x147)][_0x312aff(0x1a7)]('active');}});let _0x48911b=[],_0xdeac26='';if(_0x3f1857===_0x380ecb(0x11a))_0x48911b=validTrainingDays,_0xdeac26=_0x48911b[_0x380ecb(0x123)]>0x0?_0x48911b[0x0]+_0x380ecb(0x195)+_0x48911b[_0x48911b[_0x380ecb(0x123)]-0x1]:'-';else{const _0xe09c57=unitMonths[_0x3f1857];_0x48911b=_0xe09c57[_0x380ecb(0x194)],_0xdeac26=_0xe09c57[_0x380ecb(0x1af)]+_0x380ecb(0x195)+_0xe09c57[_0x380ecb(0x19b)];}const _0x3126ad=_0x48911b[_0x380ecb(0x123)],_0x50ec19=Math[_0x380ecb(0x152)](_0x3126ad*0.8);document[_0x380ecb(0x150)](_0x380ecb(0x1a2))['innerText']=_0xdeac26,document[_0x380ecb(0x150)](_0x380ecb(0x172))[_0x380ecb(0x171)]=_0x3126ad+'일',document[_0x380ecb(0x150)](_0x380ecb(0x1c4))[_0x380ecb(0x171)]=_0x50ec19+'일',document[_0x380ecb(0x150)](_0x380ecb(0x1ae))[_0x380ecb(0x171)]=_0x3126ad-_0x50ec19+'일',renderDetailTable(_0x48911b,_0x3f1857===_0x380ecb(0x11a));}function renderDetailTable(_0x2e4b43,_0x5da2ec){const _0x61ba16=a10_0x3032c6,_0x42a105=document['getElementById'](_0x61ba16(0x11e)),_0x48a7a5=document[_0x61ba16(0x150)](_0x61ba16(0x161)),_0x278351=typeof getTodayStrKst==='function'?getTodayStrKst():new Date()[_0x61ba16(0x176)]()[_0x61ba16(0x121)]('T')[0x0];let _0xa1e1fb='';if(_0x2e4b43[_0x61ba16(0x123)]>0x0){let _0x278e07='',_0x2352b3=0x0;_0x2e4b43[_0x61ba16(0x14c)]((_0x5ecf7e,_0x1d0593)=>{const _0x501200=_0x61ba16,_0x366027=_0x5ecf7e['split']('-')[0x1]+'월';if(_0x1d0593===0x0)_0x278e07=_0x366027,_0x2352b3=0x1;else _0x278e07===_0x366027?_0x2352b3++:(_0xa1e1fb+=_0x501200(0x15c)+_0x2352b3+'\x22\x20class=\x22month-header\x22>'+_0x278e07+'</th>',_0x278e07=_0x366027,_0x2352b3=0x1);_0x1d0593===_0x2e4b43[_0x501200(0x123)]-0x1&&(_0xa1e1fb+='<th\x20colspan=\x22'+_0x2352b3+_0x501200(0x1a3)+_0x278e07+_0x501200(0x151));});}let _0x4aca2a='';const _0x5dd7ee=Object[_0x61ba16(0x189)](fullAttendanceData)[_0x61ba16(0x14a)](_0x3c4656=>/^\d{4}-\d{2}-\d{2}$/['test'](_0x3c4656))[_0x61ba16(0x114)]();_0x5dd7ee[_0x61ba16(0x123)]>0x0&&(_0x4aca2a=_0x5dd7ee[_0x5dd7ee[_0x61ba16(0x123)]-0x1]);const _0x447fbc=['일','월','화','수','목','금','토'];let _0x28510a=_0x2e4b43[_0x61ba16(0x18e)](_0x26df19=>{const _0x58ab4f=_0x61ba16;let _0x11b6e8=evalDatesSet[_0x58ab4f(0x1a9)](_0x26df19),_0x492353=_0x11b6e8?'eval-day-header':'',_0x32699f=_0x26df19===_0x4aca2a?_0x58ab4f(0x1b9):'',_0x584ce3=_0x447fbc[new Date(_0x26df19)[_0x58ab4f(0x1b3)]()];return _0x58ab4f(0x139)+_0x26df19+'\x20'+_0x492353+'\x20'+_0x32699f+_0x58ab4f(0x1b6)+_0x26df19+_0x58ab4f(0x126)+_0x26df19+'\x27)\x22><span\x20style=\x22display:block;\x22>'+_0x584ce3+'</span>'+parseInt(_0x26df19['split']('-')[0x2])+_0x58ab4f(0x151);})['join'](''),_0xe9dcf6=_0x5da2ec?0xb:0xa,_0x504452=_0x5da2ec?_0x61ba16(0x1c0):'',_0x2705b5=_0x61ba16(0x17a)+_0xe9dcf6+_0x61ba16(0x142)+_0x2e4b43['length']+_0x61ba16(0x1bc)+_0xe9dcf6+_0x61ba16(0x116)+_0xa1e1fb+_0x61ba16(0x13d)+_0x504452+_0x61ba16(0x174)+_0x28510a+'\x0a\x20\x20\x20\x20\x20\x20\x20\x20</tr>\x0a\x20\x20\x20\x20';_0x42a105[_0x61ba16(0x199)]=_0x2705b5;const _0x22b66d=studentNames[_0x61ba16(0x18e)]((_0x42694c,_0x1f5ad8)=>{const _0x4f70b1=_0x61ba16;let _0x2a433d='';for(let _0x49ffb8 of validTrainingDays){const _0x11fb60=fullAttendanceData[_0x49ffb8]?fullAttendanceData[_0x49ffb8][_0x42694c]:null;if(_0x11fb60&&_0x11fb60[_0x4f70b1(0x191)]&&_0x11fb60[_0x4f70b1(0x191)]!==_0x4f70b1(0x1ab)&&_0x11fb60[_0x4f70b1(0x191)]!==''&&_0x11fb60[_0x4f70b1(0x191)]!=='-'){_0x2a433d=_0x49ffb8;break;}}let _0x29581d=0x0,_0x1ade8b=0x0,_0x324e63=0x0,_0x1cdee0=0x0,_0x1f5ee6=0x0,_0x1be030=0x0,_0x554994=0x0,_0x309fdb='';const _0x3a1519=Math[_0x4f70b1(0x152)](validTrainingDays[_0x4f70b1(0x123)]*0.7),_0x532ab6=Math[_0x4f70b1(0x152)](validTrainingDays[_0x4f70b1(0x123)]*0.8);let _0x2a6b47=![],_0xe0f4d5=![],_0x43a35f=0x0,_0x2d9ff3=0x0,_0x101b0b=0x0,_0x22ae80=0x0;_0x2e4b43[_0x4f70b1(0x14c)](_0x14acf1=>{const _0xd3e00a=_0x4f70b1,_0x55e5ee=fullAttendanceData[_0x14acf1]&&fullAttendanceData[_0x14acf1][_0x42694c]?fullAttendanceData[_0x14acf1][_0x42694c]:null;if(_0x55e5ee){const _0x5e1e97=_0x55e5ee['status']||'';if(_0x5e1e97['includes']('결석')||_0x5e1e97==='미편입')_0x43a35f++;else{if(_0x5e1e97['includes']('지각'))_0x2d9ff3++;else{if(_0x5e1e97[_0xd3e00a(0x1b1)]('조퇴'))_0x101b0b++;else{if(_0x5e1e97[_0xd3e00a(0x1b1)]('외출'))_0x22ae80++;}}}}});const _0x1a375a=Math[_0x4f70b1(0x163)]((_0x2d9ff3+_0x101b0b+_0x22ae80)/0x3),_0x1f185e=_0x43a35f+_0x1a375a;_0x2e4b43[_0x4f70b1(0x14c)](_0xb2cee4=>{const _0x1633b4=_0x4f70b1,_0x485f67=fullAttendanceData[_0xb2cee4]&&fullAttendanceData[_0xb2cee4][_0x42694c]?fullAttendanceData[_0xb2cee4][_0x42694c]:null;let _0x271b7f='date-col-'+_0xb2cee4,_0x1d6eaf=_0xb2cee4===_0x4aca2a?_0x1633b4(0x1b9):'',_0x52219b=_0x271b7f+'\x20'+_0x1d6eaf,_0x22a50b=validTrainingDays[_0x1633b4(0x17b)](_0xb2cee4)+0x1,_0x139d5c=_0x3a1519+_0x1be030+_0x1f185e,_0x5df23b=_0x532ab6+_0x1be030+_0x1f185e,_0x26e25c='',_0x27924a='',_0x24ceb1='';_0x5da2ec&&(!_0x2a6b47&&_0x22a50b===_0x139d5c&&(_0x2a6b47=!![],_0x26e25c='\x20milestone-70',_0x27924a=_0x1633b4(0x1a5)+(_0x1f5ad8+0x1)+_0x1633b4(0x148)),!_0xe0f4d5&&_0x22a50b===_0x5df23b&&(_0xe0f4d5=!![],_0x26e25c+=_0x1633b4(0x168),_0x24ceb1=_0x1633b4(0x180)+(_0x1f5ad8+0x1)+_0x1633b4(0x148)));const _0x1eb3d8=(_0xe99770,_0x70859a,_0x17e3cb)=>{const _0x535160=_0x1633b4;let _0x424f9d=_0x535160(0x193)+_0x70859a+_0x535160(0x148)+_0x27924a+_0x24ceb1,_0x1a06eb=_0x17e3cb?_0x535160(0x128):'';return _0x535160(0x17e)+_0xe99770+'\x20'+_0x52219b+_0x26e25c+'\x22\x20'+_0x1a06eb+'>'+_0x424f9d+'</td>';};if(dropoutData[_0x42694c]&&_0xb2cee4>=dropoutData[_0x42694c]){_0x29581d++,_0x1f5ee6++,_0x309fdb+=_0x1eb3d8(_0x1633b4(0x149),'X',!![]);return;}if(_0x2a433d&&_0xb2cee4<_0x2a433d){_0x1be030++,_0x309fdb+=_0x1eb3d8(_0x1633b4(0x149),'',![]);return;}_0x1f5ee6++;if(!_0x485f67)(typeof shouldCountMissingAttAsAbsent===_0x1633b4(0x1ac)?shouldCountMissingAttAsAbsent(_0xb2cee4,_0x278351):_0xb2cee4<=_0x278351)?(_0x29581d++,_0x309fdb+=_0x1eb3d8(_0x1633b4(0x188),'×',![])):_0x309fdb+=_0x1eb3d8('','',![]);else{const _0x12e088=_0x485f67[_0x1633b4(0x191)]||'';if(_0x12e088['includes']('결석')||_0x12e088==='미편입')_0x29581d++,_0x309fdb+=_0x1eb3d8('bg-absent','×',![]);else{if(_0x12e088[_0x1633b4(0x1b1)]('출석')||_0x12e088==='정상'||_0x12e088==='')_0x554994++,_0x309fdb+=_0x1eb3d8(_0x1633b4(0x18a),_0x5da2ec?'':'○',![]);else{_0x554994++;let _0x1a8b30='bg-attend',_0x20cb2c='';if(_0x12e088[_0x1633b4(0x1b1)]('지각'))_0x1ade8b++,_0x1a8b30=_0x1633b4(0x153),_0x20cb2c='지';else{if(_0x12e088['includes']('조퇴'))_0x324e63++,_0x1a8b30='bg-early',_0x20cb2c='조';else{if(_0x12e088['includes']('외출'))_0x1cdee0++,_0x1a8b30=_0x1633b4(0x1b7),_0x20cb2c='외';else{if(_0x12e088['includes']('공가'))_0x1a8b30=_0x1633b4(0x18a),_0x20cb2c='공';else _0x12e088[_0x1633b4(0x1b1)]('휴가')?(_0x1a8b30=_0x1633b4(0x18a),_0x20cb2c='휴'):(_0x1a8b30=_0x1633b4(0x18a),_0x20cb2c='◎');}}}_0x309fdb+=_0x1eb3d8(_0x1a8b30,_0x20cb2c,![]);}}}});const _0x1b89d6=_0x1ade8b+_0x324e63+_0x1cdee0,_0x5f598e=Math['floor'](_0x1b89d6/0x3),_0x396aa9=_0x29581d+_0x5f598e,_0x1aa8e1=_0x396aa9+_0x1be030,_0x32068a=_0x1f5ee6-_0x396aa9,_0x36519d=_0x2e4b43[_0x4f70b1(0x123)]>0x0?((_0x2e4b43['length']-_0x1aa8e1)/_0x2e4b43[_0x4f70b1(0x123)]*0x64)['toFixed'](0x1):_0x4f70b1(0x187),_0x316d9b=_0x1f5ee6>0x0?(_0x32068a/_0x1f5ee6*0x64)[_0x4f70b1(0x129)](0x1):_0x4f70b1(0x187),_0x601f54=_0x554994>_0x5f598e?_0x554994-_0x5f598e:0x0,_0x3ed5d1=validTrainingDays['length']>0x0?(_0x601f54/validTrainingDays[_0x4f70b1(0x123)]*0x64)['toFixed'](0x1):'0.0',_0x339817=dropoutData[_0x42694c]?!![]:![],_0x48d9a5=_0x339817?_0x4f70b1(0x1b4):'',_0x1b40b8=_0x339817?_0x4f70b1(0x1b4):_0x4f70b1(0x119);function _0x11a8e(_0x235904){const _0x243ddf=_0x4f70b1;if(_0x339817)return'';const _0x3cbf28=parseFloat(_0x235904);return _0x3cbf28<0x50?_0x243ddf(0x17d):_0x3cbf28<=0x55?'status-warning':_0x243ddf(0x166);}let _0x3ebe1c=_0x5da2ec?_0x4f70b1(0x196)+_0x11a8e(_0x3ed5d1)+_0x4f70b1(0x1bd)+_0x48d9a5+'\x22>'+_0x3ed5d1+_0x4f70b1(0x12a):'';return _0x4f70b1(0x12c)+(_0x339817?_0x48d9a5:_0x4f70b1(0x158))+_0x4f70b1(0x157)+(_0x1f5ad8+0x1)+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td\x20class=\x22sticky-col\x20col-name\x22\x20style=\x22'+_0x48d9a5+_0x4f70b1(0x1a4)+_0x42694c+_0x4f70b1(0x118)+(_0x2a433d||_0x4f70b1(0x15d))+_0x4f70b1(0x15e)+_0x11a8e(_0x36519d)+_0x4f70b1(0x1bd)+_0x48d9a5+'\x22>'+_0x36519d+_0x4f70b1(0x1ba)+_0x11a8e(_0x316d9b)+_0x4f70b1(0x1bd)+_0x48d9a5+'\x22>'+_0x316d9b+_0x4f70b1(0x15a)+_0x3ebe1c+_0x4f70b1(0x15f)+_0x48d9a5+'\x22>'+_0x601f54+_0x4f70b1(0x184)+_0x48d9a5+'\x22>'+_0x1f5ee6+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td\x20class=\x22sticky-col\x20col-s3\x22\x20style=\x22'+_0x1b40b8+_0x4f70b1(0x157)+_0x396aa9+_0x4f70b1(0x1a6)+_0x48d9a5+'\x22>'+_0x1ade8b+_0x4f70b1(0x113)+_0x48d9a5+'\x22>'+_0x324e63+_0x4f70b1(0x1bb)+_0x48d9a5+'\x22>'+_0x1cdee0+_0x4f70b1(0x19e)+_0x309fdb+'\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20';});_0x48a7a5['innerHTML']=_0x22b66d['join']('');}window['highlightCol']=function(_0x389da2){const _0x35a8e1=a10_0x3032c6;document[_0x35a8e1(0x155)](_0x35a8e1(0x115)+_0x389da2)[_0x35a8e1(0x14c)](_0x462e4e=>_0x462e4e[_0x35a8e1(0x147)][_0x35a8e1(0x1c2)]('hover-col'));},window[a10_0x3032c6(0x167)]=function(_0x53f9f0){const _0x4d7280=a10_0x3032c6;document[_0x4d7280(0x155)](_0x4d7280(0x115)+_0x53f9f0)['forEach'](_0x5d521e=>_0x5d521e[_0x4d7280(0x147)][_0x4d7280(0x1a7)](_0x4d7280(0x13c)));};let savedScrollPosition=0x0;window[a10_0x3032c6(0x175)]=function(_0x49f069){const _0x13c083=a10_0x3032c6,_0x23b6f9=document['getElementById']('mainTable'),_0x4ac921=document[_0x13c083(0x150)](_0x13c083(0x16f)+_0x49f069),_0x121ad2=_0x13c083(0x18d)+_0x49f069,_0x41e424=document[_0x13c083(0x150)](_0x13c083(0x14f));_0x23b6f9[_0x13c083(0x147)][_0x13c083(0x1be)](_0x121ad2)?(_0x23b6f9[_0x13c083(0x147)][_0x13c083(0x1a7)](_0x121ad2),_0x4ac921[_0x13c083(0x147)][_0x13c083(0x1a7)](_0x13c083(0x165)),!_0x23b6f9['classList'][_0x13c083(0x1be)](_0x13c083(0x144))&&!_0x23b6f9[_0x13c083(0x147)][_0x13c083(0x1be)](_0x13c083(0x143))&&_0x41e424['scrollTo']({'left':savedScrollPosition,'behavior':_0x13c083(0x117)})):(!_0x23b6f9[_0x13c083(0x147)]['contains'](_0x13c083(0x144))&&!_0x23b6f9['classList'][_0x13c083(0x1be)](_0x13c083(0x143))&&(savedScrollPosition=_0x41e424[_0x13c083(0x124)]),_0x23b6f9['classList'][_0x13c083(0x1c2)](_0x121ad2),_0x4ac921['classList'][_0x13c083(0x1c2)](_0x13c083(0x165)),setTimeout(()=>{const _0x2c9c17=_0x13c083;_0x41e424&&_0x41e424[_0x2c9c17(0x1b0)]({'left':0x1869f,'behavior':_0x2c9c17(0x117)});},0x64));},initialize(),window[a10_0x3032c6(0x175)]=function(_0x4961eb){const _0x51ff2a=a10_0x3032c6,_0x40d10c=document[_0x51ff2a(0x150)]('mainTable'),_0x215c82=document[_0x51ff2a(0x150)](_0x51ff2a(0x16f)+_0x4961eb),_0x34c7fb=_0x51ff2a(0x18d)+_0x4961eb,_0x5eeff2=document[_0x51ff2a(0x150)]('tableWrapper');_0x40d10c[_0x51ff2a(0x147)][_0x51ff2a(0x1be)](_0x34c7fb)?(_0x40d10c[_0x51ff2a(0x147)][_0x51ff2a(0x1a7)](_0x34c7fb),_0x215c82[_0x51ff2a(0x147)][_0x51ff2a(0x1a7)]('active'),!_0x40d10c[_0x51ff2a(0x147)][_0x51ff2a(0x1be)]('show-m70')&&!_0x40d10c['classList'][_0x51ff2a(0x1be)]('show-m80')&&_0x5eeff2[_0x51ff2a(0x1b0)]({'left':savedScrollPosition,'behavior':_0x51ff2a(0x117)})):(!_0x40d10c[_0x51ff2a(0x147)][_0x51ff2a(0x1be)](_0x51ff2a(0x144))&&!_0x40d10c['classList'][_0x51ff2a(0x1be)](_0x51ff2a(0x143))&&(savedScrollPosition=_0x5eeff2['scrollLeft']),_0x40d10c[_0x51ff2a(0x147)][_0x51ff2a(0x1c2)](_0x34c7fb),_0x215c82[_0x51ff2a(0x147)]['add'](_0x51ff2a(0x165)),setTimeout(()=>{const _0x5c6ac1=_0x51ff2a;_0x5eeff2&&_0x5eeff2[_0x5c6ac1(0x1b0)]({'left':0x1869f,'behavior':_0x5c6ac1(0x117)});},0x64));},initialize(),document[a10_0x3032c6(0x125)](a10_0x3032c6(0x131),()=>{const _0x2a36ab=a10_0x3032c6;document[_0x2a36ab(0x150)](_0x2a36ab(0x14e))[_0x2a36ab(0x125)](_0x2a36ab(0x11c),_0x1a61d8=>{const _0x1b816d=_0x2a36ab;_0x1a61d8[_0x1b816d(0x18f)](),location[_0x1b816d(0x164)]=classNavHref(_0x1b816d(0x136));}),document[_0x2a36ab(0x150)](_0x2a36ab(0x1b5))[_0x2a36ab(0x125)]('click',_0x1500db=>{const _0x175c5d=_0x2a36ab;_0x1500db[_0x175c5d(0x18f)](),location[_0x175c5d(0x164)]=classNavHref('상담일지.html');}),document[_0x2a36ab(0x150)](_0x2a36ab(0x12f))['addEventListener'](_0x2a36ab(0x11c),_0x58c19f=>{const _0x490d4a=_0x2a36ab;_0x58c19f[_0x490d4a(0x18f)](),location[_0x490d4a(0x164)]=classNavHref(_0x490d4a(0x198));}),document[_0x2a36ab(0x150)](_0x2a36ab(0x14d))['addEventListener']('click',_0x3ced84=>{const _0x3d469b=_0x2a36ab;_0x3ced84[_0x3d469b(0x18f)](),location['href']=classNavHref(_0x3d469b(0x173));}),document[_0x2a36ab(0x150)](_0x2a36ab(0x159))[_0x2a36ab(0x125)](_0x2a36ab(0x11c),()=>changePeriod(_0x2a36ab(0x11a)));});
+
+// [로직 보존: 절대 수정 금지]
+// 수정 후 >> [계승 및 멀티 DB 대응]
+const storedConfig = localStorage.getItem('firebaseConfig');
+const firebaseConfig = storedConfig ? JSON.parse(storedConfig) : {
+    apiKey: "AIzaSyCO37zrsZEjKTokMCNWbIc1C_o5BZMqh8E",
+    databaseURL: "https://busan-teacher-work-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "busan-teacher-work"
+};
+if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
+const database = firebase.database();
+initClassContext();
+let currentClass = window.currentClass;
+
+let rawTimetable = [], fullAttendanceData = {}, masterSubjectList = [], ncsList = [], unitMonths = [], studentNames = [], validTrainingDays = [];
+let evalDatesSet = new Set(); // 📍 신규 부품: 평가일자 전용 메모리
+
+function getFixDate(rawDate) {
+    if (!rawDate) return "";
+    let s = String(rawDate).trim().replace(/\./g, '-');
+    if (s.includes('/')) {
+        let p = s.split('/');
+        if (p.length === 3) {
+            let year = p[2].length === 2 ? "20" + p[2] : p[2];
+            s = `${year}-${p[0].padStart(2, '0')}-${p[1].padStart(2, '0')}`;
+        }
+    }
+    return s.substring(0, 10);
+}
+
+function isActualSubject(subName) {
+    if (!subName) return false;
+    const clean = String(subName).replace(/\s+/g, "");
+    return masterSubjectList.some(m => m.replace(/\s+/g, "").includes(clean)) || 
+           ncsList.some(n => n.replace(/\s+/g, "").includes(clean));
+}
+
+// 📍 [신규 부품] 전역 변수 선언부에 탈락 데이터 저장소 추가 (기존 전역 변수 아래쪽에 위치)
+let dropoutData = {};
+
+// [연비 원칙: once 전환 및 캐시 탑재]
+async function initialize() {
+    const cacheKey = classStorageKey('cache_attendance');
+    const cachedData = localStorage.getItem(cacheKey);
+    if (cachedData) {
+        fullAttendanceData = JSON.parse(cachedData);
+        console.log("⚡ [연비모드] 로컬 데이터를 즉시 불러왔습니다.");
+    }
+
+    try {
+        const [masterSnap, timeSnap, attendanceSnap, dropoutSnap] = await Promise.all([
+            classDbRef('masterData').once('value'),
+            classDbRef('fullTimetable').once('value'),
+            classDbRef('dailyAttendance').once('value'),
+            classDbRef('dropouts').once('value')
+        ]);
+
+        const master = masterSnap.val() || {};
+        evalDatesSet.clear(); // 센서 초기화
+        
+        if(master.courses) {
+            masterSubjectList = [...new Set(master.courses.map(c => c.subject))];
+            ncsList = [...new Set(master.courses.filter(c => c.unit).map(c => c.unit))];
+            
+            // 📍 [핵심 배선] 모든 교과목을 뒤져서 평가일자를 한 곳으로 수집
+            master.courses.forEach(c => {
+                if(c.evalDates && Array.isArray(c.evalDates)) {
+                    c.evalDates.forEach(ed => evalDatesSet.add(ed.date));
+                }
+            });
+        }
+
+        rawTimetable = timeSnap.val() || [];
+        fullAttendanceData = attendanceSnap.val() || {};
+        dropoutData = dropoutSnap.val() || {};
+
+        // 3. [창고 업데이트] 최신 데이터를 캐시에 저장하여 다음 로드 가속
+        localStorage.setItem(cacheKey, JSON.stringify(fullAttendanceData));
+
+        // 4. [엔진 가동] 분석 로직 실행
+        if(rawTimetable.length > 0) {
+            processBaseData();
+            renderTabs();
+            changePeriod(window.currentPeriodTarget || 'total');
+            // 상단 스크롤바 모듈 제거로 인한 동기화 함수 호출 삭제
+        }
+    } catch (e) {
+        console.error("정밀 분석 로드 실패:", e);
+        await appAlert("데이터를 불러오는 데 실패했습니다.");
+    }
+}
+
+function processBaseData() {
+    validTrainingDays = [];
+    const dayCheck = new Set();
+    rawTimetable.forEach(row => {
+        const d = getFixDate(row.날짜);
+        if(d && isActualSubject(row.교과목) && !dayCheck.has(d)) {
+            validTrainingDays.push(d);
+            dayCheck.add(d);
+        }
+    });
+    validTrainingDays.sort();
+
+    let allStudents = new Set();
+Object.values(fullAttendanceData).forEach(day => {
+    Object.keys(day).forEach(name => {
+        // 📍 [거름망 강화] 학생 성명이 아닌 시스템 키값들은 통과시키지 않습니다.
+        if(name !== "성명" && name !== "_metadata" && name !== "미기록") {
+            allStudents.add(name);
+        }
+    });
+});
+studentNames = Array.from(allStudents).sort();
+
+    unitMonths = [];
+    if(validTrainingDays.length === 0) return;
+    const start = new Date(validTrainingDays[0]);
+    const end = new Date(validTrainingDays[validTrainingDays.length - 1]);
+    let tempStart = new Date(start);
+    while (tempStart <= end) {
+        let uStart = new Date(tempStart);
+        let uEnd = new Date(tempStart);
+        uEnd.setMonth(uEnd.getMonth() + 1); uEnd.setDate(uEnd.getDate() - 1);
+        const sStr = uStart.toISOString().split('T')[0];
+        const eStr = uEnd.toISOString().split('T')[0];
+        unitMonths.push({ label: `${unitMonths.length + 1}회 단위`, start: sStr, end: eStr, days: validTrainingDays.filter(d => d >= sStr && d <= eStr) });
+        tempStart.setMonth(tempStart.getMonth() + 1);
+    }
+}
+
+function renderTabs() {
+    const menu = document.getElementById('tabMenu');
+    // 📍 [정밀 수리] onclick 배선 대신 새롭게 부착된 ID(btn_tab_total)로 전체 누적 버튼을 인식하도록 센서 교체
+    const existingBtns = menu.querySelectorAll('.tab-btn:not(#btn_tab_total)');
+    existingBtns.forEach(b => b.remove());
+    // 기존 도달 버튼 초기화
+    menu.querySelectorAll('.milestone-wrap').forEach(b => b.remove());
+
+    unitMonths.forEach((u, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'tab-btn'; btn.innerText = u.label; btn.onclick = () => changePeriod(idx);
+        menu.appendChild(btn);
+    });
+
+    // 📍 [버그 수리] 자바스크립트가 인덱스 0(1회 단위)을 false로 오인하는 현상 완벽 차단
+    if (window.currentPeriodTarget === 'total' || typeof window.currentPeriodTarget === 'undefined') {
+        const div = document.createElement('div');
+        div.className = 'milestone-wrap';
+        
+        const btn70 = document.createElement('button');
+        btn70.className = 'tab-btn btn-m70';
+        btn70.id = 'btnM70';
+        btn70.innerText = '🎯 70% 도달';
+        btn70.onclick = () => toggleMilestone('70');
+        
+        const btn80 = document.createElement('button');
+        btn80.className = 'tab-btn btn-m80';
+        btn80.id = 'btnM80';
+        btn80.innerText = '🎯 80% 도달';
+        btn80.onclick = () => toggleMilestone('80');
+
+        div.appendChild(btn70);
+        div.appendChild(btn80);
+        menu.appendChild(div);
+    }
+}
+
+function changePeriod(target) {
+    window.currentPeriodTarget = target;
+    
+    // 📍 도달 시점 하이라이트 상태 리셋
+    const table = document.getElementById('mainTable');
+    table.classList.remove('show-m70', 'show-m80');
+    
+    if(target === 'total') table.className = 'mode-total';
+    else table.className = 'mode-unit';
+
+    renderTabs(); // 도달 버튼 생성 여부 갱신
+
+    const btns = document.querySelectorAll('#tabMenu > .tab-btn'); // 탭 버튼만 타겟팅
+    btns.forEach((btn, idx) => {
+        if(target === 'total' && idx === 0) btn.classList.add('active');
+        else if(target === idx - 1) btn.classList.add('active');
+        else btn.classList.remove('active');
+    });
+
+    let targetDays = [], range = "";
+    if(target === 'total') {
+        targetDays = validTrainingDays;
+        range = targetDays.length > 0 ? `${targetDays[0]} ~ ${targetDays[targetDays.length-1]}` : "-";
+    } else {
+        const u = unitMonths[target]; targetDays = u.days; range = `${u.start} ~ ${u.end}`;
+    }
+
+    const totalCount = targetDays.length;
+    const minPassDays = Math.ceil(totalCount * 0.8);
+    document.getElementById('infoRange').innerText = range;
+    document.getElementById('infoTotalDays').innerText = totalCount + "일";
+    document.getElementById('infoMinDays').innerText = minPassDays + "일";
+    document.getElementById('infoAllowAbsent').innerText = (totalCount - minPassDays) + "일";
+
+    renderDetailTable(targetDays, target === 'total');
+}
+
+// [헤더 재배치 수정 영역]
+function renderDetailTable(targetDays, isTotalMode) {
+    const thead = document.getElementById('tableHead');
+    const tbody = document.getElementById('attendanceTableBody');
+    const todayStr = typeof getTodayStrKst === 'function' ? getTodayStrKst() : new Date().toISOString().split('T')[0];
+
+    // 월별 병합 계산 (2층용)
+    let monthHeaders = "";
+    if (targetDays.length > 0) {
+        let currentMonth = "";
+        let spanCount = 0;
+        targetDays.forEach((d, idx) => {
+            const m = d.split('-')[1] + "월";
+            if (idx === 0) { currentMonth = m; spanCount = 1; }
+            else if (currentMonth === m) { spanCount++; }
+            else {
+                monthHeaders += `<th colspan="${spanCount}" class="month-header">${currentMonth}</th>`;
+                currentMonth = m; spanCount = 1;
+            }
+            if (idx === targetDays.length - 1) {
+                monthHeaders += `<th colspan="${spanCount}" class="month-header">${currentMonth}</th>`;
+            }
+        });
+    }
+
+// 📍 [신규 배선] 업로드된 출석 데이터 중 가장 마지막(최근) 날짜 추출
+    let lastRecordedDate = "";
+    const uploadedDates = Object.keys(fullAttendanceData).filter(k => /^\d{4}-\d{2}-\d{2}$/.test(k)).sort();
+    if (uploadedDates.length > 0) {
+        lastRecordedDate = uploadedDates[uploadedDates.length - 1];
+    }
+
+    // 일 표시 (3층용) - 📍 평가일자, 호버 센서 및 수직 경계선 부착
+    const weekDays = ['일', '월', '화', '수', '목', '금', '토']; // 📍 신규 부품: 요일 인식 배열
+    let dateHeaders = targetDays.map(d => {
+        let isEval = evalDatesSet.has(d);
+        let evalCls = isEval ? "eval-day-header" : "";
+        let boundaryCls = (d === lastRecordedDate) ? "last-record-col" : ""; // 마지막 입력일에 클래스 부여
+        let dayName = weekDays[new Date(d).getDay()]; // 📍 신규 배선: 날짜에서 요일 추출
+        return `<th class="col-day day-header date-col-${d} ${evalCls} ${boundaryCls}" onmouseover="highlightCol('${d}')" onmouseout="clearColHighlight('${d}')"><span style="display:block;">${dayName}</span>${parseInt(d.split('-')[2])}</th>`;
+    }).join('');
+
+    // 헤더의 colspan 길이를 모드에 따라 동적 조절 (전체 누적이면 10칸, 아니면 9칸)
+    let stickyColspan = isTotalMode ? 11 : 10;
+    let currentRateTh = isTotalMode ? `<th class="sticky-col col-r3">현재(%)</th>` : "";
+
+    let headHtml = `
+        <tr class="tr-top">
+            <th colspan="${stickyColspan}" class="sticky-col" style="left:0;">실시간 출석 분석 데이터</th>
+            <th colspan="${targetDays.length}">일자별 출결 현황</th>
+        </tr>
+        <tr class="tr-month">
+            <th colspan="${stickyColspan}" class="sticky-col" style="left:0; border-bottom:1px solid #ddd;">(분석 기준: 단위 개월)</th>
+            ${monthHeaders}
+        </tr>
+        <tr class="tr-label-day">
+            <th class="sticky-col col-num">번호</th>
+            <th class="sticky-col col-name">성명</th>
+            <th class="sticky-col col-r1">전체(%)</th>
+            <th class="sticky-col col-r2">편입(%)</th>
+            ${currentRateTh}
+            <th class="sticky-col col-s1">출석</th>
+            <th class="sticky-col col-s2">수업</th>
+            <th class="sticky-col col-s3">결석</th>
+            <th class="sticky-col col-p1">지</th>
+            <th class="sticky-col col-p2">조</th>
+            <th class="sticky-col col-p3">외</th>
+            ${dateHeaders}
+        </tr>
+    `;
+    thead.innerHTML = headHtml;
+
+    // [데이터 로직: 절대 보존]
+    const rows = studentNames.map((name, index) => {
+        let enrollDate = "";
+        for (let d of validTrainingDays) {
+            const dayData = fullAttendanceData[d] ? fullAttendanceData[d][name] : null;
+            if (dayData && dayData.status && dayData.status !== "미편입" && dayData.status !== "" && dayData.status !== "-") {
+                enrollDate = d; break;
+            }
+        }
+        
+        let pureAbsent = 0, lCount = 0, eCount = 0, oCount = 0, personalTrainingDaysCount = 0, preEnrollAbsentCount = 0, actualPresentCount = 0, dayGridHtml = "";
+        
+        // 📍 [재설계] 70%, 80% 도달 목표일(Target Days) 계산
+        const target70 = Math.ceil(validTrainingDays.length * 0.7);
+        const target80 = Math.ceil(validTrainingDays.length * 0.8);
+        let hit70 = false, hit80 = false;
+
+        // 📍 [사전 연산] 해당 학생의 '현재까지의 총 누적 패널티 결석 일수'를 먼저 계산합니다.
+        // 미래는 모두 출석한다고 가정하므로, 패널티는 오늘(마지막 입력일)까지만 누적됩니다.
+        let tempPureAbsent = 0, tempL = 0, tempE = 0, tempO = 0;
+        targetDays.forEach(d => {
+            const att = (fullAttendanceData[d] && fullAttendanceData[d][name]) ? fullAttendanceData[d][name] : null;
+            if(att) {
+                const st = att.status || "";
+                if(st.includes("결석") || st === "미편입") tempPureAbsent++;
+                else {
+                    if(st.includes("지각")) tempL++;
+                    else if(st.includes("조퇴")) tempE++;
+                    else if(st.includes("외출")) tempO++;
+                }
+            }
+        });
+        const currentPenaltyAbs = Math.floor((tempL + tempE + tempO) / 3);
+        const totalCurrentAbsent = tempPureAbsent + currentPenaltyAbs; // 편입 전 미편입 일수(preEnroll)는 이따 루프 돌면서 합산
+
+        // 📍 [미래 예측 시뮬레이터] 
+        // 전체 훈련일수 배열(validTrainingDays)의 인덱스를 기반으로
+        // "오늘까지의 총 결석일수" + "오늘까지의 미편입 일수"를 미래의 날짜(Index)에 더해 도달 시점을 뒤로 밀어냅니다.
+        
+        // 📍 [미래 예측 시뮬레이터 및 학생 번호 장착]
+        targetDays.forEach(d => {
+            const att = (fullAttendanceData[d] && fullAttendanceData[d][name]) ? fullAttendanceData[d][name] : null;
+            
+            let colCls = `date-col-${d}`;
+            let boundaryCls = (d === lastRecordedDate) ? "last-record-col" : "";
+            let finalCls = `${colCls} ${boundaryCls}`;
+
+            let currentDayIndex = validTrainingDays.indexOf(d) + 1;
+            let delayedTarget70 = target70 + preEnrollAbsentCount + totalCurrentAbsent;
+            let delayedTarget80 = target80 + preEnrollAbsentCount + totalCurrentAbsent;
+
+            let milestoneCls = ""; 
+            let m70Html = "", m80Html = "";
+
+            if (isTotalMode) {
+                if (!hit70 && currentDayIndex === delayedTarget70) { hit70 = true; milestoneCls = " milestone-70"; m70Html = `<span class="m70-sym">${index + 1}</span>`; }
+                if (!hit80 && currentDayIndex === delayedTarget80) { hit80 = true; milestoneCls += " milestone-80"; m80Html = `<span class="m80-sym">${index + 1}</span>`; }
+            }
+
+            // 📍 [통합 조립 부품] td 태그 생성을 일원화하여 학생 번호 스팬(span)을 안전하게 감쌈
+            const buildTd = (cls, sym, isDrop) => {
+                let inner = `<span class="default-sym">${sym}</span>${m70Html}${m80Html}`;
+                let extraStyle = isDrop ? `style="color:#a1a1aa; font-weight:bold; background-color:#f4f4f5 !important;"` : ``;
+                return `<td class="col-day ${cls} ${finalCls}${milestoneCls}" ${extraStyle}>${inner}</td>`;
+            };
+
+            if (dropoutData[name] && d >= dropoutData[name]) {
+                pureAbsent++; personalTrainingDaysCount++; 
+                dayGridHtml += buildTd("bg-none", "X", true); return; 
+            }
+
+            if (enrollDate && d < enrollDate) { 
+                preEnrollAbsentCount++; 
+                dayGridHtml += buildTd("bg-none", "", false); return; 
+            }
+            
+            personalTrainingDaysCount++;
+            if(!att) {
+                if (typeof shouldCountMissingAttAsAbsent === 'function' ? shouldCountMissingAttAsAbsent(d, todayStr) : d <= todayStr) {
+                    pureAbsent++;
+                    dayGridHtml += buildTd("bg-absent", "×", false);
+                } else {
+                    dayGridHtml += buildTd("", "", false);
+                }
+            } else {
+                const st = att.status || "";
+                if(st.includes("결석") || st === "미편입") { 
+                    pureAbsent++; dayGridHtml += buildTd("bg-absent", "×", false); 
+                }
+                else if(st.includes("출석") || st === "정상" || st === "") { 
+                    actualPresentCount++; dayGridHtml += buildTd("bg-attend", isTotalMode ? '' : '○', false); 
+                }
+                else {
+                    actualPresentCount++; 
+                    let cls = "bg-attend", sym = "";
+                    if(st.includes("지각")) { lCount++; cls = "bg-late"; sym = "지"; }
+                    else if(st.includes("조퇴")) { eCount++; cls = "bg-early"; sym = "조"; }
+                    else if(st.includes("외출")) { oCount++; cls = "bg-out"; sym = "외"; }
+                    else if(st.includes("공가")) { cls = "bg-attend"; sym = "공"; } 
+                    else if(st.includes("휴가")) { cls = "bg-attend"; sym = "휴"; } 
+                    else { cls = "bg-attend"; sym = "◎"; } 
+                    dayGridHtml += buildTd(cls, sym, false);
+                }
+            }
+        });
+
+        const totalPenalty = lCount + eCount + oCount;
+        const penaltyAbs = Math.floor(totalPenalty / 3);
+        const finalAbsent = pureAbsent + penaltyAbs;
+        const totalCourseAbsent = finalAbsent + preEnrollAbsentCount; 
+        const pureAttendedDays = personalTrainingDaysCount - finalAbsent; 
+
+        const courseRate = targetDays.length > 0 ? ((targetDays.length - totalCourseAbsent) / targetDays.length * 100).toFixed(1) : "0.0";
+        const personalRate = personalTrainingDaysCount > 0 ? (pureAttendedDays / personalTrainingDaysCount * 100).toFixed(1) : "0.0";
+        
+        const currentValidAttendance = actualPresentCount > penaltyAbs ? actualPresentCount - penaltyAbs : 0;
+        const currentProgressRate = validTrainingDays.length > 0 ? (currentValidAttendance / validTrainingDays.length * 100).toFixed(1) : "0.0";
+        
+        // 📍 [신규 모듈] 중도탈락자 전용 회색 도색 변수 (셀렉터 우선순위 강제 적용)
+        const isDropped = dropoutData[name] ? true : false;
+        const dropStyle = isDropped ? "background-color:#f4f4f5 !important; color:#a1a1aa !important;" : "";
+        const dropAbsStyle = isDropped ? "background-color:#f4f4f5 !important; color:#a1a1aa !important;" : "background:#fffcfc !important; color:#ef4444;";
+
+        function getRateClass(r) { 
+            if (isDropped) return ""; // 💡 탈락자는 상태 경고 색상(빨강/노랑) 렌더링 강제 해제
+            const v = parseFloat(r); return v < 80 ? "status-danger" : (v <= 85 ? "status-warning" : "status-safe"); 
+        }
+
+        let currentRateTd = isTotalMode ? `<td class="sticky-col col-r3 ${getRateClass(currentProgressRate)}" style="${dropStyle}">${currentProgressRate}%</td>` : "";
+
+        return `
+            <tr>
+                <td class="sticky-col col-num" style="${isDropped ? dropStyle : 'color:#64748b;'} font-weight:bold;">${index + 1}</td>
+                <td class="sticky-col col-name" style="${dropStyle}"><strong>${name}</strong><span class="enroll-date">${enrollDate || '미기록'}</span></td>
+                <td class="sticky-col col-r1 ${getRateClass(courseRate)}" style="${dropStyle}">${courseRate}%</td>
+                <td class="sticky-col col-r2 ${getRateClass(personalRate)}" style="${dropStyle}">${personalRate}%</td>
+                ${currentRateTd}
+                <td class="sticky-col col-s1 summary-val" style="${dropStyle}">${currentValidAttendance}</td>
+                <td class="sticky-col col-s2 summary-val" style="${dropStyle}">${personalTrainingDaysCount}</td>
+                <td class="sticky-col col-s3" style="${dropAbsStyle} font-weight:bold;">${finalAbsent}</td>
+                <td class="sticky-col col-p1 summary-val" style="${dropStyle}">${lCount}</td>
+                <td class="sticky-col col-p2 summary-val" style="${dropStyle}">${eCount}</td>
+                <td class="sticky-col col-p3 summary-val" style="${dropStyle}">${oCount}</td>
+                ${dayGridHtml}
+            </tr>
+        `;
+    });
+    tbody.innerHTML = rows.join('');
+}
+
+// 📍 [신규 모듈] 수직 열(Column) 호버 중앙 통제소
+window.highlightCol = function(dateStr) {
+    document.querySelectorAll(`.date-col-${dateStr}`).forEach(el => el.classList.add('hover-col'));
+};
+window.clearColHighlight = function(dateStr) {
+    document.querySelectorAll(`.date-col-${dateStr}`).forEach(el => el.classList.remove('hover-col'));
+};
+
+// 📍 [신규 부품] 가로 스크롤 출발 전 원래 위치 백업용 메모리
+let savedScrollPosition = 0;
+
+// 📍 [스크롤 모터 전면 재설계] X축(가로) 이동 및 복귀 엔진 장착
+window.toggleMilestone = function(target) {
+    const table = document.getElementById('mainTable');
+    const btn = document.getElementById(`btnM${target}`);
+    const cls = `show-m${target}`;
+    const wrapper = document.getElementById('tableWrapper');
+    
+    if (table.classList.contains(cls)) {
+        table.classList.remove(cls);
+        btn.classList.remove('active');
+        
+        if (!table.classList.contains('show-m70') && !table.classList.contains('show-m80')) {
+            wrapper.scrollTo({ left: savedScrollPosition, behavior: 'smooth' });
+        }
+    } else {
+        if (!table.classList.contains('show-m70') && !table.classList.contains('show-m80')) {
+            savedScrollPosition = wrapper.scrollLeft;
+        }
+
+        table.classList.add(cls);
+        btn.classList.add('active');
+        
+        // 📍 [스크롤 확정 이동] 99999 픽셀로 지정하여 중간 멈춤 현상 없이 무조건 맨 끝으로 직행
+        setTimeout(() => {
+            if (wrapper) {
+                wrapper.scrollTo({ left: 99999, behavior: 'smooth' });
+            }
+        }, 100); 
+    }
+};
+initialize();
+
+// 📍 [스크롤 모터 전면 재설계] X축(가로) 이동 및 복귀 엔진 장착
+window.toggleMilestone = function(target) {
+    const table = document.getElementById('mainTable');
+    const btn = document.getElementById(`btnM${target}`);
+    const cls = `show-m${target}`;
+    const wrapper = document.getElementById('tableWrapper');
+    
+    if (table.classList.contains(cls)) {
+        table.classList.remove(cls);
+        btn.classList.remove('active');
+        
+        if (!table.classList.contains('show-m70') && !table.classList.contains('show-m80')) {
+            wrapper.scrollTo({ left: savedScrollPosition, behavior: 'smooth' });
+        }
+    } else {
+        if (!table.classList.contains('show-m70') && !table.classList.contains('show-m80')) {
+            savedScrollPosition = wrapper.scrollLeft;
+        }
+
+        table.classList.add(cls);
+        btn.classList.add('active');
+        
+        // 📍 [스크롤 확정 이동] 99999 픽셀로 지정하여 중간 멈춤 현상 없이 무조건 맨 끝으로 직행
+        setTimeout(() => {
+            if (wrapper) {
+                wrapper.scrollTo({ left: 99999, behavior: 'smooth' });
+            }
+        }, 100); 
+    }
+};
+initialize();
+
+// 📍 [보안 추가] 대시보드(HTML)에서 엔진룸(JS)으로 모든 배선 숨기기 (이벤트 리스너 매립)
+document.addEventListener('DOMContentLoaded', () => {
+    // 상단 네비게이션 버튼
+    document.getElementById('btn_nav_daily').addEventListener('click', (e) => { e.preventDefault(); location.href = classNavHref('일일출석부.html'); });
+    document.getElementById('btn_nav_consult').addEventListener('click', (e) => { e.preventDefault(); location.href = classNavHref('상담일지.html'); });
+    document.getElementById('btn_nav_unit').addEventListener('click', (e) => { e.preventDefault(); location.href = classNavHref('능력단위시간표.html'); });
+    document.getElementById('btn_nav_main').addEventListener('click', (e) => { e.preventDefault(); location.href = classNavHref('index1.html'); });
+
+    // 고정 탭(전체 누적) 버튼
+    document.getElementById('btn_tab_total').addEventListener('click', () => changePeriod('total'));
+});

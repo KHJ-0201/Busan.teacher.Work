@@ -1,1 +1,1859 @@
-const a12_0x1e756e=a12_0x2915;(function(_0x1f9339,_0x93f6a6){const _0x3cab98=a12_0x2915,_0x15de59=_0x1f9339();while(!![]){try{const _0x229c26=-parseInt(_0x3cab98(0x2d3))/0x1*(-parseInt(_0x3cab98(0x258))/0x2)+parseInt(_0x3cab98(0x286))/0x3+parseInt(_0x3cab98(0x23c))/0x4*(-parseInt(_0x3cab98(0x200))/0x5)+parseInt(_0x3cab98(0x31e))/0x6*(parseInt(_0x3cab98(0x3fc))/0x7)+parseInt(_0x3cab98(0x3c1))/0x8+parseInt(_0x3cab98(0x3ab))/0x9*(-parseInt(_0x3cab98(0x2c3))/0xa)+parseInt(_0x3cab98(0x23e))/0xb;if(_0x229c26===_0x93f6a6)break;else _0x15de59['push'](_0x15de59['shift']());}catch(_0x3c56c4){_0x15de59['push'](_0x15de59['shift']());}}}(a12_0x395f,0xc6889));const a12_0x4f5fec=(function(){let _0x2c52c7=!![];return function(_0x1b2845,_0x32a4a9){const _0x85f607=_0x2c52c7?function(){const _0x3babbb=a12_0x2915;if(_0x32a4a9){const _0x176ba9=_0x32a4a9[_0x3babbb(0x2e3)](_0x1b2845,arguments);return _0x32a4a9=null,_0x176ba9;}}:function(){};return _0x2c52c7=![],_0x85f607;};}()),a12_0x21f889=a12_0x4f5fec(this,function(){const _0x2f603f=a12_0x2915;return a12_0x21f889['toString']()[_0x2f603f(0x27a)](_0x2f603f(0x333))[_0x2f603f(0x2c9)]()[_0x2f603f(0x23b)](a12_0x21f889)[_0x2f603f(0x27a)](_0x2f603f(0x333));});a12_0x21f889();const storedConfig=localStorage[a12_0x1e756e(0x23d)](a12_0x1e756e(0x315)),firebaseConfig=storedConfig?JSON[a12_0x1e756e(0x2b0)](storedConfig):null,urlParams=new URLSearchParams(window[a12_0x1e756e(0x3e9)][a12_0x1e756e(0x27a)]);let currentClass=urlParams[a12_0x1e756e(0x218)]('class')||a12_0x1e756e(0x386),dbClassKey=currentClass;dbClassKey!==a12_0x1e756e(0x386)&&!dbClassKey[a12_0x1e756e(0x28e)]('반')&&(dbClassKey=dbClassKey+'반');!firebaseConfig&&((async()=>{const _0x1a7cdf=a12_0x1e756e;await appAlert(_0x1a7cdf(0x241)),location[_0x1a7cdf(0x322)]=_0x1a7cdf(0x3da);})());const masterConfig={'apiKey':a12_0x1e756e(0x382),'databaseURL':a12_0x1e756e(0x2a1),'projectId':a12_0x1e756e(0x3b9)};if(!firebase['apps'][a12_0x1e756e(0x20b)])firebase[a12_0x1e756e(0x3c5)](firebaseConfig);const database=firebase[a12_0x1e756e(0x395)]();initClassContext(),currentClass=window[a12_0x1e756e(0x2a9)];const masterApp=!firebase[a12_0x1e756e(0x2d1)][a12_0x1e756e(0x255)](_0x535ef2=>_0x535ef2[a12_0x1e756e(0x3f4)]===a12_0x1e756e(0x365))?firebase['initializeApp'](masterConfig,'masterApp'):firebase[a12_0x1e756e(0x23a)](a12_0x1e756e(0x365)),masterDatabase=masterApp[a12_0x1e756e(0x395)](),auth=firebase['auth']();document[a12_0x1e756e(0x317)](a12_0x1e756e(0x2ff))[a12_0x1e756e(0x29c)]=formatClassHudText(),document[a12_0x1e756e(0x317)](a12_0x1e756e(0x2cf))['href']=classNavHref(a12_0x1e756e(0x340));let fullList=[],subjectMaxDates={},subjectMinDates={},selectedItem=null,isAdmin=![],imageCache={'common':null,'teacherSeals':null,'teacherSigns':null,'signs':null,'reportPhotos':{}},globalAttendanceData={},subjectDaysMap={},globalValidDates=[],rawTimetableData=[],masterSubjectList=[],ncsList=[],studentNames=[],dropoutData={},earlyCompletionData={},globalMakeupWaivers={},evaluationDates={'subject':{},'ncs':{}},defaultViewMode=localStorage[a12_0x1e756e(0x23d)](classStorageKey(a12_0x1e756e(0x26c)))||a12_0x1e756e(0x313),globalManualData={},globalHistoryData={};function getStudentLeaveDate(_0x1f610b){if(dropoutData[_0x1f610b])return dropoutData[_0x1f610b];if(earlyCompletionData[_0x1f610b])return earlyCompletionData[_0x1f610b];return null;}function isStudentLeaveOnOrBefore(_0x33d5dc,_0x477965){const _0xd5fabf=getStudentLeaveDate(_0x33d5dc);return!!(_0xd5fabf&&_0xd5fabf<=_0x477965);}function isDateOnOrAfterStudentLeave(_0x14f8b7,_0x79995b){const _0xb95c9f=getStudentLeaveDate(_0x14f8b7);return!!(_0xb95c9f&&_0x79995b>=_0xb95c9f);}function hasMakeupWaiver(_0x351c6f,_0x51e200,_0x46a8c1){const _0x49a2a9=_0x351c6f[_0x51e200]?.[_0x46a8c1];return!!(_0x49a2a9&&(_0x49a2a9['waived']===!![]||_0x49a2a9===!![]));}function ultraClean(_0x59adfe){const _0x1a7e8e=a12_0x1e756e;return String(_0x59adfe||'')[_0x1a7e8e(0x300)](/^[\[\]\d\w\s\-_.]+?(?=[가-힣])/,'')[_0x1a7e8e(0x28f)]();}function getFixDate(_0x3889b3){const _0x2cf8dc=a12_0x1e756e;if(!_0x3889b3)return'';let _0x15f9fe=String(_0x3889b3)[_0x2cf8dc(0x28f)]()[_0x2cf8dc(0x300)](/\./g,'-');if(_0x15f9fe[_0x2cf8dc(0x28e)]('/')){const _0x20cc39=_0x15f9fe[_0x2cf8dc(0x2a2)]('/');if(_0x20cc39['length']===0x3){const _0x520071=_0x20cc39[0x2][_0x2cf8dc(0x20b)]===0x2?'20'+_0x20cc39[0x2]:_0x20cc39[0x2];_0x15f9fe=_0x520071+'-'+_0x20cc39[0x0]['padStart'](0x2,'0')+'-'+_0x20cc39[0x1][_0x2cf8dc(0x3c2)](0x2,'0');}}if(/^\d{4}-\d{2}-\d{2}/[_0x2cf8dc(0x3a8)](_0x15f9fe))return _0x15f9fe['substring'](0x0,0xa);const _0x13bdb1=new Date(_0x15f9fe);if(!isNaN(_0x13bdb1[_0x2cf8dc(0x359)]()))return _0x13bdb1[_0x2cf8dc(0x21b)]()[_0x2cf8dc(0x2a2)]('T')[0x0];return _0x15f9fe[_0x2cf8dc(0x307)](0x0,0xa);}function resolveSubjectDateKey(_0x1ff870,_0x110801,_0x4316cf){const _0x262dab=a12_0x1e756e;if(_0x4316cf[_0x1ff870])return _0x4316cf[_0x1ff870];if(_0x4316cf[_0x110801])return _0x4316cf[_0x110801];const _0x562588=ultraClean(_0x110801);if(_0x4316cf[_0x562588])return _0x4316cf[_0x562588];for(const _0x3744a6 in _0x4316cf){if(_0x3744a6[_0x262dab(0x28e)](_0x1ff870)||_0x1ff870[_0x262dab(0x28e)](_0x3744a6))return _0x4316cf[_0x3744a6];}return null;}function calculateParticipationForMakeup(_0x2d62e4,_0x18624c,_0x15a327,_0x110091,_0x263785,_0x242bc8,_0x1cdffe){const _0x507880=a12_0x1e756e;if(!_0x18624c||!_0x15a327||_0x18624c[_0x507880(0x3ad)]('00'))return{'am':0x0,'pm':0x0};const _0x29f49a=rawTimetableData[_0x507880(0x361)](_0x299169=>{const _0x23a307=_0x507880,_0x1d8563=_0x1cdffe==='subject'?String(_0x299169[_0x23a307(0x3fd)]||''):String(_0x299169[_0x23a307(0x39d)]||'');return getFixDate(_0x299169['날짜'])===_0x2d62e4&&_0x1d8563['replace'](/\s+/g,'')===String(_0x110091)[_0x23a307(0x300)](/\s+/g,'');});let _0x206067=0x0,_0x46ea7c=0x0;const _0x1a0c4a=_0x3f7dbe=>{const _0x35f0b4=_0x507880;if(!_0x3f7dbe||!String(_0x3f7dbe)[_0x35f0b4(0x28e)](':'))return 0x0;const _0x16cdc7=_0x3f7dbe[_0x35f0b4(0x2a2)](':');return parseInt(_0x16cdc7[0x0])*0x3c+parseInt(_0x16cdc7[0x1]);},_0x306bc0=_0x1a0c4a(_0x18624c),_0x5d8397=_0x1a0c4a(_0x15a327),_0x213565=_0x1a0c4a(_0x263785),_0x4e57a1=_0x1a0c4a(_0x242bc8),_0x4993a0=0xd*0x3c,_0x5ab930=0xd*0x3c+0x1e;return _0x29f49a[_0x507880(0x25e)](_0x26c844=>{const _0x3b9357=_0x507880;let _0x3fe9d0=String(_0x26c844['시간']||_0x26c844['교육시간']||'')['replace'](/\s/g,''),_0x5bf63e=_0x3fe9d0[_0x3b9357(0x2a2)](/[~-]/);if(_0x5bf63e['length']>=0x2){let _0x2aff66=_0x1a0c4a(_0x5bf63e[0x0]),_0x36b5a1=_0x1a0c4a(_0x5bf63e[0x1])+0xa,_0x4d656d=Math[_0x3b9357(0x226)](_0x306bc0,_0x2aff66),_0x4527af=Math[_0x3b9357(0x2d7)](_0x5d8397,_0x36b5a1),_0x501504=Math[_0x3b9357(0x226)](0x0,_0x4527af-_0x4d656d);const _0x415f3f=Math[_0x3b9357(0x226)](0x0,Math['min'](_0x4527af,_0x5ab930)-Math[_0x3b9357(0x226)](_0x4d656d,_0x4993a0));_0x501504-=_0x415f3f;if(_0x213565>0x0&&_0x4e57a1>0x0){const _0x33a08e=Math[_0x3b9357(0x226)](0x0,Math[_0x3b9357(0x2d7)](_0x4e57a1,_0x4527af)-Math[_0x3b9357(0x226)](_0x213565,_0x4d656d)),_0x3e7819=Math['max'](0x0,Math[_0x3b9357(0x2d7)](_0x4e57a1,_0x5ab930,_0x4527af)-Math['max'](_0x213565,_0x4993a0,_0x4d656d));_0x501504-=_0x33a08e-_0x3e7819;}const _0x5bcf2d=String(_0x26c844['교시'])[_0x3b9357(0x28f)]();if(['1','2','3','4'][_0x3b9357(0x28e)](_0x5bcf2d))_0x206067+=_0x501504;else{if(['5','6','7','8'][_0x3b9357(0x28e)](_0x5bcf2d))_0x46ea7c+=_0x501504;}}}),{'am':Math[_0x507880(0x370)](_0x206067),'pm':Math[_0x507880(0x370)](_0x46ea7c)};}function buildMakeupNeedList(_0x4d30aa=![]){const _0x26f9b3=a12_0x1e756e,_0x891e72=[],_0x20ba94=defaultViewMode==='ncs'?_0x26f9b3(0x2b3):_0x26f9b3(0x313),_0x48d223=_0x20ba94===_0x26f9b3(0x313)?masterSubjectList:ncsList;return _0x48d223[_0x26f9b3(0x25e)](_0x2f0450=>{const _0x2e97a0=_0x26f9b3,_0x45d048=[...new Set(rawTimetableData['filter'](_0x448fee=>{const _0x1a78e5=a12_0x2915,_0x191fdf=_0x20ba94===_0x1a78e5(0x313)?String(_0x448fee[_0x1a78e5(0x3fd)]||''):String(_0x448fee[_0x1a78e5(0x39d)]||'');return _0x191fdf[_0x1a78e5(0x28f)]()===_0x2f0450;})['map'](_0xdf0772=>getFixDate(_0xdf0772['날짜'])))]['filter'](Boolean)['sort']();if(!_0x45d048[_0x2e97a0(0x20b)])return;const _0xfc7955=_0x2f0450['replace'](/[\.\#\$\/\[\]]/g,'_');let _0x5f0bb3=0x0;const _0x3cdbbd={};_0x45d048['forEach'](_0x533e5c=>{const _0x5b213b=_0x2e97a0;_0x3cdbbd[_0x533e5c]=calculateParticipationForMakeup(_0x533e5c,_0x5b213b(0x2f0),'17:30',_0x2f0450,'','',_0x20ba94),_0x5f0bb3+=_0x3cdbbd[_0x533e5c]['am']+_0x3cdbbd[_0x533e5c]['pm'];});if(_0x5f0bb3<=0x0)return;let _0x4390e4=_0x45d048[_0x45d048['length']-0x1];const _0x5987e9=evaluationDates[_0x20ba94]||{};for(const [_0x29b428,_0x3c55ad]of Object[_0x2e97a0(0x201)](_0x5987e9)){const _0xef6f3a=_0x3c55ad[_0x2e97a0(0x38b)]||'',_0x5a4869=_0x20ba94===_0x2e97a0(0x2b3)?_0x2f0450[_0x2e97a0(0x300)](/\[.*?\]/g,'')['trim']():_0x2f0450;if(_0xef6f3a[_0x2e97a0(0x28e)](_0x5a4869)||_0xef6f3a[_0x2e97a0(0x28e)](_0x2f0450)){_0x4390e4=_0x29b428;break;}}const _0x2efc48=_0x20ba94===_0x2e97a0(0x2b3)?_0x2f0450[_0x2e97a0(0x300)](/\[.*?\]/g,'')[_0x2e97a0(0x28f)]():_0x2f0450;for(const _0x4bdcce of studentNames){const _0x42ab3e=isStudentLeaveOnOrBefore(_0x4bdcce,_0x4390e4);if(_0x42ab3e)continue;if(!_0x4d30aa&&hasMakeupWaiver(globalMakeupWaivers,_0x4bdcce,_0xfc7955))continue;let _0x4b001a=0x0;globalManualData[_0x4bdcce]&&globalManualData[_0x4bdcce][_0x2e97a0(0x343)+_0xfc7955]>0x0&&(_0x4b001a=parseInt(globalManualData[_0x4bdcce]['makeup_'+_0xfc7955])||0x0);let _0x382f59=0x0;_0x45d048['forEach'](_0x30118b=>{const _0x16d5e8=_0x2e97a0,_0x273844=isDateOnOrAfterStudentLeave(_0x4bdcce,_0x30118b);if(_0x273844)return;const _0x3de0ed=!globalAttendanceData[_0x30118b];if(_0x3de0ed)_0x382f59+=_0x3cdbbd[_0x30118b]['am']+_0x3cdbbd[_0x30118b]['pm'];else{const _0x1114e5=globalAttendanceData[_0x30118b]&&globalAttendanceData[_0x30118b][_0x4bdcce]?globalAttendanceData[_0x30118b][_0x4bdcce]:null;let _0x3cd32a={'am':0x0,'pm':0x0};_0x1114e5&&_0x1114e5[_0x16d5e8(0x27d)]&&_0x1114e5['outTime']&&(_0x3cd32a=calculateParticipationForMakeup(_0x30118b,_0x1114e5[_0x16d5e8(0x27d)],_0x1114e5[_0x16d5e8(0x257)],_0x2f0450,_0x1114e5[_0x16d5e8(0x3a1)]||'',_0x1114e5['returnTime']||'',_0x20ba94));if(globalManualData[_0x4bdcce]&&globalManualData[_0x4bdcce][_0x30118b]){if(globalManualData[_0x4bdcce][_0x30118b]['am']!==undefined)_0x3cd32a['am']=globalManualData[_0x4bdcce][_0x30118b]['am'];if(globalManualData[_0x4bdcce][_0x30118b]['pm']!==undefined)_0x3cd32a['pm']=globalManualData[_0x4bdcce][_0x30118b]['pm'];}_0x382f59+=_0x3cd32a['am']+_0x3cd32a['pm'];}});const _0x32f0eb=(_0x382f59+_0x4b001a)/_0x5f0bb3*0x64;if(_0x32f0eb>=0x4b)continue;const _0x1e858c=Math[_0x2e97a0(0x226)](0x1,Math[_0x2e97a0(0x276)](0.75*_0x5f0bb3-_0x382f59)),_0xb5b1e5=Math[_0x2e97a0(0x226)](0x1,Math[_0x2e97a0(0x276)](0.75*_0x5f0bb3-_0x382f59-_0x4b001a));_0x891e72[_0x2e97a0(0x32a)]({'studentName':_0x4bdcce,'subjectName':_0x2efc48,'rawSubjectKey':_0x2f0450,'escapedSub':_0xfc7955,'requiredTotalMin':_0x1e858c,'remainingMin':_0xb5b1e5,'projectedPercent':Math[_0x2e97a0(0x370)](_0x32f0eb*0xa)/0xa});}}),_0x891e72;}function resolveSubjectNameFromEscaped(_0xf7fcbd){const _0x2520d9=a12_0x1e756e,_0x2f97a5=_0x550736=>String(_0x550736||'')[_0x2520d9(0x300)](/[\.\#\$\/\[\]]/g,'_'),_0x227953=[...masterSubjectList,...ncsList];for(const _0x16aacc of _0x227953){if(_0x2f97a5(_0x16aacc)===_0xf7fcbd)return defaultViewMode===_0x2520d9(0x2b3)?_0x16aacc[_0x2520d9(0x300)](/\[.*?\]/g,'')[_0x2520d9(0x28f)]():_0x16aacc;}for(const _0x45d617 of rawTimetableData){for(const _0x1ddfec of[_0x45d617['교과목'],_0x45d617[_0x2520d9(0x39d)]]){if(!_0x1ddfec)continue;const _0x10d999=String(_0x1ddfec)['trim']();if(_0x2f97a5(_0x10d999)===_0xf7fcbd)return ultraClean(_0x10d999);}}return _0xf7fcbd[_0x2520d9(0x300)](/_/g,'\x20');}function mergeWaivedItemsIntoFullList(){const _0x41bd1c=a12_0x1e756e,_0x2a8454={};buildMakeupNeedList(!![])[_0x41bd1c(0x25e)](_0x25344b=>{_0x2a8454[_0x25344b['studentName']+'__'+_0x25344b['escapedSub']]=_0x25344b;}),Object[_0x41bd1c(0x201)](globalMakeupWaivers||{})[_0x41bd1c(0x25e)](([_0x4aa7d5,_0x208aa7])=>{const _0x3ffbba=_0x41bd1c;Object['entries'](_0x208aa7||{})[_0x3ffbba(0x25e)](([_0x229212,_0x2be2a0])=>{const _0x3dc074=_0x3ffbba;if(!hasMakeupWaiver(globalMakeupWaivers,_0x4aa7d5,_0x229212))return;const _0x2e2428=_0x4aa7d5+'__'+_0x229212;if(fullList[_0x3dc074(0x1fc)](_0x20f85e=>_0x20f85e[_0x3dc074(0x2da)]+'__'+_0x20f85e[_0x3dc074(0x2b2)]===_0x2e2428))return;const _0x22cf0b=_0x2a8454[_0x2e2428],_0x391b12=globalHistoryData[_0x4aa7d5]&&globalHistoryData[_0x4aa7d5][_0x229212]?globalHistoryData[_0x4aa7d5][_0x229212]:{},_0x369781=_0x22cf0b?.[_0x3dc074(0x2b8)]||resolveSubjectNameFromEscaped(_0x229212),_0x3febda=parseInt(globalManualData[_0x4aa7d5]?.[_0x3dc074(0x343)+_0x229212])||0x0;fullList['push']({'studentName':_0x4aa7d5,'subjectName':_0x369781,'escapedSub':_0x229212,'hrdDate':_0x22cf0b?resolveSubjectDateKey(_0x22cf0b[_0x3dc074(0x2b8)],_0x22cf0b[_0x3dc074(0x3ca)],subjectMaxDates)||'미정':subjectMaxDates[_0x369781]||'미정','totalMin':_0x22cf0b?.[_0x3dc074(0x314)]||_0x3febda||0x0,'requiredMin':_0x22cf0b?.[_0x3dc074(0x30e)]||0x0,'requiredTotalMin':_0x22cf0b?.[_0x3dc074(0x314)]||_0x3febda||0x0,'projectedPercent':_0x22cf0b?.[_0x3dc074(0x3c6)]??null,'history':_0x391b12,'needsMakeup':![],'isPending':![],'isWaived':!![],'waivedAt':_0x2be2a0&&_0x2be2a0[_0x3dc074(0x275)]||null});});});}function mergeMakeupNeedsIntoFullList(){const _0x1c23b9=a12_0x1e756e,_0x290f60=buildMakeupNeedList(),_0x3432b3=new Set(fullList[_0x1c23b9(0x36a)](_0x2e49d0=>_0x2e49d0[_0x1c23b9(0x2da)]+'__'+_0x2e49d0[_0x1c23b9(0x2b2)]));_0x290f60[_0x1c23b9(0x25e)](_0x2b84bb=>{const _0x2c03d1=_0x1c23b9,_0x531cc8=_0x2b84bb['studentName']+'__'+_0x2b84bb[_0x2c03d1(0x2b2)];if(hasMakeupWaiver(globalMakeupWaivers,_0x2b84bb['studentName'],_0x2b84bb[_0x2c03d1(0x2b2)]))return;const _0x569ab0=globalHistoryData[_0x2b84bb[_0x2c03d1(0x2da)]]&&globalHistoryData[_0x2b84bb[_0x2c03d1(0x2da)]][_0x2b84bb[_0x2c03d1(0x2b2)]]?globalHistoryData[_0x2b84bb['studentName']][_0x2b84bb['escapedSub']]:{},_0x547cba=Object[_0x2c03d1(0x208)](_0x569ab0)['length']>0x0;if(_0x3432b3[_0x2c03d1(0x20d)](_0x531cc8)){const _0x3ec425=fullList['find'](_0x305ee0=>_0x305ee0[_0x2c03d1(0x2da)]+'__'+_0x305ee0[_0x2c03d1(0x2b2)]===_0x531cc8);_0x3ec425['needsMakeup']=!![],_0x3ec425[_0x2c03d1(0x32c)]=_0x2b84bb[_0x2c03d1(0x30e)],_0x3ec425['requiredTotalMin']=_0x2b84bb[_0x2c03d1(0x314)],_0x3ec425[_0x2c03d1(0x3c6)]=_0x2b84bb[_0x2c03d1(0x3c6)],_0x3ec425[_0x2c03d1(0x305)]=!_0x547cba;(!_0x3ec425[_0x2c03d1(0x3c4)]||_0x3ec425[_0x2c03d1(0x3c4)]<_0x2b84bb['requiredTotalMin'])&&(_0x3ec425[_0x2c03d1(0x3c4)]=_0x2b84bb[_0x2c03d1(0x314)]);return;}fullList[_0x2c03d1(0x32a)]({'studentName':_0x2b84bb['studentName'],'subjectName':_0x2b84bb[_0x2c03d1(0x2b8)],'escapedSub':_0x2b84bb[_0x2c03d1(0x2b2)],'hrdDate':resolveSubjectDateKey(_0x2b84bb[_0x2c03d1(0x2b8)],_0x2b84bb[_0x2c03d1(0x3ca)],subjectMaxDates)||'미정','totalMin':_0x2b84bb[_0x2c03d1(0x314)],'requiredMin':_0x2b84bb[_0x2c03d1(0x30e)],'requiredTotalMin':_0x2b84bb['requiredTotalMin'],'projectedPercent':_0x2b84bb[_0x2c03d1(0x3c6)],'history':_0x569ab0,'needsMakeup':!![],'isPending':!_0x547cba});});}function applyMakeupWaiverFlags(){fullList['forEach'](_0x157f22=>{const _0x159c0b=a12_0x2915;_0x157f22[_0x159c0b(0x2c0)]=hasMakeupWaiver(globalMakeupWaivers,_0x157f22[_0x159c0b(0x2da)],_0x157f22['escapedSub']),_0x157f22[_0x159c0b(0x2c0)]&&(_0x157f22[_0x159c0b(0x305)]=![],_0x157f22[_0x159c0b(0x3c9)]=![]);});}async function saveMakeupWaiver(_0x421272,_0xe6d7fc){const _0x464cb3=a12_0x1e756e,_0x4a2462=new Date()[_0x464cb3(0x21b)]()['split']('T')[0x0];await classDbRef(_0x464cb3(0x278)+_0x421272+'/'+_0xe6d7fc)['set']({'waived':!![],'waivedAt':_0x4a2462});if(!globalMakeupWaivers[_0x421272])globalMakeupWaivers[_0x421272]={};globalMakeupWaivers[_0x421272][_0xe6d7fc]={'waived':!![],'waivedAt':_0x4a2462};}async function cancelMakeupWaiver(_0x160b00,_0x107939){const _0x1ac9df=a12_0x1e756e;await classDbRef(_0x1ac9df(0x278)+_0x160b00+'/'+_0x107939)[_0x1ac9df(0x38d)](),globalMakeupWaivers[_0x160b00]&&delete globalMakeupWaivers[_0x160b00][_0x107939];}async function waiveMakeup(_0x302ccc){const _0x6498e6=a12_0x1e756e;if(!isAdmin)return await appAlert(_0x6498e6(0x239));const _0x4ce8cb=fullList[_0x302ccc];if(!_0x4ce8cb)return;if(!await appConfirm('['+_0x4ce8cb[_0x6498e6(0x2da)]+']\x20·\x20['+_0x4ce8cb[_0x6498e6(0x2b8)]+_0x6498e6(0x28a)))return;await saveMakeupWaiver(_0x4ce8cb[_0x6498e6(0x2da)],_0x4ce8cb[_0x6498e6(0x2b2)]),mergeWaivedItemsIntoFullList(),applyMakeupWaiverFlags();const _0x4416a5=urlParams['get'](_0x6498e6(0x3d1))||_0x6498e6(0x2b8);renderMainTable(_0x4416a5),await appAlert(_0x6498e6(0x24a));}async function cancelWaiveMakeup(_0x3ae79a){const _0x80592a=a12_0x1e756e;if(!isAdmin)return await appAlert(_0x80592a(0x239));const _0x151b94=fullList[_0x3ae79a];if(!_0x151b94)return;if(!await appConfirm('['+_0x151b94[_0x80592a(0x2da)]+']\x20·\x20['+_0x151b94[_0x80592a(0x2b8)]+_0x80592a(0x344)))return;await cancelMakeupWaiver(_0x151b94[_0x80592a(0x2da)],_0x151b94['escapedSub']),mergeMakeupNeedsIntoFullList(),applyMakeupWaiverFlags();const _0x497b44=urlParams[_0x80592a(0x218)](_0x80592a(0x3d1))||_0x80592a(0x2b8);renderMainTable(_0x497b44);const _0x497a5b=fullList[_0x80592a(0x36e)](_0x17624a=>_0x17624a['studentName']===_0x151b94[_0x80592a(0x2da)]&&_0x17624a[_0x80592a(0x2b2)]===_0x151b94[_0x80592a(0x2b2)]);if(_0x497a5b>=0x0)toggleStudentDetail(_0x497a5b);await appAlert(_0x80592a(0x2eb));}function a12_0x2915(_0x45a3d8,_0x43a4ae){_0x45a3d8=_0x45a3d8-0x1f1;const _0x2ccceb=a12_0x395f();let _0x21f889=_0x2ccceb[_0x45a3d8];if(a12_0x2915['RZsMeg']===undefined){var _0x4f5fec=function(_0x5825e2){const _0x554ef6='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x4634a4='',_0x58f4dd='',_0x2639b2=_0x4634a4+_0x4f5fec;for(let _0x2c52c7=0x0,_0x1b2845,_0x32a4a9,_0x85f607=0x0;_0x32a4a9=_0x5825e2['charAt'](_0x85f607++);~_0x32a4a9&&(_0x1b2845=_0x2c52c7%0x4?_0x1b2845*0x40+_0x32a4a9:_0x32a4a9,_0x2c52c7++%0x4)?_0x4634a4+=_0x2639b2['charCodeAt'](_0x85f607+0xa)-0xa!==0x0?String['fromCharCode'](0xff&_0x1b2845>>(-0x2*_0x2c52c7&0x6)):_0x2c52c7:0x0){_0x32a4a9=_0x554ef6['indexOf'](_0x32a4a9);}for(let _0x176ba9=0x0,_0x535ef2=_0x4634a4['length'];_0x176ba9<_0x535ef2;_0x176ba9++){_0x58f4dd+='%'+('00'+_0x4634a4['charCodeAt'](_0x176ba9)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x58f4dd);};a12_0x2915['pmKTHu']=_0x4f5fec,a12_0x2915['xyGCYZ']={},a12_0x2915['RZsMeg']=!![];}const _0x395ff5=_0x2ccceb[0x0],_0x291558=_0x45a3d8+_0x395ff5,_0x4bfd2b=a12_0x2915['xyGCYZ'][_0x291558];if(!_0x4bfd2b){const _0x1f610b=function(_0x33d5dc){this['Dprnta']=_0x33d5dc,this['SogYMA']=[0x1,0x0,0x0],this['QaHqEd']=function(){return'newState';},this['lSYbLY']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['GlAMME']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x1f610b['prototype']['idKrMl']=function(){const _0x477965=new RegExp(this['lSYbLY']+this['GlAMME']),_0xd5fabf=_0x477965['test'](this['QaHqEd']['toString']())?--this['SogYMA'][0x1]:--this['SogYMA'][0x0];return this['ZNjzeP'](_0xd5fabf);},_0x1f610b['prototype']['ZNjzeP']=function(_0x14f8b7){if(!Boolean(~_0x14f8b7))return _0x14f8b7;return this['stmEMB'](this['Dprnta']);},_0x1f610b['prototype']['stmEMB']=function(_0x79995b){for(let _0xb95c9f=0x0,_0x351c6f=this['SogYMA']['length'];_0xb95c9f<_0x351c6f;_0xb95c9f++){this['SogYMA']['push'](Math['round'](Math['random']())),_0x351c6f=this['SogYMA']['length'];}return _0x79995b(this['SogYMA'][0x0]);},new _0x1f610b(a12_0x2915)['idKrMl'](),_0x21f889=a12_0x2915['pmKTHu'](_0x21f889),a12_0x2915['xyGCYZ'][_0x291558]=_0x21f889;}else _0x21f889=_0x4bfd2b;return _0x21f889;}async function syncManualMakeupTotal(_0x37c609,_0x2062bc){const _0x55cfa6=a12_0x1e756e,_0x47e248=await classDbRef('makeupDetails/'+_0x37c609+'/'+_0x2062bc)[_0x55cfa6(0x25d)](_0x55cfa6(0x34e)),_0x599591=_0x47e248[_0x55cfa6(0x1f7)]()||{};let _0xe0e3f9=0x0;return Object['values'](_0x599591)[_0x55cfa6(0x25e)](_0x52454b=>{_0xe0e3f9+=parseInt(_0x52454b['min']||calculateMinutes(_0x52454b['time'])||0x0);}),await classDbRef(_0x55cfa6(0x2ad)+_0x37c609)[_0x55cfa6(0x398)]({['makeup_'+_0x2062bc]:_0xe0e3f9}),globalManualData[_0x37c609]?globalManualData[_0x37c609]['makeup_'+_0x2062bc]=_0xe0e3f9:globalManualData[_0x37c609]={['makeup_'+_0x2062bc]:_0xe0e3f9},_0xe0e3f9;}function a12_0x395f(){const _0x1871f7=['z2v0sxrLBq','ota2mtiWnKvcwe54za','6RcCio2vREUQQEYDMcdSGQZSP4tQS7WG7isC66Qf7j2eioUQQoUrKcdSP4dSMRJQUyZSMPq/cIJRS7tQSjuG7iUC6RceioQ4SoUHNEYDGcdQT7JRJidROzWG7jYG7kEa65cP64Ui64UKlIK','yMfJA2DYB3vUzdOJzJrMngy0oYbJB2XVCJOJnJy2oYbIB3jKzxi6idfWEcbZB2XPzcaJy2nJoW','7zwz6RIjioYePoYGLsdSOjxRS7tQSiaG7jEg7iQ164Ui64UKlIdRI6tSI5WG66gC6RE47j247zw0ioYJVoYeUoYALc4','pc9ZCgfUpG','iIbZDhLSzt0IAgvPz2H0oJqWChG7ihDPzhrOoMf1Dg87ig9IAMvJDc1MAxq6y29UDgfPBJSGBwL4lwjSzw5Klw1Vzgu6BxvSDgLWBhK7ihzLCNrPy2fSlwfSAwDUoM1PzgrSztSIpG','DMLLD190ywjSzv9KyxrL','pgj1DhrVBIbJBgfZCZ0IyNrUlwrLDgfPBcbKEw5HBwLJlwnHBMnLBc13ywL2zsiGzgf0ys1PzhG9iG','zhLUyw1PyY1HDxrVlwzVy3vZ','BwfPBLjVD18','pgj1DhrVBIbJBgfZCZ0IyNrUlwrLDgfPBcbKEw5HBwLJlxrVz2DSzs1KzxrHAwWIigrHDgeTAwr4psi','C2LNBKLUv2L0AevTywLSqw5KugfZC3DVCMq','4PYfioUZToQWLsdTJ6ZQUlaG7lky66AS65cy7jEi7iQ164Ui64UKlG','phnWyw4Gy2XHC3m9iNbJlxrLEhqIpUkAOcdRS7tQSjuG65oX66gDpc9ZCgfUpJXZCgfUignSyxnZpsjTB2jPBguTDgv4Dci+65oX66gDpc9ZCgfUpG','cIaGicaGicaGpgrPDIbJBgfZCZ0IAw5UzxiTzgv0ywLSlwjVEci+cIaGicaGicaGicaGidXKAxyGy2XHC3m9iNjLBwfPBI1PBMzViIbZDhLSzt0IzgLZCgXHEtOGzMXLEdSGANvZDgLMEs1JB250zw50oIbZCgfJzs1Izxr3zwvUoYbHBgLNBI1PDgvTCZOGy2vUDgvYoYa','DMLZAwjSzq','4P2mioQ2Jo2vNoYDTcdSL4BSIRxRI4JRI6qUioYeOoYdNEUlMcdQS4tSOjxSNlZROzWG7j247kAD7zw0ioYJVoYeUoYALc4','mdaUmdaUmda','iaOGicaGicaGicaGica8l3rYpG','lMj0BI1WywDLlw5HDI5Hy3rPDMu','yNrUugfNztm','iJ4kicaGicaGicaGicaGicaGicaGica8Dgq+','CxvLCNLtzwXLy3rVCG','zMLUza','yNrUugfNzti','B3v0vgLTzq','mZj3v2ztvMy','lNjLC2v0lwnOzwnRyM94oMnOzwnRzwq','zgv0ywLSuM93xW','iIbKyxrHlwXLBJ0InciGCgXHy2vOB2XKzxi9iJe4mdaIihbHDhrLCM49iLXKkIi+cIaGica8l2rPDJ4kicaGidXKAxyGy2XHC3m9iMLUChv0lwDYB3vWiJ4kicaGicaGica8BgfIzwW+7kkf66omicG07j6q66ASktWVBgfIzwW+cIaGicaGicaGpgLUChv0ihr5Cgu9iM51BwjLCIiGAwq9iMvUzfrPBwvF','Bw9Kzs1YzxbVCNq','B25Jzq','zM9YrwfJAa','7isG7yoD65cCio2vREUQQEYDTcdSL4BSIRxRI4JRI6qUioYcREYGNo2vOcdTLA3RQQNSNyqG7lk07ygS7zw0ioYJVoYeUoYALc4','mZaL','DgL0Bgu','C2nHBguO','C2LNBG','phrYpG','Dg91y2HLBMq','ktWVyJ48l3rKpGOGicaGicaGicaGicaGicaGicaGidX0zcbZDhLSzt0IDgv4Dc1HBgLNBJPSzwz0oYi+phn0CM9UzZ4','yNrUu2f2zufJDgLVBL8','z2HSD25ZmdiWmubUyxzLCI5JB20','zNvSBfrPBwv0ywjSzq','yNrUx3bYzxbHCMvFChjPBNq','BwfRzxvWrgv0ywLSCW','zgvMyxvSDfzPzxDnB2rL','zgf0ys1YzxbVCNrRzxK','phrKpG','ksiGDgL0Bgu9iU2bToUMRsdSI5WG64kG7kECioYJVoYEHsiGC3r5Bgu9iMn1CNnVCJPWB2LUDgvYoYbIB3jKzxi6idfWEcbZB2XPzcaJztfLogvKoYbWywrKAw5NoIaYChGGmdSGzM9UDc1ZAxPLoIaXmhb4oYb0zxH0lwfSAwDUoIbJzw50zxi7iJ4','mtaL','C2nYB2XSsw50B1zPzxC','yxv0B1nJywXLvhjHAw5oyw1L','AM9PBG','ioUtSEUHNEYDTcdSMytRO4ZRKjJSL4JSIRxRI4JRI6qU','D2fPDMvKqxq','y2vPBa','DMfSDwvZ','BwfRzxvWv2fPDMvYCY8','zNvUy3rPB24','C2vHCMnO','yNrUx3nPz25Fy2XLyxi','C2LNBK1VzgfS','Aw5uAw1L','Bwf0y2HLCW','zgf0ys1UDw0','kg1HEc13Awr0AdOGnZy4ChGPigfUzcaOB3jPzw50yxrPB246ihbVCNrYywL0kq','yMCTyxr0zw5K','C3jJ','phnWyw4GC3r5Bgu9iMnVBg9YoImYn2fLnJa7iJ5B','phnWyw4Gy2XHC3m9iNbJlxrLEhqIpUkCHEYzHoUJJa','y29TBw9U','mJiZnZm2mxDdAevNAq','67AekZWVC3bHBJ4','BwfRzxvWu2LNBNm','cIaGicaGicaGicaGicaGicaGicaG','xqRRS7tQSjxSNyqG7y+S6RIWioYYMoUMRo2vMoYlNoQYOoYkTEUlIoQ5Jd8kkoYvJoUMVcdSHlZTHldSL5dSHjZRIPqG7kcC7jM465cy66MWlcdRQQNROz3SL5dRIPqGj+UZToQWLsdTJ6ZQUlaN66gCioUcQoYkTEUlIoUlPc4P','8j+tPIbB7isC66QfioUnSoYDTo2eSf0G7lc96RoGkoY6KoYlNcNSL5dSHjWG7kAj7iUCioQ6VoUcToYzLoYkTEUlIoUlPc4','CMvM','BwvKAwfszxnLDejHCG','Aw5JBhvKzxm','DhjPBq','yNrUx3nVCNrFC3vIAMvJDa','pc90yM9KEt4kicaGicaGicaGicaGpc90ywjSzt4kicaGicaGicaGicaGcIaGicaGicaGicaGia','Aw1Nmq','y2fJAgvFyxr0zw5Kyw5Jzq','idXZCgfUihn0EwXLpsjJB2XVCJOJzty3ztiYoYbMB250lxDLAwDODdPIB2XKoYi+ka','4P2mioYlPo2mQdOG','i2zMzG','iIbKyxrHlw5HBwu9iG','pc90zd4kicaGicaGicaGicaGicaGicaGica8DgqGC3r5Bgu9iNrLEhqTywXPz246BgvMDdSG','y2XHC3nmAxn0','Aw5Uzxjive1m','BwfRzxvWu2LNBNmV','Aw5UzxjuzxH0','iJ7SGQZSP4tRK7hROz08l3rOpGOGicaGicaGicaGica8l3rYpG','zgf0ys1YzxbVCNqTA2v5','iZaWma','cIaGicaGicaGicaGicaGica8DhiGAwq9iM1HAw5sB3DF','Ahr0Chm6lY9IDxnHBI10zwfJAgvYlxDVCMTHBgWTzgvMyxvSDc1YDgrIlMfZAweTC291DgHLyxn0ms5MAxjLyMfZzwrHDgfIyxnLlMfWCa','C3bSAxq','DMLLD190ywjSzv90Aw1L','C2vHCMnOugfYyw1Z','B3bHy2L0Eq','jYbZDhLSzt0IDhjHBNnMB3jToNnJywXLkdeUmYK7iJ48l3rKpG','ioYWVEQZOcJSUPdSI5WP7jEq7isCioUHNoUtNc4','zgf0ys1UzxH0','y3vYCMvUDenSyxnZ','Bg9JywXLq29TCgfYzq','sevjqYdRS4dTMzGG7ksrioYyPoULMoQWGcdRSjZSG53TLOJSIRxRI4JRI6q6ia','y2XPzw50wq','BwfUDwfSqxr0zw5Kyw5Jzs8','mtyL','lMf0DgvUzgfUy2uTDgfIBgu','CgfYC2u','iIbJBgfZCZ0IyNrUlwrLDgfPBcbKEw5HBwLJlxvWBg9Hzc10CMLNz2vYiIbKyxrHlxjLCg9YDgTLEt0I','zxnJyxbLzfn1yG','BMnZ','phnWyw4Gy2XHC3m9iNbJlxrLEhqIpUYxHEUHNoUtNc4UlJWVC3bHBJ48C3bHBIbJBgfZCZ0IBw9IAwXLlxrLEhqIpUkpSZWVC3bHBJ4','igjVCMrLCJOGmxb4ihnVBgLKicnLmwu4zwq7ihbHzgrPBMC6idjWEcaWoYbMB250lxnPEMu6idLWEdSGDgv4Dc1HBgLNBJOGy2vUDgvYoYbSzxr0zxiTC3bHy2LUzZOGltaUnxb4oYb3AgL0zs1ZCgfJztOGBM93CMfWoYi+','DMLLD19ZDhvKzw50tgLZDa','phnWyw4GC3r5Bgu9iMnVBg9YoIm2nJy7iJ7WN5QRidXZDhjVBMC+','C3vIAMvJDe5HBwu','BwfRzxvWrgv0ywLSCY8','4PYfioYcREYGNoUqMoYxIoYkTEUlIoUlPc4k64QL66cL64UO7jYe7iUC6Rce7zgCioUZToQWLEYlNoQWHoUpHcdSNPdRJ5KG6RcX7iUG65cy7jEi7iQ164Ui64UKlG','iZDMogm4za','cIaGicaGicaGicaGicaGicaGicaGpgj1DhrVBIbJBgfZCZ0IyNrUlwrLDgfPBciGC3r5Bgu9iMjHy2TNCM91BMq6iZy2nJSIig9Uy2XPy2S9iMrVy3vTzw50lMDLDevSzw1LBNrcEuLKkcDKzxrHAwXsB3DF','zMLSzv8','Aw1Hz2veyxrH','zhjVCg91Dhm','AxnxywL2zwq','66QfktWVC3bHBJ48l3rKpGOGicaGicaGicaGicaGicaGicaGidX0zd48yNv0Dg9UignSyxnZpsjIDg4Tzgv0ywLSigr5BMfTAwmTB3bLBI1YzxbVCNqIigrHDgeTCMvWB3j0A2v5psi','iIbKyxrHlxn1yJ0I','oty3mJu5mfnKt2ruAG','iIbJBgfZCZ0IzhLUyw1PyY1HDxrVlwzVy3vZiIbKyxrHlw5LEhq9iMj0BLnHDMvby3rPB25F','iIbZDhLSzt0IyMfJA2DYB3vUzdOGi2zMzJSGDMvYDgLJywWTywXPz246BwLKzgXLoYi+pgLUChv0ihr5Cgu9iMnOzwnRyM94iIbJBgfZCZ0ICMvZzxqTy2HLy2TIB3GIigrHDgeTCMvWB3j0lwTLEt0I','CgvYAw9K','i2mWmZKYyG','Dg9eyxrHvvjm','Dg9tDhjPBMC','DMLLD19PBMzVx3bLCMLVzf9WmW','ksiGDgL0Bgu9iU2bToUMRsdSI5WG64kG7kECioYJVoYEHsiGC3r5Bgu9iG','iZu2nty1nG','7j247kADioYGLEUZToQWGcdRP4ZRO4ZRKjJSL4JSIRxRI4JRI6qUioUlPoYlNcdROzZQT7JSNBJTLBtSO7ZSHlJSMPqU','pc9ZCgfUpJXZCgfUignSyxnZpsjTB2jPBguTDgv4Dci+4PYf','yMfJA01HAw4','DMLLD190ywjSzv9KyxrLx2v4zwm','yxbWCW','DgHLBG','mta3n2X4qwPArW','iJ7RS7tQS6dSHjW8l3rOpGOGicaGicaGicaGica8l3rYpG','phrKpJXPBNb1Dcb0ExbLpsjJAgvJA2jVEciGy2XHC3m9iNjLC2v0lwnOzwnRyM94iIbKyxrHlxjLCg9YDc1RzxK9iG','4PYfioYeNoUQHEYDTcdSLyJSOitTLzJQSOWG65oX66gD65cy7jEi7iQ164Ui64UKlG','BwLU','DMLLD19WAg90B1n1yMPLy3q','BM9FAw1NmL9WmW','C3r1zgvUDe5HBwu','zMLSBfjLy3q','pc9ZDhjVBMC+pc90zd4kicaGicaGicaGicaGicaGicaGica8DgqGC3r5Bgu9iNrLEhqTywXPz246BgvMDdSGzM9UDc1ZAxPLoJeYChG7iJ4','Bw92zvrV','zgf0yxnLDa','iJ7SSlJSL6WG7zwz7ioDicJSNBJSM5aPpc90Ad4kicaGicaGicaGicaGicaGidX0Acb3Awr0Ad0I','C3rYB2TLu3r5Bgu','DxnLCKnVBMzPzY9KzwzHDwX0vMLLDW','iJ7RS7tQSjuG64kG7kECpc90Ad4kicaGicaGicaGicaGicaGidX0Acb3Awr0Ad0I','yxbWBhK','y2XVC2vZDa','zw5KC1DPDgG','cIaGicaGicaGicaGidX0CIbZDhLSzt0IAgvPz2H0oJu1ChG7iJ4kicaGicaGicaGicaGicaGidX0zcbZDhLSzt0IyM9YzgvYoIaXChGGC29SAwqGiZaWmdSGDgv4Dc1HBgLNBJPJzw50zxi7ihzLCNrPy2fSlwfSAwDUoM1PzgrSztSIpG','y2f0y2G','C2v0sxrLBq','i3zPzxDFC3r1zgvUDeXPC3qGDhiGC3rYB25N','ksiGDgL0Bgu9iU2bToUMRsdSI5WG64kG7kECioYJVoYEHsiGC3r5Bgu9iMn1CNnVCJPWB2LUDgvYoYbIB3jKzxi6idfWEcbZB2XPzcaJztfLogvKoYbWywrKAw5NoIaYChGGmdSGzM9UDc1ZAxPLoIaXmhb4oYb0zxH0lwfSAwDUoIbJzw50zxi7iJ7dLZWVDgq+','4PYfioUZToQWLsdTJ6ZQUldQSiaG7lEO7iAm65cy7jEi7iQ164Ui64UKlG','DgfIBguTCM93','DMLLD190zwfJAgvYx25HBwu','y2vUDgvY','BwfPBG','mdK6mda','y29TBw9Usw1Hz2vZ','iIbKyxrHlw51Bt0ImIiGC3r5Bgu9iMjHy2TNCM91BMq6iZi3ywu2mdSGCgfKzgLUzZO0ChGGnNb4oYbMB250lxnPEMu6mtbWEdSIpJXZCgfUignSyxnZpsjWyY10zxH0iJ7WN5o37ikS7kEemJWVC3bHBJ48C3bHBIbJBgfZCZ0IBw9IAwXLlxrLEhqIpVcFK50Ypc9ZCgfUpJWVyNv0Dg9UpJWVzgL2pJXPBNb1Dcb0ExbLpsjMAwXLiIbPzd0IzMLSzv8','yMCTzwfYBhK','jYbZDhLSzt0IDhjHBNnMB3jToNnJywXLkdeUmYK7ign1CNnVCJPWB2LUDgvYoYi+pc90zd4','y29SB3i6i2mWmZKYyJSGzM9UDc13zwLNAhq6yM9SzdSGy3vYC29YoNbVAw50zxi7','cIaGicaGicaGicaGicaGica8DgGGD2LKDgG9iG','67AeioYDToYdGtWVC3bHBJ48C3bHBIbJBgfZCZ0IBw9IAwXLlxrLEhqIpU2vHoYALca','xsdSNOxRI4JRI6qU','7isX66Qf7iIC','AxnbCNjHEq','iIbZDhLSzt0IyMfJA2DYB3vUzdOJn2y4yZHKoYi+phnWyw4Gy2XHC3m9iNbJlxrLEhqIpU2pRoQ4ScdST6JSHOW8l3nWyw4+phnWyw4Gy2XHC3m9iM1VyMLSzs10zxH0iJ7ST6JSHOW8l3nWyw4+pc9IDxr0B24+','ywrK','zgf0ys1PzhG','C2v0','zgLZCenSyxnZ','CMvWBgfJzq','pc9ZDhjVBMC+oIa','AgfZqxr0CMLIDxrL','phrOig9Uy2XPy2S9iMf1Dg9gAwXSrgf0zsGN','iJ48Aw5WDxqGDhLWzt0Iy2HLy2TIB3GIig9Uy2XPy2S9iNrVz2DSzufSBfjVD3mODgHPCYKIpJWVDgG+','Axnqzw5KAw5N','64QL66cL64UO7jYe7iUC6Rce7zgClMH0BwW','C3vIC3rYAw5N','lNzPzxDFDhjHAw5oyw1L','zgf0ys1OAxn0Awq','DgvHy2HLCLnLywXZ','idXZCgfUihn0EwXLpsjMB250lxnPEMu6mtbWEdSGy29SB3i6iZy2nJSIpIJTJ6ZQUlaPpc9ZCgfUpG','pgLTzYbZCMm9iG','phrKignSyxnZpsi','CMvTywLUAw5NtwLU','ChjVAMvJDeLK','yNrUsw1NmL8','BgvMDa','y29UDgfPBNm','C3vIAMvJDa','CMvXDwLYzwruB3rHBe1PBG','zMLYzwjHC2vdB25MAwC','z2v0rgf5','z2v0rwXLBwvUDej5swq','67o06Rcv7j287iIC','CxvLCNLtzwXLy3rVCKfSBa','CMvWB3j0','phnWyw4Gy2XHC3m9iNbJlxrLEhqIpUkCHEYzHoUJJdi8l3nWyw4+phnWyw4Gy2XHC3m9iM1VyMLSzs10zxH0iJ7INiuYpc9ZCgfUpG','67o06Rcv7iIy7jEflMH0BwW','ChjLDMvUDerLzMf1Bhq','nda2mMH6qK1cyG','yNrUsw1N','zgf0ys1Uyw1L','lMr5BMfTAwmTC2f2zs1OAxn0','AhjLzG','phnWyw4Gy2XHC3m9iNbJlxrLEhqIpUkCHEYzHoUJJde8l3nWyw4+phnWyw4Gy2XHC3m9iM1VyMLSzs10zxH0iJ7INiuXpc9ZCgfUpG','zMXLEa','phrKignSyxnZpsjIzY1HyNnLBNqIig9Uy2XPy2S9iMf1Dg9gAwXSrgf0zsGN','pc9ZDhjVBMC+pc90zd4kicaGicaGicaGicaGicaGidX0zcbZDhLSzt0IyM9YzgvYoIaXChGGC29SAwqGiZaWmdSGDgv4Dc1HBgLNBJPJzw50zxi7ihzLCNrPy2fSlwfSAwDUoM1PzgrSztSIpG','BwfRzxvWuMvWB3j0sw1Hz2vZlW','iIbJBgfZCZ0Izgv0ywLSlxjVDYi+phrKignVBhnWyw49iJyIigLKpsjKzxrHAwXbCMvHxW','4P2mioYEKoUpMsdSNBJSPP0G7iUK7yYOoG','ChvZAa','BwfRzxvWlxbLBMrPBMCTCM93','CMvXDwLYzwrnAw4','z2v0qxr0CMLIDxrL','8j+tOsbB7kAD67MzioYcRoYNHf0G','BNvT','zxjYB3i','phnWyw4Gy2XHC3m9iNbJlxrLEhqIpU2pRoQ4SoUqQdWVC3bHBJ48C3bHBIbJBgfZCZ0IBw9IAwXLlxrLEhqIpU2pRoQ4SdWVC3bHBJ4','Dw5PDa','kcGOlISPkYKRksSK','Dg9gAxHLza','4PYfioYGGoYEPEUqMoYxIoYkTEUlIoUlPc4k64QL66cL64UO7jYe7iUC6Rce7zgCioUZToQWLEYlNoQWHoYxKoUpHcdSNPdRJ5KG67cy7jIb65cy7jEi7iQ164Ui64UKlG','BgLUzvrV','iIbZDhLSzt0IyMfJA2DYB3vUzdOGi2zMzJSIpJXKAxyGy2XHC3m9iNbOB3rVlwj0BI13CMfWiIbZDhLSzt0IzgLZCgXHEtPMBgv4oYbNyxa6m3b4oYbQDxn0Awz5lwnVBNrLBNq6y2vUDgvYoYi+pgj1DhrVBIbPzd0IyNrUsw1Nmv8','iZjJm2u1ma','phnWyw4Gy2XHC3m9iNbJlxrLEhqIpVcFK7FSGQZSP4q','67Aeic8G7lsDia','jYWG','yNrUx3nVCNrFAgLZDg9YEq','ih4G','AgvPz2H0','lNnVCNqTyNrUCYaUyNrUlwrLDgfPBc5Hy3rPDMu','Aw5KzxGXlMH0BwW','lMHLAwy','AgLZDeLK','BwfRzxvWxW','xqRRS7tQSjuG7y+S6RIW66w8ioY3QoYgJo2vMoYlNoQYOoYkTEUlIoQ5Jd8','iJ7RS7tQSjuO67AektWVDgG+cIaGicaGicaGicaGicaGica8DgGGD2LKDgG9iG','iZm0otHKyG','jsK8l3nWyw4+','BNvSBa','cIaGica8Dhi+cIaGicaGicaGphrKpG','cIaGicaGicaGicaGidX0CJ4kicaGicaGicaGicaGicaGia','4PYfioYeOo2dNE2vNcdRR7JRLjtSLRtQSiaG6RMO64gx7zwy6RkmioY0IoQ4So2zLoUqMoYxIoYkTEUlIoUlPc4','lNzPzxDFC3vIAMvJDf9Uyw1L','DMLLD190ywjSzv9KyxrLx3aY','DMfSDwu','iJ7SIjZRSOG8l3rOpG','8j+xKE+4JYdRR7JRLjtSLRqG7lsi6RIW7zMu','BwfRzxvWlxDHAxzLzc1YB3C','phnWyw4GC3r5Bgu9iMnVBg9YoInJmdm5mMi7iJ7IMQaG67o06RcvioUVUoUtSEUHNsdcTYdRS7tQSjxTLytSMPq6idXZDhjVBMC+','8j+tOsbB7isC66QfioUnSoYDTo2eSf0G7isC67ke7jEq7isCioYdIoUHNcdSIjJTMiJTLOJSIRxRI4JRI6qU','igrPC3bSyxK6igLUBgLUzs1IBg9JAZSGBgLUzs1OzwLNAhq6ideUndSGCgfKzgLUzZOGnxb4ideWChG7iJ4GcIaGicaGicaGicaGicaGicaGicaGicaGicaGica','w+UZToQWLv1B','yMfJA2DYB3vUza','re9nq29UDgvUDeXVywrLza','B25JBgLJAW','z2v0vgLTzq','DMLLD19WAg90B1n0DwrLBNrZ','Dg91y2HLCW','x21LDgfKyxrH','zw5KvgLTzv8','DhjHBNnMB3jT','y291CNnLCW','zwfYBhLdB21WBgv0Aw9UCW','zMLSDgvY','lMr5BMfTAwmTDxbSB2fKlxrYAwDNzxi','y2fSzw5Kyxi','Bg9N','BwfZDgvYqxbW','Dg9mB3DLCKnHC2u','phnWyw4Gy2XHC3m9iNbJlxrLEhqIpUU2HdWVC3bHBJ48l3nWyw4+pc90zd4kicaGicaGicaGicaGicaGidX0zd48yNv0Dg9UigLKpsjIDg5tAwDUxW','yNrUx3rHyL9JywXLBMrHCG','z2v0q29UDgv4Da','BwfW','Dw5KzwzPBMvK','yNrUx3rHyL9TywLU','phrOihDPzhrOpsi','zMLUzeLUzgv4','jYKUC3r5BguUzgLZCgXHEt0NBM9UzsCIpJXZCgfUignSyxnZpsjWyY10zxH0iJ7SG4hSHlJSSl0G64UR6RIWiokCLJWVC3bHBJ48C3bHBIbJBgfZCZ0IBw9IAwXLlxrLEhqIpUUlQ+Q4ScdINjy8l3nWyw4+pc9IDxr0B24+cIaGicaGicaGicaGicaGica8l2rPDJ4kicaGicaGicaGicaGpc9KAxy+cIaGicaGicaGicaGiaOGicaGicaGicaGica8DgfIBguGy2XHC3m9iMHPC3rVCNKTDgfIBguIpGOGicaGicaGicaGicaGicaGphrOzwfKpJX0CJ48DgG+67o06RcvioYDVoYEKdWVDgG+phrOpUYlNoQWHdWVDgG+phrOpUU2HdWVDgG+phrOpUQ0GoUMRdWVDgG+pc90CJ48l3rOzwfKpGOGicaGicaGicaGicaGicaGphrIB2r5pG','CM91BMq','phnWyw4Gy2XHC3m9iNbJlxrLEhqIpUYlUoYDUoUtSEUHNtWVC3bHBJ48C3bHBIbJBgfZCZ0IBw9IAwXLlxrLEhqIpVcFK508l3nWyw4+','zgLZCgXHEq','zgf0ys1Szw4','pc9IDxr0B24+','yMXVy2S','iJ48C3rYB25NpG','6Ro866QP7iIC','lNjLC2v0lwnOzwnRyM94','mZmL','4P2mioYGLEU5HcdSI6tTJkGO7jIK66wyktOG','pc90zd4kicaGicaGicaGicaGicaGicaGica8Dgq+phnWyw4Gy2XHC3m9iMrHDguTyMfKz2uIpG','iIbKyxrHlwXLBJ0InciGCgXHy2vOB2XKzxi9iJiWmdaIihbHDhrLCM49iLXKkIi+cIaGica8l2rPDJ4kicaGidXIDxr0B24Gy2XHC3m9iMj0BI1ZyxzLigr5BMfTAwmTC2f2zs1OAxn0iIbPzd0IyNrUu2f2zufJDgLVBL8','pc90zd4','yMCTywjZzw50','yxv0B1nJywXLvhjHAw5oyw1Lx1aY','yNrUx3nPz25Fy2XVC2u','BwfZDgvYrgf0yq','quL6yvn5rg5brhviDtbTCtrhswXXqM1FvKHMDJD5nLjHCMfIr2Hv','zgf0zq','iIbZDhLSzt0IAgvPz2H0oJqWChG7ihDPzhrOoMf1Dg87ig1HEc13Awr0AdOXmdaLoYbVyMPLy3qTzML0oMnVBNrHAw47ig1PEc1IBgvUzc1TB2rLoM11BhrPCgX5oYb2zxj0AwnHBc1HBgLNBJPTAwrKBgu7igrPC3bSyxK6Aw5SAw5LlwjSB2nRoYi+','zMLSBfn0EwXL','7ywm7iQK7yQ4','BwvZC2fNzq','phnWyw4Gy2XHC3m9iNbJlxrLEhqIpUUZToQWLE2pRoQ4SdWVC3bHBJ48C3bHBIbJBgfZCZ0IBw9IAwXLlxrLEhqIpU2pRoQ4SdWVC3bHBJ4','yMfJA2DYB3vUzdOGi2zMzJnLmdSGy29SB3i6icnLnJDLmJi7igjVCMrLCJOGmxb4ihnVBgLKicnMzMnJoda7','zM9JDxm','C3vIAMvJDhm','y2XPy2S','CMvTB3zL','zgv0ywLSqxjLyv8','Bw9Kzs1KzwzHDwX0','yMfJA2DYB3vUzdOJzJHMywzJoYbJB2XVCJOJnJq3ndHIoYbJDxjZB3i6Cg9PBNrLCJS','zNjVBq','CMvWB3j0tw9Kzq','cIaGicaGicaGicaGicaGicaGicaGpc90yM9KEt4kicaGicaGicaGicaGicaGidWVDgfIBgu+cIaGicaGicaGicaGidWVzgL2pGOGicaGicaGidWVzgL2pG','CMvTB3zLqxr0CMLIDxrL','zgf0ywjHC2u','67Aepc9ZDhjVBMC+pc90zd4kicaGicaGica8Dgq+pgj1DhrVBIbJBgfZCZ0IyNrUlwrLDgfPBcbKEw5HBwLJlwrLBgv0zs1OAxn0iIbKyxrHlw5HBwu9iG','cIaGicaGicaGicaGicaGicaGicaGphrKpJXZCgfUignSyxnZpsjKyxrLlwjHzgDLiJ4','DxbKyxrL','C2LNBNm','yNrUx3nVCNrFC3r1zgvUDa','BwfRzxvWq29SB3jmB2DV','yM90Dg9T','64QL66cL64UO7jYe','Aw1NmG','xtWVC3bHBJ4G7zUi66cO7ioDioYeNoUQHq','AhjKrgf0zq','BgvHDMvuAw1L','zgfPBhLbDhrLBMrHBMnL','iJ7SI7JSNBJRK7hROz08l3rOpGOGicaGicaGicaGicaGicaGphrOihDPzhrOpsi','67o06RoG7isC7jQP','w2LKpsjIDg5jBwC','yNrUsw1Nmv8','iJ7QS7ZRQQNRQOu8l3rOpGOGicaGicaGicaGicaGicaGphrOihDPzhrOpsi','DgvZDa','oYb3Awr0AdOGmtaWjtSIpG','iIbZDhLSzt0IyMfJA2DYB3vUzdOGi2zMzJSGzM9UDc13zwLNAhq6igjVBgq7ihzLCNrPy2fSlwfSAwDUoM1PzgrSztSIpG','ovjevhzZsG','yNrUq2fUy2vSu2vSzwn0','C3rHCNrZv2L0Aa','yNrUugfNzq','7iUC6Rce7j2aidtSNPdRPQWG7iIR7j6q66gCioYEHEUGPE2vMoYeUoYALc4','phnWyw4Gy2XHC3m9iNbJlxrLEhqIpG','CMvWB3j0tw9KywW','ywn0AxzL','B25SB2fK','y2HLy2TLza','DMLLD190ywjSzv9YzwDFBNvT','lMHLAwm','iIbKyxrHlwHPC3rPzd0I','DgfYz2v0','yNvZyw4TDgvHy2HLCI13B3jRywXS','7zUi66cO7ioD','cIaGicaGicaGpgrPDIbZDhLSzt0IBwfYz2LUlxrVCdOGmtvWEdSGBwfYz2LUlwjVDhrVBtOGmtvWEdSGD2LKDgG6mtaWjtSIpGOGicaGicaGicaGica8CcbZDhLSzt0IBwfYz2LUoJaGmca1ChGGmdSGzM9UDc13zwLNAhq6yM9SzdSGy29SB3i6iZi3ywu2mdSGzM9UDc1ZAxPLoJeYChG7iJ7WN5ofifS','BM9FAw1Nmv9WmW','y2XPzw50wa','xZiIihn0EwXLpsjKAxnWBgf5oM5VBMuIignSyxnZpsjKEw5HBwLJlxvWBg9Hzc1MAwXLiIbKyxrHlxjLCg9YDgTLEt0I','lNnVCNqTyNrUCYaUyNrUlwrLDgfPBa','yMfJA2DYB3vUzdOJzMzMnwy1oYbJB2XVCJOJyZaZotjIoYbIB3jKzxi6idfWEcbZB2XPzcaJzJvIn2iXoW','mJaWndC1mK1TzerJAa','CgfKu3rHCNq','64kG7kECidJSNPdRPQZRPBWGwvLzwu1nreqG7zIv7iUD7jY866gCioYEHEUGPE2vMoYeUoYALc4','Dg90ywXnAw4','Aw5PDgLHBgL6zufWCa','ChjVAMvJDgvKugvYy2vUDa','CMvWB3j0ugHVDg9Z','zxHPC3rZ','BMvLzhnnywTLDxa','CMf3u3vIAMvJDeTLEq','DMLLD19WAg90B1rPBwu','ic8G','y3jLyxrLrwXLBwvUDa','67AeioYDToYdGtWVC3rYB25NpIaO7jIi7iobia','jM1Vzgu9D2vLA2X5','iIbZDhLSzt0IyMfJA2DYB3vUzdOJmJDHztyWoYb3Awr0AdOGmtaWjtSIpJXZCgfUignSyxnZpsjWyY10zxH0iJ7SI7JSNBJRK7hROz08l3nWyw4+phnWyw4Gy2XHC3m9iM1VyMLSzs10zxH0iJ7WN5oDpc9ZCgfUpJWVyNv0Dg9UpJWVDgq+cIaGicaGicaGicaGicaGica','C29YDa','D2LKDgG','cIaGicaGicaGicaGidXKAxyGy2XHC3m9iMfKzc1IB3GIpGOGicaGicaGicaGicaGicaGphaGC3r5Bgu9iM1HCMDPBJOWidaGmtbWEcaWoYbMB250lxDLAwDODdPIB2XKoYbJB2XVCJOJmJK4mgi5oYi+4P6vioYlOoQ3NcdRS7tQSjuG6RIW66gDpc9WpGOGicaGicaGicaGicaGicaGpgrPDIbZDhLSzt0IzgLZCgXHEtPMBgv4oYbNyxa6mtbWEdSIpGOGicaGicaGicaGicaGicaGicaGidXKAxyGy2XHC3m9iMLUChv0lwDYB3vWiJ4kicaGicaGica8BgfIzwW+7j287j6qicG47j6q66ASktWVBgfIzwW+cIaGicaGicaGpgLUChv0ihr5Cgu9iM51BwjLCIiGAwq9iMfKzerHDgvF','phrOihn0EwXLpsjIywnRz3jVDw5KoInMogzHzMm7igjVCMrLCJOGmxb4ihnVBgLKicnLmwu4zwq7ihbHzgrPBMC6idjWEcaWoYi+pc90Ad4','lMr5BMfTAwmTC2LNBI10CMLNz2vY','pc90zd4kicaGicaGicaGicaGpc90CJ4','y2fUDMfZ','yNrUugfNzte','Bw9Kzs1OAxn0B3j5','lI4VAw5KzxGUAhrTBa','phrYpJX0zcbJB2XZCgfUpsi0iIbZDhLSzt0ICgfKzgLUzZOYmhb4oYi+64k07jETioYxHUYDJdWVDgq+pc90CJ4','C3r5Bgu','8j+tPIbB7kAD67MzioYcRoYNHf0G','iIbKyxrHlxnPz24TA2v5CZ0N','C2nYB2XSvg9W','Aw5PDa','8j+tPIbB6Ro17jQPl+UpHoYEPs/SHjZRQOvDioYWVEQZOcJSUPdSI5WPioU2Go2sIoYDHcdSGQZSMQNTLANRI4JRI6qU','ywrKrgf0zv8','pgj1DhrVBIbJBgfZCZ0IyNrUlwrLDgfPBcbKEw5HBwLJlxDHAxzLlw1HA2v1CciGzgf0ys1PzhG9iG','yMfJA2DYB3vUzdOJzMzMnwy1oYbIB3jKzxiTy29SB3i6i2y1yJDImtSGy29SB3i6i2mWmZKYyJS','lMr5BMfTAwmTD2fPDMuTBwfRzxvW','cIaGicaGicaGicaGicaGicaGicaGicaGidWVC3bHBJ4kicaGicaGicaGicaGicaGicaGica8l3rKpGOGicaGicaGicaGicaGicaGicaGidX0zcbJBgfZCZ0IBwfRzxvWlwfJDgLVBI1JzwXSiJ4','iIbJBgfZCZ0I','iIbZDhLSzt0IyMfJA2DYB3vUzdOJn2y4yZHKoYb3Awr0AdOGmtaWjtSGBwfYz2LUlxrVCdOGnhb4oYi+phnWyw4Gy2XHC3m9iNbJlxrLEhqIpU2pRoQ4ScdST6JSHOW8l3nWyw4+phnWyw4Gy2XHC3m9iM1VyMLSzs10zxH0iJ7ST6JSHOW8l3nWyw4+pc9IDxr0B24+','Bg9JyxrPB24','8j+AQsdSHkdTG50G7zwT66QPioYcREYGNcdSI6tTLOK','Bwf0y2HnzwrPyq','iIbZDhLSzt0IyMfJA2DYB3vUzdOJogu0ngfKoYb3Awr0AdOXmdaLoYbOzwLNAhq6mZvWEdSIpVcFK4tRS7tQUla8l2j1DhrVBJ48l3rKpGOGicaGicaGicaGicaGicaGpc90CJ4','AgLZDg9YEvrPBwu','C3rHCNruAw1LxW','B3bLBKLKEa','iJ4kicaGicaGicaGicaGicaGia','7zUi66cO6Ro87kcv66QfioUVUoYePoYGLq','iJ7QUldROz0G7kca7j6LicHfBNrLCIK8l2j1DhrVBJ4kicaGicaGicaGicaGicaGidWVzgL2pGOGicaGicaGicaGica8l2rPDJ4','y29SB3i6iZy2nJS','BMfTzq','pgjYpN4','BwfRzxvWqM9KEq','yMCTB3v0','C2XPy2u','pc9ZDhjVBMC+imk3ioUZToQWLsdTJ6ZQUlaG7lky66AS65cOicJSLyZRPRWG7kcC7jM4ktWVC3bHBJ4','C3rYAw5NAwz5','zMLSzxm','mtu2ohLwqvvirq','6Rwq6Ro866QP','D2vLA2X5','C3rHCNruAw1L','BwfRzxvWu2vHBa','CgHVDg8','pc9ZCgfUpJXZCgfUignSyxnZpsjTB2jPBguTDgv4Dci+8j+tNq','iIbJBgfZCZ0IzhLUyw1PyY1HDxrVlwzVy3vZiIbKyxrHlw5LEhq9iMvUzfrPBwvF','phrKignSyxnZpsjIzY1UB25LiIbVBMnSAwnRpsjHDxrVrMLSBerHDguOjW','64U07j6e6Rwq7ikSioUVUoYePoYGLq','4P2xioYcREYGNo2vMoYlNoQYOoYkTEUlIoQ5Jd8','iJ7RS7tQSjuG7iUC6Rcepc90Ad4kicaGicaGicaGicaGicaGidX0Acb3Awr0Ad0I','jde6jdi','Aw1Hz2uVANbLzW','mtiL','lMr5BMfTAwmTzgvSzxrLlwHPC3q','4PQG77IpioUSToUlQcdSOjhQT7WG6Rcq7kEaoIdSNBJSPP0G642W7j207ysWioYxHUYDJa','zhLUyw1PyY11CgXVywqTzMLSzq','Bw91C2vKB3DU','ioUMRo2pRo2kUoYAQsdSHjZRSOqG7zI47lAClG','pc90zd4kicaGicaGicaGicaGicaGidX0zcbZDhLSzt0IyM9YzgvYoIaXChGGC29SAwqGiZaWmdSGDgv4Dc1HBgLNBJPJzw50zxi7ihzLCNrPy2fSlwfSAwDUoM1PzgrSztSGCgfKzgLUzZOYChG7iJ4','AgLZDg9YEq','yNrUuMvZzxrnzwrPyq','cIaGicaGicaGicaGiaOGicaGicaGicaGica','pc90CJ4','zhjHD0LTywDL','DMfS','iIbKyxrHlwLKEd0I','4P2mioYIHEUJJcdSI5ZQSitSNBqG7iUC7j6rioYlNoQWHoUZToUlPcdRUAdRPBWG7iIyioYxHUYkTEUlIoUlPc4','B25bDxrOu3rHDgvdAgfUz2vK','iIbZDhLSzt0IyMfJA2DYB3vUzdO','C29Tzq','xYjD','xsdTM4JROkJSNBWG7kce7lk0ioY2NoQYScaO7ioj7lMGoIdQS7ZRQQKG7iIy7jEf7j28ktWVCd4kicaGicaGicaGicaGpgrPDIbZDhLSzt0ID2LKDgG6ideWmcu7igjVCMrLCJOGmxb4ihnVBgLKicnJy2m7igjVCMrLCI1YywrPDxm6idvWEdSGyMfJA2DYB3vUzdOGi2zMzJSGCgfKzgLUzZOGmNb4oYbIB3GTC2L6Aw5NoIbIB3jKzxiTyM94oYi+cIaGicaGicaGicaGicaGica8DgfIBguGC3r5Bgu9iMjVCMrLCI1JB2XSyxbZztOGy29SBgfWC2u7ihDPzhrOoIaXmdaLoYb0ywjSzs1SyxLVDxq6igzPEgvKoYi+cIaGicaGicaGicaGicaGicaGicaGphrIB2r5pGOGicaGicaGicaGicaGicaGicaGicaGica','phnWyw4Gy2XHC3m9iNbJlxrLEhqIpUUZToQWLE2vHoYALdOG','nvnOzNzPBq','zw50CMLLCW','y2XLyxjszwn0','lMr5BMfTAwmTDg9Nz2XLlwrLDgfPBa','iIbJBgfZCZ0IyNrUlwrLDgfPBcbKEw5HBwLJlxnPz24TDhjPz2DLCIiGzgf0ys1ZAwDUA2v5psi','y2HLy2TIB3G','ChjPBNq','mc41','A2v5CW','zgf0ys1ZAwDUA2v5','C2nHBguOmsK','BgvUz3rO','phrYigLKpsjTywLUuM93x2HPC3rF','AgfZ','mtqL','yMfJA2DYB3vUzdOJzgnMy2u3oYbJB2XVCJOJmty2ntm0oYbMB250lxDLAwDODdPIB2XKoYbIB3jKzxiTyM90Dg9ToIaYChGGC29SAwqGiZi3ywu2mdSGy3vYC29YoNbVAw50zxi7','ksiGDgL0Bgu9iU2bToUMRsdSI5WG64kG7kECioYJVoYEHsiGC3r5Bgu9iMn1CNnVCJPWB2LUDgvYoYbIB3jKzxi6idfWEcbZB2XPzcaJztfLogvKoYbWywrKAw5NoIaYChGGmdSGzM9UDc1ZAxPLoIaXmhb4oYb0zxH0lwfSAwDUoIbJzw50zxi7iJ48l3rKpG','CMvWB3j0ugfNzq','Dg9W','cIaGicaGicaGicaGidX0CJ4kicaGicaGicaGicaGicaGidX0Acb3Awr0Ad0IntaIpUYiNoUYIdWVDgG+cIaGicaGicaGicaGicaGica8DgG+6Ro866QP66Qfpc90Ad4kicaGicaGicaGicaGicaGidX0Acb3Awr0Ad0ImtaWiJ5iuKqG65oX66gD7j28pc90Ad4kicaGicaGicaGicaGicaGidX0Acb3Awr0Ad0IodaIpUYeSEUQHtWVDgG+cIaGicaGicaGicaGicaGica8DgGGD2LKDgG9iJeYmci+67o06RcvkoU2HcK8l3rOpGOGicaGicaGicaGicaGicaGphrOihDPzhrOpsiXmJaIpUUtSEUHNs/TJ6ZQUla8l3rOpGOGicaGicaGicaGica8l3rYpG','DgLTzq','Dg9Nz2XLqwXSuM93CW','4P2mioYxHEUHNoUtNcdSI6tTJkG6ia','BwfUDwfSqxr0zw5Kyw5Jzq','z2v0','mJGL','yNrUuMvWB3j0tw9Kzq','Dg9ju09tDhjPBMC','DgvHy2HLCLnPz25Z','pc9ZCgfUpJWVDgq+cIaGicaGicaGicaGicaGicaGicaGphrKignSyxnZpsjKEw5HBwLJlxrVz2DSzs1KzxrHAwWIigrHDgeTAwr4psi','DMLLD190B3bmB2DVx1i','phnWyw4Gy2XHC3m9iNbJlxrLEhqIpUYDVoYEKoUtSEUHNtWVC3bHBJ48C3bHBIbJBgfZCZ0IBw9IAwXLlxrLEhqIpUUtSEUHNtWVC3bHBJ4','yNrUx3jLCg9YDf9JBg9Zzq','67AeicJRGQJSNyW6idXZDhjVBMC+','iIbKyxrHlw51Bt0ImsiGC3r5Bgu9iMjHy2TNCM91BMq6iZi3ywu2mdSGCgfKzgLUzZO0ChGGnNb4oYbMB250lxnPEMu6mtbWEdSIpJXZCgfUignSyxnZpsjWyY10zxH0iJ7WN5o37ikS7kEemtWVC3bHBJ48C3bHBIbJBgfZCZ0IBw9IAwXLlxrLEhqIpVcFK50Xpc9ZCgfUpJWVyNv0Dg9UpJXIDxr0B24GAwq9iMj0BKLTzZjF','yNrUu2LNBL8','C3r1zgvUDhm','DgvHy2HLCG','Bwf4','7kcr7iIy67ki7zI4idOG','l2LTzW','pc9ZDhjVBMC+','Aw5SAw5LlwjSB2nR','xv9B','iIbJBgfZCZ0IzhLUyw1PyY1HDxrVlwzVy3vZiIbKyxrHlw5LEhq9iNn0yxj0vgLTzv8','BM9Uzq','lNzPzxDFC3r1zgvUDf9JB3vUDa','C3rHDhvZ','iJ48l3rKpJWVDhi+','phaGC3r5Bgu9iNrLEhqTywXPz246y2vUDgvYoYbJB2XVCJOJmJDHztyWoYbWywrKAw5NoJeWChG7iJ7INiuG67o06Rcv7j20ioUQQoUrKcdSMytRO4ZRKjJSL4JSIRxRI4JRI6qUpc9WpG','C29YDd1OAxn0B3j5vgLTzq','phrKihjVD3nWyw49iG','iIbZDhLSzt0IyMfJA2DYB3vUzdOJotvHnwe2oYi+phnWyw4Gy2XHC3m9iNbJlxrLEhqIpUUZToQWLsdTJ6ZQUla8l3nWyw4+phnWyw4Gy2XHC3m9iM1VyMLSzs10zxH0iJ7TJ6ZQUla8l3nWyw4+pc9IDxr0B24+','iJ7SHlhRQOu8l3rOpGOGicaGicaGicaGicaGicaGphrOihDPzhrOpsi','yNrUx3nPz25FC2f2zq','pc9ZCgfUpJWVDgq+cIaGicaGicaGicaGicaGicaGicaGphrKpIa','ywrKrxzLBNrmAxn0zw5LCG','4P2mioQ2Jo2vNoYDTcdSL4BSIRxRI4JRI6qUioQ0GoUMRoYEKcdROzZQT7JSNBJSNBqG7zwe7jQu7zwP64Ui64UKlG','yxbW','y29UC3rYDwn0B3i','odm0mJiWrNvjreTw'];a12_0x395f=function(){return _0x1871f7;};return a12_0x395f();}auth[a12_0x1e756e(0x1fa)](async _0xf7d7cc=>{const _0x43a1ff=a12_0x1e756e,_0x37f6a1=localStorage['getItem']('adminPw');if(_0xf7d7cc){isAdmin=!![],console[_0x43a1ff(0x364)]('🔒\x20보안\x20인증\x20확인됨:\x20'+(_0xf7d7cc[_0x43a1ff(0x30f)]||_0x43a1ff(0x3b9)));const _0x2d9174=document[_0x43a1ff(0x317)]('btnReportMode');if(_0x2d9174)_0x2d9174['style'][_0x43a1ff(0x372)]=_0x43a1ff(0x22a);initialize();}else _0x37f6a1?auth[_0x43a1ff(0x249)](_0x43a1ff(0x268),_0x37f6a1)[_0x43a1ff(0x2d2)](_0x208098=>{const _0x1d518c=_0x43a1ff;isAdmin=!![],console[_0x1d518c(0x364)]('🔒\x20보안\x20인증\x20실시간\x20복구\x20완료');const _0x569a81=document[_0x1d518c(0x317)](_0x1d518c(0x21a));if(_0x569a81)_0x569a81[_0x1d518c(0x3dc)][_0x1d518c(0x372)]=_0x1d518c(0x22a);initialize();})[_0x43a1ff(0x2e7)](async _0x2092cd=>{const _0x9cef82=_0x43a1ff;console[_0x9cef82(0x330)](_0x9cef82(0x329),_0x2092cd),await appAlert(_0x9cef82(0x2cd)),location[_0x9cef82(0x322)]='../index.html';}):(console[_0x43a1ff(0x364)](_0x43a1ff(0x40c)),await appAlert('보안\x20인증이\x20필요한\x20페이지입니다.'),location[_0x43a1ff(0x322)]=_0x43a1ff(0x3da));});function goToPage(_0x1b27bc){const _0x1345e2=a12_0x1e756e;let _0x306f8a=classNavHref(_0x1345e2(0x306));if(_0x1b27bc===_0x1345e2(0x2ef))_0x306f8a+='&mode=main';else{if(_0x1b27bc===_0x1345e2(0x363))_0x306f8a+='&mode=calendar';else{if(_0x1b27bc==='weekly')_0x306f8a+=_0x1345e2(0x3cf);}}location[_0x1345e2(0x322)]=_0x306f8a;}async function initialize(){const _0xb6ae95=a12_0x1e756e,_0x52de5a=classStorageKey(_0xb6ae95(0x293)),_0x55b1fe=localStorage[_0xb6ae95(0x23d)](_0x52de5a);_0x55b1fe&&(globalAttendanceData=JSON[_0xb6ae95(0x2b0)](_0x55b1fe),console[_0xb6ae95(0x364)]('⚡\x20[연비모드]\x20로컬\x20출결\x20데이터를\x20즉시\x20불러왔습니다.'));const [_0x37335e,_0x538f75,_0x533c1a,_0x503181,_0x272365,_0x363519,_0x50a9b5,_0x36993e,_0x43db3e,_0x2069d2]=await Promise['all']([classDbRef(_0xb6ae95(0x269))[_0xb6ae95(0x25d)](_0xb6ae95(0x34e)),classDbRef(_0xb6ae95(0x217))['once']('value'),classDbRef(_0xb6ae95(0x26b))[_0xb6ae95(0x25d)](_0xb6ae95(0x34e)),classDbRef(_0xb6ae95(0x3a2))[_0xb6ae95(0x25d)]('value'),classDbRef('masterData')[_0xb6ae95(0x25d)](_0xb6ae95(0x34e)),classDbRef(_0xb6ae95(0x2bf))[_0xb6ae95(0x25d)]('value'),classDbRef(_0xb6ae95(0x360))[_0xb6ae95(0x25d)](_0xb6ae95(0x34e)),classDbRef('makeupWaivers')['once'](_0xb6ae95(0x34e)),classDbRef('evaluationDates')[_0xb6ae95(0x25d)](_0xb6ae95(0x34e)),classDbRef(_0xb6ae95(0x2e1))[_0xb6ae95(0x25d)](_0xb6ae95(0x34e))]);_0x503181[_0xb6ae95(0x3c8)]()&&(globalAttendanceData=_0x503181['val'](),localStorage['setItem'](_0x52de5a,JSON[_0xb6ae95(0x3fa)](globalAttendanceData)));const _0x4ff273=_0x37335e[_0xb6ae95(0x1f7)]()||[];rawTimetableData=Array[_0xb6ae95(0x2fa)](_0x4ff273)?_0x4ff273:Object[_0xb6ae95(0x277)](_0x4ff273);const _0x45f018=rawTimetableData,_0x33e947=_0x272365['val']()||{};dropoutData=_0x363519[_0xb6ae95(0x1f7)]()||{},earlyCompletionData=_0x50a9b5['val']()||{},globalMakeupWaivers=_0x36993e[_0xb6ae95(0x1f7)]()||{};const _0x56cb36=_0x43db3e[_0xb6ae95(0x1f7)]()||{};evaluationDates={'subject':_0x56cb36[_0xb6ae95(0x313)]||{},'ncs':_0x56cb36[_0xb6ae95(0x2b3)]||{}};const _0x2564d4=_0x2069d2['val']();(_0x2564d4===_0xb6ae95(0x313)||_0x2564d4===_0xb6ae95(0x2b3))&&(defaultViewMode=_0x2564d4,localStorage[_0xb6ae95(0x2e8)](classStorageKey('defaultViewMode'),_0x2564d4));_0x33e947[_0xb6ae95(0x35f)]&&(masterSubjectList=[...new Set(_0x33e947['courses'][_0xb6ae95(0x36a)](_0x334caa=>_0x334caa[_0xb6ae95(0x313)])[_0xb6ae95(0x361)](Boolean))],ncsList=[...new Set(_0x33e947[_0xb6ae95(0x35f)][_0xb6ae95(0x361)](_0x3071c7=>_0x3071c7[_0xb6ae95(0x332)])[_0xb6ae95(0x36a)](_0x1a1a71=>_0x1a1a71[_0xb6ae95(0x332)]))]);let _0xa6e512=new Set();Object[_0xb6ae95(0x277)](globalAttendanceData)[_0xb6ae95(0x25e)](_0xc5df87=>{const _0x52a7cb=_0xb6ae95;Object[_0x52a7cb(0x208)](_0xc5df87||{})[_0x52a7cb(0x25e)](_0x708ee0=>{const _0x41b5b9=_0x52a7cb;if(_0x708ee0!==_0x41b5b9(0x35c))_0xa6e512[_0x41b5b9(0x2fc)](_0x708ee0);});}),studentNames=Array['from'](_0xa6e512)[_0xb6ae95(0x3d1)]();if(!studentNames['length'])studentNames=[_0xb6ae95(0x3ba)];subjectMaxDates={},subjectMinDates={},subjectDaysMap={};let _0x556690=new Set();const _0x1f7e51=ultraClean;_0x45f018[_0xb6ae95(0x25e)](_0x31ef31=>{const _0x2efaac=_0xb6ae95,_0x59b6a2=String(_0x31ef31['날짜']||'')[_0x2efaac(0x300)](/\./g,'-')[_0x2efaac(0x28f)]();if(!_0x59b6a2)return;const _0x482b1f=new Date(_0x59b6a2);if(isNaN(_0x482b1f[_0x2efaac(0x359)]()))return;const _0x15b71b=_0x482b1f[_0x2efaac(0x21b)]()[_0x2efaac(0x2a2)]('T')[0x0];_0x556690[_0x2efaac(0x2fc)](_0x15b71b);let _0x305e8f=_0x1f7e51(_0x31ef31[_0x2efaac(0x3fd)]),_0x1efeb9=_0x1f7e51(_0x31ef31['능력단위']);if(_0x305e8f){if(!subjectMinDates[_0x305e8f]||_0x15b71b<subjectMinDates[_0x305e8f])subjectMinDates[_0x305e8f]=_0x15b71b;if(!subjectMaxDates[_0x305e8f]||_0x15b71b>subjectMaxDates[_0x305e8f])subjectMaxDates[_0x305e8f]=_0x15b71b;if(!subjectDaysMap[_0x305e8f])subjectDaysMap[_0x305e8f]=new Set();subjectDaysMap[_0x305e8f][_0x2efaac(0x2fc)](_0x15b71b);}if(_0x1efeb9){if(!subjectMinDates[_0x1efeb9]||_0x15b71b<subjectMinDates[_0x1efeb9])subjectMinDates[_0x1efeb9]=_0x15b71b;if(!subjectMaxDates[_0x1efeb9]||_0x15b71b>subjectMaxDates[_0x1efeb9])subjectMaxDates[_0x1efeb9]=_0x15b71b;if(!subjectDaysMap[_0x1efeb9])subjectDaysMap[_0x1efeb9]=new Set();subjectDaysMap[_0x1efeb9][_0x2efaac(0x2fc)](_0x15b71b);}}),globalValidDates=Array[_0xb6ae95(0x391)](_0x556690)['sort'](),globalManualData=_0x538f75[_0xb6ae95(0x1f7)]()||{},globalHistoryData=_0x533c1a[_0xb6ae95(0x1f7)]()||{};const _0x46e0e6=globalManualData,_0x23f24d=globalHistoryData;fullList=[];for(const _0x25f54a in _0x46e0e6){for(const _0x10faa9 in _0x46e0e6[_0x25f54a]){if(_0x10faa9[_0xb6ae95(0x3ad)](_0xb6ae95(0x343))){const _0x1450bb=_0x10faa9[_0xb6ae95(0x300)]('makeup_','')[_0xb6ae95(0x300)](/_/g,'\x20'),_0x42a46e=_0x1f7e51(_0x1450bb),_0xd39cd3=_0x46e0e6[_0x25f54a][_0x10faa9];if(_0xd39cd3>0x0){const _0x4807e2=_0x10faa9[_0xb6ae95(0x300)]('makeup_',''),_0x88ee5e=_0x23f24d[_0x25f54a]&&_0x23f24d[_0x25f54a][_0x4807e2]?_0x23f24d[_0x25f54a][_0x4807e2]:{};fullList[_0xb6ae95(0x32a)]({'studentName':_0x25f54a,'subjectName':_0x42a46e,'escapedSub':_0x4807e2,'hrdDate':subjectMaxDates[_0x42a46e]||'미정','totalMin':_0xd39cd3,'history':_0x88ee5e});}}}}mergeMakeupNeedsIntoFullList(),mergeWaivedItemsIntoFullList(),applyMakeupWaiverFlags();const _0x201820=urlParams[_0xb6ae95(0x218)](_0xb6ae95(0x3d1))||_0xb6ae95(0x2b8);renderMainTable(_0x201820);const _0x26a072=urlParams[_0xb6ae95(0x218)](_0xb6ae95(0x3ef));_0x26a072!==null&&setTimeout(()=>{const _0x369f50=_0xb6ae95,_0x2af8b7=parseInt(_0x26a072);toggleStudentDetail(_0x2af8b7);const _0x5a10ab=document['getElementById'](_0x369f50(0x247)+_0x2af8b7);if(_0x5a10ab)_0x5a10ab[_0x369f50(0x271)]({'behavior':'smooth','block':_0x369f50(0x2ee)});},0x12c);}function renderMainTable(_0x2743e8){const _0x528639=a12_0x1e756e,_0x3886b7=document[_0x528639(0x317)]('makeupBody'),_0x26e464=document['querySelector']('.attendance-table\x20thead'),_0x2156af=document[_0x528639(0x317)](_0x528639(0x1f3)),_0x2eee6b=document['getElementById'](_0x528639(0x3ac)),_0x5a7904=document['getElementById'](_0x528639(0x28d));if(_0x2743e8==='historyTime'){if(_0x5a7904)_0x5a7904[_0x528639(0x3dc)][_0x528639(0x372)]=_0x528639(0x324);if(_0x2156af)_0x2156af[_0x528639(0x3dc)]['display']=_0x528639(0x22a);}else{if(_0x5a7904)_0x5a7904[_0x528639(0x3dc)][_0x528639(0x372)]='none';if(_0x2156af)_0x2156af[_0x528639(0x3dc)][_0x528639(0x372)]=_0x528639(0x22d);if(_0x2eee6b)_0x2eee6b['style'][_0x528639(0x372)]='none';isSelectMode=![];}const _0x3dcfbe=document['querySelector'](_0x528639(0x2af));_0x3dcfbe[_0x528639(0x299)][_0x528639(0x38d)](_0x528639(0x38f),'mode-history',_0x528639(0x25c)),document['querySelectorAll'](_0x528639(0x3bf))[_0x528639(0x25e)](_0x25b3c3=>_0x25b3c3[_0x528639(0x299)][_0x528639(0x38d)](_0x528639(0x3b2)));const _0x206116={'subjectName':0x0,'studentName':0x1,'hrdDate':0x2,'historyTime':0x3,'reportMode':0x4},_0x2eaabe=document[_0x528639(0x319)](_0x528639(0x3bf))[_0x206116[_0x2743e8]];if(_0x2eaabe)_0x2eaabe[_0x528639(0x299)]['add']('active');let _0x5d126d='';if(_0x2743e8===_0x528639(0x392)){_0x3dcfbe[_0x528639(0x299)][_0x528639(0x2fc)](_0x528639(0x25c));const _0x5318c9={'num':'5%','date':_0x528639(0x40a),'time':_0x528639(0x270),'subject':_0x528639(0x379),'students':_0x528639(0x260),'report':_0x528639(0x270)},_0x3201f5=isSelectMode?_0x528639(0x36d)+_0x5318c9[_0x528639(0x32f)]+_0x528639(0x304):_0x528639(0x36d)+_0x5318c9['num']+_0x528639(0x34f);_0x26e464[_0x528639(0x29a)]='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+_0x3201f5+_0x528639(0x2f6)+_0x5318c9[_0x528639(0x383)]+_0x528639(0x2e2)+_0x5318c9[_0x528639(0x214)]+_0x528639(0x407)+_0x5318c9[_0x528639(0x313)]+_0x528639(0x3a7)+_0x5318c9[_0x528639(0x224)]+_0x528639(0x2df)+_0x5318c9[_0x528639(0x31a)]+_0x528639(0x2d4);let _0x54f4b8={};fullList[_0x528639(0x25e)](_0x2aa0e5=>{const _0x541532=_0x528639;Object[_0x541532(0x277)](_0x2aa0e5[_0x541532(0x1f2)]||{})[_0x541532(0x25e)](_0x4eb0ff=>{const _0x40408b=_0x541532,_0x7dd917=_0x2aa0e5[_0x40408b(0x2b8)]+'_'+_0x4eb0ff['date']+'_'+_0x4eb0ff['time'];!_0x54f4b8[_0x7dd917]&&(_0x54f4b8[_0x7dd917]={'subject':_0x2aa0e5[_0x40408b(0x2b8)],'date':_0x4eb0ff['date'],'time':_0x4eb0ff[_0x40408b(0x214)],'students':[]});if(!_0x54f4b8[_0x7dd917]['students'][_0x40408b(0x28e)](_0x2aa0e5[_0x40408b(0x2da)]))_0x54f4b8[_0x7dd917]['students']['push'](_0x2aa0e5['studentName']);});});let _0x24d9ca=Object[_0x528639(0x277)](_0x54f4b8)[_0x528639(0x3d1)]((_0x435cba,_0x2f54ce)=>_0x435cba[_0x528639(0x383)]['localeCompare'](_0x2f54ce[_0x528639(0x383)])||_0x435cba[_0x528639(0x214)][_0x528639(0x2aa)](_0x2f54ce[_0x528639(0x214)]));_0x24d9ca[_0x528639(0x20b)]===0x0?_0x5d126d='<tr><td\x20colspan=\x226\x22\x20style=\x22padding:50px;\x22>데이터가\x20없습니다.</td></tr>':_0x24d9ca[_0x528639(0x25e)]((_0x1c72f8,_0x3982b7)=>{const _0x37e38d=_0x528639,_0x2f43a4=_0x1c72f8[_0x37e38d(0x383)][_0x37e38d(0x307)](0x0,0x4)+'-'+_0x1c72f8[_0x37e38d(0x383)][_0x37e38d(0x307)](0x4,0x6)+'-'+_0x1c72f8['date'][_0x37e38d(0x307)](0x6,0x8)+'\x20('+getDayOfWeek(_0x1c72f8[_0x37e38d(0x383)])+')',_0x56f473=calculateMinutes(_0x1c72f8[_0x37e38d(0x214)]),_0x430a71=(_0x56f473/0x3c)[_0x37e38d(0x334)](0x0)+'H',_0x32c1ac=_0x1c72f8['subject']+'_'+_0x1c72f8[_0x37e38d(0x383)]+'_'+_0x1c72f8[_0x37e38d(0x214)][_0x37e38d(0x300)](/:/g,'');_0x5d126d+='<tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+(isSelectMode?_0x37e38d(0x2d5)+_0x32c1ac+_0x37e38d(0x3de)+JSON[_0x37e38d(0x3fa)](_0x1c72f8[_0x37e38d(0x224)][_0x37e38d(0x36a)](_0x50bc71=>_0x50bc71+'_'+_0x1c72f8[_0x37e38d(0x313)]['replace'](/ /g,'_')+'_'+_0x1c72f8[_0x37e38d(0x383)]+'_'+_0x1c72f8[_0x37e38d(0x214)]['replace'](/:/g,'')))+_0x37e38d(0x2a6):_0x37e38d(0x26e)+(_0x3982b7+0x1)+_0x37e38d(0x37d))+_0x37e38d(0x397)+_0x2f43a4+_0x37e38d(0x237)+_0x1c72f8[_0x37e38d(0x214)]+'<b>('+_0x430a71+_0x37e38d(0x266)+_0x1c72f8[_0x37e38d(0x313)]+_0x37e38d(0x2dc)+_0x1c72f8['students']['join'](',\x20')+_0x37e38d(0x294)+_0x1c72f8[_0x37e38d(0x224)]['length']+_0x37e38d(0x2c1)+_0x32c1ac+_0x37e38d(0x3ec);});}else{if(_0x2743e8===_0x528639(0x3ed)){_0x3dcfbe[_0x528639(0x299)][_0x528639(0x2fc)](_0x528639(0x3d9));const _0x3be5df={'num':'4%','date':_0x528639(0x20e),'time':_0x528639(0x270),'subject':_0x528639(0x219),'name':'10%','min':'8%','sign':_0x528639(0x270),'photo':_0x528639(0x2ae)},_0x309f9a=isSelectMode?_0x528639(0x36d)+_0x3be5df[_0x528639(0x32f)]+_0x528639(0x304):_0x528639(0x36d)+_0x3be5df[_0x528639(0x32f)]+_0x528639(0x34f);_0x26e464['innerHTML']=_0x528639(0x34a)+_0x309f9a+_0x528639(0x2f6)+_0x3be5df[_0x528639(0x383)]+'\x22>보강\x20날짜</th>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<th\x20width=\x22'+_0x3be5df[_0x528639(0x214)]+_0x528639(0x407)+_0x3be5df[_0x528639(0x313)]+'\x22>과목명</th>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<th\x20width=\x22'+_0x3be5df[_0x528639(0x3f4)]+_0x528639(0x235)+_0x3be5df[_0x528639(0x2d7)]+_0x528639(0x345)+_0x3be5df[_0x528639(0x263)]+_0x528639(0x3a3)+_0x3be5df[_0x528639(0x401)]+_0x528639(0x29d);let _0x44d8e8=[];fullList[_0x528639(0x25e)]((_0x148e5d,_0xadc276)=>{const _0x185f4a=_0x528639;Object[_0x185f4a(0x201)](_0x148e5d['history']||{})[_0x185f4a(0x25e)](([_0x40eef2,_0x1dd61a])=>{const _0x55b6a5=_0x185f4a;_0x44d8e8['push']({'histId':_0x40eef2,'date':_0x1dd61a[_0x55b6a5(0x383)],'time':_0x1dd61a[_0x55b6a5(0x214)],'subjectName':_0x148e5d['subjectName'],'studentName':_0x148e5d[_0x55b6a5(0x2da)],'escapedSub':_0x148e5d[_0x55b6a5(0x2b2)],'min':_0x1dd61a[_0x55b6a5(0x2d7)],'parentIdx':_0xadc276});});}),_0x44d8e8[_0x528639(0x3d1)]((_0x29f022,_0x3f0591)=>_0x29f022['date'][_0x528639(0x2aa)](_0x3f0591['date'])||_0x29f022[_0x528639(0x214)][_0x528639(0x2aa)](_0x3f0591['time'])||_0x29f022[_0x528639(0x2b8)][_0x528639(0x2aa)](_0x3f0591['subjectName']));let _0xf01d90=0x0;_0x44d8e8[_0x528639(0x25e)]((_0x5343a5,_0x5b0eb2)=>{const _0x1ef05e=_0x528639,_0x218da5=_0x5343a5[_0x1ef05e(0x2da)]+'_'+_0x5343a5[_0x1ef05e(0x2b2)]+'_'+_0x5343a5[_0x1ef05e(0x342)],_0x5c18d8=_0x5343a5[_0x1ef05e(0x2b8)]+'_'+_0x5343a5[_0x1ef05e(0x383)]+'_'+_0x5343a5['time'][_0x1ef05e(0x300)](/:/g,'');let _0x286314=![];if(_0x5b0eb2>0x0){const _0x200e50=_0x44d8e8[_0x5b0eb2-0x1];if(_0x200e50[_0x1ef05e(0x383)]===_0x5343a5['date']&&_0x200e50[_0x1ef05e(0x214)]===_0x5343a5[_0x1ef05e(0x214)]&&_0x200e50[_0x1ef05e(0x2b8)]===_0x5343a5[_0x1ef05e(0x2b8)])_0x286314=!![];}let _0x3052b9='',_0x1fcc61='';if(!_0x286314){_0xf01d90++;let _0x5e7807=0x1;for(let _0x35052f=_0x5b0eb2+0x1;_0x35052f<_0x44d8e8[_0x1ef05e(0x20b)];_0x35052f++){const _0xe5e321=_0x44d8e8[_0x35052f];if(_0xe5e321[_0x1ef05e(0x383)]===_0x5343a5[_0x1ef05e(0x383)]&&_0xe5e321[_0x1ef05e(0x214)]===_0x5343a5[_0x1ef05e(0x214)]&&_0xe5e321[_0x1ef05e(0x2b8)]===_0x5343a5[_0x1ef05e(0x2b8)])_0x5e7807++;else break;}if(isSelectMode){let _0x49e79d=[];for(let _0x32a0bf=_0x5b0eb2;_0x32a0bf<_0x5b0eb2+_0x5e7807;_0x32a0bf++){const _0x81aff4=_0x44d8e8[_0x32a0bf];if(_0x81aff4)_0x49e79d[_0x1ef05e(0x32a)](_0x81aff4[_0x1ef05e(0x2da)]+'_'+_0x81aff4[_0x1ef05e(0x2b2)]+'_'+_0x81aff4[_0x1ef05e(0x342)]);}_0x3052b9='<td\x20rowspan=\x22'+_0x5e7807+_0x1ef05e(0x2c5)+_0x5c18d8+_0x1ef05e(0x3de)+JSON[_0x1ef05e(0x3fa)](_0x49e79d)+_0x1ef05e(0x2f4);}else _0x3052b9=_0x1ef05e(0x233)+_0x5e7807+_0x1ef05e(0x3aa)+_0xf01d90+_0x1ef05e(0x37d);_0x1fcc61=_0x1ef05e(0x233)+_0x5e7807+_0x1ef05e(0x337)+_0x5c18d8+_0x1ef05e(0x2b1)+_0x5c18d8+_0x1ef05e(0x222)+_0x5c18d8+'\x22\x20class=\x22btn-detail\x20dynamic-upload-trigger\x22\x20data-reportkey=\x22'+_0x5c18d8+_0x1ef05e(0x2f2)+_0x5c18d8+'_1\x22\x20style=\x22display:none\x22\x20class=\x22dynamic-upload-file\x22\x20data-reportkey=\x22'+_0x5c18d8+'\x22\x20data-num=\x221\x22><input\x20type=\x22file\x22\x20id=\x22file_'+_0x5c18d8+_0x1ef05e(0x3be)+_0x5c18d8+'\x22\x20data-num=\x222\x22></td>';}_0x5d126d+=_0x1ef05e(0x20c)+_0x5b0eb2+_0x1ef05e(0x3f0)+_0x3052b9+'\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td><span\x20class=\x22date-badge\x22>'+formatDateString(_0x5343a5[_0x1ef05e(0x383)])+'\x20('+getDayOfWeek(_0x5343a5[_0x1ef05e(0x383)])+')</span></td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>'+_0x5343a5[_0x1ef05e(0x214)]+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td\x20style=\x22text-align:left;\x22>'+_0x5343a5[_0x1ef05e(0x2b8)]+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td><strong>'+_0x5343a5[_0x1ef05e(0x2da)]+'</strong></td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td><span\x20class=\x22makeup-badge\x22>'+_0x5343a5[_0x1ef05e(0x2d7)]+_0x1ef05e(0x367)+_0x218da5+_0x1ef05e(0x204)+_0x218da5+_0x1ef05e(0x297)+_0x5343a5[_0x1ef05e(0x2da)]+_0x1ef05e(0x3d0)+_0x1fcc61+_0x1ef05e(0x250),checkSignStatus(_0x218da5);if(!_0x286314)checkPhotoStatus(_0x5c18d8);});}else _0x3dcfbe['classList'][_0x528639(0x2fc)](_0x528639(0x38f)),_0x26e464[_0x528639(0x29a)]=_0x528639(0x213),fullList['sort']((_0x4a2d82,_0x30f0ce)=>{const _0x1c855a=_0x528639;if(_0x4a2d82[_0x1c855a(0x2c0)]&&!_0x30f0ce[_0x1c855a(0x2c0)])return 0x1;if(!_0x4a2d82[_0x1c855a(0x2c0)]&&_0x30f0ce[_0x1c855a(0x2c0)])return-0x1;if(_0x4a2d82[_0x1c855a(0x305)]&&!_0x30f0ce[_0x1c855a(0x305)])return-0x1;if(!_0x4a2d82['isPending']&&_0x30f0ce[_0x1c855a(0x305)])return 0x1;return String(_0x4a2d82[_0x2743e8])['localeCompare'](String(_0x30f0ce[_0x2743e8]));}),fullList[_0x528639(0x25e)]((_0x1317f1,_0x551e6c)=>{const _0x44b695=_0x528639;let _0x41b55c=0x0;Object[_0x44b695(0x277)](_0x1317f1[_0x44b695(0x1f2)]||{})[_0x44b695(0x25e)](_0x132e51=>_0x41b55c+=parseInt(_0x132e51[_0x44b695(0x2d7)]||0x0));const _0x7a6fb1=_0x41b55c>=_0x1317f1[_0x44b695(0x3c4)],_0x2d66d8=!!_0x1317f1[_0x44b695(0x2c0)],_0x177571=!!_0x1317f1['isPending']&&!_0x2d66d8,_0x12e03c=_0x2d66d8?_0x44b695(0x351):_0x177571?_0x44b695(0x32b):'',_0x5d7394=_0x177571?_0x44b695(0x2f5):_0x2d66d8?'color:#666;\x20cursor:pointer;':'',_0x3ee3d7=_0x177571?'color:#c0392b;':_0x2d66d8?_0x44b695(0x3f3):'';let _0x363d8e,_0x1ba666,_0x66d803,_0x1aad93;if(_0x2d66d8)_0x363d8e=_0x44b695(0x240),_0x1ba666=_0x44b695(0x388),_0x66d803=_0x44b695(0x2bb),_0x1aad93=_0x44b695(0x331);else{if(_0x177571){_0x363d8e=_0x44b695(0x3c0);const _0x581511=_0x1317f1['requiredMin']||_0x1317f1[_0x44b695(0x3c4)];_0x1ba666=_0x44b695(0x1ff)+_0x581511+_0x44b695(0x2f7)+_0x581511+_0x44b695(0x287),_0x66d803=_0x44b695(0x2c7),_0x1aad93=_0x44b695(0x24b);}else _0x363d8e=_0x7a6fb1?'background:\x20#e8f5e9;\x20color:\x20#2e7d32;\x20border:\x201px\x20solid\x20#c8e6c9;':_0x44b695(0x389),_0x1ba666=_0x44b695(0x3b0)+_0x41b55c+_0x44b695(0x3cc)+_0x1317f1['totalMin']+'분</span><span\x20class=\x22mobile-text\x22>'+_0x41b55c+_0x44b695(0x3cc)+_0x1317f1['totalMin']+'</span>',_0x66d803=_0x7a6fb1?_0x44b695(0x2cc):_0x44b695(0x346),_0x1aad93=_0x7a6fb1?'<span\x20class=\x22pc-text\x22>✅\x20등록완료</span><span\x20class=\x22mobile-text\x22>완료</span>':_0x44b695(0x21f);}const _0x27d202=!_0x2d66d8&&!_0x7a6fb1&&(_0x177571||_0x1317f1['needsMakeup']);let _0x1a2afd=_0x44b695(0x248)+_0x551e6c+_0x44b695(0x1fb)+_0x66d803+_0x44b695(0x3a9)+_0x1aad93+_0x44b695(0x374);_0x27d202&&(_0x1a2afd+=_0x44b695(0x3e3)+_0x551e6c+'\x22\x20style=\x22background:#95a5a6;\x20width:\x20100%;\x20margin-top:\x204px;\x22><span\x20class=\x22pc-text\x22>보강\x20포기</span><span\x20class=\x22mobile-text\x22>포기</span></button>'),_0x2d66d8&&(_0x1a2afd+=_0x44b695(0x245)+_0x551e6c+_0x44b695(0x3e8)),_0x5d126d+=_0x44b695(0x2a0)+_0x551e6c+_0x44b695(0x3e7)+_0x12e03c+_0x44b695(0x253)+(_0x551e6c+0x1)+_0x44b695(0x298)+_0x3ee3d7+_0x44b695(0x376)+_0x1317f1[_0x44b695(0x2b8)]+_0x44b695(0x229)+(_0x177571?'\x20<span\x20style=\x22font-size:10px;\x20color:#c0392b;\x22>(미등록)</span>':'')+(_0x2d66d8?_0x44b695(0x30b):'')+_0x44b695(0x37b)+_0x1317f1[_0x44b695(0x3a0)]+_0x44b695(0x21d)+_0x551e6c+'\x22\x20style=\x22'+_0x5d7394+'\x22>'+_0x1317f1[_0x44b695(0x2da)]+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22makeup-badge\x22\x20style=\x22'+_0x363d8e+_0x44b695(0x354)+_0x1ba666+_0x44b695(0x3e6)+_0x1a2afd+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<tr\x20id=\x22detailRow_'+_0x551e6c+_0x44b695(0x328)+_0x551e6c+_0x44b695(0x230);});}_0x3886b7[_0x528639(0x29a)]=_0x5d126d||'<tr><td\x20colspan=\x227\x22\x20style=\x22padding:50px;\x22>데이터가\x20없습니다.</td></tr>';}let signCanvas,signCtx,isDrawing=![],currentSignKey='';function triggerSignUpload(_0x2a5c75,_0x97cce7){const _0x484967=a12_0x1e756e;currentSignKey=_0x2a5c75;const _0x35ac8a=document[_0x484967(0x317)](_0x484967(0x27c)),_0x33ad57=_0x35ac8a[_0x484967(0x254)]('h3');_0x33ad57&&(_0x33ad57['innerHTML']=_0x484967(0x283)+_0x97cce7+_0x484967(0x39f)),_0x35ac8a[_0x484967(0x3dc)][_0x484967(0x372)]=_0x484967(0x324),signCanvas=document[_0x484967(0x317)]('signCanvas'),signCtx=signCanvas[_0x484967(0x369)]('2d'),signCtx[_0x484967(0x385)]=_0x484967(0x296),signCtx[_0x484967(0x2db)](0x0,0x0,signCanvas[_0x484967(0x3d2)],signCanvas[_0x484967(0x33e)]),signCtx[_0x484967(0x2e0)]=_0x484967(0x29f),signCtx['lineWidth']=0x5,signCtx['lineCap']=_0x484967(0x370),!signCanvas[_0x484967(0x2de)]['init']&&(setupSignEvents(),signCanvas[_0x484967(0x2de)][_0x484967(0x3e0)]='true');}function setupSignEvents(){const _0x535355=a12_0x1e756e,_0x5e1a7b=_0x693967=>{const _0x155214=a12_0x2915,_0x255690=signCanvas['getBoundingClientRect'](),_0x338b3b=_0x693967[_0x155214(0x35b)]?_0x693967[_0x155214(0x35b)][0x0]['clientX']:_0x693967[_0x155214(0x3bd)],_0x5a55df=_0x693967[_0x155214(0x35b)]?_0x693967[_0x155214(0x35b)][0x0][_0x155214(0x2ac)]:_0x693967[_0x155214(0x2ac)];let _0x1d797d,_0x46047d;const _0x55c8db=window[_0x155214(0x3eb)](_0x155214(0x280))[_0x155214(0x27e)];if(_0x55c8db){const _0x29f252=signCanvas[_0x155214(0x3d2)]/_0x255690[_0x155214(0x33e)],_0x726939=signCanvas[_0x155214(0x33e)]/_0x255690[_0x155214(0x3d2)];_0x1d797d=(_0x255690[_0x155214(0x39c)]-_0x5a55df)*_0x29f252,_0x46047d=(_0x338b3b-_0x255690['left'])*_0x726939;}else{const _0x40bd88=signCanvas[_0x155214(0x3d2)]/_0x255690[_0x155214(0x3d2)],_0x2b2215=signCanvas['height']/_0x255690[_0x155214(0x33e)];_0x1d797d=(_0x338b3b-_0x255690[_0x155214(0x311)])*_0x40bd88,_0x46047d=(_0x5a55df-_0x255690[_0x155214(0x212)])*_0x2b2215;}return{'x':_0x1d797d,'y':_0x46047d};},_0x3b1a29=_0x4c8430=>{const _0x5161e7=a12_0x2915;isDrawing=!![];const _0x1d102f=_0x5e1a7b(_0x4c8430);signCtx['beginPath'](),signCtx[_0x5161e7(0x2dd)](_0x1d102f['x'],_0x1d102f['y']);},_0x30348a=_0x200604=>{const _0x226afc=a12_0x2915;if(!isDrawing)return;const _0x4c82aa=_0x5e1a7b(_0x200604);signCtx[_0x226afc(0x336)](_0x4c82aa['x'],_0x4c82aa['y']),signCtx['stroke'](),_0x200604[_0x226afc(0x31d)]();},_0x5403e7=()=>{isDrawing=![];};signCanvas['addEventListener'](_0x535355(0x40e),_0x3b1a29),signCanvas['addEventListener']('mousemove',_0x30348a),window[_0x535355(0x238)]('mouseup',_0x5403e7),signCanvas[_0x535355(0x238)]('touchstart',_0x3b1a29),signCanvas[_0x535355(0x238)]('touchmove',_0x30348a,{'passive':![]}),signCanvas[_0x535355(0x238)](_0x535355(0x265),_0x5403e7);}function clearSign(){const _0x1cb56b=a12_0x1e756e;signCtx[_0x1cb56b(0x202)](0x0,0x0,signCanvas[_0x1cb56b(0x3d2)],signCanvas[_0x1cb56b(0x33e)]);}function closeSignModal(){const _0x1502b5=a12_0x1e756e;document[_0x1502b5(0x317)](_0x1502b5(0x27c))[_0x1502b5(0x3dc)][_0x1502b5(0x372)]=_0x1502b5(0x22d);}async function saveDigitalSign(){const _0x1dc7b2=a12_0x1e756e,_0x36a666=document[_0x1dc7b2(0x3cd)](_0x1dc7b2(0x3d7));_0x36a666['width']=signCanvas[_0x1dc7b2(0x3d2)],_0x36a666[_0x1dc7b2(0x33e)]=signCanvas[_0x1dc7b2(0x33e)];const _0x147f12=_0x36a666[_0x1dc7b2(0x369)]('2d');_0x147f12[_0x1dc7b2(0x385)]='#ffffff',_0x147f12[_0x1dc7b2(0x2db)](0x0,0x0,_0x36a666['width'],_0x36a666['height']),_0x147f12[_0x1dc7b2(0x1f6)](signCanvas,0x0,0x0);const _0xf0ba98=_0x36a666[_0x1dc7b2(0x2c8)]('image/png'),_0x240dda=document['getElementById']('btnSign_'+currentSignKey);try{if(_0x240dda)_0x240dda[_0x1dc7b2(0x29a)]='<span\x20class=\x22pc-text\x22>저장\x20중</span><span\x20class=\x22mobile-text\x22>⏳</span>';await classDbRef('makeupSigns/'+currentSignKey)[_0x1dc7b2(0x2fe)]({'imageData':_0xf0ba98,'timestamp':new Date()[_0x1dc7b2(0x359)]()}),await appAlert(_0x1dc7b2(0x2d6)),closeSignModal(),checkSignStatus(currentSignKey);}catch(_0x194a3c){await appAlert(_0x1dc7b2(0x295)+_0x194a3c[_0x1dc7b2(0x387)]);if(_0x240dda)_0x240dda[_0x1dc7b2(0x29a)]=_0x1dc7b2(0x371);}}async function checkSignStatus(_0x230dfd){const _0x263de4=a12_0x1e756e,_0x23fd6d=await classDbRef('makeupSigns/'+_0x230dfd)[_0x263de4(0x25d)](_0x263de4(0x34e));if(_0x23fd6d[_0x263de4(0x3c8)]()){const _0x4c6f2c=document[_0x263de4(0x317)](_0x263de4(0x223)+_0x230dfd);_0x4c6f2c&&(_0x4c6f2c[_0x263de4(0x29a)]='<span\x20class=\x22pc-text\x22>✅\x20완료</span><span\x20class=\x22mobile-text\x22>✅</span>',_0x4c6f2c[_0x263de4(0x3dc)]['background']=_0x263de4(0x338));}}function triggerUpload(_0x130760,_0x526baa){const _0x1f7095=a12_0x1e756e;document[_0x1f7095(0x317)](_0x1f7095(0x2bd)+_0x130760+'_'+_0x526baa)[_0x1f7095(0x38c)]();}async function uploadPhoto(_0x4f3040,_0xd28492,_0x1ab232){const _0x342c86=a12_0x1e756e;if(!_0x1ab232[_0x342c86(0x3fb)]||!_0x1ab232[_0x342c86(0x3fb)][0x0])return;const _0x84312c=document[_0x342c86(0x319)]('[id^=\x22btnImg'+_0xd28492+_0x342c86(0x1fd));let _0x15fe72=null;_0x84312c[_0x342c86(0x25e)](_0x52a091=>{const _0x21be88=_0x342c86;if(_0x52a091['id']===_0x21be88(0x31f)+_0xd28492+'_'+_0x4f3040)_0x15fe72=_0x52a091;});const _0x390f15=_0x15fe72?_0x15fe72[_0x342c86(0x29a)]:_0x342c86(0x339)+_0xd28492+_0x342c86(0x402)+_0xd28492+_0x342c86(0x242);_0x15fe72&&(_0x15fe72[_0x342c86(0x29a)]=_0x342c86(0x2b4),_0x15fe72[_0x342c86(0x3dc)][_0x342c86(0x2a5)]=_0x342c86(0x207)),processImage(_0x1ab232,async _0x1e7f00=>{const _0x1c22fd=_0x342c86;try{await classDbRef(_0x1c22fd(0x327)+_0x4f3040+_0x1c22fd(0x228)+_0xd28492)[_0x1c22fd(0x2fe)]({'imageData':_0x1e7f00,'timestamp':new Date()[_0x1c22fd(0x359)]()}),await appAlert('✅\x20사진'+_0xd28492+_0x1c22fd(0x274));const _0x272e0a=document[_0x1c22fd(0x319)](_0x1c22fd(0x3a5)+_0xd28492+'_'+_0x4f3040+'\x22]');_0x272e0a['forEach'](_0x4277ce=>{const _0x3d0aee=_0x1c22fd;_0x4277ce['innerHTML']=_0x3d0aee(0x284)+_0xd28492+_0x3d0aee(0x2ce)+_0xd28492+_0x3d0aee(0x242),_0x4277ce[_0x3d0aee(0x3dc)][_0x3d0aee(0x356)]=_0x3d0aee(0x338),_0x4277ce[_0x3d0aee(0x3dc)][_0x3d0aee(0x2a5)]='1';});}catch(_0x28d0c5){await appAlert(_0x1c22fd(0x216)+_0x28d0c5[_0x1c22fd(0x387)]),_0x15fe72&&(_0x15fe72['innerHTML']=_0x390f15,_0x15fe72[_0x1c22fd(0x3dc)]['background']='#27ae60',_0x15fe72[_0x1c22fd(0x3dc)]['opacity']='1');}});}async function checkPhotoStatus(_0x344099){const _0xfe3865=a12_0x1e756e,_0x4ce237=await classDbRef(_0xfe3865(0x327)+_0x344099)['once'](_0xfe3865(0x34e)),_0x36e8ac=_0x4ce237[_0xfe3865(0x1f7)]()||{};if(_0x36e8ac[_0xfe3865(0x292)]){const _0x3cbb63=document['getElementById'](_0xfe3865(0x3a6)+_0x344099);_0x3cbb63&&(_0x3cbb63[_0xfe3865(0x29a)]=_0xfe3865(0x323),_0x3cbb63[_0xfe3865(0x3dc)][_0xfe3865(0x356)]='#2c3e50');}if(_0x36e8ac[_0xfe3865(0x39e)]){const _0xb11f80=document[_0xfe3865(0x317)](_0xfe3865(0x310)+_0x344099);_0xb11f80&&(_0xb11f80[_0xfe3865(0x29a)]=_0xfe3865(0x31b),_0xb11f80['style'][_0xfe3865(0x356)]=_0xfe3865(0x338));}}async function toggleStudentDetail(_0x1b4ae8){const _0x44abdd=a12_0x1e756e,_0xe2c411=document[_0x44abdd(0x317)](_0x44abdd(0x25a)+_0x1b4ae8),_0x301a05=document[_0x44abdd(0x317)](_0x44abdd(0x38e)+_0x1b4ae8);if(_0xe2c411[_0x44abdd(0x3dc)][_0x44abdd(0x372)]==='table-row'){_0xe2c411['style']['display']=_0x44abdd(0x22d);return;}document['querySelectorAll']('.detail-row')['forEach'](_0x1cdf79=>_0x1cdf79[_0x44abdd(0x3dc)][_0x44abdd(0x372)]='none'),selectedItem=fullList[_0x1b4ae8],_0xe2c411['style'][_0x44abdd(0x372)]=_0x44abdd(0x2ec);const _0x24dd90=selectedItem[_0x44abdd(0x1f2)]||{};let _0x4fc759=0x0,_0x4523e2='';Object['entries'](_0x24dd90)[_0x44abdd(0x25e)](([_0x2fc90f,_0x40afb8])=>{const _0x290fff=_0x44abdd,_0x501fd6=parseInt(_0x40afb8[_0x290fff(0x2d7)]||calculateMinutes(_0x40afb8[_0x290fff(0x214)])||0x0);_0x4fc759+=_0x501fd6,_0x4523e2+=_0x290fff(0x349)+_0x40afb8[_0x290fff(0x383)]['substring'](0x2,0x4)+'.'+_0x40afb8[_0x290fff(0x383)]['substring'](0x4,0x6)+'.'+_0x40afb8[_0x290fff(0x383)][_0x290fff(0x307)](0x6,0x8)+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<td>'+_0x40afb8[_0x290fff(0x214)]+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<td><strong>'+_0x501fd6+_0x290fff(0x396)+selectedItem[_0x290fff(0x2da)]+_0x290fff(0x2c2)+selectedItem[_0x290fff(0x2b2)]+_0x290fff(0x3b7)+_0x2fc90f+_0x290fff(0x1f8)+_0x1b4ae8+'\x22\x20style=\x22background:#e74c3c;\x20width:100%;\x20padding:8px\x200;\x22>❌</button></td>\x0a\x20\x20\x20\x20</tr>';});const _0x8636e2=selectedItem[_0x44abdd(0x3c4)]-_0x4fc759,_0x64ef38=!!selectedItem['isWaived'],_0x40677b=!!selectedItem[_0x44abdd(0x305)]&&!_0x64ef38,_0x29351f=_0x64ef38?_0x44abdd(0x2b7)+selectedItem['studentName']+_0x44abdd(0x3f9):_0x40677b?_0x44abdd(0x352)+(selectedItem[_0x44abdd(0x32c)]||_0x8636e2)+_0x44abdd(0x3ce)+(selectedItem[_0x44abdd(0x3c6)]||0x0)+_0x44abdd(0x347):'<span>📊\x20<strong>'+selectedItem[_0x44abdd(0x2da)]+_0x44abdd(0x301)+_0x4fc759+_0x44abdd(0x33a)+selectedItem[_0x44abdd(0x3c4)]+_0x44abdd(0x221)+_0x8636e2+'분</strong>)</span>',_0x374b71=resolveSubjectDateKey(selectedItem[_0x44abdd(0x2b8)],selectedItem[_0x44abdd(0x2b2)][_0x44abdd(0x300)](/_/g,'\x20'),subjectMinDates)||subjectMinDates[selectedItem[_0x44abdd(0x2b8)]],_0x4857f5=resolveSubjectDateKey(selectedItem[_0x44abdd(0x2b8)],selectedItem['escapedSub'][_0x44abdd(0x300)](/_/g,'\x20'),subjectMaxDates)||subjectMaxDates[selectedItem['subjectName']];let _0xc14f9f='';const _0x3300bf=subjectDaysMap[selectedItem[_0x44abdd(0x2b8)]]||new Set(),_0x12616f=_0x374b71&&_0x4857f5?globalValidDates[_0x44abdd(0x361)](_0x2336cd=>_0x2336cd>=_0x374b71&&_0x2336cd<=_0x4857f5):[];if(_0x12616f[_0x44abdd(0x20b)]>0x0){const _0x5ee6a9=0xa;let _0x3d4f62='';const _0xecfc82=typeof getTodayStrKst===_0x44abdd(0x279)?getTodayStrKst():new Date()[_0x44abdd(0x21b)]()['split']('T')[0x0];for(let _0x8ef1ab=0x0;_0x8ef1ab<_0x12616f[_0x44abdd(0x20b)];_0x8ef1ab+=_0x5ee6a9){const _0x52aa56=_0x12616f['slice'](_0x8ef1ab,_0x8ef1ab+_0x5ee6a9);let _0x5f4f11=_0x44abdd(0x264),_0x1369f9=_0x44abdd(0x264);_0x52aa56[_0x44abdd(0x25e)](_0x2b433d=>{const _0x2a1424=_0x44abdd,_0x15cf42=parseInt(_0x2b433d[_0x2a1424(0x2a2)]('-')[0x1])+'/'+parseInt(_0x2b433d[_0x2a1424(0x2a2)]('-')[0x2]),_0x26fa98=getDayOfWeek(_0x2b433d),_0x113982=_0x3300bf[_0x2a1424(0x20d)](_0x2b433d),_0x3ec3a7=_0x113982?_0x2a1424(0x20f):_0x2a1424(0x390);_0x5f4f11+=_0x2a1424(0x303)+_0x2b433d+_0x2a1424(0x33b)+_0x1b4ae8+_0x2a1424(0x2cb)+_0x3ec3a7+_0x2a1424(0x2b5)+_0x15cf42+'('+_0x26fa98+')</th>';const _0x53ef9e=globalAttendanceData[_0x2b433d]&&globalAttendanceData[_0x2b433d][selectedItem[_0x2a1424(0x2da)]]?globalAttendanceData[_0x2b433d][selectedItem[_0x2a1424(0x2da)]]:null;if(!_0x53ef9e){const _0x52b679=typeof shouldCountMissingAttAsAbsent==='function'?shouldCountMissingAttAsAbsent(_0x2b433d,_0xecfc82):_0x2b433d<=_0xecfc82;_0x52b679?_0x1369f9+=_0x2a1424(0x325)+_0x2b433d+'\x27,\x20'+_0x1b4ae8+_0x2a1424(0x2ea):_0x1369f9+=_0x2a1424(0x404)+_0x2b433d+_0x2a1424(0x33b)+_0x1b4ae8+_0x2a1424(0x210);}else{const _0x51596f=_0x53ef9e[_0x2a1424(0x22f)]||'';let _0x171b3d='bg-attend',_0x43915a='';if(_0x51596f[_0x2a1424(0x28e)]('결석')||_0x51596f==='미편입')_0x171b3d=_0x2a1424(0x37e),_0x43915a='×';else{if(_0x51596f['includes']('출석')||_0x51596f==='정상'||_0x51596f==='')_0x171b3d='bg-attend',_0x43915a='○';else{if(_0x51596f[_0x2a1424(0x28e)]('지각'))_0x171b3d='bg-late',_0x43915a='지';else{if(_0x51596f[_0x2a1424(0x28e)]('조퇴'))_0x171b3d=_0x2a1424(0x2f3),_0x43915a='조';else{if(_0x51596f[_0x2a1424(0x28e)]('외출'))_0x171b3d=_0x2a1424(0x3f7),_0x43915a='외';else{if(_0x51596f['includes']('공가')||_0x51596f[_0x2a1424(0x28e)]('병가'))_0x171b3d=_0x2a1424(0x281),_0x43915a='공';else _0x51596f[_0x2a1424(0x28e)]('휴가')?(_0x171b3d=_0x2a1424(0x281),_0x43915a='휴'):(_0x171b3d=_0x2a1424(0x281),_0x43915a='◎');}}}}}_0x1369f9+=_0x2a1424(0x30d)+_0x171b3d+'\x22\x20onclick=\x22autoFillDate(\x27'+_0x2b433d+_0x2a1424(0x33b)+_0x1b4ae8+_0x2a1424(0x26f)+_0x43915a+_0x2a1424(0x37d);}});for(let _0x551197=_0x52aa56[_0x44abdd(0x20b)];_0x551197<_0x5ee6a9;_0x551197++){_0x5f4f11+=_0x44abdd(0x3d4),_0x1369f9+='<td\x20style=\x22border:\x201px\x20solid\x20#e1e8ed;\x20padding:\x202px\x200;\x22></td>';}_0x5f4f11+='</tr>',_0x1369f9+=_0x44abdd(0x1f5),_0x3d4f62+=_0x5f4f11+_0x1369f9;}_0xc14f9f=_0x44abdd(0x3bb)+selectedItem[_0x44abdd(0x2b8)]+_0x44abdd(0x1fe)+_0x3d4f62+_0x44abdd(0x393);}_0x301a05[_0x44abdd(0x29a)]=_0x44abdd(0x24c)+(_0x40677b?_0x44abdd(0x3e4):'')+(_0x64ef38?'background:#f4f4f4;\x20border-color:#ccc;\x20color:#666;':'')+'\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+_0x29351f+'\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22display:flex;\x20gap:6px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+(_0x64ef38?'<button\x20class=\x22btn-detail\x20dynamic-cancel-waive\x22\x20data-idx=\x22'+_0x1b4ae8+_0x44abdd(0x2fb):'')+_0x44abdd(0x289)+(!_0x64ef38&&(_0x40677b||selectedItem[_0x44abdd(0x3c9)])&&_0x8636e2>0x0?_0x44abdd(0x3e3)+_0x1b4ae8+_0x44abdd(0x234):'')+_0x44abdd(0x2bc)+_0x1b4ae8+_0x44abdd(0x36f)+(_0x4523e2||_0x44abdd(0x3db))+_0x44abdd(0x291)+_0xc14f9f+_0x44abdd(0x1f4)+(!_0x64ef38&&_0x8636e2>0x0?_0x44abdd(0x3d3)+_0x1b4ae8+_0x44abdd(0x22c)+_0x1b4ae8+'\x22\x20data-len=\x228\x22\x20placeholder=\x22예:\x2020260311\x22\x20pattern=\x22\x5cd*\x22>\x0a\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20<div\x20class=\x22input-group\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<label>시작\x20(4자리)</label>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22number\x22\x20id=\x22startTime_'+_0x1b4ae8+_0x44abdd(0x403)+_0x1b4ae8+_0x44abdd(0x25b)+_0x1b4ae8+_0x44abdd(0x2c4)+_0x1b4ae8+_0x44abdd(0x37c)+_0x1b4ae8+_0x44abdd(0x1f8)+_0x1b4ae8+_0x44abdd(0x3f2):_0x44abdd(0x231))+'\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>';}function autoFocusNext(_0x5b39d9,_0x25aa0b,_0x113207){const _0x18406a=a12_0x1e756e;_0x5b39d9[_0x18406a(0x34e)][_0x18406a(0x20b)]>_0x113207&&(_0x5b39d9[_0x18406a(0x34e)]=_0x5b39d9['value'][_0x18406a(0x3f8)](0x0,_0x113207));if(_0x5b39d9[_0x18406a(0x34e)]['length']>=_0x113207){const _0x19f983=_0x5b39d9['id'][_0x18406a(0x2a2)]('_')[0x1],_0xf3bee4=document[_0x18406a(0x317)](_0x25aa0b);if(_0x5b39d9['id']['startsWith']('addDate')){const _0x516ad4=document[_0x18406a(0x317)](_0x18406a(0x3ee)+_0x19f983)[_0x18406a(0x34e)],_0x16c8de=document[_0x18406a(0x317)](_0x18406a(0x35d)+_0x19f983)[_0x18406a(0x34e)];if(_0x516ad4['length']>=0x4&&_0x16c8de[_0x18406a(0x20b)]>=0x4){const _0x24461b=document[_0x18406a(0x317)](_0x18406a(0x267)+_0x19f983);if(_0x24461b){_0x24461b[_0x18406a(0x38a)]();return;}}}else{if(_0x5b39d9['id'][_0x18406a(0x3ad)](_0x18406a(0x3ff))){const _0x1f1677=document[_0x18406a(0x317)](_0x18406a(0x35d)+_0x19f983)[_0x18406a(0x34e)];if(_0x1f1677['length']>=0x4){const _0x4600ee=document['getElementById'](_0x18406a(0x267)+_0x19f983);if(_0x4600ee){_0x4600ee[_0x18406a(0x38a)]();return;}}}}if(_0xf3bee4)_0xf3bee4[_0x18406a(0x38a)]();}}function autoFillDate(_0x5294cf,_0x3690ef){const _0x518624=a12_0x1e756e,_0x37cbbd=_0x5294cf['replace'](/-/g,''),_0x32a9c6=document[_0x518624(0x317)]('addDate_'+_0x3690ef),_0x1fba43=document[_0x518624(0x317)]('startTime_'+_0x3690ef);if(_0x32a9c6){_0x32a9c6['value']=_0x37cbbd;if(_0x1fba43)_0x1fba43[_0x518624(0x38a)]();}}async function saveNewHistory(_0x446f09){const _0x41c90e=a12_0x1e756e;if(!isAdmin){await appAlert(_0x41c90e(0x239));return;}const _0x15e99a=document['getElementById'](_0x41c90e(0x3e2)+_0x446f09),_0x3ec352=_0x15e99a[_0x41c90e(0x34e)][_0x41c90e(0x28f)](),_0x1a50fe=document['getElementById'](_0x41c90e(0x3ee)+_0x446f09)[_0x41c90e(0x34e)]['trim'](),_0x243cb9=document[_0x41c90e(0x317)]('endTime_'+_0x446f09)[_0x41c90e(0x34e)]['trim']();selectedItem=fullList[_0x446f09];if(!/^\d{8}$/[_0x41c90e(0x3a8)](_0x3ec352))return await appAlert(_0x41c90e(0x3c3));if(!/^\d{4}$/[_0x41c90e(0x3a8)](_0x1a50fe)||!/^\d{4}$/['test'](_0x243cb9))return await appAlert(_0x41c90e(0x3af));const _0x4df41a=_0x3ec352[_0x41c90e(0x307)](0x0,0x4)+'-'+_0x3ec352[_0x41c90e(0x307)](0x4,0x6)+'-'+_0x3ec352[_0x41c90e(0x307)](0x6,0x8),_0x158823=resolveSubjectDateKey(selectedItem[_0x41c90e(0x2b8)],selectedItem[_0x41c90e(0x2b2)]['replace'](/_/g,'\x20'),subjectMinDates)||subjectMinDates[selectedItem['subjectName']],_0x3a6e67=resolveSubjectDateKey(selectedItem[_0x41c90e(0x2b8)],selectedItem[_0x41c90e(0x2b2)]['replace'](/_/g,'\x20'),subjectMaxDates)||subjectMaxDates[selectedItem[_0x41c90e(0x2b8)]];if(_0x158823&&_0x3a6e67&&(_0x4df41a<_0x158823||_0x4df41a>_0x3a6e67)){await appAlert('⚠️\x20기간\x20외\x20등록\x20불가!\x0a본\x20과목의\x20수업\x20기간은\x20['+_0x158823+_0x41c90e(0x33d)+_0x3a6e67+_0x41c90e(0x2f8)),_0x15e99a[_0x41c90e(0x34e)]='',_0x15e99a[_0x41c90e(0x38a)]();return;}const _0x5bad37=_0x1a50fe[_0x41c90e(0x307)](0x0,0x2)+':'+_0x1a50fe[_0x41c90e(0x307)](0x2,0x4),_0x5b4756=_0x243cb9[_0x41c90e(0x307)](0x0,0x2)+':'+_0x243cb9[_0x41c90e(0x307)](0x2,0x4),_0x31c5b9=_0x5bad37+'~'+_0x5b4756,_0x1af6eb=calculateMinutes(_0x31c5b9);if(_0x1af6eb<=0x0){await appAlert(_0x41c90e(0x1f9));return;}let _0xde7de4=0x0;Object[_0x41c90e(0x277)](selectedItem[_0x41c90e(0x1f2)]||{})['forEach'](_0x1db48f=>_0xde7de4+=parseInt(_0x1db48f[_0x41c90e(0x2d7)]||calculateMinutes(_0x1db48f[_0x41c90e(0x214)])||0x0));if(_0xde7de4+_0x1af6eb>selectedItem['totalMin']){await appAlert('❌\x20등록\x20실패:\x20총\x20보강시간을\x20초과합니다.');return;}await classDbRef(_0x41c90e(0x2b9)+selectedItem[_0x41c90e(0x2da)]+'/'+selectedItem['escapedSub']+'/'+new Date()[_0x41c90e(0x359)]())['set']({'date':_0x3ec352,'time':_0x31c5b9,'min':_0x1af6eb}),await syncManualMakeupTotal(selectedItem[_0x41c90e(0x2da)],selectedItem[_0x41c90e(0x2b2)]),await appAlert(_0x41c90e(0x335));const _0x40225a=new URL(window['location']['href']);_0x40225a[_0x41c90e(0x2a4)][_0x41c90e(0x2fe)]('openIdx',_0x446f09),window['location'][_0x41c90e(0x322)]=_0x40225a['toString']();}async function deleteHistory(_0x3608bc,_0x48c937,_0x45c3cc,_0x565a8f){const _0x5b1377=a12_0x1e756e;if(!isAdmin){await appAlert('❌\x20권한이\x20없습니다.\x20선생님\x20계정으로\x20인증해\x20주세요.');return;}if(!await appConfirm(_0x5b1377(0x406)))return;await classDbRef(_0x5b1377(0x2b9)+_0x3608bc+'/'+_0x48c937+'/'+_0x45c3cc)[_0x5b1377(0x38d)](),await syncManualMakeupTotal(_0x3608bc,_0x48c937),await appAlert(_0x5b1377(0x2ba));const _0x2ba55c=new URL(window['location']['href']);_0x2ba55c[_0x5b1377(0x2a4)][_0x5b1377(0x2fe)](_0x5b1377(0x3ef),_0x565a8f),window[_0x5b1377(0x3e9)][_0x5b1377(0x322)]=_0x2ba55c[_0x5b1377(0x2c9)]();}function calculateMinutes(_0x5472dc){const _0x5952d6=a12_0x1e756e;try{const _0xe35c2c=_0x5472dc[_0x5952d6(0x2a2)]('~'),_0x386f79=_0xe35c2c[0x0][_0x5952d6(0x2a2)](':'),_0xc5e829=_0xe35c2c[0x1][_0x5952d6(0x2a2)](':');return parseInt(_0xc5e829[0x0])*0x3c+parseInt(_0xc5e829[0x1])-(parseInt(_0x386f79[0x0])*0x3c+parseInt(_0x386f79[0x1]));}catch(_0x518d6f){return 0x0;}}function formatDateString(_0x11bd85){const _0x85f01f=a12_0x1e756e;if(_0x11bd85[_0x85f01f(0x20b)]!==0x8)return _0x11bd85;return _0x11bd85[_0x85f01f(0x307)](0x0,0x4)+'년\x20'+_0x11bd85[_0x85f01f(0x307)](0x4,0x6)+'월\x20'+_0x11bd85[_0x85f01f(0x307)](0x6,0x8)+'일';}function getDayOfWeek(_0x2b8579){const _0x32bdd7=a12_0x1e756e;if(!_0x2b8579||_0x2b8579==='미정')return'';const _0x5a4eb9=['일','월','화','수','목','금','토'],_0x102d9a=_0x2b8579['includes']('-')?_0x2b8579:_0x2b8579[_0x32bdd7(0x307)](0x0,0x4)+'-'+_0x2b8579['substring'](0x4,0x6)+'-'+_0x2b8579[_0x32bdd7(0x307)](0x6,0x8),_0x1b4498=new Date(_0x102d9a)[_0x32bdd7(0x316)]();return _0x5a4eb9[_0x1b4498];}async function processImage(_0x35f6f0,_0x5345fa){const _0x40b8a3=a12_0x1e756e;if(_0x35f6f0[_0x40b8a3(0x3fb)]&&_0x35f6f0[_0x40b8a3(0x3fb)][0x0]){const _0x40cea9=_0x35f6f0['files'][0x0],_0x23cdfe=_0x40cea9[_0x40b8a3(0x3f4)][_0x40b8a3(0x366)](),_0xc045cd=_0x23cdfe[_0x40b8a3(0x2e5)](_0x40b8a3(0x3b6))||_0x23cdfe[_0x40b8a3(0x2e5)](_0x40b8a3(0x341)),_0x5c77c6=_0x713eef=>{const _0x52fa5a=_0x40b8a3,_0x58fc85=new FileReader();_0x58fc85[_0x52fa5a(0x3b3)]=function(_0x9487d1){const _0x5f54e1=_0x52fa5a,_0x1fc9b4=new Image();_0x1fc9b4['onload']=function(){const _0x242f84=a12_0x2915,_0x198ba1=document['createElement'](_0x242f84(0x3d7));let _0x3a6e66=_0x1fc9b4['width'],_0x5ebd87=_0x1fc9b4['height'];const _0x47e5ab=0x3e8;_0x3a6e66>_0x5ebd87?_0x3a6e66>_0x47e5ab&&(_0x5ebd87*=_0x47e5ab/_0x3a6e66,_0x3a6e66=_0x47e5ab):_0x5ebd87>_0x47e5ab&&(_0x3a6e66*=_0x47e5ab/_0x5ebd87,_0x5ebd87=_0x47e5ab),_0x198ba1['width']=_0x3a6e66,_0x198ba1['height']=_0x5ebd87,_0x198ba1[_0x242f84(0x369)]('2d')[_0x242f84(0x1f6)](_0x1fc9b4,0x0,0x0,_0x3a6e66,_0x5ebd87),_0x5345fa(_0x198ba1[_0x242f84(0x2c8)](_0x242f84(0x409),0.8));},_0x1fc9b4[_0x5f54e1(0x282)]=_0x9487d1['target']['result'];},_0x58fc85['readAsDataURL'](_0x713eef);};if(_0xc045cd){if(typeof heic2any===_0x40b8a3(0x36b)){await appAlert('HEIC\x20변환\x20엔진이\x20로드되지\x20않았습니다.\x20인터넷\x20연결을\x20확인해주세요.');return;}heic2any({'blob':_0x40cea9,'toType':_0x40b8a3(0x409),'quality':0.8})[_0x40b8a3(0x2d2)](function(_0x47bca0){_0x5c77c6(_0x47bca0);})[_0x40b8a3(0x2e7)](async function(_0x17f185){const _0x5ecab9=_0x40b8a3;await appAlert(_0x5ecab9(0x2ab)+_0x17f185[_0x5ecab9(0x387)]);});}else _0x5c77c6(_0x40cea9);}}async function openReportView(_0x2d9582){const _0x35b1ae=a12_0x1e756e,_0x3b97d8=document[_0x35b1ae(0x317)](_0x35b1ae(0x3b1));_0x3b97d8['style']['display']='block';const [_0x5a8b20,_0x13d181,_0x50beaa]=_0x2d9582[_0x35b1ae(0x2a2)]('_'),_0x152480=_0x13d181[_0x35b1ae(0x307)](0x0,0x4)+'년\x20'+_0x13d181[_0x35b1ae(0x307)](0x4,0x6)+'월\x20'+_0x13d181[_0x35b1ae(0x307)](0x6,0x8)+'일',_0x37982b=fullList[_0x35b1ae(0x361)](_0x58f116=>{const _0x464288=_0x35b1ae;return Object[_0x464288(0x277)](_0x58f116[_0x464288(0x1f2)]||{})[_0x464288(0x1fc)](_0x4efe86=>_0x4efe86[_0x464288(0x383)]===_0x13d181&&_0x4efe86[_0x464288(0x214)][_0x464288(0x300)](/:/g,'')===_0x50beaa&&_0x58f116['subjectName']===_0x5a8b20);}),_0x45d6ce=_0x37982b[_0x35b1ae(0x36a)](_0x381c76=>_0x381c76[_0x35b1ae(0x2da)]);if(!imageCache['signs']){const _0x21e1fe=await classDbRef(_0x35b1ae(0x288))[_0x35b1ae(0x25d)](_0x35b1ae(0x34e));imageCache[_0x35b1ae(0x399)]=_0x21e1fe[_0x35b1ae(0x1f7)]()||{},console[_0x35b1ae(0x364)](_0x35b1ae(0x353));}else console[_0x35b1ae(0x364)](_0x35b1ae(0x28b));const _0x2aff6b=imageCache[_0x35b1ae(0x399)],_0x2695c1=await classDbRef(_0x35b1ae(0x381))[_0x35b1ae(0x25d)](_0x35b1ae(0x34e)),_0xe9c76c=_0x2695c1[_0x35b1ae(0x1f7)]()||{},_0xf2c9=_0xe9c76c[_0x35b1ae(0x3f4)]||_0x35b1ae(0x3f1),_0x29ada6=_0xe9c76c[_0x35b1ae(0x2c6)]||'기간\x20미설정',_0x167efc=_0xe9c76c[_0x35b1ae(0x225)]||_0x35b1ae(0x405);document[_0x35b1ae(0x319)](_0x35b1ae(0x308))[_0x35b1ae(0x25e)](_0x920c2=>_0x920c2[_0x35b1ae(0x29c)]=_0xf2c9),document[_0x35b1ae(0x319)](_0x35b1ae(0x34c))[_0x35b1ae(0x25e)](_0x2f5159=>_0x2f5159[_0x35b1ae(0x29c)]=_0x5a8b20),document[_0x35b1ae(0x319)](_0x35b1ae(0x22e))[_0x35b1ae(0x25e)](_0x1d511e=>_0x1d511e['innerText']=_0x45d6ce[_0x35b1ae(0x20b)]+'명');const _0x4a3d8c=document[_0x35b1ae(0x317)]('view_table_date_p2');if(_0x4a3d8c)_0x4a3d8c[_0x35b1ae(0x29c)]=_0x152480;const _0x9c3f8f=document[_0x35b1ae(0x317)]('view_table_period');if(_0x9c3f8f){let _0x546e2d=_0x29ada6[_0x35b1ae(0x300)](/-/g,'.');_0x9c3f8f[_0x35b1ae(0x29a)]=_0x546e2d['replace']('~',_0x35b1ae(0x3f5));}const _0x542093=document[_0x35b1ae(0x317)](_0x35b1ae(0x244));if(_0x542093)_0x542093[_0x35b1ae(0x29a)]=_0x152480['replace']('년\x20','년<br>');const _0x24ea5b=document[_0x35b1ae(0x317)](_0x35b1ae(0x2a3));if(_0x24ea5b){let _0xe5e314=_0x50beaa;if(!_0xe5e314[_0x35b1ae(0x28e)](':')&&_0xe5e314[_0x35b1ae(0x28e)]('~')){const _0x396fc6=_0xe5e314[_0x35b1ae(0x2a2)]('~');_0xe5e314=_0x396fc6[0x0][_0x35b1ae(0x307)](0x0,0x2)+':'+_0x396fc6[0x0][_0x35b1ae(0x307)](0x2,0x4)+'~'+_0x396fc6[0x1][_0x35b1ae(0x307)](0x0,0x2)+':'+_0x396fc6[0x1][_0x35b1ae(0x307)](0x2,0x4);}_0x24ea5b['innerHTML']=_0xe5e314[_0x35b1ae(0x300)]('~','<br>~');}const _0x2d7266=document[_0x35b1ae(0x317)](_0x35b1ae(0x2ed));if(_0x2d7266)_0x2d7266[_0x35b1ae(0x29c)]=_0x167efc;const _0x39ebc1=document[_0x35b1ae(0x317)](_0x35b1ae(0x2d0));if(_0x39ebc1)_0x39ebc1[_0x35b1ae(0x29c)]=_0x13d181[_0x35b1ae(0x307)](0x0,0x4)+'.\x20'+_0x13d181['substring'](0x4,0x6)+'.\x20'+_0x13d181[_0x35b1ae(0x307)](0x6,0x8)+'.';const _0x4b38df=document['getElementById'](_0x35b1ae(0x3b5));if(_0x4b38df)_0x4b38df[_0x35b1ae(0x29c)]=_0x35b1ae(0x227)+_0x13d181[_0x35b1ae(0x307)](0x0,0x4)+'-'+_0x13d181['substring'](0x4,0x8);if(!imageCache[_0x35b1ae(0x285)]||!imageCache[_0x35b1ae(0x21c)]){const _0x4feb8f=await masterDatabase[_0x35b1ae(0x28c)](_0x35b1ae(0x2f1))['once'](_0x35b1ae(0x34e)),_0x158297=_0x4feb8f[_0x35b1ae(0x1f7)]()||{};imageCache[_0x35b1ae(0x285)]=_0x158297['docImages']||{},imageCache[_0x35b1ae(0x30a)]=_0x158297['teacherSeals']||{},imageCache[_0x35b1ae(0x21c)]=_0x158297['teacherSigns']||{},console[_0x35b1ae(0x364)]('📡\x20[공용/도장/서명]\x20서버에서\x20마스터\x20부품을\x20가져왔습니다.');}else console[_0x35b1ae(0x364)](_0x35b1ae(0x3e1));const _0x4a2428=imageCache[_0x35b1ae(0x285)],_0xbe5663=imageCache[_0x35b1ae(0x30a)],_0x336f9f=_0x4a2428['makeupBwLogo']?.['imageData'];_0x336f9f&&(document[_0x35b1ae(0x317)]('view_topLogo_L')[_0x35b1ae(0x282)]=_0x336f9f,document[_0x35b1ae(0x317)](_0x35b1ae(0x21e))[_0x35b1ae(0x282)]=_0x336f9f);const _0x44e5f9=_0x4a2428[_0x35b1ae(0x39b)]?.[_0x35b1ae(0x2be)];if(_0x44e5f9)document['getElementById']('view_bottom_logo')[_0x35b1ae(0x282)]=_0x44e5f9;const _0x4312e8=_0x4a2428[_0x35b1ae(0x400)]?.[_0x35b1ae(0x2be)];if(_0x4312e8)document[_0x35b1ae(0x317)]('view_schoolSeal')['src']=_0x4312e8;const _0x208a6f=imageCache[_0x35b1ae(0x21c)],_0x316c57=_0x208a6f[dbClassKey],_0x3953ba=_0x316c57?_0x316c57[_0x35b1ae(0x2be)]:null;let _0x4ba1a5='';const _0x4fb2a9=Math[_0x35b1ae(0x226)](_0x45d6ce[_0x35b1ae(0x20b)],0xc);for(let _0x11e493=0x0;_0x11e493<_0x4fb2a9;_0x11e493++){const _0x49fda1=_0x45d6ce[_0x11e493]||'';let _0x2b1136='';if(_0x49fda1){const _0x3f6b47=_0x37982b[_0x35b1ae(0x255)](_0x3facb8=>_0x3facb8[_0x35b1ae(0x2da)]===_0x49fda1);_0x3f6b47&&_0x3f6b47[_0x35b1ae(0x1f2)]&&Object[_0x35b1ae(0x201)](_0x3f6b47['history'])[_0x35b1ae(0x25e)](([_0x42fd75,_0x2b8310])=>{const _0x9750ac=_0x35b1ae;if(_0x2b8310[_0x9750ac(0x383)]===_0x13d181&&_0x2b8310['time'][_0x9750ac(0x300)](/:/g,'')===_0x50beaa)_0x2b1136=_0x42fd75;});}const _0x4fd513=_0x37982b[0x0]?.[_0x35b1ae(0x2b2)]||'',_0x4ae7de=_0x49fda1&&_0x2b1136?_0x49fda1+'_'+_0x4fd513+'_'+_0x2b1136:'',_0x3ecdcc=_0x4ae7de&&_0x2aff6b[_0x4ae7de]?'<img\x20src=\x22'+_0x2aff6b[_0x4ae7de][_0x35b1ae(0x2be)]+_0x35b1ae(0x243):'',_0x42a948=_0x49fda1&&_0x3953ba?_0x35b1ae(0x30c)+_0x3953ba+_0x35b1ae(0x384):'';_0x4ba1a5+=_0x35b1ae(0x2e6)+(_0x11e493+0x1)+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td\x20style=\x22border:\x201px\x20solid\x20#000;\x20font-size:12pt;\x20text-align:center;\x20vertical-align:middle;\x22><strong>'+_0x49fda1+_0x35b1ae(0x326)+(_0x49fda1?'O':'')+_0x35b1ae(0x1f1)+_0x3ecdcc+_0x35b1ae(0x1f1)+_0x42a948+_0x35b1ae(0x3d6);}document[_0x35b1ae(0x317)](_0x35b1ae(0x2b6))[_0x35b1ae(0x29a)]=_0x4ba1a5;if(!imageCache[_0x35b1ae(0x3c7)][_0x2d9582]){const _0x3da8ee=await classDbRef(_0x35b1ae(0x327)+_0x2d9582)[_0x35b1ae(0x25d)](_0x35b1ae(0x34e));imageCache['reportPhotos'][_0x2d9582]=_0x3da8ee[_0x35b1ae(0x1f7)]()||{},console[_0x35b1ae(0x364)](_0x35b1ae(0x32e)+_0x2d9582+_0x35b1ae(0x40f));}else console[_0x35b1ae(0x364)](_0x35b1ae(0x3dd)+_0x2d9582+_0x35b1ae(0x2a7));const _0x5d802b=imageCache[_0x35b1ae(0x3c7)][_0x2d9582],_0x289d44=document[_0x35b1ae(0x317)](_0x35b1ae(0x37f));_0x289d44&&(_0x289d44['innerText']=_0xf2c9,setTimeout(()=>{const _0x292ad9=_0x35b1ae,_0x21ef26=0x280,_0x285e02=_0x289d44['offsetWidth'];if(_0x285e02>_0x21ef26)_0x289d44[_0x292ad9(0x3dc)][_0x292ad9(0x35e)]=_0x292ad9(0x262)+_0x21ef26/_0x285e02+')';else _0x289d44[_0x292ad9(0x3dc)][_0x292ad9(0x35e)]=_0x292ad9(0x20a);},0x64));let _0x8e4abb=_0x50beaa;if(!_0x8e4abb[_0x35b1ae(0x28e)](':')&&_0x8e4abb[_0x35b1ae(0x28e)]('~')){const _0x160ae5=_0x8e4abb[_0x35b1ae(0x2a2)]('~');_0x8e4abb=_0x160ae5[0x0]['padStart'](0x4,'0')[_0x35b1ae(0x300)](/(\d{2})(\d{2})/,_0x35b1ae(0x408))+'~'+_0x160ae5[0x1][_0x35b1ae(0x3c2)](0x4,'0')[_0x35b1ae(0x300)](/(\d{2})(\d{2})/,_0x35b1ae(0x408));}const _0x371b73=calculateMinutes(_0x8e4abb);_0x8e4abb+='\x20('+(_0x371b73/0x3c)[_0x35b1ae(0x334)](0x0)+'시간)';const _0x379a0b=document[_0x35b1ae(0x317)](_0x35b1ae(0x2ca));if(_0x379a0b)_0x379a0b[_0x35b1ae(0x29c)]='□\x20훈련기간\x20:\x20'+_0x29ada6[_0x35b1ae(0x300)](/-/g,'.');document['getElementById'](_0x35b1ae(0x35a))[_0x35b1ae(0x29c)]=_0x45d6ce['join'](',\x20'),document[_0x35b1ae(0x317)](_0x35b1ae(0x2d8))['innerText']=_0x5a8b20,document[_0x35b1ae(0x317)]('view_photoDate')[_0x35b1ae(0x29c)]=_0x152480,document[_0x35b1ae(0x317)](_0x35b1ae(0x3cb))[_0x35b1ae(0x29c)]=_0x8e4abb;const _0x1b2191=document[_0x35b1ae(0x317)](_0x35b1ae(0x272));_0x1b2191&&(_0x1b2191[_0x35b1ae(0x29c)]=_0xf2c9,setTimeout(()=>{const _0x2fe052=_0x35b1ae,_0x26ab74=0x226,_0x178f7a=_0x1b2191['scrollWidth'];if(_0x178f7a>_0x26ab74)_0x1b2191[_0x2fe052(0x3dc)][_0x2fe052(0x35e)]='scale('+_0x26ab74/_0x178f7a+')';},0x32));const _0x35d484=document['getElementById']('view_img1_p3'),_0x2dab7d=document[_0x35b1ae(0x317)](_0x35b1ae(0x3bc));_0x5d802b[_0x35b1ae(0x292)]?.['imageData']?(_0x35d484[_0x35b1ae(0x282)]=_0x5d802b[_0x35b1ae(0x292)][_0x35b1ae(0x2be)],_0x35d484[_0x35b1ae(0x3dc)]['display']=_0x35b1ae(0x22a),_0x2dab7d[_0x35b1ae(0x3dc)][_0x35b1ae(0x372)]=_0x35b1ae(0x22d)):(_0x35d484['style'][_0x35b1ae(0x372)]=_0x35b1ae(0x22d),_0x2dab7d[_0x35b1ae(0x3dc)][_0x35b1ae(0x372)]='block');const _0x2accb5=document[_0x35b1ae(0x317)]('view_img2_p3'),_0x1cf99b=document[_0x35b1ae(0x317)](_0x35b1ae(0x2d9));_0x5d802b[_0x35b1ae(0x39e)]?.[_0x35b1ae(0x2be)]?(_0x2accb5['src']=_0x5d802b['img2'][_0x35b1ae(0x2be)],_0x2accb5[_0x35b1ae(0x3dc)][_0x35b1ae(0x372)]=_0x35b1ae(0x22a),_0x1cf99b[_0x35b1ae(0x3dc)]['display']=_0x35b1ae(0x22d)):(_0x2accb5[_0x35b1ae(0x3dc)][_0x35b1ae(0x372)]=_0x35b1ae(0x22d),_0x1cf99b['style']['display']='block'),switchReportPage(0x1);}function switchReportPage(_0xe48780){const _0x152d0d=a12_0x1e756e;for(let _0x5350ac=0x1;_0x5350ac<=0x3;_0x5350ac++){const _0x2a7bcf=document[_0x152d0d(0x317)](_0x152d0d(0x211)+_0x5350ac),_0x349d12=document['getElementById'](_0x152d0d(0x3ae)+_0x5350ac);if(_0x2a7bcf)_0x2a7bcf[_0x152d0d(0x3dc)][_0x152d0d(0x372)]=_0x152d0d(0x22d);if(_0x349d12)_0x349d12['classList']['remove'](_0x152d0d(0x3b2));}const _0x3bd89f=document[_0x152d0d(0x317)](_0x152d0d(0x211)+_0xe48780),_0x47555a=document[_0x152d0d(0x317)](_0x152d0d(0x3ae)+_0xe48780);if(_0x3bd89f)_0x3bd89f['style']['display']=_0x152d0d(0x375);if(_0x47555a)_0x47555a[_0x152d0d(0x299)][_0x152d0d(0x2fc)]('active');document['getElementById'](_0x152d0d(0x3b1))[_0x152d0d(0x3df)]=0x0;}function calcMakeupDurationHours(_0x43f52e){const _0x2e9f1c=a12_0x1e756e;try{const _0x39ef63=String(_0x43f52e||'')[_0x2e9f1c(0x300)](/<br>/gi,'')['replace'](/\n/g,'')[_0x2e9f1c(0x28f)](),_0x1df877=_0x39ef63['split']('~');if(_0x1df877['length']<0x2)return 0x0;const _0xdf2126=_0x4514ed=>{const _0x5e280c=_0x2e9f1c,_0x1aa59d=_0x4514ed['replace'](/[^0-9]/g,'');if(_0x1aa59d[_0x5e280c(0x20b)]>=0x4)return parseInt(_0x1aa59d[_0x5e280c(0x307)](0x0,0x2),0xa)*0x3c+parseInt(_0x1aa59d[_0x5e280c(0x307)](0x2,0x4),0xa);const _0x50adeb=_0x4514ed['split'](':');return parseInt(_0x50adeb[0x0],0xa)*0x3c+parseInt(_0x50adeb[0x1]||0x0,0xa);},_0x4e0e9e=_0xdf2126(_0x1df877[0x1])-_0xdf2126(_0x1df877[0x0]);return _0x4e0e9e>0x0?Math[_0x2e9f1c(0x370)](_0x4e0e9e/0x3c):0x0;}catch(_0x2fa13d){return 0x0;}}function buildMakeupReportFileName(_0x395cb4,_0x4beef8,_0x5a078e,_0x3e55e3,_0x47016d){const _0x19dc04=a12_0x1e756e,_0x5bf2a4=String(_0x4beef8||'')[_0x19dc04(0x300)](/[^0-9]/g,'');let _0x5ec07d=_0x19dc04(0x24f);if(_0x5bf2a4[_0x19dc04(0x20b)]>=0x8)_0x5ec07d=_0x5bf2a4['substring'](0x2,0x4)+'.'+_0x5bf2a4[_0x19dc04(0x307)](0x4,0x6)+'.'+_0x5bf2a4[_0x19dc04(0x307)](0x6,0x8);else _0x5bf2a4[_0x19dc04(0x20b)]>=0x6&&(_0x5ec07d=_0x5bf2a4[_0x19dc04(0x307)](0x0,0x2)+'.'+_0x5bf2a4[_0x19dc04(0x307)](0x2,0x4)+'.'+_0x5bf2a4['substring'](0x4,0x6));const _0x510b9a=String(_0x5a078e||'')[_0x19dc04(0x300)](/<br>/gi,'')[_0x19dc04(0x300)](/\n/g,'')[_0x19dc04(0x28f)](),_0x519490=_0x510b9a[_0x19dc04(0x300)](/[:\s]/g,''),_0x72cbce=calcMakeupDurationHours(_0x510b9a),_0x52cbb0=_0x72cbce>0x0?_0x519490+'('+_0x72cbce+'H)':_0x519490,_0x5034cb=_0x3e55e3[_0x19dc04(0x20b)]?_0x3e55e3[_0x19dc04(0x273)](','):'외',_0x5e69cd=_0x47016d||_0x3e55e3[_0x19dc04(0x20b)]+'명';return _0x19dc04(0x355)+_0x5ec07d+_0x19dc04(0x22b)+_0x52cbb0+_0x19dc04(0x22b)+_0x395cb4+']_'+_0x5034cb+'('+_0x5e69cd+')';}function preparePrint(){const _0x5cf62f=a12_0x1e756e,_0x578be1=document[_0x5cf62f(0x254)](_0x5cf62f(0x34c))['innerText']['trim'](),_0x32611e=document[_0x5cf62f(0x317)](_0x5cf62f(0x34d))['innerText'],_0x3d460e=document[_0x5cf62f(0x317)](_0x5cf62f(0x2a3))['innerText'][_0x5cf62f(0x300)](/<br>/gi,'')['replace'](/\n/g,''),_0x419d58=document[_0x5cf62f(0x254)]('.view_student_count')['innerText']['trim'](),_0x4f5dfb=Array[_0x5cf62f(0x391)](document[_0x5cf62f(0x319)](_0x5cf62f(0x2e9)))[_0x5cf62f(0x36a)](_0x3374eb=>_0x3374eb[_0x5cf62f(0x29c)]['trim']())[_0x5cf62f(0x361)](Boolean),_0x2603d4=buildMakeupReportFileName(_0x578be1,_0x32611e,_0x3d460e,_0x4f5dfb,_0x419d58),_0x53bd03=document['title'];document[_0x5cf62f(0x261)]=_0x2603d4;for(let _0x40f45a=0x1;_0x40f45a<=0x3;_0x40f45a++){const _0x4f438b=document[_0x5cf62f(0x317)]('reportPage'+_0x40f45a);_0x4f438b&&(_0x4f438b[_0x5cf62f(0x3dc)][_0x5cf62f(0x372)]=_0x5cf62f(0x375),_0x4f438b[_0x5cf62f(0x3dc)]['visibility']=_0x5cf62f(0x24d));}setTimeout(()=>{const _0x4c6b82=_0x5cf62f;window[_0x4c6b82(0x206)](),document[_0x4c6b82(0x261)]=_0x53bd03;const _0x3d4431=document[_0x4c6b82(0x254)](_0x4c6b82(0x251)),_0x33ffb5=_0x3d4431?_0x3d4431['id']['replace'](_0x4c6b82(0x3ae),''):0x1;switchReportPage(_0x33ffb5);},0xc8);}let isSelectMode=![];async function handleMediaResetClick(){const _0x4f9b23=a12_0x1e756e;if(!isAdmin)return await appAlert(_0x4f9b23(0x24e));if(!isSelectMode){isSelectMode=!![],document[_0x4f9b23(0x317)](_0x4f9b23(0x1f3))[_0x4f9b23(0x29c)]=_0x4f9b23(0x3ea),document['getElementById'](_0x4f9b23(0x1f3))[_0x4f9b23(0x3dc)][_0x4f9b23(0x356)]=_0x4f9b23(0x2c7),document[_0x4f9b23(0x317)](_0x4f9b23(0x3ac))[_0x4f9b23(0x3dc)][_0x4f9b23(0x372)]='inline-block';const _0x16a575=document[_0x4f9b23(0x254)](_0x4f9b23(0x33f)),_0x633b6a=_0x16a575?getSortKeyFromBtn(_0x16a575):'subjectName';renderMainTable(_0x633b6a);}else executeSelectiveReset();}function cancelSelectMode(){const _0x47c8b8=a12_0x1e756e;isSelectMode=![];const _0xa6c555=document[_0x47c8b8(0x317)]('btnResetMedia');_0xa6c555&&(_0xa6c555[_0x47c8b8(0x29c)]=_0x47c8b8(0x350),_0xa6c555[_0x47c8b8(0x3dc)][_0x47c8b8(0x356)]='#e74c3c');const _0x47f198=document[_0x47c8b8(0x317)](_0x47c8b8(0x3ac));if(_0x47f198)_0x47f198[_0x47c8b8(0x3dc)][_0x47c8b8(0x372)]=_0x47c8b8(0x22d);const _0x37436a=document[_0x47c8b8(0x254)](_0x47c8b8(0x33f));renderMainTable(_0x37436a?getSortKeyFromBtn(_0x37436a):_0x47c8b8(0x2b8));}function toggleAllRows(_0x2060d0){const _0x50c9a0=a12_0x1e756e,_0x3f1627=document['querySelectorAll'](_0x50c9a0(0x378));_0x3f1627[_0x50c9a0(0x25e)](_0xd0e8a4=>_0xd0e8a4[_0x50c9a0(0x3b4)]=_0x2060d0['checked']);}function getSortKeyFromBtn(_0x4ddb45){const _0x321308=a12_0x1e756e,_0x2f32d4=_0x4ddb45[_0x321308(0x29c)];if(_0x2f32d4[_0x321308(0x28e)](_0x321308(0x377)))return _0x321308(0x2b8);if(_0x2f32d4[_0x321308(0x28e)](_0x321308(0x2f9)))return'studentName';if(_0x2f32d4[_0x321308(0x28e)]('HRD'))return'hrdDate';if(_0x2f32d4['includes'](_0x321308(0x318)))return'historyTime';if(_0x2f32d4[_0x321308(0x28e)](_0x321308(0x3a4)))return _0x321308(0x392);return _0x321308(0x2b8);}async function executeSelectiveReset(){const _0x2f7b17=a12_0x1e756e,_0x5ee055=document[_0x2f7b17(0x319)](_0x2f7b17(0x259));if(_0x5ee055[_0x2f7b17(0x20b)]===0x0){await appAlert(_0x2f7b17(0x25f));return;}if(!await appConfirm('❗\x20선택한\x20'+_0x5ee055[_0x2f7b17(0x20b)]+_0x2f7b17(0x23f)))return;try{const _0x38b840={};_0x5ee055[_0x2f7b17(0x25e)](_0x2fc939=>{const _0x55a3cd=_0x2f7b17,_0x6a957d=_0x2fc939['getAttribute'](_0x55a3cd(0x29e)),_0x113b3f=_0x2fc939[_0x55a3cd(0x32d)]('data-sign-keys');_0x6a957d&&_0x6a957d!==_0x55a3cd(0x348)&&(_0x38b840[classDbPath(_0x55a3cd(0x327)+_0x6a957d)]=null);if(_0x113b3f){const _0x54ff23=JSON[_0x55a3cd(0x2b0)](_0x113b3f);_0x54ff23[_0x55a3cd(0x25e)](_0x5b6763=>{const _0x21009b=_0x55a3cd;_0x38b840[classDbPath(_0x21009b(0x29b)+_0x5b6763)]=null;});}}),await database[_0x2f7b17(0x28c)]()['update'](_0x38b840),await appAlert(_0x2f7b17(0x34b));const _0x751f77=new URL(window['location'][_0x2f7b17(0x322)]);window[_0x2f7b17(0x3e9)][_0x2f7b17(0x322)]=classNavHref(_0x2f7b17(0x31c),_0x2f7b17(0x232));}catch(_0x1dd1be){await appAlert(_0x2f7b17(0x37a)+_0x1dd1be[_0x2f7b17(0x387)]);}}document[a12_0x1e756e(0x238)](a12_0x1e756e(0x357),()=>{const _0x2ee396=a12_0x1e756e;document[_0x2ee396(0x317)]('btnResetMedia')[_0x2ee396(0x238)](_0x2ee396(0x38c),handleMediaResetClick),document[_0x2ee396(0x317)]('btnCancelSelect')[_0x2ee396(0x238)](_0x2ee396(0x38c),cancelSelectMode),document[_0x2ee396(0x317)](_0x2ee396(0x36c))['addEventListener'](_0x2ee396(0x38c),()=>goToPage(_0x2ee396(0x2ef))),document['getElementById'](_0x2ee396(0x368))[_0x2ee396(0x238)](_0x2ee396(0x38c),()=>goToPage(_0x2ee396(0x363))),document[_0x2ee396(0x317)]('btn_tab_weekly')['addEventListener'](_0x2ee396(0x38c),()=>goToPage(_0x2ee396(0x3fe))),document[_0x2ee396(0x317)](_0x2ee396(0x290))[_0x2ee396(0x238)](_0x2ee396(0x38c),()=>renderMainTable(_0x2ee396(0x2b8))),document[_0x2ee396(0x317)](_0x2ee396(0x39a))[_0x2ee396(0x238)]('click',()=>renderMainTable(_0x2ee396(0x2da))),document[_0x2ee396(0x317)]('btn_sort_hrd')['addEventListener'](_0x2ee396(0x38c),()=>renderMainTable('hrdDate')),document[_0x2ee396(0x317)](_0x2ee396(0x33c))['addEventListener']('click',()=>renderMainTable('historyTime')),document[_0x2ee396(0x317)](_0x2ee396(0x21a))[_0x2ee396(0x238)](_0x2ee396(0x38c),()=>renderMainTable('reportMode')),document[_0x2ee396(0x317)](_0x2ee396(0x27b))[_0x2ee396(0x238)](_0x2ee396(0x38c),clearSign),document[_0x2ee396(0x317)](_0x2ee396(0x236))[_0x2ee396(0x238)]('click',saveDigitalSign),document[_0x2ee396(0x317)](_0x2ee396(0x380))['addEventListener'](_0x2ee396(0x38c),closeSignModal),document['getElementById'](_0x2ee396(0x3d8))['addEventListener']('click',()=>switchReportPage(0x1)),document[_0x2ee396(0x317)](_0x2ee396(0x256))[_0x2ee396(0x238)](_0x2ee396(0x38c),()=>switchReportPage(0x2)),document[_0x2ee396(0x317)](_0x2ee396(0x252))[_0x2ee396(0x238)]('click',()=>switchReportPage(0x3)),document[_0x2ee396(0x317)](_0x2ee396(0x26a))['addEventListener'](_0x2ee396(0x38c),preparePrint),document['getElementById'](_0x2ee396(0x220))[_0x2ee396(0x238)](_0x2ee396(0x38c),()=>document[_0x2ee396(0x317)](_0x2ee396(0x3b1))[_0x2ee396(0x3dc)][_0x2ee396(0x372)]=_0x2ee396(0x22d));const _0x5c7dde=document['getElementById'](_0x2ee396(0x3b1));_0x5c7dde[_0x2ee396(0x238)](_0x2ee396(0x38c),_0x56a50f=>{const _0xec70e6=_0x2ee396;if(_0x56a50f[_0xec70e6(0x3b8)]===_0x5c7dde)_0x5c7dde[_0xec70e6(0x3dc)][_0xec70e6(0x372)]='none';}),document[_0x2ee396(0x317)](_0x2ee396(0x3f6))['addEventListener'](_0x2ee396(0x38c),function(_0x1394a3){const _0x713eb8=_0x2ee396,_0x3c34e8=_0x1394a3[_0x713eb8(0x3b8)][_0x713eb8(0x2e4)](_0x713eb8(0x203)),_0x2e0f20=_0x1394a3[_0x713eb8(0x3b8)][_0x713eb8(0x2e4)]('.dynamic-open-report'),_0x581855=_0x1394a3[_0x713eb8(0x3b8)][_0x713eb8(0x2e4)](_0x713eb8(0x3d5)),_0x385e96=_0x1394a3[_0x713eb8(0x3b8)][_0x713eb8(0x2e4)](_0x713eb8(0x362)),_0x514ddf=_0x1394a3[_0x713eb8(0x3b8)][_0x713eb8(0x2e4)](_0x713eb8(0x321)),_0x43f689=_0x1394a3['target'][_0x713eb8(0x2e4)](_0x713eb8(0x40b)),_0xaefb41=_0x1394a3[_0x713eb8(0x3b8)][_0x713eb8(0x2e4)](_0x713eb8(0x3e5)),_0x377a90=_0x1394a3['target'][_0x713eb8(0x2e4)]('.dynamic-cancel-waive');if(_0x3c34e8)toggleStudentDetail(_0x3c34e8[_0x713eb8(0x32d)](_0x713eb8(0x2fd)));else{if(_0xaefb41)waiveMakeup(parseInt(_0xaefb41[_0x713eb8(0x32d)](_0x713eb8(0x2fd))));else{if(_0x377a90)cancelWaiveMakeup(parseInt(_0x377a90[_0x713eb8(0x32d)](_0x713eb8(0x2fd))));else{if(_0x2e0f20)openReportView(_0x2e0f20[_0x713eb8(0x32d)](_0x713eb8(0x26d)));else{if(_0x581855)triggerSignUpload(_0x581855[_0x713eb8(0x32d)](_0x713eb8(0x209)),_0x581855[_0x713eb8(0x32d)](_0x713eb8(0x320)));else{if(_0x385e96)triggerUpload(_0x385e96[_0x713eb8(0x32d)](_0x713eb8(0x26d)),_0x385e96[_0x713eb8(0x32d)](_0x713eb8(0x27f)));else{if(_0x514ddf)saveNewHistory(_0x514ddf[_0x713eb8(0x32d)](_0x713eb8(0x2fd)));else{if(_0x43f689)deleteHistory(_0x43f689[_0x713eb8(0x32d)](_0x713eb8(0x320)),_0x43f689[_0x713eb8(0x32d)]('data-sub'),_0x43f689[_0x713eb8(0x32d)](_0x713eb8(0x309)),_0x43f689[_0x713eb8(0x32d)](_0x713eb8(0x2fd)));else _0x1394a3['target']['type']===_0x713eb8(0x205)&&_0x1394a3[_0x713eb8(0x3b8)][_0x713eb8(0x302)](_0x713eb8(0x358))&&_0x1394a3[_0x713eb8(0x3b8)][_0x713eb8(0x32d)](_0x713eb8(0x358))[_0x713eb8(0x28e)](_0x713eb8(0x215))&&(toggleAllRows(_0x1394a3['target']),_0x1394a3['target'][_0x713eb8(0x394)](_0x713eb8(0x358)));}}}}}}}}),document[_0x2ee396(0x317)](_0x2ee396(0x3f6))[_0x2ee396(0x238)]('change',function(_0x560682){const _0x5859a6=_0x2ee396,_0x3fb68e=_0x560682[_0x5859a6(0x3b8)];_0x3fb68e[_0x5859a6(0x299)]['contains'](_0x5859a6(0x40d))&&uploadPhoto(_0x3fb68e[_0x5859a6(0x32d)](_0x5859a6(0x26d)),_0x3fb68e[_0x5859a6(0x32d)](_0x5859a6(0x27f)),_0x3fb68e);}),document[_0x2ee396(0x317)](_0x2ee396(0x3f6))[_0x2ee396(0x238)]('input',function(_0x1ec2fd){const _0x3e3bd3=_0x2ee396,_0x442933=_0x1ec2fd[_0x3e3bd3(0x3b8)];_0x442933[_0x3e3bd3(0x299)][_0x3e3bd3(0x312)](_0x3e3bd3(0x246))&&autoFocusNext(_0x442933,_0x442933[_0x3e3bd3(0x32d)](_0x3e3bd3(0x2a8)),parseInt(_0x442933[_0x3e3bd3(0x32d)](_0x3e3bd3(0x373))));});});
+
+    const storedConfig = localStorage.getItem('firebaseConfig');
+    const firebaseConfig = storedConfig ? JSON.parse(storedConfig) : null;
+
+    const urlParams = new URLSearchParams(window.location.search);
+    let currentClass = urlParams.get('class') || "테스트";
+    
+    // 2. [정밀 수리] 반 이름표 보정 (701 -> 701반)
+    let dbClassKey = currentClass; 
+    if (dbClassKey !== "테스트" && !dbClassKey.includes("반")) {
+        dbClassKey = dbClassKey + "반"; 
+    }
+
+    // 3. 엔진 가동 안전장치
+    if (!firebaseConfig) { (async () => { await appAlert("학급 설정 정보가 없습니다. 다시 로그인해 주세요."); location.href = '../index.html'; })(); }
+
+    // 4. 메인 엔진 및 마스터 엔진 배선
+    const masterConfig = {
+        apiKey: "AIzaSyDnADuHu0mq4GIlqBm_VHfv7y6RarabGhU",
+        databaseURL: "https://busan-teacher-workall-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "busan-teacher-workall"
+    };
+
+    if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
+    const database = firebase.database();
+    initClassContext();
+    currentClass = window.currentClass;
+
+    const masterApp = !firebase.apps.find(app => app.name === "masterApp") 
+        ? firebase.initializeApp(masterConfig, "masterApp") 
+        : firebase.app("masterApp");
+    const masterDatabase = masterApp.database();
+    const auth = firebase.auth();
+
+    // 나머지 전역 변수 설정
+    document.getElementById('dispClass').innerText = formatClassHudText();
+    document.getElementById('backMain').href = classNavHref("index1.html");
+
+    let fullList = [];
+    let subjectMaxDates = {};
+    let subjectMinDates = {}; 
+    let selectedItem = null;
+    let isAdmin = false;
+    let imageCache = {
+        common: null,
+        teacherSeals: null,
+        teacherSigns: null, // 👈 [신규] 담임 서명 보관소 추가
+        signs: null,
+        reportPhotos: {}
+    };
+    // 📍 [추가/수정 배선] 출결 데이터 캐시 및 전체/과목별 진행일자 보관소
+    let globalAttendanceData = {};
+    let subjectDaysMap = {};
+    let globalValidDates = []; // 전체 훈련일자 보관 통
+    let rawTimetableData = [];
+    let masterSubjectList = [];
+    let ncsList = [];
+    let studentNames = [];
+    let dropoutData = {};
+    let earlyCompletionData = {};
+    let globalMakeupWaivers = {};
+    let evaluationDates = { subject: {}, ncs: {} };
+    let defaultViewMode = localStorage.getItem(classStorageKey('defaultViewMode')) || 'subject';
+    let globalManualData = {};
+    let globalHistoryData = {};
+
+function getStudentLeaveDate(name) {
+    if (dropoutData[name]) return dropoutData[name];
+    if (earlyCompletionData[name]) return earlyCompletionData[name];
+    return null;
+}
+
+function isStudentLeaveOnOrBefore(name, cutoffDate) {
+    const leaveDate = getStudentLeaveDate(name);
+    return !!(leaveDate && leaveDate <= cutoffDate);
+}
+
+function isDateOnOrAfterStudentLeave(name, date) {
+    const leaveDate = getStudentLeaveDate(name);
+    return !!(leaveDate && date >= leaveDate);
+}
+
+function hasMakeupWaiver(waivers, studentName, escapedSub) {
+    const waiver = waivers[studentName]?.[escapedSub];
+    return !!(waiver && (waiver.waived === true || waiver === true));
+}
+
+function ultraClean(str) {
+    return String(str || "")
+        .replace(/^[\[\]\d\w\s\-_.]+?(?=[가-힣])/, "")
+        .trim();
+}
+
+function getFixDate(rawDate) {
+    if (!rawDate) return "";
+    let s = String(rawDate).trim().replace(/\./g, '-');
+    if (s.includes('/')) {
+        const p = s.split('/');
+        if (p.length === 3) {
+            const year = p[2].length === 2 ? "20" + p[2] : p[2];
+            s = `${year}-${p[0].padStart(2, '0')}-${p[1].padStart(2, '0')}`;
+        }
+    }
+    if (/^\d{4}-\d{2}-\d{2}/.test(s)) return s.substring(0, 10);
+    const dateObj = new Date(s);
+    if (!isNaN(dateObj.getTime())) return dateObj.toISOString().split('T')[0];
+    return s.substring(0, 10);
+}
+
+function resolveSubjectDateKey(subjectName, rawSubjectKey, dateMap) {
+    if (dateMap[subjectName]) return dateMap[subjectName];
+    if (dateMap[rawSubjectKey]) return dateMap[rawSubjectKey];
+    const clean = ultraClean(rawSubjectKey);
+    if (dateMap[clean]) return dateMap[clean];
+    for (const k in dateMap) {
+        if (k.includes(subjectName) || subjectName.includes(k)) return dateMap[k];
+    }
+    return null;
+}
+
+function calculateParticipationForMakeup(date, inTime, outTime, targetSub, leaveTime, returnTime, mode) {
+    if (!inTime || !outTime || inTime.startsWith("00")) return { am: 0, pm: 0 };
+
+    const scheds = rawTimetableData.filter(r => {
+        const rowVal = (mode === 'subject') ? String(r.교과목 || "") : String(r.능력단위 || "");
+        return getFixDate(r.날짜) === date && rowVal.replace(/\s+/g, "") === String(targetSub).replace(/\s+/g, "");
+    });
+
+    let am = 0, pm = 0;
+    const toMin = (t) => {
+        if (!t || !String(t).includes(':')) return 0;
+        const p = t.split(':');
+        return parseInt(p[0]) * 60 + parseInt(p[1]);
+    };
+    const sIn = toMin(inTime), sOut = toMin(outTime), lIn = toMin(leaveTime), rIn = toMin(returnTime);
+    const lunchS = 13 * 60, lunchE = 13 * 60 + 30;
+
+    scheds.forEach(s => {
+        let timeStr = String(s.시간 || s.교육시간 || "").replace(/\s/g, "");
+        let parts = timeStr.split(/[~-]/);
+        if (parts.length >= 2) {
+            let start = toMin(parts[0]), end = toMin(parts[1]) + 10;
+            let actualStart = Math.max(sIn, start), actualEnd = Math.min(sOut, end);
+            let dur = Math.max(0, actualEnd - actualStart);
+            const overlapLunch = Math.max(0, Math.min(actualEnd, lunchE) - Math.max(actualStart, lunchS));
+            dur -= overlapLunch;
+            if (lIn > 0 && rIn > 0) {
+                const overlapOut = Math.max(0, Math.min(rIn, actualEnd) - Math.max(lIn, actualStart));
+                const outLunch = Math.max(0, Math.min(rIn, lunchE, actualEnd) - Math.max(lIn, lunchS, actualStart));
+                dur -= (overlapOut - outLunch);
+            }
+            const p = String(s.교시).trim();
+            if (['1', '2', '3', '4'].includes(p)) am += dur;
+            else if (['5', '6', '7', '8'].includes(p)) pm += dur;
+        }
+    });
+    return { am: Math.round(am), pm: Math.round(pm) };
+}
+
+function buildMakeupNeedList(includeWaived = false) {
+    const needs = [];
+    const currentMode = defaultViewMode === 'ncs' ? 'ncs' : 'subject';
+    const targetBaseList = currentMode === 'subject' ? masterSubjectList : ncsList;
+
+    targetBaseList.forEach(item => {
+        const subDates = [...new Set(rawTimetableData.filter(r => {
+            const targetVal = currentMode === 'subject' ? String(r.교과목 || "") : String(r.능력단위 || "");
+            return targetVal.trim() === item;
+        }).map(r => getFixDate(r.날짜)))].filter(Boolean).sort();
+        if (!subDates.length) return;
+
+        const escapedItem = item.replace(/[\.\#\$\/\[\]]/g, "_");
+        let masterTotalMin = 0;
+        const dateSchedules = {};
+        subDates.forEach(date => {
+            dateSchedules[date] = calculateParticipationForMakeup(date, "09:00", "17:30", item, "", "", currentMode);
+            masterTotalMin += (dateSchedules[date].am + dateSchedules[date].pm);
+        });
+        if (masterTotalMin <= 0) return;
+
+        let targetCutoffDate = subDates[subDates.length - 1];
+        const evalDatesObj = evaluationDates[currentMode] || {};
+        for (const [eDate, eData] of Object.entries(evalDatesObj)) {
+            const eSubs = eData.subjects || "";
+            const cleanItem = currentMode === 'ncs' ? item.replace(/\[.*?\]/g, '').trim() : item;
+            if (eSubs.includes(cleanItem) || eSubs.includes(item)) {
+                targetCutoffDate = eDate;
+                break;
+            }
+        }
+
+        const displayTitle = currentMode === 'ncs' ? item.replace(/\[.*?\]/g, '').trim() : item;
+
+        for (const name of studentNames) {
+            const isSubjectDropout = isStudentLeaveOnOrBefore(name, targetCutoffDate);
+            if (isSubjectDropout) continue;
+            if (!includeWaived && hasMakeupWaiver(globalMakeupWaivers, name, escapedItem)) continue;
+
+            let studentMakeupMin = 0;
+            if (globalManualData[name] && globalManualData[name][`makeup_${escapedItem}`] > 0) {
+                studentMakeupMin = parseInt(globalManualData[name][`makeup_${escapedItem}`]) || 0;
+            }
+
+            let projectedMin = 0;
+            subDates.forEach(date => {
+                const isDropout = isDateOnOrAfterStudentLeave(name, date);
+                if (isDropout) return;
+
+                const isFuture = !globalAttendanceData[date];
+                if (isFuture) {
+                    projectedMin += (dateSchedules[date].am + dateSchedules[date].pm);
+                } else {
+                    const att = (globalAttendanceData[date] && globalAttendanceData[date][name]) ? globalAttendanceData[date][name] : null;
+                    let calc = { am: 0, pm: 0 };
+                    if (att && att.inTime && att.outTime) {
+                        calc = calculateParticipationForMakeup(date, att.inTime, att.outTime, item, att.leaveTime || "", att.returnTime || "", currentMode);
+                    }
+                    if (globalManualData[name] && globalManualData[name][date]) {
+                        if (globalManualData[name][date].am !== undefined) calc.am = globalManualData[name][date].am;
+                        if (globalManualData[name][date].pm !== undefined) calc.pm = globalManualData[name][date].pm;
+                    }
+                    projectedMin += (calc.am + calc.pm);
+                }
+            });
+
+            const percent = ((projectedMin + studentMakeupMin) / masterTotalMin) * 100;
+            if (percent >= 75) continue;
+
+            const requiredTotalMin = Math.max(1, Math.ceil(0.75 * masterTotalMin - projectedMin));
+            const remainingMin = Math.max(1, Math.ceil(0.75 * masterTotalMin - projectedMin - studentMakeupMin));
+
+            needs.push({
+                studentName: name,
+                subjectName: displayTitle,
+                rawSubjectKey: item,
+                escapedSub: escapedItem,
+                requiredTotalMin,
+                remainingMin,
+                projectedPercent: Math.round(percent * 10) / 10
+            });
+        }
+    });
+
+    return needs;
+}
+
+function resolveSubjectNameFromEscaped(escapedSub) {
+    const escapeKey = (key) => String(key || "").replace(/[\.\#\$\/\[\]]/g, "_");
+    const lists = [...masterSubjectList, ...ncsList];
+    for (const item of lists) {
+        if (escapeKey(item) === escapedSub) {
+            return defaultViewMode === 'ncs' ? item.replace(/\[.*?\]/g, '').trim() : item;
+        }
+    }
+    for (const r of rawTimetableData) {
+        for (const field of [r.교과목, r.능력단위]) {
+            if (!field) continue;
+            const trimmed = String(field).trim();
+            if (escapeKey(trimmed) === escapedSub) return ultraClean(trimmed);
+        }
+    }
+    return escapedSub.replace(/_/g, ' ');
+}
+
+function mergeWaivedItemsIntoFullList() {
+    const needByKey = {};
+    buildMakeupNeedList(true).forEach(need => {
+        needByKey[`${need.studentName}__${need.escapedSub}`] = need;
+    });
+
+    Object.entries(globalMakeupWaivers || {}).forEach(([studentName, subs]) => {
+        Object.entries(subs || {}).forEach(([escapedSub, waiverInfo]) => {
+            if (!hasMakeupWaiver(globalMakeupWaivers, studentName, escapedSub)) return;
+            const key = `${studentName}__${escapedSub}`;
+            if (fullList.some(i => `${i.studentName}__${i.escapedSub}` === key)) return;
+
+            const need = needByKey[key];
+            const history = (globalHistoryData[studentName] && globalHistoryData[studentName][escapedSub])
+                ? globalHistoryData[studentName][escapedSub] : {};
+            const subjectName = need?.subjectName || resolveSubjectNameFromEscaped(escapedSub);
+            const manualMin = parseInt(globalManualData[studentName]?.[`makeup_${escapedSub}`]) || 0;
+
+            fullList.push({
+                studentName,
+                subjectName,
+                escapedSub,
+                hrdDate: need
+                    ? (resolveSubjectDateKey(need.subjectName, need.rawSubjectKey, subjectMaxDates) || "미정")
+                    : (subjectMaxDates[subjectName] || "미정"),
+                totalMin: need?.requiredTotalMin || manualMin || 0,
+                requiredMin: need?.remainingMin || 0,
+                requiredTotalMin: need?.requiredTotalMin || manualMin || 0,
+                projectedPercent: need?.projectedPercent ?? null,
+                history,
+                needsMakeup: false,
+                isPending: false,
+                isWaived: true,
+                waivedAt: (waiverInfo && waiverInfo.waivedAt) || null
+            });
+        });
+    });
+}
+
+function mergeMakeupNeedsIntoFullList() {
+    const needList = buildMakeupNeedList();
+    const existingKeys = new Set(fullList.map(i => `${i.studentName}__${i.escapedSub}`));
+
+    needList.forEach(need => {
+        const key = `${need.studentName}__${need.escapedSub}`;
+        if (hasMakeupWaiver(globalMakeupWaivers, need.studentName, need.escapedSub)) return;
+        const history = (globalHistoryData[need.studentName] && globalHistoryData[need.studentName][need.escapedSub])
+            ? globalHistoryData[need.studentName][need.escapedSub] : {};
+        const hasHistory = Object.keys(history).length > 0;
+
+        if (existingKeys.has(key)) {
+            const existing = fullList.find(i => `${i.studentName}__${i.escapedSub}` === key);
+            existing.needsMakeup = true;
+            existing.requiredMin = need.remainingMin;
+            existing.requiredTotalMin = need.requiredTotalMin;
+            existing.projectedPercent = need.projectedPercent;
+            existing.isPending = !hasHistory;
+            if (!existing.totalMin || existing.totalMin < need.requiredTotalMin) {
+                existing.totalMin = need.requiredTotalMin;
+            }
+            return;
+        }
+
+        fullList.push({
+            studentName: need.studentName,
+            subjectName: need.subjectName,
+            escapedSub: need.escapedSub,
+            hrdDate: resolveSubjectDateKey(need.subjectName, need.rawSubjectKey, subjectMaxDates) || "미정",
+            totalMin: need.requiredTotalMin,
+            requiredMin: need.remainingMin,
+            requiredTotalMin: need.requiredTotalMin,
+            projectedPercent: need.projectedPercent,
+            history: history,
+            needsMakeup: true,
+            isPending: !hasHistory
+        });
+    });
+}
+
+function applyMakeupWaiverFlags() {
+    fullList.forEach(item => {
+        item.isWaived = hasMakeupWaiver(globalMakeupWaivers, item.studentName, item.escapedSub);
+        if (item.isWaived) {
+            item.isPending = false;
+            item.needsMakeup = false;
+        }
+    });
+}
+
+async function saveMakeupWaiver(studentName, escapedSub) {
+    const today = new Date().toISOString().split('T')[0];
+    await classDbRef(`makeupWaivers/${studentName}/${escapedSub}`).set({
+        waived: true,
+        waivedAt: today
+    });
+    if (!globalMakeupWaivers[studentName]) globalMakeupWaivers[studentName] = {};
+    globalMakeupWaivers[studentName][escapedSub] = { waived: true, waivedAt: today };
+}
+
+async function cancelMakeupWaiver(studentName, escapedSub) {
+    await classDbRef(`makeupWaivers/${studentName}/${escapedSub}`).remove();
+    if (globalMakeupWaivers[studentName]) {
+        delete globalMakeupWaivers[studentName][escapedSub];
+    }
+}
+
+async function waiveMakeup(idx) {
+    if (!isAdmin) return await appAlert("❌ 권한이 없습니다. 관리자 로그인이 필요합니다.");
+    const item = fullList[idx];
+    if (!item) return;
+    if (!await appConfirm(`[${item.studentName}] · [${item.subjectName}]\n보강을 포기 처리하시겠습니까?\n(알림 센터에서는 제외되며, 목록에는 '보강 포기'로 남습니다.)`)) return;
+    await saveMakeupWaiver(item.studentName, item.escapedSub);
+    mergeWaivedItemsIntoFullList();
+    applyMakeupWaiverFlags();
+    const sortKey = urlParams.get('sort') || 'subjectName';
+    renderMainTable(sortKey);
+    await appAlert("✅ 보강 포기 처리되었습니다.");
+}
+
+async function cancelWaiveMakeup(idx) {
+    if (!isAdmin) return await appAlert("❌ 권한이 없습니다. 관리자 로그인이 필요합니다.");
+    const item = fullList[idx];
+    if (!item) return;
+    if (!await appConfirm(`[${item.studentName}] · [${item.subjectName}]\n보강 포기를 취소하시겠습니까?`)) return;
+    await cancelMakeupWaiver(item.studentName, item.escapedSub);
+    mergeMakeupNeedsIntoFullList();
+    applyMakeupWaiverFlags();
+    const sortKey = urlParams.get('sort') || 'subjectName';
+    renderMainTable(sortKey);
+    const newIdx = fullList.findIndex(i => i.studentName === item.studentName && i.escapedSub === item.escapedSub);
+    if (newIdx >= 0) toggleStudentDetail(newIdx);
+    await appAlert("✅ 보강 포기가 취소되었습니다.");
+}
+
+async function syncManualMakeupTotal(studentName, escapedSub) {
+    const snap = await classDbRef(`makeupDetails/${studentName}/${escapedSub}`).once('value');
+    const history = snap.val() || {};
+    let sum = 0;
+    Object.values(history).forEach(h => {
+        sum += parseInt(h.min || calculateMinutes(h.time) || 0);
+    });
+    await classDbRef(`manualAttendance/${studentName}`).update({
+        [`makeup_${escapedSub}`]: sum
+    });
+    if (globalManualData[studentName]) {
+        globalManualData[studentName][`makeup_${escapedSub}`] = sum;
+    } else {
+        globalManualData[studentName] = { [`makeup_${escapedSub}`]: sum };
+    }
+    return sum;
+}
+
+auth.onAuthStateChanged(async (user) => {
+    // 브라우저 저장소에서 관리자 비밀번호를 꺼내옵니다. (기존 adminPw 변수 대체)
+    const savedPw = localStorage.getItem('adminPw');
+    
+    if (user) {
+        // ✅ 1번 케이스: 이미 로그인 된 상태 (세션 유지)
+        isAdmin = true;
+        console.log(`🔒 보안 인증 확인됨: ${user.projectId || 'busan-teacher-workall'}`);
+        
+        // 보고서 모드 버튼이 있다면 화면에 표시 (정비소 특수 공구함 개봉)
+        const reportBtn = document.getElementById('btnReportMode');
+        if(reportBtn) reportBtn.style.display = 'inline-block';
+        
+        // 🚀 최종 시동
+        initialize(); 
+    } else if (savedPw) {
+        // 🔑 2번 케이스: 로그인은 안 되어 있지만 저장된 비밀번호가 있는 경우 (자동 로그인 시도)
+        auth.signInWithEmailAndPassword('ghlwns0201@naver.com', savedPw)
+            .then((result) => { 
+                isAdmin = true;
+                console.log("🔒 보안 인증 실시간 복구 완료");
+                
+                const reportBtn = document.getElementById('btnReportMode');
+                if(reportBtn) reportBtn.style.display = 'inline-block';
+                
+                // 🚀 최종 시동
+                initialize(); 
+            })
+            .catch(async (err) => {
+                console.error("❌ 자동 인증 실패:", err);
+                await appAlert("인증 정보가 만료되었습니다. 다시 로그인해주세요.");
+                location.href = '../index.html'; // 인증 실패 시 퇴거
+            });
+    } else {
+        // ⚠️ 3번 케이스: 인증 정보가 전혀 없는 경우 (무단 접근)
+        console.log("⚠️ 무단 접근 감지: 인증 데이터 없음");
+        await appAlert("보안 인증이 필요한 페이지입니다.");
+        location.href = '../index.html'; // 즉시 퇴거
+    }
+});
+
+function goToPage(mode) {
+    let target = classNavHref('능력단위시간표.html');
+    if (mode === 'main') target += '&mode=main';
+    else if (mode === 'calendar') target += '&mode=calendar';
+    else if (mode === 'weekly') target += '&mode=weekly';
+    location.href = target;
+}
+
+async function initialize() {
+    // 📍 [연비 원칙] 데이터를 한 번만 불러와 저장소에 보관
+    const cacheKey = classStorageKey('cache_attendance');
+    const cachedData = localStorage.getItem(cacheKey);
+    if (cachedData) {
+        globalAttendanceData = JSON.parse(cachedData);
+        console.log("⚡ [연비모드] 로컬 출결 데이터를 즉시 불러왔습니다.");
+    }
+
+    const [timetableSnap, manualSnap, historySnap, attSnap, masterSnap, dropoutSnap, earlySnap, waiverSnap, evalSnap, userConfigSnap] = await Promise.all([
+        classDbRef('fullTimetable').once('value'),
+        classDbRef('manualAttendance').once('value'),
+        classDbRef('makeupDetails').once('value'),
+        classDbRef('dailyAttendance').once('value'),
+        classDbRef('masterData').once('value'),
+        classDbRef('dropouts').once('value'),
+        classDbRef('earlyCompletions').once('value'),
+        classDbRef('makeupWaivers').once('value'),
+        classDbRef('evaluationDates').once('value'),
+        classDbRef('userConfig/defaultView').once('value')
+    ]);
+
+    if (attSnap.exists()) {
+        globalAttendanceData = attSnap.val();
+        localStorage.setItem(cacheKey, JSON.stringify(globalAttendanceData));
+    }
+
+    const timetableVal = timetableSnap.val() || [];
+    rawTimetableData = Array.isArray(timetableVal) ? timetableVal : Object.values(timetableVal);
+    const timetable = rawTimetableData;
+    
+    const masterData = masterSnap.val() || {};
+    dropoutData = dropoutSnap.val() || {};
+    earlyCompletionData = earlySnap.val() || {};
+    globalMakeupWaivers = waiverSnap.val() || {};
+    const rawEval = evalSnap.val() || {};
+    evaluationDates = {
+        subject: rawEval.subject || {},
+        ncs: rawEval.ncs || {}
+    };
+    const dbViewMode = userConfigSnap.val();
+    if (dbViewMode === 'subject' || dbViewMode === 'ncs') {
+        defaultViewMode = dbViewMode;
+        localStorage.setItem(classStorageKey('defaultViewMode'), dbViewMode);
+    }
+    if (masterData.courses) {
+        masterSubjectList = [...new Set(masterData.courses.map(c => c.subject).filter(Boolean))];
+        ncsList = [...new Set(masterData.courses.filter(c => c.unit).map(c => c.unit))];
+    }
+
+    let allStudents = new Set();
+    Object.values(globalAttendanceData).forEach(dayData => {
+        Object.keys(dayData || {}).forEach(name => {
+            if (name !== "_metadata") allStudents.add(name);
+        });
+    });
+    studentNames = Array.from(allStudents).sort();
+    if (!studentNames.length) studentNames = ["훈련생"];
+    
+    subjectMaxDates = {};
+    subjectMinDates = {}; 
+    subjectDaysMap = {}; 
+    let tempAllDates = new Set(); // 📍 전체 훈련일자 수집용 통
+
+    const ultraCleanLocal = ultraClean;
+
+    // 1. 시간표 스캔
+    timetable.forEach(r => {
+        const rawDate = String(r.날짜 || "").replace(/\./g, '-').trim();
+        if (!rawDate) return;
+        const dateObj = new Date(rawDate);
+        if (isNaN(dateObj.getTime())) return;
+        const formattedDate = dateObj.toISOString().split('T')[0]; 
+        
+        // 📍 [정밀 스캔] 전체 훈련일 무조건 수집
+        tempAllDates.add(formattedDate);
+        
+        let sub = ultraCleanLocal(r.교과목);
+        let unit = ultraCleanLocal(r.능력단위);
+        
+        if(sub) {
+            if(!subjectMinDates[sub] || formattedDate < subjectMinDates[sub]) subjectMinDates[sub] = formattedDate;
+            if(!subjectMaxDates[sub] || formattedDate > subjectMaxDates[sub]) subjectMaxDates[sub] = formattedDate;
+            
+            if(!subjectDaysMap[sub]) subjectDaysMap[sub] = new Set();
+            subjectDaysMap[sub].add(formattedDate);
+        }
+        if(unit) {
+            if(!subjectMinDates[unit] || formattedDate < subjectMinDates[unit]) subjectMinDates[unit] = formattedDate;
+            if(!subjectMaxDates[unit] || formattedDate > subjectMaxDates[unit]) subjectMaxDates[unit] = formattedDate;
+            
+            if(!subjectDaysMap[unit]) subjectDaysMap[unit] = new Set();
+            subjectDaysMap[unit].add(formattedDate);
+        }
+    });
+
+    // 📍 수집한 전체 훈련일자를 배열로 변환 후 정렬
+    globalValidDates = Array.from(tempAllDates).sort();
+
+    globalManualData = manualSnap.val() || {};
+    globalHistoryData = historySnap.val() || {};
+    const manualData = globalManualData;
+    const historyData = globalHistoryData;
+
+    fullList = [];
+    for (const name in manualData) {
+        for (const key in manualData[name]) {
+            if (key.startsWith('makeup_')) {
+                const rawSubName = key.replace('makeup_', '').replace(/_/g, ' ');
+                const originalSub = ultraCleanLocal(rawSubName);
+                
+                const totalMin = manualData[name][key];
+                if (totalMin > 0) {
+                    const escapedSub = key.replace('makeup_', '');
+                    const studentHistory = (historyData[name] && historyData[name][escapedSub]) ? historyData[name][escapedSub] : {};
+                    
+                    fullList.push({
+                        studentName: name, 
+                        subjectName: originalSub, 
+                        escapedSub: escapedSub,
+                        hrdDate: subjectMaxDates[originalSub] || "미정", 
+                        totalMin: totalMin, 
+                        history: studentHistory
+                    });
+                }
+            }
+        }
+    }
+
+    mergeMakeupNeedsIntoFullList();
+    mergeWaivedItemsIntoFullList();
+    applyMakeupWaiverFlags();
+    
+    const startSort = urlParams.get('sort') || 'subjectName';
+renderMainTable(startSort);
+
+    const openIdx = urlParams.get('openIdx');
+    if (openIdx !== null) {
+        setTimeout(() => {
+            const idx = parseInt(openIdx);
+            toggleStudentDetail(idx); 
+            const row = document.getElementById(`mainRow_${idx}`);
+            if(row) row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 300); 
+    }
+}
+
+// 📍 [정비 1] 메인 테이블 렌더링 (상세보기 제거 및 과목명 확장)
+// 📍 [정비 1] 메인 테이블 렌더링 (상세보기 제거 및 과목명 확장)
+function renderMainTable(sortKey) {
+    const tbody = document.getElementById('makeupBody');
+    const thead = document.querySelector('.attendance-table thead');
+
+    // [1] 비상 버튼(초기화/취소) 가시성 제어
+    const resetBtn = document.getElementById('btnResetMedia');
+    const cancelBtn = document.getElementById('btnCancelSelect');
+    const mediaBar = document.getElementById('mediaResetBar');
+    
+    if (sortKey === 'historyTime') {
+        if (mediaBar) mediaBar.style.display = 'flex';
+        if (resetBtn) resetBtn.style.display = 'inline-block';
+    } else {
+        if (mediaBar) mediaBar.style.display = 'none';
+        if (resetBtn) resetBtn.style.display = 'none';
+        if (cancelBtn) cancelBtn.style.display = 'none';
+        isSelectMode = false;
+    }
+    
+    // [2] 테이블 엔진 초기화 및 클래스 세팅
+    const table = document.querySelector('.attendance-table');
+    table.classList.remove('mode-default', 'mode-history', 'mode-report');
+    
+    document.querySelectorAll('.sort-btns .btn-detail').forEach(btn => btn.classList.remove('active'));
+    
+    const btnMap = { 
+        'subjectName': 0, 'studentName': 1, 'hrdDate': 2, 'historyTime': 3, 'reportMode': 4 
+    };
+    
+    const targetBtn = document.querySelectorAll('.sort-btns .btn-detail')[btnMap[sortKey]];
+    if (targetBtn) targetBtn.classList.add('active');
+
+    let html = "";
+
+    // ------------------------------------------------------------
+    // [3] 모드별 헤더(thead) 및 본문(tbody) 조립 공정
+    // ------------------------------------------------------------
+
+    if (sortKey === 'reportMode') {
+        table.classList.add('mode-report');
+        const colWidthsReport = { num: "5%", date: "12%", time: "10%", subject: "33%", students: "30%", report: "10%" };
+
+        const indexHeader = isSelectMode 
+            ? `<th width="${colWidthsReport.num}"><input type="checkbox" onclick="toggleAllRows(this)"></th>` 
+            : `<th width="${colWidthsReport.num}">순번</th>`;
+
+        // 📍 보고서 모드용 전용 계기판 장착
+        thead.innerHTML = `
+            <tr>
+                ${indexHeader}
+                <th width="${colWidthsReport.date}">보강 날짜</th>
+                <th width="${colWidthsReport.time}">보강 시간</th>
+                <th width="${colWidthsReport.subject}">과목명</th>
+                <th width="${colWidthsReport.students}">참여 학생 (인원)</th>
+                <th width="${colWidthsReport.report}">보고서</th>
+            </tr>`;
+
+        // (기존 reportMode 데이터 처리 로직 동일...)
+        let grouped = {}; 
+        fullList.forEach(item => {
+            Object.values(item.history || {}).forEach(h => {
+                const groupKey = `${item.subjectName}_${h.date}_${h.time}`;
+                if (!grouped[groupKey]) {
+                    grouped[groupKey] = { subject: item.subjectName, date: h.date, time: h.time, students: [] };
+                }
+                if (!grouped[groupKey].students.includes(item.studentName)) grouped[groupKey].students.push(item.studentName);
+            });
+        });
+        let sortedReport = Object.values(grouped).sort((a, b) => a.date.localeCompare(b.date) || a.time.localeCompare(b.time));
+        if (sortedReport.length === 0) {
+            html = '<tr><td colspan="6" style="padding:50px;">데이터가 없습니다.</td></tr>';
+        } else {
+            // 1. reportMode 
+            sortedReport.forEach((r, idx) => {
+                const dateStr = `${r.date.substring(0, 4)}-${r.date.substring(4, 6)}-${r.date.substring(6, 8)} (${getDayOfWeek(r.date)})`;
+                const totalMin = calculateMinutes(r.time);
+                const hourStr = (totalMin / 60).toFixed(0) + "H";
+                const reportKey = `${r.subject}_${r.date}_${r.time.replace(/:/g, '')}`;
+                html += `<tr>
+                    ${isSelectMode ? `<td><input type="checkbox" class="reset-checkbox" data-report-key="${reportKey}" data-sign-keys='${JSON.stringify(r.students.map(s => `${s}_${r.subject.replace(/ /g, '_')}_${r.date}_${r.time.replace(/:/g, '')}` ))}' style="transform:scale(1.3);"></td>` : `<td>${idx + 1}</td>`}
+                    <td><span class="date-badge">${dateStr}</span></td>
+                    <td> ${r.time}<b>(${hourStr})</b></td>
+                    <td style="text-align:left;"><strong>${r.subject}</strong></td>
+                    <td style="text-align:left; font-size:12px;">${r.students.join(', ')} <span style="color:#e67e22; font-weight:bold;">(${r.students.length}명)</span></td>
+                    <td><button class="btn-detail dynamic-open-report" data-reportkey="${reportKey}" style="background:#8e44ad; width:100%; height:35px;">📄보기</button></td>
+                </tr>`;
+            });
+        }
+
+    } else if (sortKey === 'historyTime') {
+        table.classList.add('mode-history');
+        const colWidths = { num: "4%", date: "14%", time: "10%", subject: "28%", name: "10%", min: "8%", sign: "10%", photo: "16%" };
+
+        const indexHeaderHistory = isSelectMode 
+            ? `<th width="${colWidths.num}"><input type="checkbox" onclick="toggleAllRows(this)"></th>` 
+            : `<th width="${colWidths.num}">순번</th>`;
+
+        // 📍 싸인등록 모드용 8구 계기판 장착
+        thead.innerHTML = `
+            <tr>
+                ${indexHeaderHistory}
+                <th width="${colWidths.date}">보강 날짜</th>
+                <th width="${colWidths.time}">보강 시간</th>
+                <th width="${colWidths.subject}">과목명</th>
+                <th width="${colWidths.name}">성명</th>
+                <th width="${colWidths.min}">보강(분)</th>
+                <th width="${colWidths.sign}">싸인등록</th>
+                <th width="${colWidths.photo}">사진등록</th>
+            </tr>`;
+        
+        // (기존 historyTime 데이터 처리 로직 동일...)
+        let flatHistory = [];
+        fullList.forEach((item, originalIdx) => {
+            Object.entries(item.history || {}).forEach(([histId, h]) => {
+                flatHistory.push({ histId: histId, date: h.date, time: h.time, subjectName: item.subjectName, studentName: item.studentName, escapedSub: item.escapedSub, min: h.min, parentIdx: originalIdx });
+            });
+        });
+        flatHistory.sort((a, b) => a.date.localeCompare(b.date) || a.time.localeCompare(b.time) || a.subjectName.localeCompare(b.subjectName));
+        let displayNum = 0;
+        flatHistory.forEach((h, idx) => {
+            const signKey = `${h.studentName}_${h.escapedSub}_${h.histId}`;
+            const reportKey = `${h.subjectName}_${h.date}_${h.time.replace(/:/g, '')}`; 
+            let isSameGroup = false;
+            if (idx > 0) {
+                const prev = flatHistory[idx - 1];
+                if (prev.date === h.date && prev.time === h.time && prev.subjectName === h.subjectName) isSameGroup = true;
+            }
+            let numTd = ""; let photoTd = "";
+            if (!isSameGroup) {
+                displayNum++;
+                let rowSpanCount = 1;
+                for (let i = idx + 1; i < flatHistory.length; i++) {
+                    const next = flatHistory[i];
+                    if (next.date === h.date && next.time === h.time && next.subjectName === h.subjectName) rowSpanCount++;
+                    else break;
+                }
+                // 2. historyTime 모드 (photoTd 및 서명 버튼 수정)
+                if (isSelectMode) {
+                    let groupSignKeys = [];
+                    for(let i = idx; i < idx + rowSpanCount; i++) {
+                        const item = flatHistory[i];
+                        if (item) groupSignKeys.push(`${item.studentName}_${item.escapedSub}_${item.histId}`);
+                    }
+                    numTd = `<td rowspan="${rowSpanCount}" style="background: #fff; vertical-align:middle;"><input type="checkbox" class="reset-checkbox" data-report-key="${reportKey}" data-sign-keys='${JSON.stringify(groupSignKeys)}' style="transform:scale(1.3); cursor:pointer;"></td>`;
+                } else {
+                    numTd = `<td rowspan="${rowSpanCount}" style="background: #fff; font-weight: bold; vertical-align:middle;">${displayNum}</td>`;
+                }
+                photoTd = `<td rowspan="${rowSpanCount}" style="background: #fff;"><div class="photo-btn-wrap" style="display:flex; gap:3px; justify-content:center;"><button id="btnImg1_${reportKey}" class="btn-detail dynamic-upload-trigger" data-reportkey="${reportKey}" data-num="1" style="background:#27ae60; padding:4px 6px; font-size:10px;"><span class="pc-text">📷사진1</span><span class="mobile-text">📝1</span></button><button id="btnImg2_${reportKey}" class="btn-detail dynamic-upload-trigger" data-reportkey="${reportKey}" data-num="2" style="background:#27ae60; padding:4px 6px; font-size:10px;"><span class="pc-text">📷사진2</span><span class="mobile-text">📝2</span></button></div><input type="file" id="file_${reportKey}_1" style="display:none" class="dynamic-upload-file" data-reportkey="${reportKey}" data-num="1"><input type="file" id="file_${reportKey}_2" style="display:none" class="dynamic-upload-file" data-reportkey="${reportKey}" data-num="2"></td>`;
+            }
+            html += `<tr id="mainRow_hist_${idx}">
+                ${numTd}
+                <td><span class="date-badge">${formatDateString(h.date)} (${getDayOfWeek(h.date)})</span></td>
+                <td>${h.time}</td>
+                <td style="text-align:left;">${h.subjectName}</td>
+                <td><strong>${h.studentName}</strong></td>
+                <td><span class="makeup-badge">${h.min}<span class="pc-text">분</span></span></td>
+                <td><button id="btnSign_${signKey}" class="btn-detail dynamic-sign-trigger" data-signkey="${signKey}" data-name="${h.studentName}" style="background:#27ae60; width: 100%;"><span class="pc-text">싸인등록</span><span class="mobile-text">📝</span></button></td>
+                ${photoTd} 
+            </tr>`;
+            checkSignStatus(signKey);
+            if (!isSameGroup) checkPhotoStatus(reportKey);
+        });
+
+    } else {
+        // 📍 [순정 보전 및 수리] 기본 모드 계기판(6구) 강제 장착
+        table.classList.add('mode-default');
+        
+        // 🚀 [핵심 수리] 기본 모드 전용 thead.innerHTML 주입
+        thead.innerHTML = `
+            <tr>
+                <th width="50">순번</th>
+                <th>과목명</th>
+                <th width="100">HRD 등록일</th>
+                <th width="80">성명</th>
+                <th width="120">보강(분)</th>
+                <th width="120">등록/포기</th>
+            </tr>`;
+        
+        fullList.sort((a, b) => {
+            if (a.isWaived && !b.isWaived) return 1;
+            if (!a.isWaived && b.isWaived) return -1;
+            if (a.isPending && !b.isPending) return -1;
+            if (!a.isPending && b.isPending) return 1;
+            return String(a[sortKey]).localeCompare(String(b[sortKey]));
+        });
+        
+        // 3. 기본 모드
+        fullList.forEach((item, idx) => {
+            let currentSum = 0;
+            Object.values(item.history || {}).forEach(h => currentSum += parseInt(h.min || 0));
+            const isDone = currentSum >= item.totalMin;
+            const isWaived = !!item.isWaived;
+            const isPending = !!item.isPending && !isWaived;
+            const rowClass = isWaived ? 'makeup-waived-row' : (isPending ? 'makeup-pending-row' : '');
+            const nameStyle = isPending ? 'color:#c0392b; font-weight:bold; cursor:pointer;' : (isWaived ? 'color:#666; cursor:pointer;' : '');
+            const subjectStyle = isPending ? 'color:#c0392b;' : (isWaived ? 'color:#666;' : '');
+
+            let badgeStyle, badgeHtml, btnColor, btnText;
+            if (isWaived) {
+                badgeStyle = "background:#f4f4f4; color:#666; border: 1px solid #ccc;";
+                badgeHtml = `<span class="pc-text">보강포기</span><span class="mobile-text">포기</span>`;
+                btnColor = "#7f8c8d";
+                btnText = `<span class="pc-text">포기됨</span><span class="mobile-text">포기</span>`;
+            } else if (isPending) {
+                badgeStyle = "background:#fff5f5; color:#c0392b; border: 1px solid #f5b7b1;";
+                const needMin = item.requiredMin || item.totalMin;
+                badgeHtml = `<span class="pc-text">보강필요: ${needMin}분 이상</span><span class="mobile-text">필요 ${needMin}분+</span>`;
+                btnColor = "#c0392b";
+                btnText = `<span class="pc-text">⚠ 보강 등록</span><span class="mobile-text">등록</span>`;
+            } else {
+                badgeStyle = isDone ? "background: #e8f5e9; color: #2e7d32; border: 1px solid #c8e6c9;" : "background: #fff3e0; color: #e67e22; border: 1px solid #ffcc80;";
+                badgeHtml = `<span class="pc-text">${currentSum} / ${item.totalMin}분</span><span class="mobile-text">${currentSum} / ${item.totalMin}</span>`;
+                btnColor = isDone ? "#565656" : "#3498db";
+                btnText = isDone ? `<span class="pc-text">✅ 등록완료</span><span class="mobile-text">완료</span>` : `<span class="pc-text">일자등록</span><span class="mobile-text">등록</span>`;
+            }
+
+            const showWaiveBtn = !isWaived && !isDone && (isPending || item.needsMakeup);
+            let actionBtns = `<button class="btn-detail dynamic-toggle-detail" data-idx="${idx}" style="background:${btnColor}; width: 100%;">${btnText}</button>`;
+            if (showWaiveBtn) {
+                actionBtns += `<button class="btn-detail dynamic-waive-makeup" data-idx="${idx}" style="background:#95a5a6; width: 100%; margin-top: 4px;"><span class="pc-text">보강 포기</span><span class="mobile-text">포기</span></button>`;
+            }
+            if (isWaived) {
+                actionBtns += `<button class="btn-detail dynamic-cancel-waive" data-idx="${idx}" style="background:#7f8c8d; width: 100%; margin-top: 4px;"><span class="pc-text">포기 취소</span><span class="mobile-text">취소</span></button>`;
+            }
+
+            html += `
+                <tr id="mainRow_${idx}" class="${rowClass}">
+                    <td>${idx + 1}</td>
+                    <td style="text-align:left; ${subjectStyle}"><strong>${item.subjectName}</strong>${isPending ? ' <span style="font-size:10px; color:#c0392b;">(미등록)</span>' : ''}${isWaived ? ' <span style="font-size:10px; color:#666;">(포기)</span>' : ''}</td>
+                    <td><span class="date-badge">${item.hrdDate}</span></td>
+                    <td class="dynamic-toggle-detail" data-idx="${idx}" style="${nameStyle}">${item.studentName}</td>
+                    <td>
+                        <span class="makeup-badge" style="${badgeStyle} display: inline-block; line-height: 1.4; padding: 5px 10px;"> 
+                            ${badgeHtml}
+                        </span>
+                    </td>
+                    <td class="makeup-action-cell">${actionBtns}</td>
+                </tr>
+                <tr id="detailRow_${idx}" class="detail-row"><td colspan="6" id="detailArea_${idx}"></td></tr>`;
+        });
+    }
+    tbody.innerHTML = html || '<tr><td colspan="7" style="padding:50px;">데이터가 없습니다.</td></tr>';
+}
+
+// 📍 [정비 3] 디지털 싸인 패드 엔진 (직접 서명 방식)
+let signCanvas, signCtx, isDrawing = false;
+let currentSignKey = "";
+
+// 📍 [정비] 디지털 싸인 패드 엔진 (커진 사이즈 대응)
+function triggerSignUpload(key, studentName) {
+    currentSignKey = key;
+    const modal = document.getElementById('signModal');
+    
+    const modalTitle = modal.querySelector('h3');
+    if (modalTitle) {
+        modalTitle.innerHTML = `<span style="color:#27ae60;">[${studentName}]</span> 훈련생 서명`;
+    }
+    
+    modal.style.display = 'flex';
+    
+    signCanvas = document.getElementById('signCanvas');
+    signCtx = signCanvas.getContext('2d');
+    
+    // 📍 캔버스 크기가 커졌으므로 전체 영역을 다시 흰색으로 도색
+    signCtx.fillStyle = "#fff";
+    signCtx.fillRect(0, 0, signCanvas.width, signCanvas.height);
+    
+    // 선 굵기도 패드 크기에 맞춰 살짝 더 묵직하게 조절 (3 -> 3.5)
+    signCtx.strokeStyle = "#000";
+    signCtx.lineWidth = 5;
+    signCtx.lineCap = "round";
+
+    if (!signCanvas.dataset.init) {
+        setupSignEvents();
+        signCanvas.dataset.init = "true";
+    }
+}
+
+function setupSignEvents() {
+    const getPos = (e) => {
+        const rect = signCanvas.getBoundingClientRect();
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+        
+        let x, y;
+        // 📍 [핵심 보정] 모바일 세로 모드에서 좌측 90도(-90deg) 강제 회전 감지
+        const isRotated = window.matchMedia("(max-width: 768px) and (orientation: portrait)").matches;
+        
+        if (isRotated) {
+            // 회전된 캔버스: 물리적 높이가 width, 너비가 height 역할을 교대함
+            const scaleX = signCanvas.width / rect.height; 
+            const scaleY = signCanvas.height / rect.width;
+            
+            // 📍 좌측 90도(-90deg) 전용 정밀 좌표 매핑
+            x = (rect.bottom - clientY) * scaleX;
+            y = (clientX - rect.left) * scaleY;
+        } else {
+            // 정상 상태 (PC 및 모바일 가로 모드)
+            const scaleX = signCanvas.width / rect.width;
+            const scaleY = signCanvas.height / rect.height;
+            x = (clientX - rect.left) * scaleX;
+            y = (clientY - rect.top) * scaleY;
+        }
+        return { x, y };
+    };
+    const start = (e) => { isDrawing = true; const p = getPos(e); signCtx.beginPath(); signCtx.moveTo(p.x, p.y); };
+    const move = (e) => { if (!isDrawing) return; const p = getPos(e); signCtx.lineTo(p.x, p.y); signCtx.stroke(); e.preventDefault(); };
+    const stop = () => { isDrawing = false; };
+    signCanvas.addEventListener('mousedown', start);
+    signCanvas.addEventListener('mousemove', move);
+    window.addEventListener('mouseup', stop);
+    signCanvas.addEventListener('touchstart', start);
+    signCanvas.addEventListener('touchmove', move, {passive: false});
+    signCanvas.addEventListener('touchend', stop);
+}
+
+function clearSign() { signCtx.clearRect(0, 0, signCanvas.width, signCanvas.height); }
+function closeSignModal() { document.getElementById('signModal').style.display = 'none'; }
+
+// [정밀 수리] 서명 저장 시 검은색 박스 현상 방지 (PNG 전환)
+async function saveDigitalSign() {
+    // 1단계: 저장 직전 배경색 안전장치 가동 (투명 영역 방지)
+    const tempCanvas = document.createElement('canvas');
+    tempCanvas.width = signCanvas.width;
+    tempCanvas.height = signCanvas.height;
+    const tempCtx = tempCanvas.getContext('2d');
+    
+    tempCtx.fillStyle = "#ffffff"; // 무조건 흰색 배경 주입
+    tempCtx.fillRect(0, 0, tempCanvas.width, tempCanvas.height);
+    tempCtx.drawImage(signCanvas, 0, 0);
+
+    // 2단계: PNG 포맷으로 추출 (압축률보다 정확도 우선)
+    const base64Data = tempCanvas.toDataURL('image/png'); 
+    const btn = document.getElementById(`btnSign_${currentSignKey}`);
+    
+    try {
+        if(btn) btn.innerHTML = `<span class="pc-text">저장 중</span><span class="mobile-text">⏳</span>`;
+        await classDbRef(`makeupSigns/${currentSignKey}`).set({
+            imageData: base64Data,
+            timestamp: new Date().getTime()
+        });
+        
+        await appAlert(`✅ 서명이 안전하게 등록되었습니다.`);
+        closeSignModal();
+        checkSignStatus(currentSignKey);
+    } catch (e) {
+        await appAlert("❌ 실패: " + e.message);
+        if(btn) btn.innerHTML = `<span class="pc-text">싸인등록</span><span class="mobile-text">📝</span>`;
+    }
+}
+
+// 3. 서명 상태 확인 로직 (순정 유지)
+async function checkSignStatus(signKey) {
+    const snap = await classDbRef(`makeupSigns/${signKey}`).once('value');
+    if (snap.exists()) {
+        const btn = document.getElementById(`btnSign_${signKey}`);
+        if(btn) { 
+            btn.innerHTML = `<span class="pc-text">✅ 완료</span><span class="mobile-text">✅</span>`; 
+            btn.style.background = "#2c3e50"; 
+        }
+    }
+}
+
+// 📍 [정비 2] 사진 업로드 엔진 (반별 독립 저장 및 실시간 교체)
+function triggerUpload(key, num) {
+    document.getElementById(`file_${key}_${num}`).click();
+}
+
+async function uploadPhoto(reportKey, num, input) {
+    if (!input.files || !input.files[0]) return;
+    
+    const btns = document.querySelectorAll(`[id^="btnImg${num}_"]`);
+    let targetBtn = null;
+    
+    btns.forEach(b => {
+        if(b.id === `btnImg${num}_${reportKey}`) targetBtn = b;
+    });
+
+    const originalHtml = targetBtn ? targetBtn.innerHTML : `<span class="pc-text">📷사진${num}</span><span class="mobile-text">📝${num}</span>`;
+    if(targetBtn) {
+        targetBtn.innerHTML = `<span class="pc-text">업로드...</span><span class="mobile-text">⏳</span>`;
+        targetBtn.style.opacity = "0.5";
+    }
+
+    processImage(input, async (base64Data) => {
+        try {
+            await classDbRef(`makeupReportImages/${reportKey}/img${num}`).set({
+                imageData: base64Data,
+                timestamp: new Date().getTime()
+            });
+            
+            await appAlert(`✅ 사진${num} 등록이 완료되었습니다.`);
+            
+            const allTargetBtns = document.querySelectorAll(`[id="btnImg${num}_${reportKey}"]`);
+            allTargetBtns.forEach(btn => {
+                btn.innerHTML = `<span class="pc-text">✅완료${num}</span><span class="mobile-text">✅${num}</span>`; 
+                btn.style.background = "#2c3e50"; 
+                btn.style.opacity = "1";
+            });
+            
+        } catch (e) {
+            await appAlert("❌ 업로드 실패: " + e.message);
+            if(targetBtn) {
+                targetBtn.innerHTML = originalHtml;
+                targetBtn.style.background = "#27ae60";
+                targetBtn.style.opacity = "1";
+            }
+        }
+    });
+}
+
+// 사진 등록 여부 실시간 확인
+async function checkPhotoStatus(reportKey) {
+    const snap = await classDbRef(`makeupReportImages/${reportKey}`).once('value');
+    const data = snap.val() || {};
+    if (data.img1) {
+        const b1 = document.getElementById(`btnImg1_${reportKey}`);
+        if(b1) { b1.innerHTML = `<span class="pc-text">✅완료1</span><span class="mobile-text">✅1</span>`; b1.style.background = "#2c3e50"; }
+    }
+    if (data.img2) {
+        const b2 = document.getElementById(`btnImg2_${reportKey}`);
+        if(b2) { b2.innerHTML = `<span class="pc-text">✅완료2</span><span class="mobile-text">✅2</span>`; b2.style.background = "#2c3e50"; }
+    }
+}
+
+    async function toggleStudentDetail(idx) {
+    const detailRow = document.getElementById(`detailRow_${idx}`);
+    const detailArea = document.getElementById(`detailArea_${idx}`);
+    if (detailRow.style.display === 'table-row') { detailRow.style.display = 'none'; return; }
+    
+    document.querySelectorAll('.detail-row').forEach(el => el.style.display = 'none');
+    selectedItem = fullList[idx];
+    detailRow.style.display = 'table-row';
+    
+    const hData = selectedItem.history || {};
+    let currentSum = 0;
+    let historyHtml = "";
+    
+    Object.entries(hData).forEach(([histId, h]) => {
+        const hMin = parseInt(h.min || calculateMinutes(h.time) || 0);
+        currentSum += hMin;
+        historyHtml += `
+    <tr>
+        <td>${h.date.substring(2,4)}.${h.date.substring(4,6)}.${h.date.substring(6,8)}</td>
+        <td>${h.time}</td>
+        <td><strong>${hMin}분</strong></td>
+        <td><button class="btn-detail dynamic-delete-hist" data-name="${selectedItem.studentName}" data-sub="${selectedItem.escapedSub}" data-histid="${histId}" data-idx="${idx}" style="background:#e74c3c; width:100%; padding:8px 0;">❌</button></td>
+    </tr>`;
+    });
+    
+    const remain = selectedItem.totalMin - currentSum;
+    const isWaived = !!selectedItem.isWaived;
+    const isPending = !!selectedItem.isPending && !isWaived;
+    const needInfo = isWaived
+        ? `<span style="color:#666;">🚫 <strong>${selectedItem.studentName}</strong> · 보강 포기 처리됨 (알림 제외)</span>`
+        : (isPending
+            ? `<span style="color:#c0392b;">⚠ 보강 미등록 · 보강필요: <strong>${selectedItem.requiredMin || remain}분 이상</strong> (예상 ${selectedItem.projectedPercent || 0}%)</span>`
+            : `<span>📊 <strong>${selectedItem.studentName}</strong>: ${currentSum}분 / 총 ${selectedItem.totalMin}분 (남음: <strong>${remain}분</strong>)</span>`);
+
+    const minDate = resolveSubjectDateKey(selectedItem.subjectName, selectedItem.escapedSub.replace(/_/g, ' '), subjectMinDates) || subjectMinDates[selectedItem.subjectName];
+    const maxDate = resolveSubjectDateKey(selectedItem.subjectName, selectedItem.escapedSub.replace(/_/g, ' '), subjectMaxDates) || subjectMaxDates[selectedItem.subjectName];
+    
+    // 📍 [출결 미니 계기판 조립 엔진 - 다중 줄바꿈 10일 모드]
+    let miniAttendHtml = "";
+    const subjectDays = subjectDaysMap[selectedItem.subjectName] || new Set();
+    const targetDates = (minDate && maxDate) ? globalValidDates.filter(d => d >= minDate && d <= maxDate) : [];
+
+    if (targetDates.length > 0) {
+        const chunkSize = 10; // 📍 한 줄에 10일씩 강제 할당 (모바일 10칸 대응)
+        let tableRowsHtml = "";
+        const todayStr = typeof getTodayStrKst === 'function' ? getTodayStrKst() : new Date().toISOString().split('T')[0];
+
+        for (let i = 0; i < targetDates.length; i += chunkSize) {
+            const chunk = targetDates.slice(i, i + chunkSize);
+            let trTop = "<tr>";
+            let trBot = "<tr>";
+            
+            chunk.forEach(d => {
+                const shortDate = parseInt(d.split('-')[1]) + "/" + parseInt(d.split('-')[2]);
+                const weekStr = getDayOfWeek(d);
+                const isSubjectDay = subjectDays.has(d);
+                
+                const headerStyle = isSubjectDay 
+                    ? "background:#dcfce7; color:#166534; font-weight:bold; border-bottom: 2px solid #27ae60; cursor:pointer;" 
+                    : "background:#f8fafc; color:#64748b; cursor:pointer;";
+                
+                // 📍 [정밀 튜닝] <br> 제거하고 한 줄로 결합, 폰트/자간 압축으로 모바일 10칸 방어 및 터치 센서 배선
+                trTop += `<th onclick="autoFillDate('${d}', ${idx})" title="클릭 시 날짜 주입" style="${headerStyle} border: 1px solid #e1e8ed; padding: 2px 0; font-size: 9px; text-align: center; letter-spacing: -0.5px; white-space: nowrap;">${shortDate}(${weekStr})</th>`;
+                
+                const att = (globalAttendanceData[d] && globalAttendanceData[d][selectedItem.studentName]) ? globalAttendanceData[d][selectedItem.studentName] : null;
+                
+                if (!att) {
+                    const countAbsent = typeof shouldCountMissingAttAsAbsent === 'function'
+                        ? shouldCountMissingAttAsAbsent(d, todayStr)
+                        : d <= todayStr;
+                    if (countAbsent) {
+                        trBot += `<td class="bg-absent" onclick="autoFillDate('${d}', ${idx})" title="클릭 시 날짜 주입" style="cursor:pointer; border: 1px solid #e1e8ed; padding: 2px 0; font-size: 10px; text-align: center;">×</td>`;
+                    } else {
+                        trBot += `<td class="bg-none" onclick="autoFillDate('${d}', ${idx})" title="클릭 시 날짜 주입" style="cursor:pointer; border: 1px solid #e1e8ed; padding: 2px 0; font-size: 10px; text-align: center;"></td>`;
+                    }
+                } else {
+                    const st = att.status || "";
+                    let cls = "bg-attend", sym = "";
+                    
+                    if(st.includes("결석") || st === "미편입") { cls = "bg-absent"; sym = "×"; }
+                    else if(st.includes("출석") || st === "정상" || st === "") { cls = "bg-attend"; sym = "○"; }
+                    else if(st.includes("지각")) { cls = "bg-late"; sym = "지"; }
+                    else if(st.includes("조퇴")) { cls = "bg-early"; sym = "조"; }
+                    else if(st.includes("외출")) { cls = "bg-out"; sym = "외"; }
+                    else if(st.includes("공가") || st.includes("병가")) { cls = "bg-attend"; sym = "공"; }
+                    else if(st.includes("휴가")) { cls = "bg-attend"; sym = "휴"; }
+                    else { cls = "bg-attend"; sym = "◎"; }
+                    
+                    trBot += `<td class="${cls}" onclick="autoFillDate('${d}', ${idx})" title="클릭 시 날짜 주입" style="cursor:pointer; border: 1px solid #e1e8ed; padding: 2px 0; font-size: 10px; text-align: center;">${sym}</td>`;
+                }
+            });
+            
+            // 마지막 줄이 빈칸일 때 레이아웃 붕괴 방지용 더미(Dummy) 부품 조립
+            for(let j = chunk.length; j < chunkSize; j++) {
+                trTop += `<th style="background:#f8fafc; border: 1px solid #e1e8ed; padding: 2px 0;"></th>`;
+                trBot += `<td style="border: 1px solid #e1e8ed; padding: 2px 0;"></td>`;
+            }
+            
+            trTop += "</tr>";
+            trBot += "</tr>";
+            tableRowsHtml += trTop + trBot;
+        }
+        
+        miniAttendHtml = `
+        <div style="margin-top: 15px; margin-bottom: 15px; width:100%;">
+            <p style="margin:0 0 5px 0; font-weight:bold; color:#27ae60; font-size:12px;">📅 [${selectedItem.subjectName}] 훈련일 전체 출결 (색칠: 과목 수업일)</p>
+            <div style="width: 100%; border: 1px solid #ccc; border-radius: 5px; background: #fff; padding: 2px; box-sizing: border-box;">
+                <table style="border-collapse: collapse; width: 100%; table-layout: fixed;">
+                    <tbody>
+                        ${tableRowsHtml}
+                    </tbody>
+                </table>
+            </div>
+        </div>`;
+    }
+    
+    detailArea.innerHTML = `
+        <div class="inner-detail-box">
+            <div class="remain-info" style="display: flex; justify-content: space-between; align-items: center; ${isPending ? 'background:#fff5f5; border-color:#f5b7b1; color:#c0392b;' : ''}${isWaived ? 'background:#f4f4f4; border-color:#ccc; color:#666;' : ''}">
+                ${needInfo}
+                <div style="display:flex; gap:6px;">
+                    ${isWaived ? `<button class="btn-detail dynamic-cancel-waive" data-idx="${idx}" style="background:#7f8c8d;"><span class="pc-text">포기 취소</span><span class="mobile-text">취소</span></button>` : ''}
+                    ${(!isWaived && (isPending || selectedItem.needsMakeup) && remain > 0) ? `<button class="btn-detail dynamic-waive-makeup" data-idx="${idx}" style="background:#95a5a6;"><span class="pc-text">보강 포기</span><span class="mobile-text">포기</span></button>` : ''}
+                    <button class="btn-detail" style="background:#666;" onclick="document.getElementById('detailRow_${idx}').style.display='none'"><span class="pc-text">상세창 닫기 ✖</span><span class="mobile-text">닫기 ✖</span></button>
+                </div>
+            </div>
+            
+            <table class="history-table">
+                <thead><tr><th>보강 일자</th><th>시간</th><th>분</th><th>관리</th></tr></thead>
+                <tbody>${historyHtml || '<tr><td colspan="4" style="padding:20px;">내역 없음</td></tr>'}</tbody>
+            </table>
+            
+            ${miniAttendHtml}
+            
+            ${!isWaived && remain > 0 ? `
+            <div class="add-box">
+                <p style="margin:0 0 10px 0; font-weight:bold; color:#2980b9;">➕ 신규 보강 기록</p>
+                <div style="display:flex; gap:10px;">
+                    <div class="input-group">
+        <label>일자 (8자리)</label>
+        <input type="number" id="addDate_${idx}" class="dynamic-auto-focus" data-next="startTime_${idx}" data-len="8" placeholder="예: 20260311" pattern="\\d*">
+    </div>
+    <div class="input-group">
+        <label>시작 (4자리)</label>
+        <input type="number" id="startTime_${idx}" class="dynamic-auto-focus" data-next="endTime_${idx}" data-len="4" placeholder="1800" pattern="\\d*">
+    </div>
+    <div class="input-group">
+        <label>종료 (4자리)</label>
+        <input type="number" id="endTime_${idx}" class="dynamic-auto-focus" data-next="btnSaveAction_${idx}" data-len="4" placeholder="2000" pattern="\\d*">
+    </div>
+    <button class="btn-save dynamic-save-hist" id="btnSaveAction_${idx}" data-idx="${idx}">기록 저장 (Enter)</button>
+                </div>
+            </div>` : '<p style="text-align:center; color:#27ae60; padding:10px;">✅ 보강이 모두 완료되었습니다.</p>'}
+        </div>`;
+}
+
+// 🚀 [자동 변속 장치] 자릿수가 다 차면 다음 칸으로 자동 포커스 이동
+function autoFocusNext(current, nextId, maxLength) {
+    // 1. 글자수 초과 방지 (절단)
+    if (current.value.length > maxLength) {
+        current.value = current.value.slice(0, maxLength);
+    }
+
+    // 2. 목표 자릿수 도달 시 작동
+    if (current.value.length >= maxLength) {
+        const idx = current.id.split('_')[1]; // 현재 줄 번호 추출
+        const nextEl = document.getElementById(nextId);
+        
+        // 📍 [정밀 튜닝] 스마트 건너뛰기 로직
+        // 일자 입력이 끝났는데, 시작/종료 시간이 이미 4자리씩 채워져 있다면?
+        if (current.id.startsWith('addDate')) {
+            const sVal = document.getElementById(`startTime_${idx}`).value;
+            const eVal = document.getElementById(`endTime_${idx}`).value;
+            
+            if (sVal.length >= 4 && eVal.length >= 4) {
+                const saveBtn = document.getElementById(`btnSaveAction_${idx}`);
+                if (saveBtn) { saveBtn.focus(); return; } // 바로 저장 버튼으로 발사
+            }
+        } 
+        // 시작 시간 입력이 끝났는데, 종료 시간이 이미 채워져 있다면?
+        else if (current.id.startsWith('startTime')) {
+            const eVal = document.getElementById(`endTime_${idx}`).value;
+            if (eVal.length >= 4) {
+                const saveBtn = document.getElementById(`btnSaveAction_${idx}`);
+                if (saveBtn) { saveBtn.focus(); return; } // 바로 저장 버튼으로 발사
+            }
+        }
+
+        // 건너뛸 조건이 아니면 순정대로 다음 칸으로 이동
+        if (nextEl) nextEl.focus();
+    }
+}
+
+// 🚀 [자동 날짜 주입 엔진] 미니 출결표 클릭 시 날짜 8자리 자동 정제 및 주입
+function autoFillDate(dateStr, idx) {
+    // 연료(dateStr)는 "2026-03-11" 형태이므로 불순물(-)을 제거하여 8자리로 정제합니다.
+    const cleanDate = dateStr.replace(/-/g, '');
+    const dateInput = document.getElementById(`addDate_${idx}`);
+    const startTimeInput = document.getElementById(`startTime_${idx}`);
+    
+    if (dateInput) {
+        dateInput.value = cleanDate; // 정제된 8자리 날짜 주입
+        if (startTimeInput) startTimeInput.focus(); // 시작 시간으로 자동 포커스(변속) 이동
+    }
+}
+
+async function saveNewHistory(idx) {
+    if (!isAdmin) {
+        await appAlert("❌ 권한이 없습니다. 관리자 로그인이 필요합니다.");
+        return;
+    }
+    const dateField = document.getElementById(`addDate_${idx}`);
+    const dateInput = dateField.value.trim(); 
+    const startInput = document.getElementById('startTime_' + idx).value.trim();
+    const endInput = document.getElementById('endTime_' + idx).value.trim();
+    selectedItem = fullList[idx];
+    if(!/^\d{8}$/.test(dateInput)) return await appAlert("날짜 8자리를 YYYYMMDD 형식으로 입력하세요.");
+    if(!/^\d{4}$/.test(startInput) || !/^\d{4}$/.test(endInput)) return await appAlert("시간은 4자리 숫자로 입력하세요.");
+    const formattedUserDate = `${dateInput.substring(0, 4)}-${dateInput.substring(4, 6)}-${dateInput.substring(6, 8)}`;
+    const minDate = resolveSubjectDateKey(selectedItem.subjectName, selectedItem.escapedSub.replace(/_/g, ' '), subjectMinDates) || subjectMinDates[selectedItem.subjectName];
+    const maxDate = resolveSubjectDateKey(selectedItem.subjectName, selectedItem.escapedSub.replace(/_/g, ' '), subjectMaxDates) || subjectMaxDates[selectedItem.subjectName];
+    if (minDate && maxDate && (formattedUserDate < minDate || formattedUserDate > maxDate)) {
+        await appAlert(`⚠️ 기간 외 등록 불가!\n본 과목의 수업 기간은 [${minDate} ~ ${maxDate}] 입니다.`);
+        dateField.value = ""; dateField.focus(); return;
+    }
+    const formattedStartTime = startInput.substring(0,2) + ":" + startInput.substring(2,4);
+    const formattedEndTime = endInput.substring(0,2) + ":" + endInput.substring(2,4);
+    const fullTimeStr = formattedStartTime + "~" + formattedEndTime;
+    const newMin = calculateMinutes(fullTimeStr);
+    if (newMin <= 0) { await appAlert("❌ 종료 시간이 시작 시간보다 빠를 수 없습니다."); return; }
+    let currentSum = 0;
+    Object.values(selectedItem.history || {}).forEach(h => currentSum += parseInt(h.min || calculateMinutes(h.time) || 0));
+    if (currentSum + newMin > selectedItem.totalMin) { await appAlert(`❌ 등록 실패: 총 보강시간을 초과합니다.`); return; }
+    await classDbRef(`makeupDetails/${selectedItem.studentName}/${selectedItem.escapedSub}/${new Date().getTime()}`).set({
+        date: dateInput, time: fullTimeStr, min: newMin
+    });
+    await syncManualMakeupTotal(selectedItem.studentName, selectedItem.escapedSub);
+    await appAlert("✅ 저장되었습니다.\n능력단위시간표 보강시간에도 자동 반영되었습니다.");
+    const currentUrl = new URL(window.location.href);
+    currentUrl.searchParams.set('openIdx', idx);
+    window.location.href = currentUrl.toString();
+}
+
+    async function deleteHistory(studentName, escapedSub, histId, idx) {
+        if (!isAdmin) {
+    await appAlert("❌ 권한이 없습니다. 선생님 계정으로 인증해 주세요.");
+    return;
+}
+        if (!await appConfirm("❗ 삭제하시겠습니까?")) return;
+        await classDbRef(`makeupDetails/${studentName}/${escapedSub}/${histId}`).remove();
+        await syncManualMakeupTotal(studentName, escapedSub);
+        await appAlert("✅ 삭제되었습니다.\n능력단위시간표 보강시간도 자동 갱신되었습니다.");
+        const currentUrl = new URL(window.location.href);
+        currentUrl.searchParams.set('openIdx', idx);
+        window.location.href = currentUrl.toString();
+    }
+
+    function calculateMinutes(timeStr) {
+        try {
+            const parts = timeStr.split('~');
+            const start = parts[0].split(':'), end = parts[1].split(':');
+            return (parseInt(end[0])*60 + parseInt(end[1])) - (parseInt(start[0])*60 + parseInt(start[1]));
+        } catch(e) { return 0; }
+    }
+
+    function formatDateString(yyyymmdd) {
+        if (yyyymmdd.length !== 8) return yyyymmdd; 
+        return `${yyyymmdd.substring(0, 4)}년 ${yyyymmdd.substring(4, 6)}월 ${yyyymmdd.substring(6, 8)}일`;
+    }
+
+    function getDayOfWeek(dateStr) {
+        if (!dateStr || dateStr === "미정") return ""; 
+        const week = ['일', '월', '화', '수', '목', '금', '토'];
+        const formatted = dateStr.includes('-') ? dateStr : `${dateStr.substring(0, 4)}-${dateStr.substring(4, 6)}-${dateStr.substring(6, 8)}`;
+        const day = new Date(formatted).getDay();
+        return week[day];
+    }
+
+    // 📍 보고서용 사진 업로드 및 압축 엔진 (HEIC 실시간 변환기 장착)
+async function processImage(input, callback) {
+    if (input.files && input.files[0]) {
+        const file = input.files[0];
+        const fileName = file.name.toLowerCase();
+        const isHeic = fileName.endsWith('.heic') || fileName.endsWith('.heif');
+
+        // 📍 순정 압축 엔진 블록 (안전하게 분리 보존)
+        const runOriginalEngine = (targetFile) => {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const img = new Image();
+                img.onload = function () {
+                    const canvas = document.createElement('canvas');
+                    let width = img.width;
+                    let height = img.height;
+                    const max_size = 1000; 
+                    if (width > height) {
+                        if (width > max_size) { height *= max_size / width; width = max_size; }
+                    } else {
+                        if (height > max_size) { width *= max_size / height; height = max_size; }
+                    }
+                    canvas.width = width; canvas.height = height;
+                    canvas.getContext('2d').drawImage(img, 0, 0, width, height);
+                    callback(canvas.toDataURL('image/jpeg', 0.8)); 
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(targetFile);
+        };
+
+        // 📍 연료(확장자) 판별기
+        if (isHeic) {
+            if (typeof heic2any === 'undefined') {
+                await appAlert("HEIC 변환 엔진이 로드되지 않았습니다. 인터넷 연결을 확인해주세요.");
+                return;
+            }
+            // 항공유(HEIC)를 휘발유(JPEG)로 1차 변환 후 순정 엔진으로 전달
+            heic2any({
+                blob: file,
+                toType: "image/jpeg",
+                quality: 0.8
+            }).then(function (convertedBlob) {
+                runOriginalEngine(convertedBlob);
+            }).catch(async function (error) {
+                await appAlert("HEIC 변환 중 오류가 발생했습니다: " + error.message);
+            });
+        } else {
+            // 일반 연료(JPEG/PNG)는 즉시 순정 엔진으로 직행
+            runOriginalEngine(file);
+        }
+    }
+}
+
+/// 📍 보고서 보기 메인 엔진 (정밀 수정본)
+// 📍 보고서 보기 메인 엔진 (정밀 수리 완료: 서명 데이터 로드 배선 복구)
+async function openReportView(reportKey) {
+    const modal = document.getElementById('reportModal');
+    modal.style.display = 'block';
+
+    // 1. 기초 정보 파싱 (과목_날짜_시간)
+    const [subName, dateStr, timeStr] = reportKey.split('_');
+    const formattedDate = `${dateStr.substring(0, 4)}년 ${dateStr.substring(4, 6)}월 ${dateStr.substring(6, 8)}일`;
+    
+    // 2. 해당 보고서 그룹 데이터 및 학생 명단 추출
+    const groupData = fullList.filter(item => {
+        return Object.values(item.history || {}).some(h => h.date === dateStr && h.time.replace(/:/g, '') === timeStr && item.subjectName === subName);
+    });
+    const students = groupData.map(g => g.studentName);
+
+    // 🚨 [캐시 엔진 1] 서명 데이터 창고 확인
+    if (!imageCache.signs) {
+        const signsSnap = await classDbRef('makeupSigns').once('value');
+        imageCache.signs = signsSnap.val() || {};
+        console.log("📡 [서명 데이터] 서버에서 새로 수혈했습니다.");
+    } else {
+        console.log("📦 [서명 데이터] 창고(캐시)에서 즉시 꺼내왔습니다.");
+    }
+    const allMakeupSigns = imageCache.signs;
+
+    // 3. 실시간 마스터 데이터 로드 (훈련명, 기간, 교사)
+    const masterSnap = await classDbRef('masterData').once('value');
+    const masterData = masterSnap.val() || {};
+    const trainName = masterData.name || "훈련과정명 미설정";
+    const trainPeriod = masterData.period || "기간 미설정";
+    const teacherName = masterData.teacher || "담임교사 미설정";
+
+    // 4. 화면 데이터 주입 (1, 2페이지)
+    document.querySelectorAll('.view_trainName').forEach(el => el.innerText = trainName);
+    document.querySelectorAll('.view_subject_name').forEach(el => el.innerText = subName);
+    document.querySelectorAll('.view_student_count').forEach(el => el.innerText = students.length + "명");
+
+    const tableDateP2 = document.getElementById('view_table_date_p2');
+    if(tableDateP2) tableDateP2.innerText = formattedDate;
+
+    const tablePeriod = document.getElementById('view_table_period');
+    if(tablePeriod) {
+        let formattedPeriod = trainPeriod.replace(/-/g, '.');
+        tablePeriod.innerHTML = formattedPeriod.replace("~", "<br>~");
+    }
+    const tableDate = document.getElementById('view_table_date');
+    if(tableDate) tableDate.innerHTML = formattedDate.replace("년 ", "년<br>");
+
+    const tableTime = document.getElementById('view_table_time');
+    if (tableTime) {
+        let displayTime = timeStr;
+        if (!displayTime.includes(':') && displayTime.includes('~')) {
+            const parts = displayTime.split('~');
+            displayTime = `${parts[0].substring(0,2)}:${parts[0].substring(2,4)}~${parts[1].substring(0,2)}:${parts[1].substring(2,4)}`;
+        }
+        tableTime.innerHTML = displayTime.replace("~", "<br>~");
+    }
+
+    // 하단 행정 정보
+    const viewTeacher = document.getElementById('view_teacher_name');
+    if(viewTeacher) viewTeacher.innerText = teacherName;
+    const tableDateExec = document.getElementById('view_table_date_exec');
+    if(tableDateExec) tableDateExec.innerText = `${dateStr.substring(0, 4)}. ${dateStr.substring(4, 6)}. ${dateStr.substring(6, 8)}.`;
+    const tableRegNum = document.getElementById('view_table_reg_num');
+    if(tableRegNum) tableRegNum.innerText = `접수번호 : ${dateStr.substring(0, 4)}-${dateStr.substring(4, 8)}`;
+
+    // 🚨 [캐시 엔진 2] 공용 이미지(로고/직인) 및 선생님 도장 창고 확인
+    // 🚨 [캐시 엔진 2] 공용 이미지(로고/직인) 및 선생님 서명 창고 확인
+    if (!imageCache.common || !imageCache.teacherSigns) {
+        const commonSnap = await masterDatabase.ref('commonImages').once('value');
+        const commonData = commonSnap.val() || {};
+        // 💡 기존 etcImages 대신 방금 만든 docImages(서류 전용) 구역을 스캔합니다.
+        imageCache.common = commonData.docImages || {}; 
+        imageCache.teacherSeals = commonData.teacherSeals || {};
+        imageCache.teacherSigns = commonData.teacherSigns || {}; // 👈 [신규 배선] 서명 데이터 파싱
+        console.log("📡 [공용/도장/서명] 서버에서 마스터 부품을 가져왔습니다.");
+    } else {
+        console.log("📦 [공용/도장/서명] 창고(캐시) 부품을 사용합니다.");
+    }
+    const docImgs = imageCache.common;
+    const teacherSeals = imageCache.teacherSeals;
+    
+
+    // 🎯 고정 경로 이름(makeupBwLogo, makeupColorLogo, makeupSeal)으로 다이렉트 호출
+    const topLogoData = docImgs['makeupBwLogo']?.imageData;
+    if(topLogoData) {
+        document.getElementById('view_topLogo_L').src = topLogoData;
+        document.getElementById('view_topLogo_R').src = topLogoData;
+    }
+    const btmLogoData = docImgs['makeupColorLogo']?.imageData;
+    if(btmLogoData) document.getElementById('view_bottom_logo').src = btmLogoData;
+
+    const sealData = docImgs['makeupSeal']?.imageData;
+    if(sealData) document.getElementById('view_schoolSeal').src = sealData;
+
+    // 6. 담임 도장 배선
+
+    const teacherSigns = imageCache.teacherSigns;
+    const signDataNode = teacherSigns[dbClassKey];
+    const teacherSignUrl = signDataNode ? signDataNode.imageData : null;
+    
+    // 7. Page 2 학생 목록 생성 로직 (정밀 복구)
+    let listHtml = "";
+    const rowCount = Math.max(students.length, 12); 
+    
+    for(let i=0; i<rowCount; i++) {
+        const sName = students[i] || "";
+        let studentSpecificHistId = "";
+        
+        if (sName) {
+            const studentItem = groupData.find(g => g.studentName === sName);
+            if (studentItem && studentItem.history) {
+                Object.entries(studentItem.history).forEach(([hid, h]) => {
+                    if (h.date === dateStr && h.time.replace(/:/g, '') === timeStr) studentSpecificHistId = hid;
+                });
+            }
+        }
+
+        const currentSubKey = groupData[0]?.escapedSub || "";
+        const signDataKey = (sName && studentSpecificHistId) ? `${sName}_${currentSubKey}_${studentSpecificHistId}` : "";
+        
+        // openReportView 함수 내 listHtml 생성 구간
+const studentSignData = (signDataKey && allMakeupSigns[signDataKey]) 
+    ? `<img src="${allMakeupSigns[signDataKey].imageData}" style="height:40px; width:auto; object-fit:contain; mix-blend-mode:multiply; vertical-align:middle;">` 
+    : "";
+
+        // 담임 서명 (비율 보정 및 흰색 배경 투명화 엔진 장착)
+        const sealImgHtml = (sName && teacherSignUrl) 
+            ? `<img src="${teacherSignUrl}" style="height:40px; width:auto; max-width:100%; object-fit:contain; mix-blend-mode:multiply; vertical-align:middle; display:inline-block;">` : "";
+
+        listHtml += `
+            <tr style="height:55px;">
+                <td style="border: 1px solid #000; text-align:center; vertical-align:middle;">${i+1}</td>
+                <td style="border: 1px solid #000; font-size:12pt; text-align:center; vertical-align:middle;"><strong>${sName}</strong></td>
+                <td style="border: 1px solid #000; text-align:center; vertical-align:middle;">${sName ? 'O' : ''}</td>
+                <td style="border: 1px solid #000; text-align:center; vertical-align:middle; padding:2px;">${studentSignData}</td>
+                <td style="border: 1px solid #000; text-align:center; vertical-align:middle; padding:2px;">${sealImgHtml}</td>
+            </tr>`;
+    }
+    document.getElementById('view_studentList').innerHTML = listHtml;
+
+    // 🚨 [캐시 엔진 3] Page 3 증빙자료 창고 확인
+    if (!imageCache.reportPhotos[reportKey]) {
+        const photoSnap = await classDbRef(`makeupReportImages/${reportKey}`).once('value');
+        imageCache.reportPhotos[reportKey] = photoSnap.val() || {};
+        console.log(`📡 [증빙 사진] ${reportKey} 리포트용 서버 호출.`);
+    } else {
+        console.log(`📦 [증빙 사진] ${reportKey} 창고(캐시)에서 로드.`);
+    }
+    const photoData = imageCache.reportPhotos[reportKey]
+
+    // 훈련과정명 자동 축소 (2, 3페이지 공통)
+    const containerP2 = document.getElementById('autoScaleTrainName_P2');
+    if (containerP2) {
+        containerP2.innerText = trainName;
+        setTimeout(() => {
+            const maxWidth = 640;
+            const currentWidth = containerP2.offsetWidth;
+            if (currentWidth > maxWidth) containerP2.style.transform = `scale(${maxWidth / currentWidth})`;
+            else containerP2.style.transform = "scale(1)";
+        }, 100);
+    }
+
+    let displayTime3 = timeStr;
+    if (!displayTime3.includes(':') && displayTime3.includes('~')) {
+        const parts = displayTime3.split('~');
+        displayTime3 = `${parts[0].padStart(4,'0').replace(/(\d{2})(\d{2})/,'$1:$2')}~${parts[1].padStart(4,'0').replace(/(\d{2})(\d{2})/,'$1:$2')}`;
+    }
+    const totalMin = calculateMinutes(displayTime3);
+    displayTime3 += ` (${(totalMin/60).toFixed(0)}시간)`;
+
+    const viewPeriodP3 = document.getElementById('view_info_period_p3');
+    if(viewPeriodP3) viewPeriodP3.innerText = "□ 훈련기간 : " + trainPeriod.replace(/-/g, '.');
+    
+    document.getElementById('view_photoStudents').innerText = students.join(', ');
+    document.getElementById('view_photoSubject').innerText = subName;
+    document.getElementById('view_photoDate').innerText = formattedDate;
+    document.getElementById('view_photoTime').innerText = displayTime3;
+
+    const containerP3 = document.getElementById('autoScaleTrainName');
+    if (containerP3) {
+        containerP3.innerText = trainName;
+        setTimeout(() => {
+            const maxWidth = 550;
+            const currentWidth = containerP3.scrollWidth;
+            if (currentWidth > maxWidth) containerP3.style.transform = `scale(${maxWidth / currentWidth})`;
+        }, 50);
+    }
+
+    // 사진 처리 (3페이지)
+    const img1 = document.getElementById('view_img1_p3');
+    const noImg1 = document.getElementById('no_img1_p3');
+    if (photoData.img1?.imageData) {
+        img1.src = photoData.img1.imageData; img1.style.display = 'inline-block'; noImg1.style.display = 'none';
+    } else {
+        img1.style.display = 'none'; noImg1.style.display = 'block';
+    }
+
+    const img2 = document.getElementById('view_img2_p3');
+    const noImg2 = document.getElementById('no_img2_p3');
+    if (photoData.img2?.imageData) {
+        img2.src = photoData.img2.imageData; img2.style.display = 'inline-block'; noImg2.style.display = 'none';
+    } else {
+        img2.style.display = 'none'; noImg2.style.display = 'block';
+    }
+
+    switchReportPage(1);
+} // 📍 openReportView 함수 끝 (중괄호 정비 완료)
+
+function switchReportPage(pageNum) {
+    for (let i = 1; i <= 3; i++) {
+        const pg = document.getElementById(`reportPage${i}`);
+        const btn = document.getElementById(`btnPage${i}`);
+        if(pg) pg.style.display = 'none';
+        if(btn) btn.classList.remove('active');
+    }
+    const targetPg = document.getElementById(`reportPage${pageNum}`);
+    const targetBtn = document.getElementById(`btnPage${pageNum}`);
+    if(targetPg) targetPg.style.display = 'block';
+    if(targetBtn) targetBtn.classList.add('active');
+    document.getElementById('reportModal').scrollTop = 0;
+}
+
+function calcMakeupDurationHours(timeRaw) {
+    try {
+        const normalized = String(timeRaw || '').replace(/<br>/gi, '').replace(/\n/g, '').trim();
+        const parts = normalized.split('~');
+        if (parts.length < 2) return 0;
+        const toMin = (t) => {
+            const digits = t.replace(/[^0-9]/g, '');
+            if (digits.length >= 4) {
+                return parseInt(digits.substring(0, 2), 10) * 60 + parseInt(digits.substring(2, 4), 10);
+            }
+            const seg = t.split(':');
+            return parseInt(seg[0], 10) * 60 + parseInt(seg[1] || 0, 10);
+        };
+        const diff = toMin(parts[1]) - toMin(parts[0]);
+        return diff > 0 ? Math.round(diff / 60) : 0;
+    } catch (e) {
+        return 0;
+    }
+}
+
+function buildMakeupReportFileName(subName, dateDisplay, timeDisplay, studentNames, countText) {
+    const digits = String(dateDisplay || '').replace(/[^0-9]/g, '');
+    let datePart = '00.00.00';
+    if (digits.length >= 8) {
+        datePart = `${digits.substring(2, 4)}.${digits.substring(4, 6)}.${digits.substring(6, 8)}`;
+    } else if (digits.length >= 6) {
+        datePart = `${digits.substring(0, 2)}.${digits.substring(2, 4)}.${digits.substring(4, 6)}`;
+    }
+
+    const timeNorm = String(timeDisplay || '').replace(/<br>/gi, '').replace(/\n/g, '').trim();
+    const timeCompact = timeNorm.replace(/[:\s]/g, '');
+    const hours = calcMakeupDurationHours(timeNorm);
+    const timePart = hours > 0 ? `${timeCompact}(${hours}H)` : timeCompact;
+
+    const namesPart = studentNames.length ? studentNames.join(',') : '외';
+    const countPart = countText || `${studentNames.length}명`;
+
+    return `[보강][${datePart}]_[${timePart}]_[${subName}]_${namesPart}(${countPart})`;
+}
+
+function preparePrint() {
+    const subName = document.querySelector('.view_subject_name').innerText.trim();
+    const dateStr = document.getElementById('view_table_date_p2').innerText;
+    const timeStr = document.getElementById('view_table_time').innerText.replace(/<br>/gi, '').replace(/\n/g, '');
+    const studentCount = document.querySelector('.view_student_count').innerText.trim();
+    const studentNames = Array.from(document.querySelectorAll('#view_studentList tr strong'))
+        .map(el => el.innerText.trim())
+        .filter(Boolean);
+
+    const fileName = buildMakeupReportFileName(subName, dateStr, timeStr, studentNames, studentCount);
+
+    const originalTitle = document.title;
+    document.title = fileName;
+
+    for (let i = 1; i <= 3; i++) {
+        const pg = document.getElementById(`reportPage${i}`);
+        if(pg) {
+            pg.style.display = 'block';
+            pg.style.visibility = 'visible';
+        }
+    }
+
+    // 📍 [누유 수리] 불필요한 setTimeout 중첩 제거 및 window.print 동기적 블로킹 활용
+    setTimeout(() => {
+        window.print();
+        // 브라우저 인쇄 대화창이 닫히면 바로 아래 코드가 실행됩니다.
+        document.title = originalTitle;
+        const activeBtn = document.querySelector('.btn-page-nav.active');
+        const currentPage = activeBtn ? activeBtn.id.replace('btnPage', '') : 1;
+        switchReportPage(currentPage);
+    }, 200);
+}
+
+let isSelectMode = false; // 선택 모드 활성화 여부
+
+// [신규] 미디어 초기화 버튼 클릭 핸들러
+async function handleMediaResetClick() {
+    if (!isAdmin) return await appAlert("❌ 권한이 없습니다. 선생님 계정으로 인증해 주세요.");
+
+    if (!isSelectMode) {
+        // 1단계: 선택 모드 진입
+        isSelectMode = true;
+        document.getElementById('btnResetMedia').innerText = "🚩 선택 항목 삭제 실행";
+        document.getElementById('btnResetMedia').style.background = "#c0392b";
+        document.getElementById('btnCancelSelect').style.display = "inline-block";
+        
+        // 현재 활성화된 정렬 상태로 리렌더링
+        const activeBtn = document.querySelector('.sort-btns .btn-detail.active');
+        const currentSort = activeBtn ? getSortKeyFromBtn(activeBtn) : 'subjectName';
+        renderMainTable(currentSort);
+    } else {
+        // 2단계: 선택 항목 삭제 실행
+        executeSelectiveReset();
+    }
+}
+
+// [신규] 선택 모드 취소
+function cancelSelectMode() {
+    isSelectMode = false;
+    const resetBtn = document.getElementById('btnResetMedia');
+    if(resetBtn) {
+        resetBtn.innerText = "🗑️ 미디어 초기화";
+        resetBtn.style.background = "#e74c3c";
+    }
+    const cancelBtn = document.getElementById('btnCancelSelect');
+    if(cancelBtn) cancelBtn.style.display = "none";
+    
+    // 현재 정렬 상태 유지하며 리렌더링
+    const activeBtn = document.querySelector('.sort-btns .btn-detail.active');
+    renderMainTable(activeBtn ? getSortKeyFromBtn(activeBtn) : 'subjectName');
+}
+
+// [신규] 전체 선택/해제
+function toggleAllRows(master) {
+    const checkboxes = document.querySelectorAll('.reset-checkbox');
+    checkboxes.forEach(cb => cb.checked = master.checked);
+}
+
+// [도우미] 버튼 텍스트로 정렬 키 추출
+function getSortKeyFromBtn(btn) {
+    const txt = btn.innerText;
+    if (txt.includes('과목순')) return 'subjectName';
+    if (txt.includes('성명순')) return 'studentName';
+    if (txt.includes('HRD')) return 'hrdDate';
+    if (txt.includes('보강일순')) return 'historyTime';
+    if (txt.includes('보고서용')) return 'reportMode';
+    return 'subjectName';
+}
+
+// 📍 [정밀 타격 엔진] 체크된 항목의 사진과 싸인만 골라서 삭제합니다.
+async function executeSelectiveReset() {
+    // 1. 체크박스 중 체크된 것만 다 불러오기
+    const checkedBoxes = document.querySelectorAll('.reset-checkbox:checked');
+    
+    if (checkedBoxes.length === 0) {
+        await appAlert("선택된 항목이 없습니다. 삭제할 항목을 체크해 주세요.");
+        return;
+    }
+
+    // 2. 최종 확인 (실수 방지 안전장치)
+    if (!await appConfirm(`❗ 선택한 ${checkedBoxes.length}개 항목의 사진과 서명을 모두 지울까요?\n(보강 시간 기록은 그대로 유지됩니다.)`)) return;
+
+    try {
+        const updates = {};
+        checkedBoxes.forEach(cb => {
+            const reportKey = cb.getAttribute('data-report-key'); // 사진 뭉치 번호
+            const signKeysStr = cb.getAttribute('data-sign-keys'); // 서명 번호들
+            
+            // 사진 경로 지우기 예약
+            if (reportKey && reportKey !== "null") {
+                updates[classDbPath(`makeupReportImages/${reportKey}`)] = null;
+            }
+
+            // 서명 경로 지우기 예약
+            if (signKeysStr) {
+                const signKeys = JSON.parse(signKeysStr);
+                signKeys.forEach(sk => {
+                    updates[classDbPath(`makeupSigns/${sk}`)] = null;
+                });
+            }
+        });
+
+        // 3. Firebase에 한 번에 전송 (일괄 삭제)
+        await database.ref().update(updates);
+        
+        await appAlert("✅ 선택한 미디어가 깨끗하게 초기화되었습니다.");
+        
+        // 🚀 [복귀 배선] 새로고침할 때 '보강일순' 정렬값이 유지되도록 URL을 수정해서 리로드
+        const currentUrl = new URL(window.location.href);
+        // 여기서 sort 파라미터를 강제로 historyTime으로 고정합니다.
+        window.location.href = classNavHref('보강수업.html', 'sort=historyTime');
+    } catch (e) {
+        await appAlert("❌ 정비 실패(오류): " + e.message);
+    }
+}
+
+// 📍 [보안 추가] 대시보드(HTML)에서 엔진룸(JS)으로 모든 배선 숨기기 및 이벤트 위임
+
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. 고정 네비게이션 및 비상 버튼
+    document.getElementById('btnResetMedia').addEventListener('click', handleMediaResetClick);
+    document.getElementById('btnCancelSelect').addEventListener('click', cancelSelectMode);
+    
+    // 2. 메인 탭 메뉴 이동
+    document.getElementById('btn_tab_main').addEventListener('click', () => goToPage('main'));
+    document.getElementById('btn_tab_calendar').addEventListener('click', () => goToPage('calendar'));
+    document.getElementById('btn_tab_weekly').addEventListener('click', () => goToPage('weekly'));
+
+    // 3. 목록 정렬 버튼
+    document.getElementById('btn_sort_subject').addEventListener('click', () => renderMainTable('subjectName'));
+    document.getElementById('btn_sort_student').addEventListener('click', () => renderMainTable('studentName'));
+    document.getElementById('btn_sort_hrd').addEventListener('click', () => renderMainTable('hrdDate'));
+    document.getElementById('btn_sort_history').addEventListener('click', () => renderMainTable('historyTime'));
+    document.getElementById('btnReportMode').addEventListener('click', () => renderMainTable('reportMode'));
+
+    // 4. 모달 및 패드 제어 버튼
+    document.getElementById('btn_sign_clear').addEventListener('click', clearSign);
+    document.getElementById('btn_sign_save').addEventListener('click', saveDigitalSign);
+    document.getElementById('btn_sign_close').addEventListener('click', closeSignModal);
+    
+    document.getElementById('btnPage1').addEventListener('click', () => switchReportPage(1));
+    document.getElementById('btnPage2').addEventListener('click', () => switchReportPage(2));
+    document.getElementById('btnPage3').addEventListener('click', () => switchReportPage(3));
+    document.getElementById('btn_prepare_print').addEventListener('click', preparePrint);
+    document.getElementById('btn_report_close').addEventListener('click', () => document.getElementById('reportModal').style.display = 'none');
+
+    // 모달창 바깥 클릭 닫기 (이벤트 전파 방지 포함)
+    const reportModal = document.getElementById('reportModal');
+    reportModal.addEventListener('click', (e) => {
+        if (e.target === reportModal) reportModal.style.display = 'none';
+    });
+
+    // 5. 📍 동적 생성 부품 제어 (이벤트 위임 기술 - 센서 강화)
+    document.getElementById('makeupBody').addEventListener('click', function(e) {
+        // 📍 [핵심 수리] 텍스트(span)나 아이콘을 눌러도 부모인 버튼(button)을 찾아내도록 'closest' 추적기 장착
+        const toggleBtn = e.target.closest('.dynamic-toggle-detail');
+        const reportBtn = e.target.closest('.dynamic-open-report');
+        const signBtn = e.target.closest('.dynamic-sign-trigger');
+        const uploadBtn = e.target.closest('.dynamic-upload-trigger');
+        const saveHistBtn = e.target.closest('.dynamic-save-hist');
+        const delHistBtn = e.target.closest('.dynamic-delete-hist');
+        const waiveBtn = e.target.closest('.dynamic-waive-makeup');
+        const cancelWaiveBtn = e.target.closest('.dynamic-cancel-waive');
+
+        if (toggleBtn) {
+            toggleStudentDetail(toggleBtn.getAttribute('data-idx'));
+        } else if (waiveBtn) {
+            waiveMakeup(parseInt(waiveBtn.getAttribute('data-idx')));
+        } else if (cancelWaiveBtn) {
+            cancelWaiveMakeup(parseInt(cancelWaiveBtn.getAttribute('data-idx')));
+        } else if (reportBtn) {
+            openReportView(reportBtn.getAttribute('data-reportkey'));
+        } else if (signBtn) {
+            triggerSignUpload(signBtn.getAttribute('data-signkey'), signBtn.getAttribute('data-name'));
+        } else if (uploadBtn) {
+            triggerUpload(uploadBtn.getAttribute('data-reportkey'), uploadBtn.getAttribute('data-num'));
+        } else if (saveHistBtn) {
+            saveNewHistory(saveHistBtn.getAttribute('data-idx'));
+        } else if (delHistBtn) {
+            deleteHistory(delHistBtn.getAttribute('data-name'), delHistBtn.getAttribute('data-sub'), delHistBtn.getAttribute('data-histid'), delHistBtn.getAttribute('data-idx'));
+        } 
+        // 전체 체크박스 묶음 제어
+        else if (e.target.type === 'checkbox' && e.target.hasAttribute('onclick') && e.target.getAttribute('onclick').includes('toggleAllRows')) {
+            toggleAllRows(e.target);
+            e.target.removeAttribute('onclick'); 
+        }
+    });
+
+    // 사진 파일 선택(change) 이벤트 위임
+    document.getElementById('makeupBody').addEventListener('change', function(e) {
+        const target = e.target;
+        if (target.classList.contains('dynamic-upload-file')) {
+            uploadPhoto(target.getAttribute('data-reportkey'), target.getAttribute('data-num'), target);
+        }
+    });
+
+    // 자동 포커스(input) 이벤트 위임
+    document.getElementById('makeupBody').addEventListener('input', function(e) {
+        const target = e.target;
+        if (target.classList.contains('dynamic-auto-focus')) {
+            autoFocusNext(target, target.getAttribute('data-next'), parseInt(target.getAttribute('data-len')));
+        }
+    });
+});

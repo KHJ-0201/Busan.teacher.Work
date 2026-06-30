@@ -1,1 +1,428 @@
-function a0_0x2b42(_0x19d3a7,_0x1ad130){_0x19d3a7=_0x19d3a7-0x187;const _0x408cc8=a0_0x5ae8();let _0x368ed3=_0x408cc8[_0x19d3a7];if(a0_0x2b42['SkLCea']===undefined){var _0x10adcf=function(_0x282e8a){const _0xf1f084='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x17a735='',_0x570d71='',_0x3c49d8=_0x17a735+_0x10adcf;for(let _0x36bfdc=0x0,_0x3a801d,_0x3b9762,_0x1841d5=0x0;_0x3b9762=_0x282e8a['charAt'](_0x1841d5++);~_0x3b9762&&(_0x3a801d=_0x36bfdc%0x4?_0x3a801d*0x40+_0x3b9762:_0x3b9762,_0x36bfdc++%0x4)?_0x17a735+=_0x3c49d8['charCodeAt'](_0x1841d5+0xa)-0xa!==0x0?String['fromCharCode'](0xff&_0x3a801d>>(-0x2*_0x36bfdc&0x6)):_0x36bfdc:0x0){_0x3b9762=_0xf1f084['indexOf'](_0x3b9762);}for(let _0x1a3af6=0x0,_0x9fa71c=_0x17a735['length'];_0x1a3af6<_0x9fa71c;_0x1a3af6++){_0x570d71+='%'+('00'+_0x17a735['charCodeAt'](_0x1a3af6)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x570d71);};a0_0x2b42['sxnQBr']=_0x10adcf,a0_0x2b42['lIXhMF']={},a0_0x2b42['SkLCea']=!![];}const _0x5ae803=_0x408cc8[0x0],_0x2b4205=_0x19d3a7+_0x5ae803,_0x41abf0=a0_0x2b42['lIXhMF'][_0x2b4205];if(!_0x41abf0){const _0x294016=function(_0x2a8ebd){this['oWABpO']=_0x2a8ebd,this['xkoBPg']=[0x1,0x0,0x0],this['IbmpYM']=function(){return'newState';},this['FmwQwW']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['rUrsHt']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x294016['prototype']['aYVxlh']=function(){const _0x5ca645=new RegExp(this['FmwQwW']+this['rUrsHt']),_0x373c27=_0x5ca645['test'](this['IbmpYM']['toString']())?--this['xkoBPg'][0x1]:--this['xkoBPg'][0x0];return this['FdqVkH'](_0x373c27);},_0x294016['prototype']['FdqVkH']=function(_0x57eb9f){if(!Boolean(~_0x57eb9f))return _0x57eb9f;return this['mvHKTY'](this['oWABpO']);},_0x294016['prototype']['mvHKTY']=function(_0x4fa162){for(let _0x5c188c=0x0,_0x1700a3=this['xkoBPg']['length'];_0x5c188c<_0x1700a3;_0x5c188c++){this['xkoBPg']['push'](Math['round'](Math['random']())),_0x1700a3=this['xkoBPg']['length'];}return _0x4fa162(this['xkoBPg'][0x0]);},new _0x294016(a0_0x2b42)['aYVxlh'](),_0x368ed3=a0_0x2b42['sxnQBr'](_0x368ed3),a0_0x2b42['lIXhMF'][_0x2b4205]=_0x368ed3;}else _0x368ed3=_0x41abf0;return _0x368ed3;}(function(_0x2477bb,_0x3debb6){const _0x4c419b=a0_0x2b42,_0x4d5608=_0x2477bb();while(!![]){try{const _0x20ea2f=parseInt(_0x4c419b(0x228))/0x1*(parseInt(_0x4c419b(0x225))/0x2)+parseInt(_0x4c419b(0x1f7))/0x3*(-parseInt(_0x4c419b(0x1cf))/0x4)+-parseInt(_0x4c419b(0x1b1))/0x5*(parseInt(_0x4c419b(0x1aa))/0x6)+parseInt(_0x4c419b(0x1b4))/0x7+parseInt(_0x4c419b(0x222))/0x8+parseInt(_0x4c419b(0x1de))/0x9+-parseInt(_0x4c419b(0x1fe))/0xa;if(_0x20ea2f===_0x3debb6)break;else _0x4d5608['push'](_0x4d5608['shift']());}catch(_0x46dd0a){_0x4d5608['push'](_0x4d5608['shift']());}}}(a0_0x5ae8,0x3add9),(function(){const _0x2d5432=a0_0x2b42,_0x36bfdc=(function(){let _0x47a63b=!![];return function(_0x28238b,_0x3fcaf7){const _0x70a879=_0x47a63b?function(){const _0xeae3d0=a0_0x2b42;if(_0x3fcaf7){const _0x5e912d=_0x3fcaf7[_0xeae3d0(0x188)](_0x28238b,arguments);return _0x3fcaf7=null,_0x5e912d;}}:function(){};return _0x47a63b=![],_0x70a879;};}());'use strict';let _0x3a801d={},_0x3b9762=_0x2d5432(0x219),_0x1841d5='',_0x1a3af6='',_0x9fa71c=_0x2d5432(0x1b3);function _0x294016(_0x26e3f7){const _0x1adca5=_0x2d5432;if(!_0x26e3f7)return'날짜미상';let _0x56dc14=String(_0x26e3f7)[_0x1adca5(0x204)]()[_0x1adca5(0x1ff)](/\./g,'-');if(_0x56dc14[_0x1adca5(0x1f9)]('/')){const _0x4d07d4=_0x56dc14[_0x1adca5(0x1db)]('/');if(_0x4d07d4[_0x1adca5(0x218)]===0x3){const _0x488b0=_0x4d07d4[0x2][_0x1adca5(0x218)]===0x2?'20'+_0x4d07d4[0x2]:_0x4d07d4[0x2];_0x56dc14=_0x488b0+'-'+_0x4d07d4[0x0][_0x1adca5(0x196)](0x2,'0')+'-'+_0x4d07d4[0x1][_0x1adca5(0x196)](0x2,'0');}}return _0x56dc14[_0x1adca5(0x194)](0x0,0xa);}function _0x2a8ebd(_0x3b1d0e){const _0x425ca1=_0x2d5432;if(_0x3a801d['dropoutData']&&_0x3a801d[_0x425ca1(0x224)][_0x3b1d0e])return _0x3a801d[_0x425ca1(0x224)][_0x3b1d0e];if(_0x3a801d[_0x425ca1(0x1c6)]&&_0x3a801d[_0x425ca1(0x1c6)][_0x3b1d0e])return _0x3a801d[_0x425ca1(0x1c6)][_0x3b1d0e];return null;}function _0x5ca645(_0x20ae99,_0x4118e9){const _0x19bf54=_0x2a8ebd(_0x20ae99);return!!(_0x19bf54&&_0x19bf54<=_0x4118e9);}function _0x373c27(_0xa6e57e,_0x112bc1){const _0x1ecc7e=_0x2a8ebd(_0xa6e57e);return!!(_0x1ecc7e&&_0x112bc1>=_0x1ecc7e);}function _0x57eb9f(_0x58a3a5,_0x19d1c8,_0xf06587){const _0x582a96=_0x2d5432,_0x25d995=_0xf06587||_0x3b9762;return(_0x3a801d[_0x582a96(0x1f4)]||[])[_0x582a96(0x1ce)](_0x64be2=>{const _0x4ac686=_0x582a96,_0x3fab6f=_0x25d995===_0x4ac686(0x18a)?String(_0x64be2['교과목']||''):String(_0x64be2[_0x4ac686(0x1e7)]||'');return _0x294016(_0x64be2['날짜'])===_0x58a3a5&&_0x3fab6f[_0x4ac686(0x1ff)](/\s+/g,'')===String(_0x19d1c8)[_0x4ac686(0x1ff)](/\s+/g,'');});}function _0x4fa162(_0x508bcf,_0x2e7513,_0x4a0178,_0x1ea37a,_0x40920a,_0x5c1562,_0x345381){const _0x45fbca=_0x2d5432;if(!_0x2e7513||!_0x4a0178||_0x2e7513['startsWith']('00'))return{'am':0x0,'pm':0x0};const _0x386a43=_0x57eb9f(_0x508bcf,_0x1ea37a,_0x345381);let _0x21b8d9=0x0,_0x2a27f4=0x0;const _0x47f9a8=_0x17bdd5=>{const _0x235abc=a0_0x2b42;if(!_0x17bdd5||!String(_0x17bdd5)[_0x235abc(0x1f9)](':'))return 0x0;const _0x50e4ee=_0x17bdd5[_0x235abc(0x1db)](':');return parseInt(_0x50e4ee[0x0],0xa)*0x3c+parseInt(_0x50e4ee[0x1],0xa);},_0x2fd565=_0x47f9a8(_0x2e7513),_0x3ccfc0=_0x47f9a8(_0x4a0178),_0x19c83e=_0x47f9a8(_0x40920a),_0x3a8f60=_0x47f9a8(_0x5c1562),_0x3c1552=0xd*0x3c,_0x20f833=0xd*0x3c+0x1e;return _0x386a43[_0x45fbca(0x18c)](_0x5a0c26=>{const _0x317cef=_0x45fbca,_0x5df809=String(_0x5a0c26['시간']||_0x5a0c26[_0x317cef(0x1b0)]||'')[_0x317cef(0x1ff)](/\s/g,''),_0x265c05=_0x5df809[_0x317cef(0x1db)](/[~-]/);if(_0x265c05[_0x317cef(0x218)]>=0x2){let _0x1dbf8d=_0x47f9a8(_0x265c05[0x0]),_0x3d6a4a=_0x47f9a8(_0x265c05[0x1])+0xa,_0x3758a0=Math[_0x317cef(0x214)](_0x2fd565,_0x1dbf8d),_0x1d8566=Math[_0x317cef(0x213)](_0x3ccfc0,_0x3d6a4a),_0x5763b8=Math['max'](0x0,_0x1d8566-_0x3758a0);_0x5763b8-=Math[_0x317cef(0x214)](0x0,Math[_0x317cef(0x213)](_0x1d8566,_0x20f833)-Math[_0x317cef(0x214)](_0x3758a0,_0x3c1552));if(_0x19c83e>0x0&&_0x3a8f60>0x0){const _0x1c53ef=Math['max'](0x0,Math[_0x317cef(0x213)](_0x3a8f60,_0x1d8566)-Math[_0x317cef(0x214)](_0x19c83e,_0x3758a0)),_0x3e5c91=Math['max'](0x0,Math[_0x317cef(0x213)](_0x3a8f60,_0x20f833,_0x1d8566)-Math[_0x317cef(0x214)](_0x19c83e,_0x3c1552,_0x3758a0));_0x5763b8-=_0x1c53ef-_0x3e5c91;}const _0x4997da=String(_0x5a0c26['교시'])['trim']();if(['1','2','3','4'][_0x317cef(0x1f9)](_0x4997da))_0x21b8d9+=_0x5763b8;else{if(['5','6','7','8'][_0x317cef(0x1f9)](_0x4997da))_0x2a27f4+=_0x5763b8;}}}),{'am':Math[_0x45fbca(0x1ee)](_0x21b8d9),'pm':Math[_0x45fbca(0x1ee)](_0x2a27f4)};}function _0x5c188c(_0x108c29,_0x288655,_0x5797ea){const _0x362113=_0x2d5432;if(!_0x288655||_0x288655<=0x0||!_0x5797ea)return;const _0x3e2c2b=_0x5797ea['closest']('tr');if(!_0x3e2c2b)return;const _0x5884ef=_0x3e2c2b[_0x362113(0x1a6)](_0x362113(0x1a8)),_0x45f6b4=_0x5884ef?parseInt(_0x5884ef[_0x362113(0x18e)],0xa)||0x0:0x0,_0x2f7750=_0x3e2c2b['querySelectorAll']('td');let _0x3aea79=0x0;for(let _0x5f3d63=0x2;_0x5f3d63<_0x2f7750[_0x362113(0x218)]-0x4;_0x5f3d63++){const _0x2c2e65=_0x2f7750[_0x5f3d63],_0x4fb346=_0x2c2e65['querySelector']('.sim-input');_0x3aea79+=_0x4fb346?parseInt(_0x4fb346[_0x362113(0x18e)],0xa)||0x0:parseInt(_0x2c2e65['innerText'],0xa)||0x0;}const _0x2f6daa=_0x3aea79+_0x45f6b4,_0x2cee52=(_0x2f6daa/_0x288655*0x64)[_0x362113(0x1e9)](0x1),_0x18a3e7=_0x3e2c2b['querySelector'](_0x362113(0x1da)),_0x588634=_0x3e2c2b['querySelector'](_0x362113(0x1a3)),_0x4835b8=_0x3e2c2b[_0x362113(0x1a6)]('[id^=\x22percent_\x22]');if(_0x18a3e7)_0x18a3e7[_0x362113(0x1b8)]=_0x2f6daa;if(_0x588634)_0x588634['innerText']=(_0x2f6daa/0x3c)['toFixed'](0x1)+'h';_0x4835b8&&(_0x4835b8[_0x362113(0x1b8)]=_0x2cee52+'%',_0x4835b8[_0x362113(0x1ea)][_0x362113(0x1b7)]=_0x2cee52<0x4b?'red':_0x362113(0x1ad));}function _0x1700a3(_0x541c6a,_0x3f6404,_0x1058ff,_0x8595cc,_0x106ef5,_0x35f87e,_0x8abf29,_0x3de1e7){const _0x268833=_0x2d5432,_0x33db8c=document[_0x268833(0x207)](_0x106ef5),_0x54f100=document[_0x268833(0x207)](_0x35f87e);if(!_0x33db8c||!_0x54f100)return;if(_0x106ef5===_0x268833(0x1a4)){const _0xf0400d=document[_0x268833(0x207)](_0x268833(0x220));if(_0xf0400d){const _0x351d78=_0x3de1e7===_0x268833(0x1b3)?_0x268833(0x22d)+_0x8abf29+_0x268833(0x206)+_0x106ef5+'\x27,\x20\x27'+_0x35f87e+_0x268833(0x1fb):_0x268833(0x22d)+_0x8abf29+_0x268833(0x206)+_0x106ef5+'\x27,\x20\x27'+_0x35f87e+_0x268833(0x21b),_0x363c03=_0xf0400d[_0x268833(0x1a6)](_0x268833(0x1e5));if(_0x363c03)_0x363c03[_0x268833(0x187)]();const _0x3013e4=_0xf0400d[_0x268833(0x1a6)]('.btn-excel');if(_0x3013e4)_0x3013e4[_0x268833(0x229)]('beforebegin',_0x351d78);}}let _0x1c7d0a='<tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<th\x20rowspan=\x222\x22\x20class=\x22sticky-no\x22\x20style=\x22width:\x2030px;\x22>No</th>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<th\x20rowspan=\x222\x22\x20class=\x22sticky-col\x22\x20style=\x22width:\x2046px\x20!important;\x20min-width:\x2046px\x20!important;\x20max-width:\x2046px\x20!important;\x20font-size:\x2011px;\x20padding:\x202px\x20!important;\x22>훈련생명</th>',_0x23bde0=_0x268833(0x1bc);_0x541c6a['forEach'](_0x3c2d0c=>{const _0x481745=_0x268833,_0x1a68b2=_0x3c2d0c===window[_0x481745(0x1d7)],_0x47c865=_0x1a68b2?_0x481745(0x221):'background:#f8f9fa;',_0x44fbf4=_0x1a68b2?_0x481745(0x227):'';_0x1c7d0a+=_0x481745(0x1ef)+_0x47c865+'\x22>'+_0x8595cc[_0x3c2d0c]+'</th>',_0x23bde0+=_0x481745(0x1a9)+_0x44fbf4+_0x481745(0x1ae)+_0x44fbf4+_0x481745(0x1d5);}),_0x1c7d0a+='<th\x20rowspan=\x222\x22\x20style=\x22background:#e3f2fd;\x20width:\x2035px\x20!important;\x20min-width:\x2035px\x20!important;\x20max-width:\x2035px\x20!important;\x20font-size:\x2010.5px;\x20line-height:\x201.2;\x20padding:\x202px\x20!important;\x22>보강<br>(분)</th>',_0x1c7d0a+=_0x268833(0x21c),_0x23bde0+=_0x268833(0x1e1),_0x33db8c[_0x268833(0x19d)]=_0x1c7d0a+_0x23bde0;let _0x6892b3=0x0;_0x541c6a[_0x268833(0x18c)](_0x2e268a=>{_0x6892b3+=_0x1058ff[_0x2e268a]['am']+_0x1058ff[_0x2e268a]['pm'];});let _0x3dc3da=_0x268833(0x1f3);_0x541c6a[_0x268833(0x18c)](_0x53a3ce=>{const _0x532f14=_0x268833;_0x3dc3da+='<td>'+_0x1058ff[_0x53a3ce]['am']+'</td><td>'+_0x1058ff[_0x53a3ce]['pm']+_0x532f14(0x1eb);}),_0x3dc3da+=_0x268833(0x20d)+_0x6892b3+_0x268833(0x1d9)+(_0x6892b3/0x3c)[_0x268833(0x1e9)](0x1)+_0x268833(0x1d1);const _0x5eb68b=_0x3a801d[_0x268833(0x19f)]||[],_0x1c12fb=_0x3a801d['fullAttendanceData']||{},_0x3b15fe=_0x5eb68b[_0x268833(0x20a)]((_0x240e02,_0x4b1484)=>{const _0x118957=_0x268833;let _0x1a4a73=0x0,_0x14160b='';_0x541c6a[_0x118957(0x18c)](_0x9d1a1a=>{const _0x39eef8=_0x118957,_0x338e20=_0x3f6404[_0x240e02][_0x39eef8(0x1cd)][_0x9d1a1a],_0x479c46=_0x1c12fb[_0x9d1a1a]&&_0x1c12fb[_0x9d1a1a][_0x240e02]?_0x1c12fb[_0x9d1a1a][_0x240e02]:{};let _0x4c33e3=_0x338e20['am'],_0x22c486=_0x338e20['pm'],_0x392c5f='';const _0x3f4c9a=_0x373c27(_0x240e02,_0x9d1a1a);if(_0x3f4c9a)_0x4c33e3=0x0,_0x22c486=0x0,_0x392c5f=_0x39eef8(0x216);else{if(_0x3de1e7===_0x39eef8(0x1c7)&&_0x338e20[_0x39eef8(0x1f1)])_0x4c33e3=_0x1058ff[_0x9d1a1a]['am'],_0x22c486=_0x1058ff[_0x9d1a1a]['pm'],_0x392c5f='status-special';else{const _0x1fd34e=_0x479c46[_0x39eef8(0x1b2)]||'',_0x256aea=_0x479c46[_0x39eef8(0x197)]||'00:00:00';if(_0x1fd34e[_0x39eef8(0x1f9)]('지각')||_0x1fd34e['includes']('조퇴')||parseInt(_0x256aea[_0x39eef8(0x1ff)](/:/g,''),0xa)>0x15f90&&parseInt(_0x256aea[_0x39eef8(0x1ff)](/:/g,''),0xa)<0x1fbd0)_0x392c5f=_0x39eef8(0x20c);else{if(_0x1fd34e[_0x39eef8(0x1f9)]('외출'))_0x392c5f=_0x39eef8(0x1e0);else{if(_0x1fd34e[_0x39eef8(0x1f9)]('결석')||_0x1fd34e===_0x39eef8(0x20e))_0x392c5f=_0x39eef8(0x1ab);else(_0x1fd34e[_0x39eef8(0x1f9)]('휴가')||_0x1fd34e[_0x39eef8(0x1f9)]('공가')||_0x1fd34e[_0x39eef8(0x1f9)]('기타'))&&(_0x392c5f='status-special');}}}}_0x1a4a73+=_0x4c33e3+_0x22c486;let _0x426fcc=_0x3f4c9a?'-':_0x4c33e3,_0xb3eac7=_0x3f4c9a?'-':_0x22c486;if(!_0x3f4c9a&&_0x338e20[_0x39eef8(0x1f1)]){const _0x45b2a0=_0x39eef8(0x18d);_0x426fcc=_0x39eef8(0x1af)+_0x4c33e3+'\x22\x20oninput=\x22calculateRowPercent(\x27'+_0x240e02+_0x39eef8(0x1a5)+_0x6892b3+_0x39eef8(0x1bf)+_0x45b2a0+_0x39eef8(0x1f8),_0xb3eac7=_0x39eef8(0x1af)+_0x22c486+_0x39eef8(0x1d6)+_0x240e02+_0x39eef8(0x1a5)+_0x6892b3+_0x39eef8(0x1bf)+_0x45b2a0+'\x22\x20title=\x22시뮬레이션\x20입력\x20(저장되지\x20않음)\x22>';}_0x14160b+='<td\x20class=\x22attendance-time-cell\x20'+_0x392c5f+'\x22>'+_0x426fcc+_0x39eef8(0x1d3)+_0x392c5f+'\x22>'+_0xb3eac7+'</td>';});const _0x5584bf=_0x3f6404[_0x240e02][_0x118957(0x191)],_0x5f150c=_0x1a4a73+_0x5584bf,_0x3b7f7d=_0x6892b3>0x0?(_0x5f150c/_0x6892b3*0x64)[_0x118957(0x1e9)](0x1):_0x118957(0x19e),_0x54249b=_0x541c6a[_0x541c6a[_0x118957(0x218)]-0x1],_0x56da3b=_0x5ca645(_0x240e02,_0x54249b),_0x461124=_0x56da3b?_0x118957(0x216):'',_0x3165c5=_0x56da3b?'':_0x3b7f7d<0x4b?'color:red;':_0x118957(0x209),_0x1ef634=_0x56da3b?'':_0x118957(0x193),_0x81c74c=_0x56da3b?'':_0x118957(0x21a),_0x30597a='width:100%;\x20box-sizing:border-box;\x20padding:2px;\x20text-align:center;\x20font-size:11px;\x20'+(_0x56da3b?_0x118957(0x1fa):'border:1px\x20solid\x20#ccc;\x20border-radius:3px;'),_0xacabaa=_0x118957(0x21d)+_0x240e02+_0x118957(0x1d4)+_0x240e02+_0x118957(0x22a)+_0x8abf29+'\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20data-type=\x22makeup\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20value=\x22'+_0x5584bf+_0x118957(0x1e2)+_0x240e02+_0x118957(0x1a5)+_0x6892b3+',\x20this)\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20style=\x22'+_0x30597a+'\x22\x20'+(_0x56da3b?_0x118957(0x1ba):'')+'>';return _0x118957(0x1e4)+(_0x4b1484+0x1)+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td\x20class=\x22sticky-col\x20'+_0x461124+_0x118957(0x22c)+_0x240e02+'</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+_0x14160b+_0x118957(0x212)+_0x461124+_0x118957(0x1c4)+_0x1ef634+_0x118957(0x1d0)+_0xacabaa+_0x118957(0x211)+_0x240e02+_0x118957(0x20f)+_0x461124+_0x118957(0x1df)+_0x5f150c+_0x118957(0x1f5)+_0x240e02+_0x118957(0x20f)+_0x461124+_0x118957(0x1c4)+_0x81c74c+_0x118957(0x1e3)+(_0x5f150c/0x3c)[_0x118957(0x1e9)](0x1)+_0x118957(0x223)+_0x240e02+_0x118957(0x20f)+_0x461124+_0x118957(0x1be)+_0x3165c5+_0x118957(0x19b)+_0x3b7f7d+_0x118957(0x1cc);})[_0x268833(0x1c0)]('');_0x54f100[_0x268833(0x19d)]=_0x3dc3da+_0x3b15fe,_0x9fa71c=_0x3de1e7;}async function _0x2a1fd1(_0x124b0f,_0x395a24,_0xc48849,_0x1691ac=_0x2d5432(0x1b3)){const _0x50dc67=_0x2d5432,_0x3fde94=String(_0x124b0f)['replace'](/\s+/g,''),_0x5c4050=[...new Set((_0x3a801d['rawTimetable']||[])[_0x50dc67(0x1ce)](_0x1e4d6d=>{const _0x475107=_0x50dc67,_0x3ca494=_0x3b9762==='subject'?_0x1e4d6d[_0x475107(0x201)]||'':_0x1e4d6d['능력단위']||'';return String(_0x3ca494)[_0x475107(0x1ff)](/\s+/g,'')===_0x3fde94;})[_0x50dc67(0x20a)](_0x3bce3e=>_0x294016(_0x3bce3e['날짜'])))][_0x50dc67(0x1ac)](),_0x451152=await classDbRef(_0x50dc67(0x20b))[_0x50dc67(0x1dc)](_0x50dc67(0x18e)),_0x4c8a15=_0x451152[_0x50dc67(0x21f)]()||{},_0x579985={},_0x3cd25a={},_0x6a868d={},_0x107aae=['일','월','화','수','목','금','토'],_0x15b872=_0x3a801d['studentNames']||[],_0x1c089a=_0x3a801d[_0x50dc67(0x1cb)]||{};_0x15b872['forEach'](_0x273756=>{_0x579985[_0x273756]={'dates':{},'totalMin':0x0,'makeupMin':0x0};}),_0x5c4050[_0x50dc67(0x18c)](_0x19de11=>{const _0x299b4c=_0x50dc67,_0x3629ef=_0x19de11[_0x299b4c(0x194)](0x2)[_0x299b4c(0x1ff)](/-/g,'.');_0x6a868d[_0x19de11]=_0x299b4c(0x1ec)+_0x3629ef+_0x299b4c(0x19a)+_0x107aae[new Date(_0x19de11)['getDay']()]+')</span>',_0x3cd25a[_0x19de11]=_0x4fa162(_0x19de11,'09:00',_0x299b4c(0x200),_0x124b0f,'',''),_0x15b872[_0x299b4c(0x18c)](_0x12c04d=>{const _0x34e0b4=_0x299b4c,_0x552182=_0x1c089a[_0x19de11]&&_0x1c089a[_0x19de11][_0x12c04d]?_0x1c089a[_0x19de11][_0x12c04d]:null;let _0x2eb063={'am':0x0,'pm':0x0,'isFuture':!_0x1c089a[_0x19de11]};_0x552182&&_0x552182['inTime']&&_0x552182[_0x34e0b4(0x1f2)]&&(_0x2eb063=_0x4fa162(_0x19de11,_0x552182['inTime'],_0x552182['outTime'],_0x124b0f,_0x552182[_0x34e0b4(0x1bb)]||'',_0x552182['returnTime']||''),_0x2eb063['isFuture']=![]);_0x4c8a15[_0x12c04d]&&_0x4c8a15[_0x12c04d][_0x19de11]&&(_0x4c8a15[_0x12c04d][_0x19de11]['am']!==undefined&&(_0x2eb063['am']=_0x4c8a15[_0x12c04d][_0x19de11]['am'],_0x2eb063[_0x34e0b4(0x217)]=!![]),_0x4c8a15[_0x12c04d][_0x19de11]['pm']!==undefined&&(_0x2eb063['pm']=_0x4c8a15[_0x12c04d][_0x19de11]['pm'],_0x2eb063['pm_manual']=!![]),_0x2eb063['isFuture']=![]);const _0xab7289=_0x124b0f[_0x34e0b4(0x1ff)](/[\.\#\$\/\[\]]/g,'_');_0x4c8a15[_0x12c04d]&&_0x4c8a15[_0x12c04d][_0x34e0b4(0x1a1)+_0xab7289]&&(_0x579985[_0x12c04d]['makeupMin']=parseInt(_0x4c8a15[_0x12c04d][_0x34e0b4(0x1a1)+_0xab7289],0xa)||0x0),_0x579985[_0x12c04d][_0x34e0b4(0x1cd)][_0x19de11]=_0x2eb063;});}),_0x1700a3(_0x5c4050,_0x579985,_0x3cd25a,_0x6a868d,_0x395a24,_0xc48849,_0x124b0f,_0x1691ac);}async function _0x4d9788(){const _0x1c5809=_0x2d5432,_0x46292a=document['querySelectorAll']('.edit-input'),_0x18261a={};let _0x2b974f=![];const _0x220179=_0x5ae05b=>String(_0x5ae05b||'unknown')[_0x1c5809(0x1ff)](/[\.\#\$\/\[\]]/g,'_');_0x46292a['forEach'](_0x1429c2=>{const _0x470201=_0x1c5809;if(!_0x1429c2[_0x470201(0x1fc)][_0x470201(0x1a2)](_0x470201(0x189)))return;const _0x334263=_0x1429c2[_0x470201(0x1f6)](_0x470201(0x21e)),_0x28ae24=_0x1429c2[_0x470201(0x1f6)]('data-sub'),_0x163b73=_0x220179(_0x28ae24);if(!_0x18261a[_0x334263])_0x18261a[_0x334263]={};if(_0x1429c2['classList'][_0x470201(0x1a2)](_0x470201(0x1a0)))_0x18261a[_0x334263][_0x470201(0x1a1)+_0x163b73]=parseInt(_0x1429c2[_0x470201(0x18e)],0xa)||0x0,_0x2b974f=!![];else{const _0x550911=_0x1429c2[_0x470201(0x1f6)](_0x470201(0x205)),_0x818737=_0x1429c2[_0x470201(0x1f6)](_0x470201(0x192));if(_0x550911&&_0x818737){if(!_0x18261a[_0x334263][_0x550911])_0x18261a[_0x334263][_0x550911]={};_0x18261a[_0x334263][_0x550911][_0x818737]=parseInt(_0x1429c2[_0x470201(0x18e)],0xa),_0x18261a[_0x334263][_0x550911][_0x818737+_0x470201(0x1e8)]=!![],_0x2b974f=!![];}}});if(!_0x2b974f)return appAlert('수정된\x20데이터가\x20없습니다.');if(!await appConfirm(_0x1c5809(0x215)))return;try{for(const _0x379dce in _0x18261a){await classDbRef(_0x1c5809(0x1c8)+_0x379dce)[_0x1c5809(0x1e6)](_0x18261a[_0x379dce]);}await appAlert(_0x1c5809(0x1b9));if(typeof _0x3a801d['onAfterSave']===_0x1c5809(0x1b5))await _0x3a801d[_0x1c5809(0x19c)]();if(_0x1841d5)await _0x2a1fd1(_0x1841d5,'modalHead',_0x1c5809(0x18b),_0x9fa71c);}catch(_0x2f2fff){await appAlert(_0x1c5809(0x1c5)+_0x2f2fff[_0x1c5809(0x1c3)]);}}function _0x4278b9(){const _0x16d7ce=_0x2d5432,_0x5d8628=document['getElementById'](_0x16d7ce(0x226));if(_0x5d8628)_0x5d8628[_0x16d7ce(0x1ea)][_0x16d7ce(0x203)]=_0x16d7ce(0x1c9);}async function _0x5cd7cb(_0x220ad2,_0x206161,_0x11d77c,_0x2f40cb){const _0x29babd=_0x2d5432;_0x3a801d=_0x220ad2||{},_0x3b9762=_0x11d77c||'ncs',_0x1841d5=_0x206161,_0x1a3af6=_0x2f40cb,window[_0x29babd(0x1d7)]=_0x2f40cb;const _0x32611d=document[_0x29babd(0x207)](_0x29babd(0x226)),_0x5b33a=document[_0x29babd(0x207)](_0x29babd(0x1c2)),_0x37b51c=document[_0x29babd(0x207)](_0x29babd(0x220));if(!_0x32611d||!_0x5b33a||!_0x37b51c){await appAlert(_0x29babd(0x195));return;}_0x32611d['style'][_0x29babd(0x203)]='flex',_0x5b33a[_0x29babd(0x1b8)]=_0x29babd(0x1f0)+_0x206161,document[_0x29babd(0x207)](_0x29babd(0x1a4))[_0x29babd(0x19d)]='<tr><td\x20colspan=\x275\x27>과목\x20전체\x20데이터를\x20집계\x20중입니다...</td></tr>',document[_0x29babd(0x207)]('modalBody')[_0x29babd(0x19d)]='',_0x37b51c[_0x29babd(0x19d)]=_0x29babd(0x1ca)+_0x2f40cb+')\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22btn-excel\x22\x20onclick=\x22saveManualAttendance()\x22\x20style=\x22background-color:\x20#e67e22\x20!important;\x22>💾\x20수정사항\x20저장</button>\x0a\x20\x20\x20\x20',await _0x2a1fd1(_0x206161,'modalHead','modalBody',_0x29babd(0x1b3));}function _0x383831(){const _0x264c43=_0x2d5432,_0x19f83b=_0x36bfdc(this,function(){const _0x47bacd=a0_0x2b42;return _0x19f83b[_0x47bacd(0x198)]()['search'](_0x47bacd(0x1a7))[_0x47bacd(0x198)]()['constructor'](_0x19f83b)[_0x47bacd(0x1bd)]('(((.+)+)+)+$');});_0x19f83b();const _0x42ee83=document[_0x264c43(0x207)](_0x264c43(0x226)),_0x1d3949=document[_0x264c43(0x207)](_0x264c43(0x190));if(!_0x42ee83||_0x42ee83[_0x264c43(0x1ed)][_0x264c43(0x1c1)]==='1')return;_0x42ee83['dataset'][_0x264c43(0x1c1)]='1',_0x42ee83[_0x264c43(0x210)]('click',_0xcd9824=>{const _0x5b6fbf=_0x264c43;if(_0xcd9824['target']['id']===_0x5b6fbf(0x226))_0x4278b9();});const _0x230102=document[_0x264c43(0x207)]('btn_modal_close');if(_0x230102)_0x230102['addEventListener'](_0x264c43(0x1b6),_0x4278b9);if(_0x1d3949)_0x1d3949['addEventListener'](_0x264c43(0x1b6),_0x47a694=>_0x47a694['stopPropagation']());window['addEventListener'](_0x264c43(0x1fd),_0x5bef9c=>{const _0x3d5f5b=_0x264c43;if(_0x5bef9c['key']!==_0x3d5f5b(0x202))return;(_0x42ee83[_0x3d5f5b(0x1ea)][_0x3d5f5b(0x203)]===_0x3d5f5b(0x1d8)||_0x42ee83['style'][_0x3d5f5b(0x203)]===_0x3d5f5b(0x18f))&&_0x4278b9();});}window[_0x2d5432(0x199)]={'open':_0x5cd7cb,'close':_0x4278b9,'loadDetailInto':_0x2a1fd1,'saveManualAttendance':_0x4d9788,'calculateRowPercent':_0x5c188c},window['loadDetailInto']=_0x2a1fd1,window[_0x2d5432(0x208)]=_0x4d9788,window[_0x2d5432(0x1d2)]=_0x5c188c,document[_0x2d5432(0x1dd)]===_0x2d5432(0x22b)?document[_0x2d5432(0x210)]('DOMContentLoaded',_0x383831):_0x383831();}()));function a0_0x5ae8(){const _0x4518b7=['iIbVBMLUChv0psjJywXJDwXHDgvsB3DqzxjJzw50kcC','BgfZDfnLBgvJDgvKrgf0zq','zMXLEa','pc90zd4kicaGicaGica8DgqGC3r5Bgu9iNDOAxrLlxnWywnLoIbUB3DYyxa7iJ4','w2LKxJ0IDg90ywXnAw5FiL0','C3bSAxq','B25Jzq','CMvHzhLtDgf0zq','mJm0odm0m1zlAu5hBW','iIbZDhLSzt0IzM9UDc13zwLNAhq6yM9SzdSGD2HPDguTC3bHy2u6BM93CMfWoYi+','C3rHDhvZlw91Da','phrOihn0EwXLpsj3Awr0AdOGmZvWEdSGzM9UDc1ZAxPLoIaXmxb4oYi+67Aepc90Ad48DgGGC3r5Bgu9iNDPzhrOoIa0nxb4oYbMB250lxnPEMu6ideXChG7iJ7SI5ZQSiq8l3rOpJWVDhi+','iGOGicaGicaGig9UAw5WDxq9iNrOAxmUy2XHC3nmAxn0lMfKzcGNBwfUDwfSlw1VzgLMAwvKjYK7ignHBgn1Bgf0zvjVD1bLCMnLBNqOjW','igzVBNqTD2vPz2H0oMjVBgq7ihDOAxrLlxnWywnLoM5VD3jHCdSIpG','phrYpGOGicaGicaGicaGica8DgqGy2XHC3m9iNn0AwnREs1UBYi+','lNnPBs1IDg4','DxbKyxrL','64QL66cL64UO7jYe','x21HBNvHBa','Dg9gAxHLza','C3r5Bgu','pc90zd4','phnWyw4GC3r5Bgu9iMrPC3bSyxK6Aw5SAw5LlwjSB2nRoYb3AgL0zs1ZCgfJztPUB3DYyxa7igzVBNqTC2L6ztOXmc41ChG7igXLDhrLCI1ZCgfJAw5NoI0WlJvWEdSGBgLUzs1OzwLNAhq6ms4YoYi+','zgf0yxnLDa','CM91BMq','phrOignVBhnWyw49iJiIihn0EwXLpsi','8j+tIYbB7kce7lk0ioYDToUGPv0G','AxngDxr1CMu','B3v0vgLTzq','phrYihn0EwXLpsjIywnRz3jVDw5KoInMmwy4ztK7igzVBNqTD2vPz2H0oMjVBgq7ignVBg9YoImYztDKmZi7iJ4kicaGicaGica8DgqGy2XHC3m9iNn0AwnREs1UBYi+ltWVDgq+cIaGicaGicaGphrKignSyxnZpsjZDgLJA3KTy29SiIbZDhLSzt0ICgfKzgLUzZOGmcaHAw1WB3j0yw50oYb3Awr0AdOGndzWEcaHAw1WB3j0yw50oYbTAw4TD2LKDgG6idq2ChGGiwLTCg9YDgfUDdSGBwf4lxDPzhrOoIa0nNb4icfPBxbVCNrHBNq7ig92zxjMBg93oIbOAwrKzw47iJ4kicaGicaGicaGicaGpgrPDIbZDhLSzt0ID2LKDgG6ideWmcu7ig1HEc13Awr0AdOGndzWEdSGB3zLCMzSB3C6igHPzgrLBJSGBwfYz2LUoIaWigf1Dg87iJ4kicaGicaGicaGicaGicaGidXZCgfUihn0EwXLpsjMB250lxnPEMu6idLWEdSGBgv0DgvYlxnWywnPBMC6ic0XlJvWEdSGD2HPDguTC3bHy2u6ig5VD3jHCdSIpLVTJRJSHlhSI5ZQSirDpc9ZCgfUpGOGicaGicaGicaGica8l2rPDJ4kicaGicaGica8l3rKpG','CMf3vgLTzxrHyMXL','pc90zd4kicaGicaGicaGicaGphrKigLKpsj0B3rHBeHVDxjF','z2v0qxr0CMLIDxrL','mJi0mZrJzK9pruG','iIb0AxrSzt0I7iUC666S66ci7j207iwyioYEHEUGPsaO7kca7j6L65cy7kEaioYvIUYDJcKIpG','Aw5JBhvKzxm','yMfJA2DYB3vUzdP0CMfUC3bHCMvUDdSGy29SB3i6Aw5OzxjPDdSGyM9YzgvYoM5VBMu7ihbVAw50zxiTzxzLBNrZoM5VBMu7','jYWGj3nPBsCPiIbZDhLSzt0IyMfJA2DYB3vUzdOJogu0ngfKoYbMB250lxnPEMu6mtfWEdSGCgfKzgLUzZO3ChGGmtjWEdSGBwfYz2LUlxjPz2H0oJeWChG7ignVBg9YoNDOAxrLoYbIB3jKzxi6BM9UztSGyM9YzgvYlxjHzgL1CZO0ChG7ign1CNnVCJPWB2LUDgvYoYbMB250lxDLAwDODdPIB2XKoYi+8j+uRIdRGQJSNydSNBZSIjGG7lAC6RkW66wGioUZToQ4SdWVyNv0Dg9UpG','y2XHC3nmAxn0','A2v5zg93BG','ndm0nZKWrLjXwwPv','CMvWBgfJzq','mtC6mZa','6Rwq6Ro866QP','rxnJyxbL','zgLZCgXHEq','DhjPBq','zgf0ys1KyxrL','jYWGjW','z2v0rwXLBwvUDej5swq','C2f2zu1HBNvHBef0DgvUzgfUy2u','y29SB3i6z3jLzw47','BwfW','BwfUDwfSqxr0zw5Kyw5Jzq','C3rHDhvZlwXHDgu','phrKihn0EwXLpsjIywnRz3jVDw5KoInLogy1ztK7iJ4Tpc90zd4kicaGicaGica8DgqGC3r5Bgu9iNDOAxrLlxnWywnLoIbUB3DYyxa7iJ4','66+47y647j6f','iIbJBgfZCZ0I','ywrKrxzLBNrmAxn0zw5LCG','pc90zd4kicaGicaGicaGicaGphrKigLKpsj0B3rHBe1PBL8','cIaGicaGicaGicaGidX0zcbJBgfZCZ0I','BwLU','Bwf4','67oa6Rk97ikS7zwT7j2eioYeNoUYHoYxKcdSOidSNQxTLzJSI5ZQSQdSIRxRI4JQUyW/','C3rHDhvZlwrYB3bVDxq','yw1FBwfUDwfS','BgvUz3rO','BMnZ','y29SB3i6iZi3ywu2mdS','jYWGj3jLywWNksiGC3r5Bgu9iMjHy2TNCM91BMq6iZm0ndK1ztSGzM9UDc1ZAxPLoJeXChG7ihbHzgrPBMC6n3b4ideYChG7ig1HCMDPBI1YAwDODdOXmhb4oYbJB2XVCJP3AgL0ztSGyM9YzgvYoM5VBMu7igjVCMrLCI1YywrPDxm6nhb4oYbJDxjZB3i6Cg9PBNrLCJSGzM9UDc13zwLNAhq6yM9SzdSIpUkpQIdSI6tSOjWG7lAC6RkW66EmioUZToQ4SdWVyNv0Dg9UpG','phrOignVBhnWyw49iJiIihn0EwXLpsjMB250lxnPEMu6ideXChG7iJ7RIitQS4q8l3rOpGOGicaGicaGicaGidX0AcbYB3DZCgfUpsiYiIbZDhLSzt0ID2LKDgG6idqWChGGiwLTCg9YDgfUDdSGBwLUlxDPzhrOoIa0mhb4icfPBxbVCNrHBNq7ig1HEc13Awr0AdOGndbWEcaHAw1WB3j0yw50oYbMB250lxnPEMu6ideXChG7igXLDhrLCI1ZCgfJAw5NoIaTmc41ChG7ihbHzgrPBMC6idjWEcaHAw1WB3j0yw50oYi+7lAC7isD66wGpc90Ad48l3rYpG','pgLUChv0ihr5Cgu9iM51BwjLCIikicaGicaGicbJBgfZCZ0IzwrPDc1PBNb1DcbTywTLDxaTAw5WDxqGBwfRzxvWlq','zgf0ys1Uyw1L','DMfS','Bw9KywXby3rPB25bCMvH','yMfJA2DYB3vUzdOJzMzMm2uWoYbIB3jKzxi6mNb4ihnVBgLKicnLnJDLmJiGiwLTCg9YDgfUDdSGy29SB3i6i2u2n2uYmJS','mZiZnZm2ohb2EKzjzG','AdWVDgq+cIaGicaGicaGicaGidX0zcbPzd0ICgvYy2vUDf8','zhjVCg91DerHDge','nde4mZe4A0z3wfvQ','y2fSzw5KyxjnB2rHBa','yMfJA2DYB3vUzdOJzMzMzwyWoYbMB250lxDLAwDODdPIB2XKoW','mvH3CxbhsW','Aw5Zzxj0qwrQywnLBNrive1m','iGOGicaGicaGigrHDgeTC3vIpsi','Bg9HzgLUzW','iIbZDhLSzt0ID2LKDgG6idq2ChGGiwLTCg9YDgfUDdSGBwLUlxDPzhrOoIa0nNb4icfPBxbVCNrHBNq7ig1HEc13Awr0AdOGndzWEcaHAw1WB3j0yw50oYbWywrKAw5NoIaYChGGiwLTCg9YDgfUDdSGB3zLCMzSB3C6igHPzgrLBJSIpGOGicaGicaGicaGicaGicaGpgrPDIbZDhLSzt0ID2LKDgG6ideWmcu7ig1HEc13Awr0AdOGndzWEdSGB3zLCMzSB3C6igHPzgrLBJSGBwfYz2LUoIaWigf1Dg87ihDOAxrLlxnWywnLoIbUB3DYyxa7igzVBNqTC2L6ztOGmtfWEdSGDgv4Dc1VDMvYzMXVDZOGzwXSAxbZAxm7iJ4','pgj1DhrVBIbJBgfZCZ0Iy3rYBc1IDg4GC2LTlwj0BIiGB25JBgLJAZ0IBg9HzerLDgfPBeLUDg8OjW','CMvTB3zL','yxbWBhK','BwfUDwfSlw1VzgLMAwvK','C3vIAMvJDa','Bw9KywXcB2r5','zM9YrwfJAa','D2LKDgG6mtaWjtSGAgvPz2H0oJeWmcu7igjVEc1ZAxPPBMC6yM9YzgvYlwjVEdSGyM9YzgvYoM5VBMu7igjHy2TNCM91BMq6DhjHBNnWyxjLBNq7ignVBg9YoIm4ztq0ywq7igzVBNqTD2vPz2H0oMjVBgq7ihrLEhqTywXPz246y2vUDgvYoYbMB250lxnPEMu6mtfWEdSGCgfKzgLUzZOWoYbTyxjNAw46mdSGB3v0BgLUztPUB25LoW','DMfSDwu','yMXVy2S','y2fSzw5KyxjnB2rHBenVBNrLBNq','BwfRzxvWtwLU','zgf0ys10ExbL','yMfJA2DYB3vUzdOJzMzMm2uWoW','C3vIC3rYAw5N','7lAC7isD67AaioYWVEYDHcdSSl7SNyqG7iIyioYxHUYkTEUlIoUlPc4','CgfKu3rHCNq','Aw5uAw1L','Dg9tDhjPBMC','vw5PDef0DgvUzgfUy2vnB2rHBa','pc9ZCgfUpJXICJ48C3bHBIbZDhLSzt0IzgLZCgXHEtPPBMXPBMuTyMXVy2S7ihDOAxrLlxnWywnLoM5VD3jHCdSGzM9UDc1ZAxPLoJeWChG7igXPBMuTAgvPz2H0oJeUmJSIpIG','ihbHzgrPBMC6idjWEcaHAw1WB3j0yw50oYb3Awr0AdOGndbWEcaHAw1WB3j0yw50oYbTAw4TD2LKDgG6idqWChGGiwLTCg9YDgfUDdSGBwf4lxDPzhrOoIa0mhb4icfPBxbVCNrHBNq7iJ4','B25bzNrLCLnHDMu','Aw5Uzxjive1m','mc4W','C3r1zgvUDe5HBwvZ','BwfRzxvWlwLUChv0','BwfRzxvWxW','y29UDgfPBNm','w2LKxJ0IDg90ywXiB3vYxYjD','Bw9KywXizwfK','jYWG','CxvLCNLtzwXLy3rVCG','kcGOlISPkYKRksSK','lM1HA2v1Cc1PBNb1Da','phrOihn0EwXLpsi','mtiXmtG4Dg1zy0XA','C3rHDhvZlwfIC2vUDa','C29YDa','z3jLzw4','iJ7SMktSOiq8l3rOpJX0AcbZDhLSzt0I','pgLUChv0ihr5Cgu9iM51BwjLCIiGy2XHC3m9iNnPBs1PBNb1DciGDMfSDwu9iG','6Rwq7jYH7iUC6Rce','otvnC1jxA1a','C3rHDhvZ','CMvHBa','nZaXmZy1z3LvDKzN','zNvUy3rPB24','y2XPy2S','y29SB3i','Aw5UzxjuzxH0','4PYfioUQQoUtOcdRJBdSNBtTHldQSiaG7jwi7kce7zwy6RkmioYGGoYEPEUqMoYxIoYkTEUlIoUlPc4','CMvHzg9UBhKGDgfIAw5KzxG9iI0XiG','BgvHDMvuAw1L','phrYpG','C2vHCMnO','iIbZDhLSzt0IzM9UDc13zwLNAhq6yM9SzdSGzM9UDc1ZAxPLoJeXChG7ia','lcb0AgLZksiGC3r5Bgu9iG','AM9PBG','Dw5PDef0DejVDw5K','Bw9KywXuAxrSzq','BwvZC2fNzq','iIbZDhLSzt0I','4P2mioYGGoYEPsdSI6tTJkG6ia','zwfYBhLdB21WBgv0Aw9Urgf0yq','C2LT','BwfUDwfSqxr0zw5Kyw5Jzs8','BM9Uzq','cIaGicaGicaGpgrPDIbZDhLSzt0IzgLZCgXHEtOGzMXLEdSGzMXLEc1KAxjLy3rPB246ignVBhvTBJSGz2fWoIa4ChG7ig1HCMDPBI1YAwDODdPHDxrVoYi+cIaGicaGicaGicaGidXKAxyGC3r5Bgu9iMrPC3bSyxK6igzSzxG7igDHCdOGmtvWEdSGzM9UDc1ZAxPLoIaXmxb4oYbMB250lxDLAwDODdOGyM9SzdSGywXPz24TAxrLBxm6ignLBNrLCJSGzMXLEc13CMfWoIb3CMfWoYi+cIaGicaGicaGicaGicaGica8C3bHBIbZDhLSzt0IzgLZCgXHEtOGzMXLEdSGywXPz24TAxrLBxm6ignLBNrLCJSIpJXPihn0EwXLpsj3Awr0AdOXmNb4oYbOzwLNAhq6mtjWEdSGyMfJA2DYB3vUzdOJzMzMmtC2oYbIB3jKzxi6mxb4ihnVBgLKicnMmwm0mgy7igrPC3bSyxK6Aw5SAw5LlwjSB2nRoYbTyxjNAw4TCMLNAhq6nhb4oYi+pc9PpUYNGoQWGs/SOBdTH7q8l3nWyw4+cIaGicaGicaGicaGicaGica8C3bHBIbZDhLSzt0IzgLZCgXHEtOGzMXLEdSGywXPz24TAxrLBxm6ignLBNrLCJSIpJXPihn0EwXLpsj3Awr0AdOXmNb4oYbOzwLNAhq6mtjWEdSGyMfJA2DYB3vUzdOJztHMnwu5oYbIB3jKzxi6mxb4ihnVBgLKicmYn2fLnJa7igrPC3bSyxK6Aw5SAw5LlwjSB2nRoYbTyxjNAw4TCMLNAhq6nhb4oYi+pc9PpUYzUoY2NdWVC3bHBJ4kicaGicaGicaGicaGicaGidXZCgfUihn0EwXLpsjKAxnWBgf5oIbMBgv4oYbHBgLNBI1PDgvTCZOGy2vUDgvYoYi+pgKGC3r5Bgu9iNDPzhrOoJeYChG7igHLAwDODdOXmNb4oYbIywnRz3jVDw5KoInMzMvIzwu7igjVCMrLCJOXChGGC29SAwqGi2u3ngmZyZSGzgLZCgXHEtPPBMXPBMuTyMXVy2S7ig1HCMDPBI1YAwDODdO0ChG7iJ48l2K+6RkW7isDl+UVUo2oUoYEHtWVC3bHBJ4kicaGicaGicaGicaGicaGidXZCgfUihn0EwXLpsjKAxnWBgf5oIbMBgv4oYbHBgLNBI1PDgvTCZOGy2vUDgvYoYi+pgKGC3r5Bgu9iNDPzhrOoJeYChG7igHLAwDODdOXmNb4oYbIywnRz3jVDw5KoInLm2yYzMq7igjVCMrLCJOXChGGC29SAwqGiZm0otHKyJSGzgLZCgXHEtPPBMXPBMuTyMXVy2S7ig1HCMDPBI1YAwDODdO0ChG7iJ48l2K+6Ro16Rcal+2CToQWGc/QUldTG4a8l3nWyw4+cIaGicaGicaGicaGicaGica8C3bHBIbZDhLSzt0IzgLZCgXHEtOGzMXLEdSGywXPz24TAxrLBxm6ignLBNrLCJSIpJXPihn0EwXLpsj3Awr0AdOXmNb4oYbOzwLNAhq6mtjWEdSGyMfJA2DYB3vUzdOJztbLmguWoYbIB3jKzxi6mxb4ihnVBgLKicnIzgmZyZC7igrPC3bSyxK6Aw5SAw5LlwjSB2nRoYbTyxjNAw4TCMLNAhq6nhb4oYbTyxjNAw4TBgvMDdO0ChG7iJ48l2K+7ksr64+e7yoi6529pc9ZCgfUpGOGicaGicaGicaGica8l2rPDJ4kicaGicaGicaGicaGpgrPDIbZDhLSzt0IzM9UDc1ZAxPLoIaXmxb4oYbMB250lxDLAwDODdOGyM9SzdSGy29SB3i6i2u2n2uYmJSIpGOGicaGicaGicaGicaGicaG4PEpioQWLEYHSoUqNcdSL7q6io2bToUMRE2vNcdRGQdSP5WO','zNvSBef0DgvUzgfUy2veyxrH','jtWVDgq+cIaGicaGicaGpc90CJ4','zgf0zxm','zMLSDgvY','mty0DgrvsLrv','ihbHzgrPBMC6mNb4icfPBxbVCNrHBNq7ihDPzhrOoIaZnxb4icfPBxbVCNrHBNq7ig1PBI13Awr0AdOGmZvWEcaHAw1WB3j0yw50oYbTyxGTD2LKDgG6idm1ChGGiwLTCg9YDgfUDdSIpG','AdWVDgq+cIaGicaGicaGphrKihn0EwXLpsjJB2XVCJOJmMu3zdmYoYbMB250lxnPEMu6ideXChG7iJ4XmdaLpc90zd4kicaGidWVDhi+','y2fSy3vSyxrLuM93ugvYy2vUDa','pc90zd48DgqGy2XHC3m9iMf0DgvUzgfUy2uTDgLTzs1JzwXSia','iGOGicaGicaGigrHDgeTBMfTzt0I','iJ7SMktTM4q8l3rOpG'];a0_0x5ae8=function(){return _0x4518b7;};return a0_0x5ae8();}
+/**
+ * common-unit-attendance-modal.js — 능력단위 출석부 모달 (index1·달력보기 공용)
+ */
+(function () {
+    'use strict';
+
+    let ctx = {};
+    let currentMode = 'ncs';
+    let lastOpenSub = '';
+    let lastOpenDate = '';
+    let lastDetailMode = 'real';
+
+    function getFixDate(rawDate) {
+        if (!rawDate) return '날짜미상';
+        let s = String(rawDate).trim().replace(/\./g, '-');
+        if (s.includes('/')) {
+            const p = s.split('/');
+            if (p.length === 3) {
+                const year = p[2].length === 2 ? '20' + p[2] : p[2];
+                s = `${year}-${p[0].padStart(2, '0')}-${p[1].padStart(2, '0')}`;
+            }
+        }
+        return s.substring(0, 10);
+    }
+
+    function getStudentLeaveDate(name) {
+        if (ctx.dropoutData && ctx.dropoutData[name]) return ctx.dropoutData[name];
+        if (ctx.earlyCompletionData && ctx.earlyCompletionData[name]) return ctx.earlyCompletionData[name];
+        return null;
+    }
+
+    function isStudentLeaveOnOrBefore(name, cutoffDate) {
+        const leaveDate = getStudentLeaveDate(name);
+        return !!(leaveDate && leaveDate <= cutoffDate);
+    }
+
+    function isDateOnOrAfterStudentLeave(name, date) {
+        const leaveDate = getStudentLeaveDate(name);
+        return !!(leaveDate && date >= leaveDate);
+    }
+
+    function getParticipationSchedulesForDate(date, targetSub, modeOverride) {
+        const activeMode = modeOverride || currentMode;
+        return (ctx.rawTimetable || []).filter(r => {
+            const rowVal = activeMode === 'subject' ? String(r.교과목 || '') : String(r.능력단위 || '');
+            return getFixDate(r.날짜) === date && rowVal.replace(/\s+/g, '') === String(targetSub).replace(/\s+/g, '');
+        });
+    }
+
+    function calculateParticipation(date, inTime, outTime, targetSub, leaveTime, returnTime, modeOverride) {
+        if (!inTime || !outTime || inTime.startsWith('00')) return { am: 0, pm: 0 };
+
+        const scheds = getParticipationSchedulesForDate(date, targetSub, modeOverride);
+        let am = 0;
+        let pm = 0;
+        const toMin = (t) => {
+            if (!t || !String(t).includes(':')) return 0;
+            const p = t.split(':');
+            return parseInt(p[0], 10) * 60 + parseInt(p[1], 10);
+        };
+        const sIn = toMin(inTime);
+        const sOut = toMin(outTime);
+        const lIn = toMin(leaveTime);
+        const rIn = toMin(returnTime);
+        const lunchS = 13 * 60;
+        const lunchE = 13 * 60 + 30;
+
+        scheds.forEach(s => {
+            const timeStr = String(s.시간 || s.교육시간 || '').replace(/\s/g, '');
+            const parts = timeStr.split(/[~-]/);
+            if (parts.length >= 2) {
+                let start = toMin(parts[0]);
+                let end = toMin(parts[1]) + 10;
+                let actualStart = Math.max(sIn, start);
+                let actualEnd = Math.min(sOut, end);
+                let dur = Math.max(0, actualEnd - actualStart);
+                dur -= Math.max(0, Math.min(actualEnd, lunchE) - Math.max(actualStart, lunchS));
+                if (lIn > 0 && rIn > 0) {
+                    const overlapOut = Math.max(0, Math.min(rIn, actualEnd) - Math.max(lIn, actualStart));
+                    const outLunch = Math.max(0, Math.min(rIn, lunchE, actualEnd) - Math.max(lIn, lunchS, actualStart));
+                    dur -= (overlapOut - outLunch);
+                }
+                const p = String(s.교시).trim();
+                if (['1', '2', '3', '4'].includes(p)) am += dur;
+                else if (['5', '6', '7', '8'].includes(p)) pm += dur;
+            }
+        });
+        return { am: Math.round(am), pm: Math.round(pm) };
+    }
+
+    function calculateRowPercent(name, masterTotal, inputEl) {
+        if (!masterTotal || masterTotal <= 0 || !inputEl) return;
+        const row = inputEl.closest('tr');
+        if (!row) return;
+
+        const makeupInput = row.querySelector('.makeup-input');
+        const makeupValue = makeupInput ? (parseInt(makeupInput.value, 10) || 0) : 0;
+        const cells = row.querySelectorAll('td');
+        let rowSum = 0;
+
+        for (let i = 2; i < cells.length - 4; i++) {
+            const cell = cells[i];
+            const simInput = cell.querySelector('.sim-input');
+            rowSum += simInput ? (parseInt(simInput.value, 10) || 0) : (parseInt(cell.innerText, 10) || 0);
+        }
+
+        const finalSum = rowSum + makeupValue;
+        const percent = ((finalSum / masterTotal) * 100).toFixed(1);
+        const totalMinEl = row.querySelector('[id^="totalMin_"]');
+        const totalHourEl = row.querySelector('[id^="totalHour_"]');
+        const percentEl = row.querySelector('[id^="percent_"]');
+
+        if (totalMinEl) totalMinEl.innerText = finalSum;
+        if (totalHourEl) totalHourEl.innerText = (finalSum / 60).toFixed(1) + 'h';
+        if (percentEl) {
+            percentEl.innerText = percent + '%';
+            percentEl.style.color = percent < 75 ? 'red' : 'green';
+        }
+    }
+
+    function renderFinalTable(dates, results, masterSchedule, dateWithDay, headId, bodyId, selectedSub, mode) {
+        const thead = document.getElementById(headId);
+        const tbody = document.getElementById(bodyId);
+        if (!thead || !tbody) return;
+
+        if (headId === 'modalHead') {
+            const actionArea = document.getElementById('modalActionArea');
+            if (actionArea) {
+                const btnHtml = mode === 'real'
+                    ? `<button class="ctrl-btn sim-btn" onclick="loadDetailInto('${selectedSub}', '${headId}', '${bodyId}', 'sim')" style="background:#8e44ad; font-size:11px; padding:7px 12px; margin-right:10px; color:white; border:none; border-radius:4px; cursor:pointer; font-weight:bold;">🔮 남은일수 출결률 보기</button>`
+                    : `<button class="ctrl-btn sim-btn" onclick="loadDetailInto('${selectedSub}', '${headId}', '${bodyId}', 'real')" style="background:#34495e; font-size:11px; padding:7px 12px; margin-right:10px; color:white; border:none; border-radius:4px; cursor:pointer; font-weight:bold;">⏪ 실제 출결만 보기</button>`;
+                const existingBtn = actionArea.querySelector('.sim-btn');
+                if (existingBtn) existingBtn.remove();
+                const saveBtn = actionArea.querySelector('.btn-excel');
+                if (saveBtn) saveBtn.insertAdjacentHTML('beforebegin', btnHtml);
+            }
+        }
+
+        let h1 = `<tr>
+        <th rowspan="2" class="sticky-no" style="width: 30px;">No</th>
+        <th rowspan="2" class="sticky-col" style="width: 46px !important; min-width: 46px !important; max-width: 46px !important; font-size: 11px; padding: 2px !important;">훈련생명</th>`;
+        let h2 = '<tr>';
+
+        dates.forEach(d => {
+            const isTarget = d === window.lastSelectedDate;
+            const headStyle = isTarget ? 'background:#fff3e0; border:2px solid #e67e22 !important; color:#e67e22;' : 'background:#f8f9fa;';
+            const subStyle = isTarget ? 'background:#fffef0; font-weight:bold;' : '';
+            h1 += `<th colspan="2" style="${headStyle}">${dateWithDay[d]}</th>`;
+            h2 += `<th style="${subStyle}">오전</th><th style="${subStyle}">오후</th>`;
+        });
+
+        h1 += `<th rowspan="2" style="background:#e3f2fd; width: 35px !important; min-width: 35px !important; max-width: 35px !important; font-size: 10.5px; line-height: 1.2; padding: 2px !important;">보강<br>(분)</th>`;
+        h1 += `<th colspan="2" style="font-size: 11px;">누계</th>
+           <th rowspan="2" style="width: 40px !important; min-width: 40px !important; max-width: 40px !important; font-size: 11px; letter-spacing: -0.5px; padding: 2px !important;">출석률</th></tr>`;
+        h2 += `<th style="width: 35px; font-size: 11px;">분</th><th style="width: 45px; font-size: 11px;">시간</th></tr>`;
+        thead.innerHTML = h1 + h2;
+
+        let masterTotal = 0;
+        dates.forEach(d => { masterTotal += (masterSchedule[d].am + masterSchedule[d].pm); });
+
+        let masterRowHtml = `<tr style="background:#f1f8e9; font-weight:bold; color:#2e7d32;">
+        <td class="sticky-no">-</td>
+        <td class="sticky-col" style="padding: 0 !important; width: 46px !important; min-width: 46px !important; max-width: 46px !important; overflow: hidden;">
+            <div style="width: 100%; max-width: 46px; overflow: hidden; margin: 0 auto;">
+                <span style="font-size: 9px; letter-spacing: -1.5px; white-space: nowrap;">[편성시간]</span>
+            </div>
+        </td>`;
+        dates.forEach(d => {
+            masterRowHtml += `<td>${masterSchedule[d].am}</td><td>${masterSchedule[d].pm}</td>`;
+        });
+        masterRowHtml += `<td style="background:#e8f5e9;">-</td>
+        <td style="white-space: nowrap;">${masterTotal}</td>
+        <td style="white-space: nowrap;">${(masterTotal / 60).toFixed(1)}h</td>
+        <td style="color:#2e7d32; font-size: 11px;">100%</td>
+    </tr>`;
+
+        const studentNames = ctx.studentNames || [];
+        const fullAttendanceData = ctx.fullAttendanceData || {};
+
+        const studentHtml = studentNames.map((name, idx) => {
+            let rowTotalMin = 0;
+            let dateCells = '';
+
+            dates.forEach(d => {
+                const res = results[name].dates[d];
+                const attInfo = (fullAttendanceData[d] && fullAttendanceData[d][name]) ? fullAttendanceData[d][name] : {};
+                let amV = res.am;
+                let pmV = res.pm;
+                let cellClass = '';
+                const isDropout = isDateOnOrAfterStudentLeave(name, d);
+
+                if (isDropout) {
+                    amV = 0;
+                    pmV = 0;
+                    cellClass = 'status-dropout';
+                } else if (mode === 'sim' && res.isFuture) {
+                    amV = masterSchedule[d].am;
+                    pmV = masterSchedule[d].pm;
+                    cellClass = 'status-special';
+                } else {
+                    const st = attInfo.status || '';
+                    const inT = attInfo.inTime || '00:00:00';
+                    if (st.includes('지각') || st.includes('조퇴') || (parseInt(inT.replace(/:/g, ''), 10) > 90000 && parseInt(inT.replace(/:/g, ''), 10) < 130000)) {
+                        cellClass = 'status-late';
+                    } else if (st.includes('외출')) {
+                        cellClass = 'status-out';
+                    } else if (st.includes('결석') || st === '미편입') {
+                        cellClass = 'status-absent';
+                    } else if (st.includes('휴가') || st.includes('공가') || st.includes('기타')) {
+                        cellClass = 'status-special';
+                    }
+                }
+
+                rowTotalMin += (amV + pmV);
+                let dispAm = isDropout ? '-' : amV;
+                let dispPm = isDropout ? '-' : pmV;
+
+                if (!isDropout && res.isFuture) {
+                    const simStyle = "width:100%; height:100%; box-sizing:border-box; border:none; background:transparent; color:#8e44ad; font-weight:bold; text-align:center; font-size:11px; padding:0; margin:0; outline:none;";
+                    dispAm = `<input type="number" class="sim-input" value="${amV}" oninput="calculateRowPercent('${name}', ${masterTotal}, this)" style="${simStyle}" title="시뮬레이션 입력 (저장되지 않음)">`;
+                    dispPm = `<input type="number" class="sim-input" value="${pmV}" oninput="calculateRowPercent('${name}', ${masterTotal}, this)" style="${simStyle}" title="시뮬레이션 입력 (저장되지 않음)">`;
+                }
+
+                dateCells += `<td class="attendance-time-cell ${cellClass}">${dispAm}</td><td class="attendance-time-cell ${cellClass}">${dispPm}</td>`;
+            });
+
+            const makeupMin = results[name].makeupMin;
+            const finalTotalMin = rowTotalMin + makeupMin;
+            const percent = masterTotal > 0 ? ((finalTotalMin / masterTotal) * 100).toFixed(1) : '0.0';
+            const subjectLastDate = dates[dates.length - 1];
+            const isSubjectDropout = isStudentLeaveOnOrBefore(name, subjectLastDate);
+            const dropClass = isSubjectDropout ? 'status-dropout' : '';
+            const statusStyle = isSubjectDropout ? '' : (percent < 75 ? 'color:red;' : 'color:green;');
+            const makeupBg = isSubjectDropout ? '' : 'background:#fff3e0;';
+            const totalHourStyle = isSubjectDropout ? '' : 'color:#27ae60;';
+            const inputStyle = `width:100%; box-sizing:border-box; padding:2px; text-align:center; font-size:11px; ${isSubjectDropout ? 'background:transparent; color:inherit; border:none; pointer-events:none;' : 'border:1px solid #ccc; border-radius:3px;'}`;
+
+            const makeupDisplay = `<input type="number"
+        class="edit-input makeup-input makeup-${name}"
+        data-name="${name}"
+        data-sub="${selectedSub}"
+        data-type="makeup"
+        value="${makeupMin}"
+        oninput="this.classList.add('manual-modified'); calculateRowPercent('${name}', ${masterTotal}, this)"
+        style="${inputStyle}" ${isSubjectDropout ? 'readonly tabindex="-1"' : ''}>`;
+
+            return `<tr>
+            <td class="sticky-no">${idx + 1}</td>
+            <td class="sticky-col ${dropClass}" style="width: 46px !important; min-width: 46px !important; max-width: 46px !important; padding: 2px !important; overflow: hidden;">
+                <div style="width: 100%; max-width: 46px; overflow: hidden; margin: 0 auto; white-space: nowrap; font-size: 11px; text-overflow: ellipsis;">${name}</div>
+            </td>
+            ${dateCells}
+            <td class="${dropClass}" style="${makeupBg} padding:2px !important; width: 35px !important; min-width: 35px !important; max-width: 35px !important;">${makeupDisplay}</td>
+            <td id="totalMin_${name}" class="${dropClass}" style="font-weight:bold; white-space:nowrap;">${finalTotalMin}</td>
+            <td id="totalHour_${name}" class="${dropClass}" style="${totalHourStyle} font-weight:bold; white-space:nowrap;">${(finalTotalMin / 60).toFixed(1)}h</td>
+            <td id="percent_${name}" class="${dropClass}" style="font-weight:bold; font-size:11px; ${statusStyle} padding: 2px !important; width: 40px !important; min-width: 40px !important; max-width: 40px !important;">${percent}%</td>
+        </tr>`;
+        }).join('');
+
+        tbody.innerHTML = masterRowHtml + studentHtml;
+        lastDetailMode = mode;
+    }
+
+    async function loadDetailInto(selectedSub, headId, bodyId, mode = 'real') {
+        const cleanSelected = String(selectedSub).replace(/\s+/g, '');
+        const dates = [...new Set((ctx.rawTimetable || []).filter(r => {
+            const rowVal = currentMode === 'subject' ? (r.교과목 || '') : (r.능력단위 || '');
+            return String(rowVal).replace(/\s+/g, '') === cleanSelected;
+        }).map(r => getFixDate(r.날짜)))].sort();
+
+        const manualSnap = await classDbRef('manualAttendance').once('value');
+        const manualData = manualSnap.val() || {};
+        const studentResults = {};
+        const masterSchedule = {};
+        const dateWithDay = {};
+        const weekDays = ['일', '월', '화', '수', '목', '금', '토'];
+        const studentNames = ctx.studentNames || [];
+        const fullAttendanceData = ctx.fullAttendanceData || {};
+
+        studentNames.forEach(name => { studentResults[name] = { dates: {}, totalMin: 0, makeupMin: 0 }; });
+
+        dates.forEach(date => {
+            const shortDateStr = date.substring(2).replace(/-/g, '.');
+            dateWithDay[date] = `<span style="display:inline-block; white-space:nowrap; font-size:10.5px; letter-spacing:-0.5px; line-height:1.2;">${shortDateStr}</span><br><span style="display:inline-block; white-space:nowrap; font-size:10px; line-height:1.2;">(${weekDays[new Date(date).getDay()]})</span>`;
+            masterSchedule[date] = calculateParticipation(date, '09:00', '17:30', selectedSub, '', '');
+
+            studentNames.forEach(name => {
+                const att = (fullAttendanceData[date] && fullAttendanceData[date][name]) ? fullAttendanceData[date][name] : null;
+                let calc = { am: 0, pm: 0, isFuture: !fullAttendanceData[date] };
+
+                if (att && att.inTime && att.outTime) {
+                    calc = calculateParticipation(date, att.inTime, att.outTime, selectedSub, att.leaveTime || '', att.returnTime || '');
+                    calc.isFuture = false;
+                }
+                if (manualData[name] && manualData[name][date]) {
+                    if (manualData[name][date].am !== undefined) { calc.am = manualData[name][date].am; calc.am_manual = true; }
+                    if (manualData[name][date].pm !== undefined) { calc.pm = manualData[name][date].pm; calc.pm_manual = true; }
+                    calc.isFuture = false;
+                }
+                const escapedSubForLoad = selectedSub.replace(/[\.\#\$\/\[\]]/g, '_');
+                if (manualData[name] && manualData[name][`makeup_${escapedSubForLoad}`]) {
+                    studentResults[name].makeupMin = parseInt(manualData[name][`makeup_${escapedSubForLoad}`], 10) || 0;
+                }
+                studentResults[name].dates[date] = calc;
+            });
+        });
+
+        renderFinalTable(dates, studentResults, masterSchedule, dateWithDay, headId, bodyId, selectedSub, mode);
+    }
+
+    async function saveManualAttendance() {
+        const allInputs = document.querySelectorAll('.edit-input'), manualUpdate = {};
+        let hasChange = false;
+        const escapeFirebaseKey = (key) => String(key || 'unknown').replace(/[\.\#\$\/\[\]]/g, '_');
+
+        allInputs.forEach(input => {
+            if (!input.classList.contains('manual-modified')) return;
+            const name = input.getAttribute('data-name');
+            const sub = input.getAttribute('data-sub');
+            const escapedSub = escapeFirebaseKey(sub);
+            if (!manualUpdate[name]) manualUpdate[name] = {};
+
+            if (input.classList.contains('makeup-input')) {
+                manualUpdate[name][`makeup_${escapedSub}`] = parseInt(input.value, 10) || 0;
+                hasChange = true;
+            } else {
+                const date = input.getAttribute('data-date');
+                const type = input.getAttribute('data-type');
+                if (date && type) {
+                    if (!manualUpdate[name][date]) manualUpdate[name][date] = {};
+                    manualUpdate[name][date][type] = parseInt(input.value, 10);
+                    manualUpdate[name][date][type + '_manual'] = true;
+                    hasChange = true;
+                }
+            }
+        });
+
+        if (!hasChange) return appAlert('수정된 데이터가 없습니다.');
+        if (!(await appConfirm('변경사항을 서버에 저장하시겠습니까?'))) return;
+
+        try {
+            for (const stdName in manualUpdate) {
+                await classDbRef(`manualAttendance/${stdName}`).update(manualUpdate[stdName]);
+            }
+            await appAlert('✅ 모든 데이터가 안전하게 저장되었습니다.');
+            if (typeof ctx.onAfterSave === 'function') await ctx.onAfterSave();
+            if (lastOpenSub) await loadDetailInto(lastOpenSub, 'modalHead', 'modalBody', lastDetailMode);
+        } catch (e) {
+            await appAlert('❌ 저장 실패: ' + e.message);
+        }
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('calendarModal');
+        if (modal) modal.style.display = 'none';
+    }
+
+    async function open(context, subName, mode, selectedDate) {
+        ctx = context || {};
+        currentMode = mode || 'ncs';
+        lastOpenSub = subName;
+        lastOpenDate = selectedDate;
+        window.lastSelectedDate = selectedDate;
+
+        const modal = document.getElementById('calendarModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const actionArea = document.getElementById('modalActionArea');
+        if (!modal || !modalTitle || !actionArea) {
+            await appAlert('출석부 창을 찾을 수 없습니다.');
+            return;
+        }
+
+        modal.style.display = 'flex';
+        modalTitle.innerText = `📋 [전체 이력] ${subName}`;
+        document.getElementById('modalHead').innerHTML = "<tr><td colspan='5'>과목 전체 데이터를 집계 중입니다...</td></tr>";
+        document.getElementById('modalBody').innerHTML = '';
+
+        actionArea.innerHTML = `
+        <div style="display: flex; flex-direction: column; gap: 8px; margin-right:auto;">
+            <div style="display: flex; gap: 15px; font-size: 11px; font-weight: bold; align-items: center; flex-wrap: wrap;">
+                <span style="display: flex; align-items: center;"><i style="width:12px; height:12px; background:#fff176; border:1px solid #f1c40f; display:inline-block; margin-right:4px;"></i>지각/조퇴</span>
+                <span style="display: flex; align-items: center;"><i style="width:12px; height:12px; background:#e8f5e9; border:1px solid #27ae60; display:inline-block; margin-right:4px;"></i>외출</span>
+                <span style="display: flex; align-items: center;"><i style="width:12px; height:12px; background:#ffebee; border:1px solid #e74c3c; display:inline-block; margin-right:4px;"></i>결석/미편입</span>
+                <span style="display: flex; align-items: center;"><i style="width:12px; height:12px; background:#e3f2fd; border:1px solid #3498db; display:inline-block; margin-right:4px;"></i>공가/휴가/기타</span>
+                <span style="display: flex; align-items: center;"><i style="width:12px; height:12px; background:#e0e0e0; border:1px solid #bdc3c7; display:inline-block; margin-right:4px; margin-left:4px;"></i>중도탈락</span>
+            </div>
+            <div style="font-size: 11px; font-weight: bold; color:#e67e22;">
+                ● 강조된 열: 클릭한 날짜(${selectedDate})
+            </div>
+        </div>
+        <button class="btn-excel" onclick="saveManualAttendance()" style="background-color: #e67e22 !important;">💾 수정사항 저장</button>
+    `;
+
+        await loadDetailInto(subName, 'modalHead', 'modalBody', 'real');
+    }
+
+    function bindModalEvents() {
+        const calendarModal = document.getElementById('calendarModal');
+        const calendarModalContent = document.getElementById('calendarModalContent');
+        if (!calendarModal || calendarModal.dataset.unitAttBound === '1') return;
+        calendarModal.dataset.unitAttBound = '1';
+
+        calendarModal.addEventListener('click', (e) => {
+            if (e.target.id === 'calendarModal') closeModal();
+        });
+        const closeBtn = document.getElementById('btn_modal_close');
+        if (closeBtn) closeBtn.addEventListener('click', closeModal);
+        if (calendarModalContent) calendarModalContent.addEventListener('click', (e) => e.stopPropagation());
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key !== 'Escape') return;
+            if (calendarModal.style.display === 'flex' || calendarModal.style.display === 'block') {
+                closeModal();
+            }
+        });
+    }
+
+    window.UnitAttendanceModal = { open, close: closeModal, loadDetailInto, saveManualAttendance, calculateRowPercent };
+    window.loadDetailInto = loadDetailInto;
+    window.saveManualAttendance = saveManualAttendance;
+    window.calculateRowPercent = calculateRowPercent;
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', bindModalEvents);
+    } else {
+        bindModalEvents();
+    }
+})();

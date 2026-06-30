@@ -1,1 +1,290 @@
-function a0_0x29af(_0x353df1,_0x466ebc){_0x353df1=_0x353df1-0x1e7;var _0x221def=a0_0x316a();var _0x32a5f3=_0x221def[_0x353df1];if(a0_0x29af['XMnbqf']===undefined){var _0x530462=function(_0x50caeb){var _0x251775='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';var _0x5472e8='',_0xc2d435='',_0x1b9cd5=_0x5472e8+_0x530462;for(var _0x170a04=0x0,_0x1be8a9,_0x1abc49,_0x3916a9=0x0;_0x1abc49=_0x50caeb['charAt'](_0x3916a9++);~_0x1abc49&&(_0x1be8a9=_0x170a04%0x4?_0x1be8a9*0x40+_0x1abc49:_0x1abc49,_0x170a04++%0x4)?_0x5472e8+=_0x1b9cd5['charCodeAt'](_0x3916a9+0xa)-0xa!==0x0?String['fromCharCode'](0xff&_0x1be8a9>>(-0x2*_0x170a04&0x6)):_0x170a04:0x0){_0x1abc49=_0x251775['indexOf'](_0x1abc49);}for(var _0x4b3029=0x0,_0x2a6134=_0x5472e8['length'];_0x4b3029<_0x2a6134;_0x4b3029++){_0xc2d435+='%'+('00'+_0x5472e8['charCodeAt'](_0x4b3029)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0xc2d435);};a0_0x29af['wAykfr']=_0x530462,a0_0x29af['KzWClU']={},a0_0x29af['XMnbqf']=!![];}var _0x316a88=_0x221def[0x0],_0x29afaf=_0x353df1+_0x316a88,_0x3c72ee=a0_0x29af['KzWClU'][_0x29afaf];if(!_0x3c72ee){var _0x3b04a7=function(_0x2fa3c4){this['HgtTbr']=_0x2fa3c4,this['jezjnM']=[0x1,0x0,0x0],this['fZTrTX']=function(){return'newState';},this['qLHTJi']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['XNKoSY']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x3b04a7['prototype']['KxdksW']=function(){var _0x313824=new RegExp(this['qLHTJi']+this['XNKoSY']),_0x1a1eb7=_0x313824['test'](this['fZTrTX']['toString']())?--this['jezjnM'][0x1]:--this['jezjnM'][0x0];return this['OYqEjc'](_0x1a1eb7);},_0x3b04a7['prototype']['OYqEjc']=function(_0xe7456f){if(!Boolean(~_0xe7456f))return _0xe7456f;return this['MMyMXJ'](this['HgtTbr']);},_0x3b04a7['prototype']['MMyMXJ']=function(_0x1e5252){for(var _0xb33bb=0x0,_0xe5c14f=this['jezjnM']['length'];_0xb33bb<_0xe5c14f;_0xb33bb++){this['jezjnM']['push'](Math['round'](Math['random']())),_0xe5c14f=this['jezjnM']['length'];}return _0x1e5252(this['jezjnM'][0x0]);},new _0x3b04a7(a0_0x29af)['KxdksW'](),_0x32a5f3=a0_0x29af['wAykfr'](_0x32a5f3),a0_0x29af['KzWClU'][_0x29afaf]=_0x32a5f3;}else _0x32a5f3=_0x3c72ee;return _0x32a5f3;}function a0_0x316a(){var _0x14bd30=['mtqXntDnwNzcwvm','AxnmzwDHy3LdB2HVCNrnB2rL','zM9YrwfJAa','Bg9HzenVAg9YDeXHyMvSrNjVBurI','DgHLBG','z2v0vgLTzxPVBMvpzMzZzxq','BM9Uzq','64QL66cL64UO7jYe','y2XHC3noyw1L','C3bSAxq','y3vYCMvUDenVAg9YDeXHyMvS','m25HBKLUzq','odeWrhPPu2Dr','AxmTC2nYB2XS','AxnbzNrLCLrVzgf5qxr0zw5Kyw5Jzun1Dg9MzKTZDa','C2vSzwn0zwrdB2HVCNq','re9nq29UDgvUDeXVywrLza','z2v0sxrLBq','y29OB3j0','CMvWBgfJzq','y2XHC3m','7ywm7iQK7yQ4','n0L1zu96CG','BgvUz3rO','z2v0','l2fYy2HPDMvnzxrH','BwfZDgvYrgf0yq','CgfYC2u','y3vYCMvUDenSyxnZrgLZCgXHEq','y2XHC3ntDg9YywDLs2v5','tevhqunzx0npse9sva','y2XHC3m9','zgf0ywjHC2u','DMfS','ntG1mdG0Dvjuy2jt','kcGOlISPkYKRksSK','l2XHyMvS','yxbWCW','y29OB3j0pq','yxbWBhK','CMvTB3zLuhjVCgvYDhK','ls1TyxjXDwvLlxnOAwz0','y2XHC3neyLjLzG','CMvZB2X2zq','mtq0nJvHAuTys1m','B2zMC2v0v2LKDgG','y29UC3rYDwn0B3i','AxnbCNjHEq','Dw5KzwzPBMvK','CMvMCMvZAenSyxnZshvK','z2v0vvrdsg91CNm','Aw5UzxjxAwr0Aa','Bg9JyxrPB24','y2XHC3ndB2HVCNrqCMvMxW','ywrKrxzLBNrmAxn0zw5LCG','y3vYCMvUDenVAg9YDa','yxbWBhLiyxjUzxnZq2XHC3nnyxjXDwvL','C3r5Bgu','C2v0sxrLBq','y2XHC3nmAxn0','BgfIzwW','z2v0rwXLBwvUDej5swq','y3vYCMvUDenSyxnZ','DhjPBq','lMHHCM5LC3mTy2XHC3mTBwfYCxvLzs13CMfW','Dg9ju09tDhjPBMC','7zIe7j6SioYAToYyGsdRSjG','ChvZAa','mtCYmff2sMjmqG','y2XHC3ndB2HVCNrmywjLBhnF','y2XHC3neyxrHuM9VDa','imk3ia','z2v0vvrdtwLUDxrLCW','ndy5mZK4uLHHrhP4','Aw5UzxjuzxH0','y2XHC3nbCMnOAxzLtwv0yvjLzG','mJr6yuPSt3e','C2vHCMnO','ywrK','BM9YBwfSAxPLq291CNnLC0XPC3q','mJq4mZrjvK9qt0S','AhLKCMf0zvn1yMPLy3rmAxn0C0zYB21uAw1LDgfIBgu','x2HHCM5LC3nnyxjXDwvLuMvZAxPLvgLTzxi','yw5PBwf0Aw9U','zNjVBq','y2f0y2G','otK3mJi4tLHNs3rj','Dg9tDhjPBMC','y2XPzw50v2LKDgG','DMfSDwvZ','CMvM','BM9YBwfSAxPLvgLTzxrHyMXLuM93CW','y2XHC3neyLbHDgG','zM9YBwf0q2XHC3niDwruzxH0','CMvZB2X2zunVAg9YDeXHyMvSrNjVBvn0B3jL','nduXntvkDu9lAgu','C2vSzwn0zwrdBgfZCW','zgLZCenSyxnZ','z2v0q2XHC3neyxrHuM9VDa'];a0_0x316a=function(){return _0x14bd30;};return a0_0x316a();}(function(_0x5c489d,_0x367f6a){var _0x190d3f=a0_0x29af,_0x60c0c5=_0x5c489d();while(!![]){try{var _0x593425=parseInt(_0x190d3f(0x243))/0x1*(-parseInt(_0x190d3f(0x23f))/0x2)+parseInt(_0x190d3f(0x1fe))/0x3*(parseInt(_0x190d3f(0x249))/0x4)+-parseInt(_0x190d3f(0x1ef))/0x5+parseInt(_0x190d3f(0x23c))/0x6*(-parseInt(_0x190d3f(0x209))/0x7)+-parseInt(_0x190d3f(0x237))/0x8*(-parseInt(_0x190d3f(0x1f3))/0x9)+parseInt(_0x190d3f(0x1ff))/0xa*(parseInt(_0x190d3f(0x21f))/0xb)+parseInt(_0x190d3f(0x215))/0xc;if(_0x593425===_0x367f6a)break;else _0x60c0c5['push'](_0x60c0c5['shift']());}catch(_0x2b5a06){_0x60c0c5['push'](_0x60c0c5['shift']());}}}(a0_0x316a,0x5747e),(function(){var _0x1e2cb9=a0_0x29af,_0x170a04=(function(){var _0x38ac8f=!![];return function(_0x2c601d,_0x28fb26){var _0x43710e=_0x38ac8f?function(){var _0x346b6d=a0_0x29af;if(_0x28fb26){var _0x3c377a=_0x28fb26[_0x346b6d(0x21a)](_0x2c601d,arguments);return _0x28fb26=null,_0x3c377a;}}:function(){};return _0x38ac8f=![],_0x43710e;};}()),_0x1be8a9=_0x170a04(this,function(){var _0x35ce73=a0_0x29af;return _0x1be8a9[_0x35ce73(0x1e7)]()[_0x35ce73(0x240)]('(((.+)+)+)+$')[_0x35ce73(0x1e7)]()[_0x35ce73(0x221)](_0x1be8a9)[_0x35ce73(0x240)](_0x35ce73(0x216));});_0x1be8a9();'use strict';var _0x1abc49='legacy';function _0x3916a9(){var _0x16f710=a0_0x29af,_0x4397d8=new URLSearchParams(window[_0x16f710(0x227)][_0x16f710(0x240)]),_0x59847d=(_0x4397d8[_0x16f710(0x20b)](_0x16f710(0x207))||'')['trim'](),_0x434800=(_0x4397d8[_0x16f710(0x20b)](_0x16f710(0x205))||'')[_0x16f710(0x232)](),_0x465ca6,_0x4a979d='';if(_0x59847d)_0x465ca6=_0x59847d,_0x4a979d=_0x434800;else try{_0x465ca6=localStorage[_0x16f710(0x204)]('selectedClass')||window[_0x16f710(0x231)]||'테스트',_0x4a979d=_0x434800||localStorage['getItem'](_0x16f710(0x202))||'';}catch(_0x358967){_0x465ca6=window[_0x16f710(0x231)]||_0x16f710(0x208),_0x4a979d=_0x434800||'';}return{'className':_0x465ca6,'cohort':(_0x4a979d||'')['trim'](),'urlHasClass':!!_0x59847d};}function _0x4b3029(_0xc014ed){if(!_0xc014ed||_0xc014ed===_0x1abc49)return'';return _0xc014ed;}function _0x2a6134(_0x216845){return!_0x4b3029(_0x216845);}function _0x3b04a7(_0x37e7bb,_0x3ecdf9){var _0x1364db=_0x4b3029(_0x3ecdf9);if(!_0x1364db)return _0x37e7bb;return _0x37e7bb+'/'+_0x1364db;}function _0x2fa3c4(_0x40f60c,_0x580ad5){var _0x51da42=a0_0x29af;if(!_0x40f60c)return;try{var _0x354ef7=_0x51da42(0x228)+_0x40f60c;_0x580ad5?localStorage[_0x51da42(0x22d)](_0x354ef7,_0x580ad5):localStorage['removeItem'](_0x354ef7);}catch(_0x1fe97f){}}function _0x313824(){var _0x109e89=a0_0x29af,_0x50b686=_0x3916a9();window[_0x109e89(0x231)]=_0x50b686[_0x109e89(0x1fb)],window[_0x109e89(0x22a)]=_0x4b3029(_0x50b686[_0x109e89(0x205)]),window[_0x109e89(0x1f4)]=_0x2a6134(window[_0x109e89(0x22a)]),window[_0x109e89(0x239)]=_0x3b04a7(window[_0x109e89(0x231)],window[_0x109e89(0x22a)]);try{localStorage[_0x109e89(0x22d)](_0x109e89(0x1f0),window[_0x109e89(0x231)]),window['currentCohort']?localStorage[_0x109e89(0x22d)](_0x109e89(0x202),window['currentCohort']):localStorage['removeItem']('selectedCohort'),_0x50b686['urlHasClass']&&!window['currentCohort']&&_0x2fa3c4(window[_0x109e89(0x231)],'');}catch(_0x1edbcd){}return window[_0x109e89(0x239)];}function _0x1a1eb7(_0x437304){var _0x2f8a1a=a0_0x29af;if(!window[_0x2f8a1a(0x239)])_0x313824();var _0x44d73f=window[_0x2f8a1a(0x239)];if(!_0x437304)return _0x44d73f;return _0x44d73f+'/'+String(_0x437304)['replace'](/^\/+/,'');}function _0xe7456f(_0x496085){var _0x414192=a0_0x29af,_0x3835b4=typeof firebase!==_0x414192(0x223)&&firebase['apps'][_0x414192(0x20a)]?firebase[_0x414192(0x213)]():null;if(!_0x3835b4)throw new Error('Firebase\x20not\x20initialized');return _0x3835b4[_0x414192(0x1ea)](_0x1a1eb7(_0x496085));}function _0x1e5252(_0x5dcbc0){var _0x2b3980=a0_0x29af,_0x305664=firebase[_0x2b3980(0x213)](),_0x3985f8=window['currentClass']+_0x2b3980(0x20c),_0xb728bb=_0x5dcbc0?_0x3985f8+'/'+String(_0x5dcbc0)['replace'](/^\/+/,''):_0x3985f8;return _0x305664['ref'](_0xb728bb);}function _0xb33bb(_0x439a7a){var _0x3cbed9=a0_0x29af;if(!window[_0x3cbed9(0x239)])_0x313824();var _0x3613a3=window[_0x3cbed9(0x1f4)]?window[_0x3cbed9(0x231)]:window[_0x3cbed9(0x231)]+'__'+window[_0x3cbed9(0x22a)];return _0x439a7a+'_'+_0x3613a3;}function _0xe5c14f(_0x31b1a5){var _0x385110=a0_0x29af;if(!window['currentClass'])_0x313824();var _0x4e1b11=[_0x385110(0x212)+encodeURIComponent(window[_0x385110(0x231)])];window[_0x385110(0x22a)]&&_0x4e1b11['push'](_0x385110(0x219)+encodeURIComponent(window['currentCohort']));if(_0x31b1a5){var _0x2199f8=String(_0x31b1a5)[_0x385110(0x206)](/^\?/,'');if(_0x2199f8)_0x4e1b11[_0x385110(0x236)](_0x2199f8);}return _0x4e1b11['join']('&');}function _0x8bbedd(_0x456a82,_0x2ffa7d){var _0x39f11f=_0xe5c14f(_0x2ffa7d);return _0x456a82+(_0x39f11f?'?'+_0x39f11f:'');}function _0xf48edf(){var _0x185d6f=a0_0x29af;if(!window['currentCohort'])return _0x185d6f(0x235);return window['currentCohortLabel']||window[_0x185d6f(0x22a)];}function _0x1f0353(){var _0x96ea2d=a0_0x29af,_0x148f30=window[_0x96ea2d(0x231)]||'';if(window[_0x96ea2d(0x1f4)])return _0x148f30;return _0x148f30+_0x96ea2d(0x23a)+_0xf48edf();}function _0x3e33ac(){var _0x5ccb1e=a0_0x29af;if(!window[_0x5ccb1e(0x22a)]||window[_0x5ccb1e(0x1fd)])return;try{var _0x1c3ddb=JSON[_0x5ccb1e(0x20e)](localStorage['getItem'](_0x5ccb1e(0x238)+window['currentClass'])||'{}');if(_0x1c3ddb[window[_0x5ccb1e(0x22a)]])window[_0x5ccb1e(0x1fd)]=_0x1c3ddb[window[_0x5ccb1e(0x22a)]];}catch(_0x40fea5){}}function _0x1bd71c(){var _0x402570=a0_0x29af,_0x582442=document['querySelector'](_0x402570(0x233)),_0x52ff86=document[_0x402570(0x230)](_0x402570(0x20f));if(!_0x582442||!_0x52ff86)return;_0x582442[_0x402570(0x22e)]['remove'](_0x402570(0x200)),_0x52ff86[_0x402570(0x22c)][_0x402570(0x21b)]('--marquee-shift'),_0x52ff86[_0x402570(0x22c)][_0x402570(0x246)]=_0x402570(0x1f9),void _0x52ff86[_0x402570(0x220)],_0x52ff86[_0x402570(0x22c)]['animation']='';if(window[_0x402570(0x226)]>0x352)return;requestAnimationFrame(function(){var _0xa9707b=_0x402570,_0x1df8a7=_0x52ff86['scrollWidth']-_0x582442[_0xa9707b(0x1e8)];_0x1df8a7>0x4&&(_0x582442[_0xa9707b(0x22e)]['add'](_0xa9707b(0x200)),_0x52ff86[_0xa9707b(0x22c)]['setProperty'](_0xa9707b(0x21c),_0x1df8a7+'px'));});}function _0x3ea683(){var _0x222852=a0_0x29af,_0x25d9b8=_0x1f0353(),_0x72efc2=document[_0x222852(0x230)](_0x222852(0x20f));if(_0x72efc2)_0x72efc2[_0x222852(0x23d)]=_0x25d9b8;var _0x15174f=document[_0x222852(0x230)](_0x222852(0x1f1));if(_0x15174f)_0x15174f['innerText']=_0x25d9b8;var _0x4aa5fa=document['getElementById']('mobileClassDisplay');if(_0x4aa5fa)_0x4aa5fa[_0x222852(0x23d)]=_0x25d9b8;_0x1bd71c();}function _0x31e3ea(){var _0x731ac0=a0_0x29af;_0x3e33ac(),_0x3ea683();if(!window[_0x731ac0(0x22a)])return Promise[_0x731ac0(0x21e)]();var _0x3e57e6=typeof firebase!==_0x731ac0(0x223)&&firebase[_0x731ac0(0x218)]['length']?firebase['database']():null;if(!_0x3e57e6)return Promise[_0x731ac0(0x21e)]();return _0xe7456f(_0x731ac0(0x20d))['once']('value')[_0x731ac0(0x1f7)](function(_0x129461){var _0x3ec7a3=_0x731ac0,_0xf4c7bf=_0x129461['val']()||{};if(_0xf4c7bf[_0x3ec7a3(0x22f)]){window['currentCohortLabel']=_0xf4c7bf[_0x3ec7a3(0x22f)];return;}return _0x1e5252(window[_0x3ec7a3(0x22a)]+_0x3ec7a3(0x217))['once']('value')['then'](function(_0x414b54){var _0x141985=_0x3ec7a3;if(_0x414b54[_0x141985(0x214)]())window[_0x141985(0x1fd)]=_0x414b54[_0x141985(0x214)]();});})[_0x731ac0(0x1f7)](_0x3ea683)[_0x731ac0(0x248)](function(){_0x3ea683();});}function _0x4474c2(_0x4ad7be,_0x351490,_0x32fde6){var _0x1276ce=a0_0x29af,_0x54f114=new Set(Array['isArray'](_0x351490)?_0x351490:[]),_0x888458=new Set(Array['isArray'](_0x32fde6)?_0x32fde6:[]);return(_0x4ad7be||[])[_0x1276ce(0x1f5)](function(_0xb32793){var _0x21ca27=_0x1276ce,_0x203ceb=String(_0xb32793['교과목']||'')[_0x21ca27(0x232)](),_0x28f719=String(_0xb32793[_0x21ca27(0x1fa)]||'')[_0x21ca27(0x232)]();if(_0x203ceb)_0x54f114[_0x21ca27(0x241)](_0x203ceb);if(_0x28f719)_0x888458[_0x21ca27(0x241)](_0x28f719);}),{'masterSubjectList':Array['from'](_0x54f114),'ncsList':Array[_0x1276ce(0x247)](_0x888458)};}function _0x55d4ae(_0x2f3a66){var _0x271573=a0_0x29af;if(!_0x2f3a66)return[];return Array[_0x271573(0x222)](_0x2f3a66)?_0x2f3a66:Object[_0x271573(0x1e9)](_0x2f3a66);}function _0x78b63e(_0xeb7907){var _0x40a619=a0_0x29af;if(!_0xeb7907)return[];return Array[_0x40a619(0x222)](_0xeb7907)?_0xeb7907:Object[_0x40a619(0x1e9)](_0xeb7907);}function _0x391dbe(){var _0x5d9535=a0_0x29af,_0x5540c9=new Date(),_0x48d95a=_0x5540c9[_0x5d9535(0x1f8)]()*0xea60;return new Date(_0x5540c9-_0x48d95a)[_0x5d9535(0x234)]()[_0x5d9535(0x1fc)]('T')[0x0];}function _0x22c44e(){var _0x189bf5=a0_0x29af,_0x4b9711=new Date(),_0x2bddb3=_0x4b9711[_0x189bf5(0x1f8)]()*0xea60,_0x34fde1=new Date(_0x4b9711-_0x2bddb3),_0x193295=_0x34fde1[_0x189bf5(0x225)](),_0x52fd74=_0x34fde1[_0x189bf5(0x23b)]();return _0x193295>0x11||_0x193295===0x11&&_0x52fd74>=0x1e;}function _0x552693(_0x214d29,_0x2812f6){var _0x463fd3=_0x2812f6||_0x391dbe();if(!_0x214d29||_0x214d29>_0x463fd3)return![];if(_0x214d29<_0x463fd3)return!![];return _0x22c44e();}document[_0x1e2cb9(0x229)](_0x1e2cb9(0x203),function(){var _0x3da7c5=_0x1e2cb9;if(!window['classDataRoot'])_0x313824();_0x31e3ea(),window[_0x3da7c5(0x229)]('resize',function(){var _0x13be28=_0x3da7c5;clearTimeout(window['_harnessMarqueeResizeTimer']),window[_0x13be28(0x245)]=setTimeout(_0x1bd71c,0x78);});}),window[_0x1e2cb9(0x211)]=_0x1abc49,window['initClassContext']=_0x313824,window['isLegacyCohortId']=_0x2a6134,window[_0x1e2cb9(0x1f2)]=_0x3b04a7,window[_0x1e2cb9(0x1ec)]=_0x1a1eb7,window[_0x1e2cb9(0x21d)]=_0xe7456f,window[_0x1e2cb9(0x23e)]=_0x1e5252,window[_0x1e2cb9(0x210)]=_0xb33bb,window['classQueryString']=_0xe5c14f,window['classNavHref']=_0x8bbedd,window['classCohortLabel']=_0xf48edf,window[_0x1e2cb9(0x1ed)]=_0x1f0353,window[_0x1e2cb9(0x1ee)]=_0x3e33ac,window[_0x1e2cb9(0x22b)]=_0x1bd71c,window[_0x1e2cb9(0x224)]=_0x3ea683,window[_0x1e2cb9(0x1f6)]=_0x31e3ea,window[_0x1e2cb9(0x244)]=_0x4474c2,window[_0x1e2cb9(0x1eb)]=_0x78b63e,window[_0x1e2cb9(0x242)]=_0x55d4ae,window['getTodayStrKst']=_0x391dbe,window[_0x1e2cb9(0x201)]=_0x22c44e,window['shouldCountMissingAttAsAbsent']=_0x552693;}()));
+/**
+ * common-class-db.js — 반·기수(cohort) Firebase 경로 (기존 데이터 레거시 보존)
+ *
+ * - cohort 없음 / legacy → 기존과 동일: {className}/masterData … (절대 변경하지 않음)
+ * - cohort=c_xxx       → 신규만: {className}/c_xxx/masterData …
+ */
+(function () {
+    'use strict';
+
+    var LEGACY = 'legacy';
+
+    function readParams() {
+        var p = new URLSearchParams(window.location.search);
+        var urlClass = (p.get('class') || '').trim();
+        var urlCohort = (p.get('cohort') || '').trim();
+        var className;
+        var cohort = '';
+
+        // URL에 class가 있으면 cohort는 URL만 따름. cohort 없음 = 현재 운영 반.
+        // (localStorage 잔여 selectedCohort를 붙이면 새로고침 시 수료 반으로 되돌아감)
+        if (urlClass) {
+            className = urlClass;
+            cohort = urlCohort;
+        } else {
+            try {
+                className = localStorage.getItem('selectedClass') || window.currentClass || '테스트';
+                cohort = urlCohort || localStorage.getItem('selectedCohort') || '';
+            } catch (e) {
+                className = window.currentClass || '테스트';
+                cohort = urlCohort || '';
+            }
+        }
+        return { className: className, cohort: (cohort || '').trim(), urlHasClass: !!urlClass };
+    }
+
+    function normalizeCohort(cohort) {
+        if (!cohort || cohort === LEGACY) return '';
+        return cohort;
+    }
+
+    function isLegacyCohortId(cohort) {
+        return !normalizeCohort(cohort);
+    }
+
+    function getClassDataRoot(className, cohort) {
+        var c = normalizeCohort(cohort);
+        if (!c) return className;
+        return className + '/' + c;
+    }
+
+    function syncCohortPreferenceStore(className, cohort) {
+        if (!className) return;
+        try {
+            var prefKey = 'classCohortPref_' + className;
+            if (cohort) {
+                localStorage.setItem(prefKey, cohort);
+            } else {
+                localStorage.removeItem(prefKey);
+            }
+        } catch (e) { /* ignore */ }
+    }
+
+    function initClassContext() {
+        var q = readParams();
+        window.currentClass = q.className;
+        window.currentCohort = normalizeCohort(q.cohort);
+        window.isLegacyCohortMode = isLegacyCohortId(window.currentCohort);
+        window.classDataRoot = getClassDataRoot(window.currentClass, window.currentCohort);
+
+        try {
+            localStorage.setItem('selectedClass', window.currentClass);
+            if (window.currentCohort) {
+                localStorage.setItem('selectedCohort', window.currentCohort);
+            } else {
+                localStorage.removeItem('selectedCohort');
+            }
+            if (q.urlHasClass && !window.currentCohort) {
+                syncCohortPreferenceStore(window.currentClass, '');
+            }
+        } catch (e) { /* ignore */ }
+        return window.classDataRoot;
+    }
+
+    function classDbPath(subPath) {
+        if (!window.classDataRoot) initClassContext();
+        var root = window.classDataRoot;
+        if (!subPath) return root;
+        return root + '/' + String(subPath).replace(/^\/+/, '');
+    }
+
+    function classDbRef(subPath) {
+        var db = typeof firebase !== 'undefined' && firebase.apps.length
+            ? firebase.database()
+            : null;
+        if (!db) throw new Error('Firebase not initialized');
+        return db.ref(classDbPath(subPath));
+    }
+
+    /** archiveMeta만 (기존 masterData와 분리) */
+    function classArchiveMetaRef(subPath) {
+        var db = firebase.database();
+        var base = window.currentClass + '/archiveMeta';
+        var full = subPath ? base + '/' + String(subPath).replace(/^\/+/, '') : base;
+        return db.ref(full);
+    }
+
+    /** localStorage 키 (기존: defaultViewMode_701반 형식 유지·기수별 분리) */
+    function classStorageKey(prefix) {
+        if (!window.classDataRoot) initClassContext();
+        var id = window.isLegacyCohortMode
+            ? window.currentClass
+            : (window.currentClass + '__' + window.currentCohort);
+        return prefix + '_' + id;
+    }
+
+    function classQueryString(extra) {
+        if (!window.currentClass) initClassContext();
+        var parts = ['class=' + encodeURIComponent(window.currentClass)];
+        if (window.currentCohort) {
+            parts.push('cohort=' + encodeURIComponent(window.currentCohort));
+        }
+        if (extra) {
+            var s = String(extra).replace(/^\?/, '');
+            if (s) parts.push(s);
+        }
+        return parts.join('&');
+    }
+
+    function classNavHref(page, extraQuery) {
+        var q = classQueryString(extraQuery);
+        return page + (q ? '?' + q : '');
+    }
+
+    function classCohortLabel() {
+        if (!window.currentCohort) return '현재 운영 반';
+        return window.currentCohortLabel || window.currentCohort;
+    }
+
+    function formatClassHudText() {
+        var base = window.currentClass || '';
+        if (window.isLegacyCohortMode) return base;
+        return base + ' · ' + classCohortLabel();
+    }
+
+    function resolveCohortLabelFromStore() {
+        if (!window.currentCohort || window.currentCohortLabel) return;
+        try {
+            var store = JSON.parse(localStorage.getItem('classCohortLabels_' + window.currentClass) || '{}');
+            if (store[window.currentCohort]) window.currentCohortLabel = store[window.currentCohort];
+        } catch (e) { /* ignore */ }
+    }
+
+    function applyHarnessClassMarquee() {
+        var wrap = document.querySelector('.harness-class-marquee-wrap');
+        var textEl = document.getElementById('currentClassDisplay');
+        if (!wrap || !textEl) return;
+
+        wrap.classList.remove('is-scroll');
+        textEl.style.removeProperty('--marquee-shift');
+        textEl.style.animation = 'none';
+        void textEl.offsetWidth;
+        textEl.style.animation = '';
+
+        if (window.innerWidth > 850) return;
+
+        requestAnimationFrame(function () {
+            var overflow = textEl.scrollWidth - wrap.clientWidth;
+            if (overflow > 4) {
+                wrap.classList.add('is-scroll');
+                textEl.style.setProperty('--marquee-shift', overflow + 'px');
+            }
+        });
+    }
+
+    function refreshClassHud() {
+        var hudText = formatClassHudText();
+        var hud = document.getElementById('currentClassDisplay');
+        if (hud) hud.innerText = hudText;
+        var disp = document.getElementById('dispClass');
+        if (disp) disp.innerText = hudText;
+        var mobileDisp = document.getElementById('mobileClassDisplay');
+        if (mobileDisp) mobileDisp.innerText = hudText;
+        applyHarnessClassMarquee();
+    }
+
+    function loadCohortLabelFromDb() {
+        resolveCohortLabelFromStore();
+        refreshClassHud();
+        if (!window.currentCohort) return Promise.resolve();
+        var db = typeof firebase !== 'undefined' && firebase.apps.length ? firebase.database() : null;
+        if (!db) return Promise.resolve();
+        return classDbRef('masterData').once('value').then(function (snap) {
+            var d = snap.val() || {};
+            if (d.label) {
+                window.currentCohortLabel = d.label;
+                return;
+            }
+            return classArchiveMetaRef(window.currentCohort + '/label').once('value').then(function (metaSnap) {
+                if (metaSnap.val()) window.currentCohortLabel = metaSnap.val();
+            });
+        }).then(refreshClassHud).catch(function () { refreshClassHud(); });
+    }
+
+    /** masterData.courses가 비어 있어도 fullTimetable에서 교과목·능력단위 목록 보강 */
+    function hydrateSubjectListsFromTimetable(rawTimetable, masterSubjectList, ncsList) {
+        var subjects = new Set(Array.isArray(masterSubjectList) ? masterSubjectList : []);
+        var units = new Set(Array.isArray(ncsList) ? ncsList : []);
+        (rawTimetable || []).forEach(function (r) {
+            var sub = String(r['교과목'] || '').trim();
+            var unit = String(r['능력단위'] || '').trim();
+            if (sub) subjects.add(sub);
+            if (unit) units.add(unit);
+        });
+        return {
+            masterSubjectList: Array.from(subjects),
+            ncsList: Array.from(units)
+        };
+    }
+
+    function normalizeCoursesList(courses) {
+        if (!courses) return [];
+        return Array.isArray(courses) ? courses : Object.values(courses);
+    }
+
+    function normalizeTimetableRows(val) {
+        if (!val) return [];
+        return Array.isArray(val) ? val : Object.values(val);
+    }
+
+    /** KST 기준 오늘 날짜 (YYYY-MM-DD) */
+    function getTodayStrKst() {
+        var nowKst = new Date();
+        var offset = nowKst.getTimezoneOffset() * 60000;
+        return new Date(nowKst - offset).toISOString().split('T')[0];
+    }
+
+    /** 오늘 17:30(KST) 이후인지 — 이후부터 당일 미등록 출석을 결석으로 집계 */
+    function isAfterTodayAttendanceCutoffKst() {
+        var now = new Date();
+        var offset = now.getTimezoneOffset() * 60000;
+        var kst = new Date(now - offset);
+        var h = kst.getUTCHours();
+        var m = kst.getUTCMinutes();
+        return h > 17 || (h === 17 && m >= 30);
+    }
+
+    /**
+     * 출석부 미등록(!att) 시 결석으로 셀지 여부.
+     * 당일 17:30(KST) 이전에는 오늘 날짜는 결석 처리하지 않음.
+     */
+    function shouldCountMissingAttAsAbsent(dateStr, todayStr) {
+        var today = todayStr || getTodayStrKst();
+        if (!dateStr || dateStr > today) return false;
+        if (dateStr < today) return true;
+        return isAfterTodayAttendanceCutoffKst();
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        if (!window.classDataRoot) initClassContext();
+        loadCohortLabelFromDb();
+        window.addEventListener('resize', function () {
+            clearTimeout(window._harnessMarqueeResizeTimer);
+            window._harnessMarqueeResizeTimer = setTimeout(applyHarnessClassMarquee, 120);
+        });
+    });
+
+    window.LEGACY_COHORT = LEGACY;
+    window.initClassContext = initClassContext;
+    window.isLegacyCohortId = isLegacyCohortId;
+    window.getClassDataRoot = getClassDataRoot;
+    window.classDbPath = classDbPath;
+    window.classDbRef = classDbRef;
+    window.classArchiveMetaRef = classArchiveMetaRef;
+    window.classStorageKey = classStorageKey;
+    window.classQueryString = classQueryString;
+    window.classNavHref = classNavHref;
+    window.classCohortLabel = classCohortLabel;
+    window.formatClassHudText = formatClassHudText;
+    window.resolveCohortLabelFromStore = resolveCohortLabelFromStore;
+    window.applyHarnessClassMarquee = applyHarnessClassMarquee;
+    window.refreshClassHud = refreshClassHud;
+    window.loadCohortLabelFromDb = loadCohortLabelFromDb;
+    window.hydrateSubjectListsFromTimetable = hydrateSubjectListsFromTimetable;
+    window.normalizeTimetableRows = normalizeTimetableRows;
+    window.normalizeCoursesList = normalizeCoursesList;
+    window.getTodayStrKst = getTodayStrKst;
+    window.isAfterTodayAttendanceCutoffKst = isAfterTodayAttendanceCutoffKst;
+    window.shouldCountMissingAttAsAbsent = shouldCountMissingAttAsAbsent;
+})();
+

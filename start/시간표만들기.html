@@ -1,4 +1,16 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>자동 시간표 생산 공장 [통합 매칭 버전]</title><script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script><script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script><script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.3.0/exceljs.min.js"></script><style>body { font-family: 'Malgun Gothic', sans-serif; background-color: #f4f7f6; color: #333; margin: 0; padding: 20px; }
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자동 시간표 생산 공장 [통합 매칭 버전]</title>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.3.0/exceljs.min.js"></script>
+    <style>
+        body { font-family: 'Malgun Gothic', sans-serif; background-color: #f4f7f6; color: #333; margin: 0; padding: 20px; }
         .container { max-width: 1200px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
         h1 { color: #2c3e50; text-align: center; border-bottom: 3px solid #3498db; padding-bottom: 15px; }
         
@@ -72,55 +84,527 @@
         .cal-cell.saturday { color: #3498db; }
         .cal-cell.selected-holiday { background: #e74c3c !important; color: white !important; border-color: #c0392b; font-weight: bold; }
         .cal-cell.selected-workday { background: #27ae60 !important; color: white !important; border-color: #2ecc71; font-weight: bold; }
-        .cal-cell.in-training-range { border-bottom: 3px solid #f39c12; }</style></head><body><div class="container"><div style="text-align: left;"><button onclick='location.href="데이터자료.html"' style="background:#7f8c8d; padding:8px 15px; margin:0; font-size:0.95em; box-shadow:0 2px 4px rgba(0,0,0,0.1);">⬅️ 데이터자료 관리로 이동</button></div><h1 style="margin-top: 5px;">⚙️ RD등록 자동 시간표 만들기</h1><div class="zone" id="zone2"><div class="zone-title">0구역: 훈련기간·휴일 설정 <span style="font-size:0.85em; font-weight:normal; color:#7f8c8d;">(RD 없이 틀 만들기 가능)</span></div><p style="margin:0 0 12px 0; font-size:0.92em; color:#555; line-height:1.5;">RD 엑셀 없이도 훈련 시작·종료일과 달력(휴일·주말 수업)만 정한 뒤, <strong>index1 업로드용 시간표 엑셀 틀</strong>을 받을 수 있습니다. RD를 등록하면 아래 1구역에서 교과·시간을 채운 <strong>완성 시간표</strong>를 만들 수 있습니다.</p><div style="display:flex; gap:20px; flex-wrap:wrap; background:#fff; padding:15px; border-radius:8px; border:1px solid #dfe6e9;"><div style="flex:1; min-width:250px;"><label><strong>📅 훈련 기간 설정</strong></label><div class="period-date-row"><div class="period-date-field" id="startDateField"><input type="hidden" id="startDate"> <button type="button" class="period-date-btn empty" id="startDateBtn" onclick='togglePeriodDatePicker("startDate",event)'>연도-월-일</button><div id="startDatePicker" class="period-date-popup"></div></div><span style="font-weight:bold;">~</span><div class="period-date-field" id="endDateField"><input type="hidden" id="endDate"> <button type="button" class="period-date-btn empty" id="endDateBtn" onclick='togglePeriodDatePicker("endDate",event)'>연도-월-일</button><div id="endDatePicker" class="period-date-popup"></div></div></div><div style="margin-top:15px; font-size:1.05em; color:#34495e; background:#f8f9fa; padding:10px; border-radius:5px; border-left:4px solid #3498db;"><span id="rdDayHintBlock">RD 요구 일수: <span id="targetDays" style="font-weight:bold; color:#95a5a6;">—</span> <span id="rdDayHintSuffix" style="font-size:0.85em;">(RD 미등록)</span><br></span>실제 확보 일수: <span id="calcDays" style="font-weight:bold; color:#27ae60;">0</span>일 <span id="dayStatusWarning" style="font-size:0.85em; margin-left:10px; font-weight:bold;"></span></div><div style="margin-top:15px; font-size:0.8em; color:#7f8c8d; background:#f4f7f6; padding:8px; border-radius:5px; border-left:3px solid #bdc3c7;">💡 <strong>달력 조작:</strong> [평일] 클릭=휴일(🔴) / [주말] 클릭=수업(🟢)</div><div style="margin-top:10px; border:1px solid #dfe6e9; border-radius:5px; padding:10px; background:#fff; max-height:220px; overflow-y:auto; box-shadow:inset 0 1px 3px rgba(0,0,0,0.05);"><strong style="font-size:0.9em; color:#2c3e50; border-bottom:2px solid #3498db; padding-bottom:3px; display:inline-block; margin-bottom:10px;">📋 특수 일정 등록 현황</strong><div id="specialDaysList" style="display:grid; grid-template-columns: 1fr 1fr; gap:8px; font-size:0.85em;"><span style="color:#95a5a6; grid-column: span 2; text-align:center; padding:10px 0;">등록된 일정이 없습니다.<br>달력을 클릭하세요.</span></div></div><button type="button" onclick="exportSkeletonTimetableExcel()" style="width:100%; margin-top:14px; background:#8e44ad; color:white; font-weight:bold; padding:14px; font-size:1.05em; border-radius:5px; box-shadow:0 2px 4px rgba(0,0,0,0.15);">📄 훈련기간 틀만 엑셀 다운로드 (RD 없이)</button></div><div style="flex:1.5; min-width:320px; border-left:1px solid #ecf0f1; padding-left:20px;"><div style="display:flex; justify-content:space-between; margin-bottom:10px; font-size:0.95em; background:#f8f9fa; padding:8px 12px; border-radius:5px;"><span style="font-weight:bold; color:#2c3e50;">총 수업일수: <span id="calTotalClassDays" style="color:#3498db;">0</span>일</span> <span style="font-weight:bold; color:#e74c3c;">휴일수: <span id="calTotalHolidays">0</span>일</span> <span style="font-weight:bold; color:#27ae60;">주말수업일수: <span id="calTotalWeekendWorks">0</span>일</span></div><div class="cal-header"><button type="button" onclick="changeCalMonth(-1)">◀</button> <strong id="calMonthYearDisplay">2026년 05월</strong> <button type="button" onclick="changeCalMonth(1)">▶</button></div><div class="cal-grid"><div class="cal-day-label" style="color:#e74c3c;">일</div><div class="cal-day-label">월</div><div class="cal-day-label">화</div><div class="cal-day-label">수</div><div class="cal-day-label">목</div><div class="cal-day-label">금</div><div class="cal-day-label" style="color:#3498db;">토</div></div><div id="calDaysGrid" class="cal-grid" style="margin-top:5px;"></div><button type="button" onclick="alertCalendarInfo()" style="width:100%; margin-top:15px; background:#f39c12; color:white; font-weight:bold; padding:12px; font-size:1.05em; border-radius:5px;">📢 현재 선택된 달력 정보 브리핑</button></div></div></div><div class="zone" id="zone1"><div class="zone-title">1구역: RD 제원 스캔 <span id="dbStatus" class="status-loading">⏳ DB 로딩 중...</span></div><label for="rdExcelInput"><strong>1. RD 엑셀 파일 업로드:</strong></label> <input type="file" id="rdExcelInput" accept=".xlsx, .xls" disabled="disabled"><div class="dashboard" id="initialDashboard" style="display: none;"><div class="dash-card">총 훈련일수<strong id="dashDays">0일</strong></div><div class="dash-card">총 훈련시간<strong id="dashTotalHours">0시간</strong></div><div class="dash-card">소양교과<strong id="dashBasicHours">0시간</strong></div><div class="dash-card">NCS교과<strong id="dashNcsHours">0시간</strong></div><div class="dash-card">비NCS교과<strong id="dashNonNcsHours">0시간</strong></div></div><div id="saveControlPanel" style="display:none; gap:10px; margin-top:15px;"><button onclick="saveDraftToDB()" style="flex:1; background:#27ae60; padding:12px; font-weight:bold; font-size:0.95em; margin:0;">💾 현재 모든 작업 상태 서버에 저장</button> <button onclick="exportToIndex1Excel()" style="flex:1.2; background:#2980b9; padding:12px; font-weight:bold; font-size:1.1em; margin:0; box-shadow:0 2px 4px rgba(0,0,0,0.2);">🚀 최종 출고 엑셀 다운로드</button> <button onclick="deleteDraftFromDB()" style="flex:1; background:#e74c3c; padding:12px; font-weight:bold; font-size:0.95em; margin:0;">🗑️ 저장된 데이터 삭제</button></div></div><div class="zone" id="zone3" style="display: none;"><div class="zone-title">3구역: 연료 정밀 분배 계기판 (시간 분배)</div><div id="subjectContainer"></div></div></div><script>let urlParams=new URLSearchParams(window.location.search),currentClass=urlParams.get("class")||"테스트",masterConfig={apiKey:"AIzaSyDnADuHu0mq4GIlqBm_VHfv7y6RarabGhU",authDomain:"busan-teacher-workall.firebaseapp.com",databaseURL:"https://busan-teacher-workall-default-rtdb.asia-southeast1.firebasedatabase.app",projectId:"busan-teacher-workall"},database=(firebase.apps.length||firebase.initializeApp(masterConfig),firebase.database()),auth=firebase.auth(),globalNcsMasterDB={},currentUploadedFileName="";function displayFileStatus(e){var t=document.getElementById("rdExcelInput");t.style.display="none";let a=document.getElementById("savedFileStatusBox");a||((a=document.createElement("div")).id="savedFileStatusBox",a.style.marginTop="10px",a.style.padding="12px",a.style.backgroundColor="#e8f8f5",a.style.border="1px solid #27ae60",a.style.borderRadius="5px",a.style.color="#2c3e50",t.parentNode.insertBefore(a,t.nextSibling)),a.innerHTML=`✅ <strong>[ ${e} ]</strong> 등록 완료 
-        <button onclick="document.getElementById('rdExcelInput').style.display='block'; this.parentElement.style.display='none'; document.getElementById('rdExcelInput').value='';" style="margin:0 0 0 15px; padding:4px 10px; font-size:0.8em; background:#e74c3c; color:white; border:none; border-radius:3px; cursor:pointer;">새 파일로 교체</button>`,a.style.display="block"}function loadAllNCSVersions(){let t=document.getElementById("dbStatus"),n=document.getElementById("rdExcelInput");database.ref("ncsVersions").once("value").then(e=>{let r=e.val();if(r){let a=0;Object.keys(r).forEach(e=>{let t=r[e].data;t&&Object.keys(t).forEach(e=>{e=t[e].data;e&&Array.isArray(e)&&e.forEach(e=>{e.code&&(globalNcsMasterDB[e.code]=e,a++)})})}),console.log(`✅ 통합 DB 조립 완료: 총 ${a}개 능력단위 적재.`),t.innerText=`✅ 준비 완료 (DB ${a}종 로드)`,t.className="status-ready",n.disabled=!1}else t.innerText="❌ 등록된 훈련기준이 없습니다."}).catch(e=>{t.innerText="❌ DB 통신 오류"})}function generateAllocationUI(a,e=!1){document.getElementById("zone3").style.display="block";var t=document.getElementById("subjectContainer");let o=t.innerHTML="",i=[];[{key:"basic",title:"📘 소양교과"},{key:"ncs",title:"📙 NCS 전공교과"},{key:"nonNcs",title:"📗 비NCS 교과 (이론)"}].forEach(r=>{var e=a[r.key];if(e&&0<e.length){var t=e.length,n=e.reduce((e,t)=>e+t.hour,0);let a={};e.forEach((e,t)=>{e._originalIndex=t,a[e.subject]||(a[e.subject]={totalHour:0,units:[]}),a[e.subject].totalHour+=e.hour,a[e.subject].units.push(e)});e=Object.keys(a).length;o+=`<h3 style="margin-top:25px; color:#2c3e50; border-bottom:3px solid #bdc3c7; padding-bottom:8px; display:flex; justify-content:space-between; align-items:flex-end;">
-                            <span>${r.title}</span><span style="font-size:0.65em; color:#e67e22; background:#fff3e0; padding:4px 10px; border-radius:12px;">총 ${e}과목 / ${t}단위 / ${n}시간</span>
-                         </h3>`,"ncs"===r.key?Object.keys(a).forEach(e=>{var t=a[e];o+=`
+        .cal-cell.in-training-range { border-bottom: 3px solid #f39c12; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div style="text-align: left;">
+        <button onclick="location.href='데이터자료.html'" style="background:#7f8c8d; padding:8px 15px; margin:0; font-size:0.95em; box-shadow:0 2px 4px rgba(0,0,0,0.1);">
+            ⬅️ 데이터자료 관리로 이동
+        </button>
+    </div>
+    
+    <h1 style="margin-top: 5px;">⚙️ RD등록 자동 시간표 만들기</h1>
+
+    <div class="zone" id="zone2">
+        <div class="zone-title">0구역: 훈련기간·휴일 설정 <span style="font-size:0.85em; font-weight:normal; color:#7f8c8d;">(RD 없이 틀 만들기 가능)</span></div>
+        <p style="margin:0 0 12px 0; font-size:0.92em; color:#555; line-height:1.5;">
+            RD 엑셀 없이도 훈련 시작·종료일과 달력(휴일·주말 수업)만 정한 뒤, <strong>index1 업로드용 시간표 엑셀 틀</strong>을 받을 수 있습니다.
+            RD를 등록하면 아래 1구역에서 교과·시간을 채운 <strong>완성 시간표</strong>를 만들 수 있습니다.
+        </p>
+        <div style="display:flex; gap:20px; flex-wrap:wrap; background:#fff; padding:15px; border-radius:8px; border:1px solid #dfe6e9;">
+            
+            <div style="flex:1; min-width:250px;">
+                <label><strong>📅 훈련 기간 설정</strong></label>
+                <div class="period-date-row">
+                    <div class="period-date-field" id="startDateField">
+                        <input type="hidden" id="startDate">
+                        <button type="button" class="period-date-btn empty" id="startDateBtn" onclick="togglePeriodDatePicker('startDate', event)">연도-월-일</button>
+                        <div id="startDatePicker" class="period-date-popup"></div>
+                    </div>
+                    <span style="font-weight:bold;">~</span>
+                    <div class="period-date-field" id="endDateField">
+                        <input type="hidden" id="endDate">
+                        <button type="button" class="period-date-btn empty" id="endDateBtn" onclick="togglePeriodDatePicker('endDate', event)">연도-월-일</button>
+                        <div id="endDatePicker" class="period-date-popup"></div>
+                    </div>
+                </div>
+                <div style="margin-top:15px; font-size:1.05em; color:#34495e; background:#f8f9fa; padding:10px; border-radius:5px; border-left:4px solid #3498db;">
+                    <span id="rdDayHintBlock">RD 요구 일수: <span id="targetDays" style="font-weight:bold; color:#95a5a6;">—</span> <span id="rdDayHintSuffix" style="font-size:0.85em;">(RD 미등록)</span><br></span>
+                    실제 확보 일수: <span id="calcDays" style="font-weight:bold; color:#27ae60;">0</span>일
+                    <span id="dayStatusWarning" style="font-size:0.85em; margin-left:10px; font-weight:bold;"></span>
+                </div>
+                
+                <div style="margin-top:15px; font-size:0.8em; color:#7f8c8d; background:#f4f7f6; padding:8px; border-radius:5px; border-left:3px solid #bdc3c7;">
+                    💡 <strong>달력 조작:</strong> [평일] 클릭=휴일(🔴) / [주말] 클릭=수업(🟢)
+                </div>
+                
+                <div style="margin-top:10px; border:1px solid #dfe6e9; border-radius:5px; padding:10px; background:#fff; max-height:220px; overflow-y:auto; box-shadow:inset 0 1px 3px rgba(0,0,0,0.05);">
+                    <strong style="font-size:0.9em; color:#2c3e50; border-bottom:2px solid #3498db; padding-bottom:3px; display:inline-block; margin-bottom:10px;">📋 특수 일정 등록 현황</strong>
+                    <div id="specialDaysList" style="display:grid; grid-template-columns: 1fr 1fr; gap:8px; font-size:0.85em;">
+                        <span style="color:#95a5a6; grid-column: span 2; text-align:center; padding:10px 0;">등록된 일정이 없습니다.<br>달력을 클릭하세요.</span>
+                    </div>
+                </div>
+
+                <button type="button" onclick="exportSkeletonTimetableExcel()" style="width:100%; margin-top:14px; background:#8e44ad; color:white; font-weight:bold; padding:14px; font-size:1.05em; border-radius:5px; box-shadow:0 2px 4px rgba(0,0,0,0.15);">
+                    📄 훈련기간 틀만 엑셀 다운로드 (RD 없이)
+                </button>
+            </div>
+
+            <div style="flex:1.5; min-width:320px; border-left:1px solid #ecf0f1; padding-left:20px;">
+                <div style="display:flex; justify-content:space-between; margin-bottom:10px; font-size:0.95em; background:#f8f9fa; padding:8px 12px; border-radius:5px;">
+                    <span style="font-weight:bold; color:#2c3e50;">총 수업일수: <span id="calTotalClassDays" style="color:#3498db;">0</span>일</span>
+                    <span style="font-weight:bold; color:#e74c3c;">휴일수: <span id="calTotalHolidays">0</span>일</span>
+                    <span style="font-weight:bold; color:#27ae60;">주말수업일수: <span id="calTotalWeekendWorks">0</span>일</span>
+                </div>
+                <div class="cal-header">
+                    <button type="button" onclick="changeCalMonth(-1)">◀</button>
+                    <strong id="calMonthYearDisplay">2026년 05월</strong>
+                    <button type="button" onclick="changeCalMonth(1)">▶</button>
+                </div>
+                <div class="cal-grid">
+                    <div class="cal-day-label" style="color:#e74c3c;">일</div><div class="cal-day-label">월</div>
+                    <div class="cal-day-label">화</div><div class="cal-day-label">수</div><div class="cal-day-label">목</div>
+                    <div class="cal-day-label">금</div><div class="cal-day-label" style="color:#3498db;">토</div>
+                </div>
+                <div id="calDaysGrid" class="cal-grid" style="margin-top:5px;"></div>
+                <button type="button" onclick="alertCalendarInfo()" style="width:100%; margin-top:15px; background:#f39c12; color:white; font-weight:bold; padding:12px; font-size:1.05em; border-radius:5px;">
+                    📢 현재 선택된 달력 정보 브리핑
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="zone" id="zone1">
+        <div class="zone-title">
+            1구역: RD 제원 스캔
+            <span id="dbStatus" class="status-loading">⏳ DB 로딩 중...</span>
+        </div>
+        
+        <label for="rdExcelInput"><strong>1. RD 엑셀 파일 업로드:</strong></label>
+        <input type="file" id="rdExcelInput" accept=".xlsx, .xls" disabled>
+
+        <div class="dashboard" id="initialDashboard" style="display: none;">
+            <div class="dash-card">총 훈련일수<strong id="dashDays">0일</strong></div>
+            <div class="dash-card">총 훈련시간<strong id="dashTotalHours">0시간</strong></div>
+            <div class="dash-card">소양교과<strong id="dashBasicHours">0시간</strong></div>
+            <div class="dash-card">NCS교과<strong id="dashNcsHours">0시간</strong></div>
+            <div class="dash-card">비NCS교과<strong id="dashNonNcsHours">0시간</strong></div>
+        </div>
+
+        <div id="saveControlPanel" style="display:none; gap:10px; margin-top:15px;">
+            <button onclick="saveDraftToDB()" style="flex:1; background:#27ae60; padding:12px; font-weight:bold; font-size:0.95em; margin:0;">💾 현재 모든 작업 상태 서버에 저장</button>
+            
+            <button onclick="exportToIndex1Excel()" style="flex:1.2; background:#2980b9; padding:12px; font-weight:bold; font-size:1.1em; margin:0; box-shadow:0 2px 4px rgba(0,0,0,0.2);">🚀 최종 출고 엑셀 다운로드</button>
+            
+            <button onclick="deleteDraftFromDB()" style="flex:1; background:#e74c3c; padding:12px; font-weight:bold; font-size:0.95em; margin:0;">🗑️ 저장된 데이터 삭제</button>
+        </div>
+    </div>
+
+    <div class="zone" id="zone3" style="display: none;">
+        <div class="zone-title">3구역: 연료 정밀 분배 계기판 (시간 분배)</div>
+        <div id="subjectContainer"></div>
+    </div>
+    
+    </div>
+
+<script>
+   // 📍 0. URL 환경 변수 파악 (현재 반 이름 가져오기)
+    const urlParams = new URLSearchParams(window.location.search);
+    const currentClass = urlParams.get('class') || "테스트";
+
+    // 📍 1. 메인 엔진 배선
+    const masterConfig = {
+        apiKey: "AIzaSyDnADuHu0mq4GIlqBm_VHfv7y6RarabGhU",
+        authDomain: "busan-teacher-workall.firebaseapp.com",
+        databaseURL: "https://busan-teacher-workall-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "busan-teacher-workall"
+    };
+
+    if (!firebase.apps.length) { firebase.initializeApp(masterConfig); }
+    const database = firebase.database();
+    const auth = firebase.auth();
+
+    let globalNcsMasterDB = {}; 
+    let currentUploadedFileName = ""; // 💡 [신규 메모리] 엑셀 파일명 보관소
+
+    // 📍 [신규 장착] 파일명 전용 상태창 UI 엔진
+    function displayFileStatus(fileName) {
+        const fileInput = document.getElementById('rdExcelInput');
+        fileInput.style.display = 'none'; 
+
+        let statusBox = document.getElementById('savedFileStatusBox');
+        if (!statusBox) {
+            statusBox = document.createElement('div');
+            statusBox.id = 'savedFileStatusBox';
+            statusBox.style.marginTop = '10px';
+            statusBox.style.padding = '12px';
+            statusBox.style.backgroundColor = '#e8f8f5';
+            statusBox.style.border = '1px solid #27ae60';
+            statusBox.style.borderRadius = '5px';
+            statusBox.style.color = '#2c3e50';
+            fileInput.parentNode.insertBefore(statusBox, fileInput.nextSibling);
+        }
+        
+        statusBox.innerHTML = `✅ <strong>[ ${fileName} ]</strong> 등록 완료 
+        <button onclick="document.getElementById('rdExcelInput').style.display='block'; this.parentElement.style.display='none'; document.getElementById('rdExcelInput').value='';" style="margin:0 0 0 15px; padding:4px 10px; font-size:0.8em; background:#e74c3c; color:white; border:none; border-radius:3px; cursor:pointer;">새 파일로 교체</button>`;
+        statusBox.style.display = "block";
+    }
+
+    // 📍 2. 시동(보안 인증) 및 통합 DB 로드
+    window.onload = function() {
+        const adminPw = localStorage.getItem('adminPw');
+        if (!adminPw) {
+            alert("보안 인증이 필요합니다. 메인 화면으로 이동합니다.");
+            location.href = '../index.html'; return;
+        }
+
+        auth.signInWithEmailAndPassword('ghlwns0201@naver.com', adminPw)
+            .then(() => {
+                console.log("🔒 보안 인증 성공!");
+                loadAllNCSVersions(); 
+                loadDraftFromDB(); // 서버 저장 데이터 확인
+            })
+            .catch(err => {
+                alert("인증 정보가 올바르지 않습니다.");
+                location.href = '../index.html';
+            });
+    };
+
+    // 📍 3. 통합 사전 구축
+    function loadAllNCSVersions() {
+        const statusSpan = document.getElementById('dbStatus');
+        const fileInput = document.getElementById('rdExcelInput');
+
+        database.ref('ncsVersions').once('value').then(snap => {
+            const allVersions = snap.val();
+            if (!allVersions) { statusSpan.innerText = "❌ 등록된 훈련기준이 없습니다."; return; }
+
+            let subjectCount = 0;
+            Object.keys(allVersions).forEach(vId => {
+                const partsData = allVersions[vId].data; 
+                if(partsData) {
+                    Object.keys(partsData).forEach(partName => {
+                        const subjects = partsData[partName].data; 
+                        if(subjects && Array.isArray(subjects)) {
+                            subjects.forEach(sub => {
+                                if(sub.code) {
+                                    globalNcsMasterDB[sub.code] = sub;
+                                    subjectCount++;
+                                }
+                            });
+                        }
+                    });
+                }
+            });
+            console.log(`✅ 통합 DB 조립 완료: 총 ${subjectCount}개 능력단위 적재.`);
+            statusSpan.innerText = `✅ 준비 완료 (DB ${subjectCount}종 로드)`;
+            statusSpan.className = "status-ready";
+            fileInput.disabled = false;
+        }).catch(err => {
+            statusSpan.innerText = "❌ DB 통신 오류";
+        });
+    }
+
+    // 📍 4. RD 엑셀 스캐너
+    document.getElementById('rdExcelInput').addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (file) {
+            currentUploadedFileName = file.name; // 💡 파일명 기억
+            displayFileStatus(currentUploadedFileName); // 💡 즉시 UI 변환
+
+            const reader = new FileReader();
+            reader.onload = function(evt) {
+                try {
+                    const data = new Uint8Array(evt.target.result);
+                    const workbook = XLSX.read(data, {type: 'array'});
+                    const sheet = workbook.Sheets[workbook.SheetNames[0]];
+                    const rows = XLSX.utils.sheet_to_json(sheet, {header: 1, defval: ""});
+
+                    let totals = { basic: 0, ncs: 0, nonNcs: 0, sum: 0 };
+                    let extractedData = { basic: [], ncs: [], nonNcs: [] };
+
+                    const B = 1, C = 2, L = 11, X = 23, AH = 33, AJ = 35, AN = 39;
+                    let currentSection = null; let currentSubject = "";
+
+                    for (let i = 0; i < rows.length; i++) {
+                        let row = rows[i] || [];
+                        let valB = String(row[B] || "").trim();
+                        let valC = String(row[C] || "").trim();
+
+                        if (valB.includes("■ 훈련시설")) break; 
+                        if (valC === "NCS 소양교과") { currentSection = "소양"; currentSubject = ""; continue; }
+                        if (valC === "NCS 전공교과") { currentSection = "전공"; currentSubject = ""; continue; }
+                        if (valC === "비 NCS 교과 (이론)") { currentSection = "이론"; currentSubject = ""; continue; }
+                        if (valB === "■ 교수학습방법과 평가방법") { currentSection = "평가"; currentSubject = ""; continue; }
+
+                        if (valB === "교과목" || valB === "교과구분" || valB.includes("총 훈련시간") || valB === "소계" || valB === "합계") continue;
+                        if (valB !== "") currentSubject = valB;
+                        if (!currentSection || (!currentSubject && currentSection !== "평가")) continue;
+
+                        if (currentSection === "소양" && row[AH]) {
+                            let h = Number(String(row[AH]).replace(/[^0-9.]/g, '')) || 0;
+                            if (h > 0) { totals.basic += h; extractedData.basic.push({ subject: currentSubject, unit: currentSubject, hour: h, elements: [] }); }
+                        } else if (currentSection === "전공" && (row[L] || row[AH] || row[AJ])) {
+                            let h = Number(String(row[AJ]).replace(/[^0-9.]/g, '')) || 0;
+                            let unitNameRaw = String(row[L] || "").trim(); 
+                            if (h > 0 && unitNameRaw) {
+                                totals.ncs += h;
+                                const codeMatch = unitNameRaw.match(/\[([0-9]{10}_[0-9]+v[0-9]+)\]/);
+                                let fullCode = codeMatch ? codeMatch[1] : "";
+                                let unitName = unitNameRaw.replace(/\[.*?\]/g, '').trim(); 
+                                
+                                let matchedPartData = null;
+                                if(fullCode) {
+                                    if(globalNcsMasterDB[fullCode]) {
+                                        matchedPartData = globalNcsMasterDB[fullCode];
+                                    } else {
+                                        const prefix10 = fullCode.substring(0, 10);
+                                        const altCode = Object.keys(globalNcsMasterDB).find(key => key.startsWith(prefix10));
+                                        if(altCode) matchedPartData = globalNcsMasterDB[altCode];
+                                    }
+                                }
+                                extractedData.ncs.push({
+                                    subject: currentSubject, unit: unitName, hour: h, rdCode: fullCode,
+                                    elements: matchedPartData ? JSON.parse(JSON.stringify(matchedPartData.elements || [])) : []
+                                });
+                            }
+                        } else if (currentSection === "이론" && (row[L] || row[X] || row[AN])) {
+                            let h = Number(String(row[AN]).replace(/[^0-9.]/g, '')) || 0;
+                            let unitName = String(row[L] || "").trim(); 
+                            let detailName = String(row[X] || "").trim(); // 💡 [신규 배선] X열 세부내용 추출
+                            
+                            if (h > 0 && unitName) {
+                                totals.nonNcs += h;
+                                extractedData.nonNcs.push({ 
+                                    subject: currentSubject, 
+                                    unit: unitName, 
+                                    detail: detailName, // 💡 메모리에 세부내용 보관
+                                    hour: h, 
+                                    elements: [] 
+                                });
+                            }
+                        }
+                    }
+                    totals.sum = totals.basic + totals.ncs + totals.nonNcs;
+
+                    document.getElementById('initialDashboard').style.display = "flex";
+                    document.getElementById('saveControlPanel').style.display = "flex";
+                    
+                    document.getElementById('dashTotalHours').innerText = totals.sum + "시간";
+                    document.getElementById('dashBasicHours').innerText = totals.basic + "시간";
+                    document.getElementById('dashNcsHours').innerText = totals.ncs + "시간";
+                    document.getElementById('dashNonNcsHours').innerText = totals.nonNcs + "시간";
+                    document.getElementById('dashDays').innerText = Math.ceil(totals.sum / 8) + "일 (예상)"; 
+
+                    window.rdParsedData = extractedData; 
+
+                    const targetRequiredDays = Math.ceil(totals.sum / 8);
+                    updateRdTargetDaysDisplay(targetRequiredDays);
+                    
+                    generateAllocationUI(extractedData, false); 
+                    alert(`✅ 통합 스캔 완료! 총 ${totals.sum}시간 로드됨.`);
+                } catch(error) {
+                    alert("❌ 엑셀 분석 중 오류 발생. (F12 확인)");
+                }
+            };
+            reader.readAsArrayBuffer(file);
+        }
+    });
+
+    // 📍 5. [3구역] 시간 분배 계기판(UI) 생성 엔진
+    function generateAllocationUI(data, isLoadMode = false) {
+        document.getElementById('zone3').style.display = 'block';
+        const container = document.getElementById('subjectContainer');
+        container.innerHTML = "";
+        const categories = [{ key: 'basic', title: '📘 소양교과' }, { key: 'ncs', title: '📙 NCS 전공교과' }, { key: 'nonNcs', title: '📗 비NCS 교과 (이론)' }];
+        let html = "";
+        let autoDistributeTargetIds = []; 
+
+        categories.forEach(cat => {
+            const items = data[cat.key];
+            if (items && items.length > 0) {
+                const totalUnits = items.length;
+                const totalHours = items.reduce((sum, item) => sum + item.hour, 0);
+                const groupedBySubject = {};
+                items.forEach((item, idx) => {
+                    item._originalIndex = idx;
+                    if (!groupedBySubject[item.subject]) groupedBySubject[item.subject] = { totalHour: 0, units: [] };
+                    groupedBySubject[item.subject].totalHour += item.hour;
+                    groupedBySubject[item.subject].units.push(item);
+                });
+                const totalSubjects = Object.keys(groupedBySubject).length;
+
+                html += `<h3 style="margin-top:25px; color:#2c3e50; border-bottom:3px solid #bdc3c7; padding-bottom:8px; display:flex; justify-content:space-between; align-items:flex-end;">
+                            <span>${cat.title}</span><span style="font-size:0.65em; color:#e67e22; background:#fff3e0; padding:4px 10px; border-radius:12px;">총 ${totalSubjects}과목 / ${totalUnits}단위 / ${totalHours}시간</span>
+                         </h3>`;
+
+                if (cat.key === 'ncs') {
+                    Object.keys(groupedBySubject).forEach(subjectName => {
+                        const subjectData = groupedBySubject[subjectName];
+                        html += `
                         <div style="background:#fff; border:1px solid #dfe6e9; margin-bottom:15px; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.05); overflow:hidden;">
                             <div style="background:#ecf0f1; padding:12px 15px; border-bottom:1px solid #dfe6e9; display:flex; justify-content:space-between; align-items:center;">
-                                <strong style="font-size:1.15em; color:#2c3e50;">📚 ${e}</strong>
-                                <span style="background:#2c3e50; color:white; padding:4px 12px; border-radius:12px; font-size:0.9em; font-weight:bold;">과목 총 ${t.totalHour}시간</span>
+                                <strong style="font-size:1.15em; color:#2c3e50;">📚 ${subjectName}</strong>
+                                <span style="background:#2c3e50; color:white; padding:4px 12px; border-radius:12px; font-size:0.9em; font-weight:bold;">과목 총 ${subjectData.totalHour}시간</span>
                             </div>
                             <div style="padding:15px; display:flex; flex-wrap:wrap; gap:15px; background:#fbfbfc;">
-                        `,t.units.forEach(e=>{let a=r.key+"_"+e._originalIndex;o+=`
+                        `;
+                        subjectData.units.forEach(item => {
+                            const uniqueId = `${cat.key}_${item._originalIndex}`;
+                            html += `
                                 <div style="flex: 1 1 300px; min-width:280px; max-width:400px; border:1px solid #bdc3c7; border-radius:6px; background:#fff; display:flex; flex-direction:column; overflow:hidden;">
                                     <div style="padding:10px 12px; background:#3498db; color:white; display:flex; justify-content:space-between; align-items:center; font-size:0.95em;">
-                                        <span style="font-weight:bold; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:75%;" title="${e.unit}">${e.unit}</span>
-                                        <span><span id="target_${a}">${e.hour}</span>h</span>
+                                        <span style="font-weight:bold; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:75%;" title="${item.unit}">${item.unit}</span>
+                                        <span><span id="target_${uniqueId}">${item.hour}</span>h</span>
                                     </div>
-                            `,e.elements&&0<e.elements.length?(i.push(a),o+=`
+                            `;
+                            if (item.elements && item.elements.length > 0) {
+                                autoDistributeTargetIds.push(uniqueId);
+                                html += `
                                     <div style="background:#ecf0f1; padding:6px 10px; display:flex; gap:5px; border-bottom:1px solid #bdc3c7; justify-content:flex-end;">
-                                        <button onclick="autoDistributeHours('${a}')" style="background:#27ae60; color:white; border:none; padding:4px 8px; font-size:0.8em; border-radius:3px; cursor:pointer; margin:0;">⚡ 4배수 재분배</button>
-                                        <button onclick="clearHours('${a}')" style="background:#e74c3c; color:white; border:none; padding:4px 8px; font-size:0.8em; border-radius:3px; cursor:pointer; margin:0;">🗑️ 초기화</button>
+                                        <button onclick="autoDistributeHours('${uniqueId}')" style="background:#27ae60; color:white; border:none; padding:4px 8px; font-size:0.8em; border-radius:3px; cursor:pointer; margin:0;">⚡ 4배수 재분배</button>
+                                        <button onclick="clearHours('${uniqueId}')" style="background:#e74c3c; color:white; border:none; padding:4px 8px; font-size:0.8em; border-radius:3px; cursor:pointer; margin:0;">🗑️ 초기화</button>
                                     </div>
                                     <div style="flex-grow:1; padding:10px;">
                                         <table style="width:100%; border-collapse:collapse; text-align:left; font-size:0.85em;">
-                                            <tr style="border-bottom:2px solid #ecf0f1; color:#7f8c8d;"><th style="padding:4px 6px;">요소명</th><th style="padding:4px 6px; width:50px; text-align:center;">시간</th></tr>`,e.elements.forEach(e=>{var t;e&&e.name&&(t=void 0!==e.allocatedHour?e.allocatedHour:0,o+=`
+                                            <tr style="border-bottom:2px solid #ecf0f1; color:#7f8c8d;"><th style="padding:4px 6px;">요소명</th><th style="padding:4px 6px; width:50px; text-align:center;">시간</th></tr>`;
+                                item.elements.forEach((el) => {
+                                    if(el && el.name) {
+                                        let savedVal = el.allocatedHour !== undefined ? el.allocatedHour : 0;
+                                        html += `
                                                 <tr style="border-bottom:1px dashed #ecf0f1;">
-                                                    <td style="padding:6px; letter-spacing:-0.5px;">${e.name}</td>
+                                                    <td style="padding:6px; letter-spacing:-0.5px;">${el.name}</td>
                                                     <td style="padding:6px; text-align:center;">
-                                                        <input type="number" min="0" class="time-input ${a}" data-target="${a}" style="width:45px; text-align:center; padding:4px; border:1px solid #ccc; border-radius:3px; outline:none;" value="${t}" oninput="calculateSubTotal('${a}')">
+                                                        <input type="number" min="0" class="time-input ${uniqueId}" data-target="${uniqueId}" style="width:45px; text-align:center; padding:4px; border:1px solid #ccc; border-radius:3px; outline:none;" value="${savedVal}" oninput="calculateSubTotal('${uniqueId}')">
                                                     </td>
-                                                </tr>`)}),o+=`</table></div>
+                                                </tr>`;
+                                    }
+                                });
+                                html += `</table></div>
                                          <div style="text-align:right; padding:10px; font-weight:bold; font-size:0.9em; background:#f9f9f9; border-top:1px solid #eee;">
-                                            상태: <span id="status_${a}" style="color:#f39c12;">계산 대기중</span>
-                                         </div>`):(e=void 0!==e.allocatedHour?e.allocatedHour:e.hour,o+=`<div style="flex-grow:1; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:20px 10px; background:#fafafa;">
+                                            상태: <span id="status_${uniqueId}" style="color:#f39c12;">계산 대기중</span>
+                                         </div>`;
+                            } else {
+                                let savedVal = item.allocatedHour !== undefined ? item.allocatedHour : item.hour;
+                                html += `<div style="flex-grow:1; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:20px 10px; background:#fafafa;">
                                             <span style="color:#e74c3c; font-size:0.85em; margin-bottom:10px;">⚠️ DB 매칭 실패 (요소 없음)</span>
-                                            <input type="number" min="0" class="time-input ${a}" data-target="${a}" style="width:70px; text-align:center; padding:6px; border:1px solid #e74c3c; border-radius:4px; font-weight:bold; color:#c0392b;" value="${e}" oninput="calculateSubTotal('${a}')">
-                                         </div>`),o+="</div>"}),o+="</div></div>"}):(o+='<div style="background:#fff; border:1px solid #dfe6e9; margin-bottom:15px; border-radius:8px; overflow:hidden; box-shadow:0 2px 5px rgba(0,0,0,0.02);">',Object.keys(a).forEach(e=>{var t=a[e];o+=`
+                                            <input type="number" min="0" class="time-input ${uniqueId}" data-target="${uniqueId}" style="width:70px; text-align:center; padding:6px; border:1px solid #e74c3c; border-radius:4px; font-weight:bold; color:#c0392b;" value="${savedVal}" oninput="calculateSubTotal('${uniqueId}')">
+                                         </div>`;
+                            }
+                            html += `</div>`;
+                        });
+                        html += `</div></div>`;
+                    });
+                } else {
+                    html += `<div style="background:#fff; border:1px solid #dfe6e9; margin-bottom:15px; border-radius:8px; overflow:hidden; box-shadow:0 2px 5px rgba(0,0,0,0.02);">`;
+                    Object.keys(groupedBySubject).forEach(subjectName => {
+                        const subjectData = groupedBySubject[subjectName];
+                        html += `
                         <div style="display:flex; border-bottom:1px solid #f1f2f6; min-height:50px;">
                             <div style="width:220px; background:#f8f9fa; padding:15px; color:#2c3e50; display:flex; flex-direction:column; justify-content:center; border-right:1px solid #f1f2f6;">
-                                <span style="font-weight:bold; font-size:1.05em;">${e}</span>
-                                <span style="font-size:0.85em; color:#3498db; margin-top:4px; font-weight:bold;">총 ${t.totalHour}시간</span>
+                                <span style="font-weight:bold; font-size:1.05em;">${subjectName}</span>
+                                <span style="font-size:0.85em; color:#3498db; margin-top:4px; font-weight:bold;">총 ${subjectData.totalHour}시간</span>
                             </div>
                             <div style="flex:1; padding:15px; display:flex; flex-wrap:wrap; gap:10px; align-items:center;">
-                        `,t.units.forEach(e=>{var t="basic"===r.key?"기본 편성":e.unit,a=void 0!==e.allocatedHour?e.allocatedHour:e.hour;o+=`
+                        `;
+                        subjectData.units.forEach(item => {
+                            let unitLabel = cat.key === 'basic' ? '기본 편성' : item.unit;
+                            let savedVal = item.allocatedHour !== undefined ? item.allocatedHour : item.hour;
+                            html += `
                                 <div style="background:#ecf0f1; border:1px solid #bdc3c7; border-radius:20px; padding:4px 12px; font-size:0.9em; color:#34495e; display:flex; align-items:center; gap:8px; box-shadow:inset 0 1px 2px rgba(255,255,255,0.5);">
-                                    <span style="max-width:300px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${t}</span>
-                                    <span style="background:#fff; padding:2px 8px; border-radius:10px; font-weight:bold; color:#e67e22; border:1px solid #dfe6e9;">${a}h</span>
+                                    <span style="max-width:300px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${unitLabel}</span>
+                                    <span style="background:#fff; padding:2px 8px; border-radius:10px; font-weight:bold; color:#e67e22; border:1px solid #dfe6e9;">${savedVal}h</span>
                                 </div>
-                                <input type="hidden" class="time-input ${r.key}_${e._originalIndex}" data-target="${r.key}_${e._originalIndex}" value="${a}">
-                            `}),o+="</div></div>"}),o+="</div>")}}),t.innerHTML=o,e?document.querySelectorAll(".time-input").forEach(e=>{e=e.getAttribute("data-target");e&&calculateSubTotal(e)}):i.forEach(e=>autoDistributeHours(e))}function calculateSubTotal(e){var a=document.querySelectorAll("."+e),r=document.getElementById("target_"+e),e=document.getElementById("status_"+e);if(r&&e){r=parseInt(r.innerText)||0;let t=0;a.forEach(e=>{t+=parseInt(e.value)||0});a=r-t;0==a?(e.innerText="잔여: 0h (완벽)",e.style.color="#27ae60"):a<0?(e.innerText=`잔여: ${a}h (초과)`,e.style.color="#e74c3c"):(e.innerText=`잔여: ${a}h (부족)`,e.style.color="#f39c12")}}function autoDistributeHours(e){var t=document.querySelectorAll("."+e),a=document.getElementById("target_"+e);if(t.length&&a){a=parseInt(a.innerText)||0;let r=t.length;var l=Math.floor(a/4);let n=a%4,o=Math.floor(l/r),i=l%r;t.forEach((e,t)=>{let a=4*o;t<i&&(a+=4),t===r-1&&(a+=n),e.value=a}),calculateSubTotal(e)}}function clearHours(e){document.querySelectorAll("."+e).forEach(e=>e.value=0),calculateSubTotal(e)}window.onload=function(){var e=localStorage.getItem("adminPw");e?auth.signInWithEmailAndPassword("ghlwns0201@naver.com",e).then(()=>{console.log("🔒 보안 인증 성공!"),loadAllNCSVersions(),loadDraftFromDB()}).catch(e=>{alert("인증 정보가 올바르지 않습니다."),location.href="../index.html"}):(alert("보안 인증이 필요합니다. 메인 화면으로 이동합니다."),location.href="../index.html")},document.getElementById("rdExcelInput").addEventListener("change",function(e){var t,e=e.target.files[0];e&&(displayFileStatus(currentUploadedFileName=e.name),(t=new FileReader).onload=function(e){try{var r=new Uint8Array(e.target.result),n=XLSX.read(r,{type:"array"}),o=n.Sheets[n.SheetNames[0]],i=XLSX.utils.sheet_to_json(o,{header:1,defval:""}),l={basic:0,ncs:0,nonNcs:0,sum:0},d={basic:[],ncs:[],nonNcs:[]};let t=null,a="";for(let e=0;e<i.length;e++){var s,c,p,u=i[e]||[],y=String(u[1]||"").trim(),m=String(u[2]||"").trim();if(y.includes("■ 훈련시설"))break;if("NCS 소양교과"===m)t="소양",a="";else if("NCS 전공교과"===m)t="전공",a="";else if("비 NCS 교과 (이론)"===m)t="이론",a="";else if("■ 교수학습방법과 평가방법"===y)t="평가",a="";else if("교과목"!==y&&"교과구분"!==y&&!y.includes("총 훈련시간")&&"소계"!==y&&"합계"!==y&&(""!==y&&(a=y),t)&&(a||"평가"===t))if("소양"===t&&u[33]){var g=Number(String(u[33]).replace(/[^0-9.]/g,""))||0;0<g&&(l.basic+=g,d.basic.push({subject:a,unit:a,hour:g,elements:[]}))}else if("전공"===t&&(u[11]||u[33]||u[35])){var f=Number(String(u[35]).replace(/[^0-9.]/g,""))||0,h=String(u[11]||"").trim();if(0<f&&h){l.ncs+=f;var b=h.match(/\[([0-9]{10}_[0-9]+v[0-9]+)\]/),D=b?b[1]:"",x=h.replace(/\[.*?\]/g,"").trim();let e=null;if(D)if(globalNcsMasterDB[D])e=globalNcsMasterDB[D];else{let t=D.substring(0,10);var v=Object.keys(globalNcsMasterDB).find(e=>e.startsWith(t));v&&(e=globalNcsMasterDB[v])}d.ncs.push({subject:a,unit:x,hour:f,rdCode:D,elements:e?JSON.parse(JSON.stringify(e.elements||[])):[]})}}else"이론"===t&&(u[11]||u[23]||u[39])&&(s=Number(String(u[39]).replace(/[^0-9.]/g,""))||0,c=String(u[11]||"").trim(),p=String(u[23]||"").trim(),0<s)&&c&&(l.nonNcs+=s,d.nonNcs.push({subject:a,unit:c,detail:p,hour:s,elements:[]}))}l.sum=l.basic+l.ncs+l.nonNcs,document.getElementById("initialDashboard").style.display="flex",document.getElementById("saveControlPanel").style.display="flex",document.getElementById("dashTotalHours").innerText=l.sum+"시간",document.getElementById("dashBasicHours").innerText=l.basic+"시간",document.getElementById("dashNcsHours").innerText=l.ncs+"시간",document.getElementById("dashNonNcsHours").innerText=l.nonNcs+"시간",document.getElementById("dashDays").innerText=Math.ceil(l.sum/8)+"일 (예상)",window.rdParsedData=d,updateRdTargetDaysDisplay(Math.ceil(l.sum/8)),generateAllocationUI(d,!1),alert(`✅ 통합 스캔 완료! 총 ${l.sum}시간 로드됨.`)}catch(e){alert("❌ 엑셀 분석 중 오류 발생. (F12 확인)")}},t.readAsArrayBuffer(e))});let activePeriodPickerId=null,periodPickerViewDate=new Date;function formatPeriodDateLabel(e){var t;return e?3!==(t=e.split("-")).length?e:`${t[0]}년 ${parseInt(t[1],10)}월 ${parseInt(t[2],10)}일`:"연도-월-일"}function syncPeriodDateButton(e){var t=document.getElementById(e),e=document.getElementById(e+"Btn");t&&e&&(t=t.value||"",e.innerText=formatPeriodDateLabel(t),e.classList.toggle("empty",!t))}function closeAllPeriodDatePickers(){["startDate","endDate"].forEach(e=>{e=document.getElementById(e+"Picker");e&&(e.style.display="none")}),activePeriodPickerId=null}function buildPeriodPickerPopupHtml(){return`
+                                <input type="hidden" class="time-input ${cat.key}_${item._originalIndex}" data-target="${cat.key}_${item._originalIndex}" value="${savedVal}">
+                            `;
+                        });
+                        html += `</div></div>`;
+                    });
+                    html += `</div>`;
+                }
+            }
+        });
+        container.innerHTML = html;
+        
+        if (!isLoadMode) {
+            autoDistributeTargetIds.forEach(id => autoDistributeHours(id));
+        } else {
+            document.querySelectorAll('.time-input').forEach(input => {
+                const id = input.getAttribute('data-target');
+                if(id) calculateSubTotal(id);
+            });
+        }
+    }
+
+    function calculateSubTotal(groupId) {
+        const inputs = document.querySelectorAll(`.${groupId}`);
+        const targetElement = document.getElementById(`target_${groupId}`);
+        const statusElement = document.getElementById(`status_${groupId}`);
+        if(!targetElement || !statusElement) return;
+
+        const targetHour = parseInt(targetElement.innerText) || 0;
+        let sum = 0;
+        inputs.forEach(input => { sum += parseInt(input.value) || 0; });
+        const remain = targetHour - sum;
+
+        if (remain === 0) {
+            statusElement.innerText = `잔여: 0h (완벽)`; statusElement.style.color = "#27ae60"; 
+        } else if (remain < 0) {
+            statusElement.innerText = `잔여: ${remain}h (초과)`; statusElement.style.color = "#e74c3c"; 
+        } else {
+            statusElement.innerText = `잔여: ${remain}h (부족)`; statusElement.style.color = "#f39c12"; 
+        }
+    }
+
+    function autoDistributeHours(groupId) {
+        const inputs = document.querySelectorAll(`.${groupId}`);
+        const targetElement = document.getElementById(`target_${groupId}`);
+        if(!inputs.length || !targetElement) return;
+
+        const targetHour = parseInt(targetElement.innerText) || 0;
+        const N = inputs.length;
+        const q = Math.floor(targetHour / 4); 
+        const r = targetHour % 4; 
+        const baseChunks = Math.floor(q / N);
+        const extraChunks = q % N;
+
+        inputs.forEach((input, index) => {
+            let val = baseChunks * 4;
+            if (index < extraChunks) val += 4;
+            if (index === N - 1) val += r; 
+            input.value = val;
+        });
+        calculateSubTotal(groupId); 
+    }
+
+    function clearHours(groupId) {
+        document.querySelectorAll(`.${groupId}`).forEach(input => input.value = 0);
+        calculateSubTotal(groupId);
+    }
+
+    // 📍 5-1. 훈련기간 날짜 선택 (▲ 다음달 / ▼ 이전달)
+    let activePeriodPickerId = null;
+    let periodPickerViewDate = new Date();
+
+    function formatPeriodDateLabel(isoStr) {
+        if (!isoStr) return "연도-월-일";
+        const parts = isoStr.split("-");
+        if (parts.length !== 3) return isoStr;
+        return `${parts[0]}년 ${parseInt(parts[1], 10)}월 ${parseInt(parts[2], 10)}일`;
+    }
+
+    function syncPeriodDateButton(inputId) {
+        const input = document.getElementById(inputId);
+        const btn = document.getElementById(inputId + "Btn");
+        if (!input || !btn) return;
+        const val = input.value || "";
+        btn.innerText = formatPeriodDateLabel(val);
+        btn.classList.toggle("empty", !val);
+    }
+
+    function closeAllPeriodDatePickers() {
+        ["startDate", "endDate"].forEach(id => {
+            const pop = document.getElementById(id + "Picker");
+            if (pop) pop.style.display = "none";
+        });
+        activePeriodPickerId = null;
+    }
+
+    function buildPeriodPickerPopupHtml() {
+        return `
             <div class="period-date-nav">
                 <div class="period-picker-ym-row">
                     <div class="period-picker-year-block">
@@ -143,10 +627,733 @@
                 </div>
                 <div class="period-picker-days period-date-days"></div>
             </div>
-        `}function getActivePeriodPickerPop(){return activePeriodPickerId?document.getElementById(activePeriodPickerId+"Picker"):null}function closePeriodYmPanels(e){var t,a,r,n,e=e||getActivePeriodPickerPop();e&&(t=e.querySelector(".period-year-panel"),a=e.querySelector(".period-month-panel"),r=e.querySelector(".period-picker-year-btn"),n=e.querySelector(".period-picker-month-btn"),e=e.querySelector(".period-picker-days-wrap"),t&&t.classList.remove("open"),a&&a.classList.remove("open"),r&&r.classList.remove("active"),n&&n.classList.remove("active"),e)&&e.classList.remove("hidden-by-ym")}function scrollPeriodYearPanelToCurrent(t){let a=t.querySelector(".period-ym-choice.current");if(a){let e=()=>{var e=a.offsetTop-t.clientHeight/2+a.offsetHeight/2;t.scrollTop=Math.max(0,e)};requestAnimationFrame(()=>requestAnimationFrame(e)),setTimeout(e,0),setTimeout(e,80)}}function renderPeriodYearPanel(e){e=e.querySelector(".period-year-panel");if(e){var a=periodPickerViewDate.getFullYear(),r=a+24;let t="";for(let e=a-24;e<=r;e++){var n=e===a?"period-ym-choice current":"period-ym-choice";t+=`<button type="button" class="${n}" data-year="${e}" onclick="selectPeriodPickerYear(${e}); event.stopPropagation();">${e}</button>`}e.innerHTML=t,scrollPeriodYearPanelToCurrent(e)}}function renderPeriodMonthPanel(e){e=e.querySelector(".period-month-panel");if(e){var a=periodPickerViewDate.getMonth()+1;let t="";for(let e=1;e<=12;e++){var r=e===a?"period-ym-choice current":"period-ym-choice";t+=`<button type="button" class="${r}" onclick="selectPeriodPickerMonth(${e}); event.stopPropagation();">${e}월</button>`}e.innerHTML=t}}function togglePeriodYearPanel(e){e&&e.stopPropagation();var t,a,r,n,e=getActivePeriodPickerPop();e&&(t=e.querySelector(".period-year-panel"),e.querySelector(".period-month-panel"),a=e.querySelector(".period-picker-year-btn"),e.querySelector(".period-picker-month-btn"),r=e.querySelector(".period-picker-days-wrap"),n=!t.classList.contains("open"),closePeriodYmPanels(e),n)&&(t.classList.add("open"),a.classList.add("active"),r&&r.classList.add("hidden-by-ym"),renderPeriodYearPanel(e))}function togglePeriodMonthPanel(e){e&&e.stopPropagation();var t,a,r,n,e=getActivePeriodPickerPop();e&&(e.querySelector(".period-year-panel"),t=e.querySelector(".period-month-panel"),e.querySelector(".period-picker-year-btn"),a=e.querySelector(".period-picker-month-btn"),r=e.querySelector(".period-picker-days-wrap"),n=!t.classList.contains("open"),closePeriodYmPanels(e),n)&&(renderPeriodMonthPanel(e),t.classList.add("open"),a.classList.add("active"),r)&&r.classList.add("hidden-by-ym")}function selectPeriodPickerYear(e){periodPickerViewDate.setFullYear(e),closePeriodYmPanels(),renderPeriodPickerDays()}function selectPeriodPickerMonth(e){periodPickerViewDate.setMonth(e-1),closePeriodYmPanels(),renderPeriodPickerDays()}function initPeriodDatePickers(){["startDate","endDate"].forEach(e=>{var t=document.getElementById(e+"Picker");t&&(t.innerHTML=buildPeriodPickerPopupHtml(),t.dataset.ready="1"),syncPeriodDateButton(e)}),window._periodPickerDocClickBound||(document.addEventListener("click",function(){closeAllPeriodDatePickers()}),window._periodPickerDocClickBound=!0)}function togglePeriodDatePicker(e,t){t&&t.stopPropagation();t=document.getElementById(e+"Picker");t&&(activePeriodPickerId===e&&"block"===t.style.display?closeAllPeriodDatePickers:(closeAllPeriodDatePickers(),activePeriodPickerId=e,e=document.getElementById(e).value,periodPickerViewDate=e?(e=e.split("-"),new Date(parseInt(e[0],10),parseInt(e[1],10)-1,parseInt(e[2],10))):new Date,t.style.display="block",t.onclick=function(e){e.stopPropagation()},closePeriodYmPanels(t),renderPeriodPickerDays))()}function shiftPeriodPickerYear(e){periodPickerViewDate.setFullYear(periodPickerViewDate.getFullYear()+e);var t,e=getActivePeriodPickerPop();e&&((t=e.querySelector(".period-year-panel"))&&t.classList.contains("open")?renderPeriodYearPanel:closePeriodYmPanels)(e),renderPeriodPickerDays()}function shiftPeriodPickerMonth(e){periodPickerViewDate.setMonth(periodPickerViewDate.getMonth()+e);var t,e=getActivePeriodPickerPop();e&&((t=e.querySelector(".period-month-panel"))&&t.classList.contains("open")?renderPeriodMonthPanel:closePeriodYmPanels)(e),renderPeriodPickerDays()}function renderPeriodPickerDays(){if(activePeriodPickerId){var e=document.getElementById(activePeriodPickerId+"Picker");if(e){var t=e.querySelector(".period-picker-year-btn"),r=e.querySelector(".period-picker-month-btn"),e=e.querySelector(".period-picker-days");if(t&&r&&e){var n=periodPickerViewDate.getFullYear(),o=periodPickerViewDate.getMonth(),i=(t.innerText=n+"년",r.innerText=o+1+"월",new Date(n,o,1).getDay()),l=new Date(n,o+1,0).getDate(),d=document.getElementById(activePeriodPickerId).value||"",s=getIsoDateStr(new Date);let a="";for(let e=0;e<i;e++)a+='<div class="period-date-day empty"></div>';for(let t=1;t<=l;t++){var c=getIsoDateStr(new Date(n,o,t));let e="period-date-day";c===s&&(e+=" today"),c===d&&(e+=" selected"),a+=`<div class="${e}" onclick="selectPeriodDate('${c}'); event.stopPropagation();">${t}</div>`}e.innerHTML=a}}}}function selectPeriodDate(e){activePeriodPickerId&&(document.getElementById(activePeriodPickerId).value=e,syncPeriodDateButton(activePeriodPickerId),closeAllPeriodDatePickers(),updateCalendarTrigger())}function setPeriodDateValue(e,t){var a=document.getElementById(e);a&&(a.value=t||"",syncPeriodDateButton(e))}let currentCalDate=new Date,selectedHolidays=new Map,selectedWorkdays=new Set,trainStartDate=null,trainEndDate=null;function getIsoDateStr(e){var t=6e4*e.getTimezoneOffset();return new Date(e.getTime()-t).toISOString().split("T")[0]}function updateCalendarTrigger(){var e=document.getElementById("startDate").value,t=document.getElementById("endDate").value;e&&(trainStartDate=new Date(e)),t&&(trainEndDate=new Date(t)),trainStartDate&&trainEndDate&&trainStartDate>trainEndDate?(alert("❌ 종료일이 시작일보다 빠를 수 없습니다."),setPeriodDateValue("endDate",""),trainEndDate=null):(syncPeriodDateButton("startDate"),syncPeriodDateButton("endDate"),trainStartDate&&(currentCalDate=new Date(trainStartDate.getFullYear(),trainStartDate.getMonth(),1)),renderCalendar(),updateCalendarStats())}function renderCalendar(){var r=currentCalDate.getFullYear(),n=currentCalDate.getMonth(),o=(document.getElementById("calMonthYearDisplay").innerText=r+`년 ${n+1}월`,document.getElementById("calDaysGrid")),t=(o.innerHTML="",new Date(r,n,1).getDay()),e=new Date(r,n+1,0).getDate();for(let e=0;e<t;e++)o.innerHTML+='<div class="cal-cell" style="background:transparent; border:none;"></div>';for(let a=1;a<=e;a++){var i=new Date(r,n,a),l=getIsoDateStr(i),d=i.getDay();let e="cal-cell",t=(0===d&&(e+=" weekend"),6===d&&(e+=" saturday"),!0);trainStartDate&&trainEndDate&&i>=trainStartDate&&i<=trainEndDate&&(t=!1,e+=" in-training-range"),selectedHolidays.has(l)&&(e+=" selected-holiday"),selectedWorkdays.has(l)&&(e+=" selected-workday"),o.innerHTML+=`<div class="${e}" onclick="toggleCalDay('${l}', ${d}, ${t})">${a}</div>`}}function changeCalMonth(e){currentCalDate.setMonth(currentCalDate.getMonth()+e),renderCalendar()}function toggleCalDay(e,t,a){return trainStartDate&&trainEndDate?a?alert("⚠️ 설정한 훈련 기간 내부의 날짜만 클릭할 수 있습니다."):(0===t||6===t?selectedWorkdays.has(e)?selectedWorkdays.delete(e):selectedWorkdays.add(e):selectedHolidays.has(e)?selectedHolidays.delete(e):selectedHolidays.set(e,"휴일"),renderCalendar(),void updateCalendarStats()):alert("⚠️ 훈련 기간을 먼저 설정해 주십시오.")}function updateCalendarStats(){if(trainStartDate&&trainEndDate){let t=0,a=0,r=0;for(var n=new Date(trainStartDate);n<=trainEndDate;){var o=getIsoDateStr(n);let e=!1;0===n.getDay()||6===n.getDay()?selectedWorkdays.has(o)&&(e=!0,r++):selectedHolidays.has(o)?(e=!1,a++):e=!0,e&&t++,n.setDate(n.getDate()+1)}document.getElementById("calTotalClassDays").innerText=t,document.getElementById("calTotalHolidays").innerText=a,document.getElementById("calTotalWeekendWorks").innerText=r;var e=parseInt(String(document.getElementById("targetDays").innerText).replace(/[^\d]/g,""))||0,i=document.getElementById("calcDays"),l=document.getElementById("dayStatusWarning");i.innerText=t,window.rdParsedData&&0!==e?t===e?(i.style.color="#27ae60",l.innerText="(✅ 완벽 일치)",l.style.color="#27ae60"):t<e?(i.style.color="#e74c3c",l.innerText=`(⚠️ ${e-t}일 부족)`,l.style.color="#e74c3c"):(i.style.color="#f39c12",l.innerText=`(⚠️ ${t-e}일 초과)`,l.style.color="#f39c12"):(i.style.color="#3498db",l.innerText="(RD 미등록 — 틀만 만들기 가능)",l.style.color="#7f8c8d"),renderSpecialDaysList()}}function renderSpecialDaysList(){var e=document.getElementById("specialDaysList");if(e){let a=[];if(selectedHolidays.forEach((e,t)=>{a.push({date:t,type:"holiday",name:e})}),selectedWorkdays.forEach(e=>{a.push({date:e,type:"workday",name:"주말 수업"})}),0===a.length)e.innerHTML='<span style="color:#95a5a6; grid-column: span 2; text-align:center; padding:10px 0;">등록된 일정이 없습니다.<br>달력을 클릭하세요.</span>';else{a.sort((e,t)=>e.date.localeCompare(t.date));let t="";a.forEach(e=>{"holiday"===e.type?t+=`<div onclick="editHolidayName('${e.date}')" style="cursor:pointer; background:#fdeaea; color:#c0392b; padding:6px; border-radius:4px; border:1px solid #f5b7b1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; transition:0.2s;" onmouseover="this.style.background='#fadbd8'" onmouseout="this.style.background='#fdeaea'" title="클릭하여 휴일명 수정">🔴 ${e.date}<br>(${e.name})</div>`:t+=`<div style="background:#eafaf1; color:#27ae60; padding:6px; border-radius:4px; border:1px solid #a9dfbf; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">🟢 ${e.date}<br>(수업)</div>`}),e.innerHTML=t}}}function editHolidayName(e){var t;selectedHolidays.has(e)&&(t=selectedHolidays.get(e),null!==(t=prompt(`[${e}] 변경할 휴일명을 입력하세요:`,t)))&&(selectedHolidays.set(e,t.trim()||"휴일"),renderSpecialDaysList())}function alertCalendarInfo(){var e=Array.from(selectedHolidays.entries()).sort((e,t)=>e[0].localeCompare(t[0])),t=Array.from(selectedWorkdays).sort(),a="📢 [현재 달력 설정 내용]\n\n",a=(a+=`[휴일 지정]: 총 ${e.length}일
-👉 ${0<e.length?e.map(e=>e[0]+`(${e[1]})`).join(", "):"없음"}
+        `;
+    }
 
-`)+`[주말 수업 지정]: 총 ${t.length}일
-👉 ${0<t.length?t.join(", "):"없음"}
-`;alert(a)}function saveDraftToDB(){if(!window.rdParsedData)return alert("저장할 데이터가 없습니다.");["basic","ncs","nonNcs"].forEach(t=>{window.rdParsedData[t]&&window.rdParsedData[t].forEach((a,e)=>{var e=t+"_"+e;a.elements&&0<a.elements.length?document.querySelectorAll("."+e).forEach((e,t)=>{a.elements[t]&&(a.elements[t].allocatedHour=parseInt(e.value)||0)}):(e=document.querySelector(".time-input."+e))&&(a.allocatedHour=parseInt(e.value)||0)})});var e={fileName:currentUploadedFileName,rdData:window.rdParsedData,dashboard:{sum:document.getElementById("dashTotalHours").innerText,basic:document.getElementById("dashBasicHours").innerText,ncs:document.getElementById("dashNcsHours").innerText,nonNcs:document.getElementById("dashNonNcsHours").innerText,days:document.getElementById("dashDays").innerText,targetDays:document.getElementById("targetDays").innerText},calendar:{startDate:trainStartDate?getIsoDateStr(trainStartDate):null,endDate:trainEndDate?getIsoDateStr(trainEndDate):null,holidays:Array.from(selectedHolidays.entries()),workdays:Array.from(selectedWorkdays)}};database.ref(currentClass+"/rdTimetableDraft").set(e).then(()=>alert("✅ 작업하신 모든 데이터와 파일명이 서버에 안전하게 저장되었습니다!")).catch(e=>alert("❌ 저장 실패: "+e.message))}function loadDraftFromDB(){database.ref(currentClass+"/rdTimetableDraft").once("value",t=>{t=t.val();if(t){console.log("💾 서버에 저장된 임시 데이터를 복구합니다."),displayFileStatus(currentUploadedFileName=t.fileName||"저장된 RD 엑셀 파일"),window.rdParsedData=t.rdData,currentUploadedFileName=t.fileName||"저장된 RD 엑셀 파일";var a=document.getElementById("rdExcelInput");a.style.display="none";let e=document.getElementById("savedFileStatusBox");e||((e=document.createElement("div")).id="savedFileStatusBox",e.style.marginTop="10px",e.style.padding="12px",e.style.backgroundColor="#e8f8f5",e.style.border="1px solid #27ae60",e.style.borderRadius="5px",e.style.color="#2c3e50",a.parentNode.insertBefore(e,a.nextSibling)),e.innerHTML=`✅ <strong>[ ${currentUploadedFileName} ]</strong> 등록 완료 
-                <button onclick="document.getElementById('rdExcelInput').style.display='block'; this.parentElement.style.display='none'; document.getElementById('rdExcelInput').value='';" style="margin:0 0 0 15px; padding:4px 10px; font-size:0.8em; background:#e74c3c;">새 파일로 교체</button>`,e.style.display="block",window.rdParsedData=t.rdData,document.getElementById("dashTotalHours").innerText=t.dashboard.sum,document.getElementById("dashBasicHours").innerText=t.dashboard.basic,document.getElementById("dashNcsHours").innerText=t.dashboard.ncs,document.getElementById("dashNonNcsHours").innerText=t.dashboard.nonNcs,document.getElementById("dashDays").innerText=t.dashboard.days,updateRdTargetDaysDisplay(parseInt(String(t.dashboard.targetDays||0).replace(/[^\d]/g,""))||0),document.getElementById("initialDashboard").style.display="flex",document.getElementById("saveControlPanel").style.display="flex",t.calendar&&(t.calendar.startDate&&(setPeriodDateValue("startDate",t.calendar.startDate),trainStartDate=new Date(t.calendar.startDate)),t.calendar.endDate&&(setPeriodDateValue("endDate",t.calendar.endDate),trainEndDate=new Date(t.calendar.endDate)),t.calendar.holidays&&(selectedHolidays=new Map,t.calendar.holidays.forEach(e=>{Array.isArray(e)?selectedHolidays.set(e[0],e[1]):selectedHolidays.set(e,"휴일")})),t.calendar.workdays&&(selectedWorkdays=new Set(t.calendar.workdays)),trainStartDate)&&(currentCalDate=new Date(trainStartDate.getFullYear(),trainStartDate.getMonth(),1)),generateAllocationUI(window.rdParsedData,!0),renderCalendar(),updateCalendarStats()}})}function deleteDraftFromDB(){confirm("⚠️ 서버에 저장된 작업 상태를 완전히 삭제하시겠습니까?\n삭제 후 시스템이 초기화됩니다.")&&database.ref(currentClass+"/rdTimetableDraft").remove().then(()=>location.reload()).catch(e=>alert("❌ 삭제 실패"))}function updateRdTargetDaysDisplay(e){var t=document.getElementById("targetDays"),a=document.getElementById("rdDayHintSuffix");t&&(e?(t.innerText=String(e),t.style.color="#e67e22",a&&(a.innerText="일")):(t.innerText="—",t.style.color="#95a5a6",a&&(a.innerText="(RD 미등록)")))}function collectRdBlocksFromUI(){let i=[];return window.rdParsedData&&["basic","ncs","nonNcs"].forEach(o=>{window.rdParsedData[o]&&window.rdParsedData[o].forEach((n,e)=>{e=o+"_"+e;if(n.elements&&0<n.elements.length)document.querySelectorAll("."+e).forEach((e,t)=>{var a=parseInt(e.value)||0;if(n.elements[t]&&0<a){var r=n.rdCode?`[${n.rdCode}]  `+n.unit:n.unit;for(let e=0;e<a;e++)i.push({sub:n.subject,unit:r,det:n.elements[t].name})}});else{var e=document.querySelector(".time-input."+e),r=e&&parseInt(e.value)||0;if(0<r){let t=n.rdCode?`[${n.rdCode}]  `+n.unit:n.unit,a="";"basic"===o?(t=n.subject,a=n.subject):"nonNcs"===o&&(t=n.unit,a=n.detail||"");for(let e=0;e<r;e++)i.push({sub:n.subject,unit:t,det:a})}}})}),i}initPeriodDatePickers(),renderCalendar();let TIMETABLE_TIME_SLOTS=[{p:1,time:"09:00~09:50"},{p:2,time:"10:00~10:50"},{p:3,time:"11:00~11:50"},{p:4,time:"12:00~12:50"},{p:"",time:""},{p:5,time:"13:30~14:20"},{p:6,time:"14:30~15:20"},{p:7,time:"15:30~16:20"},{p:8,time:"16:30~17:20"}],TIMETABLE_WEEK_NAMES=["일요일","월요일","화요일","수요일","목요일","금요일","토요일"];function buildDailyTimetableExportData(a){let i=[];var l=[],r=new Date(trainStartDate),e=new Date(trainEndDate);let d=1,s=0,c=!a||0===a.length;for(;r<=e;){let n=getIsoDateStr(r),o=r.getDay();var p=0===o||6===o;let e=!1,t=!1;if((!p||!selectedWorkdays.has(n))&&(p||selectedHolidays.has(n))?!p&&selectedHolidays.has(n)&&(t=!0):e=!0,e){if(!c&&s>=a.length){r.setDate(r.getDate()+1);continue}TIMETABLE_TIME_SLOTS.forEach(e=>{var t;""===e.p?i.push([d,n,TIMETABLE_WEEK_NAMES[o],"","","","","","","",""]):!c&&s<a.length?(t=a[s++],i.push([d,n,TIMETABLE_WEEK_NAMES[o],e.p,e.time,t.sub,t.unit,t.det,"","",""])):i.push([d,n,TIMETABLE_WEEK_NAMES[o],e.p,e.time,"","","","","",""])}),d++}else if(t){let a=selectedHolidays.get(n)||"휴일";p=i.length+2;l.push([p,6,p+8,11]);let r=1<d?d-1:1;TIMETABLE_TIME_SLOTS.forEach((e,t)=>{i.push([r,n,TIMETABLE_WEEK_NAMES[o],e.p,e.time,0===t?a:"","","","","",""])})}r.setDate(r.getDate()+1)}return{exportData:i,holidayMerges:l,unplacedBlocks:c?0:a.length-s}}function downloadTimetableWorkbook(t,e,a){if(!t.length)return alert("⚠️ 출력할 일정이 없습니다. 훈련 기간과 달력(수업일·휴일)을 확인해 주세요.");var r=new ExcelJS.Workbook;let n=r.addWorksheet("일일시간표",{views:[{state:"frozen",xSplit:0,ySplit:1}],pageSetup:{paperSize:9,orientation:"landscape",fitToPage:!0,fitToWidth:1,fitToHeight:0}});n.columns=[{header:"일수",width:6},{header:"날짜",width:14},{header:"요일",width:10},{header:"교시",width:6},{header:"훈련시간",width:16},{header:"교과목명",width:28},{header:"능력단위명",width:40},{header:"세부교과",width:50},{header:"이론/실기",width:12},{header:"훈련교사",width:12},{header:"훈련시설명",width:16}],t.forEach(e=>{n.addRow(e)}),e.forEach(e=>{n.mergeCells(e[0],e[1],e[2],e[3])}),n.eachRow({includeEmpty:!0},(e,t)=>{e.eachCell({includeEmpty:!0},e=>{e.font={name:"맑은 고딕",bold:1===t},e.alignment={vertical:"middle",horizontal:"center",shrinkToFit:!0,wrapText:!1},e.border={top:{style:"thin"},left:{style:"thin"},bottom:{style:"thin"},right:{style:"thin"}},1===t&&(e.fill={type:"pattern",pattern:"solid",fgColor:{argb:"FFF2F2F2"}})})}),e.forEach(e=>{n.getCell(e[0],e[1]).font={name:"맑은 고딕",color:{argb:"FFFF0000"},bold:!0,size:14}});for(let e=0;e<t.length-1;e++)t[e][1]!==t[e+1][1]&&1===new Date(t[e+1][1]).getDay()&&n.getRow(e+2).addPageBreak();r.xlsx.writeBuffer().then(e=>{var e=new Blob([e],{type:"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"}),t=document.createElement("a");t.href=URL.createObjectURL(e),t.download=a,t.click()})}function exportSkeletonTimetableExcel(){if(!trainStartDate||!trainEndDate)return alert("⚠️ 훈련 시작·종료일을 먼저 설정해 주십시오.");var{exportData:e,holidayMerges:t}=buildDailyTimetableExportData([]);downloadTimetableWorkbook(e,t,`일일훈련계획_틀_${getIsoDateStr(trainStartDate).replace(/-/g,"")}-${getIsoDateStr(trainEndDate).replace(/-/g,"")}.xlsx`)}function exportToIndex1Excel(){var e,t,a;return trainStartDate&&trainEndDate?window.rdParsedData?0===(e=collectRdBlocksFromUI()).length?alert("⚠️ 배분된 시간이 전혀 없습니다. 3구역을 확인하십시오."):({exportData:e,holidayMerges:t,unplacedBlocks:a}=buildDailyTimetableExportData(e),0<a&&alert(`⚠️ 훈련 기간 부족 경고: 총 ${a}시간 분량의 수업이 엑셀에 배치되지 못했습니다!`),void downloadTimetableWorkbook(e,t,`일일훈련계획_${currentClass}.xlsx`)):alert("⚠️ 1구역에서 RD 엑셀 데이터를 먼저 스캔해 주십시오."):alert("⚠️ 0구역 캘린더에서 훈련 기간을 먼저 설정해 주십시오.")}</script></body></html>
+    function getActivePeriodPickerPop() {
+        if (!activePeriodPickerId) return null;
+        return document.getElementById(activePeriodPickerId + "Picker");
+    }
+
+    function closePeriodYmPanels(pop) {
+        const p = pop || getActivePeriodPickerPop();
+        if (!p) return;
+        const yearPanel = p.querySelector(".period-year-panel");
+        const monthPanel = p.querySelector(".period-month-panel");
+        const yearBtn = p.querySelector(".period-picker-year-btn");
+        const monthBtn = p.querySelector(".period-picker-month-btn");
+        const daysWrap = p.querySelector(".period-picker-days-wrap");
+        if (yearPanel) yearPanel.classList.remove("open");
+        if (monthPanel) monthPanel.classList.remove("open");
+        if (yearBtn) yearBtn.classList.remove("active");
+        if (monthBtn) monthBtn.classList.remove("active");
+        if (daysWrap) daysWrap.classList.remove("hidden-by-ym");
+    }
+
+    function scrollPeriodYearPanelToCurrent(panel) {
+        const currentBtn = panel.querySelector(".period-ym-choice.current");
+        if (!currentBtn) return;
+        const alignToCenter = () => {
+            const top = currentBtn.offsetTop - (panel.clientHeight / 2) + (currentBtn.offsetHeight / 2);
+            panel.scrollTop = Math.max(0, top);
+        };
+        requestAnimationFrame(() => requestAnimationFrame(alignToCenter));
+        setTimeout(alignToCenter, 0);
+        setTimeout(alignToCenter, 80);
+    }
+
+    function renderPeriodYearPanel(pop) {
+        const panel = pop.querySelector(".period-year-panel");
+        if (!panel) return;
+        const y = periodPickerViewDate.getFullYear();
+        const span = 24;
+        const startY = y - span;
+        const endY = y + span;
+        let html = "";
+        for (let yr = startY; yr <= endY; yr++) {
+            const cls = yr === y ? "period-ym-choice current" : "period-ym-choice";
+            html += `<button type="button" class="${cls}" data-year="${yr}" onclick="selectPeriodPickerYear(${yr}); event.stopPropagation();">${yr}</button>`;
+        }
+        panel.innerHTML = html;
+        scrollPeriodYearPanelToCurrent(panel);
+    }
+
+    function renderPeriodMonthPanel(pop) {
+        const panel = pop.querySelector(".period-month-panel");
+        if (!panel) return;
+        const m = periodPickerViewDate.getMonth() + 1;
+        let html = "";
+        for (let mo = 1; mo <= 12; mo++) {
+            const cls = mo === m ? "period-ym-choice current" : "period-ym-choice";
+            html += `<button type="button" class="${cls}" onclick="selectPeriodPickerMonth(${mo}); event.stopPropagation();">${mo}월</button>`;
+        }
+        panel.innerHTML = html;
+    }
+
+    function togglePeriodYearPanel(ev) {
+        if (ev) ev.stopPropagation();
+        const pop = getActivePeriodPickerPop();
+        if (!pop) return;
+        const yearPanel = pop.querySelector(".period-year-panel");
+        const monthPanel = pop.querySelector(".period-month-panel");
+        const yearBtn = pop.querySelector(".period-picker-year-btn");
+        const monthBtn = pop.querySelector(".period-picker-month-btn");
+        const daysWrap = pop.querySelector(".period-picker-days-wrap");
+        const willOpen = !yearPanel.classList.contains("open");
+        closePeriodYmPanels(pop);
+        if (willOpen) {
+            yearPanel.classList.add("open");
+            yearBtn.classList.add("active");
+            if (daysWrap) daysWrap.classList.add("hidden-by-ym");
+            renderPeriodYearPanel(pop);
+        }
+    }
+
+    function togglePeriodMonthPanel(ev) {
+        if (ev) ev.stopPropagation();
+        const pop = getActivePeriodPickerPop();
+        if (!pop) return;
+        const yearPanel = pop.querySelector(".period-year-panel");
+        const monthPanel = pop.querySelector(".period-month-panel");
+        const yearBtn = pop.querySelector(".period-picker-year-btn");
+        const monthBtn = pop.querySelector(".period-picker-month-btn");
+        const daysWrap = pop.querySelector(".period-picker-days-wrap");
+        const willOpen = !monthPanel.classList.contains("open");
+        closePeriodYmPanels(pop);
+        if (willOpen) {
+            renderPeriodMonthPanel(pop);
+            monthPanel.classList.add("open");
+            monthBtn.classList.add("active");
+            if (daysWrap) daysWrap.classList.add("hidden-by-ym");
+        }
+    }
+
+    function selectPeriodPickerYear(year) {
+        periodPickerViewDate.setFullYear(year);
+        closePeriodYmPanels();
+        renderPeriodPickerDays();
+    }
+
+    function selectPeriodPickerMonth(month) {
+        periodPickerViewDate.setMonth(month - 1);
+        closePeriodYmPanels();
+        renderPeriodPickerDays();
+    }
+
+    function initPeriodDatePickers() {
+        ["startDate", "endDate"].forEach(id => {
+            const pop = document.getElementById(id + "Picker");
+            if (pop) {
+                pop.innerHTML = buildPeriodPickerPopupHtml();
+                pop.dataset.ready = "1";
+            }
+            syncPeriodDateButton(id);
+        });
+        if (!window._periodPickerDocClickBound) {
+            document.addEventListener("click", function() { closeAllPeriodDatePickers(); });
+            window._periodPickerDocClickBound = true;
+        }
+    }
+
+    function togglePeriodDatePicker(inputId, ev) {
+        if (ev) ev.stopPropagation();
+        const pop = document.getElementById(inputId + "Picker");
+        if (!pop) return;
+        if (activePeriodPickerId === inputId && pop.style.display === "block") {
+            closeAllPeriodDatePickers();
+            return;
+        }
+        closeAllPeriodDatePickers();
+        activePeriodPickerId = inputId;
+        const cur = document.getElementById(inputId).value;
+        if (cur) {
+            const p = cur.split("-");
+            periodPickerViewDate = new Date(parseInt(p[0], 10), parseInt(p[1], 10) - 1, parseInt(p[2], 10));
+        } else {
+            periodPickerViewDate = new Date();
+        }
+        pop.style.display = "block";
+        pop.onclick = function(e) { e.stopPropagation(); };
+        closePeriodYmPanels(pop);
+        renderPeriodPickerDays();
+    }
+
+    function shiftPeriodPickerYear(direction) {
+        periodPickerViewDate.setFullYear(periodPickerViewDate.getFullYear() + direction);
+        const pop = getActivePeriodPickerPop();
+        if (pop) {
+            const yearPanel = pop.querySelector(".period-year-panel");
+            if (yearPanel && yearPanel.classList.contains("open")) {
+                renderPeriodYearPanel(pop);
+            } else {
+                closePeriodYmPanels(pop);
+            }
+        }
+        renderPeriodPickerDays();
+    }
+
+    function shiftPeriodPickerMonth(direction) {
+        periodPickerViewDate.setMonth(periodPickerViewDate.getMonth() + direction);
+        const pop = getActivePeriodPickerPop();
+        if (pop) {
+            const monthPanel = pop.querySelector(".period-month-panel");
+            if (monthPanel && monthPanel.classList.contains("open")) {
+                renderPeriodMonthPanel(pop);
+            } else {
+                closePeriodYmPanels(pop);
+            }
+        }
+        renderPeriodPickerDays();
+    }
+
+    function renderPeriodPickerDays() {
+        if (!activePeriodPickerId) return;
+        const pop = document.getElementById(activePeriodPickerId + "Picker");
+        if (!pop) return;
+        const yearBtn = pop.querySelector(".period-picker-year-btn");
+        const monthBtn = pop.querySelector(".period-picker-month-btn");
+        const grid = pop.querySelector(".period-picker-days");
+        if (!yearBtn || !monthBtn || !grid) return;
+
+        const year = periodPickerViewDate.getFullYear();
+        const month = periodPickerViewDate.getMonth();
+        yearBtn.innerText = `${year}년`;
+        monthBtn.innerText = `${month + 1}월`;
+
+        const firstDay = new Date(year, month, 1).getDay();
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+        const selectedIso = document.getElementById(activePeriodPickerId).value || "";
+        const todayIso = getIsoDateStr(new Date());
+
+        let html = "";
+        for (let i = 0; i < firstDay; i++) html += `<div class="period-date-day empty"></div>`;
+        for (let day = 1; day <= daysInMonth; day++) {
+            const dateObj = new Date(year, month, day);
+            const iso = getIsoDateStr(dateObj);
+            let cls = "period-date-day";
+            if (iso === todayIso) cls += " today";
+            if (iso === selectedIso) cls += " selected";
+            html += `<div class="${cls}" onclick="selectPeriodDate('${iso}'); event.stopPropagation();">${day}</div>`;
+        }
+        grid.innerHTML = html;
+    }
+
+    function selectPeriodDate(isoStr) {
+        if (!activePeriodPickerId) return;
+        document.getElementById(activePeriodPickerId).value = isoStr;
+        syncPeriodDateButton(activePeriodPickerId);
+        closeAllPeriodDatePickers();
+        updateCalendarTrigger();
+    }
+
+    function setPeriodDateValue(inputId, isoStr) {
+        const input = document.getElementById(inputId);
+        if (!input) return;
+        input.value = isoStr || "";
+        syncPeriodDateButton(inputId);
+    }
+
+    // 📍 6. 인터랙티브 캘린더 엔진
+    let currentCalDate = new Date(); 
+    let selectedHolidays = new Map(); // 💡 휴일명을 함께 기억하도록 Map으로 교체
+    let selectedWorkdays = new Set();
+    let trainStartDate = null;
+    let trainEndDate = null;
+
+    function getIsoDateStr(dateObj) {
+        const offset = dateObj.getTimezoneOffset() * 60000;
+        return new Date(dateObj.getTime() - offset).toISOString().split('T')[0];
+    }
+
+    function updateCalendarTrigger() {
+        const startStr = document.getElementById('startDate').value;
+        const endStr = document.getElementById('endDate').value;
+        if (startStr) trainStartDate = new Date(startStr);
+        if (endStr) trainEndDate = new Date(endStr);
+        if (trainStartDate && trainEndDate && trainStartDate > trainEndDate) {
+            alert("❌ 종료일이 시작일보다 빠를 수 없습니다.");
+            setPeriodDateValue('endDate', "");
+            trainEndDate = null;
+            return;
+        }
+        syncPeriodDateButton('startDate');
+        syncPeriodDateButton('endDate');
+        if (trainStartDate) currentCalDate = new Date(trainStartDate.getFullYear(), trainStartDate.getMonth(), 1);
+        renderCalendar();
+        updateCalendarStats();
+    }
+
+    function renderCalendar() {
+        const year = currentCalDate.getFullYear();
+        const month = currentCalDate.getMonth();
+        document.getElementById('calMonthYearDisplay').innerText = `${year}년 ${month + 1}월`;
+        const grid = document.getElementById('calDaysGrid');
+        grid.innerHTML = "";
+        const firstDay = new Date(year, month, 1).getDay(); 
+        const daysInMonth = new Date(year, month + 1, 0).getDate(); 
+
+        for (let i = 0; i < firstDay; i++) { grid.innerHTML += `<div class="cal-cell" style="background:transparent; border:none;"></div>`; }
+
+        for (let day = 1; day <= daysInMonth; day++) {
+            const dateObj = new Date(year, month, day);
+            const dateStr = getIsoDateStr(dateObj);
+            const dayOfWeek = dateObj.getDay();
+
+            let classes = "cal-cell";
+            if (dayOfWeek === 0) classes += " weekend";
+            if (dayOfWeek === 6) classes += " saturday";
+
+            let isOutOfRange = true;
+            if (trainStartDate && trainEndDate && dateObj >= trainStartDate && dateObj <= trainEndDate) {
+                isOutOfRange = false; classes += " in-training-range";
+            }
+            if (selectedHolidays.has(dateStr)) classes += " selected-holiday";
+            if (selectedWorkdays.has(dateStr)) classes += " selected-workday";
+
+            grid.innerHTML += `<div class="${classes}" onclick="toggleCalDay('${dateStr}', ${dayOfWeek}, ${isOutOfRange})">${day}</div>`;
+        }
+    }
+
+    function changeCalMonth(direction) { currentCalDate.setMonth(currentCalDate.getMonth() + direction); renderCalendar(); }
+
+    function toggleCalDay(dateStr, dayOfWeek, isOutOfRange) {
+        if (!trainStartDate || !trainEndDate) return alert("⚠️ 훈련 기간을 먼저 설정해 주십시오.");
+        if (isOutOfRange) return alert("⚠️ 설정한 훈련 기간 내부의 날짜만 클릭할 수 있습니다.");
+
+        const isWeekend = (dayOfWeek === 0 || dayOfWeek === 6);
+        if (isWeekend) { 
+            selectedWorkdays.has(dateStr) ? selectedWorkdays.delete(dateStr) : selectedWorkdays.add(dateStr); 
+        } else { 
+            if (selectedHolidays.has(dateStr)) {
+                selectedHolidays.delete(dateStr);
+            } else {
+                // 💡 [수정 완료] 성가신 프롬프트 제거, 클릭 즉시 기본값 '휴일'로 다이렉트 등록
+                selectedHolidays.set(dateStr, "휴일");
+            }
+        }
+        renderCalendar(); 
+        updateCalendarStats(); 
+    }
+
+    function updateCalendarStats() {
+        if (!trainStartDate || !trainEndDate) return;
+        let totalClassDays = 0, holCount = 0, workCount = 0;
+        let pointerDate = new Date(trainStartDate);
+
+        while (pointerDate <= trainEndDate) {
+            const dateStr = getIsoDateStr(pointerDate);
+            const isWeekend = (pointerDate.getDay() === 0 || pointerDate.getDay() === 6);
+            let isClassDay = false;
+
+            if (isWeekend) {
+                if (selectedWorkdays.has(dateStr)) { isClassDay = true; workCount++; }
+            } else {
+                if (selectedHolidays.has(dateStr)) { isClassDay = false; holCount++; } 
+                else { isClassDay = true; }
+            }
+            if (isClassDay) totalClassDays++;
+            pointerDate.setDate(pointerDate.getDate() + 1); 
+        }
+
+        document.getElementById('calTotalClassDays').innerText = totalClassDays;
+        document.getElementById('calTotalHolidays').innerText = holCount;
+        document.getElementById('calTotalWeekendWorks').innerText = workCount;
+
+        const targetDays = parseInt(String(document.getElementById('targetDays').innerText).replace(/[^\d]/g, '')) || 0;
+        const calcDaysSpan = document.getElementById('calcDays');
+        const warningSpan = document.getElementById('dayStatusWarning');
+        calcDaysSpan.innerText = totalClassDays;
+
+        if (!window.rdParsedData || targetDays === 0) {
+            calcDaysSpan.style.color = "#3498db";
+            warningSpan.innerText = "(RD 미등록 — 틀만 만들기 가능)";
+            warningSpan.style.color = "#7f8c8d";
+        } else if (totalClassDays === targetDays) {
+            calcDaysSpan.style.color = "#27ae60"; warningSpan.innerText = "(✅ 완벽 일치)"; warningSpan.style.color = "#27ae60";
+        } else if (totalClassDays < targetDays) {
+            calcDaysSpan.style.color = "#e74c3c"; warningSpan.innerText = `(⚠️ ${targetDays - totalClassDays}일 부족)`; warningSpan.style.color = "#e74c3c";
+        } else {
+            calcDaysSpan.style.color = "#f39c12"; warningSpan.innerText = `(⚠️ ${totalClassDays - targetDays}일 초과)`; warningSpan.style.color = "#f39c12";
+        }
+        
+        // 💡 [신규 엔진 트리거] 달력 상태 계산이 끝날 때마다 일정 목록을 자동 갱신
+        renderSpecialDaysList();
+    }
+
+    // 💡 [신규 장착] 특수 일정(휴일/주말) 2열 목록 렌더링 엔진
+    function renderSpecialDaysList() {
+        const container = document.getElementById('specialDaysList');
+        if(!container) return;
+
+        let combined = [];
+        
+        // Map 데이터와 Set 데이터를 모두 하나의 배열로 수집
+        selectedHolidays.forEach((name, dateStr) => {
+            combined.push({ date: dateStr, type: 'holiday', name: name });
+        });
+        selectedWorkdays.forEach(dateStr => {
+            combined.push({ date: dateStr, type: 'workday', name: '주말 수업' });
+        });
+
+        // 💡 배열이 비어있으면 초기 안내 문구 출력
+        if(combined.length === 0) {
+            container.innerHTML = `<span style="color:#95a5a6; grid-column: span 2; text-align:center; padding:10px 0;">등록된 일정이 없습니다.<br>달력을 클릭하세요.</span>`;
+            return;
+        }
+
+        // 💡 날짜순(오름차순) 정밀 정렬
+        combined.sort((a, b) => a.date.localeCompare(b.date));
+
+        let html = "";
+        combined.forEach(item => {
+            if(item.type === 'holiday') {
+                // 💡 [수정 완료] onclick 이벤트와 cursor:pointer(마우스 손가락 모양) 장착
+                html += `<div onclick="editHolidayName('${item.date}')" style="cursor:pointer; background:#fdeaea; color:#c0392b; padding:6px; border-radius:4px; border:1px solid #f5b7b1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; transition:0.2s;" onmouseover="this.style.background='#fadbd8'" onmouseout="this.style.background='#fdeaea'" title="클릭하여 휴일명 수정">🔴 ${item.date}<br>(${item.name})</div>`;
+            } else {
+                html += `<div style="background:#eafaf1; color:#27ae60; padding:6px; border-radius:4px; border:1px solid #a9dfbf; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">🟢 ${item.date}<br>(수업)</div>`;
+            }
+        });
+
+        container.innerHTML = html;
+    }
+
+    // 💡 [신규 장착] 현황판 목록 클릭 시 휴일명 다이렉트 수정 엔진
+    function editHolidayName(dateStr) {
+        if (!selectedHolidays.has(dateStr)) return; // 안전 장치
+        
+        const currentName = selectedHolidays.get(dateStr);
+        const newName = prompt(`[${dateStr}] 변경할 휴일명을 입력하세요:`, currentName);
+        
+        // 취소를 누르지 않았을 경우에만 메모리 업데이트 및 화면 갱신
+        if (newName !== null) {
+            selectedHolidays.set(dateStr, newName.trim() || "휴일");
+            renderSpecialDaysList(); // 💡 현황판 즉시 갱신
+        }
+    }
+
+    function alertCalendarInfo() {
+        const holArray = Array.from(selectedHolidays.entries()).sort((a,b) => a[0].localeCompare(b[0]));
+        const workArray = Array.from(selectedWorkdays).sort();
+        let msg = "📢 [현재 달력 설정 내용]\n\n";
+        msg += `[휴일 지정]: 총 ${holArray.length}일\n👉 ${holArray.length > 0 ? holArray.map(x => `${x[0]}(${x[1]})`).join(', ') : '없음'}\n\n`;
+        msg += `[주말 수업 지정]: 총 ${workArray.length}일\n👉 ${workArray.length > 0 ? workArray.join(', ') : '없음'}\n`;
+        alert(msg);
+    }
+
+    initPeriodDatePickers();
+    renderCalendar();
+
+    // 📍 7. 서버 세이브 포인트 로직 (파일명 보존 추가)
+    function saveDraftToDB() {
+        if(!window.rdParsedData) return alert("저장할 데이터가 없습니다.");
+        
+        const categories = ['basic', 'ncs', 'nonNcs'];
+        categories.forEach(cat => {
+            if(window.rdParsedData[cat]) {
+                window.rdParsedData[cat].forEach((item, idx) => {
+                    const uniqueId = `${cat}_${idx}`;
+                    if(item.elements && item.elements.length > 0) {
+                        const inputs = document.querySelectorAll(`.${uniqueId}`);
+                        inputs.forEach((input, elIdx) => {
+                            if(item.elements[elIdx]) item.elements[elIdx].allocatedHour = parseInt(input.value) || 0;
+                        });
+                    } else {
+                        const input = document.querySelector(`.time-input.${uniqueId}`);
+                        if(input) item.allocatedHour = parseInt(input.value) || 0;
+                    }
+                });
+            }
+        });
+
+        const draftData = {
+            fileName: currentUploadedFileName, // 💡 파일명 백업 추가
+            rdData: window.rdParsedData,
+            dashboard: {
+                sum: document.getElementById('dashTotalHours').innerText,
+                basic: document.getElementById('dashBasicHours').innerText,
+                ncs: document.getElementById('dashNcsHours').innerText,
+                nonNcs: document.getElementById('dashNonNcsHours').innerText,
+                days: document.getElementById('dashDays').innerText,
+                targetDays: document.getElementById('targetDays').innerText
+            },
+            calendar: {
+                startDate: trainStartDate ? getIsoDateStr(trainStartDate) : null,
+                endDate: trainEndDate ? getIsoDateStr(trainEndDate) : null,
+                holidays: Array.from(selectedHolidays.entries()), // 💡 날짜와 휴일명을 쌍으로 배열화하여 저장
+                workdays: Array.from(selectedWorkdays)
+            }
+        };
+
+        database.ref(`${currentClass}/rdTimetableDraft`).set(draftData)
+            .then(() => alert("✅ 작업하신 모든 데이터와 파일명이 서버에 안전하게 저장되었습니다!"))
+            .catch(err => alert("❌ 저장 실패: " + err.message));
+    }
+
+    // 📍 8. 💡 [파일명 보존 UI] 시동 시 자동 복구 엔진 업데이트
+    function loadDraftFromDB() {
+        database.ref(`${currentClass}/rdTimetableDraft`).once('value', snap => {
+            const draft = snap.val();
+            if(draft) {
+                console.log("💾 서버에 저장된 임시 데이터를 복구합니다.");
+                
+                // 💡 파일명 UI 복구 기동
+                currentUploadedFileName = draft.fileName || "저장된 RD 엑셀 파일";
+                displayFileStatus(currentUploadedFileName);
+
+                window.rdParsedData = draft.rdData;
+                
+                // 💡 파일명 UI 교체 기동
+                currentUploadedFileName = draft.fileName || "저장된 RD 엑셀 파일";
+                const fileInput = document.getElementById('rdExcelInput');
+                fileInput.style.display = 'none'; // 빈 파일 업로드 버튼 숨김
+
+                let statusBox = document.getElementById('savedFileStatusBox');
+                if (!statusBox) {
+                    statusBox = document.createElement('div');
+                    statusBox.id = 'savedFileStatusBox';
+                    statusBox.style.marginTop = '10px';
+                    statusBox.style.padding = '12px';
+                    statusBox.style.backgroundColor = '#e8f8f5';
+                    statusBox.style.border = '1px solid #27ae60';
+                    statusBox.style.borderRadius = '5px';
+                    statusBox.style.color = '#2c3e50';
+                    // 파일 업로드 칸 바로 밑에 생성
+                    fileInput.parentNode.insertBefore(statusBox, fileInput.nextSibling);
+                }
+                
+                statusBox.innerHTML = `✅ <strong>[ ${currentUploadedFileName} ]</strong> 등록 완료 
+                <button onclick="document.getElementById('rdExcelInput').style.display='block'; this.parentElement.style.display='none'; document.getElementById('rdExcelInput').value='';" style="margin:0 0 0 15px; padding:4px 10px; font-size:0.8em; background:#e74c3c;">새 파일로 교체</button>`;
+                statusBox.style.display = "block";
+
+                window.rdParsedData = draft.rdData;
+                
+                document.getElementById('dashTotalHours').innerText = draft.dashboard.sum;
+                document.getElementById('dashBasicHours').innerText = draft.dashboard.basic;
+                document.getElementById('dashNcsHours').innerText = draft.dashboard.ncs;
+                document.getElementById('dashNonNcsHours').innerText = draft.dashboard.nonNcs;
+                document.getElementById('dashDays').innerText = draft.dashboard.days;
+                updateRdTargetDaysDisplay(parseInt(String(draft.dashboard.targetDays || 0).replace(/[^\d]/g, '')) || 0);
+                
+                document.getElementById('initialDashboard').style.display = "flex";
+                document.getElementById('saveControlPanel').style.display = "flex";
+
+                if(draft.calendar) {
+                    if(draft.calendar.startDate) {
+                        setPeriodDateValue('startDate', draft.calendar.startDate);
+                        trainStartDate = new Date(draft.calendar.startDate);
+                    }
+                    if(draft.calendar.endDate) {
+                        setPeriodDateValue('endDate', draft.calendar.endDate);
+                        trainEndDate = new Date(draft.calendar.endDate);
+                    }
+                    if(draft.calendar.holidays) {
+                        selectedHolidays = new Map();
+                        draft.calendar.holidays.forEach(h => {
+                            // 구버전(Set) 데이터와 신버전(Map) 데이터 모두 호환 복구
+                            Array.isArray(h) ? selectedHolidays.set(h[0], h[1]) : selectedHolidays.set(h, "휴일");
+                        });
+                    }
+                    if(draft.calendar.workdays) selectedWorkdays = new Set(draft.calendar.workdays);
+                    
+                    if(trainStartDate) currentCalDate = new Date(trainStartDate.getFullYear(), trainStartDate.getMonth(), 1);
+                }
+
+                generateAllocationUI(window.rdParsedData, true); 
+                renderCalendar();
+                updateCalendarStats();
+            }
+        });
+    }
+
+    function deleteDraftFromDB() {
+        if(confirm("⚠️ 서버에 저장된 작업 상태를 완전히 삭제하시겠습니까?\n삭제 후 시스템이 초기화됩니다.")) {
+            database.ref(`${currentClass}/rdTimetableDraft`).remove()
+                .then(() => location.reload())
+                .catch(err => alert("❌ 삭제 실패"));
+        }
+    }
+
+    function updateRdTargetDaysDisplay(days) {
+        const el = document.getElementById('targetDays');
+        const suffix = document.getElementById('rdDayHintSuffix');
+        if (!el) return;
+        if (!days) {
+            el.innerText = "—";
+            el.style.color = "#95a5a6";
+            if (suffix) suffix.innerText = "(RD 미등록)";
+        } else {
+            el.innerText = String(days);
+            el.style.color = "#e67e22";
+            if (suffix) suffix.innerText = "일";
+        }
+    }
+
+    function collectRdBlocksFromUI() {
+        const blocks = [];
+        if (!window.rdParsedData) return blocks;
+        const categories = ['basic', 'ncs', 'nonNcs'];
+        categories.forEach(cat => {
+            if(window.rdParsedData[cat]) {
+                window.rdParsedData[cat].forEach((item, idx) => {
+                    const uniqueId = `${cat}_${idx}`;
+                    if(item.elements && item.elements.length > 0) {
+                        const inputs = document.querySelectorAll(`.${uniqueId}`);
+                        inputs.forEach((input, elIdx) => {
+                            let h = parseInt(input.value) || 0;
+                            if(item.elements[elIdx] && h > 0) {
+                                let exportUnit = item.rdCode ? `[${item.rdCode}]  ${item.unit}` : item.unit;
+                                for(let i=0; i<h; i++) blocks.push({ sub: item.subject, unit: exportUnit, det: item.elements[elIdx].name });
+                            }
+                        });
+                    } else {
+                        const input = document.querySelector(`.time-input.${uniqueId}`);
+                        let h = input ? (parseInt(input.value) || 0) : 0;
+                        if(h > 0) {
+                            let exportUnit = item.rdCode ? `[${item.rdCode}]  ${item.unit}` : item.unit;
+                            let exportDetail = "";
+                            if (cat === 'basic') { exportUnit = item.subject; exportDetail = item.subject; } 
+                            else if (cat === 'nonNcs') { exportUnit = item.unit; exportDetail = item.detail || ""; }
+                            for(let i=0; i<h; i++) blocks.push({ sub: item.subject, unit: exportUnit, det: exportDetail });
+                        }
+                    }
+                });
+            }
+        });
+        return blocks;
+    }
+
+    const TIMETABLE_TIME_SLOTS = [
+        { p: 1, time: "09:00~09:50" }, { p: 2, time: "10:00~10:50" }, { p: 3, time: "11:00~11:50" }, { p: 4, time: "12:00~12:50" },
+        { p: "", time: "" },
+        { p: 5, time: "13:30~14:20" }, { p: 6, time: "14:30~15:20" }, { p: 7, time: "15:30~16:20" }, { p: 8, time: "16:30~17:20" }
+    ];
+    const TIMETABLE_WEEK_NAMES = ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"];
+
+    /** blocks: 1시간=1행. 빈 배열이면 수업일은 교과목 없이 틀만 생성 */
+    function buildDailyTimetableExportData(blocks) {
+        const exportData = [];
+        const holidayMerges = [];
+        let currentDate = new Date(trainStartDate);
+        const endDate = new Date(trainEndDate);
+        let dayCount = 1;
+        let blockIndex = 0;
+        const skeletonMode = !blocks || blocks.length === 0;
+
+        while(currentDate <= endDate) {
+            const dateStr = getIsoDateStr(currentDate);
+            const dayOfWeek = currentDate.getDay();
+            const isWeekend = (dayOfWeek === 0 || dayOfWeek === 6);
+            let isClassDay = false, isHoliday = false;
+
+            if(isWeekend && selectedWorkdays.has(dateStr)) isClassDay = true;
+            else if(!isWeekend && !selectedHolidays.has(dateStr)) isClassDay = true;
+            else if(!isWeekend && selectedHolidays.has(dateStr)) isHoliday = true;
+
+            if(isClassDay) {
+                if (!skeletonMode && blockIndex >= blocks.length) {
+                    currentDate.setDate(currentDate.getDate() + 1);
+                    continue;
+                }
+                TIMETABLE_TIME_SLOTS.forEach(slot => {
+                    if (slot.p === "") {
+                        exportData.push([ dayCount, dateStr, TIMETABLE_WEEK_NAMES[dayOfWeek], "", "", "", "", "", "", "", "" ]);
+                    } else if (!skeletonMode && blockIndex < blocks.length) {
+                        const b = blocks[blockIndex++];
+                        exportData.push([ dayCount, dateStr, TIMETABLE_WEEK_NAMES[dayOfWeek], slot.p, slot.time, b.sub, b.unit, b.det, "", "", "" ]);
+                    } else {
+                        exportData.push([ dayCount, dateStr, TIMETABLE_WEEK_NAMES[dayOfWeek], slot.p, slot.time, "", "", "", "", "", "" ]);
+                    }
+                });
+                dayCount++;
+            } else if (isHoliday) {
+                const hName = selectedHolidays.get(dateStr) || "휴일";
+                const startRow = exportData.length + 2;
+                holidayMerges.push([startRow, 6, startRow + 8, 11]);
+                const hDayCount = dayCount > 1 ? dayCount - 1 : 1;
+                TIMETABLE_TIME_SLOTS.forEach((slot, i) => {
+                    exportData.push([ hDayCount, dateStr, TIMETABLE_WEEK_NAMES[dayOfWeek], slot.p, slot.time, i === 0 ? hName : "", "", "", "", "", "" ]);
+                });
+            }
+            currentDate.setDate(currentDate.getDate() + 1);
+        }
+        return { exportData, holidayMerges, unplacedBlocks: skeletonMode ? 0 : (blocks.length - blockIndex) };
+    }
+
+    function downloadTimetableWorkbook(exportData, holidayMerges, fileName) {
+        if (!exportData.length) return alert("⚠️ 출력할 일정이 없습니다. 훈련 기간과 달력(수업일·휴일)을 확인해 주세요.");
+
+        const workbook = new ExcelJS.Workbook();
+        const ws = workbook.addWorksheet('일일시간표', {
+            views: [{ state: 'frozen', xSplit: 0, ySplit: 1 }],
+            pageSetup: { paperSize: 9, orientation: 'landscape', fitToPage: true, fitToWidth: 1, fitToHeight: 0 }
+        });
+
+        ws.columns = [
+            { header: "일수", width: 6 }, { header: "날짜", width: 14 }, { header: "요일", width: 10 },
+            { header: "교시", width: 6 }, { header: "훈련시간", width: 16 }, { header: "교과목명", width: 28 },
+            { header: "능력단위명", width: 40 }, { header: "세부교과", width: 50 }, { header: "이론/실기", width: 12 },
+            { header: "훈련교사", width: 12 }, { header: "훈련시설명", width: 16 }
+        ];
+
+        exportData.forEach(rowArray => { ws.addRow(rowArray); });
+        holidayMerges.forEach(m => { ws.mergeCells(m[0], m[1], m[2], m[3]); });
+
+        ws.eachRow({ includeEmpty: true }, (row, rowNumber) => {
+            row.eachCell({ includeEmpty: true }, (cell) => {
+                cell.font = { name: '맑은 고딕', bold: rowNumber === 1 };
+                cell.alignment = { vertical: 'middle', horizontal: 'center', shrinkToFit: true, wrapText: false };
+                cell.border = { top: {style:'thin'}, left: {style:'thin'}, bottom: {style:'thin'}, right: {style:'thin'} };
+                if(rowNumber === 1) {
+                    cell.fill = { type: 'pattern', pattern:'solid', fgColor:{ argb:'FFF2F2F2' } };
+                }
+            });
+        });
+
+        holidayMerges.forEach(m => {
+            const mergedCell = ws.getCell(m[0], m[1]);
+            mergedCell.font = { name: '맑은 고딕', color: { argb: 'FFFF0000' }, bold: true, size: 14 };
+        });
+
+        for (let i = 0; i < exportData.length - 1; i++) {
+            if (exportData[i][1] !== exportData[i+1][1]) {
+                if (new Date(exportData[i+1][1]).getDay() === 1) {
+                    ws.getRow(i + 2).addPageBreak();
+                }
+            }
+        }
+
+        workbook.xlsx.writeBuffer().then(buffer => {
+            const blob = new Blob([buffer], { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" });
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = fileName;
+            link.click();
+        });
+    }
+
+    function exportSkeletonTimetableExcel() {
+        if (!trainStartDate || !trainEndDate) return alert("⚠️ 훈련 시작·종료일을 먼저 설정해 주십시오.");
+        const { exportData, holidayMerges } = buildDailyTimetableExportData([]);
+        const startLabel = getIsoDateStr(trainStartDate).replace(/-/g, '');
+        const endLabel = getIsoDateStr(trainEndDate).replace(/-/g, '');
+        downloadTimetableWorkbook(exportData, holidayMerges, `일일훈련계획_틀_${startLabel}-${endLabel}.xlsx`);
+    }
+
+    // 📍 9. [4구역] 최종 차량 출고 라인 (ExcelJS 프리미엄 엔진 장착 버전)
+    function exportToIndex1Excel() {
+        if (!trainStartDate || !trainEndDate) return alert("⚠️ 0구역 캘린더에서 훈련 기간을 먼저 설정해 주십시오.");
+        if (!window.rdParsedData) return alert("⚠️ 1구역에서 RD 엑셀 데이터를 먼저 스캔해 주십시오.");
+
+        const blocks = collectRdBlocksFromUI();
+        if(blocks.length === 0) return alert("⚠️ 배분된 시간이 전혀 없습니다. 3구역을 확인하십시오.");
+
+        const { exportData, holidayMerges, unplacedBlocks } = buildDailyTimetableExportData(blocks);
+        if(unplacedBlocks > 0) {
+            alert(`⚠️ 훈련 기간 부족 경고: 총 ${unplacedBlocks}시간 분량의 수업이 엑셀에 배치되지 못했습니다!`);
+        }
+        downloadTimetableWorkbook(exportData, holidayMerges, `일일훈련계획_${currentClass}.xlsx`);
+    }
+</script>
+
+</body>
+</html>

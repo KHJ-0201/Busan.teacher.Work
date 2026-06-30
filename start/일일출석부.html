@@ -1,4 +1,15 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>일일 출석 기록 등록 | 자동차 교육과정 통합 시스템</title><script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script><script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script><script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script><script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script><style>/* 레이아웃을 flex로 변경하여 사이드바와 나란히 배치 */
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일일 출석 기록 등록 | 자동차 교육과정 통합 시스템</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+<style>
+/* 레이아웃을 flex로 변경하여 사이드바와 나란히 배치 */
 /* 레이아웃을 flex로 변경하여 사이드바 공간 확보 및 패딩 조정 */
 body { font-family: 'Malgun Gothic', sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; color: #333; display: flex; justify-content: center; align-items: flex-start; gap: 20px; }
 /* margin auto를 제거하고 flex 속성 부여 */
@@ -267,7 +278,14 @@ body { font-family: 'Malgun Gothic', sans-serif; background-color: #f4f7f6; marg
     font-weight: bold;
     cursor: pointer;
 }
-.direct-auth-monitor-action:hover { background: #7d3c98; }</style></head><body style="padding-top: 80px;"><style>/* 🚀 하네스 레이아웃 (PC 버튼 크기·여백은 common-harness.css) */
+.direct-auth-monitor-action:hover { background: #7d3c98; }
+    </style>
+</head>
+<body style="padding-top: 80px;"> <!-- 📍 기존 flex 레이아웃 훼손을 막기 위한 여백 확보 장치 -->
+
+<!-- 📍 [메인 하네스 V5 (반응형 완전체)] 화면 최상단 고정 통합 버스바 -->
+<style>
+    /* 🚀 하네스 레이아웃 (PC 버튼 크기·여백은 common-harness.css) */
     #globalMainHarness { flex-wrap: nowrap !important; }
     #navButtonBank { flex-wrap: nowrap !important; }
 
@@ -301,4 +319,207 @@ body { font-family: 'Malgun Gothic', sans-serif; background-color: #f4f7f6; marg
         #harnessRightBank { order: 2; flex: 1; display: flex; justify-content: flex-end; }
         #navButtonBank { order: 3; flex-wrap: wrap !important; width: 100%; margin: 0 !important; }
         .nav-btn-global { max-width: calc(25% - 4px); font-size: 9px !important; }
-    }</style><link rel="stylesheet" href="../common-harness.css"><script src="../common-harness.js"></script><div id="globalMainHarness" style="position: fixed; top: 0; left: 0; width: 100%; background: #1a252f; z-index: 9999; padding: 10px 20px; box-sizing: border-box; box-shadow: 0 4px 15px rgba(0,0,0,0.3); border-bottom: 3px solid #e67e22; display: flex; justify-content: space-between; align-items: center;"><div id="harnessLeftBank" style="flex-shrink: 0;"><button class="btn" style="background: transparent; color: #f1c40f; border: 1px solid #f1c40f; width: 90px; padding: 6px 0; font-size: 12px; font-weight: bold; box-sizing: border-box; cursor: pointer;" onclick='location.href="select_class.html"'>◀ 반 선택</button></div><div id="navButtonBank" style="display: flex; justify-content: center; gap: 6px; flex-grow: 1; margin: 0 15px;"><button class="nav-btn-global" style="background: #3498db;" onclick='location.href=classNavHref("index1.html")'>🏠 메인화면</button> <button class="nav-btn-global" style="background: #e67e22;" onclick='location.href=classNavHref("일일출석부.html")'>📅 일일출석부</button> <button class="nav-btn-global" style="background: #27ae60;" onclick='location.href=classNavHref("능력단위시간표.html")'>📊 출석률/보강</button> <button class="nav-btn-global" style="background: #8e44ad;" onclick='location.href=classNavHref("단위개월출석부.html")'>📈 단위출석부</button> <button class="nav-btn-global" style="background: #2c3e50;" onclick='location.href=classNavHref("평가계획서.html")'>📄 계획서류</button> <button class="nav-btn-global" style="background: #16a085;" onclick='location.href=classNavHref("../평가지/평가지.html")'>📋 내부평가</button> <button class="nav-btn-global" style="background: #d35400;" onclick='location.href=classNavHref("상담일지.html")'>🤝 상담/이력서</button></div><div id="harnessRightBank" style="flex-shrink: 0;"><div style="background: #000000; color: #f1c40f; padding: 8px 22px; border-radius: 6px; border: 2px solid #f1c40f; font-weight: 900; font-size: 16px; box-shadow: 0 0 12px rgba(241, 196, 15, 0.8); white-space: nowrap; letter-spacing: 1px;"><span style="color: #ffffff; font-size: 14px; margin-right: 5px;">▶ 현재 학급:</span> <span id="currentClassDisplay" style="font-size: 19px; text-shadow: 0 0 5px #f1c40f;">로딩 중...</span></div></div></div><div class="container"><div class="header"><h2 style="margin:0; color:#e67e22;">📅 일일 출석 데이터 관리</h2><div class="header-btns"><div style="display: none;"><a href="#" id="btn_nav_unit"></a> <a href="#" id="btn_nav_main"></a></div><button id="btn_find_empty" class="btn btn-info">🔍 출석부 미등록 찾기</button> <button id="btn_multi_upload" class="btn btn-upload" style="background-color: #d35400;">📤 시간표 한번에 올리기</button> <span style="font-size: 11px; color: #666; margin-left: 5px; background: #eee; padding: 4px 8px; border-radius: 4px;">※ 가능형식: 2026.03.18 / 2026-03-18 / 20260318 / 260318</span></div><input type="file" id="hiddenFileInput" accept=".xlsx, .xls" multiple="multiple"></div><div class="danger-zone" style="display: flex; justify-content: space-between; align-items: center;"><div></div><div id="viewModeControl" style="display: inline-block; font-size: 12px; background: #fff; padding: 6px 12px; border-radius: 8px; border: 1px solid #27ae60; box-shadow: 0 2px 4px rgba(0,0,0,0.05);"><span style="font-weight: bold; color: #27ae60; margin-right: 10px;">⚙️ 기본 보기 고정:</span> <label style="cursor:pointer; margin-right:8px;"><input type="radio" name="defaultView" id="radio_view_subject" value="subject"> 교과목별</label> <label style="cursor:pointer;"><input type="radio" name="defaultView" id="radio_view_ncs" value="ncs"> 능력단위별</label></div><div><button id="btn_open_dropout" class="btn btn-danger-outline" style="border-color: #8e44ad; color: #8e44ad;">🚫 탈락 / 🎓 조수 처리</button> <button id="btn_clear_all" class="btn btn-danger-outline">🧹 전체 데이터 초기화</button></div></div><div class="info-bar"><div id="classBox"><strong>학급:</strong> <span id="dispClass" class="highlight">-</span></div><div id="courseInfo" style="font-size: 14px; color: #666;">훈련 기간 로딩 중...</div><div id="summaryBox" style="display: flex; gap: 20px;"><div><strong>총 훈련일수:</strong> <span id="totalWorkDays" class="highlight">0</span>일</div><div style="color: #2e7d32;"><strong>등록:</strong> <span id="doneWorkDays">0</span>일</div><div style="color: #c0392b;"><strong>미등록:</strong> <span id="noneWorkDays">0</span>일</div></div></div><div class="section-card"><div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 10px;"><p style="margin: 0; font-size: 14px; color: #555;">※ 공가, 휴가, 경조사 등은 입/퇴실 시간이 없어도 <strong>자동으로 풀타임 출석 처리</strong>됩니다.</p></div><div class="scroll-area"><table class="date-list-table"><thead><tr><th width="10%">훈련일수</th><th width="15%">날짜(요일)</th><th width="40%">진행 과목</th><th width="8%">상태</th><th width="12%">시간표</th><th width="15%">기타</th></tr></thead><tbody id="dateListBody"><tr><td colspan="5" style="padding:50px;">데이터를 불러오고 있습니다...</td></tr></tbody></table></div></div></div><div id="sideMonitor" class="side-monitor"><div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;"><div class="monitor-title" style="margin: 0;">🚫 현황 모니터</div><button id="btnToggleSide" style="background:transparent; border:none; color:#c0392b; font-size:16px; cursor:pointer; padding:0; line-height:1; transition: transform 0.3s;" title="패널 접기">▶</button></div><div id="sideMonitorContent"><div id="sideMonitorList"><div style="color:#999; font-size:12px; text-align:center; padding:20px;">데이터 로딩 중...</div></div><div class="direct-auth-monitor-section" id="directAuthMonitorSection"><div class="direct-auth-monitor-header"><span>📋 이번달 직권 신청<span class="direct-auth-unit-badge" id="directAuthUnitLabel"></span><span class="direct-auth-dday-badge" id="directAuthDdayLabel"></span></span> <span class="direct-auth-monitor-count" id="directAuthSectionCount">0</span></div><div id="directAuthList"><div class="direct-auth-empty-line">데이터 확인 중...</div></div><button type="button" id="btnOpenDirectAuthAlert" class="direct-auth-monitor-action">직권신청 전체보기</button></div></div><div id="sideMonitorCollapsedText" style="display:none; writing-mode: vertical-rl; text-orientation: upright; color:#c0392b; font-weight:bold; letter-spacing:5px; margin: 20px auto 0 auto; cursor:pointer;">현황보기</div></div><div id="detailModal" class="modal"><div class="modal-content"><div class="modal-header"><h3 id="modalTitle" style="margin:0; color:#e67e22;">📅 일자별 상세 출결 현황</h3><span class="close-btn" id="btn_close_detail">&times;</span></div><div id="modalBody"><table class="modal-table"><thead><tr><th>연번</th><th>성명</th><th>상태</th><th>실제출석(분)</th><th>입실시간</th><th>퇴실시간</th><th>외출</th><th>복귀</th><th>사유</th></tr></thead><tbody id="detailTableBody"></tbody></table></div></div></div><div id="dropoutModal" class="modal"><div class="modal-content" style="max-width: 400px;"><div class="modal-header"><h3 style="margin:0; color:#8e44ad;">🚫 탈락 / 🎓 조기수료 처리</h3><span class="close-btn" id="btn_close_dropout">&times;</span></div><div style="padding: 10px 0;"><label style="font-weight: bold; font-size: 14px;">학생 선택:</label> <select id="dropoutStudentSelect" style="width: 100%; padding: 8px; margin-top: 5px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ddd;"><option value="">학생을 선택하세요</option></select> <label style="font-weight: bold; font-size: 14px; display: block; margin-bottom: 5px;">처리 유형:</label><div style="display: flex; gap: 15px; margin-bottom: 15px; background: #f8f9fa; padding: 10px; border-radius: 5px; border: 1px solid #ddd;"><label style="cursor: pointer;"><input type="radio" name="processType" value="dropout" checked="checked"> 🚫 중도탈락</label> <label style="cursor: pointer;"><input type="radio" name="processType" value="early"> 🎓 조기수료</label></div><label style="font-weight: bold; font-size: 14px;">시작 일자 (탈락/조수일):</label> <input type="date" id="dropoutDateInput" style="width: 100%; padding: 8px; margin-top: 5px; margin-bottom: 20px; border-radius: 5px; border: 1px solid #ddd; box-sizing: border-box;"> <button id="btn_save_dropout" class="btn" style="width: 100%; background-color: #8e44ad; color: white;">저장하기</button> <button id="btn_cancel_dropout" class="btn" style="width: 100%; background-color: transparent; color: #c0392b; border: 1px solid #c0392b; margin-top: 8px;">처리 취소 (정상 복구)</button><hr style="margin: 20px 0; border: 0; border-top: 1px dashed #e74c3c;"><label style="font-weight: bold; font-size: 12px; color: #c0392b; display: block; margin-bottom: 5px;">⚠️ 확정 기간 전 오입력 인원 삭제용</label> <button id="btn_delete_permanently" class="btn" style="width: 100%; background-color: #c0392b; color: white; border: none; padding: 10px 0;">훈련생 완전 삭제 (DB에서 영구 제거)</button></div></div></div><link rel="stylesheet" href="../common-dialog.css"><script src="../common-class-db.js"></script><script src="../common-dialog.js"></script><script src="직권신청.js"></script><script src="일일출석부.js"></script></body></html>
+    }
+</style>
+<link rel="stylesheet" href="../common-harness.css">
+<script src="../common-harness.js"></script>
+
+<div id="globalMainHarness" style="position: fixed; top: 0; left: 0; width: 100%; background: #1a252f; z-index: 9999; padding: 10px 20px; box-sizing: border-box; box-shadow: 0 4px 15px rgba(0,0,0,0.3); border-bottom: 3px solid #e67e22; display: flex; justify-content: space-between; align-items: center;">
+    
+    <!-- [좌측 뱅크] 반 선택 모듈 -->
+    <div id="harnessLeftBank" style="flex-shrink: 0;">
+        <button class="btn" style="background: transparent; color: #f1c40f; border: 1px solid #f1c40f; width: 90px; padding: 6px 0; font-size: 12px; font-weight: bold; box-sizing: border-box; cursor: pointer;" onclick="location.href='select_class.html'">◀ 반 선택</button>
+    </div>
+
+    <!-- [중앙 뱅크] 공통 네비게이션 모듈 (지저분한 inline CSS 제거, 반응형 클래스로 통합) -->
+    <div id="navButtonBank" style="display: flex; justify-content: center; gap: 6px; flex-grow: 1; margin: 0 15px;">
+        <button class="nav-btn-global" style="background: #3498db;" onclick="location.href=classNavHref('index1.html')">🏠 메인화면</button>
+        <button class="nav-btn-global" style="background: #e67e22;" onclick="location.href=classNavHref('일일출석부.html')">📅 일일출석부</button>
+        <button class="nav-btn-global" style="background: #27ae60;" onclick="location.href=classNavHref('능력단위시간표.html')">📊 출석률/보강</button>
+        <button class="nav-btn-global" style="background: #8e44ad;" onclick="location.href=classNavHref('단위개월출석부.html')">📈 단위출석부</button>
+        <button class="nav-btn-global" style="background: #2c3e50;" onclick="location.href=classNavHref('평가계획서.html')">📄 계획서류</button>
+        <button class="nav-btn-global" style="background: #16a085;" onclick="location.href=classNavHref('../평가지/평가지.html')">📋 내부평가</button>
+        <button class="nav-btn-global" style="background: #d35400;" onclick="location.href=classNavHref('상담일지.html')">🤝 상담/이력서</button>
+    </div>
+
+    <!-- [우측 뱅크] 현재 학급 상태창 (HUD 계기판 스타일) -->
+    <div id="harnessRightBank" style="flex-shrink: 0;">
+        <div style="background: #000000; color: #f1c40f; padding: 8px 22px; border-radius: 6px; border: 2px solid #f1c40f; font-weight: 900; font-size: 16px; box-shadow: 0 0 12px rgba(241, 196, 15, 0.8); white-space: nowrap; letter-spacing: 1px;">
+            <span style="color: #ffffff; font-size: 14px; margin-right: 5px;">▶ 현재 학급:</span>
+            <span id="currentClassDisplay" style="font-size: 19px; text-shadow: 0 0 5px #f1c40f;">로딩 중...</span>
+        </div>
+    </div>
+
+    <!-- 📍 [독립 ECU 센서] 외부 JS 파일에 의존하지 않고 자체적으로 학급 정보 및 현재 기어 위치를 감지합니다. -->
+</div>
+<div class="container"> <div class="header">
+        <h2 style="margin:0; color:#e67e22;">📅 일일 출석 데이터 관리</h2>
+        <div class="header-btns">
+            <!-- 📍 [엔진 복구 완료] JS 숏트 에러 방지를 위해 구형 버튼 ID만 스텔스(숨김) 처리하여 부활시킵니다. -->
+            <div style="display: none;">
+                <a href="#" id="btn_nav_unit"></a>
+                <a href="#" id="btn_nav_main"></a>
+            </div>
+
+            <button id="btn_find_empty" class="btn btn-info">🔍 출석부 미등록 찾기</button>
+            <button id="btn_multi_upload" class="btn btn-upload" style="background-color: #d35400;">📤 시간표 한번에 올리기</button>
+            <span style="font-size: 11px; color: #666; margin-left: 5px; background: #eee; padding: 4px 8px; border-radius: 4px;">
+                ※ 가능형식: 2026.03.18 / 2026-03-18 / 20260318 / 260318
+            </span>
+        </div>
+
+        <input type="file" id="hiddenFileInput" accept=".xlsx, .xls" multiple>
+    </div>
+
+    <div class="danger-zone" style="display: flex; justify-content: space-between; align-items: center;">
+    <div></div> 
+
+    <div id="viewModeControl" style="display: inline-block; font-size: 12px; background: #fff; padding: 6px 12px; border-radius: 8px; border: 1px solid #27ae60; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+        <span style="font-weight: bold; color: #27ae60; margin-right: 10px;">⚙️ 기본 보기 고정:</span>
+        
+        <label style="cursor:pointer; margin-right:8px;">
+            <input type="radio" name="defaultView" id="radio_view_subject" value="subject"> 교과목별
+        </label>
+        
+        <label style="cursor:pointer;">
+            <input type="radio" name="defaultView" id="radio_view_ncs" value="ncs"> 능력단위별
+        </label>
+    </div>
+
+    <div>
+        <button id="btn_open_dropout" class="btn btn-danger-outline" style="border-color: #8e44ad; color: #8e44ad;">🚫 탈락 / 🎓 조수 처리</button>
+        <button id="btn_clear_all" class="btn btn-danger-outline">🧹 전체 데이터 초기화</button>
+    </div>
+</div>
+        
+
+    <div class="info-bar">
+    <div id="classBox"><strong>학급:</strong> <span id="dispClass" class="highlight">-</span></div>
+    
+    <div id="courseInfo" style="font-size: 14px; color: #666;">훈련 기간 로딩 중...</div>
+    
+    <div id="summaryBox" style="display: flex; gap: 20px;">
+        <div><strong>총 훈련일수:</strong> <span id="totalWorkDays" class="highlight">0</span>일</div>
+        <div style="color: #2e7d32;"><strong>등록:</strong> <span id="doneWorkDays">0</span>일</div>
+        <div style="color: #c0392b;"><strong>미등록:</strong> <span id="noneWorkDays">0</span>일</div>
+    </div>
+</div>
+
+    <div class="section-card">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 10px;">
+            <p style="margin: 0; font-size: 14px; color: #555;">
+                ※ 공가, 휴가, 경조사 등은 입/퇴실 시간이 없어도 <strong>자동으로 풀타임 출석 처리</strong>됩니다.
+            </p>
+        </div>
+        <div class="scroll-area">
+            <table class="date-list-table">
+                <thead>
+                    <tr>
+                        <th width="10%">훈련일수</th>
+                        <th width="15%">날짜(요일)</th>
+                        <th width="40%">진행 과목</th>
+                        <th width="8%">상태</th>
+                        <th width="12%">시간표</th>
+                        <th width="15%">기타</th>
+                    </tr>
+                </thead>
+                <tbody id="dateListBody">
+                    <tr><td colspan="5" style="padding:50px;">데이터를 불러오고 있습니다...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div> <div id="sideMonitor" class="side-monitor">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+        <div class="monitor-title" style="margin: 0;">🚫 현황 모니터</div>
+        <button id="btnToggleSide" style="background:transparent; border:none; color:#c0392b; font-size:16px; cursor:pointer; padding:0; line-height:1; transition: transform 0.3s;" title="패널 접기">▶</button>
+    </div>
+    
+    <div id="sideMonitorContent">
+        <div id="sideMonitorList">
+            <div style="color:#999; font-size:12px; text-align:center; padding:20px;">데이터 로딩 중...</div>
+        </div>
+        <div class="direct-auth-monitor-section" id="directAuthMonitorSection">
+            <div class="direct-auth-monitor-header">
+                <span>📋 이번달 직권 신청<span class="direct-auth-unit-badge" id="directAuthUnitLabel"></span><span class="direct-auth-dday-badge" id="directAuthDdayLabel"></span></span>
+                <span class="direct-auth-monitor-count" id="directAuthSectionCount">0</span>
+            </div>
+            <div id="directAuthList">
+                <div class="direct-auth-empty-line">데이터 확인 중...</div>
+            </div>
+            <button type="button" id="btnOpenDirectAuthAlert" class="direct-auth-monitor-action">직권신청 전체보기</button>
+        </div>
+    </div>
+    
+    <div id="sideMonitorCollapsedText" style="display:none; writing-mode: vertical-rl; text-orientation: upright; color:#c0392b; font-weight:bold; letter-spacing:5px; margin: 20px auto 0 auto; cursor:pointer;">
+        현황보기
+    </div>
+</div>
+
+
+<div id="detailModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 id="modalTitle" style="margin:0; color:#e67e22;">📅 일자별 상세 출결 현황</h3>
+            <span class="close-btn" id="btn_close_detail">&times;</span>
+        </div>
+        <div id="modalBody">
+            <table class="modal-table">
+                <thead>
+                    <tr>
+                        <th>연번</th> <th>성명</th>
+                        <th>상태</th>
+                        <th>실제출석(분)</th>
+                        <th>입실시간</th>
+                        <th>퇴실시간</th>
+                        <th>외출</th>
+                        <th>복귀</th>
+                        <th>사유</th>
+                    </tr>
+                </thead>
+                <tbody id="detailTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id="dropoutModal" class="modal">
+    <div class="modal-content" style="max-width: 400px;">
+        <div class="modal-header">
+            <h3 style="margin:0; color:#8e44ad;">🚫 탈락 / 🎓 조기수료 처리</h3>
+            <span class="close-btn" id="btn_close_dropout">&times;</span>
+        </div>
+        <div style="padding: 10px 0;">
+            <label style="font-weight: bold; font-size: 14px;">학생 선택:</label>
+            <select id="dropoutStudentSelect" style="width: 100%; padding: 8px; margin-top: 5px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ddd;">
+                <option value="">학생을 선택하세요</option>
+            </select>
+            
+            <label style="font-weight: bold; font-size: 14px; display: block; margin-bottom: 5px;">처리 유형:</label>
+            <div style="display: flex; gap: 15px; margin-bottom: 15px; background: #f8f9fa; padding: 10px; border-radius: 5px; border: 1px solid #ddd;">
+                <label style="cursor: pointer;"><input type="radio" name="processType" value="dropout" checked> 🚫 중도탈락</label>
+                <label style="cursor: pointer;"><input type="radio" name="processType" value="early"> 🎓 조기수료</label>
+            </div>
+            
+            <label style="font-weight: bold; font-size: 14px;">시작 일자 (탈락/조수일):</label>
+            <input type="date" id="dropoutDateInput" style="width: 100%; padding: 8px; margin-top: 5px; margin-bottom: 20px; border-radius: 5px; border: 1px solid #ddd; box-sizing: border-box;">
+            
+            <button id="btn_save_dropout" class="btn" style="width: 100%; background-color: #8e44ad; color: white;">저장하기</button>
+            
+            <button id="btn_cancel_dropout" class="btn" style="width: 100%; background-color: transparent; color: #c0392b; border: 1px solid #c0392b; margin-top: 8px;">처리 취소 (정상 복구)</button>
+            
+            <hr style="margin: 20px 0; border: 0; border-top: 1px dashed #e74c3c;">
+            
+            <label style="font-weight: bold; font-size: 12px; color: #c0392b; display: block; margin-bottom: 5px;">⚠️ 확정 기간 전 오입력 인원 삭제용</label>
+            <button id="btn_delete_permanently" class="btn" style="width: 100%; background-color: #c0392b; color: white; border: none; padding: 10px 0;">훈련생 완전 삭제 (DB에서 영구 제거)</button>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="../common-dialog.css">
+<script src="../common-class-db.js"></script>
+<script src="../common-dialog.js"></script>
+<script src="직권신청.js"></script>
+<script src="일일출석부.js"></script>
+</body>
+</html>

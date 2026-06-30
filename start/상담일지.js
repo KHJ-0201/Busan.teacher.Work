@@ -1,1 +1,1135 @@
-const a13_0x2ae345=a13_0x46f7;(function(_0x3fecd1,_0x40f762){const _0x2ec690=a13_0x46f7,_0x20caf3=_0x3fecd1();while(!![]){try{const _0x12ed98=-parseInt(_0x2ec690(0xa4))/0x1*(parseInt(_0x2ec690(0x162))/0x2)+parseInt(_0x2ec690(0xcb))/0x3+parseInt(_0x2ec690(0x141))/0x4+-parseInt(_0x2ec690(0x188))/0x5*(parseInt(_0x2ec690(0xac))/0x6)+-parseInt(_0x2ec690(0x7f))/0x7+parseInt(_0x2ec690(0xa7))/0x8+parseInt(_0x2ec690(0x11e))/0x9*(parseInt(_0x2ec690(0x108))/0xa);if(_0x12ed98===_0x40f762)break;else _0x20caf3['push'](_0x20caf3['shift']());}catch(_0x4b417e){_0x20caf3['push'](_0x20caf3['shift']());}}}(a13_0x39f1,0x3be00));const a13_0x30ce80=(function(){let _0x447eb4=!![];return function(_0x28ef19,_0x1f0b4c){const _0x207f33=_0x447eb4?function(){const _0x1cc574=a13_0x46f7;if(_0x1f0b4c){const _0x5494e3=_0x1f0b4c[_0x1cc574(0xf2)](_0x28ef19,arguments);return _0x1f0b4c=null,_0x5494e3;}}:function(){};return _0x447eb4=![],_0x207f33;};}()),a13_0x16ceb3=a13_0x30ce80(this,function(){const _0x432764=a13_0x46f7;return a13_0x16ceb3['toString']()[_0x432764(0x11f)]('(((.+)+)+)+$')[_0x432764(0x148)]()[_0x432764(0x175)](a13_0x16ceb3)[_0x432764(0x11f)]('(((.+)+)+)+$');});a13_0x16ceb3();const masterConfig={'apiKey':a13_0x2ae345(0x173),'authDomain':'busan-teacher-workall.firebaseapp.com','databaseURL':a13_0x2ae345(0xdc),'projectId':a13_0x2ae345(0xaf)},storedConfig=localStorage[a13_0x2ae345(0x97)]('firebaseConfig'),firebaseConfig=storedConfig?JSON['parse'](storedConfig):{'apiKey':a13_0x2ae345(0x143),'databaseURL':a13_0x2ae345(0x14e),'projectId':'busan-teacher-work'};!firebase[a13_0x2ae345(0x117)]['length']&&firebase[a13_0x2ae345(0x16d)](firebaseConfig);const database=firebase[a13_0x2ae345(0xbc)](),auth=firebase[a13_0x2ae345(0x79)]();initClassContext();const masterApp=firebase['apps'][a13_0x2ae345(0xff)]>0x1?firebase[a13_0x2ae345(0xb2)](a13_0x2ae345(0x170)):firebase[a13_0x2ae345(0x16d)](masterConfig,a13_0x2ae345(0x170));auth[a13_0x2ae345(0xe9)](async _0x2abe0b=>{const _0x747fcb=a13_0x2ae345,_0x532a77=localStorage['getItem']('adminPw');if(_0x2abe0b)console['log']('🔒\x20보안\x20인증\x20확인됨\x20(Class\x20DB):\x20'+firebaseConfig['projectId']),initialize();else _0x532a77?auth[_0x747fcb(0x11c)](_0x747fcb(0x139),_0x532a77)[_0x747fcb(0x163)](async _0x3f5cfd=>{const _0xd11863=_0x747fcb;console['error'](_0xd11863(0xb0),_0x3f5cfd),await appAlert(_0xd11863(0x186)),location[_0xd11863(0x7e)]='../index.html';}):(await appAlert('보안\x20인증이\x20필요한\x20페이지입니다.'),location[_0x747fcb(0x7e)]='../index.html');});let currentClass=window[a13_0x2ae345(0xee)],rawTimetable=[],fullAttendanceData={},masterSubjectList=[],ncsList=[],unitMonths=[],studentNames=[],validTrainingDays=[],dropoutData={},earlyCompletionData={},counselingLogs={},currentUnitIndex=0x0,currentStudent='',currentTeacherName='',isMainView=!![],selectedDates=[];function getFixDate(_0x94aecf){const _0x1fdd1e=a13_0x2ae345;if(!_0x94aecf)return'';let _0x798052=String(_0x94aecf)[_0x1fdd1e(0x10a)]()[_0x1fdd1e(0x126)](/\./g,'-');if(_0x798052['includes']('/')){let _0x4db5dc=_0x798052[_0x1fdd1e(0x17f)]('/');if(_0x4db5dc[_0x1fdd1e(0xff)]===0x3){let _0x2732a6=_0x4db5dc[0x2][_0x1fdd1e(0xff)]===0x2?'20'+_0x4db5dc[0x2]:_0x4db5dc[0x2];_0x798052=_0x2732a6+'-'+_0x4db5dc[0x0][_0x1fdd1e(0x154)](0x2,'0')+'-'+_0x4db5dc[0x1][_0x1fdd1e(0x154)](0x2,'0');}}return _0x798052['substring'](0x0,0xa);}function formatCounselDisplayDate(_0x37152c){const _0x2d3423=a13_0x2ae345;return getFixDate(_0x37152c)[_0x2d3423(0x126)](/-/g,'.');}function getTodayDateKey(){const _0x53c02f=a13_0x2ae345,_0x1bb9da=new Date(),_0xf94196=_0x1bb9da[_0x53c02f(0x179)]()*0xea60;return new Date(_0x1bb9da[_0x53c02f(0x10e)]()-_0xf94196)['toISOString']()[_0x53c02f(0x17f)]('T')[0x0];}function isCalendarWeekday(_0x3f0800){const _0x3b3fe3=a13_0x2ae345,_0x1145a7=_0x3f0800[_0x3b3fe3(0x80)]();return _0x1145a7>=0x1&&_0x1145a7<=0x5;}function a13_0x39f1(){const _0x2aff86=['y291CNnLCW','y291BNnLBgLUz0fJDgLVBKrc','pgrPDIbJBgfZCZ0Iy2fSlxn0yxr1CYiGC3r5Bgu9iMnVBg9YoIm4ztq0ywq7igzVBNqTD2vPz2H0oMjVBgq7iJ7TNlq8l2rPDJ4','yxbWzw5Kq2HPBgq','C3r5Bgu','lMr5BMfTAwmTDg9Nz2XLlwrHDgu','iIbJBgfZCZ0IzM9YBs1JB250CM9Sigr5BMfTAwmTy29WEsiGC3r5Bgu9iM1PBI1OzwLNAhq6iduWChG7igzVBNqTC2L6ztOGmtjWEdSGCgfKzgLUzZOGnNb4oYiGCMvHzg9UBhK+','A2v5CW','cIaGicaGicaGpgrPDIbZDhLSzt0IyMfJA2DYB3vUzdOGi2zMzJSGyM9YzgvYoIaXChGGC29SAwqGi2nIzdvLmtSGyM9YzgvYlxjHzgL1CZOGohb4oYbWywrKAw5NoIaXmhb4oYbIB3GTC2HHzg93oIaWidjWEca0ChGGCMDIysGWldaSmcWWlJaYktSGBwfYz2LUlwjVDhrVBtOGmtbWEdSIpGOGicaGicaGicaGica8AdqGC3r5Bgu9iM1HCMDPBJOGmcaWidHWEcaWoYbJB2XVCJOGiZbMmtCYytSGyM9YzgvYlwjVDhrVBtOGmxb4ihnVBgLKicnMmwy1zJK7ihbHzgrPBMCTyM90Dg9ToIa0ChG7igzVBNqTC2L6ztOGmtnWEdSIpGOGicaGicaGicaGicaGicaG8j+tHsa','C3vTBwfYEvbHBMvS','z2v0rgf0zq','Aw5KzxHpzG','zM9UDfDLAwDODa','y2XHC3noyw1L','pc9KAxy+','BwfW','z2HSD25ZmdiWmubUyxzLCI5JB20','x21LDgfKyxrH','Dw5PDa','yxr0zw5Kyw5Jzq','zg9Uzs1TDwX0Aq','lMr5BMfTAwmTyxv0BY1MAwXS','lcdTNAZRP50G7lEO7jEf7lkyioYHSoQXTcWG7iIy66omio2BHcdQS4tTMO0','D3jPDgvuzxH0','mte3nJK4me9JAgvTva','66QfioYGNoYzUcK8l3nWyw4+','quL6yvn5q08Zn3PYC1PfAKTuB2Tnq05xyKLJmunFBZvcwK1XAdHf','DMfSDwvZ','ywDLx3vUzgvYxZi5','C3rHDhvZ','pgrPDIbJBgfZCZ0Iy2fSlxn0yxr1CYiGC3r5Bgu9iMnVBg9YoIm5ngeZyJG7igzVBNqTC2L6ztO4ChG7iJ7RR7JRK7e8l2rPDJ4','Dg9tDhjPBMC','Aw5JBhvKzxm','pgrPDIbJBgfZCZ0Iy2fSlxn0yxr1CYiGC3r5Bgu9iMnVBg9YoInLzJq0ndq7igzVBNqTD2vPz2H0oMjVBgq7iJ7dLZWVzgL2pG','4P2mio2bToUMVEUZToUtNcdRS7xSGQWG6RAm7zwC7j20io2vHoYALo2vMoQXSoUcMcdSP4dSM5dTLzJSP4aG7jwk64QuioU4JoUDVoYASoYGGoYEHEUlIoUlPc4','zgf5CW','CM91BMq','Ahr0Chm6lY9IDxnHBI10zwfJAgvYlxDVCMSTzgvMyxvSDc1YDgrIlMfZAweTC291DgHLyxn0ms5MAxjLyMfZzwrHDgfIyxnLlMfWCa','zgf0zq','jtSIpJWVzgL2pGOGicaGicaGicaGicaGicaGpc9KAxy+cIaGicaGicaGicaGicaGica8zgL2ihn0EwXLpsj0zxH0lwfSAwDUoIbYAwDODdSGzM9UDc1ZAxPLoIaXmhb4oYbJB2XVCJOGiZy0nZq4yJSGBwfYz2LUlxrVCdOGnxb4oYi+7kEe7zAj66wGia','y2XVC2vZDa','7iob64U07j287kEa7kgW7lMylMPZioUnSoYDTo2eSoUYOoYDToYkPoQWGcdSL7dQSRdRKjJSP4aG7jwk7jwy7iQ164Ui64UKlG','pc9ZDhjVBMC+','CgfKu3rHCNq','ywDLxZm0x3rVxZqY','phnWyw4GC3r5Bgu9iMzVBNqTC2L6ztOXmhb4oYbSzxr0zxiTC3bHy2LUzZOTmc41ChG7ihDOAxrLlxnWywnLoM5VD3jHCdSIpG','7zwz7ioD7j2066cL7isC7zMv7j24lMH0BwW','66Qfpc9ZCgfUpGOGicaGicaGicaGicaGicaGpc9KAxy+cIaGicaGicaGicaGicaGica8zgL2ihn0EwXLpsjIywnRz3jVDw5KoIaJztjLogyWoYbIB3jKzxiTCMfKAxvZoIa0ChG7igHLAwDODdOGmtbWEdSGD2LKDgG6ideWmcu7ig92zxjMBg93oIbOAwrKzw47ihbVC2L0Aw9UoIbYzwXHDgL2ztSIpGOGicaGicaGicaGicaGicaGicaGidXKAxyGC3r5Bgu9iMjHy2TNCM91BMq6icmZyJGYzJy7igHLAwDODdOGmtaWjtSGD2LKDgG6ia','iIbKyxrHlwrHDgu9iG','zwfYBhLdB21WBgv0Aw9UCW','CMvTB3zL','cIaGicaGicaGpgrPDIbZDhLSzt0IyMfJA2DYB3vUzdOGi2yXzJvMotSGyM9YzgvYoIaYChGGzgfZAgvKicnJyMq1zte7igjVCMrLCI1YywrPDxm6idHWEdSGCgfKzgLUzZOGmtvWEdSGBwfYz2LUlwjVDhrVBtOGmtbWEdSIpGOGicaGicaGicaGica8AdqGC3r5Bgu9iM1HCMDPBJOGmcaWidHWEcaWoYbJB2XVCJOGiZq3ntu2otSGyM9YzgvYlwjVDhrVBtOGmxb4ihnVBgLKicnJyMq1zte7ihbHzgrPBMCTyM90Dg9ToIa0ChG7igzVBNqTC2L6ztOGmtnWEdSIpGOGicaGicaGicaGicaGicaG8j+tIYdSG4hRI7qG6RIW7lsiioYEKoUJJcaO7j207kceioUlQoYCHoQ4SoQWHcdSTPZQSRaG67Ae7isDkqOGicaGicaGicaGica8l2G0pGOGicaGicaGicaGica8zgL2ihn0EwXLpsjMB250lxnPEMu6ideYChG7igXPBMuTAgvPz2H0oIaXlJy7ignVBg9YoIaJmwuYotnIoYbIywnRz3jVDw5KoIaJzMzMoYbWywrKAw5NoIaXmhb4oYbIB3jKzxiTCMfKAxvZoIa2ChG7igjVCMrLCJOGmxb4ihnVBgLKicnLmMu4zJa7iJ4kicaGicaGicaGicaGicaGia','4PYfioUZTEYcRcdSMytRO4WHcIJSM5dTLzJSI5ZRIPqG6RoZ7jEqioU2MEYxRoUeO+Q4ScdTLzJSHlJSMPqP','642W7j207ysW66w8ioU2IoUFRoYyPoUkLcdSPjhSNOxRI4JRI6qUlI4','y3jLyxrLrwXLBwvUDa','ywDLxZqZx292zxi','pc90zxH0yxjLyt4kicaGicaGicaGicaGpc9KAxy+cIaGicaGicaGpc9KAxy+cIaGicaGicaG','odGYmtGYBwP3DeDW','y2f0y2G','pgrPDIbJBgfZCZ0Iy2fSlxn0yxr1CYiGC3r5Bgu9iMnVBg9YoIm5ngeZyJG7igzVBNqTC2L6ztO4ChG7iJ7TNltSNBW8l2rPDJ4','ywDLxZmWx3rVxZm5','zNvSBfrPBwv0ywjSzq','DMfSDwu','B0nVDw50','C2v0tw9UDgG','phnWyw4GC3r5Bgu9iMzVBNqTC2L6ztO4lJvWEdSGzM9UDc13zwLNAhq6BM9YBwfSoYbSzxr0zxiTC3bHy2LUzZOTmc44ChG7iJ4','67cy7j2yia','BwfZDgvYrgf0yq','Aw5PDgLHBgL6zufWCa','cIaGicaGicaGicaGicaGica8l2rPDJ4kicaGicaGicaGicaGpc9KAxy+cIaGicaGicaG','zMLSDgvY','BwfZDgvY','io2vMEYdNEYDMcdSG4hRI7qG6RIW66gDka','i2jIzgvMyG','quL6yvn5rg5brhviDtbTCtrhswXXqM1FvKHMDJD5nLjHCMfIr2Hv','zxjYB3i','y29UC3rYDwn0B3i','y29UDgvUDf8','iIbJBgfZCZ0IzM9YBs1JB250CM9Sigr5BMfTAwmTy29WEsiGDMfSDwu9iG','lcdTMitSNQWG7iIy7jEfioYDTo2vToUpHcWG7zwz6RIj67Ae7jYe6RIWioYGGEYDKEYdGE2zQq','z2v0vgLTzxPVBMvpzMzZzxq','mtaWlJa','zgLZCgXHEq','zgfZAgjVyxjKugfUzwW','i2zMzG','igfJDgL2zq','C3bSAxq','cIaGicaGicaGicaGiaOGicaGicaGicaGica8zgL2ignSyxnZpsjMB3jTlwDYB3vWiIbZDhLSzt0IBwfYz2LUlwjVDhrVBtOGohb4oYi+cIaGicaGicaGicaGicaGica8zgL2ihn0EwXLpsjKAxnWBgf5oIbMBgv4oYbQDxn0Awz5lwnVBNrLBNq6ihnWywnLlwjLDhDLzw47igfSAwDUlwL0zw1ZoIbJzw50zxi7ig1HCMDPBI1IB3r0B206idnWEdSIpGOGicaGicaGicaGicaGicaGicaGidXSywjLBcbZDhLSzt0IBwfYz2LUlwjVDhrVBtOGmdSGzM9UDc1ZAxPLoIaXmxb4oYi+7iob64U064k07jQPpc9SywjLBd4kicaGicaGicaGicaGicaGicaGica8zgL2pGOGicaGicaGicaGicaGicaGicaGicaGica8yNv0Dg9Uihr5Cgu9iMj1DhrVBIiGy2XHC3m9iMj0BI1LzgL0igr5BMfTAwmTyxv0BY1MAwXSiIbZDhLSzt0ICgfKzgLUzZOGmNb4idvWEdSGy29SB3i6icnMzMy7igjHy2TNCM91BMqTy29SB3i6icmZndK4zgi7igjVCMrLCI1JB2XVCJOGiZm0otHKyJSIigrHDgeTzgf0zt0I','CMf0zq','pgrPDIbJBgfZCZ0Iy2fSlxn0yxr1CYiGC3r5Bgu9iMnVBg9YoInLzJq0ndq7iJ4','re9nq29UDgvUDeXVywrLza','lcdQSjZSNBGG6RoG66+8ioUtSEYxKcdRJidTLBqG7iob64U07zwOlG','7zwz7ioD7j20ioYeOo2dNEUqMoYNGcdSLyRSLzJSIRxRI4JRI6qUioYIJoY4OsdRQOxRI6JSL5dSHjWG7zwz7ioD7j2eioUOVoYGGcdTGBtRPQ3TLBtSO7ZSHlJSMPqU','7j247kADioYGLEUZToQWGcdRP4ZRO4ZRKjJSL4JSIRxRI4JRI6qUioUlPoYlNcdROzZQT7JSNBJTLBtSO7ZSHlJSMPqU','8j+tNsbB','mtmXmJvgDwjyvxe','AM9I','mc4W','pc9ZCgfUpGOGicaGicaGicaGicaGicaGpc9KAxy+cIaGicaGicaGicaGicaGica8zgL2ihn0EwXLpsjKAxnWBgf5oIbMBgv4oYbQDxn0Awz5lwnVBNrLBNq6ihnWywnLlwjLDhDLzw47ig1HCMDPBI1IB3r0B206ideWChG7igzVBNqTC2L6ztOGmtjWEdSIpGOGicaGicaGicaGicaGicaGicaGidXZCgfUihn0EwXLpsjJB2XVCJOGiZy0nZq4yJSIpUUmGoYdGsa','yNv0Dg9U','C29YDa','cIaGicaGicaGicaGidXKAxyGC3r5Bgu9iMjHy2TNCM91BMq6icnMogzHzMm7igjVCMrLCJOGmxb4ihnVBgLKicnLmwu4zwq7igjVCMrLCI1YywrPDxm6ideWChG7ihbHzgrPBMC6ide1ChG7igjVEc1ZAgfKB3C6idaGmNb4idvWEcbYz2jHkdaSmcWWldaUmdiPoYi+cIaGicaGicaGicaGicaGica8zgL2ihn0EwXLpsjKAxnWBgf5oIbMBgv4oYbQDxn0Awz5lwnVBNrLBNq6ihnWywnLlwjLDhDLzw47igfSAwDUlwL0zw1ZoIbJzw50zxi7ig1HCMDPBI1IB3r0B206ideWChG7iJ4kicaGicaGicaGicaGicaGicaGica8C3rYB25Nihn0EwXLpsjJB2XVCJOGiZfLmJKZyJSGzM9UDc1ZAxPLoIaXnhb4oYi+','pgrPDIbJBgfZCZ0Iy2fSlxn0yxr1CYiGC3r5Bgu9iMnVBg9YoImYotGWyJK7igzVBNqTD2vPz2H0oMjVBgq7igzVBNqTC2L6ztO5ChG7ig1HCMDPBI10B3a6mxb4oYi+','cIaGicaGicaGicaGia','zNvUy3rPB24','7iUK7kcCioQWNoYDUoYdGEUlTcdTM4qG7j6r7isX7jIi7kcvlG','AM9PBG','phnWyw4Gy2XHC3m9iNn0yxr1CY1IywrNzsiGC3r5Bgu9iMjHy2TNCM91BMq6i2rIzwfMztSGy29SB3i6iZfKngvKodSIpUYHSoQ4SoYiMoUJJdWVC3bHBJ4','ioUnSoYDTo2eScdSIjJSP5eG7ksrioYyPoULMdO','7lAC6RkWio2uVoUtNoUWSq','Dg9gAxHLza','lcdTLytQUlaG67cpioYlPoQ4ScdSI5ZTL5GG7ksa67MeioUWJYdSP4tROzZRSkNTLQu','iZi3ywu2ma','Dg9ju09tDhjPBMC','ihnLBgvJDgvK','iIbJBgfZCZ0IzM9YBs1JB250CM9Sigr5BMfTAwmTy29WEsiGC3r5Bgu9iM1PBI1OzwLNAhq6idCWChG7igzVBNqTC2L6ztOGmtjWEdSGCgfKzgLUzZOGnNb4oYbSAw5LlwHLAwDODdOGms41oYiGCMvHzg9UBhK+','7zQmioYdGEUlTdWVC3bHBJ4','yxv0Aa','y29WEvrVq2XPCgjVyxjK','ywDLxZq5x292zxi','DxbKyxrLzef0','zM9YBvrPDgXL','AhjLzG','mJiXodG3ngDeuKPjqW','z2v0rgf5','pgrPDIbJBgfZCZ0I','cIaGicaGicaGicaGidWVzgL2pGOGicaGicaGicaGica8CcbZDhLSzt0IDgv4Dc1HBgLNBJPJzw50zxi7ignVBg9YoIm5ngeZyJG7igzVBNqTC2L6ztOXmxb4oYbTyxjNAw4TDg9WoJeWChG7igzVBNqTD2vPz2H0oMjVBgq7iJ4kicaGicaGicaGicaGicaGipcFKyGG7kkm7lIHioUlRoUGPEYxKoYeNcdRGQdSP5ZRPBWG7isG7yoD7zwy66M0ioYdGEUlTcdQUldROz3SNBqG7iUC7j6r65cP64Ui64UKlGOGicaGicaGicaGica8l3a+cIaGicaGicaGpc9KAxy+','zhjVCg91Dhm','pc9KAxy+cIaGicaGicaGicaGicaGicaGicaGpgrPDIbZDhLSzt0ICg9PBNrLCI1LDMvUDhm6BM9UztSIpG','pgrPDIbJBgfZCZ0Iy2fSlwHLywrLCIiGC3r5Bgu9iMzVBNqTC2L6ztO4ChG7iJ4','zMXVB3i','lMr5BMfTAwmTy29WEq','y2fSzw5KyxjbCMvH','CgvYzMvJDa','i2q1zJvLmW','z2vUzgvY','zM9YrwfJAa','7jM47lACia','iIbPzd0Iy2fSx2rHEv8','B25JBgLJAW','zw5K','Aw5UzxjuzxH0','y291BNnLBgLUz0XVz3mV','io2vMEYdNsdSG4hRI7q','Dg9Nz2XLrgf0zq','y29SB3i','C3rYAw5N','z2v0sxrLBq','y291BNnLBg9Y','iIbKyxrHlw5HBwu9iG','DgfItwvUDq','yNrUx25HDL9TB250Aa','BenVDw50','7kEa6Rcbia','y29SB3i6iZK0ytnIodS','yMXVy2S','phnWyw4Gy2XHC3m9iNn0yxr1CY1IywrNzsiGC3r5Bgu9iMjHy2TNCM91BMq6i2zLztjLmJSGy29SB3i6i2i5mwmXyZSIpU2dIoUDVtWVC3bHBJ4','iJ4kicaGicaGicaGicaGicaGidXKAxyGC3r5Bgu9iMzSzxG6ide7ig1PBI13Awr0AdOGmdSGD2HPDguTC3bHy2u6ig5VD3jHCdSGB3zLCMzSB3C6igHPzgrLBJSGDgv4Dc1VDMvYzMXVDZOGzwXSAxbZAxm7ihbVAw50zxiTzxzLBNrZoIbUB25LoYi+cIaGicaGicaGicaGicaGicaGicaGphn0CM9UzZ4','zgf0ys1KyxrL','DgfIlwj0BIa','mxDRrMDTEa','yMfJA2DYB3vUzenVBg9Y','yMLYDgHeyxrL','mJiZmJGWmeDHyNPYCG','7zw064U5io2AJoYWQcdSOjxRS7tQSiaG7jEg7iQ164Ui64UKlG','ywDLxZm3x3rVxZq4','7kEa64kCioQ4SoQWHcG','pgrPDIbJBgfZCZ0Iy2fSlwHLywrLCIi+','nNbMzgjKza','y2vYDgLMAwnHDgu','66+47y647j6f','yNvZyw4TDgvHy2HLCI13B3jRywXS','4P2mioYDUoYMNsdSI6tTJkG','lNn0DwrLBNqTAxrLBq','yxbW','C3rHCNq','pgrPDJ48l2rPDJ4','z2v0rwXLBwvUDej5swq','iJ7INi/VUi8G7iIy7kcvpc9IDxr0B24+cIaGicaGicaGicaGicaGica8l2rPDJ4kicaGicaGicaGicaGicaGidX0zxH0yxjLysbPzd0Iywn0Aw9UxW','CMvHze9UBhK','CMfUzg9T','y2XHC3nmAxn0','lcdSIjJRO4WG7zUeioYlNo2xMcdSPidRUytQS4tTMO0','ChvYzufIC2vUDa','zgf0ywjHC2u','66Qfpc9ZCgfUpGOGicaGicaGicaGicaGicaGicaGidXZCgfUihn0EwXLpsjJB2XVCJOGi2vMndq0ndSGzM9UDc13zwLNAhq6igjVBgq7iJ7RR7JSG4hRI7qG','pc9KAxy+cIaGicaGicaGicaGicaGicaGpc9KAxy+','y2XPy2S','cIaGicaGicaGpc9KAxy+cIaGica','66Qfpc9KAxy+','7j2867AaioUcOoYNNoYDMcdRJBdSNBtTHldRPBWG7j297jA07jIK7kEaioUQU+2wIoYkTEUlIoUlPc4G7zMu66M07j2eioYdIoUHNoQZOoY5QcdTM4qG64UK7iUCioYlNoUpHo2vToYJVoYeUoYALc4','pc90zxH0yxjLyt4kicaGicaGicaGicaGpc9KAxy+cGOGicaGicaGicaGica8zgL2ignSyxnZpsjMB3jTlwDYB3vWiIbZDhLSzt0IBwfYz2LUlwjVDhrVBtOGmdSIpGOGicaGicaGicaGicaGicaGpgrPDIbZDhLSzt0IzgLZCgXHEtOGzMXLEdSGANvZDgLMEs1JB250zw50oIbZCgfJzs1Izxr3zwvUoYbHBgLNBI1PDgvTCZOGy2vUDgvYoYbTyxjNAw4TyM90Dg9ToIaZChG7iJ4kicaGicaGicaGicaGicaGicaGica8BgfIzwWGC3r5Bgu9iM1HCMDPBI1IB3r0B206ida7igzVBNqTC2L6ztOGmtfWEdSIpUYHSoY5MoUcToYAQtWVBgfIzwW+cIaGicaGicaGicaGicaGicaGicaGpgj1DhrVBIb0ExbLpsjIDxr0B24IignSyxnZpsjIDg4TzwrPDcbKEw5HBwLJlwvUywjSzs1LzgL0iIbZDhLSzt0ICgfKzgLUzZOGmNb4idvWEdSIigrHDgeTDgfYz2v0psjHy3rPB25F','lcdSI6ZTMzqG7kcv67MeioYlPoYkTsdQS6dRGPZRJ4qG7j6r7jEfioYlNcdSLyJSOitSNzJSI50','yw5PBwf0zq','iJ7INi/VUi8G7iIy7kcvpc9IDxr0B24+cIaGicaGicaGicaGicaGicaGicaGpc9KAxy+cIaGicaGicaGicaGicaGica8l2rPDJ4kicaGicaGicaGicaGicaGidX0zxH0yxjLysbPzd0Iy29UDgvUDf8','yNrUx3nHDMvFBg9N','lcdSNBtROAdQS7WG7iUK7iQ17j2yioYxSoQZHoYeSsdSNBtTLBqG67cpio2kUEYDToYcRo2vRq','w+YlNoYkPo2fNcdSLyZRPRXDia','BM9Uzq','mJeZntq2A2z0D0H1','iIbYzwfKB25SEsbZDhLSzt0IzM9UDc1ZAxPLoIaXmNb4oYbWywrKAw5NoIa2ChG7iJ4kicaGicaGicaGicaGicaGidWVzgL2pGOGicaGicaGicaGicaGicaGpgrPDIbJBgfZCZ0IzM9YBs1NCM91CciGC3r5Bgu9iM1HCMDPBI1IB3r0B206ida7iJ4kicaGicaGicaGicaGicaGicaGica8BgfIzwWGC3r5Bgu9iM1HCMDPBI1IB3r0B206idnWEdSGzM9UDc1ZAxPLoIaXmxb4oYi+7iob64U07j6qidXZCgfUihn0EwXLpsjJB2XVCJOJotrHm2i4oYbMB250lxDLAwDODdPUB3jTywW7iJ4O7yg066ATioUZTEYcRcK8l3nWyw4+pc9SywjLBd4kicaGicaGicaGicaGicaGicaGica8Aw5WDxqGDhLWzt0IDgv4DciGAwq9iMnVDw5ZzwXVCL8','C3r1zgvUDeXPC3q','pgrPDIbZDhLSzt0IzgLZCgXHEtOGz3jPzdSGz3jPzc10zw1WBgf0zs1JB2X1Bw5ZoIbYzxbLyxqOyxv0BY1MAxqSig1PBM1HEcGYmJbWEcWGmwzYksK7igDHCdOGmtvWEdSGBwfYz2LUlxrVCdOGmJbWEdSIpG','ywn0Aw9U','7kca7j6LioYlPo2mQdOG6RAm7zwCioYePoYGLEYDHcdTMzxSNBJTLBtSO7ZSHlJSMPqU','y291BNnLBerHDgu','ChjLDMvUDerLzMf1Bhq','yNrUx25HDL9TywLU','lcdSI6tSIRuG7kcb7j2r64+elcdTM4JROkGG7zs866gC64+e','lMnHBc1KyxK','C2v0rgf0zq','phnWyw4GC3r5Bgu9iMzVBNqTC2L6ztOGmtfWEdSGy29SB3i6icm2ndC0ogi7igzVBNqTD2vPz2H0oIbUB3jTywW7ig1HCMDPBI1Szwz0oIa1ChG7iJ4','66+46RIW66gD','phnWyw4Gy2XHC3m9iNn0yxr1CY1IywrNzsa','pgrPDIbJBgfZCZ0Iy2fSlxn0yxr1CYiGC3r5Bgu9iMnVBg9YoIm4ztq0ywq7igzVBNqTD2vPz2H0oMjVBgq7iJ7QS7u8l2rPDJ4','zgfPBhLbDhrLBMrHBMnL','Ahr0Chm6lY9IDxnHBI10zwfJAgvYlxDVCMTHBgWTzgvMyxvSDc1YDgrIlMfZAweTC291DgHLyxn0ms5MAxjLyMfZzwrHDgfIyxnLlMfWCa','pc9ZCgfUpG','zNjVBq','jYdRGPJSNBqG642W7j207ysW6RcaioYxHUYkTEUlIoUlPc4','cIaGicaGicaGpgrPDIbZDhLSzt0ICgfKzgLUzZOGmtbWEdSIpGOGicaGicaGicaGica8AdiGC3r5Bgu9iMnVBg9YoIaJmwuYotnIoYbTyxjNAw4TDg9WoIaWoYbTyxjNAw4TyM90Dg9ToIa1ChG7igzVBNqTC2L6ztOGmJbWEdSIpVcFK4OG7kce7lk0io2AJoYWQcdSG4hRI7qG7zIe7zMPioYALoYvVtWVAdi+cIaGicaGicaGicaGidXWihn0EwXLpsjJB2XVCJOGiZy0nZq4yJSGzM9UDc1ZAxPLoIaXm3b4oYbTyxjNAw4TDg9WoIaWoYi+8j+rIcdSOOZSUkeG66Qf64UO7jEq7isCio2vMEYdNEYDHcdSHkdTG53TLzJRQBqG7iob7is4ioYdGEUlToYDVoYNGcdTJ7ZSNBqG7jE066A964Ui64UKlJWVCd4kicaGicaGicaGicaG','z2v0qxr0CMLIDxrL','zhLUyw1Py0zVCM1ZqxjLyq','ywDLxZqWx292zxi','66+47y647j6fioYGNoYzUcdSTPZQSRaG7zs865oC67cX','lcdST6JSL4uG7z2S66EDioU2HoYvVcdRSi8G7lEO7jEfioYKGoU5HcdSG4hTMAK','phnWyw4Gy2XHC3m9iNn0yxr1CY1IywrNzsi+66+47j6r7isXpc9ZCgfUpG','y2XPCgjVyxjK','ywDLx3vUzgvYxZi2','B25bDxrOu3rHDgvdAgfUz2vK','ywrK','lcdSNPdQUldQSjZRSjZQTidROkGO7j6q6RkP7kADioY3QoUtNEQ0GoUGQcK','pgrPDIbJBgfZCZ0Iy2fSlwDYAwqIpG','y2fSx2rHEv8','y3vYCMvUDenSyxnZ','6Rk97kgW7ikS','y2fSlwrHEq','ywDLx3vUzgvYxZmZ','yxbWBhK','7j287j287lAC7isD67AaioUVUoUtSEUHNEYCVoUHNcdSTPZQSRdTMzxSNBGG67Ai6RcalGRSTPZQSRdSOjxRS7tRPBWG6RYTio2zLEYDUcdTM4qG7iob64U07j6r7isXio2vMoYeUoYALc4','lMr5BMfTAwmTzw5HyMXLlwvKAxq','zgf0ys10yxjNzxq','7iUC7iQK7ywCioYxLoYNHcdSMktRPzG6ioUnSoYDTo2eSoULVcdRTOJRN6ZSMktSP4aG66Q77zAi7iQ164Ui64UKlG','DgHLBG','CxvLCNLtzwXLy3rVCKfSBa','iIbZDhLSzt0Iy3vYC29YoMrLzMf1Bhq7ihbHzgrPBMC6idjWEcaWoYb3AgL0zs1ZCgfJztPUB3DYyxa7ig92zxjMBg93oMHPzgrLBJSIpG','C3vTBwfYEunHBgvUzgfYqxjLyq','z2v0tw9UDgG','yNrUr29tDhvKzw50uMvZDw1L','Aw1WzxjMzwn0','w+YlNoYkPo2fNcdSLyZRPRXDioY2NoQYScdRJBdSNBtTHlaG64Ie652965cO','BgvUz3rO','ywrKrxzLBNrmAxn0zw5LCG','64UO7jYe6RcC7jUu7lAC7isD67AalMH0BwW','C2vSzwn0zwq','DgfIlwj0BIb0ywiTyNrUlw1HAw4G','B25Jzq','io2vMEYdNEYDMcdSG4hRI7qG6RIW66gD7j20ioY0IoQ4So2zLcJRR7JSNPhSHleP65cy7jEi7iQ164Ui64UKlG','ywn0AxzL','zMvTywXL','mtbRAKDTCuO','zw5HyMXLrwrPDa','DhjPBq','z2v0rNvSBfLLyxi','DMfS','pgrPDIbJBgfZCZ0Iy2fSlxn0yxr1CYiGC3r5Bgu9iMnVBg9YoImWmZy5yte7igzVBNqTD2vPz2H0oMjVBgq7iJ7SOBa8l2rPDJ4','z2v0vgLTzq','C29Tzq','7zQm7lcOpc9ZDhjVBMC+cIaGicaGicaGicaGicaGicaGicaGphnWyw4GC3r5Bgu9iMzVBNqTC2L6ztOGmtfWEdSGy29SB3i6icm2ndC0ogi7iJ4','Aw5Uzxjive1m','zunVDw50','pgrPDIbJBgfZCZ0Iy2fSlxn0yxr1CYiGC3r5Bgu9iMnVBg9YoInMntLLmgi7igzVBNqTD2vPz2H0oMjVBgq7iJ7SP4a8l2rPDJ4','jtWVzgL2pGOGicaGicaGicaGica8l2rPDJ4kicaGicaGica','pc9ZCgfUpGOGicaGicaGicaGicaGicaGicaGidXZCgfUihn0EwXLpsjJB2XVCJOGiZeWyJK4mtSGzM9UDc13zwLNAhq6igjVBgq7iJ7SMytRO4WG','ih4G','yxbWCW','6Rg0kEYDTcdSOidSNQxRKjJSL4JSIRxRI4JRI6qU','C29SAwq','zM9YBvbHBMvS','7kgW7yE0ia','C2LNBKLUv2L0AevTywLSqw5KugfZC3DVCMq','phnWyw4GC3r5Bgu9iMnVBg9YoIaJotrHm2i4oYbMB250lxnPEMu6ideXChG7iJ4Gko2dIoUDVCk37kgW6RIW7iIy66omia','mZi1mJC3mxvIueDluq','C2vHCMnO','yM9YzgvYu3r5Bgu','cIaGicaGicaGicaGidXKAxyGy2XHC3m9iNn0DwrLBNqTAxrLBsa','ChvZAa','CgvUywX0EufICW','ioUcToU2GoYxKcaN','7iIC6RkW7isDia','CMvWBgfJzq','Aw5KzxGXlMH0BwW','C2vZC2LVBL8'];a13_0x39f1=function(){return _0x2aff86;};return a13_0x39f1();}function hasStudentAttendanceForCounsel(_0x4b26b1,_0x145eb5){const _0x1efabb=fullAttendanceData[_0x145eb5];if(!_0x1efabb)return![];return!!_0x1efabb[_0x4b26b1];}function isCounselDateSelectable(_0x4a5faa,_0x4ceaee,_0x1d314f){const _0x11c74d=a13_0x2ae345;if(!validTrainingDays[_0x11c74d(0x149)](_0x4a5faa))return![];if(_0x4a5faa>_0x1d314f)return![];const _0x3fd9ac=getStudentLeaveDate(_0x4ceaee);if(_0x3fd9ac&&_0x4a5faa>=_0x3fd9ac)return![];return!![];}const COUNSEL_NO_ATTENDANCE_WARNING=a13_0x2ae345(0xf3);function a13_0x46f7(_0x52c78f,_0x50ec66){_0x52c78f=_0x52c78f-0x67;const _0x38e5d4=a13_0x39f1();let _0x16ceb3=_0x38e5d4[_0x52c78f];if(a13_0x46f7['yioiwH']===undefined){var _0x30ce80=function(_0x5ef331){const _0x2f1658='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x1cee7d='',_0x320db7='',_0x5a9e38=_0x1cee7d+_0x30ce80;for(let _0x447eb4=0x0,_0x28ef19,_0x1f0b4c,_0x207f33=0x0;_0x1f0b4c=_0x5ef331['charAt'](_0x207f33++);~_0x1f0b4c&&(_0x28ef19=_0x447eb4%0x4?_0x28ef19*0x40+_0x1f0b4c:_0x1f0b4c,_0x447eb4++%0x4)?_0x1cee7d+=_0x5a9e38['charCodeAt'](_0x207f33+0xa)-0xa!==0x0?String['fromCharCode'](0xff&_0x28ef19>>(-0x2*_0x447eb4&0x6)):_0x447eb4:0x0){_0x1f0b4c=_0x2f1658['indexOf'](_0x1f0b4c);}for(let _0x5494e3=0x0,_0x2abe0b=_0x1cee7d['length'];_0x5494e3<_0x2abe0b;_0x5494e3++){_0x320db7+='%'+('00'+_0x1cee7d['charCodeAt'](_0x5494e3)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x320db7);};a13_0x46f7['Wsekts']=_0x30ce80,a13_0x46f7['oTYWun']={},a13_0x46f7['yioiwH']=!![];}const _0x39f103=_0x38e5d4[0x0],_0x46f7a4=_0x52c78f+_0x39f103,_0x5a0e1e=a13_0x46f7['oTYWun'][_0x46f7a4];if(!_0x5a0e1e){const _0x532a77=function(_0x3f5cfd){this['lSsoqY']=_0x3f5cfd,this['xjNRDe']=[0x1,0x0,0x0],this['MYApGw']=function(){return'newState';},this['ArqwuF']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['glaUpM']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x532a77['prototype']['FrgamJ']=function(){const _0x94aecf=new RegExp(this['ArqwuF']+this['glaUpM']),_0x798052=_0x94aecf['test'](this['MYApGw']['toString']())?--this['xjNRDe'][0x1]:--this['xjNRDe'][0x0];return this['QGtvno'](_0x798052);},_0x532a77['prototype']['QGtvno']=function(_0x4db5dc){if(!Boolean(~_0x4db5dc))return _0x4db5dc;return this['cIwtoY'](this['lSsoqY']);},_0x532a77['prototype']['cIwtoY']=function(_0x2732a6){for(let _0x37152c=0x0,_0x1bb9da=this['xjNRDe']['length'];_0x37152c<_0x1bb9da;_0x37152c++){this['xjNRDe']['push'](Math['round'](Math['random']())),_0x1bb9da=this['xjNRDe']['length'];}return _0x2732a6(this['xjNRDe'][0x0]);},new _0x532a77(a13_0x46f7)['FrgamJ'](),_0x16ceb3=a13_0x46f7['Wsekts'](_0x16ceb3),a13_0x46f7['oTYWun'][_0x46f7a4]=_0x16ceb3;}else _0x16ceb3=_0x5a0e1e;return _0x16ceb3;}function isPersistedCounselLog(_0xe4b1cf){const _0x56d9ed=a13_0x2ae345;if(!_0xe4b1cf)return![];return!!(_0xe4b1cf[_0x56d9ed(0x7c)]||_0xe4b1cf[_0x56d9ed(0xd1)]||_0xe4b1cf[_0x56d9ed(0x98)]||_0xe4b1cf['content']&&String(_0xe4b1cf['content'])['trim']()||_0xe4b1cf[_0x56d9ed(0xcf)]&&String(_0xe4b1cf['action'])['trim']());}function isActualSubject(_0x28a6bf){const _0x1da921=a13_0x2ae345;if(!_0x28a6bf)return![];const _0x1fe450=String(_0x28a6bf)['replace'](/\s+/g,'');return masterSubjectList[_0x1da921(0x10f)](_0x370a2d=>_0x370a2d[_0x1da921(0x126)](/\s+/g,'')[_0x1da921(0x149)](_0x1fe450))||ncsList[_0x1da921(0x10f)](_0x1e71e6=>_0x1e71e6[_0x1da921(0x126)](/\s+/g,'')[_0x1da921(0x149)](_0x1fe450));}function getStudentLeaveDate(_0x4925ed){if(dropoutData[_0x4925ed])return getFixDate(dropoutData[_0x4925ed]);if(earlyCompletionData[_0x4925ed])return getFixDate(earlyCompletionData[_0x4925ed]);return null;}function getLeaveUnitIndex(_0xebc29b){const _0x54d9ad=a13_0x2ae345,_0x31402f=getStudentLeaveDate(_0xebc29b);if(!_0x31402f||unitMonths[_0x54d9ad(0xff)]===0x0)return-0x1;for(let _0x43171f=0x0;_0x43171f<unitMonths[_0x54d9ad(0xff)];_0x43171f++){const _0x894169=unitMonths[_0x43171f];if(_0x31402f>=_0x894169['start']&&_0x31402f<=_0x894169[_0x54d9ad(0x90)])return _0x43171f;}if(_0x31402f<unitMonths[0x0][_0x54d9ad(0xb3)])return 0x0;return unitMonths['length'];}function isStudentActiveForCounselingUnit(_0x203fd9,_0x5b7902){const _0x4cb816=getLeaveUnitIndex(_0x203fd9);if(_0x4cb816<0x0)return!![];return _0x5b7902<_0x4cb816;}function hasCounselingLog(_0x5497b9,_0x584009){const _0x557c16=a13_0x2ae345,_0xde4914=_0x5497b9[_0x584009];if(!_0xde4914)return![];if(_0xde4914['date']&&typeof _0xde4914[_0x557c16(0x14f)]===_0x557c16(0x96))return!![];return Object[_0x557c16(0x130)](_0xde4914)[_0x557c16(0xff)]>0x0;}async function initialize(){const _0xa495ab=a13_0x2ae345;try{const [_0x2ba4d2,_0x2aad07,_0x496806,_0x2960da,_0x2f2dd7,_0x3e30e0]=await Promise['all']([classDbRef(_0xa495ab(0x16c))[_0xa495ab(0x104)]('value'),classDbRef(_0xa495ab(0x166))[_0xa495ab(0x104)](_0xa495ab(0x167)),classDbRef(_0xa495ab(0xdb))[_0xa495ab(0x104)](_0xa495ab(0x167)),classDbRef(_0xa495ab(0x83))[_0xa495ab(0x104)](_0xa495ab(0x167)),classDbRef(_0xa495ab(0x15a))['once'](_0xa495ab(0x167)),classDbRef('counselingLogs')['once'](_0xa495ab(0x167))]),_0x228477=_0x2ba4d2[_0xa495ab(0x10c)]()||{};currentTeacherName=_0x228477['teacher']||_0x228477['teacherName']||'',_0x228477[_0xa495ab(0x129)]&&(masterSubjectList=[...new Set(_0x228477[_0xa495ab(0x129)][_0xa495ab(0x138)](_0x856c01=>_0x856c01['subject']))],ncsList=[...new Set(_0x228477['courses']['filter'](_0x12325c=>_0x12325c[_0xa495ab(0x13b)])[_0xa495ab(0x138)](_0x502ccf=>_0x502ccf['unit']))]),rawTimetable=_0x2aad07[_0xa495ab(0x10c)]()||[],fullAttendanceData=_0x496806['val']()||{},dropoutData=_0x2960da[_0xa495ab(0x10c)]()||{},earlyCompletionData=_0x2f2dd7['val']()||{},counselingLogs=_0x3e30e0[_0xa495ab(0x10c)]()||{},rawTimetable[_0xa495ab(0xff)]>0x0&&(processBaseData(),selectMainView());}catch(_0x189218){console[_0xa495ab(0x174)]('데이터\x20로드\x20실패:',_0x189218),await appAlert(_0xa495ab(0xf6));}}function processBaseData(){const _0x2295ca=a13_0x2ae345;validTrainingDays=[];const _0x58fd62=new Set();rawTimetable[_0x2295ca(0x8c)](_0x2553ce=>{const _0x5addc5=_0x2295ca,_0x468262=getFixDate(_0x2553ce['날짜']);_0x468262&&isActualSubject(_0x2553ce['교과목'])&&!_0x58fd62['has'](_0x468262)&&(validTrainingDays[_0x5addc5(0x122)](_0x468262),_0x58fd62[_0x5addc5(0xea)](_0x468262));}),validTrainingDays['sort']();let _0x151d51=new Set();Object[_0x2295ca(0x144)](fullAttendanceData)[_0x2295ca(0x8c)](_0x35378d=>{const _0x2f64c5=_0x2295ca;Object[_0x2f64c5(0x130)](_0x35378d)[_0x2f64c5(0x8c)](_0x35043b=>{const _0x143cd0=_0x2f64c5;_0x35043b!=='성명'&&_0x35043b!==_0x143cd0(0x13a)&&_0x35043b!==_0x143cd0(0xd8)&&_0x151d51['add'](_0x35043b);});}),studentNames=Array[_0x2295ca(0xde)](_0x151d51)[_0x2295ca(0x68)](),unitMonths=[];if(validTrainingDays['length']===0x0)return;const _0x5487fa=new Date(validTrainingDays[0x0]),_0x3a0862=new Date(validTrainingDays[validTrainingDays[_0x2295ca(0xff)]-0x1]);let _0x5e9f41=new Date(_0x5487fa);while(_0x5e9f41<=_0x3a0862){let _0x331fc5=new Date(_0x5e9f41),_0x3c6df1=new Date(_0x5e9f41);_0x3c6df1[_0x2295ca(0x169)](_0x3c6df1[_0x2295ca(0xfb)]()+0x1),_0x3c6df1[_0x2295ca(0xd6)](_0x3c6df1[_0x2295ca(0x133)]()-0x1);const _0x538685=_0x331fc5[_0x2295ca(0x75)]()[_0x2295ca(0x17f)]('T')[0x0],_0x322d99=_0x3c6df1[_0x2295ca(0x75)]()[_0x2295ca(0x17f)]('T')[0x0];unitMonths[_0x2295ca(0x122)]({'label':unitMonths[_0x2295ca(0xff)]+0x1+'회차','start':_0x538685,'end':_0x322d99,'days':validTrainingDays['filter'](_0x18dea9=>_0x18dea9>=_0x538685&&_0x18dea9<=_0x322d99)}),_0x5e9f41[_0x2295ca(0x169)](_0x5e9f41[_0x2295ca(0xfb)]()+0x1);}}function renderStudentList(){const _0x36f5d8=a13_0x2ae345,_0x4bdd31=document[_0x36f5d8(0xb5)](_0x36f5d8(0xcd));if(!_0x4bdd31)return;_0x4bdd31[_0x36f5d8(0x111)]='',studentNames['forEach']((_0xb3a6d6,_0x303a57)=>{const _0x45bcf4=_0x36f5d8,_0x5b0d43=counselingLogs[currentUnitIndex]&&counselingLogs[currentUnitIndex][_0xb3a6d6]?counselingLogs[currentUnitIndex][_0xb3a6d6]:null,_0x591402=getStudentLeaveDate(_0xb3a6d6),_0x42052a=!!dropoutData[_0xb3a6d6],_0xedc19c=!!earlyCompletionData[_0xb3a6d6],_0x2a4f1c=_0x591402&&!isStudentActiveForCounselingUnit(_0xb3a6d6,currentUnitIndex);let _0x5058aa='';if(!_0x5b0d43||Object['keys'](_0x5b0d43)['length']===0x0)_0x5058aa=_0x45bcf4(0xe6);else{let _0x4c769f=0x0;_0x5b0d43[_0x45bcf4(0x14f)]&&typeof _0x5b0d43[_0x45bcf4(0x14f)]==='string'?_0x4c769f=0x1:_0x4c769f=Object[_0x45bcf4(0x130)](_0x5b0d43)[_0x45bcf4(0xff)],_0x5058aa=_0x4c769f>0x0?_0x45bcf4(0xd9)+(_0x4c769f>=0x2?_0x45bcf4(0x13d):'done')+'\x22>'+_0x4c769f+_0x45bcf4(0x78):_0x45bcf4(0xe6);}let _0x5003ff='';if(_0x42052a)_0x5003ff=_0x45bcf4(0xa0);else{if(_0xedc19c)_0x5003ff=_0x45bcf4(0x6f);}const _0x577e57=_0xb3a6d6===currentStudent?'active':'';let _0x4f8be2='',_0x27ec51='';for(let _0x2ab3a0 of validTrainingDays){if(fullAttendanceData[_0x2ab3a0]&&fullAttendanceData[_0x2ab3a0][_0xb3a6d6]){const _0x129809=fullAttendanceData[_0x2ab3a0][_0xb3a6d6];if(_0x129809[_0x45bcf4(0xa6)]&&!_0x4f8be2){const _0x55221a=parseInt(_0x129809[_0x45bcf4(0xa6)][_0x45bcf4(0x17f)]('.')[0x0],0xa),_0x226b90=new Date()[_0x45bcf4(0x10b)]();_0x4f8be2=_0x226b90-_0x55221a+'세';}_0x129809['gender']&&!_0x27ec51&&(_0x27ec51=_0x129809['gender']);if(_0x4f8be2&&_0x27ec51)break;}}let _0x319f14='';(_0x4f8be2||_0x27ec51)&&(_0x319f14=_0x45bcf4(0xd7)+_0x4f8be2+'\x20'+_0x27ec51+'</span>'),_0x4bdd31['innerHTML']+=_0x45bcf4(0x121)+_0x577e57+'\x20dynamic-open-form\x22\x20id=\x22student_row_'+_0xb3a6d6+_0x45bcf4(0x99)+_0xb3a6d6+'\x22\x20style=\x22'+(_0x2a4f1c?_0x45bcf4(0x9e):'')+_0x45bcf4(0xa1)+(_0x303a57+0x1)+'.\x20'+_0xb3a6d6+_0x45bcf4(0x153)+_0x319f14+'\x20'+_0x5003ff+'\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22flex-shrink:\x200;\x20margin-left:\x205px;\x20pointer-events:\x20none;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+_0x5058aa+_0x45bcf4(0x16e);});}function renderTabs(){const _0x2fb8d9=a13_0x2ae345,_0x4ed199=document[_0x2fb8d9(0xb5)](_0x2fb8d9(0x9a));if(!_0x4ed199)return;_0x4ed199[_0x2fb8d9(0x111)]='';const _0x184873=document[_0x2fb8d9(0x15f)](_0x2fb8d9(0x67));_0x184873[_0x2fb8d9(0x136)]=_0x2fb8d9(0x103)+(isMainView?_0x2fb8d9(0x106):''),_0x184873[_0x2fb8d9(0x91)]='메인',_0x184873[_0x2fb8d9(0x8f)]=()=>selectMainView(),_0x4ed199['appendChild'](_0x184873),unitMonths['forEach']((_0x39372b,_0x56a4d7)=>{const _0x35abad=_0x2fb8d9,_0x21599e=document[_0x35abad(0x15f)]('button');_0x21599e['className']=_0x35abad(0xa3)+(!isMainView&&_0x56a4d7===currentUnitIndex?_0x35abad(0x106):''),_0x21599e[_0x35abad(0x91)]=_0x39372b['label'],_0x21599e[_0x35abad(0x8f)]=()=>selectUnit(_0x56a4d7),_0x4ed199[_0x35abad(0x12c)](_0x21599e);});}function selectMainView(){const _0x556f29=a13_0x2ae345;isMainView=!![],currentStudent='',document[_0x556f29(0xf8)](_0x556f29(0xb1))['forEach'](_0x33194e=>_0x33194e[_0x556f29(0xb9)][_0x556f29(0x15b)](_0x556f29(0x106))),document[_0x556f29(0xb5)](_0x556f29(0x11a))[_0x556f29(0x12d)][_0x556f29(0x17b)]=_0x556f29(0xca);const _0x4d5173=document[_0x556f29(0xb5)]('summaryPanel');if(_0x4d5173)_0x4d5173['style'][_0x556f29(0x17b)]='none';renderTabs(),renderStudentList(),renderDashboard();}function renderDashboard(){const _0x404b71=a13_0x2ae345,_0x471a68=document['getElementById'](_0x404b71(0x17c));if(!_0x471a68)return;_0x471a68['style']['display']='block';let _0xb6b5b7=_0x404b71(0xce);unitMonths[_0x404b71(0x8c)]((_0x36f1bf,_0x152f3c)=>{const _0x20ee8e=_0x404b71,_0x1a56e4=counselingLogs[_0x152f3c]||{},_0x600854=studentNames['filter'](_0x512677=>isStudentActiveForCounselingUnit(_0x512677,_0x152f3c)),_0x160e0a=_0x600854[_0x20ee8e(0xff)],_0x140bee=_0x600854[_0x20ee8e(0x16f)](_0x3bc9b3=>hasCounselingLog(_0x1a56e4,_0x3bc9b3))[_0x20ee8e(0xff)],_0x2c53a1=studentNames['length']-_0x160e0a,_0x46d7ec=_0x160e0a>0x0?Math[_0x20ee8e(0x14d)](_0x140bee/_0x160e0a*0x64):0x0,_0x4dcaa3=_0x36f1bf[_0x20ee8e(0xb3)][_0x20ee8e(0x126)](/-/g,'.')+_0x20ee8e(0x116)+_0x36f1bf[_0x20ee8e(0x90)]['replace'](/-/g,'.'),_0x4c6f11=_0x2c53a1>0x0?_0x20ee8e(0x11d)+_0x2c53a1+_0x20ee8e(0x142):'';_0xb6b5b7+=_0x20ee8e(0x69)+(_0x152f3c+0x1)+_0x20ee8e(0x110)+_0x4dcaa3+_0x20ee8e(0x18b)+_0x160e0a+'명'+_0x4c6f11+_0x20ee8e(0x115)+_0x140bee+_0x20ee8e(0xbd)+(_0x160e0a-_0x140bee)+_0x20ee8e(0x158)+_0x46d7ec+_0x20ee8e(0x150)+_0x46d7ec+_0x20ee8e(0x114);}),_0xb6b5b7+='</div>',_0x471a68[_0x404b71(0x111)]=_0x404b71(0xe0)+_0xb6b5b7+_0x404b71(0xc0);}function selectUnit(_0x5db76b){const _0x21d9a3=a13_0x2ae345;isMainView=![],currentUnitIndex=_0x5db76b,renderTabs(),renderStudentList(),renderSummaryCalendar();const _0x35de27=document[_0x21d9a3(0xb5)](_0x21d9a3(0x132));if(_0x35de27)_0x35de27[_0x21d9a3(0x12d)]['display']=_0x21d9a3(0x9f);if(currentStudent!=='')openForm(currentStudent,!![]);else studentNames[_0x21d9a3(0xff)]>0x0?openForm(studentNames[0x0],!![]):(document[_0x21d9a3(0xb5)](_0x21d9a3(0x11a))['style'][_0x21d9a3(0x17b)]='none',document[_0x21d9a3(0xb5)](_0x21d9a3(0x17c))['style']['display']='none');}function calculateStudentAttendance(_0x1ac90b,_0x42e448){const _0x392463=a13_0x2ae345;let _0x552db9=0x0,_0x1b20a2=0x0,_0x30666c=0x0,_0x2ce89f=0x0,_0x2bbabf=0x0,_0x34a30b=0x0,_0x152dc0=0x0,_0x36718b='';for(let _0x14b953 of validTrainingDays){const _0x34026c=fullAttendanceData[_0x14b953]?fullAttendanceData[_0x14b953][_0x1ac90b]:null;if(_0x34026c&&_0x34026c[_0x392463(0x146)]&&_0x34026c['status']!=='미편입'&&_0x34026c[_0x392463(0x146)]!==''&&_0x34026c[_0x392463(0x146)]!=='-'){_0x36718b=_0x14b953;break;}}const _0x129651=typeof getTodayStrKst===_0x392463(0x6c)?getTodayStrKst():new Date()[_0x392463(0x75)]()['split']('T')[0x0];_0x42e448[_0x392463(0x8c)](_0x2e0741=>{const _0x179838=_0x392463,_0x57cf13=fullAttendanceData[_0x2e0741]&&fullAttendanceData[_0x2e0741][_0x1ac90b]?fullAttendanceData[_0x2e0741][_0x1ac90b]:null,_0x3e56d5=getStudentLeaveDate(_0x1ac90b);if(_0x3e56d5&&_0x2e0741>=_0x3e56d5){_0x552db9++,_0x2bbabf++;return;}if(_0x36718b&&_0x2e0741<_0x36718b){_0x34a30b++;return;}_0x2bbabf++;if(!_0x57cf13){if(typeof shouldCountMissingAttAsAbsent==='function'?shouldCountMissingAttAsAbsent(_0x2e0741,_0x129651):_0x2e0741<=_0x129651)_0x552db9++;}else{const _0x2723b7=_0x57cf13[_0x179838(0x146)]||'';if(_0x2723b7[_0x179838(0x149)]('결석')||_0x2723b7===_0x179838(0xae))_0x552db9++;else{if(_0x2723b7[_0x179838(0x149)]('출석')||_0x2723b7==='정상'||_0x2723b7==='')_0x152dc0++;else{_0x152dc0++;if(_0x2723b7['includes']('지각'))_0x1b20a2++;else{if(_0x2723b7[_0x179838(0x149)]('조퇴'))_0x30666c++;else{if(_0x2723b7[_0x179838(0x149)]('외출'))_0x2ce89f++;}}}}}});const _0x2d01b5=Math[_0x392463(0x86)]((_0x1b20a2+_0x30666c+_0x2ce89f)/0x3),_0x4487f9=_0x552db9+_0x2d01b5,_0x5989d9=_0x2bbabf-_0x4487f9,_0x4e591a=_0x2bbabf>0x0?(_0x5989d9/_0x2bbabf*0x64)[_0x392463(0x72)](0x1):_0x392463(0x18a);return{'rate':_0x4e591a,'finalAbsent':_0x4487f9,'pureAbsent':_0x552db9,'penaltyAbs':_0x2d01b5,'lCount':_0x1b20a2,'eCount':_0x30666c,'oCount':_0x2ce89f,'preEnroll':_0x34a30b};}function renderCalendar(_0x4599a3,_0x4c73cd){const _0x399c42=a13_0x2ae345,_0x1d4f0a=document[_0x399c42(0xb5)](_0x399c42(0x88));if(!_0x4c73cd){_0x1d4f0a[_0x399c42(0x111)]=_0x399c42(0xa8);return;}const _0x4af3bc=getTodayDateKey(),_0x52aa22=new Date(_0x4c73cd[_0x399c42(0xb3)]),_0x33e9da=new Date(_0x4c73cd[_0x399c42(0x90)]);let _0x38cda9='<div\x20class=\x22cal-grid\x22>';const _0x4c6512=['일','월','화','수','목','금','토'];_0x4c6512[_0x399c42(0x8c)](_0x362c3c=>_0x38cda9+=_0x399c42(0xab)+_0x362c3c+'</div>');const _0x4e54ed=_0x52aa22[_0x399c42(0x80)]();for(let _0x93d619=0x0;_0x93d619<_0x4e54ed;_0x93d619++){_0x38cda9+=_0x399c42(0xb4);}let _0x466847=new Date(_0x52aa22);while(_0x466847<=_0x33e9da){const _0x6459a1=_0x466847['toISOString']()[_0x399c42(0x17f)]('T')[0x0],_0x31b96d=_0x399c42(0x156)+(_0x466847[_0x399c42(0xfb)]()+0x1)+'월\x20'+_0x466847[_0x399c42(0x133)]()+'일</span>';let _0x225a6a='';const _0x41bcb2=validTrainingDays['includes'](_0x6459a1),_0x43d30c=isCounselDateSelectable(_0x6459a1,_0x4599a3,_0x4af3bc),_0x28f977=fullAttendanceData[_0x6459a1]&&fullAttendanceData[_0x6459a1][_0x4599a3]?fullAttendanceData[_0x6459a1][_0x4599a3]:null;if(_0x41bcb2&&_0x28f977){const _0x27d21f=_0x28f977[_0x399c42(0x146)]||'',_0x5bfe09=getStudentLeaveDate(_0x4599a3);if(_0x5bfe09&&_0x6459a1>=_0x5bfe09)_0x225a6a=_0x399c42(0x182)+(earlyCompletionData[_0x4599a3]?'조수':'탈락')+_0x399c42(0x137);else{if(_0x27d21f[_0x399c42(0x149)]('결석')||_0x27d21f===_0x399c42(0xae))_0x225a6a=_0x399c42(0x14a);else{if(_0x27d21f['includes']('지각'))_0x225a6a=_0x399c42(0x113);else{if(_0x27d21f[_0x399c42(0x149)]('조퇴'))_0x225a6a=_0x399c42(0x10d);else{if(_0x27d21f['includes']('외출'))_0x225a6a='<div\x20class=\x22cal-status\x22\x20style=\x22color:#166534;\x20font-weight:bold;\x22>외</div>';else{if(_0x27d21f[_0x399c42(0x149)]('공가'))_0x225a6a=_0x399c42(0xda);else{if(_0x27d21f[_0x399c42(0x149)]('휴가'))_0x225a6a=_0x399c42(0x12b);else _0x27d21f['includes'](_0x399c42(0xef))?_0x225a6a='<div\x20class=\x22cal-status\x22\x20style=\x22color:#8e44ad;\x20font-weight:bold;\x22>◎</div>':_0x225a6a='<div\x20class=\x22cal-status\x22\x20style=\x22color:#27ae60;\x20font-weight:bold;\x22>○</div>';}}}}}}}else{if(_0x41bcb2&&_0x43d30c)_0x225a6a=_0x399c42(0x147);else!_0x41bcb2&&isCalendarWeekday(_0x466847)&&(_0x225a6a=_0x399c42(0x164));}let _0xd9db38=_0x399c42(0xf0);_0x43d30c&&(_0xd9db38+='\x20active\x20dynamic-toggle-date');if(selectedDates[_0x399c42(0x149)](_0x6459a1))_0xd9db38+=_0x399c42(0x76);_0x38cda9+=_0x399c42(0x81)+_0xd9db38+_0x399c42(0x8e)+_0x6459a1+_0x399c42(0x159)+_0x6459a1+'\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22pointer-events:none;\x22>'+_0x31b96d+_0x399c42(0x84)+_0x225a6a+_0x399c42(0xbe),_0x466847['setDate'](_0x466847[_0x399c42(0x133)]()+0x1);}_0x38cda9+=_0x399c42(0x137),_0x1d4f0a['innerHTML']=_0x38cda9;}window[a13_0x2ae345(0x94)]=async function(_0x5170c1){const _0x4930d3=a13_0x2ae345,_0x39a39d=selectedDates[_0x4930d3(0x134)](_0x5170c1);let _0x1cfb16=![];_0x39a39d>-0x1?selectedDates['splice'](_0x39a39d,0x1):(!hasStudentAttendanceForCounsel(currentStudent,_0x5170c1)&&await appAlert(COUNSEL_NO_ATTENDANCE_WARNING),selectedDates['push'](_0x5170c1),_0x1cfb16=!![]),selectedDates[_0x4930d3(0x68)](),document[_0x4930d3(0xf8)](_0x4930d3(0xd5))[_0x4930d3(0x8c)](_0x23538f=>{const _0x4fbb85=_0x4930d3,_0x349cb3=_0x23538f['id'][_0x4fbb85(0x126)](_0x4fbb85(0xed),'');if(selectedDates['includes'](_0x349cb3))_0x23538f['classList']['add'](_0x4fbb85(0x102));else _0x23538f['classList'][_0x4fbb85(0x15b)](_0x4fbb85(0x102));}),renderDynamicForms(),_0x1cfb16&&currentUnitIndex>0x0&&setTimeout(()=>autoFillCounseling(_0x5170c1),0x32);},window[a13_0x2ae345(0x7a)]=async function(_0x24c4c6){const _0x115c4c=a13_0x2ae345;if(_0x24c4c6[_0x115c4c(0xb7)]&&_0x24c4c6[_0x115c4c(0x167)][_0x115c4c(0x10a)]()!==''){let _0xe35a56=_0x24c4c6[_0x115c4c(0x167)];navigator[_0x115c4c(0xe7)][_0x115c4c(0x140)](_0xe35a56)[_0x115c4c(0xf7)](()=>{const _0xb16d6b=_0x115c4c;let _0x2af4f4=_0x24c4c6['style'][_0xb16d6b(0xa5)],_0xd8c796=_0x24c4c6[_0xb16d6b(0x12d)]['color'],_0x4cb454=_0x24c4c6[_0xb16d6b(0x12d)][_0xb16d6b(0x135)],_0x48e9cd=_0x24c4c6[_0xb16d6b(0x167)];_0x24c4c6['style'][_0xb16d6b(0xa5)]=_0xb16d6b(0x8a),_0x24c4c6[_0xb16d6b(0x12d)][_0xb16d6b(0x95)]=_0xb16d6b(0x74),_0x24c4c6[_0xb16d6b(0x12d)][_0xb16d6b(0x135)]='bold',_0x24c4c6['value']=_0xb16d6b(0x15d),setTimeout(()=>{const _0x5d209d=_0xb16d6b;_0x24c4c6[_0x5d209d(0x12d)][_0x5d209d(0xa5)]=_0x2af4f4,_0x24c4c6[_0x5d209d(0x12d)]['color']=_0xd8c796,_0x24c4c6['style'][_0x5d209d(0x135)]=_0x4cb454,_0x24c4c6['value']=_0x48e9cd;},0x4b0);})[_0x115c4c(0x163)](async _0x4e738e=>{const _0x364aef=_0x115c4c;await appAlert(_0x364aef(0x14b));});}},window[a13_0x2ae345(0x109)]=function(_0x375ece){const _0x13ce8f=a13_0x2ae345,_0x456e13=document['getElementById'](_0x375ece);_0x456e13[_0x13ce8f(0xb7)]=![],_0x456e13['style'][_0x13ce8f(0xa5)]='#fff',_0x456e13[_0x13ce8f(0x12d)][_0x13ce8f(0x120)]=_0x13ce8f(0x119),_0x456e13['focus']();};function openForm(_0xe1c6d1,_0x35ac1f=![]){const _0x446367=a13_0x2ae345;if(!_0x35ac1f&&currentStudent===_0xe1c6d1){selectMainView();return;}isMainView=![],renderTabs(),currentStudent=_0xe1c6d1,document[_0x446367(0xf8)](_0x446367(0xb1))[_0x446367(0x8c)](_0x2c9fe9=>_0x2c9fe9[_0x446367(0xb9)]['remove'](_0x446367(0x106)));const _0x14a3bf=document['getElementById']('student_row_'+_0xe1c6d1);if(_0x14a3bf)_0x14a3bf[_0x446367(0xb9)][_0x446367(0xea)]('active');const _0x1b8578=document[_0x446367(0xb5)](_0x446367(0x11a));_0x1b8578[_0x446367(0x12d)]['display']=_0x446367(0x9f);const _0x23721c=document[_0x446367(0xb5)](_0x446367(0x17c));if(_0x23721c)_0x23721c[_0x446367(0x12d)][_0x446367(0x17b)]='none';renderSummaryCalendar();const _0xc0ed37=document[_0x446367(0xb5)](_0x446367(0x132));if(_0xc0ed37)_0xc0ed37[_0x446367(0x12d)][_0x446367(0x17b)]=_0x446367(0x9f);const _0x5bf977=unitMonths[currentUnitIndex],_0x1c19b7=_0x5bf977[_0x446367(0xb3)][_0x446367(0x126)](/-/g,'.'),_0x2abee3=_0x5bf977['end']['replace'](/-/g,'.');document[_0x446367(0xb5)](_0x446367(0x7d))[_0x446367(0x91)]=_0x446367(0x187)+_0x1c19b7+_0x446367(0x116)+_0x2abee3+']\x20'+_0xe1c6d1+_0x446367(0x93);const _0x3f41fd=counselingLogs[currentUnitIndex]&&counselingLogs[currentUnitIndex][_0xe1c6d1]||null;let _0x2f6e71={};_0x3f41fd&&(_0x3f41fd['date']&&typeof _0x3f41fd[_0x446367(0x14f)]===_0x446367(0x96)?_0x2f6e71[_0x3f41fd[_0x446367(0x14f)]]=_0x3f41fd:_0x2f6e71=_0x3f41fd),selectedDates=Object[_0x446367(0x130)](_0x2f6e71)[_0x446367(0x68)](),renderCalendar(_0xe1c6d1,_0x5bf977),renderDynamicForms();}function renderDynamicForms(){const _0x18c9e5=a13_0x2ae345,_0xa8eeba=document[_0x18c9e5(0xb5)](_0x18c9e5(0xe2));let _0x5444e6='';const _0x2b8110=counselingLogs[currentUnitIndex]?.[currentStudent]||{};let _0x514e0f={};_0x2b8110[_0x18c9e5(0x14f)]&&typeof _0x2b8110[_0x18c9e5(0x14f)]===_0x18c9e5(0x96)?_0x514e0f[_0x2b8110[_0x18c9e5(0x14f)]]=_0x2b8110:_0x514e0f=_0x2b8110;let _0x360313='';if(currentUnitIndex>0x0){const _0x1e1324=unitMonths[currentUnitIndex-0x1],_0x1f20c2=calculateStudentAttendance(currentStudent,_0x1e1324[_0x18c9e5(0x14c)]),_0x291f59=_0x572582=>{const _0x4ae219=_0x18c9e5,_0x567e64=_0x572582[_0x4ae219(0x17f)]('-');return parseInt(_0x567e64[0x1])+'/'+parseInt(_0x567e64[0x2]);},_0x304d93=_0x291f59(_0x1e1324['start']),_0x2c63ca=_0x291f59(_0x1e1324[_0x18c9e5(0x90)]);let _0x3daa28='출석률\x20'+_0x1f20c2[_0x18c9e5(0x181)]+'%';if(_0x1f20c2['rate']!==_0x18c9e5(0x17a)){let _0x1d6b4d=[];if(_0x1f20c2[_0x18c9e5(0xbb)]>0x0)_0x1d6b4d['push'](_0x18c9e5(0x125)+_0x1f20c2[_0x18c9e5(0xbb)]+'회');let _0x1a1517=[];if(_0x1f20c2['lCount']>0x0)_0x1a1517['push']('지각\x20'+_0x1f20c2['lCount']+'회');if(_0x1f20c2[_0x18c9e5(0x112)]>0x0)_0x1a1517[_0x18c9e5(0x122)](_0x18c9e5(0x11b)+_0x1f20c2['eCount']+'회');if(_0x1f20c2[_0x18c9e5(0x168)]>0x0)_0x1a1517[_0x18c9e5(0x122)](_0x18c9e5(0x8d)+_0x1f20c2[_0x18c9e5(0x168)]+'회');if(_0x1f20c2[_0x18c9e5(0x123)]>0x0)_0x1d6b4d[_0x18c9e5(0x122)]('합산\x20결석\x20'+_0x1f20c2[_0x18c9e5(0x123)]+'회('+_0x1a1517[_0x18c9e5(0x6e)](',\x20')+')');else _0x1a1517[_0x18c9e5(0xff)]>0x0&&_0x1d6b4d[_0x18c9e5(0x122)](''+_0x1a1517[_0x18c9e5(0x6e)](',\x20'));_0x1d6b4d[_0x18c9e5(0xff)]>0x0&&(_0x3daa28=_0x1f20c2[_0x18c9e5(0x181)]+'%\x20'+_0x1d6b4d[_0x18c9e5(0x6e)](',\x20'));}let _0x1c8300=_0x18c9e5(0x71);if(currentUnitIndex===0x1&&_0x1f20c2['preEnroll']>0x0)_0x1c8300=_0x18c9e5(0xe4);let _0x54de16=currentUnitIndex+0x1,_0xe1798b=currentUnitIndex===unitMonths['length']-0x1;if(_0x54de16===0x1)_0x360313=_0x18c9e5(0x6d);else{_0x360313=_0x18c9e5(0xaa)+_0x304d93+'~'+_0x2c63ca+')\x20'+_0x1c8300+'['+_0x3daa28+']';switch(_0x54de16){case 0x2:_0x360313+=_0x18c9e5(0x178);break;case 0x3:_0x360313+=_0x18c9e5(0xd4);break;case 0x4:_0x360313+=_0x18c9e5(0xc8);break;case 0x5:_0x360313+=_0x18c9e5(0xc4);break;case 0x6:_0x360313+=_0x18c9e5(0x73);break;case 0x7:_0x360313+=_0x18c9e5(0x13f);break;case 0x8:_0x360313+=_0x18c9e5(0xba);break;}let _0x3655a6=parseInt(_0x1e1324[_0x18c9e5(0x90)][_0x18c9e5(0x17f)]('-')[0x1],0xa);if([0x1,0x3,0x6,0x9][_0x18c9e5(0x149)](_0x3655a6))_0x360313+=',\x20자기개발관련(자격증\x20취득관련)';if(_0xe1798b)_0x360313+=_0x18c9e5(0xe5);_0x360313+=_0x18c9e5(0x184);}}if(selectedDates[_0x18c9e5(0xff)]===0x0){_0xa8eeba[_0x18c9e5(0x111)]=_0x18c9e5(0x15c)+(_0x360313||_0x18c9e5(0x15e))+_0x18c9e5(0x82);return;}selectedDates[_0x18c9e5(0x8c)](_0x2994a6=>{const _0x16aac5=_0x18c9e5,_0x866894=_0x514e0f[_0x2994a6]||{},_0x1c979d=_0x866894['content']||_0x360313,_0x320523=_0x866894['action']||'',_0x23928e=isPersistedCounselLog(_0x866894),_0x30c5fb=_0x866894[_0x16aac5(0xd1)]||formatCounselDisplayDate(_0x2994a6),_0x107734=_0x866894[_0x16aac5(0x98)]||currentTeacherName||'',_0x4b74d5=hasStudentAttendanceForCounsel(currentStudent,_0x2994a6)?'':'\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22margin-bottom:\x208px;\x20padding:\x208px\x2010px;\x20border-radius:\x206px;\x20background:\x20#fff7ed;\x20border:\x201px\x20solid\x20#f5cba7;\x20color:\x20#c0392b;\x20font-size:\x2011px;\x20line-height:\x201.45;\x20font-weight:\x20bold;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20일일출석부\x20미등록으로\x20출결확인\x20불가.\x20출결정보를\x20꼭\x20확인\x20후\x20상담작성\x20하세요.\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>';_0x5444e6+=_0x16aac5(0x131)+_0x2994a6+'\x20상담\x20기록\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</h4>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+_0x4b74d5+_0x16aac5(0x6b)+(_0x23928e?'\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22display:\x20grid;\x20grid-template-columns:\x201fr\x201fr;\x20gap:\x208px;\x20margin-bottom:\x2010px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22form-group\x22\x20style=\x22margin-bottom:\x200;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<label\x20style=\x22margin-bottom:\x203px;\x20font-size:\x2011px;\x22>저장\x20일자\x20<span\x20style=\x22color:#94a3b8;\x20font-weight:normal;\x22>(클릭\x20복사)</span></label>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22text\x22\x20id=\x22counselDate_'+_0x2994a6+_0x16aac5(0x177)+_0x30c5fb+_0x16aac5(0xcc)+_0x2994a6+_0x16aac5(0x177)+_0x107734+'\x22\x20readonly\x20style=\x22font-size:\x2012px;\x20padding:\x206px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20':'')+_0x16aac5(0x180)+_0x2994a6+'\x22>🤖\x20자동\x20랜덤</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20type=\x22button\x22\x20class=\x22btn-edit\x20dynamic-enable-edit\x22\x20style=\x22padding:\x202px\x205px;\x22\x20data-target=\x22content_'+_0x2994a6+_0x16aac5(0xc6)+_0x2994a6+_0x16aac5(0x12f)+_0x1c979d+_0x16aac5(0xc3)+_0x2994a6+_0x16aac5(0xb6)+_0x2994a6+_0x16aac5(0x77)+_0x320523+_0x16aac5(0x161);}),_0xa8eeba[_0x18c9e5(0x111)]=_0x5444e6;}function renderSummaryCalendar(){const _0x127532=a13_0x2ae345,_0x441776=document[_0x127532(0xb5)](_0x127532(0xfa)),_0x385a99=unitMonths[currentUnitIndex];if(!_0x385a99){_0x441776[_0x127532(0x111)]=_0x127532(0xa8);return;}const _0x2fcd0e=counselingLogs[currentUnitIndex]||{},_0x176ac2={};Object[_0x127532(0x144)](_0x2fcd0e)['forEach'](_0x11fac6=>{const _0x40e2be=_0x127532;_0x11fac6['date']&&typeof _0x11fac6['date']==='string'?_0x176ac2[_0x11fac6['date']]=(_0x176ac2[_0x11fac6[_0x40e2be(0x14f)]]||0x0)+0x1:Object[_0x40e2be(0x130)](_0x11fac6)[_0x40e2be(0x8c)](_0xc9461b=>{_0x176ac2[_0xc9461b]=(_0x176ac2[_0xc9461b]||0x0)+0x1;});});const _0x2f6604=new Date(_0x385a99[_0x127532(0xb3)]),_0x1e7374=new Date(_0x385a99[_0x127532(0x90)]);let _0x532475=_0x127532(0xec);const _0x14d973=['일','월','화','수','목','금','토'];_0x14d973['forEach'](_0x326963=>_0x532475+=_0x127532(0x85)+_0x326963+_0x127532(0x137));const _0x17f56e=_0x2f6604['getDay']();for(let _0x2e84a2=0x0;_0x2e84a2<_0x17f56e;_0x2e84a2++){_0x532475+=_0x127532(0xb4);}let _0x2afe5c=new Date(_0x2f6604);while(_0x2afe5c<=_0x1e7374){const _0x597aa8=_0x2afe5c[_0x127532(0x75)]()['split']('T')[0x0],_0x4e20d2=_0x127532(0x16a)+(_0x2afe5c[_0x127532(0xfb)]()+0x1)+'.'+_0x2afe5c[_0x127532(0x133)]()+_0x127532(0xdd);let _0x2a4625='',_0x344309=_0x127532(0xf0);if(validTrainingDays[_0x127532(0x149)](_0x597aa8)){_0x344309+=_0x127532(0x17e);const _0x227c30=_0x176ac2[_0x597aa8]||0x0;_0x227c30>0x0?_0x2a4625=_0x127532(0x6a)+_0x227c30+_0x127532(0xc1):_0x2a4625='<div\x20class=\x22cal-status\x22\x20style=\x22color:#cbd5e1;\x20margin-top:1px;\x20font-size:8px;\x22>-</div>';}else isCalendarWeekday(_0x2afe5c)&&(_0x2a4625='<div\x20class=\x22cal-status\x22\x20style=\x22color:#94a3b8;\x20font-size:8px;\x20margin-top:1px;\x22>휴일</div>');_0x532475+=_0x127532(0x81)+_0x344309+_0x127532(0xf9)+_0x4e20d2+_0x2a4625+_0x127532(0x137),_0x2afe5c[_0x127532(0xd6)](_0x2afe5c['getDate']()+0x1);}_0x532475+=_0x127532(0x137),_0x441776[_0x127532(0x111)]=_0x532475,document['getElementById'](_0x127532(0x132))['style'][_0x127532(0x17b)]=_0x127532(0x9f);}async function saveLog(){const _0x1e2f96=a13_0x2ae345;if(!currentStudent||currentStudent===''){await appAlert(_0x1e2f96(0x185));return;}let _0x259da8={},_0x43317a=![];selectedDates[_0x1e2f96(0x8c)](_0x4edff8=>{const _0x3f7427=_0x1e2f96,_0x24dc2d=document[_0x3f7427(0xb5)](_0x3f7427(0x176)+_0x4edff8),_0x4594eb=document[_0x3f7427(0xb5)]('action_'+_0x4edff8);try{const _0x337532=_0x24dc2d?_0x24dc2d[_0x3f7427(0x167)]:'',_0x1bab55=_0x4594eb?_0x4594eb[_0x3f7427(0x167)]:'';_0x259da8[_0x4edff8]={'content':_0x337532,'action':_0x1bab55,'counselDate':formatCounselDisplayDate(_0x4edff8),'counselor':currentTeacherName||'','updatedAt':new Date()[_0x3f7427(0x75)]()};}catch(_0x520b58){console[_0x3f7427(0x174)](_0x4edff8+_0x3f7427(0x70),_0x520b58),_0x43317a=!![];}});if(_0x43317a){await appAlert(_0x1e2f96(0xc2));return;}try{if(selectedDates[_0x1e2f96(0xff)]===0x0){await classDbRef(_0x1e2f96(0x92)+currentUnitIndex+'/'+currentStudent)[_0x1e2f96(0x15b)]();if(counselingLogs[currentUnitIndex])delete counselingLogs[currentUnitIndex][currentStudent];await appAlert('✅\x20'+currentStudent+_0x1e2f96(0x105));}else{await classDbRef('counselingLogs/'+currentUnitIndex+'/'+currentStudent)['set'](_0x259da8);if(!counselingLogs[currentUnitIndex])counselingLogs[currentUnitIndex]={};counselingLogs[currentUnitIndex][currentStudent]=_0x259da8,await appAlert('✅\x20'+currentStudent+_0x1e2f96(0x171)+selectedDates[_0x1e2f96(0xff)]+_0x1e2f96(0x118));}renderStudentList(),openForm(currentStudent,!![]),renderSummaryCalendar();}catch(_0x447f71){console[_0x1e2f96(0x174)]('파이어베이스\x20전송\x20오류:',_0x447f71),await appAlert(_0x1e2f96(0xd0));}}async function autoFillCounseling(_0x572621){const _0x1aa9d9=a13_0x2ae345;if(!window[_0x1aa9d9(0x12a)]){await appAlert(_0x1aa9d9(0x152));return;}let _0x421975=0x0,_0x36cc48='';for(let _0x20ff9a of validTrainingDays){if(fullAttendanceData[_0x20ff9a]&&fullAttendanceData[_0x20ff9a][currentStudent]){const _0x5e9bef=fullAttendanceData[_0x20ff9a][currentStudent];if(_0x5e9bef[_0x1aa9d9(0xa6)]&&_0x421975===0x0){const _0x6abdf1=parseInt(_0x5e9bef[_0x1aa9d9(0xa6)]['split']('.')[0x0],0xa);_0x421975=new Date()['getFullYear']()-_0x6abdf1;}if(_0x5e9bef['gender']&&_0x36cc48==='')_0x36cc48=_0x5e9bef[_0x1aa9d9(0x8b)];if(_0x421975>0x0&&_0x36cc48!=='')break;}}let _0x50ce2d=window[_0x1aa9d9(0x12a)][currentClass]||window[_0x1aa9d9(0x12a)]['테스트'];const _0x20a5a2=unitMonths[currentUnitIndex>0x0?currentUnitIndex-0x1:0x0],_0x5065ee=calculateStudentAttendance(currentStudent,_0x20a5a2['days']);let _0x4e948f=_0x5065ee[_0x1aa9d9(0x181)]+'%';if(_0x5065ee['rate']!==_0x1aa9d9(0x17a)){let _0x3bc8c5=[];if(_0x5065ee[_0x1aa9d9(0xbb)]>0x0)_0x3bc8c5[_0x1aa9d9(0x122)](_0x1aa9d9(0x125)+_0x5065ee[_0x1aa9d9(0xbb)]+'회');let _0x44ccbd=[];if(_0x5065ee[_0x1aa9d9(0x9c)]>0x0)_0x44ccbd[_0x1aa9d9(0x122)](_0x1aa9d9(0x9d)+_0x5065ee[_0x1aa9d9(0x9c)]+'회');if(_0x5065ee[_0x1aa9d9(0x112)]>0x0)_0x44ccbd[_0x1aa9d9(0x122)]('조퇴\x20'+_0x5065ee['eCount']+'회');if(_0x5065ee[_0x1aa9d9(0x168)]>0x0)_0x44ccbd[_0x1aa9d9(0x122)]('외출\x20'+_0x5065ee['oCount']+'회');if(_0x5065ee[_0x1aa9d9(0x123)]>0x0)_0x3bc8c5[_0x1aa9d9(0x122)]('합산결석\x20'+_0x5065ee[_0x1aa9d9(0x123)]+'회('+_0x44ccbd[_0x1aa9d9(0x6e)](',')+')');else{if(_0x44ccbd[_0x1aa9d9(0xff)]>0x0)_0x3bc8c5[_0x1aa9d9(0x122)](_0x44ccbd[_0x1aa9d9(0x6e)](','));}if(_0x3bc8c5[_0x1aa9d9(0xff)]>0x0)_0x4e948f+='\x20'+_0x3bc8c5[_0x1aa9d9(0x6e)](',\x20');}const _0x3d087a=_0x20a5a2[_0x1aa9d9(0xb3)][_0x1aa9d9(0x17f)]('-')[0x1]+'/'+_0x20a5a2[_0x1aa9d9(0xb3)][_0x1aa9d9(0x17f)]('-')[0x2],_0x17b8ad=_0x20a5a2[_0x1aa9d9(0x90)][_0x1aa9d9(0x17f)]('-')[0x1]+'/'+_0x20a5a2[_0x1aa9d9(0x90)][_0x1aa9d9(0x17f)]('-')[0x2];let _0x4e3d90='',_0x522345=currentUnitIndex+0x1,_0x33f5cf=currentUnitIndex===unitMonths[_0x1aa9d9(0xff)]-0x1,_0x579971='';if(_0x522345===0x1)_0x579971='실제\x20개인상담\x20후\x20작성예정.';else{_0x4e3d90=_0x1aa9d9(0xaa)+_0x3d087a+'~'+_0x17b8ad+')\x20출결\x20피드백['+_0x4e948f+']';switch(_0x522345){case 0x2:_0x4e3d90+=_0x1aa9d9(0x178);break;case 0x3:_0x4e3d90+=',\x20실습\x20적응도,\x20훈련\x20피로도';break;case 0x4:_0x4e3d90+=_0x1aa9d9(0xc8);break;case 0x5:_0x4e3d90+=_0x1aa9d9(0xc4);break;case 0x6:_0x4e3d90+=',\x20필기\x20및\x20실기\x20시험\x20준비\x20및\x20진로방향';break;case 0x7:_0x4e3d90+=_0x1aa9d9(0x13f);break;case 0x8:_0x4e3d90+=_0x1aa9d9(0xba);break;}let _0x509c04=parseInt(_0x572621[_0x1aa9d9(0x17f)]('-')[0x1],0xa),_0x32f686=[0x1,0x3,0x6,0x9][_0x1aa9d9(0x149)](_0x509c04);if(_0x32f686)_0x4e3d90+=_0x1aa9d9(0xeb);if(_0x33f5cf)_0x4e3d90+=_0x1aa9d9(0xe5);_0x579971=_0x4e3d90+_0x1aa9d9(0x184);}let _0x2a4bc1=[];const _0x3071d1=_0x4e651a=>_0x4e651a?_0x4e651a[Math['floor'](Math[_0x1aa9d9(0xb8)]()*_0x4e651a[_0x1aa9d9(0xff)])]:'';if(_0x522345>0x1){let _0x3f8048=_0x5065ee['rate']===_0x1aa9d9(0x17a)?_0x1aa9d9(0x89):_0x1aa9d9(0xfd);_0x50ce2d[_0x1aa9d9(0x13c)]&&_0x50ce2d['attendance'][_0x3f8048]?_0x2a4bc1[_0x1aa9d9(0x122)](_0x3071d1(_0x50ce2d[_0x1aa9d9(0x13c)][_0x3f8048])):_0x2a4bc1[_0x1aa9d9(0x122)](_0x1aa9d9(0xfe));let _0x2b87e1=_0x1aa9d9(0x128)+_0x522345;if(!_0x50ce2d[_0x2b87e1])_0x2a4bc1[_0x1aa9d9(0x122)]('[시스템\x20알림]\x20'+currentClass+_0x1aa9d9(0x16b)+_0x2b87e1+'('+_0x522345+'회차)\x20DB가\x20존재하지\x20않습니다.');else{let _0xf5fa93=_0x1aa9d9(0xe8);if(_0x421975>=0x31)_0xf5fa93=_0x1aa9d9(0x7b);else{if(_0x421975>=0x25)_0xf5fa93=_0x1aa9d9(0xa9);else{if(_0x421975>=0x1b)_0xf5fa93='age_27_to_36';}}if(_0x36cc48==='여'&&_0x50ce2d[_0x2b87e1][_0x1aa9d9(0x107)])_0xf5fa93=_0x1aa9d9(0x107);_0x50ce2d[_0x2b87e1][_0xf5fa93]?_0x2a4bc1[_0x1aa9d9(0x122)](_0x3071d1(_0x50ce2d[_0x2b87e1][_0xf5fa93])):_0x2a4bc1[_0x1aa9d9(0x122)](_0x1aa9d9(0xc9)+_0x2b87e1+_0x1aa9d9(0x124)+_0xf5fa93+_0x1aa9d9(0xdf));}let _0x18f69a=parseInt(_0x572621[_0x1aa9d9(0x17f)]('-')[0x1],0xa),_0x3f425d=[0x1,0x3,0x6,0x9][_0x1aa9d9(0x149)](_0x18f69a);if(_0x3f425d&&_0x50ce2d[_0x1aa9d9(0xad)]){let _0x49bd0b=_0x1aa9d9(0xf1);if(_0x421975>=0x2b)_0x49bd0b=_0x1aa9d9(0x160);else{if(_0x421975>=0x22)_0x49bd0b=_0x1aa9d9(0x155);}_0x50ce2d[_0x1aa9d9(0xad)][_0x49bd0b]&&_0x2a4bc1['push'](_0x3071d1(_0x50ce2d[_0x1aa9d9(0xad)][_0x49bd0b]));}if(_0x33f5cf&&_0x50ce2d[_0x1aa9d9(0x189)]){let _0x40f114=_0x1aa9d9(0x145);if(_0x421975>=0x28)_0x40f114=_0x1aa9d9(0xe3);else{if(_0x421975>=0x1e)_0x40f114=_0x1aa9d9(0x165);}_0x50ce2d[_0x1aa9d9(0x189)][_0x40f114]&&_0x2a4bc1[_0x1aa9d9(0x122)](_0x3071d1(_0x50ce2d[_0x1aa9d9(0x189)][_0x40f114]));}}let _0x5f33fa=_0x2a4bc1[_0x1aa9d9(0x6e)]('\x20'),_0x4bc952=document[_0x1aa9d9(0xb5)](_0x1aa9d9(0x176)+_0x572621),_0x43777d=document[_0x1aa9d9(0xb5)]('action_'+_0x572621);_0x4bc952&&(_0x4bc952[_0x1aa9d9(0x167)]=_0x579971,_0x4bc952[_0x1aa9d9(0x12d)][_0x1aa9d9(0xa5)]=_0x1aa9d9(0x17d),_0x4bc952[_0x1aa9d9(0x12d)][_0x1aa9d9(0x120)]=_0x1aa9d9(0x119),_0x4bc952[_0x1aa9d9(0xb7)]=![]),_0x43777d&&(_0x43777d[_0x1aa9d9(0x167)]=_0x5f33fa,_0x43777d[_0x1aa9d9(0x12d)][_0x1aa9d9(0xa5)]=_0x1aa9d9(0x17d),_0x43777d[_0x1aa9d9(0x12d)][_0x1aa9d9(0x120)]=_0x1aa9d9(0x119),_0x43777d[_0x1aa9d9(0xb7)]=![]),_0x4bc952[_0x1aa9d9(0xc5)]&&(_0x4bc952[_0x1aa9d9(0xc5)]([{'backgroundColor':_0x1aa9d9(0x172)},{'backgroundColor':_0x1aa9d9(0x17d)}],{'duration':0x320}),_0x43777d['animate']([{'backgroundColor':_0x1aa9d9(0x172)},{'backgroundColor':_0x1aa9d9(0x17d)}],{'duration':0x320}));}document[a13_0x2ae345(0x100)](a13_0x2ae345(0x183),()=>{const _0x555085=a13_0x2ae345;document[_0x555085(0xb5)](_0x555085(0xfc))?.['addEventListener'](_0x555085(0xbf),_0x23e8b6=>{const _0x21732a=_0x555085;_0x23e8b6[_0x21732a(0xd2)](),location['href']=classNavHref(_0x21732a(0x157));}),document[_0x555085(0xb5)](_0x555085(0x9b))?.[_0x555085(0x100)](_0x555085(0xbf),_0xc431f8=>{const _0xef58db=_0x555085;_0xc431f8['preventDefault'](),location['href']=classNavHref(_0xef58db(0x101));}),document['getElementById'](_0x555085(0xd3))?.['addEventListener'](_0x555085(0xbf),_0x5af224=>{const _0x1e7b8f=_0x555085;_0x5af224[_0x1e7b8f(0xd2)](),location['href']=classNavHref(_0x1e7b8f(0x127));}),document[_0x555085(0xb5)](_0x555085(0xc7))[_0x555085(0x100)](_0x555085(0xbf),saveLog),document[_0x555085(0x100)](_0x555085(0xbf),function(_0x30e147){const _0x140ce1=_0x555085,_0x5a3749=_0x30e147['target'][_0x140ce1(0x151)]('.dynamic-open-form');if(_0x5a3749){openForm(_0x5a3749[_0x140ce1(0xe1)]('data-name'));return;}const _0x27bc66=_0x30e147['target'][_0x140ce1(0x151)](_0x140ce1(0x12e));if(_0x27bc66){toggleDate(_0x27bc66[_0x140ce1(0xe1)](_0x140ce1(0xa2)));return;}const _0x135972=_0x30e147['target']['closest'](_0x140ce1(0x13e)),_0x18ec88=_0x30e147['target'][_0x140ce1(0x151)](_0x140ce1(0xf4)),_0x265541=_0x30e147['target']['closest'](_0x140ce1(0x87));if(_0x135972)autoFillCounseling(_0x135972[_0x140ce1(0xe1)](_0x140ce1(0xa2)));else{if(_0x18ec88)enableEdit(_0x18ec88[_0x140ce1(0xe1)](_0x140ce1(0xf5)));else _0x265541&&copyToClipboard(_0x265541);}});});
+// ==========================================
+// [1. 공통 환경 및 보안 설정 통합]
+// ==========================================
+const masterConfig = {
+    apiKey: "AIzaSyDnADuHu0mq4GIlqBm_VHfv7y6RarabGhU",
+    authDomain: "busan-teacher-workall.firebaseapp.com",
+    databaseURL: "https://busan-teacher-workall-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "busan-teacher-workall"
+};
+
+const storedConfig = localStorage.getItem('firebaseConfig');
+const firebaseConfig = storedConfig ? JSON.parse(storedConfig) : {
+    apiKey: "AIzaSyCO37zrsZEjKTokMCNWbIc1C_o5BZMqh8E",
+    databaseURL: "https://busan-teacher-work-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "busan-teacher-work"
+};
+
+// 📍 [핵심 수리] 두 엔진의 배선을 하나로 통일하거나 각각 인증을 전달해야 합니다.
+// 여기서는 실제 저장이 일어나는 Class DB를 기본 앱으로 설정하여 보안 문제를 원천 차단합니다.
+if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig); // 1순위: 저장이 일어나는 Class DB를 메인으로 시동
+}
+const database = firebase.database();
+const auth = firebase.auth();
+initClassContext();
+
+// 📍 [보조 부품] 마스터 인증이 필요한 경우를 위해 마스터 앱을 별도로 준비
+const masterApp = (firebase.apps.length > 1) ? firebase.app("master") : firebase.initializeApp(masterConfig, "master");
+
+// ==========================================
+// [2. 보안 검문소] (로그인 상태를 DB 엔진에 동기화)
+// ==========================================
+auth.onAuthStateChanged(async (user) => {
+    const savedPw = localStorage.getItem('adminPw');
+
+    if (user) {
+        // ✅ 인증 성공 상태 -> 시스템 시동
+        console.log("🔒 보안 인증 확인됨 (Class DB): " + firebaseConfig.projectId);
+        initialize(); 
+    } else if (savedPw) {
+        // 🔑 자동 로그인 시도 (Class DB 엔진에 직접 로그인)
+        auth.signInWithEmailAndPassword('ghlwns0201@naver.com', savedPw)
+            .catch(async (err) => {
+                console.error("❌ 인증 실패", err);
+                await appAlert("인증 정보가 만료되었습니다. 다시 로그인해주세요.");
+                location.href = "../index.html"; 
+            });
+    } else {
+        // ⚠️ 무단 접근 차단
+        await appAlert("보안 인증이 필요한 페이지입니다.");
+        location.href = "../index.html"; 
+    }
+});
+
+let currentClass = window.currentClass;
+
+let rawTimetable = [], fullAttendanceData = {}, masterSubjectList = [], ncsList = [];
+let unitMonths = [], studentNames = [], validTrainingDays = [];
+let dropoutData = {}, earlyCompletionData = {}, counselingLogs = {}; 
+
+let currentUnitIndex = 0; 
+let currentStudent = "";  
+let currentTeacherName = ""; 
+let isMainView = true;
+let selectedDates = []; // 📍 신규 배선: 복수 날짜를 기억하는 배열
+
+// [날짜 및 과목 규격 포맷용 순정 부품]
+function getFixDate(rawDate) {
+    if (!rawDate) return "";
+    let s = String(rawDate).trim().replace(/\./g, '-');
+    if (s.includes('/')) {
+        let p = s.split('/');
+        if (p.length === 3) {
+            let year = p[2].length === 2 ? "20" + p[2] : p[2];
+            s = `${year}-${p[0].padStart(2, '0')}-${p[1].padStart(2, '0')}`;
+        }
+    }
+    return s.substring(0, 10);
+}
+function formatCounselDisplayDate(dateStr) {
+    return getFixDate(dateStr).replace(/-/g, '.');
+}
+
+function getTodayDateKey() {
+    const t = new Date();
+    const offset = t.getTimezoneOffset() * 60000;
+    return new Date(t.getTime() - offset).toISOString().split('T')[0];
+}
+
+function isCalendarWeekday(dateObj) {
+    const dow = dateObj.getDay();
+    return dow >= 1 && dow <= 5;
+}
+
+function hasStudentAttendanceForCounsel(studentName, dateStr) {
+    const dayData = fullAttendanceData[dateStr];
+    if (!dayData) return false;
+    return !!dayData[studentName];
+}
+
+function isCounselDateSelectable(dateStr, studentName, todayKey) {
+    if (!validTrainingDays.includes(dateStr)) return false;
+    if (dateStr > todayKey) return false;
+    const leaveDate = getStudentLeaveDate(studentName);
+    if (leaveDate && dateStr >= leaveDate) return false;
+    return true;
+}
+
+const COUNSEL_NO_ATTENDANCE_WARNING = "일일출석부 미등록으로 출결확인 불가.\n출결정보를 꼭 확인 후 상담작성 하세요.";
+function isPersistedCounselLog(log) {
+    if (!log) return false;
+    return !!(log.updatedAt || log.counselDate || log.counselor
+        || (log.content && String(log.content).trim())
+        || (log.action && String(log.action).trim()));
+}
+function isActualSubject(subName) {
+    if (!subName) return false;
+    const clean = String(subName).replace(/\s+/g, "");
+    return masterSubjectList.some(m => m.replace(/\s+/g, "").includes(clean)) || 
+           ncsList.some(n => n.replace(/\s+/g, "").includes(clean));
+}
+
+function getStudentLeaveDate(name) {
+    if (dropoutData[name]) return getFixDate(dropoutData[name]);
+    if (earlyCompletionData[name]) return getFixDate(earlyCompletionData[name]);
+    return null;
+}
+
+function getLeaveUnitIndex(name) {
+    const leaveDate = getStudentLeaveDate(name);
+    if (!leaveDate || unitMonths.length === 0) return -1;
+    for (let i = 0; i < unitMonths.length; i++) {
+        const u = unitMonths[i];
+        if (leaveDate >= u.start && leaveDate <= u.end) return i;
+    }
+    if (leaveDate < unitMonths[0].start) return 0;
+    return unitMonths.length;
+}
+
+function isStudentActiveForCounselingUnit(name, unitIndex) {
+    const leaveUnitIdx = getLeaveUnitIndex(name);
+    if (leaveUnitIdx < 0) return true;
+    return unitIndex < leaveUnitIdx;
+}
+
+function hasCounselingLog(logs, name) {
+    const logData = logs[name];
+    if (!logData) return false;
+    if (logData.date && typeof logData.date === 'string') return true;
+    return Object.keys(logData).length > 0;
+}
+
+// [2. 통합 데이터 로드 엔진]
+async function initialize() {
+    try {
+        // 📍 즉시 데이터 로드 시작
+        const [masterSnap, timeSnap, attSnap, dropSnap, earlySnap, logSnap] = await Promise.all([
+            classDbRef('masterData').once('value'),
+            classDbRef('fullTimetable').once('value'),
+            classDbRef('dailyAttendance').once('value'),
+            classDbRef('dropouts').once('value'),
+            classDbRef('earlyCompletions').once('value'),
+            classDbRef('counselingLogs').once('value') 
+        ]);
+
+        const master = masterSnap.val() || {};
+        currentTeacherName = master.teacher || master.teacherName || ""; 
+
+        if(master.courses) {
+            masterSubjectList = [...new Set(master.courses.map(c => c.subject))];
+            ncsList = [...new Set(master.courses.filter(c => c.unit).map(c => c.unit))];
+        }
+
+        rawTimetable = timeSnap.val() || [];
+        fullAttendanceData = attSnap.val() || {};
+        dropoutData = dropSnap.val() || {};
+        earlyCompletionData = earlySnap.val() || {};
+        counselingLogs = logSnap.val() || {}; 
+
+        if(rawTimetable.length > 0) {
+            processBaseData(); 
+            selectMainView();
+        }
+    } catch (e) {
+        console.error("데이터 로드 실패:", e);
+        await appAlert("시스템 엔진 오류: 데이터를 불러오지 못했습니다.");
+    }
+}
+
+// [3. 단위개월 분할 엔진]
+function processBaseData() {
+    validTrainingDays = [];
+    const dayCheck = new Set();
+    rawTimetable.forEach(row => {
+        const d = getFixDate(row.날짜);
+        if(d && isActualSubject(row.교과목) && !dayCheck.has(d)) {
+            validTrainingDays.push(d);
+            dayCheck.add(d);
+        }
+    });
+    validTrainingDays.sort();
+
+    let allStudents = new Set();
+    Object.values(fullAttendanceData).forEach(day => {
+        Object.keys(day).forEach(name => {
+            if(name !== "성명" && name !== "_metadata" && name !== "미기록") {
+                allStudents.add(name);
+            }
+        });
+    });
+    studentNames = Array.from(allStudents).sort();
+
+    unitMonths = [];
+    if(validTrainingDays.length === 0) return;
+    const start = new Date(validTrainingDays[0]);
+    const end = new Date(validTrainingDays[validTrainingDays.length - 1]);
+    let tempStart = new Date(start);
+    while (tempStart <= end) {
+        let uStart = new Date(tempStart);
+        let uEnd = new Date(tempStart);
+        uEnd.setMonth(uEnd.getMonth() + 1); uEnd.setDate(uEnd.getDate() - 1);
+        const sStr = uStart.toISOString().split('T')[0];
+        const eStr = uEnd.toISOString().split('T')[0];
+        unitMonths.push({ 
+            label: `${unitMonths.length + 1}회차`, 
+            start: sStr, end: eStr, 
+            days: validTrainingDays.filter(d => d >= sStr && d <= eStr) 
+        });
+        tempStart.setMonth(tempStart.getMonth() + 1);
+    }
+}
+
+// [4. 좌측 명단 및 탭 렌더링 구역 - 상담 횟수 표시 버전]
+// [4. 좌측 명단 및 탭 렌더링 구역 - 0회 방지 정밀 버전]
+function renderStudentList() {
+    const listBody = document.getElementById('studentList');
+    if (!listBody) return;
+    listBody.innerHTML = "";
+
+    studentNames.forEach((name, index) => {
+        const logData = (counselingLogs[currentUnitIndex] && counselingLogs[currentUnitIndex][name]) ? counselingLogs[currentUnitIndex][name] : null;
+        const leaveDate = getStudentLeaveDate(name);
+        const isDropped = !!dropoutData[name];
+        const isEarly = !!earlyCompletionData[name];
+        const isInactiveThisUnit = leaveDate && !isStudentActiveForCounselingUnit(name, currentUnitIndex);
+        
+        let badgeHtml = "";
+        
+        // 📍 [핵심 수리] 데이터가 없거나, 날짜 키값이 0개라면 '미작성'으로 분류
+        if (!logData || Object.keys(logData).length === 0) {
+            badgeHtml = `<span class="status-badge">미작성</span>`;
+        } else {
+            let count = 0;
+            if (logData.date && typeof logData.date === 'string') {
+                count = 1; 
+            } else {
+                count = Object.keys(logData).length;
+            }
+            // 📍 만약 데이터 처리가 꼬여서 0회로 잡히면 다시 한번 '미작성'으로 필터링
+            badgeHtml = (count > 0)
+                ? `<span class="status-badge ${count >= 2 ? 'done-multi' : 'done'}">${count}회 상담</span>`
+                : `<span class="status-badge">미작성</span>`;
+        }
+
+        let leaveBadgeHtml = "";
+        if (isDropped) leaveBadgeHtml = `<span class="status-badge" style="background:#fee2e2; color:#b91c1c;">탈락</span>`;
+        else if (isEarly) leaveBadgeHtml = `<span class="status-badge" style="background:#dbeafe; color:#1d4ed8;">조기수료</span>`;
+        const activeClass = (name === currentStudent) ? "active" : "";
+
+        // 📍 [신규 부품] 일일출석부 데이터에서 생년월일/성별을 스캔하여 나이 계산
+        let studentAge = "";
+        let studentGender = "";
+        
+        // 이 학생의 데이터가 존재하는 날짜를 스캔하여 정보를 빼옵니다.
+        for (let d of validTrainingDays) {
+            if (fullAttendanceData[d] && fullAttendanceData[d][name]) {
+                const info = fullAttendanceData[d][name];
+                
+                // 생년월일(YYYY.MM.DD)이 있으면 나이 계산
+                if (info.birthDate && !studentAge) {
+                    const birthYear = parseInt(info.birthDate.split('.')[0], 10);
+                    const currentYear = new Date().getFullYear();
+                    studentAge = (currentYear - birthYear) + "세"; // 연나이 기준
+                }
+                // 성별이 있으면 가져옴
+                if (info.gender && !studentGender) {
+                    studentGender = info.gender;
+                }
+                
+                // 둘 다 찾았으면 더 이상 검색하지 않고 모터 중지 (연비 절약)
+                if (studentAge && studentGender) break; 
+            }
+        }
+
+        // 이름 옆에 붙일 정보 텍스트 조립 (예: 21세 남)
+        let addInfoHtml = "";
+        if (studentAge || studentGender) {
+            addInfoHtml = `<span style="font-size: 11px; color: #64748b; font-weight: normal; margin-left: 5px;">${studentAge} ${studentGender}</span>`;
+        }
+
+        listBody.innerHTML += `
+            <div class="student-item ${activeClass} dynamic-open-form" id="student_row_${name}" data-name="${name}" style="${isInactiveThisUnit ? 'color:#94a3b8;' : ''}">
+                <div style="flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; pointer-events: none;">
+                    <strong>${index + 1}. ${name}</strong>${addInfoHtml} ${leaveBadgeHtml}
+                </div>
+                <div style="flex-shrink: 0; margin-left: 5px; pointer-events: none;">
+                    ${badgeHtml}
+                </div>
+            </div>
+        `;
+    });
+}
+
+function renderTabs() {
+    const menu = document.getElementById('tabMenu');
+    if (!menu) return;
+    menu.innerHTML = "";
+
+    const mainBtn = document.createElement('button');
+    mainBtn.className = `tab-btn tab-btn-main ${isMainView ? 'active' : ''}`;
+    mainBtn.innerText = '메인';
+    mainBtn.onclick = () => selectMainView();
+    menu.appendChild(mainBtn);
+
+    unitMonths.forEach((u, idx) => {
+        const btn = document.createElement('button');
+        btn.className = `tab-btn ${!isMainView && idx === currentUnitIndex ? 'active' : ''}`;
+        btn.innerText = u.label;
+        btn.onclick = () => selectUnit(idx);
+        menu.appendChild(btn);
+    });
+}
+
+function selectMainView() {
+    isMainView = true;
+    currentStudent = "";
+    document.querySelectorAll('.student-item').forEach(el => el.classList.remove('active'));
+    document.getElementById('formPanel').style.display = 'none';
+    const summaryPanel = document.getElementById('summaryPanel');
+    if (summaryPanel) summaryPanel.style.display = 'none';
+    renderTabs();
+    renderStudentList();
+    renderDashboard();
+}
+
+
+// 📍 [신규 모터] 모든 회차의 정보를 그리드로 한눈에 보여주는 메인 멀티 계기판
+function renderDashboard() {
+    const dash = document.getElementById('dashboardPanel');
+    if(!dash) return;
+    dash.style.display = 'block';
+    
+    let gridHtml = `<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-top: 20px;">`;
+    
+    // 존재하는 모든 단위개월(회차)을 순회하며 미니 카드 생성
+    unitMonths.forEach((unit, idx) => {
+        const logs = counselingLogs[idx] || {};
+        const activeStudents = studentNames.filter(name => isStudentActiveForCounselingUnit(name, idx));
+        const total = activeStudents.length;
+        const done = activeStudents.filter(name => hasCounselingLog(logs, name)).length;
+        const excluded = studentNames.length - total;
+        const percent = total > 0 ? Math.round((done / total) * 100) : 0;
+        const periodText = `${unit.start.replace(/-/g, '.')} ~ ${unit.end.replace(/-/g, '.')}`;
+        const excludedNote = excluded > 0 ? `<span style="color: #94a3b8; font-size: 11px;"> (탈락·조기수료 ${excluded}명 제외)</span>` : "";
+        
+        gridHtml += `
+            <div style="background: #f8fafc; border: 1px solid #e1e8ed; border-radius: 10px; padding: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                    <strong style="color: #1e293b; font-size: 14px;">${idx + 1}회차</strong>
+                    <span style="font-size: 11px; color: #64748b;">${periodText}</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 12px;">
+                    <span style="color: #64748b;">대상 ${total}명${excludedNote}</span>
+                    <span style="color: #10b981; font-weight: bold;">완료 ${done}명</span>
+                    <span style="color: #ef4444; font-weight: bold;">미상담 ${total - done}명</span>
+                </div>
+                <div style="background: #e2e8f0; border-radius: 4px; height: 10px; width: 100%; overflow: hidden; position: relative;">
+                    <div style="background: #3b82f6; height: 100%; width: ${percent}%;"></div>
+                </div>
+                <div style="text-align: right; font-size: 10px; color: #64748b; margin-top: 5px;">진행률 ${percent}%</div>
+            </div>
+        `;
+    });
+    gridHtml += `</div>`;
+
+    dash.innerHTML = `
+        <div style="padding: 10px;">
+            <h2 style="color: #1e293b; margin-top: 0; margin-bottom: 5px; font-size: 20px;">📊 전체 회차 상담 현황 요약</h2>
+            <p style="color: #64748b; font-size: 13px; margin-top: 0;">👈 좌측 명단에서 학생을 선택하면 상세 상담일지 폼이 열립니다.</p>
+            ${gridHtml}
+        </div>
+    `;
+}
+
+// 📍 [핵심 수리] 탭 선택 시 학생이 풀리지 않도록 연쇄 반응 제어
+function selectUnit(index) {
+    isMainView = false;
+    currentUnitIndex = index;
+    renderTabs(); 
+    renderStudentList(); 
+    renderSummaryCalendar(); 
+    const summaryPanel = document.getElementById('summaryPanel');
+    if (summaryPanel) summaryPanel.style.display = 'block';
+    
+    if (currentStudent !== "") {
+        // 📍 탭을 누를 때는 토글 스위치가 폼을 꺼버리지 않도록 강제 열기(true) 신호 송신
+        openForm(currentStudent, true);
+    } else if (studentNames.length > 0) {
+        openForm(studentNames[0], true);
+    } else {
+        document.getElementById('formPanel').style.display = 'none';
+        document.getElementById('dashboardPanel').style.display = 'none';
+    }
+}
+
+// [5. 출석 추출 패키징 엔진 - 정밀 분석 버전]
+function calculateStudentAttendance(name, targetDays) {
+    let pureAbsent = 0, lCount = 0, eCount = 0, oCount = 0, personalDays = 0, preEnroll = 0, actualPresent = 0;
+    let enrollDate = "";
+    for (let d of validTrainingDays) {
+        const dayData = fullAttendanceData[d] ? fullAttendanceData[d][name] : null;
+        if (dayData && dayData.status && dayData.status !== "미편입" && dayData.status !== "" && dayData.status !== "-") {
+            enrollDate = d; break;
+        }
+    }
+
+    const todayStr = typeof getTodayStrKst === 'function' ? getTodayStrKst() : new Date().toISOString().split('T')[0];
+
+    targetDays.forEach(d => {
+        const att = (fullAttendanceData[d] && fullAttendanceData[d][name]) ? fullAttendanceData[d][name] : null;
+        const leaveDate = getStudentLeaveDate(name);
+        if (leaveDate && d >= leaveDate) { pureAbsent++; personalDays++; return; }
+        if (enrollDate && d < enrollDate) { preEnroll++; return; }
+        personalDays++;
+        
+        if(!att) {
+            if (typeof shouldCountMissingAttAsAbsent === 'function' ? shouldCountMissingAttAsAbsent(d, todayStr) : d <= todayStr) pureAbsent++;
+        } else {
+            const st = att.status || "";
+            if(st.includes("결석") || st === "미편입") pureAbsent++;
+            else if(st.includes("출석") || st === "정상" || st === "") actualPresent++;
+            else {
+                actualPresent++;
+                if(st.includes("지각")) lCount++;
+                else if(st.includes("조퇴")) eCount++;
+                else if(st.includes("외출")) oCount++;
+            }
+        }
+    });
+
+    const penaltyAbs = Math.floor((lCount + eCount + oCount) / 3);
+    const finalAbsent = pureAbsent + penaltyAbs;
+    const pureAttendedDays = personalDays - finalAbsent;
+    
+    const rate = personalDays > 0 ? (pureAttendedDays / personalDays * 100).toFixed(1) : "0.0";
+    
+    return {
+        rate: rate,
+        finalAbsent: finalAbsent,
+        pureAbsent: pureAbsent,    // 📍 순결석 추가
+        penaltyAbs: penaltyAbs,    // 📍 합산 결석 추가
+        lCount: lCount,
+        eCount: eCount,
+        oCount: oCount,
+        preEnroll: preEnroll 
+    };
+}
+
+// 📍 [핵심 개조] 달력 렌더링 내부에 출결 마커(○, ×, 지, 조 등) 탑재
+function renderCalendar(studentName, unitMonth) {
+    const calArea = document.getElementById('calendarArea');
+    if (!unitMonth) { calArea.innerHTML = "해당 회차 정보가 없습니다."; return; }
+
+    const todayKey = getTodayDateKey();
+    const start = new Date(unitMonth.start);
+    const end = new Date(unitMonth.end);
+    
+    let html = `<div class="cal-grid">`;
+    const daysOfWeek = ['일', '월', '화', '수', '목', '금', '토'];
+    daysOfWeek.forEach(d => html += `<div class="cal-header">${d}</div>`);
+
+    const startDayOfWeek = start.getDay();
+    for(let i=0; i<startDayOfWeek; i++) {
+        html += `<div></div>`; 
+    }
+
+    let tempDate = new Date(start);
+    while(tempDate <= end) {
+        const dateStr = tempDate.toISOString().split('T')[0];
+        const dayStr = `<span style="font-size:10px; letter-spacing:-0.5px; white-space:nowrap;">${tempDate.getMonth() + 1}월 ${tempDate.getDate()}일</span>`;
+        
+        let statusHtml = "";
+        const isTrainingDay = validTrainingDays.includes(dateStr);
+        const isSelectable = isCounselDateSelectable(dateStr, studentName, todayKey);
+        const att = (fullAttendanceData[dateStr] && fullAttendanceData[dateStr][studentName]) ? fullAttendanceData[dateStr][studentName] : null;
+        
+        if (isTrainingDay && att) {
+            const st = att.status || "";
+            const leaveDate = getStudentLeaveDate(studentName);
+            if (leaveDate && dateStr >= leaveDate) {
+                statusHtml = `<div class="cal-status" style="color:#ef4444;">${earlyCompletionData[studentName] ? '조수' : '탈락'}</div>`;
+            } else if (st.includes("결석") || st === "미편입") {
+                statusHtml = `<div class="cal-status" style="color:#ef4444; font-weight:bold;">×</div>`;
+            } else if (st.includes("지각")) {
+                statusHtml = `<div class="cal-status" style="color:#f59e0b; font-weight:bold;">지</div>`;
+            } else if (st.includes("조퇴")) {
+                statusHtml = `<div class="cal-status" style="color:#0369a1; font-weight:bold;">조</div>`;
+            } else if (st.includes("외출")) {
+                statusHtml = `<div class="cal-status" style="color:#166534; font-weight:bold;">외</div>`;
+            } else if (st.includes("공가")) {
+                statusHtml = `<div class="cal-status" style="color:#8e44ad; font-weight:bold;">공</div>`;
+            } else if (st.includes("휴가")) {
+                statusHtml = `<div class="cal-status" style="color:#8e44ad; font-weight:bold;">휴</div>`;
+            } else if (st.includes("경조사")) {
+                statusHtml = `<div class="cal-status" style="color:#8e44ad; font-weight:bold;">◎</div>`;
+            } else {
+                statusHtml = `<div class="cal-status" style="color:#27ae60; font-weight:bold;">○</div>`;
+            }
+        } else if (isTrainingDay && isSelectable) {
+            statusHtml = `<div class="cal-status" style="color:#94a3b8; font-size:8px;">미등</div>`;
+        } else if (!isTrainingDay && isCalendarWeekday(tempDate)) {
+            statusHtml = `<div class="cal-status" style="color:#94a3b8; font-size:8px;">휴일</div>`;
+        }
+        
+        let cls = "cal-day";
+        if (isSelectable) {
+            cls += " active dynamic-toggle-date";
+        }
+        if(selectedDates.includes(dateStr)) cls += " selected";
+        
+        html += `<div class="${cls}" id="cal_day_${dateStr}" data-date="${dateStr}">
+                    <div style="pointer-events:none;">${dayStr}</div>
+                    <div style="pointer-events:none;">${statusHtml}</div>
+                 </div>`;
+        
+        tempDate.setDate(tempDate.getDate() + 1);
+    }
+    html += `</div>`;
+    calArea.innerHTML = html;
+}
+
+// 📍 [신규 모터] 여러 날짜를 켜고 끄는 토글 방식 엔진
+window.toggleDate = async function(dateStr) {
+    const idx = selectedDates.indexOf(dateStr);
+    let isAdded = false;
+
+    if (idx > -1) {
+        selectedDates.splice(idx, 1);
+    } else {
+        if (!hasStudentAttendanceForCounsel(currentStudent, dateStr)) {
+            await appAlert(COUNSEL_NO_ATTENDANCE_WARNING);
+        }
+        selectedDates.push(dateStr);
+        isAdded = true;
+    }
+    selectedDates.sort();
+    
+    document.querySelectorAll('.cal-day').forEach(el => {
+        const d = el.id.replace('cal_day_', '');
+        if(selectedDates.includes(d)) el.classList.add('selected');
+        else el.classList.remove('selected');
+    });
+    
+    renderDynamicForms();
+
+    if (isAdded && currentUnitIndex > 0) {
+        setTimeout(() => autoFillCounseling(dateStr), 50);
+    }
+};
+
+// 📍 [신규 모듈] 클릭 시 복사 엔진 및 수정 잠금해제 엔진 (무소음 시각 피드백 탑재)
+window.copyToClipboard = async function(el) {
+    if (el.readOnly && el.value.trim() !== "") {
+        let textToCopy = el.value;
+
+        // 브라우저 클립보드 API 가동
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            // 1. 기존 상태 백업
+            let originalBg = el.style.backgroundColor;
+            let originalColor = el.style.color;
+            let originalWeight = el.style.fontWeight;
+            let oldText = el.value;
+            
+            // 2. 시각적 타격감(피드백) 부여
+            el.style.backgroundColor = "#d5f5e3"; // 연한 녹색 배경
+            el.style.color = "#27ae60"; // 진한 녹색 글씨
+            el.style.fontWeight = "bold";
+            el.value = `✅ 복사 완료!\n(원하시는 곳에 붙여넣기 하세요)`;
+            
+            // 3. 1.2초 뒤 자동 원상 복구 (타이머)
+            setTimeout(() => {
+                el.style.backgroundColor = originalBg;
+                el.style.color = originalColor;
+                el.style.fontWeight = originalWeight;
+                el.value = oldText;
+            }, 1200);
+
+        }).catch(async (err) => {
+            await appAlert("❌ 클립보드 복사 권한이 필요하거나 지원하지 않는 브라우저입니다.");
+        });
+    }
+};
+
+window.enableEdit = function(id) {
+    const el = document.getElementById(id);
+    el.readOnly = false;
+    el.style.backgroundColor = "#fff"; // 편집 가능 상태로 색상 변경
+    el.style.borderStyle = "solid";
+    el.focus();
+};
+
+// [6. 입력 폼 제어 및 자동기입 조립 공장]
+function openForm(name, forceOpen = false) {
+    if (!forceOpen && currentStudent === name) {
+        selectMainView();
+        return;
+    }
+
+    isMainView = false;
+    renderTabs();
+    currentStudent = name;
+    
+    document.querySelectorAll('.student-item').forEach(el => el.classList.remove('active'));
+    const currentRow = document.getElementById(`student_row_${name}`);
+    if(currentRow) currentRow.classList.add('active');
+    
+    const panel = document.getElementById('formPanel');
+    panel.style.display = 'block';
+
+    const dash = document.getElementById('dashboardPanel');
+    if(dash) dash.style.display = 'none';
+    
+    renderSummaryCalendar();
+    const summaryPanel = document.getElementById('summaryPanel');
+    if (summaryPanel) summaryPanel.style.display = 'block';
+    
+    const unitMonthData = unitMonths[currentUnitIndex];
+    const titleStart = unitMonthData.start.replace(/-/g, '.');
+    const titleEnd = unitMonthData.end.replace(/-/g, '.');
+    document.getElementById('formTitle').innerText = `📝 [${titleStart} ~ ${titleEnd}] ${name} 학생 상담`;
+    
+    const existingData = (counselingLogs[currentUnitIndex] && counselingLogs[currentUnitIndex][name]) || null;
+    
+    // 📍 구형 데이터 호환성 및 다중 날짜 로드
+    let logsObj = {};
+    if (existingData) {
+        if (existingData.date && typeof existingData.date === 'string') {
+            logsObj[existingData.date] = existingData; // 구형 포맷을 신형으로 래핑
+        } else {
+            logsObj = existingData; // 이미 신형인 경우
+        }
+    }
+    selectedDates = Object.keys(logsObj).sort();
+    
+    // 📍 상담자 관련 로직 제거 및 렌더링 집중
+    renderCalendar(name, unitMonthData); 
+    renderDynamicForms();
+}
+
+// [6. 우측 구역에 선택된 날짜만큼 폼을 동적으로 찍어내는 공장]
+function renderDynamicForms() {
+    const area = document.getElementById('dynamicFormsArea');
+    let html = "";
+    
+    // 현재 메모리에 저장된 데이터 확보
+    const existingData = counselingLogs[currentUnitIndex]?.[currentStudent] || {};
+    let logsObj = {};
+    if (existingData.date && typeof existingData.date === 'string') {
+        logsObj[existingData.date] = existingData; 
+    } else {
+        logsObj = existingData; 
+    }
+
+    // 📍 [정밀 피드백 엔진] 괄호 서식 정리 및 기초 데이터 생성
+    let defaultContent = "";
+    if (currentUnitIndex > 0) {
+        const prevUnit = unitMonths[currentUnitIndex - 1]; 
+        const attStats = calculateStudentAttendance(currentStudent, prevUnit.days); 
+        
+        const formatShortDate = (dateStr) => {
+            const parts = dateStr.split('-');
+            return `${parseInt(parts[1])}/${parseInt(parts[2])}`;
+        };
+        const startStr = formatShortDate(prevUnit.start);
+        const endStr = formatShortDate(prevUnit.end);
+        
+        let attFeedback = `출석률 ${attStats.rate}%`;
+        if (attStats.rate !== "100.0") {
+            let details = [];
+            // 순결석이 있을 경우
+            if (attStats.pureAbsent > 0) details.push(`순결석 ${attStats.pureAbsent}회`);
+            
+            // 지각/조퇴/외출 상세 구성
+            let subDetails = [];
+            if (attStats.lCount > 0) subDetails.push(`지각 ${attStats.lCount}회`);
+            if (attStats.eCount > 0) subDetails.push(`조퇴 ${attStats.eCount}회`);
+            if (attStats.oCount > 0) subDetails.push(`외출 ${attStats.oCount}회`);
+            
+            // 합산 결석 여부에 따른 텍스트 분기 (선생님 요청 서식 적용)
+            if (attStats.penaltyAbs > 0) {
+                details.push(`합산 결석 ${attStats.penaltyAbs}회(${subDetails.join(', ')})`);
+            } else if (subDetails.length > 0) {
+                details.push(`${subDetails.join(', ')}`);
+            }
+            
+            if (details.length > 0) {
+                // 📍 괄호 정리: 피드백[출석률 00% 상세이유] 서식으로 결합
+                attFeedback = `${attStats.rate}% ${details.join(', ')}`;
+            }
+        }
+        
+        let feedbackTitle = "출결 피드백";
+        if (currentUnitIndex === 1 && attStats.preEnroll > 0) feedbackTitle = "미편입 제외 출결 피드백";
+        
+        // 📍 [회차별 뼈대 조립기] 1~8회차 동기화
+        let sessionNum = currentUnitIndex + 1;
+        let isLastSession = (currentUnitIndex === unitMonths.length - 1);
+        
+        if (sessionNum === 1) {
+            defaultContent = "실제 개인상담 후 작성예정.";
+        } else {
+            defaultContent = `지난 기간(${startStr}~${endStr}) ${feedbackTitle}[${attFeedback}]`;
+            
+            // 회차별 핵심 내용 결합
+            switch(sessionNum) {
+                case 2: defaultContent += ", 현재 수업 이해도, 학급분위기 적응상황"; break;
+                case 3: defaultContent += ", 실습 적응도, 훈련 피로도"; break;
+                case 4: defaultContent += ", 이론과 실습의 연계성 이해 및 특이사항"; break;
+                case 5: defaultContent += ", 심화 정비 실습 고난도 작업 시 안전의식"; break;
+                case 6: defaultContent += ", 필기 및 실기 시험 준비 및 진로방향"; break;
+                case 7: defaultContent += ", 희망 취업처 조건, 수료 후 계획"; break;
+                case 8: defaultContent += ", 수료 후 시험 준비계획"; break; 
+            }
+
+            // [월 센서] 단위기간 종료월 기준 자격증 추가
+            let endMonth = parseInt(prevUnit.end.split('-')[1], 10);
+            if ([1, 3, 6, 9].includes(endMonth)) defaultContent += ", 자기개발관련(자격증 취득관련)";
+
+            // [종점 센서] 마지막 회차 취업 추가
+            if (isLastSession) defaultContent += ", 취업 희망 분야 및 취업 준비 상황";
+
+            // [배기구 고정]
+            defaultContent += ", 개인 고민 등에 대해 상담함.";
+        }
+    }
+
+    // 📍 [시동 전 예열 모드] 선택된 날짜가 없을 때 기초 자료 상시 노출
+    if (selectedDates.length === 0) {
+        area.innerHTML = `
+        <div style="background: #f1f5f9; border: 2px dashed #cbd5e1; border-radius: 8px; padding: 15px; margin-bottom: 10px;">
+            <h4 style="margin: 0 0 8px 0; color: #475569; border-bottom: 1px solid #cbd5e1; padding-bottom: 4px; font-size: 13px;">
+                📋 상담 기초 자료 (이전 단위기간 출결 분석)
+            </h4>
+            <div style="font-size: 12px; line-height: 1.6; color: #1e293b; background: #fff; padding: 10px; border-radius: 6px; border: 1px solid #e2e8f0;">
+                ${defaultContent || "데이터를 불러오는 중입니다..."}
+            </div>
+            <p style="text-align:center; color:#94a3b8; font-size:11px; margin-top:10px; font-weight:bold;">
+                👈 좌측 달력에서 날짜를 선택하면 상담 기록이 시작됩니다.
+            </p>
+        </div>`;
+        return;
+    }
+
+    // 선택된 날짜 배열을 순회하며 폼 생성
+    selectedDates.forEach((dateStr) => {
+        const log = logsObj[dateStr] || {};
+        const contentVal = log.content || defaultContent; 
+        const actionVal = log.action || "";
+        const showMetaCopy = isPersistedCounselLog(log);
+        const counselDateVal = log.counselDate || formatCounselDisplayDate(dateStr);
+        const counselorVal = log.counselor || currentTeacherName || "";
+        const noAttWarningHtml = hasStudentAttendanceForCounsel(currentStudent, dateStr) ? "" : `
+            <div style="margin-bottom: 8px; padding: 8px 10px; border-radius: 6px; background: #fff7ed; border: 1px solid #f5cba7; color: #c0392b; font-size: 11px; line-height: 1.45; font-weight: bold;">
+                일일출석부 미등록으로 출결확인 불가. 출결정보를 꼭 확인 후 상담작성 하세요.
+            </div>`;
+
+        html += `
+        <div style="background: #fff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); margin-bottom: 10px;">
+            <h4 style="margin: 0 0 8px 0; color: #0f172a; border-bottom: 1px solid #f1f5f9; padding-bottom: 4px; font-size: 13px;">
+                📅 ${dateStr} 상담 기록
+            </h4>
+            ${noAttWarningHtml}
+            ${showMetaCopy ? `
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px;">
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label style="margin-bottom: 3px; font-size: 11px;">저장 일자 <span style="color:#94a3b8; font-weight:normal;">(클릭 복사)</span></label>
+                    <input type="text" id="counselDate_${dateStr}" class="form-control dynamic-copy" value="${counselDateVal}" readonly style="font-size: 12px; padding: 6px;">
+                </div>
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label style="margin-bottom: 3px; font-size: 11px;">상담자 <span style="color:#94a3b8; font-weight:normal;">(클릭 복사)</span></label>
+                    <input type="text" id="counselor_${dateStr}" class="form-control dynamic-copy" value="${counselorVal}" readonly style="font-size: 12px; padding: 6px;">
+                </div>
+            </div>
+            ` : ""}
+            
+            <div class="form-group" style="margin-bottom: 8px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
+                    <label style="margin-bottom: 0; font-size: 11px;">상담내용</label>
+                    <div>
+                        <button type="button" class="btn-edit dynamic-auto-fill" style="padding: 2px 5px; color: #fff; background-color: #3498db; border-color: #3498db;" data-date="${dateStr}">🤖 자동 랜덤</button>
+                        <button type="button" class="btn-edit dynamic-enable-edit" style="padding: 2px 5px;" data-target="content_${dateStr}">✏️ 수정</button>
+                    </div>
+                </div>
+                <textarea id="content_${dateStr}" class="form-control dynamic-copy" style="min-height: 50px; font-size: 12px; padding: 6px;" readonly>${contentVal}</textarea>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 0;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
+                    <label style="margin-bottom: 0; font-size: 11px;">조치내용</label>
+                    <button type="button" class="btn-edit dynamic-enable-edit" style="padding: 2px 5px;" data-target="action_${dateStr}">✏️ 수정</button>
+                </div>
+                <textarea id="action_${dateStr}" class="form-control dynamic-copy" style="min-height: 70px; font-size: 12px; padding: 6px; line-height: 1.5;" readonly>${actionVal}</textarea>
+            </div>
+        </div>
+        `;
+    });
+    area.innerHTML = html;
+}
+
+// [7. 파이어베이스 송신부]
+function renderSummaryCalendar() {
+    const sumArea = document.getElementById('summaryCalendarArea');
+    const unitMonth = unitMonths[currentUnitIndex];
+    if (!unitMonth) { sumArea.innerHTML = "해당 회차 정보가 없습니다."; return; }
+
+    const logs = counselingLogs[currentUnitIndex] || {};
+    const dailyCounts = {};
+    
+    Object.values(logs).forEach(studentLog => {
+        if (studentLog.date && typeof studentLog.date === 'string') {
+            dailyCounts[studentLog.date] = (dailyCounts[studentLog.date] || 0) + 1;
+        } else {
+            Object.keys(studentLog).forEach(date => {
+                dailyCounts[date] = (dailyCounts[date] || 0) + 1;
+            });
+        }
+    });
+
+    const start = new Date(unitMonth.start);
+    const end = new Date(unitMonth.end);
+    
+    let html = `<div class="cal-grid">`;
+    const daysOfWeek = ['일', '월', '화', '수', '목', '금', '토'];
+    daysOfWeek.forEach(d => html += `<div class="cal-header" style="font-size:8px;">${d}</div>`);
+
+    const startDayOfWeek = start.getDay();
+    for(let i=0; i<startDayOfWeek; i++) { html += `<div></div>`; }
+
+    let tempDate = new Date(start);
+    while(tempDate <= end) {
+        const dateStr = tempDate.toISOString().split('T')[0];
+        // 📍 [날짜 압축] 12월 1일 -> 12.1 형식으로 변경
+        const dayStr = `<span style="font-size:8.5px; font-weight:normal; letter-spacing:-0.8px;">${tempDate.getMonth() + 1}.${tempDate.getDate()}</span>`;
+        
+        let countHtml = "";
+        let cls = "cal-day";
+        
+        if (validTrainingDays.includes(dateStr)) {
+            cls += " active";
+            const count = dailyCounts[dateStr] || 0;
+            if (count > 0) {
+                countHtml = `<div class="cal-status" style="color:#2980b9; font-weight:bold; font-size:9px; margin-top:1px;">${count}명</div>`;
+            } else {
+                countHtml = `<div class="cal-status" style="color:#cbd5e1; margin-top:1px; font-size:8px;">-</div>`;
+            }
+        } else if (isCalendarWeekday(tempDate)) {
+            countHtml = `<div class="cal-status" style="color:#94a3b8; font-size:8px; margin-top:1px;">휴일</div>`;
+        }
+        
+        html += `<div class="${cls}" style="cursor:default; padding: 2px 0; white-space:nowrap; overflow:hidden;">${dayStr}${countHtml}</div>`;
+        tempDate.setDate(tempDate.getDate() + 1);
+    }
+    html += `</div>`;
+    sumArea.innerHTML = html;
+    document.getElementById('summaryPanel').style.display = 'block';
+}
+
+// [7. 파이어베이스 송신 및 다중 날짜 저장 엔진 - 정밀 수리 버전]
+// [7. 파이어베이스 송신 및 다중 날짜 저장 엔진 - 공백 저장 허용 버전]
+async function saveLog() {
+    if (!currentStudent || currentStudent === "") { 
+        await appAlert("학생이 선택되지 않았습니다. 좌측 명단에서 학생을 먼저 클릭해주세요."); 
+        return; 
+    }
+    
+    // 📍 [수리] "selectedDates.length === 0"일 때 막았던 체크 로직을 삭제했습니다.
+    // 이제 날짜를 하나도 선택하지 않고 저장하면 해당 학생의 상담 기록이 '비워짐'으로 처리됩니다.
+    
+    let newLogsObj = {};
+    let hasError = false;
+
+    selectedDates.forEach(dateStr => {
+        const contentEl = document.getElementById(`content_${dateStr}`);
+        const actionEl = document.getElementById(`action_${dateStr}`);
+        
+        try {
+            const contentValue = contentEl ? contentEl.value : "";
+            const actionValue = actionEl ? actionEl.value : "";
+            
+            newLogsObj[dateStr] = {
+                content: contentValue,
+                action: actionValue,
+                counselDate: formatCounselDisplayDate(dateStr),
+                counselor: currentTeacherName || "",
+                updatedAt: new Date().toISOString()
+            };
+        } catch (e) {
+            console.error(`${dateStr} 데이터 수집 중 오류:`, e);
+            hasError = true;
+        }
+    });
+
+    if (hasError) {
+        await appAlert("일부 날짜의 데이터를 읽어오지 못했습니다. 화면을 새로고침 후 다시 시도해주세요.");
+        return;
+    }
+
+    try {
+        if (selectedDates.length === 0) {
+            await classDbRef(`counselingLogs/${currentUnitIndex}/${currentStudent}`).remove();
+            if(counselingLogs[currentUnitIndex]) delete counselingLogs[currentUnitIndex][currentStudent]; // 📍 메모리 잔유 제거
+            await appAlert(`✅ ${currentStudent} 학생의 상담 기록이 초기화(미작성)되었습니다.`);
+        } else {
+            await classDbRef(`counselingLogs/${currentUnitIndex}/${currentStudent}`).set(newLogsObj);
+            if(!counselingLogs[currentUnitIndex]) counselingLogs[currentUnitIndex] = {};
+            counselingLogs[currentUnitIndex][currentStudent] = newLogsObj;
+            await appAlert(`✅ ${currentStudent} 학생의 상담 기록(${selectedDates.length}건)이 저장되었습니다.`);
+        }
+        
+        renderStudentList(); 
+        openForm(currentStudent, true); 
+        renderSummaryCalendar();
+        
+    } catch (err) {
+        console.error("파이어베이스 전송 오류:", err);
+        await appAlert("저장 실패: 권한 설정을 확인해주세요.");
+    }
+}
+
+// ==========================================
+// 📍 [신규 모터] AI 자동 완성 펌프 엔진 (OBD 진단기 탑재)
+// ==========================================
+async function autoFillCounseling(dateStr) {
+    if (!window.counselingActionDB) {
+        await appAlert("상담일지조치.js 데이터베이스가 연결되지 않았습니다.");
+        return;
+    }
+
+    // 1. 학생 나이/성별 추출 센서 가동
+    let ageNum = 0;
+    let genderStr = "";
+    for (let d of validTrainingDays) {
+        if (fullAttendanceData[d] && fullAttendanceData[d][currentStudent]) {
+            const info = fullAttendanceData[d][currentStudent];
+            if (info.birthDate && ageNum === 0) {
+                const birthYear = parseInt(info.birthDate.split('.')[0], 10);
+                ageNum = new Date().getFullYear() - birthYear;
+            }
+            if (info.gender && genderStr === "") genderStr = info.gender;
+            if (ageNum > 0 && genderStr !== "") break;
+        }
+    }
+
+    // 2. 현재 반 데이터베이스 로드 (없으면 '테스트' 순정 모드)
+    let classDB = window.counselingActionDB[currentClass] || window.counselingActionDB["테스트"];
+    
+    // 3. 상담내용 (Content) 조립 
+    const prevUnit = unitMonths[currentUnitIndex > 0 ? currentUnitIndex - 1 : 0];
+    const attStats = calculateStudentAttendance(currentStudent, prevUnit.days);
+    
+    let attFeedback = `${attStats.rate}%`;
+    if (attStats.rate !== "100.0") {
+        let details = [];
+        if (attStats.pureAbsent > 0) details.push(`순결석 ${attStats.pureAbsent}회`);
+        let subDetails = [];
+        if (attStats.lCount > 0) subDetails.push(`지각 ${attStats.lCount}회`);
+        if (attStats.eCount > 0) subDetails.push(`조퇴 ${attStats.eCount}회`);
+        if (attStats.oCount > 0) subDetails.push(`외출 ${attStats.oCount}회`);
+        if (attStats.penaltyAbs > 0) details.push(`합산결석 ${attStats.penaltyAbs}회(${subDetails.join(',')})`);
+        else if (subDetails.length > 0) details.push(subDetails.join(','));
+        if (details.length > 0) attFeedback += ` ${details.join(', ')}`;
+    }
+
+    const startStr = prevUnit.start.split('-')[1] + "/" + prevUnit.start.split('-')[2];
+    const endStr = prevUnit.end.split('-')[1] + "/" + prevUnit.end.split('-')[2];
+    
+    let contentBase = "";
+    let sessionNum = currentUnitIndex + 1;
+    let isLast = (currentUnitIndex === unitMonths.length - 1);
+    let finalContent = "";
+    
+    if (sessionNum === 1) {
+        finalContent = "실제 개인상담 후 작성예정.";
+    } else {
+        contentBase = `지난 기간(${startStr}~${endStr}) 출결 피드백[${attFeedback}]`;
+        switch(sessionNum) {
+            case 2: contentBase += ", 현재 수업 이해도, 학급분위기 적응상황"; break;
+            case 3: contentBase += ", 실습 적응도, 훈련 피로도"; break;
+            case 4: contentBase += ", 이론과 실습의 연계성 이해 및 특이사항"; break;
+            case 5: contentBase += ", 심화 정비 실습 고난도 작업 시 안전의식"; break;
+            case 6: contentBase += ", 필기 및 실기 시험 준비 및 진로방향"; break;
+            case 7: contentBase += ", 희망 취업처 조건, 수료 후 계획"; break;
+            case 8: contentBase += ", 수료 후 시험 준비계획"; break; 
+        }
+
+        let month = parseInt(dateStr.split('-')[1], 10);
+        let hasCert = [1, 3, 6, 9].includes(month);
+        if (hasCert) contentBase += ", 자기개발관련(자격증 취득관련)";
+        if (isLast) contentBase += ", 취업 희망 분야 및 취업 준비 상황";
+
+        finalContent = contentBase + ", 개인 고민 등에 대해 상담함.";
+    }
+
+    // 4. 조치내용 (Action) 랜덤 분사기 (고장 진단기 장착)
+    let actions = [];
+    const pickRandom = (arr) => arr ? arr[Math.floor(Math.random() * arr.length)] : "";
+
+    if (sessionNum > 1) {
+        // 4-1. 출결 조치
+        let attKey = (attStats.rate === "100.0") ? "perfect" : "imperfect";
+        if (classDB.attendance && classDB.attendance[attKey]) {
+            actions.push(pickRandom(classDB.attendance[attKey])); // 📍 대괄호와 하이픈 탈거
+        } else {
+            actions.push("[시스템 알림] 출결 데이터 누락됨");
+        }
+
+        // 4-2. 회차별 적응 조치
+        let sessKey = "session_" + sessionNum;
+        if (!classDB[sessKey]) {
+            actions.push(`[시스템 알림] ${currentClass}반의 ${sessKey}(${sessionNum}회차) DB가 존재하지 않습니다.`);
+        } else {
+            let sAgeKey = "age_under_26";
+            if (ageNum >= 49) sAgeKey = "age_49_over";
+            else if (ageNum >= 37) sAgeKey = "age_37_to_48";
+            else if (ageNum >= 27) sAgeKey = "age_27_to_36";
+            if (genderStr === "여" && classDB[sessKey]["female"]) sAgeKey = "female";
+
+            if (classDB[sessKey][sAgeKey]) {
+                actions.push(pickRandom(classDB[sessKey][sAgeKey])); // 📍 타이틀(sTitle)과 하이픈 탈거
+            } else {
+                actions.push(`[시스템 알림] ${sessKey} 내부에 '${sAgeKey}' 나이 데이터가 없습니다.`);
+            }
+        }
+
+        // 4-3. 자격증 조치
+        let month = parseInt(dateStr.split('-')[1], 10);
+        let hasCert = [1, 3, 6, 9].includes(month);
+        if (hasCert && classDB.certificate) {
+            let cAgeKey = "age_under_33";
+            if (ageNum >= 43) cAgeKey = "age_43_over";
+            else if (ageNum >= 34) cAgeKey = "age_34_to_42";
+            if (classDB.certificate[cAgeKey]) {
+                actions.push(pickRandom(classDB.certificate[cAgeKey])); // 📍 대괄호와 하이픈 탈거
+            }
+        }
+
+        // 4-4. 취업 조치
+        if (isLast && classDB.job) {
+            let jAgeKey = "age_under_29";
+            if (ageNum >= 40) jAgeKey = "age_40_over";
+            else if (ageNum >= 30) jAgeKey = "age_30_to_39";
+            if (classDB.job[jAgeKey]) {
+                actions.push(pickRandom(classDB.job[jAgeKey])); // 📍 대괄호와 하이픈 탈거
+            }
+        }
+    }
+
+    // 5. 화면에 분사
+    let finalAction = actions.join(" ");
+    let contentEl = document.getElementById(`content_${dateStr}`);
+    let actionEl = document.getElementById(`action_${dateStr}`);
+    
+    if (contentEl) {
+        contentEl.value = finalContent;
+        contentEl.style.backgroundColor = "#fff"; 
+        contentEl.style.borderStyle = "solid";
+        contentEl.readOnly = false; 
+    }
+    if (actionEl) {
+        actionEl.value = finalAction;
+        actionEl.style.backgroundColor = "#fff";
+        actionEl.style.borderStyle = "solid";
+        actionEl.readOnly = false;
+    }
+    
+    if(contentEl.animate) {
+        contentEl.animate([{ backgroundColor: '#bbdefb' }, { backgroundColor: '#fff' }], { duration: 800 });
+        actionEl.animate([{ backgroundColor: '#bbdefb' }, { backgroundColor: '#fff' }], { duration: 800 });
+    }
+}
+
+
+// 📍 [보안 추가] 대시보드(HTML)에서 엔진룸(JS)으로 모든 배선 숨기기 (이벤트 위임 기술 적용)
+
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. 고정 네비게이션 및 저장 버튼 연결
+    document.getElementById('btnGoStudentResume')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        location.href = classNavHref('학생이력서확인.html');
+    });
+    document.getElementById('btn_nav_month')?.addEventListener('click', (e) => { e.preventDefault(); location.href = classNavHref('단위개월출석부.html'); });
+    document.getElementById('btn_nav_main')?.addEventListener('click', (e) => { e.preventDefault(); location.href = classNavHref('index1.html'); });
+    document.getElementById('btn_save_log').addEventListener('click', saveLog);
+
+    // 2. 📍 [수리 완료] 화면 전체의 동적 클릭을 감지하는 강력한 통합 센서 장착
+    document.addEventListener('click', function(e) {
+        
+        // ① 좌측 학생 명단 클릭 감지
+        const studentBtn = e.target.closest('.dynamic-open-form');
+        if (studentBtn) {
+            openForm(studentBtn.getAttribute('data-name'));
+            return; // 찾았으면 엔진 정지 (연비 최적화)
+        }
+
+        // ② 중앙 달력 날짜 클릭 감지
+        const dateBtn = e.target.closest('.dynamic-toggle-date');
+        if (dateBtn) {
+            toggleDate(dateBtn.getAttribute('data-date'));
+            return;
+        }
+
+        // ③ 우측 폼 내부 버튼/텍스트상자 클릭 감지
+        const autoBtn = e.target.closest('.dynamic-auto-fill');
+        const editBtn = e.target.closest('.dynamic-enable-edit');
+        const copyArea = e.target.closest('.dynamic-copy');
+
+        if (autoBtn) {
+            autoFillCounseling(autoBtn.getAttribute('data-date'));
+        } else if (editBtn) {
+            enableEdit(editBtn.getAttribute('data-target'));
+        } else if (copyArea) {
+            copyToClipboard(copyArea);
+        }
+    });
+});

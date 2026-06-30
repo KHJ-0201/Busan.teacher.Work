@@ -1,1 +1,141 @@
-(function(_0x48c1a1,_0x2aff83){var _0x582d53=a0_0x666e,_0xeb9c95=_0x48c1a1();while(!![]){try{var _0x220296=-parseInt(_0x582d53(0x1c8))/0x1*(-parseInt(_0x582d53(0x1ea))/0x2)+-parseInt(_0x582d53(0x1b1))/0x3*(parseInt(_0x582d53(0x1e0))/0x4)+parseInt(_0x582d53(0x1cd))/0x5*(parseInt(_0x582d53(0x1c9))/0x6)+-parseInt(_0x582d53(0x1c0))/0x7+-parseInt(_0x582d53(0x1b8))/0x8*(-parseInt(_0x582d53(0x1e9))/0x9)+parseInt(_0x582d53(0x1f1))/0xa*(parseInt(_0x582d53(0x1ed))/0xb)+-parseInt(_0x582d53(0x1ad))/0xc*(parseInt(_0x582d53(0x1e3))/0xd);if(_0x220296===_0x2aff83)break;else _0xeb9c95['push'](_0xeb9c95['shift']());}catch(_0x47c235){_0xeb9c95['push'](_0xeb9c95['shift']());}}}(a0_0x2326,0xb04e4),(function(){var _0x48275e=a0_0x666e,_0x159e85=(function(){var _0x317b73=!![];return function(_0x534340,_0x1a9a13){var _0x4b523f=_0x317b73?function(){var _0x5e1fc5=a0_0x666e;if(_0x1a9a13){var _0x4f3306=_0x1a9a13[_0x5e1fc5(0x1f3)](_0x534340,arguments);return _0x1a9a13=null,_0x4f3306;}}:function(){};return _0x317b73=![],_0x4b523f;};}());'use strict';var _0x517824=0x300,_0x50f1ad=0xa,_0x4791dc=[{'match':_0x48275e(0x1b6),'tip':_0x48275e(0x1cc)},{'match':_0x48275e(0x1e5),'tip':_0x48275e(0x1af)},{'match':_0x48275e(0x1bd),'tip':_0x48275e(0x1d8)},{'match':_0x48275e(0x1e1),'tip':_0x48275e(0x1d4)},{'match':'평가지.html','tip':'평가지\x20등록,\x20평가서류\x20작성\x20및\x20PDF\x20출력.'},{'match':_0x48275e(0x1f0),'tip':_0x48275e(0x1d5)}];function _0x5079da(_0x3b03ca){var _0x7cddab=_0x48275e;if(!_0x3b03ca)return'';for(var _0x4ec6e5=0x0;_0x4ec6e5<_0x4791dc[_0x7cddab(0x1c4)];_0x4ec6e5++){if(_0x3b03ca[_0x7cddab(0x1e8)](_0x4791dc[_0x4ec6e5][_0x7cddab(0x1d2)])!==-0x1)return _0x4791dc[_0x4ec6e5]['tip'];}return'';}function _0x3b24c9(){var _0x42f1f6=_0x48275e,_0x30cc7c=document[_0x42f1f6(0x1eb)](_0x42f1f6(0x1db));_0x30cc7c[_0x42f1f6(0x1be)](function(_0x3b47aa){var _0x467964=_0x42f1f6,_0x1d53c4=_0x3b47aa[_0x467964(0x1e7)]('.nav-btn-global');_0x1d53c4&&_0x3b47aa['parentNode']&&_0x3b47aa[_0x467964(0x1ce)]['insertBefore'](_0x1d53c4,_0x3b47aa),_0x3b47aa[_0x467964(0x1ba)]();});}function _0x59f993(){var _0x5cfa30=_0x48275e,_0x1e22a6=document['getElementById'](_0x5cfa30(0x1aa));if(!_0x1e22a6)return;if(window['innerWidth']<=_0x517824){_0x3b24c9();return;}_0x1e22a6[_0x5cfa30(0x1eb)](_0x5cfa30(0x1b3))[_0x5cfa30(0x1be)](function(_0x2a7ab0){var _0xd09d70=_0x5cfa30;if(_0x2a7ab0['parentElement']&&_0x2a7ab0[_0xd09d70(0x1b4)][_0xd09d70(0x1d9)][_0xd09d70(0x1f4)](_0xd09d70(0x1d1)))return;var _0x5d3bd0=_0x5079da(_0x2a7ab0[_0xd09d70(0x1bf)](_0xd09d70(0x1ef))||'');if(!_0x5d3bd0)return;var _0xb009c0=document['createElement'](_0xd09d70(0x1de));_0xb009c0[_0xd09d70(0x1e6)]=_0xd09d70(0x1d1);var _0x2548ba=document[_0xd09d70(0x1bc)]('span');_0x2548ba[_0xd09d70(0x1e6)]=_0xd09d70(0x1cf),_0x2548ba[_0xd09d70(0x1ca)]=_0x5d3bd0,_0x2a7ab0['parentNode']['insertBefore'](_0xb009c0,_0x2a7ab0),_0xb009c0[_0xd09d70(0x1b2)](_0x2a7ab0),_0xb009c0['appendChild'](_0x2548ba);});}function _0x2c7dba(){var _0x3b79c8=_0x48275e,_0x511e7f=decodeURIComponent(window[_0x3b79c8(0x1df)][_0x3b79c8(0x1c1)]['split']('/')['pop']())||'',_0x28732b=_0x511e7f===_0x3b79c8(0x1f5)||_0x511e7f==='능력단위시간표.html',_0x55814c=_0x511e7f===_0x3b79c8(0x1f0)||_0x511e7f===_0x3b79c8(0x1ab);document[_0x3b79c8(0x1eb)](_0x3b79c8(0x1c6))[_0x3b79c8(0x1be)](function(_0x4d7a0f){var _0x419101=_0x3b79c8,_0x3dca4c=_0x4d7a0f['getAttribute']('onclick')||'',_0x55477f=_0x3dca4c['indexOf'](_0x511e7f)!==-0x1;!_0x55477f&&_0x28732b&&_0x3dca4c[_0x419101(0x1e8)]('능력단위시간표.html')!==-0x1&&(_0x55477f=!![]),!_0x55477f&&_0x55814c&&_0x3dca4c['indexOf'](_0x419101(0x1f0))!==-0x1&&(_0x55477f=!![]),_0x55477f?_0x4d7a0f[_0x419101(0x1d9)][_0x419101(0x1d6)]('is-current-nav'):(_0x4d7a0f[_0x419101(0x1d9)][_0x419101(0x1ba)](_0x419101(0x1ae)),_0x4d7a0f['style'][_0x419101(0x1a9)]='',_0x4d7a0f[_0x419101(0x1e2)]['boxShadow']='',_0x4d7a0f[_0x419101(0x1e2)][_0x419101(0x1e4)]='',_0x4d7a0f['style'][_0x419101(0x1b5)]='',_0x4d7a0f[_0x419101(0x1e2)][_0x419101(0x1f2)]='',_0x4d7a0f[_0x419101(0x1e2)][_0x419101(0x1ac)]='');});}function _0xed08a7(){var _0x3a4810=_0x48275e,_0xc0d7c5=document[_0x3a4810(0x1cb)](_0x3a4810(0x1b9));if(!_0xc0d7c5)return;if(window['innerWidth']<=_0x517824){document[_0x3a4810(0x1d3)][_0x3a4810(0x1e2)]['removeProperty'](_0x3a4810(0x1b7));return;}var _0x3e1e37=Math[_0x3a4810(0x1c3)](_0xc0d7c5['getBoundingClientRect']()[_0x3a4810(0x1da)]);if(_0x3e1e37<=0x0)return;var _0x4320af=_0x3e1e37+_0x50f1ad;document[_0x3a4810(0x1c5)][_0x3a4810(0x1e2)][_0x3a4810(0x1ee)](_0x3a4810(0x1d0),_0x4320af+'px',_0x3a4810(0x1d7)),document[_0x3a4810(0x1d3)][_0x3a4810(0x1e2)][_0x3a4810(0x1ee)](_0x3a4810(0x1b7),_0x4320af+'px');}function _0x22617e(){_0x59f993(),_0x2c7dba(),_0xed08a7();}function _0x37ac86(){var _0x7c846e=_0x48275e,_0x2ced0e=_0x159e85(this,function(){var _0x366c1f=a0_0x666e;return _0x2ced0e[_0x366c1f(0x1dc)]()[_0x366c1f(0x1c2)]('(((.+)+)+)+$')[_0x366c1f(0x1dc)]()[_0x366c1f(0x1b0)](_0x2ced0e)[_0x366c1f(0x1c2)]('(((.+)+)+)+$');});_0x2ced0e(),_0x22617e(),window[_0x7c846e(0x1dd)]('resize',_0x22617e);var _0x41badc=document[_0x7c846e(0x1cb)](_0x7c846e(0x1b9));_0x41badc&&typeof ResizeObserver!=='undefined'&&new ResizeObserver(_0xed08a7)[_0x7c846e(0x1ec)](_0x41badc),window[_0x7c846e(0x1dd)]('load',_0x22617e),setTimeout(_0x22617e,0x32),setTimeout(_0x22617e,0x12c);}document[_0x48275e(0x1c7)]===_0x48275e(0x1bb)?document['addEventListener']('DOMContentLoaded',_0x37ac86):_0x37ac86();}()));function a0_0x666e(_0x3c382c,_0x5915e5){_0x3c382c=_0x3c382c-0x1a9;var _0x1c6d3c=a0_0x2326();var _0x25adf9=_0x1c6d3c[_0x3c382c];if(a0_0x666e['JzKywj']===undefined){var _0x4436cf=function(_0x2b4cef){var _0x474be4='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';var _0x1e7797='',_0xab392='',_0x2ae918=_0x1e7797+_0x4436cf;for(var _0x159e85=0x0,_0x517824,_0x50f1ad,_0x4791dc=0x0;_0x50f1ad=_0x2b4cef['charAt'](_0x4791dc++);~_0x50f1ad&&(_0x517824=_0x159e85%0x4?_0x517824*0x40+_0x50f1ad:_0x50f1ad,_0x159e85++%0x4)?_0x1e7797+=_0x2ae918['charCodeAt'](_0x4791dc+0xa)-0xa!==0x0?String['fromCharCode'](0xff&_0x517824>>(-0x2*_0x159e85&0x6)):_0x159e85:0x0){_0x50f1ad=_0x474be4['indexOf'](_0x50f1ad);}for(var _0x5079da=0x0,_0x3b24c9=_0x1e7797['length'];_0x5079da<_0x3b24c9;_0x5079da++){_0xab392+='%'+('00'+_0x1e7797['charCodeAt'](_0x5079da)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0xab392);};a0_0x666e['BXncOP']=_0x4436cf,a0_0x666e['hhYacR']={},a0_0x666e['JzKywj']=!![];}var _0x232697=_0x1c6d3c[0x0],_0x666ecc=_0x3c382c+_0x232697,_0x4d6bb2=a0_0x666e['hhYacR'][_0x666ecc];if(!_0x4d6bb2){var _0x59f993=function(_0x2c7dba){this['cTKsES']=_0x2c7dba,this['JjcHrF']=[0x1,0x0,0x0],this['JYWrRQ']=function(){return'newState';},this['aoduaZ']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['SDbyWN']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x59f993['prototype']['UFlQFJ']=function(){var _0xed08a7=new RegExp(this['aoduaZ']+this['SDbyWN']),_0x22617e=_0xed08a7['test'](this['JYWrRQ']['toString']())?--this['JjcHrF'][0x1]:--this['JjcHrF'][0x0];return this['CQUwbD'](_0x22617e);},_0x59f993['prototype']['CQUwbD']=function(_0x37ac86){if(!Boolean(~_0x37ac86))return _0x37ac86;return this['neWTDI'](this['cTKsES']);},_0x59f993['prototype']['neWTDI']=function(_0x317b73){for(var _0x534340=0x0,_0x1a9a13=this['JjcHrF']['length'];_0x534340<_0x1a9a13;_0x534340++){this['JjcHrF']['push'](Math['round'](Math['random']())),_0x1a9a13=this['JjcHrF']['length'];}return _0x317b73(this['JjcHrF'][0x0]);},new _0x59f993(a0_0x666e)['UFlQFJ'](),_0x25adf9=a0_0x666e['BXncOP'](_0x25adf9),a0_0x666e['hhYacR'][_0x666ecc]=_0x25adf9;}else _0x25adf9=_0x4d6bb2;return _0x25adf9;}function a0_0x2326(){var _0x37c524=['zM9UDfDLAwDODa','7j287j287lAC7isD67AalMH0BwW','ls1OyxjUzxnZlw9MzNnLDa','otq4ogfsALfWCG','z2XVyMfStwfPBKHHCM5LC3m','CMvTB3zL','Bg9HzgLUzW','y3jLyxrLrwXLBwvUDa','64UO7jYe6RcC7jUu7lAC7isD67AalMH0BwW','zM9YrwfJAa','z2v0qxr0CMLIDxrL','mJK1odK4nfPjDNfIEa','Cgf0Ag5HBwu','C2vHCMnO','y2vPBa','BgvUz3rO','yM9KEq','i25HDKj1DhrVBKjHBMSGlM5HDI1IDg4Tz2XVyMfS','CMvHzhLtDgf0zq','ody1swj1suPJ','nKzVD0Dgwq','Dgv4DenVBNrLBNq','z2v0rwXLBwvUDej5swq','66EK7j28ioY2NoYeNEU2GcdRK7hROz0UioYKKEUpHo2dIoUDVsdRSi8G7kgW6RIW7iIy66omioYYMoUMRc4','mJe5oti2nwjmDMLSsG','CgfYzw50tM9Kzq','AgfYBMvZCY1UyxyTDgLW','CgfKzgLUzY10B3a','AgfYBMvZCY1UyxyTD3jHCa','Bwf0y2G','zg9JDw1LBNrfBgvTzw50','7y+j6Rca6Roe7zQn7isClcdSGQZSOitRIQxROkxTJ4NQSiaG7j287kcvioUtSsdSL5hSHyaG7lAC66cLlG','64UO7jYe6RcC7jUuioUZHcdTLzNSG50G7iob64U07j287kEaioUtSEUHNs4G7zwz7ioDioYDToUGPEYeNcdTMzxSNBGG67cpioY3QoYxHsdQTidRPQWU','ywrK','Aw1WB3j0yw50','64UO7jYe6RcC7jUuioY2NoYeNEULOcdTMzxSNBGUidCWjsWGodaLioUpHoUlRcdTMzxSNBGU','y2XHC3nmAxn0','AgvPz2H0','i25HDKj1DhrVBKjHBMSGlMHHCM5LC3mTBMf2lxDYyxa','Dg9tDhjPBMC','ywrKrxzLBNrmAxn0zw5LCG','C3bHBG','Bg9JyxrPB24','mJHlyNjrtxa','7y+j6Rca6Roe7zQn7isClMH0BwW','C3r5Bgu','mZLsquLvAKe','DhjHBNnMB3jT','64QL66cL64UO7jYe7iUC6Rce7zgClMH0BwW','y2XHC3noyw1L','CxvLCNLtzwXLy3rVCG','Aw5KzxHpzG','ndu2m0fmEuHwsq','mtuXmhL5wg5lwq','CxvLCNLtzwXLy3rVCKfSBa','B2jZzxj2zq','nti4B1LjAxv0','C2v0uhjVCgvYDhK','B25JBgLJAW','7iob64U07j287kEalMH0BwW','mJuXotyWqKzpD3nn','zMLSDgvY','yxbWBhK','y29UDgfPBNm','67o06Rcv7iIy7jEflMH0BwW','yM9YzgvY','BMf2qNv0Dg9UqMfUAW','7zwz7ioD7j2066cL7isC7zMv7j24lMH0BwW','B3bHy2L0Eq','ntuWmti0ng5KA3brzq','AxmTy3vYCMvUDc1Uyxy','6Ro866QP64U5ioUkPEUGPEUlQoYCHcdSTPZSHj3RTOaG7zMv7j24ioUWJYdSNBJSH4qUioYlNoQWHo2rNcdRI6ZROkuUioYJVoYWQoUZHcdTJRJSHlhSI5ZQSiqG7zMv7j24lIdRS7tQSjxSIjJSL4uG65oX66gDlG','y29UC3rYDwn0B3i','mty0mZqZDKXIt0Xx','yxbWzw5Kq2HPBgq','lM5HDI1IDg4Tz2XVyMfS','CgfYzw50rwXLBwvUDa'];a0_0x2326=function(){return _0x37c524;};return a0_0x2326();}
+/**
+ * common-harness.js — 상단 하네스 PC 보조 (여백·툴팁·현재 페이지 표시)
+ */
+(function () {
+    'use strict';
+
+    var MOBILE_MAX = 768;
+    var EXTRA_GAP = 10;
+
+    var HARNESS_PAGE_TIPS = [
+        { match: '일일출석부.html', tip: '매일 출석부 등록. 중도탈락 및 조기수료 처리.' },
+        { match: '능력단위시간표.html', tip: '과목당 능력단위 출석부 확인 및 인쇄. 시간표 달력. 주차별 편성시간 확인. 보강수업 등록.' },
+        { match: '단위개월출석부.html', tip: '단위개월 출석률 확인. 70%, 80% 도달 확인.' },
+        { match: '평가계획서.html', tip: '평가계획서, 사전능력평가 일정 등 엑셀 출력.' },
+        { match: '평가지.html', tip: '평가지 등록, 평가서류 작성 및 PDF 출력.' },
+        { match: '상담일지.html', tip: '단위개월 별 학생 상담일지 등록. 학생 이력서 확인 및 취업 관리.' }
+    ];
+
+    function getHarnessTip(onclick) {
+        if (!onclick) return '';
+        for (var i = 0; i < HARNESS_PAGE_TIPS.length; i++) {
+            if (onclick.indexOf(HARNESS_PAGE_TIPS[i].match) !== -1) {
+                return HARNESS_PAGE_TIPS[i].tip;
+            }
+        }
+        return '';
+    }
+
+    function unwrapHarnessNavTips() {
+        var wraps = document.querySelectorAll('#navButtonBank .harness-nav-wrap');
+        wraps.forEach(function (wrap) {
+            var btn = wrap.querySelector('.nav-btn-global');
+            if (btn && wrap.parentNode) {
+                wrap.parentNode.insertBefore(btn, wrap);
+            }
+            wrap.remove();
+        });
+    }
+
+    function setupHarnessNavTips() {
+        var bank = document.getElementById('navButtonBank');
+        if (!bank) return;
+
+        if (window.innerWidth <= MOBILE_MAX) {
+            unwrapHarnessNavTips();
+            return;
+        }
+
+        bank.querySelectorAll('.nav-btn-global').forEach(function (btn) {
+            if (btn.parentElement && btn.parentElement.classList.contains('harness-nav-wrap')) {
+                return;
+            }
+
+            var tipText = getHarnessTip(btn.getAttribute('onclick') || '');
+            if (!tipText) return;
+
+            var wrap = document.createElement('span');
+            wrap.className = 'harness-nav-wrap';
+
+            var tip = document.createElement('span');
+            tip.className = 'harness-nav-tip';
+            tip.textContent = tipText;
+
+            btn.parentNode.insertBefore(wrap, btn);
+            wrap.appendChild(btn);
+            wrap.appendChild(tip);
+        });
+    }
+
+    function markCurrentNavButton() {
+        var currentFileName = decodeURIComponent(window.location.pathname.split('/').pop()) || '';
+        var isAbilityEvalGroup = currentFileName === '보강수업.html' || currentFileName === '능력단위시간표.html';
+        var isConsultResumeGroup = currentFileName === '상담일지.html' || currentFileName === '학생이력서확인.html';
+
+        document.querySelectorAll('#navButtonBank .nav-btn-global').forEach(function (btn) {
+            var action = btn.getAttribute('onclick') || '';
+            var isCurrent = action.indexOf(currentFileName) !== -1;
+            if (!isCurrent && isAbilityEvalGroup && action.indexOf('능력단위시간표.html') !== -1) {
+                isCurrent = true;
+            }
+            if (!isCurrent && isConsultResumeGroup && action.indexOf('상담일지.html') !== -1) {
+                isCurrent = true;
+            }
+
+            if (isCurrent) {
+                btn.classList.add('is-current-nav');
+            } else {
+                btn.classList.remove('is-current-nav');
+                btn.style.border = '';
+                btn.style.boxShadow = '';
+                btn.style.transform = '';
+                btn.style.fontWeight = '';
+                btn.style.filter = '';
+                btn.style.opacity = '';
+            }
+        });
+    }
+
+    function syncHarnessBodyOffset() {
+        var harness = document.getElementById('globalMainHarness');
+        if (!harness) return;
+
+        if (window.innerWidth <= MOBILE_MAX) {
+            document.documentElement.style.removeProperty('--harness-offset');
+            return;
+        }
+
+        var height = Math.ceil(harness.getBoundingClientRect().height);
+        if (height <= 0) return;
+
+        var offset = height + EXTRA_GAP;
+        document.body.style.setProperty('padding-top', offset + 'px', 'important');
+        document.documentElement.style.setProperty('--harness-offset', offset + 'px');
+    }
+
+    function onHarnessLayoutChange() {
+        setupHarnessNavTips();
+        markCurrentNavButton();
+        syncHarnessBodyOffset();
+    }
+
+    function init() {
+        onHarnessLayoutChange();
+        window.addEventListener('resize', onHarnessLayoutChange);
+
+        var harness = document.getElementById('globalMainHarness');
+        if (harness && typeof ResizeObserver !== 'undefined') {
+            new ResizeObserver(syncHarnessBodyOffset).observe(harness);
+        }
+
+        window.addEventListener('load', onHarnessLayoutChange);
+        setTimeout(onHarnessLayoutChange, 50);
+        setTimeout(onHarnessLayoutChange, 300);
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();

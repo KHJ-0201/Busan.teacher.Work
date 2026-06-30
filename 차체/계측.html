@@ -1,4 +1,16 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>차체 정밀 진단 시스템</title><script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script><script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script><script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script><style>/* [1] 순정 베이스 레이아웃 */
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>차체 정밀 진단 시스템</title>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+
+    <style>
+        /* [1] 순정 베이스 레이아웃 */
         html, body { margin: 0; padding: 0; width: 100%; height: 100%; background-color: #ecf0f1; display: flex; justify-content: center; align-items: center; overflow: hidden; }
         
         .master-grid {
@@ -193,7 +205,227 @@
         /* 그리드 내부 내용이 넘쳐도 스크롤 생성 금지 */
         overflow: hidden !important;
     }
-}</style></head><body><div class="mobile-top-bar"><button class="m-btn m-btn-back" onclick='location.href="../start/데이터자료.html"'>자료</button><div style="width: 1px; height: 20px; background: #57606f; margin: 0 2px;"></div><button class="m-btn m-btn-save" onclick="saveAllData()">저장</button> <button class="m-btn m-btn-edit" onclick="unlockData()">수정</button><div class="m-time-info"><span>수정일</span> <span id="m-time-val" style="color:white;">-</span></div><div style="width: 1px; height: 20px; background: #57606f; margin: 0 2px;"></div><button class="m-btn m-btn-page" onclick="switchPage(1)">1P</button> <button class="m-btn m-btn-page" onclick="switchPage(2)">2P</button><div id="m-day-display" class="m-day-indicator">월요일</div></div><div class="left-control-panel"><button class="btn-back" onclick='location.href="../start/데이터자료.html"'>◀ 데이터 자료</button></div><div class="right-control-panel"><div id="last-modified-display" style="font-size: 0.75rem; color: #ff4757; text-align: center; background: white; padding: 6px; border-radius: 4px; border: 2px solid #ff4757; font-weight: bold; margin-bottom: 5px;">수정일자<br><span id="last-modified-time" style="color: #2f3542; font-size: 0.85rem;">동기화 중...</span></div><button onclick="switchPage(1)">1페이지</button> <button onclick="switchPage(2)">2페이지</button> <button class="btn-print" onclick="smartPrint()">🖨️ 프린트</button></div><div class="master-grid" id="gridContainer"><div class="top-zone-engine"><div class="top-row-1"><div class="action-btn-group" style="grid-column: 1 / 2; display: flex; gap: 4px; justify-content: flex-start; align-items: center;"><button class="action-btn btn-save" onclick="saveAllData()">저장</button> <button class="action-btn btn-edit" onclick="unlockData()">수정</button></div><div class="top-col-merged">[공개도면]</div><div class="top-col-day" id="topDayDisplay">월요일</div></div><div class="top-row-2"><table class="top-info-table"><tr><th>자격종목</th><td>자동차차체수리기능사</td><th>작품명</th><td>자동차차체수리작업</td></tr></table></div></div><div class="bottom-zone-engine"><div class="dashboard-container"><div class="day-selector"><button class="day-btn" onclick='changeDay("일")'>일</button> <button class="day-btn active" onclick='changeDay("월")'>월</button> <button class="day-btn" onclick='changeDay("화")'>화</button> <button class="day-btn" onclick='changeDay("수")'>수</button> <button class="day-btn" onclick='changeDay("목")'>목</button> <button class="day-btn" onclick='changeDay("금")'>금</button> <button class="day-btn" onclick='changeDay("토")'>토</button></div><div id="wheelCards" style="display: flex; gap: 8px; flex: 1;"></div></div></div><div id="page2-panel"></div></div><script>let container=document.getElementById("gridContainer"),p2Panel=document.getElementById("page2-panel"),currentDay="월",isSystemLocked=!0,measureData={},standardData={"일":{},"월":{},"화":{},"수":{},"목":{},"금":{},"토":{}},masterConfig={apiKey:"AIzaSyDnADuHu0mq4GIlqBm_VHfv7y6RarabGhU",authDomain:"busan-teacher-workall.firebaseapp.com",databaseURL:"https://busan-teacher-workall-default-rtdb.asia-southeast1.firebasedatabase.app",projectId:"busan-teacher-workall"},database=(firebase.apps.length||firebase.initializeApp(masterConfig),firebase.database());function confirmNavigation(e){isSystemLocked?e():confirm("⚠ 수정 중인 데이터가 저장되지 않았습니다.\n저장하지 않고 이동하시겠습니까?")&&(applyLockState(isSystemLocked=!0),e())}function changeDay(t){confirmNavigation(()=>{currentDay=t,document.querySelectorAll(".day-btn").forEach(e=>e.classList.toggle("active",e.innerText===t)),document.getElementById("topDayDisplay").innerText=t+"요일",document.getElementById("m-day-display")&&(document.getElementById("m-day-display").innerText=t+"요일"),renderCards()})}function switchPage(e){confirmNavigation(()=>{p2Panel.style.display=1===e?"none":"block"})}function applyLockState(t){document.querySelectorAll('.wheel-card input[type="number"]').forEach(e=>{e.readOnly=t,e.style.backgroundColor=t?"#e0e0e0":"white",e.style.pointerEvents=t?"none":"auto"})}let fixedBoxData=[{id:1,x:50.2,y:20.4},{id:2,x:50.2,y:23.9},{id:3,x:50.2,y:29.1},{id:4,x:52.5,y:20.4},{id:5,x:52.5,y:23.9},{id:6,x:52.5,y:29.1},{id:7,x:44.9,y:20.4},{id:8,x:44.9,y:23.9},{id:9,x:44.9,y:29.1},{id:10,x:47.3,y:20.4},{id:11,x:47.3,y:23.9},{id:12,x:47.3,y:29.1},{id:13,x:25.6,y:23.9},{id:14,x:25.6,y:26.8},{id:15,x:25.6,y:29.9},{id:16,x:28,y:23.9},{id:17,x:28,y:26.8},{id:18,x:28,y:29.9},{id:19,x:50.2,y:64},{id:20,x:50.2,y:69},{id:21,x:52.5,y:64},{id:22,x:52.5,y:69},{id:23,x:44.9,y:64},{id:24,x:44.9,y:69},{id:25,x:47.3,y:64},{id:26,x:47.3,y:69},{id:27,x:25.6,y:64},{id:28,x:25.6,y:69.7},{id:29,x:28,y:64},{id:30,x:28,y:69.7},{id:31,x:25.6,y:33.3},{id:32,x:28,y:33.3},{id:33,x:25.6,y:36.8},{id:34,x:28,y:36.8},{id:35,x:25.6,y:42.7},{id:36,x:28,y:42.7},{id:37,x:25.6,y:53.3},{id:38,x:28,y:53.3},{id:39,x:25.6,y:57.9},{id:40,x:28,y:57.9},{id:41,x:44.9,y:32.6},{id:42,x:47.3,y:32.6},{id:43,x:50.2,y:32.6},{id:44,x:52.5,y:32.6},{id:45,x:44.9,y:35.9},{id:46,x:47.3,y:35.9},{id:47,x:50.2,y:35.9},{id:48,x:52.5,y:35.9},{id:49,x:44.9,y:42.5},{id:50,x:47.3,y:42.5},{id:51,x:50.2,y:42.5},{id:52,x:52.5,y:42.5},{id:53,x:44.9,y:54.4},{id:54,x:47.3,y:54.4},{id:55,x:50.2,y:54.4},{id:56,x:52.5,y:54.4},{id:57,x:44.9,y:59},{id:58,x:47.3,y:59},{id:59,x:50.2,y:59},{id:60,x:52.5,y:59}],p2FixedBoxData=[{id:1,x:"85.43",y:"23.29",w:"40px",h:"20px"},{id:2,x:"73.58",y:"23.29",w:"40px",h:"20px"},{id:3,x:"74.06",y:"88.90",w:"40px",h:"20px"},{id:4,x:"84.94",y:"88.90",w:"40px",h:"20px"},{id:5,x:"15.42",y:"18.06",w:"40px",h:"20px"},{id:6,x:"16.27",y:"82.05",w:"40px",h:"20px"},{id:7,x:"52.18",y:"15.02",w:"20px",h:"50px"},{id:8,x:"55.93",y:"87.92",w:"20px",h:"50px"},{id:9,x:"46.01",y:"49.08",w:"40px",h:"80px"}];function resizeGrid(){container.style.height=window.innerHeight+"px",container.style.width="auto",container.style.visibility="visible"}function renderCards(){var e,t,a,d,i,n,r,l,s,o,u,c,h,p,y,m,x,g,w=document.getElementById("wheelCards");w&&(e=(n=standardData[currentDay]||{})["F-width"]||"",t=n["F-length"]||"",a=n["F-height"]||"",d=n["R-width"]||"",i=n["R-length"]||"",n=n["R-height"]||"",r=measureData["FL-width"]||"",l=measureData["FR-width"]||"",s=measureData["FL-length"]||"",o=measureData["FR-length"]||"",u=measureData["FL-height"]||"",c=measureData["FR-height"]||"",h=measureData["RL-width"]||"",p=measureData["RR-width"]||"",y=measureData["RL-length"]||"",m=measureData["RR-length"]||"",x=measureData["RL-height"]||"",g=measureData["RR-height"]||"",w.innerHTML=`
+}
+    </style>
+</head>
+<body>
+<div class="mobile-top-bar">
+    <button class="m-btn m-btn-back" onclick="location.href='../start/데이터자료.html'">자료</button>
+    <div style="width: 1px; height: 20px; background: #57606f; margin: 0 2px;"></div>
+    <button class="m-btn m-btn-save" onclick="saveAllData()">저장</button>
+    <button class="m-btn m-btn-edit" onclick="unlockData()">수정</button>
+    <div class="m-time-info">
+        <span>수정일</span>
+        <span id="m-time-val" style="color:white;">-</span>
+    </div>
+    <div style="width: 1px; height: 20px; background: #57606f; margin: 0 2px;"></div>
+    <button class="m-btn m-btn-page" onclick="switchPage(1)">1P</button>
+    <button class="m-btn m-btn-page" onclick="switchPage(2)">2P</button>
+    <div id="m-day-display" class="m-day-indicator">월요일</div>
+</div>
+
+
+    <div class="left-control-panel">
+        <button class="btn-back" onclick="location.href='../start/데이터자료.html'">◀ 데이터 자료</button>
+    </div>
+    
+    <div class="right-control-panel">
+        <div id="last-modified-display" style="font-size: 0.75rem; color: #ff4757; text-align: center; background: white; padding: 6px; border-radius: 4px; border: 2px solid #ff4757; font-weight: bold; margin-bottom: 5px;">
+            수정일자<br><span id="last-modified-time" style="color: #2f3542; font-size: 0.85rem;">동기화 중...</span>
+        </div>
+        
+        <button onclick="switchPage(1)">1페이지</button>
+        <button onclick="switchPage(2)">2페이지</button>
+        <button class="btn-print" onclick="smartPrint()">🖨️ 프린트</button>
+    </div>
+
+    <div class="master-grid" id="gridContainer">
+        
+        <div class="top-zone-engine">
+            <div class="top-row-1">
+                <div class="action-btn-group" style="grid-column: 1 / 2; display: flex; gap: 4px; justify-content: flex-start; align-items: center;">
+                    <button class="action-btn btn-save" onclick="saveAllData()">저장</button>
+                    <button class="action-btn btn-edit" onclick="unlockData()">수정</button>
+                </div>
+                <div class="top-col-merged">[공개도면]</div>
+                <div class="top-col-day" id="topDayDisplay">월요일</div> 
+            </div>
+            <div class="top-row-2">
+                <table class="top-info-table">
+                    <tr>
+                        <th>자격종목</th><td>자동차차체수리기능사</td>
+                        <th>작품명</th><td>자동차차체수리작업</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="bottom-zone-engine">
+            <div class="dashboard-container">
+                <div class="day-selector">
+                    <button class="day-btn" onclick="changeDay('일')">일</button>
+                    <button class="day-btn active" onclick="changeDay('월')">월</button>
+                    <button class="day-btn" onclick="changeDay('화')">화</button>
+                    <button class="day-btn" onclick="changeDay('수')">수</button>
+                    <button class="day-btn" onclick="changeDay('목')">목</button>
+                    <button class="day-btn" onclick="changeDay('금')">금</button>
+                    <button class="day-btn" onclick="changeDay('토')">토</button>
+                </div>
+                <div id="wheelCards" style="display: flex; gap: 8px; flex: 1;"></div>
+            </div>
+        </div>
+
+        <div id="page2-panel"></div>
+
+    </div>
+
+    <script>
+
+        const container = document.getElementById('gridContainer');
+    const p2Panel = document.getElementById('page2-panel');
+    let currentDay = '월';
+    let isSystemLocked = true; // 한 번만 선언
+
+    let measureData = {};
+    let standardData = { '일':{}, '월':{}, '화':{}, '수':{}, '목':{}, '금':{}, '토':{} };
+
+    const masterConfig = {
+    apiKey: "AIzaSyDnADuHu0mq4GIlqBm_VHfv7y6RarabGhU",
+    authDomain: "busan-teacher-workall.firebaseapp.com",
+    databaseURL: "https://busan-teacher-workall-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "busan-teacher-workall"
+};
+if (!firebase.apps.length) firebase.initializeApp(masterConfig);
+const database = firebase.database();
+
+
+
+// [2] 페이지 이동 및 요일 변경 시 '세이프티 가드' 함수
+function confirmNavigation(targetAction) {
+    if (!isSystemLocked) {
+        if (confirm("⚠ 수정 중인 데이터가 저장되지 않았습니다.\n저장하지 않고 이동하시겠습니까?")) {
+            // [정밀 수리] 이동에 동의했으므로 수정 모드를 강제 종료하고 시스템을 잠급니다.
+            isSystemLocked = true; 
+            applyLockState(true); 
+            targetAction();
+        }
+    } else {
+        targetAction();
+    }
+}
+
+// 요일 변경 로직에 가드 장착
+function changeDay(day) {
+    confirmNavigation(() => {
+        currentDay = day;
+        document.querySelectorAll('.day-btn').forEach(b => b.classList.toggle('active', b.innerText === day));
+        document.getElementById('topDayDisplay').innerText = day + '요일'; 
+        if(document.getElementById('m-day-display')) document.getElementById('m-day-display').innerText = day + '요일';
+        renderCards(); 
+    });
+}
+
+// 페이지 전환 로직에 가드 장착
+function switchPage(pageNum) {
+    confirmNavigation(() => {
+        if (pageNum === 1) {
+            p2Panel.style.display = 'none';
+        } else {
+            p2Panel.style.display = 'block';
+        }
+    });
+}
+
+
+    
+   
+
+
+
+// 잠금 상태 시각화 및 입력 차단
+function applyLockState(isLocked) {
+    const inputs = document.querySelectorAll('.wheel-card input[type="number"]');
+    inputs.forEach(el => {
+        el.readOnly = isLocked;
+        el.style.backgroundColor = isLocked ? '#e0e0e0' : 'white';
+        el.style.pointerEvents = isLocked ? 'none' : 'auto';
+    });
+}
+
+    
+
+    
+    // [선생님의 순정 좌표 보존 구역] 1페이지 60개
+    const fixedBoxData = [
+        {id: 1, x: 50.2, y: 20.4}, {id: 2, x: 50.2, y: 23.9}, {id: 3, x: 50.2, y: 29.1},
+        {id: 4, x: 52.5, y: 20.4}, {id: 5, x: 52.5, y: 23.9}, {id: 6, x: 52.5, y: 29.1},
+        {id: 7, x: 44.9, y: 20.4}, {id: 8, x: 44.9, y: 23.9}, {id: 9, x: 44.9, y: 29.1},
+        {id: 10, x: 47.3, y: 20.4}, {id: 11, x: 47.3, y: 23.9}, {id: 12, x: 47.3, y: 29.1},
+        {id: 13, x: 25.6, y: 23.9}, {id: 14, x: 25.6, y: 26.8}, {id: 15, x: 25.6, y: 29.9},
+        {id: 16, x: 28.0, y: 23.9}, {id: 17, x: 28.0, y: 26.8}, {id: 18, x: 28.0, y: 29.9},
+        {id: 19, x: 50.2, y: 64.0}, {id: 20, x: 50.2, y: 69.0}, {id: 21, x: 52.5, y: 64.0},
+        {id: 22, x: 52.5, y: 69.0}, {id: 23, x: 44.9, y: 64.0}, {id: 24, x: 44.9, y: 69.0},
+        {id: 25, x: 47.3, y: 64.0}, {id: 26, x: 47.3, y: 69.0}, {id: 27, x: 25.6, y: 64.0},
+        {id: 28, x: 25.6, y: 69.7}, {id: 29, x: 28.0, y: 64.0}, {id: 30, x: 28.0, y: 69.7},
+        {id: 31, x: 25.6, y: 33.3}, {id: 32, x: 28.0, y: 33.3}, {id: 33, x: 25.6, y: 36.8},
+        {id: 34, x: 28.0, y: 36.8}, {id: 35, x: 25.6, y: 42.7}, {id: 36, x: 28.0, y: 42.7},
+        {id: 37, x: 25.6, y: 53.3}, {id: 38, x: 28.0, y: 53.3}, {id: 39, x: 25.6, y: 57.9},
+        {id: 40, x: 28.0, y: 57.9}, {id: 41, x: 44.9, y: 32.6}, {id: 42, x: 47.3, y: 32.6},
+        {id: 43, x: 50.2, y: 32.6}, {id: 44, x: 52.5, y: 32.6}, {id: 45, x: 44.9, y: 35.9},
+        {id: 46, x: 47.3, y: 35.9}, {id: 47, x: 50.2, y: 35.9}, {id: 48, x: 52.5, y: 35.9},
+        {id: 49, x: 44.9, y: 42.5}, {id: 50, x: 47.3, y: 42.5}, {id: 51, x: 50.2, y: 42.5},
+        {id: 52, x: 52.5, y: 42.5}, {id: 53, x: 44.9, y: 54.4}, {id: 54, x: 47.3, y: 54.4},
+        {id: 55, x: 50.2, y: 54.4}, {id: 56, x: 52.5, y: 54.4}, {id: 57, x: 44.9, y: 59.0},
+        {id: 58, x: 47.3, y: 59.0}, {id: 59, x: 50.2, y: 59.0}, {id: 60, x: 52.5, y: 59.0}
+    ];
+
+    // 2페이지 9개 좌표
+    const p2FixedBoxData = [
+        {id:1, x:"85.43", y:"23.29", w:"40px", h:"20px"},
+        {id:2, x:"73.58", y:"23.29", w:"40px", h:"20px"},
+        {id:3, x:"74.06", y:"88.90", w:"40px", h:"20px"},
+        {id:4, x:"84.94", y:"88.90", w:"40px", h:"20px"},
+        {id:5, x:"15.42", y:"18.06", w:"40px", h:"20px"},
+        {id:6, x:"16.27", y:"82.05", w:"40px", h:"20px"},
+        {id:7, x:"52.18", y:"15.02", w:"20px", h:"50px"},
+        {id:8, x:"55.93", y:"87.92", w:"20px", h:"50px"},
+        {id:9, x:"46.01", y:"49.08", w:"40px", h:"80px"}
+    ];
+
+    function resizeGrid() {
+        container.style.height = window.innerHeight + 'px';
+        container.style.width = 'auto'; 
+        container.style.visibility = 'visible';
+    }
+
+
+    function renderCards() {
+    const cardContainer = document.getElementById('wheelCards');
+    if (!cardContainer) return; // 엔진 룸(컨테이너) 확인
+
+    // [정밀 진단] 데이터가 없는 요일이라도 에러가 나지 않도록 빈 부품({})을 즉시 공급합니다.
+    const sData = standardData[currentDay] || {}; 
+    
+    // 기준값(Standard) 변수들: sData가 비어있어도 에러 없이 공백('')을 출력합니다.
+    const f_w_s = sData['F-width'] || '';
+    const f_l_s = sData['F-length'] || '';
+    const f_h_s = sData['F-height'] || '';
+    
+    const r_w_s = sData['R-width'] || '';
+    const r_l_s = sData['R-length'] || '';
+    const r_h_s = sData['R-height'] || '';
+
+    // 측정값(Measure) 변수들
+    const fl_w_m = measureData['FL-width'] || ''; const fr_w_m = measureData['FR-width'] || '';
+    const fl_l_m = measureData['FL-length'] || ''; const fr_l_m = measureData['FR-length'] || '';
+    const fl_h_m = measureData['FL-height'] || ''; const fr_h_m = measureData['FR-height'] || '';
+
+    const rl_w_m = measureData['RL-width'] || ''; const rr_w_m = measureData['RR-width'] || '';
+    const rl_l_m = measureData['RL-length'] || ''; const rr_l_m = measureData['RR-length'] || '';
+    const rl_h_m = measureData['RL-height'] || ''; const rr_h_m = measureData['RR-height'] || '';
+
+    // [표 구조 출력] 이 부분이 실행되어야 화면에 표가 나타납니다.
+    cardContainer.innerHTML = `
         <div class="wheel-card front" style="flex: 1;">
             <table>
                 <thead>
@@ -208,23 +440,23 @@
                 <tbody>
                     <tr>
                         <td>폭</td>
-                        <td><input type="number" id="FL-width-m" class="measure-input" value="${r}" oninput="calculateArrows()"></td>
-                        <td><input type="number" id="F-width-s" class="standard-input" value="${e}" oninput="calculateArrows()"></td>
-                        <td><input type="number" id="FR-width-m" class="measure-input" value="${l}" oninput="calculateArrows()"></td>
+                        <td><input type="number" id="FL-width-m" class="measure-input" value="${fl_w_m}" oninput="calculateArrows()"></td>
+                        <td><input type="number" id="F-width-s" class="standard-input" value="${f_w_s}" oninput="calculateArrows()"></td>
+                        <td><input type="number" id="FR-width-m" class="measure-input" value="${fr_w_m}" oninput="calculateArrows()"></td>
                         <td>폭</td>
                     </tr>
                     <tr>
                         <td>길이</td>
-                        <td><input type="number" id="FL-length-m" class="measure-input" value="${s}" oninput="calculateArrows()"></td>
-                        <td><input type="number" id="F-length-s" class="standard-input" value="${t}" oninput="calculateArrows()"></td>
-                        <td><input type="number" id="FR-length-m" class="measure-input" value="${o}" oninput="calculateArrows()"></td>
+                        <td><input type="number" id="FL-length-m" class="measure-input" value="${fl_l_m}" oninput="calculateArrows()"></td>
+                        <td><input type="number" id="F-length-s" class="standard-input" value="${f_l_s}" oninput="calculateArrows()"></td>
+                        <td><input type="number" id="FR-length-m" class="measure-input" value="${fr_l_m}" oninput="calculateArrows()"></td>
                         <td>길이</td>
                     </tr>
                     <tr>
                         <td>높이</td>
-                        <td><input type="number" id="FL-height-m" class="measure-input" value="${u}" oninput="calculateArrows()"></td>
-                        <td><input type="number" id="F-height-s" class="standard-input" value="${a}" oninput="calculateArrows()"></td>
-                        <td><input type="number" id="FR-height-m" class="measure-input" value="${c}" oninput="calculateArrows()"></td>
+                        <td><input type="number" id="FL-height-m" class="measure-input" value="${fl_h_m}" oninput="calculateArrows()"></td>
+                        <td><input type="number" id="F-height-s" class="standard-input" value="${f_h_s}" oninput="calculateArrows()"></td>
+                        <td><input type="number" id="FR-height-m" class="measure-input" value="${fr_h_m}" oninput="calculateArrows()"></td>
                         <td>높이</td>
                     </tr>
                 </tbody>
@@ -245,26 +477,338 @@
                 <tbody>
                     <tr>
                         <td>폭</td>
-                        <td><input type="number" id="RL-width-m" class="measure-input" value="${h}" oninput="calculateArrows()"></td>
-                        <td><input type="number" id="R-width-s" class="standard-input" value="${d}" oninput="calculateArrows()"></td>
-                        <td><input type="number" id="RR-width-m" class="measure-input" value="${p}" oninput="calculateArrows()"></td>
+                        <td><input type="number" id="RL-width-m" class="measure-input" value="${rl_w_m}" oninput="calculateArrows()"></td>
+                        <td><input type="number" id="R-width-s" class="standard-input" value="${r_w_s}" oninput="calculateArrows()"></td>
+                        <td><input type="number" id="RR-width-m" class="measure-input" value="${rr_w_m}" oninput="calculateArrows()"></td>
                         <td>폭</td>
                     </tr>
                     <tr>
                         <td>길이</td>
-                        <td><input type="number" id="RL-length-m" class="measure-input" value="${y}" oninput="calculateArrows()"></td>
-                        <td><input type="number" id="R-length-s" class="standard-input" value="${i}" oninput="calculateArrows()"></td>
-                        <td><input type="number" id="RR-length-m" class="measure-input" value="${m}" oninput="calculateArrows()"></td>
+                        <td><input type="number" id="RL-length-m" class="measure-input" value="${rl_l_m}" oninput="calculateArrows()"></td>
+                        <td><input type="number" id="R-length-s" class="standard-input" value="${r_l_s}" oninput="calculateArrows()"></td>
+                        <td><input type="number" id="RR-length-m" class="measure-input" value="${rr_l_m}" oninput="calculateArrows()"></td>
                         <td>길이</td>
                     </tr>
                     <tr>
                         <td>높이</td>
-                        <td><input type="number" id="RL-height-m" class="measure-input" value="${x}" oninput="calculateArrows()"></td>
-                        <td><input type="number" id="R-height-s" class="standard-input" value="${n}" oninput="calculateArrows()"></td>
-                        <td><input type="number" id="RR-height-m" class="measure-input" value="${g}" oninput="calculateArrows()"></td>
+                        <td><input type="number" id="RL-height-m" class="measure-input" value="${rl_h_m}" oninput="calculateArrows()"></td>
+                        <td><input type="number" id="R-height-s" class="standard-input" value="${r_h_s}" oninput="calculateArrows()"></td>
+                        <td><input type="number" id="RR-height-m" class="measure-input" value="${rr_h_m}" oninput="calculateArrows()"></td>
                         <td>높이</td>
                     </tr>
                 </tbody>
             </table>
         </div>
-    `,calculateArrows(),applyLockState(isSystemLocked))}function saveAllData(){var e=document.querySelectorAll('.wheel-card input[type="number"]'),e=(standardData[currentDay]||(standardData[currentDay]={}),e.forEach(e=>{var t,a=e.id.split("-");a.length<3||(t=a[0]+"-"+a[1],"m"===(a=a[2])?measureData[t]=e.value:"s"===a&&(standardData[currentDay][t]=e.value))}),new Date);let t=e.getFullYear()+"."+(e.getMonth()+1)+"."+e.getDate()+" "+e.getHours()+":"+String(e.getMinutes()).padStart(2,"0");database.ref("carBodyMeasurement").set({measureData:measureData,standardData:standardData,lockState:"locked",lastModified:t}).then(()=>{document.getElementById("last-modified-time").innerText=t,document.getElementById("m-time-val")&&(document.getElementById("m-time-val").innerText=t.split(" ")[1]),applyLockState(isSystemLocked=!0),calculateArrows(),alert("✅ 클라우드 저장소에 안전하게 기록되었습니다. 시스템을 잠급니다.")}).catch(e=>{console.error("저장 오류 상세:",e),alert("❌ 저장 실패: "+e.message)})}function unlockData(){var e=prompt("🔧 [정비사 인증] 수정을 위해 비밀번호를 입력하십시오.");"0936"===e?(isSystemLocked=!1,database.ref("carBodyMeasurement/lockState").set("unlocked").then(()=>{applyLockState(!1),alert("🔓 수정 모드 가동. 이동 시 데이터 유실에 주의하십시오.")})):null!==e&&alert("❌ 비밀번호가 일치하지 않습니다.")}function renderFixedBoxes(){fixedBoxData.forEach(e=>{var t=document.createElement("div");t.id="box-"+e.id,t.className="measure-box",t.style.left=e.x+"%",t.style.top=e.y+"%",t.innerText=e.id,container.appendChild(t)})}function renderP2FixedBoxes(){p2Panel.innerHTML="",p2FixedBoxData.forEach(e=>{var t=document.createElement("div");t.id="p2-box-"+e.id,t.className="p2-measure-box",t.style.left=e.x+"%",t.style.top=e.y+"%",t.style.width=e.w,t.style.height=e.h,p2Panel.appendChild(t)})}function updateBoxDisplay(t,a,e,d){var i=document.getElementById("box-"+t);if(i)if(""===a||""===e)i.innerHTML=t,i.style.color="black";else{t=parseFloat(a),a=parseFloat(e);if(t===a)i.innerHTML='<div style="box-sizing: border-box; width: 13px; height: 13px; border: 3px solid #ff4757; border-radius: 50%;"></div>';else{let e="";"FL-width"===d||"RL-width"===d?e=a<t?"←":"→":"FR-width"===d||"RR-width"===d?e=t<a?"←":"→":"FL-length"===d||"FR-length"===d?e=a<t?"↑":"↓":"RL-length"===d||"RR-length"===d?e=a<t?"↓":"↑":"height"===d&&(e=a<t?"→":"←"),i.innerHTML=`<span style="color: #ff4757; font-weight: 900; font-size: 15px;">${e}</span>`}}}function updatePage2Values(){var e=standardData[currentDay]||{},t=e["F-width"]||"",a=e["R-width"]||"",d=e["F-length"]||"",i=e["R-length"]||"",n=e["F-height"]||"",e=e["R-height"]||"",r=(e,t)=>{e=document.getElementById("p2-box-"+e);e&&(e.innerText=t)},l=(e,t)=>{e=document.getElementById("p2-box-"+e);e&&(e.innerHTML=`<span style="transform: rotate(90deg); display: block;">${t}</span>`)},t=(r(1,t),r(2,t),r(3,a),r(4,a),l(7,d),l(8,i),r(5,n),r(6,e),document.getElementById("p2-box-9"));t&&(t.style.border="none",t.style.backgroundColor="transparent",t.innerHTML=`<div style="transform: rotate(90deg); border: 2px solid #1e90ff; border-radius: 4px; padding: 4px 10px; color: #1e90ff; font-weight: 900; font-size: 14px; background-color: white; white-space: nowrap;">${currentDay}요일</div>`)}function calculateArrows(){var e=e=>document.getElementById(e)?document.getElementById(e).value:"";let t=e("F-width-s"),a=e("F-length-s"),d=e("F-height-s"),i=e("R-width-s"),n=e("R-length-s"),r=e("R-height-s"),l=e("FL-width-m"),s=e("FR-width-m"),o=e("FL-length-m"),u=e("FR-length-m"),c=e("FL-height-m"),h=e("FR-height-m"),p=e("RL-width-m"),y=e("RR-width-m"),m=e("RL-length-m"),x=e("RR-length-m"),g=e("RL-height-m"),w=e("RR-height-m");[1,2,3].forEach(e=>updateBoxDisplay(e,l,t,"FL-width")),[4,5,6].forEach(e=>updateBoxDisplay(e,s,t,"FR-width")),[7,8,9].forEach(e=>updateBoxDisplay(e,o,a,"FL-length")),[10,11,12].forEach(e=>updateBoxDisplay(e,u,a,"FR-length")),[13,14,15].forEach(e=>updateBoxDisplay(e,c,d,"height")),[16,17,18].forEach(e=>updateBoxDisplay(e,h,d,"height")),[19,20].forEach(e=>updateBoxDisplay(e,p,i,"RL-width")),[21,22].forEach(e=>updateBoxDisplay(e,y,i,"RR-width")),[23,24].forEach(e=>updateBoxDisplay(e,m,n,"RL-length")),[25,26].forEach(e=>updateBoxDisplay(e,x,n,"RR-length")),[27,28].forEach(e=>updateBoxDisplay(e,g,r,"height")),[29,30].forEach(e=>updateBoxDisplay(e,w,r,"height"));for(let e=31;e<=60;e++){var b=document.getElementById("box-"+e);b&&(b.innerHTML='<div style="box-sizing: border-box; width: 13px; height: 13px; border: 3px solid black; border-radius: 50%;"></div>')}updatePage2Values()}function loadFirebaseData(){isSystemLocked=!0,database.ref("carBodyMeasurement").once("value",e=>{e=e.val();e&&(measureData=e.measureData||{},standardData=e.standardData||{"일":{},"월":{},"화":{},"수":{},"목":{},"금":{},"토":{}},isSystemLocked="locked"===e.lockState,document.getElementById("last-modified-time").innerText=e.lastModified||"기록 없음"),currentDay="월",document.querySelectorAll(".day-btn").forEach(e=>e.classList.toggle("active","월"===e.innerText)),document.getElementById("topDayDisplay").innerText="월요일",renderCards(),applyLockState(isSystemLocked)}).catch(e=>{console.error("DB 연동 실패:",e),alert("데이터를 불러오지 못했습니다.")})}function smartPrint(){var e="block"===p2Panel.style.display,t=currentDay+"요일",a=new Date,a=a.getFullYear()+`-${String(a.getMonth()+1).padStart(2,"0")}-`+String(a.getDate()).padStart(2,"0");let d="",i=(d=e?`계측 기준값(${t})_수정일 `+a:`계측답안(${t})_수정일 `+a,document.title);document.title=d,window.print(),setTimeout(()=>{document.title=i},1e3)}window.addEventListener("resize",resizeGrid),window.onload=function(){resizeGrid(),renderFixedBoxes(),renderP2FixedBoxes();var e=localStorage.getItem("adminPw");e?firebase.auth().signInWithEmailAndPassword("ghlwns0201@naver.com",e).then(()=>{loadFirebaseData()}).catch(e=>{alert("서버 연결 실패. 인증 정보가 만료되었습니다.")}):(alert("보안 인증이 필요합니다. 메인 화면으로 이동합니다."),location.href="../index.html")},window.onload=function(){resizeGrid(),renderFixedBoxes(),renderP2FixedBoxes();var e=localStorage.getItem("adminPw");e?firebase.auth().signInWithEmailAndPassword("ghlwns0201@naver.com",e).then(()=>{loadFirebaseData()}).catch(e=>{alert("서버 연결 실패. 인증 정보가 만료되었습니다.")}):(alert("보안 인증이 필요합니다. 메인 화면으로 이동합니다."),location.href="../index.html")}</script></body></html>
+    `;
+    calculateArrows(); 
+    applyLockState(isSystemLocked);
+}
+
+    // [서버로 전송 엔진]
+    function saveAllData() {
+    const inputs = document.querySelectorAll('.wheel-card input[type="number"]');
+    
+    // 1. 요일별 기준값 저장 공간이 비어있는지 먼저 점검 (안전 장치)
+    if (!standardData[currentDay]) {
+        standardData[currentDay] = {};
+    }
+
+    inputs.forEach(el => {
+        const idParts = el.id.split('-'); // 예: ["FL", "width", "m"]
+        if (idParts.length < 3) return;   // 비정상적인 ID 스킵
+
+        const key = idParts[0] + '-' + idParts[1]; // 예: "FL-width" 또는 "F-width"
+        const type = idParts[2];                  // "m" (측정치) 또는 "s" (기준치)
+
+        if (type === 'm') { 
+            measureData[key] = el.value; 
+        } else if (type === 's') { 
+            standardData[currentDay][key] = el.value; 
+        }
+    });
+    
+    // 현재 시간을 굽기 (기존 로직 유지)
+    const now = new Date();
+    const timeStr = now.getFullYear() + '.' + (now.getMonth() + 1) + '.' + now.getDate() + ' ' + now.getHours() + ':' + String(now.getMinutes()).padStart(2, '0');
+    
+    // 파이어베이스 DB로 일괄 전송
+    database.ref('carBodyMeasurement').set({
+        measureData: measureData,
+        standardData: standardData,
+        lockState: 'locked',
+        lastModified: timeStr
+    }).then(() => {
+        document.getElementById('last-modified-time').innerText = timeStr;
+        if(document.getElementById('m-time-val')) document.getElementById('m-time-val').innerText = timeStr.split(' ')[1]; // 시간만 표시
+        isSystemLocked = true; 
+        applyLockState(true);
+        calculateArrows(); 
+        alert("✅ 클라우드 저장소에 안전하게 기록되었습니다. 시스템을 잠급니다.");
+    }).catch(err => {
+        console.error("저장 오류 상세:", err);
+        alert("❌ 저장 실패: " + err.message);
+    });
+}
+
+    function unlockData() {
+    const pwd = prompt("🔧 [정비사 인증] 수정을 위해 비밀번호를 입력하십시오.");
+    if (pwd === "0936") {
+        isSystemLocked = false; // [핵심] 로컬 잠금 해제
+        database.ref('carBodyMeasurement/lockState').set('unlocked').then(() => {
+            applyLockState(false);
+            alert("🔓 수정 모드 가동. 이동 시 데이터 유실에 주의하십시오.");
+        });
+    } else if (pwd !== null) {
+        alert("❌ 비밀번호가 일치하지 않습니다.");
+    }
+}
+
+    
+
+    function renderFixedBoxes() {
+        fixedBoxData.forEach(data => {
+            const box = document.createElement('div');
+            box.id = 'box-' + data.id; 
+            box.className = 'measure-box';
+            box.style.left = data.x + '%';
+            box.style.top = data.y + '%';
+            box.innerText = data.id;
+            container.appendChild(box);
+        });
+    }
+
+    function renderP2FixedBoxes() {
+        p2Panel.innerHTML = ''; 
+        p2FixedBoxData.forEach(data => {
+            const box = document.createElement('div');
+            box.id = 'p2-box-' + data.id; 
+            box.className = 'p2-measure-box';
+            box.style.left = data.x + '%';
+            box.style.top = data.y + '%';
+            box.style.width = data.w;
+            box.style.height = data.h;
+            p2Panel.appendChild(box);
+        });
+    }
+
+    function updateBoxDisplay(boxId, m, s, rule) {
+        const boxEl = document.getElementById('box-' + boxId);
+        if (!boxEl) return;
+        
+        if (m === '' || s === '') {
+            boxEl.innerHTML = boxId;
+            boxEl.style.color = 'black'; 
+            return;
+        }
+        
+        const measure = parseFloat(m);
+        const standard = parseFloat(s);
+        const formatRed = (char) => `<span style="color: #ff4757; font-weight: 900; font-size: 15px;">${char}</span>`;
+        
+        const redCircle = `<div style="box-sizing: border-box; width: 13px; height: 13px; border: 3px solid #ff4757; border-radius: 50%;"></div>`;
+        
+        if (measure === standard) {
+            boxEl.innerHTML = redCircle; 
+            return;
+        }
+        
+        let arrow = '';
+        if (rule === 'FL-width' || rule === 'RL-width') {
+            arrow = measure > standard ? '←' : '→';
+        } else if (rule === 'FR-width' || rule === 'RR-width') {
+            arrow = measure < standard ? '←' : '→';
+        } else if (rule === 'FL-length' || rule === 'FR-length') {
+            arrow = measure > standard ? '↑' : '↓';
+        } else if (rule === 'RL-length' || rule === 'RR-length') {
+            arrow = measure > standard ? '↓' : '↑';
+        } else if (rule === 'height') { 
+            arrow = measure > standard ? '→' : '←';
+        }
+        
+        boxEl.innerHTML = formatRed(arrow);
+    }
+
+    function updatePage2Values() {
+        const sData = standardData[currentDay] || {};
+        
+        const f_w = sData['F-width'] || '';
+        const r_w = sData['R-width'] || '';
+        const f_l = sData['F-length'] || '';
+        const r_l = sData['R-length'] || '';
+        const f_h = sData['F-height'] || '';
+        const r_h = sData['R-height'] || '';
+
+        const setP2Box = (id, val) => {
+            const el = document.getElementById('p2-box-' + id);
+            if(el) el.innerText = val;
+        };
+
+        const setP2BoxRotated = (id, val) => {
+            const el = document.getElementById('p2-box-' + id);
+            if(el) el.innerHTML = `<span style="transform: rotate(90deg); display: block;">${val}</span>`;
+        };
+
+        setP2Box(1, f_w); setP2Box(2, f_w);
+        setP2Box(3, r_w); setP2Box(4, r_w);
+        setP2BoxRotated(7, f_l); setP2BoxRotated(8, r_l);
+        setP2Box(5, f_h); setP2Box(6, r_h);
+
+        const box9 = document.getElementById('p2-box-9');
+        if(box9) {
+            box9.style.border = 'none';
+            box9.style.backgroundColor = 'transparent';
+            box9.innerHTML = `<div style="transform: rotate(90deg); border: 2px solid #1e90ff; border-radius: 4px; padding: 4px 10px; color: #1e90ff; font-weight: 900; font-size: 14px; background-color: white; white-space: nowrap;">${currentDay}요일</div>`;
+        }
+    }
+
+    function calculateArrows() {
+        const getValue = (id) => document.getElementById(id) ? document.getElementById(id).value : '';
+
+        const F_w_s = getValue('F-width-s'), F_l_s = getValue('F-length-s'), F_h_s = getValue('F-height-s');
+        const R_w_s = getValue('R-width-s'), R_l_s = getValue('R-length-s'), R_h_s = getValue('R-height-s');
+
+        const FL_w_m = getValue('FL-width-m'), FR_w_m = getValue('FR-width-m');
+        const FL_l_m = getValue('FL-length-m'), FR_l_m = getValue('FR-length-m');
+        const FL_h_m = getValue('FL-height-m'), FR_h_m = getValue('FR-height-m');
+
+        const RL_w_m = getValue('RL-width-m'), RR_w_m = getValue('RR-width-m');
+        const RL_l_m = getValue('RL-length-m'), RR_l_m = getValue('RR-length-m');
+        const RL_h_m = getValue('RL-height-m'), RR_h_m = getValue('RR-height-m');
+
+        [1,2,3].forEach(id => updateBoxDisplay(id, FL_w_m, F_w_s, 'FL-width'));
+        [4,5,6].forEach(id => updateBoxDisplay(id, FR_w_m, F_w_s, 'FR-width'));
+        [7,8,9].forEach(id => updateBoxDisplay(id, FL_l_m, F_l_s, 'FL-length'));
+        [10,11,12].forEach(id => updateBoxDisplay(id, FR_l_m, F_l_s, 'FR-length'));
+        [13,14,15].forEach(id => updateBoxDisplay(id, FL_h_m, F_h_s, 'height'));
+        [16,17,18].forEach(id => updateBoxDisplay(id, FR_h_m, F_h_s, 'height'));
+
+        [19,20].forEach(id => updateBoxDisplay(id, RL_w_m, R_w_s, 'RL-width'));
+        [21,22].forEach(id => updateBoxDisplay(id, RR_w_m, R_w_s, 'RR-width'));
+        [23,24].forEach(id => updateBoxDisplay(id, RL_l_m, R_l_s, 'RL-length'));
+        [25,26].forEach(id => updateBoxDisplay(id, RR_l_m, R_l_s, 'RR-length'));
+        [27,28].forEach(id => updateBoxDisplay(id, RL_h_m, R_h_s, 'height'));
+        [29,30].forEach(id => updateBoxDisplay(id, RR_h_m, R_h_s, 'height'));
+
+        const blackCircle = `<div style="box-sizing: border-box; width: 13px; height: 13px; border: 3px solid black; border-radius: 50%;"></div>`;
+        for (let i = 31; i <= 60; i++) {
+            const boxEl = document.getElementById('box-' + i);
+            if (boxEl) boxEl.innerHTML = blackCircle;
+        }
+
+        updatePage2Values();
+    }
+
+    // [부팅 시 파이어베이스에서 영구 데이터 수신]
+    // [수정 후] 데이터 로드 즉시 물리적 잠금 공정 강제 집행
+function loadFirebaseData() {
+    // 시작하자마자 일단 잠금 유지
+    isSystemLocked = true; 
+    
+    database.ref('carBodyMeasurement').once('value', (snap) => {
+        const data = snap.val();
+        if (data) {
+            measureData = data.measureData || {};
+            standardData = data.standardData || { '일':{}, '월':{}, '화':{}, '수':{}, '목':{}, '금':{}, '토':{} };
+            // 서버에 저장된 값이 'locked'일 때만 true, 아니면 false
+            isSystemLocked = (data.lockState === 'locked'); 
+            document.getElementById('last-modified-time').innerText = data.lastModified || '기록 없음';
+        }
+        
+        currentDay = '월';
+        document.querySelectorAll('.day-btn').forEach(b => b.classList.toggle('active', b.innerText === '월'));
+        document.getElementById('topDayDisplay').innerText = '월요일'; 
+        
+        renderCards(); 
+        
+        // [정밀 수리] 데이터를 다 불러온 즉시, 판독된 잠금 상태를 물리적으로 적용합니다.
+        applyLockState(isSystemLocked); 
+        
+    }).catch(err => {
+        console.error("DB 연동 실패:", err);
+        alert("데이터를 불러오지 못했습니다.");
+    });
+}
+
+    window.addEventListener('resize', resizeGrid);
+    window.onload = function() {
+        resizeGrid();
+        renderFixedBoxes(); 
+        renderP2FixedBoxes(); 
+        
+        // 1. 보안 키 확인 (데이터자료.html 에서 로그인할 때 발급받은 키)
+        const savedPw = localStorage.getItem('adminPw');
+        if (!savedPw) {
+            alert("보안 인증이 필요합니다. 메인 화면으로 이동합니다.");
+            location.href = '../index.html'; // 경로가 다르면 조절하십시오
+            return;
+        }
+
+        // 2. 파이어베이스 서버 로그인 (히든 스위치로 진입한 관리자 권한 확인)
+        firebase.auth().signInWithEmailAndPassword('ghlwns0201@naver.com', savedPw)
+            .then(() => {
+                // 3. 권한 확인 완료 후 데이터 다운로드
+                loadFirebaseData();
+            })
+            .catch(err => {
+                alert("서버 연결 실패. 인증 정보가 만료되었습니다.");
+            });
+    };
+
+    window.onload = function() {
+        resizeGrid();
+        renderFixedBoxes(); 
+        renderP2FixedBoxes(); 
+        
+        const savedPw = localStorage.getItem('adminPw');
+        if (!savedPw) {
+            alert("보안 인증이 필요합니다. 메인 화면으로 이동합니다.");
+            location.href = '../index.html'; 
+            return;
+        }
+
+        firebase.auth().signInWithEmailAndPassword('ghlwns0201@naver.com', savedPw)
+            .then(() => {
+                loadFirebaseData();
+            })
+            .catch(err => {
+                alert("서버 연결 실패. 인증 정보가 만료되었습니다.");
+            });
+    }; // window.onload가 끝나는 중괄호
+
+    
+    function smartPrint() {
+    // 1. 현재 페이지 판별 및 요일 정보 (순정 요일만 추출)
+    const isPage2 = (p2Panel.style.display === 'block');
+    const dayInfo = currentDay + "요일"; // 예: "화요일"
+    
+    // 2. 현재 날짜 정보 추출 (YYYY-MM-DD 형식)
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const date = String(now.getDate()).padStart(2, '0');
+    const dateStr = `${year}-${month}-${date}`; 
+    
+    // 3. 파일명 조립 (선생님 요청 순서: 명칭(요일)_수정일 날짜)
+    let fileName = "";
+    if (!isPage2) {
+        // 예: 계측답안(화요일)_수정일 2026-03-15
+        fileName = `계측답안(${dayInfo})_수정일 ${dateStr}`;
+    } else {
+        // 예: 계측 기준값(화요일)_수정일 2026-03-15
+        fileName = `계측 기준값(${dayInfo})_수정일 ${dateStr}`;
+    }
+
+    // 4. 브라우저 타이틀 임시 변경 및 출력 실행
+    const originalTitle = document.title;
+    document.title = fileName;
+
+    window.print();
+
+    // 5. 출력 완료 후 타이틀 복구
+    setTimeout(() => {
+        document.title = originalTitle;
+    }, 1000);
+}
+    </script>
+</body>
+</html>

@@ -1,4 +1,16 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>종합 능력단위 출석 관리 시스템</title><script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script><script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script><script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script><script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script><style>/* [선생님 디자인 순정 유지 및 "부족 학생 강조" 기능 완벽 복원] */
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>종합 능력단위 출석 관리 시스템</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    
+    <style>
+    /* [선생님 디자인 순정 유지 및 "부족 학생 강조" 기능 완벽 복원] */
     body { font-family: 'Malgun Gothic', sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; color: #333; }
     .excel-container { max-width: 1400px; margin: 20px auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
     .excel-header-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 12px; }
@@ -1522,8 +1534,130 @@
     .resume-submit-btn:active { background: #219a52; }
     .resume-submit-status { text-align: center; font-size: 12px; color: #64748b; margin-top: 10px; min-height: 1.2em; }
     .resume-submit-status.is-success { color: #166534; font-weight: bold; }
+    .resume-daily-limit-hint { text-align: center; font-size: 12px; color: #0369a1; margin: 14px 0 0; font-weight: bold; }
+    .resume-daily-limit-hint.is-exhausted { color: #c0392b; }
+    .resume-submit-btn:disabled { opacity: 0.55; cursor: not-allowed; }
     @media (max-width: 768px) {
         .resume-basic-grid { grid-template-columns: 1fr; }
         .resume-address-grid { grid-template-columns: 1fr; }
         .tab-menu .tab-btn { font-size: 9px; padding: 8px 4px; }
-    }</style><div id="evalDateBanner"></div><div id="calendarModal" class="modal-overlay"><div class="modal-content" id="calendarModalContent"><div class="calendar-close-btn" id="btn_modal_close">✕</div><h3 id="modalTitle" style="color: #27ae60; border-bottom: 2px solid #27ae60; padding-bottom: 10px;">과목 상세 정보</h3><div id="modalActionArea" style="display: flex; justify-content: flex-end; margin-bottom: 10px; gap: 10px;"></div><div class="scroll-box"><table class="attendance-table"><thead id="modalHead"></thead><tbody id="modalBody"></tbody></table></div></div></div><div id="remainAttInfoSheet" class="remain-att-sheet" aria-hidden="true"><div class="remain-att-backdrop" id="remainAttBackdrop"></div><div class="remain-att-panel" role="dialog" aria-modal="true" aria-labelledby="remainAttTitle"><div class="remain-att-header"><div class="remain-att-kicker">📋 남은 출석 정보</div><div id="remainAttTitle" class="remain-att-title">-</div><div id="remainAttStudent" class="remain-att-student"></div></div><div id="remainAttBody" class="remain-att-body"></div><div class="remain-att-footer"><button type="button" class="remain-att-confirm" id="btnRemainAttConfirm">확인</button></div></div></div><div id="daySubjectsSheet" class="day-subjects-sheet" aria-hidden="true"><div class="day-subjects-backdrop" id="daySubjectsBackdrop"></div><div class="day-subjects-panel" role="dialog" aria-modal="true" aria-labelledby="daySubjectsDate"><div class="day-subjects-handle" aria-hidden="true"></div><div class="day-subjects-header"><div class="day-subjects-header-main"><div class="day-subjects-kicker">📅 오늘의 수업 · <span class="day-subjects-kicker-hint">과목명을 누르면 출석부</span></div><div id="daySubjectsDate" class="day-subjects-date">-</div><div id="daySubjectsStudent" class="day-subjects-student"></div></div><button type="button" class="day-subjects-close" id="btnDaySubjectsClose" aria-label="닫기">✕</button></div><div id="daySubjectsAttBar" class="day-subjects-att-bar is-empty"><span class="day-subjects-att-text muted">출결 정보 없음</span></div><div id="daySubjectsBody" class="day-subjects-body"></div><div class="day-subjects-footer"><button type="button" class="day-subjects-confirm" id="btnDaySubjectsConfirm">확인</button></div></div></div></head><body><div class="excel-container"><div style="display: none;"><input type="radio" name="defaultView" id="radio_view_ncs" value="ncs"><input type="radio" name="defaultView" id="radio_view_subject" value="subject"></div><div class="excel-header-row"><div class="excel-header-title">종합 능력단위 출석 관리 시스템</div><div class="class-hud-badge"><span class="class-hud-label">▶ 현재 학급:</span> <span id="dispClass" class="class-hud-value">-</span></div></div><div id="studentPickerBar" class="student-picker-bar"><div class="student-picker-header"><div class="student-picker-current"><span class="student-picker-label">👤 내 이름</span> <span id="studentPickerSelectedName" class="student-picker-name is-empty">미선택</span></div><div id="studentPickerUnitTitle" class="student-picker-unit-title"></div><button type="button" id="btnToggleStudentList" class="student-picker-toggle">명단 열기</button></div><div id="studentPickerList" class="student-picker-list collapsed"></div><div id="studentUnitMonthRates" class="student-unit-rates" style="display:none;"></div></div><div class="tab-menu"><div id="tab_main" class="tab-btn">📋 능력단위 시간표 보기</div><div id="tab_calendar" class="tab-btn active">📅 요일별(달력) 보기</div><div id="tab_resume" class="tab-btn">📝 이력서 작성</div></div><table class="excel-info-table" style="display: none;"><tr><td class="info-label">훈련과정 :</td><td class="info-value" id="infoCourse">-</td><td class="info-label">훈련기간 :</td><td class="info-value" id="infoPeriod">-</td></tr><tr id="subjectFilterRow"><td colspan="4" class="full-width-cell"><div style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;"><div id="dashboardTitle" style="font-weight: bold; font-size: 16px; color: #27ae60;">📜 능력단위 상세 목록</div></div><div id="subjectDashboardArea"></div></td></tr></table><div id="viewArea"></div></div><div id="printOnlyArea" style="display: none;"><span id="targetSubName"></span><span id="pInfoCourse"></span><span id="pInfoPeriod"></span><table id="actionTargetTable"><thead id="pHead"></thead><tbody id="pBody"></tbody></table></div><link rel="stylesheet" href="../common-dialog.css"><script src="../common-class-db.js"></script><script src="../common-dialog.js"></script><script src="kr-regions-data.js"></script><script src="student-resume-shared.js"></script><script src="student-resume-student.js"></script><script src="능력단위학생용.js"></script></body></html>
+    }
+
+    </style>
+
+<div id="evalDateBanner"></div>
+
+<div id="calendarModal" class="modal-overlay">
+    <div class="modal-content" id="calendarModalContent">
+        <div class="calendar-close-btn" id="btn_modal_close">✕</div>
+        <h3 id="modalTitle" style="color: #27ae60; border-bottom: 2px solid #27ae60; padding-bottom: 10px;">과목 상세 정보</h3>
+        <div id="modalActionArea" style="display: flex; justify-content: flex-end; margin-bottom: 10px; gap: 10px;"></div>
+        <div class="scroll-box">
+            <table class="attendance-table">
+                <thead id="modalHead"></thead>
+                <tbody id="modalBody"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id="remainAttInfoSheet" class="remain-att-sheet" aria-hidden="true">
+    <div class="remain-att-backdrop" id="remainAttBackdrop"></div>
+    <div class="remain-att-panel" role="dialog" aria-modal="true" aria-labelledby="remainAttTitle">
+        <div class="remain-att-header">
+            <div class="remain-att-kicker">📋 남은 출석 정보</div>
+            <div id="remainAttTitle" class="remain-att-title">-</div>
+            <div id="remainAttStudent" class="remain-att-student"></div>
+        </div>
+        <div id="remainAttBody" class="remain-att-body"></div>
+        <div class="remain-att-footer">
+            <button type="button" class="remain-att-confirm" id="btnRemainAttConfirm">확인</button>
+        </div>
+    </div>
+</div>
+
+<div id="daySubjectsSheet" class="day-subjects-sheet" aria-hidden="true">
+    <div class="day-subjects-backdrop" id="daySubjectsBackdrop"></div>
+    <div class="day-subjects-panel" role="dialog" aria-modal="true" aria-labelledby="daySubjectsDate">
+        <div class="day-subjects-handle" aria-hidden="true"></div>
+        <div class="day-subjects-header">
+            <div class="day-subjects-header-main">
+                <div class="day-subjects-kicker">📅 오늘의 수업 · <span class="day-subjects-kicker-hint">과목명을 누르면 출석부</span></div>
+                <div id="daySubjectsDate" class="day-subjects-date">-</div>
+                <div id="daySubjectsStudent" class="day-subjects-student"></div>
+            </div>
+            <button type="button" class="day-subjects-close" id="btnDaySubjectsClose" aria-label="닫기">✕</button>
+        </div>
+        <div id="daySubjectsAttBar" class="day-subjects-att-bar is-empty">
+            <span class="day-subjects-att-text muted">출결 정보 없음</span>
+        </div>
+        <div id="daySubjectsBody" class="day-subjects-body"></div>
+        <div class="day-subjects-footer">
+            <button type="button" class="day-subjects-confirm" id="btnDaySubjectsConfirm">확인</button>
+        </div>
+    </div>
+</div>
+</head>
+<body>
+
+<div class="excel-container">
+    <div style="display: none;"><input type="radio" name="defaultView" id="radio_view_ncs" value="ncs"><input type="radio" name="defaultView" id="radio_view_subject" value="subject"></div>
+
+    <div class="excel-header-row">
+        <div class="excel-header-title">종합 능력단위 출석 관리 시스템</div>
+        <div class="class-hud-badge">
+            <span class="class-hud-label">▶ 현재 학급:</span>
+            <span id="dispClass" class="class-hud-value">-</span>
+        </div>
+    </div>
+
+    <div id="studentPickerBar" class="student-picker-bar">
+        <div class="student-picker-header">
+            <div class="student-picker-current">
+                <span class="student-picker-label">👤 내 이름</span>
+                <span id="studentPickerSelectedName" class="student-picker-name is-empty">미선택</span>
+            </div>
+            <div id="studentPickerUnitTitle" class="student-picker-unit-title"></div>
+            <button type="button" id="btnToggleStudentList" class="student-picker-toggle">명단 열기</button>
+        </div>
+        <div id="studentPickerList" class="student-picker-list collapsed"></div>
+        <div id="studentUnitMonthRates" class="student-unit-rates" style="display:none;"></div>
+    </div>
+
+    <div class="tab-menu">
+        <div id="tab_main" class="tab-btn">📋 능력단위 시간표 보기</div>
+        <div id="tab_calendar" class="tab-btn active">📅 요일별(달력) 보기</div>
+        <div id="tab_resume" class="tab-btn">📝 이력서 작성</div>
+    </div>
+
+    <table class="excel-info-table" style="display: none;">
+        <tr>
+            <td class="info-label">훈련과정 :</td><td class="info-value" id="infoCourse">-</td>
+            <td class="info-label">훈련기간 :</td><td class="info-value" id="infoPeriod">-</td>
+        </tr>
+        <tr id="subjectFilterRow">
+            <td colspan="4" class="full-width-cell">
+                <div style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;">
+                    <div id="dashboardTitle" style="font-weight: bold; font-size: 16px; color: #27ae60;">📜 능력단위 상세 목록</div>
+                </div>
+                <div id="subjectDashboardArea"></div>
+            </td>
+        </tr>
+    </table>
+    <div id="viewArea"></div>
+</div>
+
+<div id="printOnlyArea" style="display: none;">
+    <span id="targetSubName"></span><span id="pInfoCourse"></span><span id="pInfoPeriod"></span>
+    <table id="actionTargetTable"><thead id="pHead"></thead><tbody id="pBody"></tbody></table>
+</div>
+
+<link rel="stylesheet" href="../common-dialog.css">
+<script src="../common-class-db.js"></script>
+<script src="../common-dialog.js"></script>
+<script src="kr-regions-data.js"></script>
+<script src="student-resume-shared.js"></script>
+<script src="student-resume-student.js"></script>
+<script src="능력단위학생용.js"></script>
+</body>
+</html>

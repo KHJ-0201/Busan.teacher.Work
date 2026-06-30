@@ -1,1 +1,164 @@
-(function(_0x128085,_0x1dc21f){const _0x5b5e32=a6_0xf171,_0x255c0e=_0x128085();while(!![]){try{const _0x755284=-parseInt(_0x5b5e32(0x16c))/0x1*(-parseInt(_0x5b5e32(0x169))/0x2)+-parseInt(_0x5b5e32(0x167))/0x3+-parseInt(_0x5b5e32(0x160))/0x4+-parseInt(_0x5b5e32(0x15c))/0x5+parseInt(_0x5b5e32(0x175))/0x6+parseInt(_0x5b5e32(0x17a))/0x7+parseInt(_0x5b5e32(0x16d))/0x8;if(_0x755284===_0x1dc21f)break;else _0x255c0e['push'](_0x255c0e['shift']());}catch(_0x35c674){_0x255c0e['push'](_0x255c0e['shift']());}}}(a6_0x2cc5,0x6f0dc),function(_0x277d61){const _0x1da00c=a6_0xf171,_0x5be3d9=(function(){let _0x53c7fb=!![];return function(_0x5dfc71,_0x10919f){const _0x18422c=_0x53c7fb?function(){const _0x3d3f71=a6_0xf171;if(_0x10919f){const _0xc63949=_0x10919f[_0x3d3f71(0x159)](_0x5dfc71,arguments);return _0x10919f=null,_0xc63949;}}:function(){};return _0x53c7fb=![],_0x18422c;};}()),_0x2f4ee5=_0x5be3d9(this,function(){const _0x4f9ba4=a6_0xf171;return _0x2f4ee5[_0x4f9ba4(0x16b)]()['search'](_0x4f9ba4(0x158))[_0x4f9ba4(0x16b)]()[_0x4f9ba4(0x170)](_0x2f4ee5)[_0x4f9ba4(0x15a)](_0x4f9ba4(0x158));});_0x2f4ee5();'use strict';function _0x458b40(){const _0x263e8e=a6_0xf171;if(_0x277d61[_0x263e8e(0x154)])return _0x277d61['getTodayStrKst']();const _0x40185b=new Date(),_0x4324a7=_0x40185b[_0x263e8e(0x15b)]()*0xea60;return new Date(_0x40185b-_0x4324a7)[_0x263e8e(0x17b)]()[_0x263e8e(0x15d)]('T')[0x0];}function _0x5b9170(_0x4030ef,_0xbef8fc){const _0x44fd5e=a6_0xf171;if(_0x277d61[_0x44fd5e(0x153)])return _0x277d61[_0x44fd5e(0x153)](_0x4030ef,_0xbef8fc);return _0x4030ef<=_0xbef8fc;}function _0x286d0f(_0x25d966,_0x5ae1f5,_0x3df431,_0x3fc648,_0x49d764){const _0x5a7a20=a6_0xf171;if(!_0x25d966||!_0x5ae1f5?.[_0x5a7a20(0x15f)])return 0x0;let _0x54defc='';for(let _0x38c46a of _0x3fc648||_0x5ae1f5){const _0x440d4a=_0x3df431[_0x38c46a]?_0x3df431[_0x38c46a][_0x25d966]:null;if(_0x440d4a&&_0x440d4a['status']&&_0x440d4a[_0x5a7a20(0x165)]!=='미편입'&&_0x440d4a[_0x5a7a20(0x165)]!==''&&_0x440d4a[_0x5a7a20(0x165)]!=='-'){_0x54defc=_0x38c46a;break;}}let _0x219860=0x0,_0x365545=0x0,_0x1a84a3=0x0,_0x4cead0=0x0,_0x5cbb1a=0x0;const _0x3be998=_0x458b40(),_0x119dbb=_0x49d764||{};_0x5ae1f5['forEach'](_0x4a55e5=>{const _0x4a73c1=_0x5a7a20,_0x49393e=_0x3df431[_0x4a55e5]&&_0x3df431[_0x4a55e5][_0x25d966]?_0x3df431[_0x4a55e5][_0x25d966]:null;if(_0x119dbb[_0x25d966]&&_0x4a55e5>=_0x119dbb[_0x25d966]){_0x219860++,_0x5cbb1a++;return;}if(_0x54defc&&_0x4a55e5<_0x54defc)return;_0x5cbb1a++;if(!_0x49393e){if(_0x5b9170(_0x4a55e5,_0x3be998))_0x219860++;}else{const _0x33290a=_0x49393e[_0x4a73c1(0x165)]||'';if(_0x33290a[_0x4a73c1(0x179)]('결석')||_0x33290a===_0x4a73c1(0x157))_0x219860++;else{if(_0x33290a[_0x4a73c1(0x179)]('지각'))_0x365545++;else{if(_0x33290a[_0x4a73c1(0x179)]('조퇴'))_0x1a84a3++;else{if(_0x33290a['includes']('외출'))_0x4cead0++;}}}}});const _0x4c717a=Math[_0x5a7a20(0x173)]((_0x365545+_0x1a84a3+_0x4cead0)/0x3),_0x577f0a=_0x219860+_0x4c717a,_0x2c5390=_0x5cbb1a-_0x577f0a;return _0x5cbb1a>0x0?parseFloat((_0x2c5390/_0x5cbb1a*0x64)[_0x5a7a20(0x166)](0x1)):0x0;}function _0x5b7d08(_0x1d78f5,_0xbcbb){const _0x1d76c6=a6_0xf171;if(!_0x1d78f5||!_0xbcbb)return'';for(const _0x2df7f7 of Object['values'](_0xbcbb)){if(!_0x2df7f7||typeof _0x2df7f7!=='object')continue;const _0x4664ba=_0x2df7f7[_0x1d78f5];if(_0x4664ba&&_0x4664ba['birthDate'])return String(_0x4664ba[_0x1d76c6(0x168)])[_0x1d76c6(0x176)]();}return'';}function _0x45e0c1(_0x226851){const _0x4d7422=a6_0xf171,_0xde7d60=parseInt(_0x226851[_0x4d7422(0x16a)],0xa)||0x0,_0x1cf9f3=parseInt(_0x226851[_0x4d7422(0x177)],0xa)||0x0,_0xd0e2ef=parseInt(_0x226851[_0x4d7422(0x15e)],0xa)||0x0;return _0xde7d60*0x2710+_0x1cf9f3*0x64+_0xd0e2ef;}function _0x371412(_0x21b612,_0x502d45){const _0x4e543c=a6_0xf171,_0x19d0d4=Array[_0x4e543c(0x16f)](_0x21b612)?_0x21b612['slice']():[];return _0x19d0d4[_0x4e543c(0x172)]((_0x13d899,_0x39f33c)=>{const _0xfc4c5a=_0x45e0c1(_0x13d899)-_0x45e0c1(_0x39f33c);return _0x502d45===![]?-_0xfc4c5a:_0xfc4c5a;}),_0x19d0d4;}function _0x3e5e51(_0xe790a0){const _0x4d65c6=a6_0xf171;if(typeof classStorageKey===_0x4d65c6(0x162))return classStorageKey('studentResume_lastSubmit_'+_0xe790a0);return _0x4d65c6(0x164)+_0xe790a0;}function _0x5afea9(){return{'year':'','month':'','day':'','content':''};}function _0x178730(_0x2dcc4a){const _0x27848c=a6_0xf171,_0x4be9a1=_0x2dcc4a&&typeof _0x2dcc4a===_0x27848c(0x161)?_0x2dcc4a:{},_0x6d6ede=[_0x4be9a1[_0x27848c(0x171)],_0x4be9a1[_0x27848c(0x16e)],_0x4be9a1[_0x27848c(0x174)]]['map'](_0x2153ca=>_0x2153ca!=null?String(_0x2153ca)[_0x27848c(0x176)]():'')[_0x27848c(0x156)](Boolean);if(_0x6d6ede[_0x27848c(0x15f)])return _0x6d6ede[_0x27848c(0x178)]('\x20');return String(_0x4be9a1[_0x27848c(0x163)]||'')[_0x27848c(0x176)]();}function _0x2f5ede(_0x2a61a5){const _0x422c81=a6_0xf171,_0x210c7a=_0x2a61a5&&typeof _0x2a61a5==='object'?{..._0x2a61a5}:{};return _0x210c7a[_0x422c81(0x171)]=_0x210c7a['addressSido']!=null?String(_0x210c7a[_0x422c81(0x171)])[_0x422c81(0x176)]():'',_0x210c7a['addressSigungu']=_0x210c7a[_0x422c81(0x16e)]!=null?String(_0x210c7a[_0x422c81(0x16e)])['trim']():'',_0x210c7a[_0x422c81(0x174)]=_0x210c7a[_0x422c81(0x174)]!=null?String(_0x210c7a[_0x422c81(0x174)])['trim']():'',!_0x210c7a[_0x422c81(0x171)]&&!_0x210c7a[_0x422c81(0x16e)]&&!_0x210c7a[_0x422c81(0x174)]&&_0x210c7a[_0x422c81(0x163)]&&(_0x210c7a[_0x422c81(0x174)]=String(_0x210c7a[_0x422c81(0x163)])[_0x422c81(0x176)]()),_0x210c7a[_0x422c81(0x163)]=_0x178730(_0x210c7a),_0x210c7a;}function _0x1df45d(_0x5974fc,_0x3bdb20){return{'basic':{'name':_0x5974fc||'','email':'','phone':'','addressSido':'','addressSigungu':'','addressDetail':'','address':''},'educationCareer':[_0x5afea9()],'skillsCerts':[_0x5afea9()],'totalAttendanceRate':_0x3bdb20!=null?_0x3bdb20:''};}_0x277d61[_0x1da00c(0x155)]={'getTodayStrKst':_0x458b40,'calculateUnitMonthPersonalRate':_0x286d0f,'getStudentBirthDateFromAttendance':_0x5b7d08,'sortResumeRowsByDate':_0x371412,'getResumeLocalStorageKey':_0x3e5e51,'emptyResumeRow':_0x5afea9,'buildDefaultResumeForm':_0x1df45d,'formatFullAddress':_0x178730,'normalizeBasicAddress':_0x2f5ede};}(typeof window!=='undefined'?window:globalThis));function a6_0xf171(_0xfe269f,_0x519662){_0xfe269f=_0xfe269f-0x153;const _0x3c53a6=a6_0x2cc5();let _0x5165e0=_0x3c53a6[_0xfe269f];if(a6_0xf171['QEIeMT']===undefined){var _0x2876a4=function(_0xa01619){const _0x4b7b4d='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x4234bf='',_0x1254e5='',_0x30c504=_0x4234bf+_0x2876a4;for(let _0x277d61=0x0,_0x5be3d9,_0x2f4ee5,_0x458b40=0x0;_0x2f4ee5=_0xa01619['charAt'](_0x458b40++);~_0x2f4ee5&&(_0x5be3d9=_0x277d61%0x4?_0x5be3d9*0x40+_0x2f4ee5:_0x2f4ee5,_0x277d61++%0x4)?_0x4234bf+=_0x30c504['charCodeAt'](_0x458b40+0xa)-0xa!==0x0?String['fromCharCode'](0xff&_0x5be3d9>>(-0x2*_0x277d61&0x6)):_0x277d61:0x0){_0x2f4ee5=_0x4b7b4d['indexOf'](_0x2f4ee5);}for(let _0x5b9170=0x0,_0x286d0f=_0x4234bf['length'];_0x5b9170<_0x286d0f;_0x5b9170++){_0x1254e5+='%'+('00'+_0x4234bf['charCodeAt'](_0x5b9170)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x1254e5);};a6_0xf171['ksXkJR']=_0x2876a4,a6_0xf171['ayvKWJ']={},a6_0xf171['QEIeMT']=!![];}const _0x2cc554=_0x3c53a6[0x0],_0xf17184=_0xfe269f+_0x2cc554,_0x52df6e=a6_0xf171['ayvKWJ'][_0xf17184];if(!_0x52df6e){const _0x5b7d08=function(_0x45e0c1){this['fGePhu']=_0x45e0c1,this['lcPLqL']=[0x1,0x0,0x0],this['hUnRcd']=function(){return'newState';},this['YotcJe']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['RswvQK']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x5b7d08['prototype']['dEXWEA']=function(){const _0x371412=new RegExp(this['YotcJe']+this['RswvQK']),_0x3e5e51=_0x371412['test'](this['hUnRcd']['toString']())?--this['lcPLqL'][0x1]:--this['lcPLqL'][0x0];return this['YznthM'](_0x3e5e51);},_0x5b7d08['prototype']['YznthM']=function(_0x5afea9){if(!Boolean(~_0x5afea9))return _0x5afea9;return this['ChESKw'](this['fGePhu']);},_0x5b7d08['prototype']['ChESKw']=function(_0x178730){for(let _0x2f5ede=0x0,_0x1df45d=this['lcPLqL']['length'];_0x2f5ede<_0x1df45d;_0x2f5ede++){this['lcPLqL']['push'](Math['round'](Math['random']())),_0x1df45d=this['lcPLqL']['length'];}return _0x178730(this['lcPLqL'][0x0]);},new _0x5b7d08(a6_0xf171)['dEXWEA'](),_0x5165e0=a6_0xf171['ksXkJR'](_0x5165e0),a6_0xf171['ayvKWJ'][_0xf17184]=_0x5165e0;}else _0x5165e0=_0x52df6e;return _0x5165e0;}function a6_0x2cc5(){const _0x3a6884=['ywrKCMvZC1nPzg8','C29YDa','zMXVB3i','ywrKCMvZC0rLDgfPBa','nZK5ndK0DMnUvgzh','DhjPBq','Bw9UDgG','AM9PBG','Aw5JBhvKzxm','mte3nti1mwL1BwvcAa','Dg9ju09tDhjPBMC','C2HVDwXKq291BNrnAxnZAw5Nqxr0qxnbyNnLBNq','z2v0vg9KyxLtDhjlC3q','u3r1zgvUDfjLC3vTzvnOyxjLza','zMLSDgvY','66+47y647j6f','kcGOlISPkYKRksSK','yxbWBhK','C2vHCMnO','z2v0vgLTzxPVBMvpzMzZzxq','mtC0mdy3nwXns3PLsG','C3bSAxq','zgf5','BgvUz3rO','mtqWmZyZnM1Yrvz5sa','B2jQzwn0','zNvUy3rPB24','ywrKCMvZCW','C3r1zgvUDfjLC3vTzv9Syxn0u3vIBwL0xW','C3rHDhvZ','Dg9gAxHLza','mteXndq3ovPguxbrta','yMLYDgHeyxrL','ntretwHcBxy','EwvHCG','Dg9tDhjPBMC','mZeZmZDsC0fTs0q','mZaYntm3nLfurNfTDa','ywrKCMvZC1nPz3vUz3u','AxnbCNjHEq','y29UC3rYDwn0B3i'];a6_0x2cc5=function(){return _0x3a6884;};return a6_0x2cc5();}
+/**
+ * student-resume-shared.js — 학생 이력서 공통 (단위개월출석부 편입% 동일 계산)
+ */
+(function (global) {
+    'use strict';
+
+    function resolveTodayStrKst() {
+        if (global.getTodayStrKst) return global.getTodayStrKst();
+        const nowKst = new Date();
+        const offset = nowKst.getTimezoneOffset() * 60000;
+        return new Date(nowKst - offset).toISOString().split('T')[0];
+    }
+
+    function countMissingAsAbsent(dateStr, todayStr) {
+        if (global.shouldCountMissingAttAsAbsent) {
+            return global.shouldCountMissingAttAsAbsent(dateStr, todayStr);
+        }
+        return dateStr <= todayStr;
+    }
+
+    /** 단위개월출석부.js renderDetailTable — col-r2 편입(%) 와 동일 */
+    function calculateUnitMonthPersonalRate(studentName, targetDays, fullAttendanceData, validTrainingDays, dropoutData) {
+        if (!studentName || !targetDays?.length) return 0;
+
+        let enrollDate = '';
+        for (let d of validTrainingDays || targetDays) {
+            const dayData = fullAttendanceData[d] ? fullAttendanceData[d][studentName] : null;
+            if (dayData && dayData.status && dayData.status !== '미편입' && dayData.status !== '' && dayData.status !== '-') {
+                enrollDate = d;
+                break;
+            }
+        }
+
+        let pureAbsent = 0;
+        let lCount = 0;
+        let eCount = 0;
+        let oCount = 0;
+        let personalTrainingDaysCount = 0;
+        const todayStr = resolveTodayStrKst();
+        const dropouts = dropoutData || {};
+
+        targetDays.forEach(d => {
+            const att = (fullAttendanceData[d] && fullAttendanceData[d][studentName])
+                ? fullAttendanceData[d][studentName]
+                : null;
+
+            if (dropouts[studentName] && d >= dropouts[studentName]) {
+                pureAbsent++;
+                personalTrainingDaysCount++;
+                return;
+            }
+            if (enrollDate && d < enrollDate) return;
+
+            personalTrainingDaysCount++;
+            if (!att) {
+                if (countMissingAsAbsent(d, todayStr)) pureAbsent++;
+            } else {
+                const st = att.status || '';
+                if (st.includes('결석') || st === '미편입') pureAbsent++;
+                else {
+                    if (st.includes('지각')) lCount++;
+                    else if (st.includes('조퇴')) eCount++;
+                    else if (st.includes('외출')) oCount++;
+                }
+            }
+        });
+
+        const penaltyAbs = Math.floor((lCount + eCount + oCount) / 3);
+        const finalAbsent = pureAbsent + penaltyAbs;
+        const pureAttendedDays = personalTrainingDaysCount - finalAbsent;
+        return personalTrainingDaysCount > 0
+            ? parseFloat((pureAttendedDays / personalTrainingDaysCount * 100).toFixed(1))
+            : 0;
+    }
+
+    /** 일일출석부 dailyAttendance 에 저장된 birthDate (YYYY.MM.DD) */
+    function getStudentBirthDateFromAttendance(studentName, fullAttendanceData) {
+        if (!studentName || !fullAttendanceData) return '';
+        for (const dayData of Object.values(fullAttendanceData)) {
+            if (!dayData || typeof dayData !== 'object') continue;
+            const info = dayData[studentName];
+            if (info && info.birthDate) return String(info.birthDate).trim();
+        }
+        return '';
+    }
+
+    function rowToDateSortKey(row) {
+        const y = parseInt(row.year, 10) || 0;
+        const m = parseInt(row.month, 10) || 0;
+        const d = parseInt(row.day, 10) || 0;
+        return y * 10000 + m * 100 + d;
+    }
+
+    function sortResumeRowsByDate(rows, ascending) {
+        const list = Array.isArray(rows) ? rows.slice() : [];
+        list.sort((a, b) => {
+            const diff = rowToDateSortKey(a) - rowToDateSortKey(b);
+            return ascending === false ? -diff : diff;
+        });
+        return list;
+    }
+
+    function getResumeLocalStorageKey(studentName) {
+        if (typeof classStorageKey === 'function') {
+            return classStorageKey('studentResume_lastSubmit_' + studentName);
+        }
+        return 'studentResume_lastSubmit_' + studentName;
+    }
+
+    function emptyResumeRow() {
+        return { year: '', month: '', day: '', content: '' };
+    }
+
+    function formatFullAddress(basic) {
+        const b = basic && typeof basic === 'object' ? basic : {};
+        const parts = [b.addressSido, b.addressSigungu, b.addressDetail]
+            .map(v => (v != null ? String(v).trim() : ''))
+            .filter(Boolean);
+        if (parts.length) return parts.join(' ');
+        return String(b.address || '').trim();
+    }
+
+    /** 신규(시·구 분리) + 구버전(주소 한 줄) 호환 */
+    function normalizeBasicAddress(basic) {
+        const b = basic && typeof basic === 'object' ? { ...basic } : {};
+        b.addressSido = b.addressSido != null ? String(b.addressSido).trim() : '';
+        b.addressSigungu = b.addressSigungu != null ? String(b.addressSigungu).trim() : '';
+        b.addressDetail = b.addressDetail != null ? String(b.addressDetail).trim() : '';
+        if (!b.addressSido && !b.addressSigungu && !b.addressDetail && b.address) {
+            b.addressDetail = String(b.address).trim();
+        }
+        b.address = formatFullAddress(b);
+        return b;
+    }
+
+    function buildDefaultResumeForm(studentName, attendanceRate) {
+        return {
+            basic: {
+                name: studentName || '',
+                email: '',
+                phone: '',
+                addressSido: '',
+                addressSigungu: '',
+                addressDetail: '',
+                address: ''
+            },
+            educationCareer: [emptyResumeRow()],
+            skillsCerts: [emptyResumeRow()],
+            totalAttendanceRate: attendanceRate != null ? attendanceRate : ''
+        };
+    }
+
+    global.StudentResumeShared = {
+        getTodayStrKst: resolveTodayStrKst,
+        calculateUnitMonthPersonalRate,
+        getStudentBirthDateFromAttendance,
+        sortResumeRowsByDate,
+        getResumeLocalStorageKey,
+        emptyResumeRow,
+        buildDefaultResumeForm,
+        formatFullAddress,
+        normalizeBasicAddress
+    };
+})(typeof window !== 'undefined' ? window : globalThis);

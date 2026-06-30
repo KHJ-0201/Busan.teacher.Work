@@ -1,1 +1,109 @@
-function a0_0xd4bf(_0x1072fa,_0x59888c){_0x1072fa=_0x1072fa-0x138;const _0x1e4df2=a0_0x308a();let _0x5d692e=_0x1e4df2[_0x1072fa];if(a0_0xd4bf['ibLIRY']===undefined){var _0x386510=function(_0x592e81){const _0x5436d6='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x325f6a='',_0x175817='',_0x46b064=_0x325f6a+_0x386510;for(let _0x322387=0x0,_0x25f3b6,_0x39b5a,_0x38c19f=0x0;_0x39b5a=_0x592e81['charAt'](_0x38c19f++);~_0x39b5a&&(_0x25f3b6=_0x322387%0x4?_0x25f3b6*0x40+_0x39b5a:_0x39b5a,_0x322387++%0x4)?_0x325f6a+=_0x46b064['charCodeAt'](_0x38c19f+0xa)-0xa!==0x0?String['fromCharCode'](0xff&_0x25f3b6>>(-0x2*_0x322387&0x6)):_0x322387:0x0){_0x39b5a=_0x5436d6['indexOf'](_0x39b5a);}for(let _0x6f1d69=0x0,_0x3682a4=_0x325f6a['length'];_0x6f1d69<_0x3682a4;_0x6f1d69++){_0x175817+='%'+('00'+_0x325f6a['charCodeAt'](_0x6f1d69)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x175817);};a0_0xd4bf['RqZAIY']=_0x386510,a0_0xd4bf['ytjBvz']={},a0_0xd4bf['ibLIRY']=!![];}const _0x308a05=_0x1e4df2[0x0],_0xd4bf92=_0x1072fa+_0x308a05,_0x5e9b2e=a0_0xd4bf['ytjBvz'][_0xd4bf92];if(!_0x5e9b2e){const _0xcd816=function(_0x37c7b8){this['MafyHs']=_0x37c7b8,this['bfNGBv']=[0x1,0x0,0x0],this['fWwcff']=function(){return'newState';},this['XbExke']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['NVVSbb']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0xcd816['prototype']['yldDsn']=function(){const _0x4e0ec4=new RegExp(this['XbExke']+this['NVVSbb']),_0x119638=_0x4e0ec4['test'](this['fWwcff']['toString']())?--this['bfNGBv'][0x1]:--this['bfNGBv'][0x0];return this['eOxDyT'](_0x119638);},_0xcd816['prototype']['eOxDyT']=function(_0x550400){if(!Boolean(~_0x550400))return _0x550400;return this['nHfjsE'](this['MafyHs']);},_0xcd816['prototype']['nHfjsE']=function(_0x3fa42b){for(let _0x3106ef=0x0,_0x1cbd5d=this['bfNGBv']['length'];_0x3106ef<_0x1cbd5d;_0x3106ef++){this['bfNGBv']['push'](Math['round'](Math['random']())),_0x1cbd5d=this['bfNGBv']['length'];}return _0x3fa42b(this['bfNGBv'][0x0]);},new _0xcd816(a0_0xd4bf)['yldDsn'](),_0x5d692e=a0_0xd4bf['RqZAIY'](_0x5d692e),a0_0xd4bf['ytjBvz'][_0xd4bf92]=_0x5d692e;}else _0x5d692e=_0x5e9b2e;return _0x5d692e;}(function(_0x3e14c1,_0x4d3636){const _0x35204b=a0_0xd4bf,_0x4c6362=_0x3e14c1();while(!![]){try{const _0x57fdfd=-parseInt(_0x35204b(0x155))/0x1*(parseInt(_0x35204b(0x14e))/0x2)+-parseInt(_0x35204b(0x153))/0x3+-parseInt(_0x35204b(0x14c))/0x4*(-parseInt(_0x35204b(0x159))/0x5)+-parseInt(_0x35204b(0x150))/0x6+-parseInt(_0x35204b(0x151))/0x7+-parseInt(_0x35204b(0x145))/0x8+parseInt(_0x35204b(0x156))/0x9*(parseInt(_0x35204b(0x157))/0xa);if(_0x57fdfd===_0x4d3636)break;else _0x4c6362['push'](_0x4c6362['shift']());}catch(_0x23e848){_0x4c6362['push'](_0x4c6362['shift']());}}}(a0_0x308a,0x993f4),function(_0x322387){const _0x34c204=a0_0xd4bf,_0x25f3b6=(function(){let _0x1cbd5d=!![];return function(_0x166432,_0xf91dd3){const _0x332b4e=_0x1cbd5d?function(){if(_0xf91dd3){const _0x59d54f=_0xf91dd3['apply'](_0x166432,arguments);return _0xf91dd3=null,_0x59d54f;}}:function(){};return _0x1cbd5d=![],_0x332b4e;};}()),_0x39b5a=_0x25f3b6(this,function(){const _0x440e86=a0_0xd4bf;return _0x39b5a['toString']()[_0x440e86(0x13f)](_0x440e86(0x142))[_0x440e86(0x15a)]()[_0x440e86(0x141)](_0x39b5a)[_0x440e86(0x13f)]('(((.+)+)+)+$');});_0x39b5a();'use strict';const _0x38c19f=[_0x34c204(0x14d),_0x34c204(0x13a),_0x34c204(0x14f),'ev'],_0x6f1d69={'electronics':'전기','engine':'엔진','chassis':'섀시','ev':'전기차'};function _0x3682a4(_0x2f804a){return String(_0x2f804a||'')['replace'](/[^0-9]/g,'');}function _0xcd816(_0xf43cb0,_0x5babfe){const _0x4fd080=_0x34c204,_0x8d08bc=new Set(),_0x5c6d9c=_0x268bd0=>{const _0x251512=a0_0xd4bf,_0x27e17f=_0x3682a4(_0x268bd0);if(_0x27e17f)_0x8d08bc[_0x251512(0x13e)](_0x27e17f);},_0x1ac82d=String(_0xf43cb0||''),_0x52d196=_0x1ac82d[_0x4fd080(0x148)](/\[(.*?)\]/);if(_0x52d196)_0x5c6d9c(_0x52d196[0x1]);const _0x3ffa0a=_0x1ac82d[_0x4fd080(0x148)](/[0-9]{8,}_[0-9]+v[0-9]+/i);if(_0x3ffa0a)_0x5c6d9c(_0x3ffa0a[0x0]);if(_0x5babfe){const _0x1fb836=String(_0x5babfe),_0x52d035=_0x1fb836[_0x4fd080(0x148)](/\[(.*?)\]/);if(_0x52d035)_0x5c6d9c(_0x52d035[0x1]);else _0x5c6d9c(_0x1fb836);}return _0x8d08bc;}function _0x37c7b8(_0xb2fd42){const _0x4517e2=_0x34c204,_0x37a982=String(_0xb2fd42||'')[_0x4517e2(0x13b)]();if(!_0x37a982)return'-';const _0x4b0a61=_0x37a982[_0x4517e2(0x148)](/\[(.*?)\]/);if(_0x4b0a61)return _0x4b0a61[0x1];const _0x29de6f=_0x3682a4(_0x37a982);if(_0x29de6f[_0x4517e2(0x140)]>=0x8)return _0x29de6f[_0x4517e2(0x147)](0x0,0xc);return _0x37a982;}function _0x4e0ec4(_0x181428){const _0x40c641=_0x34c204,_0x37db6b=new Set();if(!_0x181428)return _0x37db6b;return Object[_0x40c641(0x13c)](_0x181428)[_0x40c641(0x149)](_0x28e57e=>{const _0x56c8a5=_0x40c641,_0x562634=_0x28e57e&&_0x28e57e[_0x56c8a5(0x14a)];if(!_0x562634)return;_0x38c19f[_0x56c8a5(0x149)](_0x47fd51=>{const _0x17a04c=_0x56c8a5,_0x5bb49a=_0x562634[_0x47fd51];if(Array[_0x17a04c(0x138)](_0x5bb49a))_0x5bb49a[_0x17a04c(0x149)](_0x26c8a0=>_0x119638(_0x37db6b,_0x26c8a0));else _0x5bb49a&&typeof _0x5bb49a===_0x17a04c(0x14b)&&Object[_0x17a04c(0x146)](_0x5bb49a)['forEach'](_0x294b19=>_0x119638(_0x37db6b,_0x294b19));});}),_0x37db6b;}function _0x119638(_0x3e6680,_0x59876e){const _0x214ad4=_0x34c204,_0x88e648=_0x3682a4(_0x59876e);if(_0x88e648)_0x3e6680[_0x214ad4(0x13e)](_0x88e648);}function _0x550400(_0x39cc1a,_0x941a37,_0x39ac78){const _0x530f24=_0x34c204;if(!_0x39ac78||!_0x39ac78[_0x530f24(0x143)])return![];const _0x9ac1ec=_0xcd816(_0x39cc1a,_0x941a37);for(const _0x1c557d of _0x9ac1ec){if(_0x39ac78['has'](_0x1c557d))return!![];}return![];}function _0x3fa42b(_0x2ce8ae,_0x2b5339,_0x2a5459,_0x4494bd){const _0x3701f7=_0x34c204;if(_0x2a5459!=='NCS교과')return'';if(!_0x4494bd||!_0x4494bd[_0x3701f7(0x143)])return'';return _0x550400(_0x2ce8ae,_0x2b5339,_0x4494bd)?'필수능력단위':_0x3701f7(0x13d);}function _0x3106ef(_0x14f1c8,_0x3d8a49){const _0x41e3eb=_0x34c204;if(!_0x3d8a49||!_0x3d8a49[_0x41e3eb(0x143)]||!Array[_0x41e3eb(0x138)](_0x14f1c8))return;_0x14f1c8[_0x41e3eb(0x149)](_0x540214=>{const _0xee15b=_0x41e3eb;if(_0x540214[_0xee15b(0x152)]!==_0xee15b(0x158))return;const _0xb4b3e1=_0x3fa42b(_0x540214[_0xee15b(0x139)],_0x540214[_0xee15b(0x154)],_0x540214[_0xee15b(0x152)],_0x3d8a49);if(_0xb4b3e1)_0x540214[_0xee15b(0x15b)]=_0xb4b3e1;});}_0x322387[_0x34c204(0x144)]={'PART_KEYS':_0x38c19f,'PART_LABELS':_0x6f1d69,'normalizeNcsCodeKey':_0x3682a4,'extractUnitCodeKeys':_0xcd816,'formatCodeBracketLabel':_0x37c7b8,'buildRequiredCodeSetFromVersions':_0x4e0ec4,'isUnitRequiredByCodeSet':_0x550400,'resolveAutoUnitType':_0x3fa42b,'applyAutoUnitTypeToCourseList':_0x3106ef};}(typeof window!=='undefined'?window:globalThis));function a0_0x308a(){const _0x2df58b=['CMrdB2rL','mxnjA01Pva','mJeXnda2odv3rxbcufa','mtbYA2fvzwC','tKnt6Rwq6Ro8','mZC1r2jlEvfr','Dg9tDhjPBMC','Dw5PDfr5Cgu','AxnbCNjHEq','Dw5PDa','zw5NAw5L','DhjPBq','DMfSDwvZ','7isG7yoD64QL66cL64UO7jYe','ywrK','C2vHCMnO','BgvUz3rO','y29UC3rYDwn0B3i','kcGOlISPkYKRksSK','C2L6zq','tMnZuMvXDwLYzwrvDgLSCW','nZe1ntGWoe9LBgLzDW','A2v5CW','C2XPy2u','Bwf0y2G','zM9YrwfJAa','CMvXDwLYzwrvBML0CW','B2jQzwn0','nda4ndrRD1Lpz2q','zwXLy3rYB25Py3m','ntiXodm0BhjTvwP1','y2HHC3nPCW','mJyZntGYnhrjA3zQBq','ntuWmtK3ouPhCMrNvq','DhLWzq','mZe5mtG4rM50D2Tv'];a0_0x308a=function(){return _0x2df58b;};return a0_0x308a();}
+/**
+ * 훈련기준 필수과목 코드 매칭 (공용 Firebase ncsVersions.requiredUnits)
+ */
+(function (global) {
+    'use strict';
+
+    const PART_KEYS = ['electronics', 'engine', 'chassis', 'ev'];
+    const PART_LABELS = {
+        electronics: '전기',
+        engine: '엔진',
+        chassis: '섀시',
+        ev: '전기차'
+    };
+
+    function normalizeNcsCodeKey(codeStr) {
+        return String(codeStr || '').replace(/[^0-9]/g, '');
+    }
+
+    function extractUnitCodeKeys(unitName, rdCode) {
+        const keys = new Set();
+        const add = (s) => {
+            const n = normalizeNcsCodeKey(s);
+            if (n) keys.add(n);
+        };
+        const unit = String(unitName || '');
+        const bracket = unit.match(/\[(.*?)\]/);
+        if (bracket) add(bracket[1]);
+        const longMatch = unit.match(/[0-9]{8,}_[0-9]+v[0-9]+/i);
+        if (longMatch) add(longMatch[0]);
+        if (rdCode) {
+            const rd = String(rdCode);
+            const rdBracket = rd.match(/\[(.*?)\]/);
+            if (rdBracket) add(rdBracket[1]);
+            else add(rd);
+        }
+        return keys;
+    }
+
+    function formatCodeBracketLabel(code) {
+        const raw = String(code || '').trim();
+        if (!raw) return '-';
+        const bracket = raw.match(/\[(.*?)\]/);
+        if (bracket) return bracket[1];
+        const digits = normalizeNcsCodeKey(raw);
+        if (digits.length >= 8) return digits.slice(0, 12);
+        return raw;
+    }
+
+    function buildRequiredCodeSetFromVersions(versionsObj) {
+        const set = new Set();
+        if (!versionsObj) return set;
+        Object.values(versionsObj).forEach((v) => {
+            const req = v && v.requiredUnits;
+            if (!req) return;
+            PART_KEYS.forEach((part) => {
+                const bucket = req[part];
+                if (Array.isArray(bucket)) {
+                    bucket.forEach((code) => addCodeToSet(set, code));
+                } else if (bucket && typeof bucket === 'object') {
+                    Object.keys(bucket).forEach((code) => addCodeToSet(set, code));
+                }
+            });
+        });
+        return set;
+    }
+
+    function addCodeToSet(set, code) {
+        const n = normalizeNcsCodeKey(code);
+        if (n) set.add(n);
+    }
+
+    function isUnitRequiredByCodeSet(unitName, rdCode, requiredSet) {
+        if (!requiredSet || !requiredSet.size) return false;
+        const keys = extractUnitCodeKeys(unitName, rdCode);
+        for (const k of keys) {
+            if (requiredSet.has(k)) return true;
+        }
+        return false;
+    }
+
+    function resolveAutoUnitType(unitName, rdCode, courseType, requiredSet) {
+        if (courseType !== 'NCS교과') return '';
+        if (!requiredSet || !requiredSet.size) return '';
+        return isUnitRequiredByCodeSet(unitName, rdCode, requiredSet)
+            ? '필수능력단위'
+            : '선택능력단위';
+    }
+
+    function applyAutoUnitTypeToCourseList(courses, requiredSet) {
+        if (!requiredSet || !requiredSet.size || !Array.isArray(courses)) return;
+        courses.forEach((c) => {
+            if (c.type !== 'NCS교과') return;
+            const auto = resolveAutoUnitType(c.unit, c.rdCode, c.type, requiredSet);
+            if (auto) c.unitType = auto;
+        });
+    }
+
+    global.NcsRequiredUtils = {
+        PART_KEYS,
+        PART_LABELS,
+        normalizeNcsCodeKey,
+        extractUnitCodeKeys,
+        formatCodeBracketLabel,
+        buildRequiredCodeSetFromVersions,
+        isUnitRequiredByCodeSet,
+        resolveAutoUnitType,
+        applyAutoUnitTypeToCourseList
+    };
+})(typeof window !== 'undefined' ? window : globalThis);

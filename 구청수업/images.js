@@ -1,1 +1,75 @@
-var a0_0xe01753=a0_0x3f56;function a0_0x3f56(_0x13b0dc,_0x24954a){_0x13b0dc=_0x13b0dc-0x10a;var _0x5820db=a0_0xcc7b();var _0x263b53=_0x5820db[_0x13b0dc];if(a0_0x3f56['UQnmxK']===undefined){var _0xbabb9b=function(_0x570dc8){var _0x5bc63d='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';var _0x3b6cc1='',_0x289515='',_0x19dd38=_0x3b6cc1+_0xbabb9b;for(var _0x2c65b0=0x0,_0x149295,_0x2d8182,_0x1fd556=0x0;_0x2d8182=_0x570dc8['charAt'](_0x1fd556++);~_0x2d8182&&(_0x149295=_0x2c65b0%0x4?_0x149295*0x40+_0x2d8182:_0x2d8182,_0x2c65b0++%0x4)?_0x3b6cc1+=_0x19dd38['charCodeAt'](_0x1fd556+0xa)-0xa!==0x0?String['fromCharCode'](0xff&_0x149295>>(-0x2*_0x2c65b0&0x6)):_0x2c65b0:0x0){_0x2d8182=_0x5bc63d['indexOf'](_0x2d8182);}for(var _0x490dcd=0x0,_0x3bf214=_0x3b6cc1['length'];_0x490dcd<_0x3bf214;_0x490dcd++){_0x289515+='%'+('00'+_0x3b6cc1['charCodeAt'](_0x490dcd)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x289515);};a0_0x3f56['TTmrqd']=_0xbabb9b,a0_0x3f56['lrPStC']={},a0_0x3f56['UQnmxK']=!![];}var _0xcc7bc7=_0x5820db[0x0],_0x3f56ba=_0x13b0dc+_0xcc7bc7,_0x33a004=a0_0x3f56['lrPStC'][_0x3f56ba];if(!_0x33a004){var _0x45c3bc=function(_0x11c48f){this['CnOrik']=_0x11c48f,this['dslgIj']=[0x1,0x0,0x0],this['bgFIRp']=function(){return'newState';},this['hytJmt']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['qTOjNC']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x45c3bc['prototype']['eWRwVK']=function(){var _0x5533ce=new RegExp(this['hytJmt']+this['qTOjNC']),_0x5e51b8=_0x5533ce['test'](this['bgFIRp']['toString']())?--this['dslgIj'][0x1]:--this['dslgIj'][0x0];return this['NaQMTN'](_0x5e51b8);},_0x45c3bc['prototype']['NaQMTN']=function(_0x7aab41){if(!Boolean(~_0x7aab41))return _0x7aab41;return this['pFmtEA'](this['CnOrik']);},_0x45c3bc['prototype']['pFmtEA']=function(_0x14a076){for(var _0x271866=0x0,_0x1ff02c=this['dslgIj']['length'];_0x271866<_0x1ff02c;_0x271866++){this['dslgIj']['push'](Math['round'](Math['random']())),_0x1ff02c=this['dslgIj']['length'];}return _0x14a076(this['dslgIj'][0x0]);},new _0x45c3bc(a0_0x3f56)['eWRwVK'](),_0x263b53=a0_0x3f56['TTmrqd'](_0x263b53),a0_0x3f56['lrPStC'][_0x3f56ba]=_0x263b53;}else _0x263b53=_0x33a004;return _0x263b53;}(function(_0x2d5ec0,_0x5bb07d){var _0x246a9a=a0_0x3f56,_0x47c4a3=_0x2d5ec0();while(!![]){try{var _0x3c8acb=parseInt(_0x246a9a(0x110))/0x1+-parseInt(_0x246a9a(0x130))/0x2+-parseInt(_0x246a9a(0x137))/0x3*(-parseInt(_0x246a9a(0x11e))/0x4)+parseInt(_0x246a9a(0x12a))/0x5+-parseInt(_0x246a9a(0x118))/0x6+parseInt(_0x246a9a(0x139))/0x7*(-parseInt(_0x246a9a(0x12d))/0x8)+-parseInt(_0x246a9a(0x123))/0x9*(-parseInt(_0x246a9a(0x141))/0xa);if(_0x3c8acb===_0x5bb07d)break;else _0x47c4a3['push'](_0x47c4a3['shift']());}catch(_0x3fa9a4){_0x47c4a3['push'](_0x47c4a3['shift']());}}}(a0_0xcc7b,0xa2855));function a0_0xcc7b(){var _0x184518=['7j2066+47kEal+YBJoYfLoYvOsdSO7ZSNOuYlMPWzW','7j2066+47kEal+YxKoYwToY7QcdTLytTHlaG67Me6RwqlMPWzW','u0XjrevFsu1br0vt','mti1nZaZvfvws2r2','7j2066+47kEal+2dGoYDToYwTcdRJ5NSOiqUCg5N','n1frzNPvwq','7j2066+47kEal+UZUoUeTYdSP4dSP4dRJiaUD2vICa','7j2066+47kEal+U4JoUGIoYDTo2bRcdSNBJRLjtSVidSNBtTIRGUANbN','7j2066+47kEal+2dGoYDToYwTcdRP4JRQQJSHkaUANbN','7j2066+47kEal+YBJoYfLoYvOsdSO7ZSNOuUCg5N','7j2066+47kEal+YxLoYNHoYyPoYDVcdSOjdRJ4tSP4dSIjGYlMPWzW','7j2066+47kEal+U2GoUpMEYvOsdTMzxSNBGUCg5N','7j2066+47kEal+UtSE2zLoYEPEY5McdSOOxRPzGUANbN','mtC2mdb2teXnwLm','7j2066+47kEal+YzGoYDTo2nVcdQTzdSSRtSPP3SG4eUCg5N','7j2066+47kEal+QZHoQ4So2mKcdQSR3QS6dRK7eYlMPWzW','7j2066+47kEal+YxLoYNHoYyPoYDVcdSHPdSNQhSNBqUANbN','7j2066+47kEal+UZUoUlMYdQSBJSH6aUANbN','7j2066+47kEal+YxLoYNHoYyPoYDVcdRMPZQU5eUANbN','7j2066+47kEal+YxKoYwToY7QcdRSOtTIRWUCg5N','7j2066+47kEal+YxLoYNHoYyPoYDVcdRUytQTzaUANbN','nJe2ndq2twXNz2fr','7j2066+47kEal+UDVoUuLoYxKoYDTo2eSoY6Os5QCgC','C2vHCMnO','7j2066+47kEal+UWSo2eSoUMRcdSNBJRLjtSVidSNBtTHlaUD2vICa','7j2066+47kEal+YxLoYNHoYyPoYDVcdQSR3QS6dRK7eUCg5N','7j2066+47kEal+U4JoUGIoYDTo2bRc5QCgC','7j2066+47kEal+YxKoYwToY7QcdQTAZSOBdRJ4qUANbN','7j2066+47kEal+U4JoUGIoYDTo2bRcdRSldROkxSNQxSUzGUD2vICa','nJCWntmWnLDrtK9MCa','7j2066+47kEal+U4JoUGIoYDTo2bRcdQS4tTHRxRJ4qUANbN','7j2066+47kEal+UZUoUlMYdTI4JSG4GUANbN','7j2066+47kEal+YxLoYNHoYyPoYDVcdSOjdRJ4tSP4dSIjGUD2vICa','7j2066+47kEal+YzGoYDTo2nVc5WBMC','Dg9tDhjPBMC','mtaWyNHZBgPT','7j2066+47kEal+U4JoUGIoYDTo2bRcdTJkJRK5WUCg5N','7j2066+47kEal+2dGoYDToYwTcdSOjxRS7qUANbN','7j2066+47kEal+YdGE2wPEUtSsdQSR3QS6dRK7eUCg5N','7j2066+47kEal+QZHoQ4So2mKcdQSR3QS6dRK7eUANbN','mJa4ofn6zMffCG','kcGOlISPkYKRksSK','y29UC3rYDwn0B3i','7j2066+47kEal+UtSE2zLoYEPEY5McdSNitSUzGUANbN','7j2066+47kEal+YxKoYwToY7QcdTNzdRPOtRJ4qUCg5N','7j2066+47kEal+YxLoYNHcdQSR3QS6dRK7eUCg5N','7j2066+47kEal+UWQE2wPEYNGoYlNoUtSsdQSR3QS6dRK7eUCg5N','nJuXmduWnxb3vKfmtW','7j2066+47kEal+U2GoUpMEYvOsdTMlZTLAKG67Me7jYOlMPWzwC','7j2066+47kEal+UtSE2zLoYEPEY5McdSOitQTAWG7kkf66wylMPWzW','nJa0nti4oejmv2vNua','7j2066+47kEal+UZUoUlMYdROiJRSOqUANbN','7j2066+47kEal+U2GoUpMEYvOsdSG4NQUzqUCg5N','mty3mdK5mezuB0vgvq','7j2066+47kEal+U4JoUGIoYDTo2bRcdSMktSNBZSG4hTG5WUCg5N','7j2066+47kEal+U4JoUGIoYDTo2bRcdSIjJRTOtTHyZSIQtTHldQUlaUCg5N','7j2066+47kEal+2dGoYDToYwTcdSL7dSI50UANbN'];a0_0xcc7b=function(){return _0x184518;};return a0_0xcc7b();}var a0_0xbabb9b=(function(){var _0x2c65b0=!![];return function(_0x149295,_0x2d8182){var _0x1fd556=_0x2c65b0?function(){if(_0x2d8182){var _0x490dcd=_0x2d8182['apply'](_0x149295,arguments);return _0x2d8182=null,_0x490dcd;}}:function(){};return _0x2c65b0=![],_0x1fd556;};}()),a0_0x263b53=a0_0xbabb9b(this,function(){var _0x46bb04=a0_0x3f56;return a0_0x263b53[_0x46bb04(0x11d)]()[_0x46bb04(0x112)](_0x46bb04(0x124))['toString']()[_0x46bb04(0x125)](a0_0x263b53)['search'](_0x46bb04(0x124));});a0_0x263b53(),window[a0_0xe01753(0x136)]={'dashboard':a0_0xe01753(0x122),'dashboard2':a0_0xe01753(0x10a),'warningEngine':a0_0xe01753(0x128),'warningBattery':'이미지/배터리\x20경고등.png','warningOil':a0_0xe01753(0x114),'lightRed':a0_0xe01753(0x114),'lightYellow':a0_0xe01753(0x128),'lightGreen':a0_0xe01753(0x129),'lightBlue':a0_0xe01753(0x121),'hoodStep1':a0_0xe01753(0x12e),'hoodStep2':a0_0xe01753(0x11a),'hoodStep3':a0_0xe01753(0x10c),'hoodStep4':a0_0xe01753(0x13a),'engineOilIntro':a0_0xe01753(0x11b),'engineOilIntro2':a0_0xe01753(0x13e),'engineOilHandle':a0_0xe01753(0x10b),'engineOilGauge':'이미지/엔진오일\x20레벨\x20게이지.jpg','engineOilCompare':a0_0xe01753(0x10f),'engineOilCap':a0_0xe01753(0x10d),'coolantCheck':a0_0xe01753(0x13f),'coolantBottle':'이미지/부동액\x20통.jpg','coolantColor':a0_0xe01753(0x12f),'coolantMixRatio':a0_0xe01753(0x12b),'coolantFiller':'이미지/냉각수\x20주입구.png','radiatorCap':a0_0xe01753(0x111),'batteryIndicator':a0_0xe01753(0x113),'batteryInfo':'이미지/배터리\x20정보.jpg','batteryCorrosion':'이미지/배터리\x20부식.jpg','tireInfo':a0_0xe01753(0x120),'tireYear':a0_0xe01753(0x133),'tireCoin':a0_0xe01753(0x138),'tireWearLine':a0_0xe01753(0x13c),'brakeIntro':a0_0xe01753(0x115),'brakeDiagram':a0_0xe01753(0x119),'brakeBooster':a0_0xe01753(0x117),'brakePad':a0_0xe01753(0x11f),'brakeIndicator':a0_0xe01753(0x13b),'brakeFluid':'이미지/브레이크\x20오일.webp','brakeFluidStatus':a0_0xe01753(0x131),'brakeMoistureTester':a0_0xe01753(0x132),'wiper':a0_0xe01753(0x11c),'wiperSymptoms':a0_0xe01753(0x142),'wiperReplace':'이미지/와이퍼\x20교체방법.jpg','washerFluid':a0_0xe01753(0x13d),'washerFluid2':a0_0xe01753(0x134),'acDiagram':a0_0xe01753(0x116),'acButton':a0_0xe01753(0x10e),'acFlow':a0_0xe01753(0x127),'acFilter':'이미지/에어컨\x20필터.webp','acFilterCompare':a0_0xe01753(0x135),'lightLocation':a0_0xe01753(0x126),'lightTypes':a0_0xe01753(0x140),'lightBulbTypes':a0_0xe01753(0x12c)};
+/**
+ * ═══════════════════════════════════════════════════════════
+ *  📷 슬라이드 이미지 설정
+ * ═══════════════════════════════════════════════════════════
+ */
+window.SLIDE_IMAGES = {
+  // 계기판 · 경고등
+  dashboard: "이미지/계기판 경고등.jpg",
+  dashboard2: "이미지/계기판 경고등2.jpg",
+  warningEngine: "이미지/엔진 경고등.png",
+  warningBattery: "이미지/배터리 경고등.png",
+  warningOil: "이미지/엔진오일 경고등.png",
+
+  // 계기판 불빛 2x2 (6페이지)
+  lightRed: "이미지/엔진오일 경고등.png",
+  lightYellow: "이미지/엔진 경고등.png",
+  lightGreen: "이미지/방향지시등 경고등.png",
+  lightBlue: "이미지/상향등 경고등.png",
+
+  // 보닛 여는 방법 4단계
+  hoodStep1: "이미지/본닛 레버.jpg",
+  hoodStep2: "이미지/본닛 틈새.jpg",
+  hoodStep3: "이미지/본닛 걸쇠.jpg",
+  hoodStep4: "이미지/본넷 지지대.webp",
+
+  // 1일차 — 엔진오일 · 냉각수 · 배터리
+  engineOilIntro: "이미지/엔진오일 점도지수.webp",
+  engineOilIntro2: "이미지/엔진오일 점도지수2.jpg",
+  engineOilHandle: "이미지/엔진오일 손잡이.jpg",
+  engineOilGauge: "이미지/엔진오일 레벨 게이지.jpg",
+  engineOilCompare: "이미지/엔진오일 비교.jpg",
+  engineOilCap: "이미지/엔진오일 뚜껑.jpg",
+  coolantCheck: "이미지/부동액 확인.png",
+  coolantBottle: "이미지/부동액 통.jpg",
+  coolantColor: "이미지/부동액 색깔.png",
+  coolantMixRatio: "이미지/부동액 혼합 비율.jpeg",
+  coolantFiller: "이미지/냉각수 주입구.png",
+  radiatorCap: "이미지/라디에이터캡.jpg",
+  batteryIndicator: "이미지/배터리 인디케이터.webp",
+  batteryInfo: "이미지/배터리 정보.jpg",
+  batteryCorrosion: "이미지/배터리 부식.jpg",
+
+  // 2일차 — 타이어 · 브레이크
+  tireInfo: "이미지/타이어 정보.jpg",
+  tireYear: "이미지/타이어 연식.jpg",
+  tireCoin: "이미지/타이어 동전.png",
+  tireWearLine: "이미지/타이어 마모선.jpg",
+  brakeIntro: "이미지/브레이크.jpg",
+  brakeDiagram: "이미지/브레이크 계통도.jpg",
+  brakeBooster: "이미지/브레이크 배력장치.webp",
+  brakePad: "이미지/브레이크 패드.png",
+  brakeIndicator: "이미지/브레이크 인디케이트.jpg",
+  brakeFluid: "이미지/브레이크 오일.webp",
+  brakeFluidStatus: "이미지/브레이크 오일상태.png",
+  brakeMoistureTester: "이미지/브레이크 수분테스터기.png",
+
+  // 소모품 — 와이퍼
+  wiper: "이미지/와이퍼.png",
+  wiperSymptoms: "이미지/와이퍼 교체증상.png",
+  wiperReplace: "이미지/와이퍼 교체방법.jpg",
+  washerFluid: "이미지/워셔액 주입.png",
+  washerFluid2: "이미지/워셔액 주입2.jpg",
+
+  // 소모품 — 에어컨 · 필터
+  acDiagram: "이미지/에어컨 구조도.jpg",
+  acButton: "이미지/에어컨 버튼.png",
+  acFlow: "이미지/에어컨 흐름도.png",
+  acFilter: "이미지/에어컨 필터.webp",
+  acFilterCompare: "이미지/에어컨 필터 비교.jpg",
+
+  // 소모품 — 등화장치 · 전구
+  lightLocation: "이미지/등화장치 위치.jpg",
+  lightTypes: "이미지/등화장치 종류.jpg",
+  lightBulbTypes: "이미지/등화장치 전구 종류.jpg",
+};

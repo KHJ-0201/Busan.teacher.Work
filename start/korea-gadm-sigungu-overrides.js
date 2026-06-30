@@ -1,1 +1,102 @@
-var a2_0x43c0ea=a2_0x445a;function a2_0x5b5b(){var _0x1786f1=['7ikS7iob6RwS','r0fetv9tsuDvtKDvx09wrvjssurfuW','6RIi7kcv6RwS','64US7isC6RwS','yxbWBhK','66Ei7y+S6RwS','7j2a7y+j6RwS','6Roe7jAr6RwS','6Rcv7isC6RwS','mtmZntyWBLb2wfDh','7zw07jQ064Ya6RwS','mtmYode1ng1uvxDhDG','7iIy7jIb6RwS','7jAr7lkC6RwS','mZe4ntiWvvrRquj0','mNbcBgPtDW','7jI57kEe6RwW','mJrdwerysee','64kO64+z6RwS','6Rsr7ikW6RwS','7jYG7isX6RwS','mZq3otK0mejywMTprG','7isX64+z6RwS','66+47lAu7zMa6RwS','6RIi7lkC6RwS','odGXmZi5mMXUtLvpDW','7jIb65oX7y+S6RwS','y29UC3rYDwn0B3i','6Rcv7zMu6RwW','7ksr656r6RwS','64+z64Ya66Y46RwS','6Rcv67Ab6RwS','7isC64Ya66Y46RwS','6Rcv64kO6RwS','nJi2mtm4ohHZr25WuG','mtfAtgjsDMe','6RIW7j6L6RwW','Dw5KzwzPBMvK','m3LWruvYyG','64w47jUq6RwS','ndC3odyWmZbZrw1kyuy','7ikS7zwy6RwS','kcGOlISPkYKRksSK','7jEW7kcC6RwS','7jEW7iIy6RwS','6Rsr7kEe6RwS','67Aa7ikW7kEe6RwS','6Rsa7jwf6RwS','6RwS66gC6RwS','C2vHCMnO','7kcC7ko87iUC','6Rcv64+z6RwS'];a2_0x5b5b=function(){return _0x1786f1;};return a2_0x5b5b();}function a2_0x445a(_0x440a50,_0x4d3b14){_0x440a50=_0x440a50-0x86;var _0x5f0316=a2_0x5b5b();var _0xad248=_0x5f0316[_0x440a50];if(a2_0x445a['WpwHnt']===undefined){var _0x198361=function(_0x58ad71){var _0x37bcdb='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';var _0x286538='',_0x4ee1b3='',_0x40dd38=_0x286538+_0x198361;for(var _0x4bc0aa=0x0,_0x33b3ed,_0x230a41,_0x51f448=0x0;_0x230a41=_0x58ad71['charAt'](_0x51f448++);~_0x230a41&&(_0x33b3ed=_0x4bc0aa%0x4?_0x33b3ed*0x40+_0x230a41:_0x230a41,_0x4bc0aa++%0x4)?_0x286538+=_0x40dd38['charCodeAt'](_0x51f448+0xa)-0xa!==0x0?String['fromCharCode'](0xff&_0x33b3ed>>(-0x2*_0x4bc0aa&0x6)):_0x4bc0aa:0x0){_0x230a41=_0x37bcdb['indexOf'](_0x230a41);}for(var _0x3b09c5=0x0,_0x271f8f=_0x286538['length'];_0x3b09c5<_0x271f8f;_0x3b09c5++){_0x4ee1b3+='%'+('00'+_0x286538['charCodeAt'](_0x3b09c5)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x4ee1b3);};a2_0x445a['bFcNDJ']=_0x198361,a2_0x445a['xPPpXk']={},a2_0x445a['WpwHnt']=!![];}var _0x5b5b7d=_0x5f0316[0x0],_0x445a08=_0x440a50+_0x5b5b7d,_0x251e30=a2_0x445a['xPPpXk'][_0x445a08];if(!_0x251e30){var _0x1f3835=function(_0x1e83b8){this['oNNUKk']=_0x1e83b8,this['lBGZmV']=[0x1,0x0,0x0],this['kQWUJR']=function(){return'newState';},this['XeFtJr']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['NCMAYQ']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x1f3835['prototype']['kfaosI']=function(){var _0x4b2ab4=new RegExp(this['XeFtJr']+this['NCMAYQ']),_0x8913bd=_0x4b2ab4['test'](this['kQWUJR']['toString']())?--this['lBGZmV'][0x1]:--this['lBGZmV'][0x0];return this['SXAvuT'](_0x8913bd);},_0x1f3835['prototype']['SXAvuT']=function(_0x194aae){if(!Boolean(~_0x194aae))return _0x194aae;return this['FMjGHT'](this['oNNUKk']);},_0x1f3835['prototype']['FMjGHT']=function(_0x31909c){for(var _0x46c0fe=0x0,_0x2e00a0=this['lBGZmV']['length'];_0x46c0fe<_0x2e00a0;_0x46c0fe++){this['lBGZmV']['push'](Math['round'](Math['random']())),_0x2e00a0=this['lBGZmV']['length'];}return _0x31909c(this['lBGZmV'][0x0]);},new _0x1f3835(a2_0x445a)['kfaosI'](),_0xad248=a2_0x445a['bFcNDJ'](_0xad248),a2_0x445a['xPPpXk'][_0x445a08]=_0xad248;}else _0xad248=_0x251e30;return _0xad248;}(function(_0x3e647d,_0x16a377){var _0x3cdf59=a2_0x445a,_0x3a7271=_0x3e647d();while(!![]){try{var _0x34b5c9=parseInt(_0x3cdf59(0x87))/0x1*(-parseInt(_0x3cdf59(0x8b))/0x2)+-parseInt(_0x3cdf59(0xa2))/0x3*(parseInt(_0x3cdf59(0x9e))/0x4)+parseInt(_0x3cdf59(0x8a))/0x5+-parseInt(_0x3cdf59(0x95))/0x6+-parseInt(_0x3cdf59(0xb9))/0x7*(parseInt(_0x3cdf59(0x8d))/0x8)+parseInt(_0x3cdf59(0x91))/0x9+-parseInt(_0x3cdf59(0xa4))/0xa*(-parseInt(_0x3cdf59(0x9f))/0xb);if(_0x34b5c9===_0x16a377)break;else _0x3a7271['push'](_0x3a7271['shift']());}catch(_0x12d610){_0x3a7271['push'](_0x3a7271['shift']());}}}(a2_0x5b5b,0xc5980),function(_0x4bc0aa){var _0x30ab36=a2_0x445a,_0x33b3ed=(function(){var _0x51f448=!![];return function(_0x3b09c5,_0x271f8f){var _0x1f3835=_0x51f448?function(){var _0x5007c7=a2_0x445a;if(_0x271f8f){var _0x1e83b8=_0x271f8f[_0x5007c7(0xb4)](_0x3b09c5,arguments);return _0x271f8f=null,_0x1e83b8;}}:function(){};return _0x51f448=![],_0x1f3835;};}()),_0x230a41=_0x33b3ed(this,function(){var _0x422755=a2_0x445a;return _0x230a41['toString']()[_0x422755(0xad)](_0x422755(0xa6))['toString']()[_0x422755(0x97)](_0x230a41)[_0x422755(0xad)](_0x422755(0xa6));});_0x230a41();'use strict';_0x4bc0aa[_0x30ab36(0xb1)]={'서울특별시':{'Gangseo':_0x30ab36(0xb8),'Geum-cheon':_0x30ab36(0x94),'Guro':_0x30ab36(0xac),'Gwanak':_0x30ab36(0xab),'Gwang-jin':_0x30ab36(0xa9),'Jongro':'종로구','Jung':'중구','Jungnang':_0x30ab36(0x99),'Mapo':_0x30ab36(0xb5),'Nowon':_0x30ab36(0xa3),'Seocho':'서초구','Seodaemun':_0x30ab36(0x9c),'Seongbuk':'성북구','Seongdong':_0x30ab36(0x92),'Songpa':'송파구','Yangcheon':_0x30ab36(0x89),'Yeongdeungpo':_0x30ab36(0x96),'Yongsan':'용산구','Dobong':'도봉구','Dong-daemun':_0x30ab36(0x9a),'Dongjak':'동작구','Eun-pyeong':_0x30ab36(0xb6),'Gandong':_0x30ab36(0xaf),'Gangbuk':_0x30ab36(0x9b),'Gangnam':_0x30ab36(0x9d)},'부산광역시':{'Buk':'북구','Busanjin':_0x30ab36(0xaa),'Dong':'동구','Dongnae':'동래구','Gangseo':_0x30ab36(0xb8),'Geumjeong':_0x30ab36(0xb2),'Gijang':_0x30ab36(0xa0),'Haeundae':_0x30ab36(0x86),'Nam':'남구','Saha':_0x30ab36(0xa5),'Sasang':_0x30ab36(0xb0),'Seo':'서구','Suyeong':_0x30ab36(0x88),'Yeongdo':'영도구','Yeonje':_0x30ab36(0xa7)},'인천광역시':{'Bupyeong':'부평구','Dong':'동구','Ganghwa':_0x30ab36(0x98),'Gyeyang':_0x30ab36(0xb7),'Jung':'중구','Nam':_0x30ab36(0x8e),'Namdong':'남동구','Ongjin':_0x30ab36(0x8c),'Seo':'서구','Yeonsu':_0x30ab36(0xa8),'Michuhol':_0x30ab36(0x93)},'대구광역시':{'Buk':'북구','Dalseo':_0x30ab36(0xb3),'Dalseong':'달성군','Dong':'동구','Jung':'중구','Nam':'남구','Seo':'서구','Suseong':'수성구','Gunwi':'군위군'},'대전광역시':{'Daedeok':'대덕구','Dong':'동구','Jung':'중구','Seo':'서구','Yuseong':_0x30ab36(0x90)},'광주광역시':{'Buk':'북구','Dong':'동구','Gwangsan':_0x30ab36(0x8f),'Nam':'남구','Seo':'서구'},'울산광역시':{'Buk':'북구','Dong':'동구','Jung':'중구','Nam':'남구','Ulju':'울주군'},'제주특별자치도':{'Jeju':_0x30ab36(0xae),'Seogwipo':'서귀포시'}};}(typeof window!==a2_0x43c0ea(0xa1)?window:globalThis));
+/**
+ * GADM 영문 구명 → 한글 시·군·구 보정 (자동 매핑 오류 수정)
+ */
+(function (global) {
+    'use strict';
+
+    global.GADM_SIGUNGU_OVERRIDES = {
+        '서울특별시': {
+            'Gangseo': '강서구',
+            'Geum-cheon': '금천구',
+            'Guro': '구로구',
+            'Gwanak': '관악구',
+            'Gwang-jin': '광진구',
+            'Jongro': '종로구',
+            'Jung': '중구',
+            'Jungnang': '중랑구',
+            'Mapo': '마포구',
+            'Nowon': '노원구',
+            'Seocho': '서초구',
+            'Seodaemun': '서대문구',
+            'Seongbuk': '성북구',
+            'Seongdong': '성동구',
+            'Songpa': '송파구',
+            'Yangcheon': '양천구',
+            'Yeongdeungpo': '영등포구',
+            'Yongsan': '용산구',
+            'Dobong': '도봉구',
+            'Dong-daemun': '동대문구',
+            'Dongjak': '동작구',
+            'Eun-pyeong': '은평구',
+            'Gandong': '강동구',
+            'Gangbuk': '강북구',
+            'Gangnam': '강남구'
+        },
+        '부산광역시': {
+            'Buk': '북구',
+            'Busanjin': '부산진구',
+            'Dong': '동구',
+            'Dongnae': '동래구',
+            'Gangseo': '강서구',
+            'Geumjeong': '금정구',
+            'Gijang': '기장군',
+            'Haeundae': '해운대구',
+            'Nam': '남구',
+            'Saha': '사하구',
+            'Sasang': '사상구',
+            'Seo': '서구',
+            'Suyeong': '수영구',
+            'Yeongdo': '영도구',
+            'Yeonje': '연제구'
+        },
+        '인천광역시': {
+            'Bupyeong': '부평구',
+            'Dong': '동구',
+            'Ganghwa': '강화군',
+            'Gyeyang': '계양구',
+            'Jung': '중구',
+            'Nam': '남동구',
+            'Namdong': '남동구',
+            'Ongjin': '옹진군',
+            'Seo': '서구',
+            'Yeonsu': '연수구',
+            'Michuhol': '미추홀구'
+        },
+        '대구광역시': {
+            'Buk': '북구',
+            'Dalseo': '달서구',
+            'Dalseong': '달성군',
+            'Dong': '동구',
+            'Jung': '중구',
+            'Nam': '남구',
+            'Seo': '서구',
+            'Suseong': '수성구',
+            'Gunwi': '군위군'
+        },
+        '대전광역시': {
+            'Daedeok': '대덕구',
+            'Dong': '동구',
+            'Jung': '중구',
+            'Seo': '서구',
+            'Yuseong': '유성구'
+        },
+        '광주광역시': {
+            'Buk': '북구',
+            'Dong': '동구',
+            'Gwangsan': '광산구',
+            'Nam': '남구',
+            'Seo': '서구'
+        },
+        '울산광역시': {
+            'Buk': '북구',
+            'Dong': '동구',
+            'Jung': '중구',
+            'Nam': '남구',
+            'Ulju': '울주군'
+        },
+        '제주특별자치도': {
+            'Jeju': '제주시',
+            'Seogwipo': '서귀포시'
+        }
+    };
+})(typeof window !== 'undefined' ? window : globalThis);

@@ -1,1 +1,729 @@
-const a19_0x6c328f=a19_0x3c9a;function a19_0x51d5(){const _0x35ebe4=['y2XHC3noyw1L','lMmTC3vIAMvJDc10ExbLlcaUyY1LDMfSlw1LDgHVza','lMmTDw5PDc10ExbLlxzHBa','iJ48l3rKpG','A2v5CW','7jQu7iAm66Qf','AM9PBG','yxbWzw5Kq2HPBgq','yxbWBhK','D3jPDgvgAwXL','zgLZCgXHEq','zMLUza','D2fYBG','lNn1yI1KzxrHAwWTAw5WDxq','lMr5BMfTAwmTC3vIAMvJDc10ExbL','cIaGicaGicaGicaGicaGicaGicaGicaGicaGica8zgL2ignSyxnZpsjZDwiTAxrLBs1YB3CIihn0EwXLpsjMBgv4oIaXoYbKAxnWBgf5oIbMBgv4oYi+cIaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGphrLEhrHCMvHignSyxnZpsjLzgL0ywjSzs1PBNb1DcbZDwiTzgv0ywLSlwLUChv0iIbZDhLSzt0ICMvZAxPLoM5VBMu7ihDPzhrOoJeWmcu7igHLAwDODdOGmtaWjtSGyM9YzgvYoM5VBMu7igjHy2TNCM91BMq6DhjHBNnWyxjLBNq7ihrLEhqTywXPz246BgvMDdSGzM9UDc1Myw1PBhK6Aw5OzxjPDdSGzM9UDc1ZAxPLoJeYChG7ihbHzgrPBMC6ohb4ideWChG7igjVEc1ZAxPPBMC6yM9YzgvYlwjVEdSGzgLZCgXHEtPIBg9JAZSIpG','Dg90ywXi','DhjBzgf0ys1NCM91Cd0I','C2v0qxr0CMLIDxrL','ogDdBfPTAa','7y+j6Rca67cP67kv67cp64k07jQP','4PYfioUQQoUtOcdRS4dQSR3SGQZTLA3SNBqG7isC67ke7jEqioYvIoYGHo2vMoQYJcdSOidSNQxRKjJSL4JSIRxRI4JRI6qU','DhLWzq','z2v0rgf0zq','64QL66cL64UO7jYe7jQu7iAm','mtK1mdmWmfjOD1LOwG','lMr5BMfTAwmTzgvSzxrLlxjVDW','BwfZDgvYrgf0yq','yM9VA19HChbLBMrFC2HLzxq','DgHLBG','7lwC7lsiioYiMoYxHEYDVcaY7ko8ioYGHcdQUldSPidSNOxRI4JRI6qU','lNn1yI1OB3vYlwLUChv0','CxvLCNLtzwXLy3rVCKfSBa','6RIW7kg0ioUnSoYDTo2eScdROzZRK5WG7iUK7yYO','iIbZDhLSzt0ID2LKDgG6mtaWjtSGAgvPz2H0oIaXmdaLoYbIB3jKzxi6BM9UztSGyMfJA2DYB3vUzdP0CMfUC3bHCMvUDdSGDgv4Dc1HBgLNBJPJzw50zxi7igzVBNqTzMfTAwX5oMLUAgvYAxq7igzVBNqTC2L6ztOXmNb4oYbIB3GTC2L6Aw5NoMjVCMrLCI1IB3G7igrPC3bSyxK6yMXVy2S7iJ4kicaGicaGicaGicaGicaGicaGicaGicaGicaGidWVzgL2pGOGicaGicaGicaGicaGicaGicaGicaGica','mUYWQcdTJ4NQSidSNBW','pc90zxH0yxjLyt4kicaGicaGicaGicaGicaGicaGicaGicaGicaGidWVzgL2pGOGicaGicaGicaGicaGicaGicaGicaGica','iZmZmZmZmW','642W7j207ysWioUHNoUtNcdSI6tTJkG6','CxvLCNLtzwXLy3rVCG','Aw5UzxjuzxH0','Dw5PDa','lNHSC3G','lNr5CguTDg9Nz2XLlwj0BJPUDgGTy2HPBgqOmIK','phrKpUQ1KoQZVoUQQtOG','nZy1mLrwvKXHtW','DhjPBq','6Rcv7j2y67kvkWRTLzNSG53SI6tSIRu','y29SB3i','8j+uKIdRS7tSLyGG7j247kADio2zLEYDUoUqQdOG','7iAm7jAr6Rwq6Ro8','lMr5BMfTAwmTzxzHBc1TzxrOB2q','C29YDa','6Rwq7iIy7zwz7iQ167cP67kv','6Rwq6Ro866QP','8j+uKIdSNPdRJ5KG66gC6RE47j24ioYeSEQZTq','66+46RIW7j6f','7zwe7iIy64QL66cL64UO7jYe','DMfSDwu','Dg90ywXiB3vYCW','lMmTC3vIAMvJDc1PBNb1Da','C3bSAxq','i2zMzJfMma','7zUi66cO7iUC6Rce','Aw5Uzxjive1m','ChvZAa','Dg9ju09tDhjPBMC','C2vSzwn0zwq','6Rwq6Ro866QPioU2HoULMoULVcdTLBtSO7ZSHlJSMPqU','cIaGicaGicaGicaGicaGicaGicaGpc9KAxy+cIaGicaGicaGicaGicaGica8l3rKpGOkicaGicaGicaGicaGicaGidX0zcbZDhLSzt0IAgvPz2H0oIaXChG7iJ4kicaGicaGicaGicaGicaGicaGica8zgL2ignSyxnZpsjZDwiTAxrLBs1JB250ywLUzxiIihn0EwXLpsjOzwLNAhq6ideWmcu7igrPC3bSyxK6igzSzxG7igzSzxGTzgLYzwn0Aw9UoIbJB2X1Bw47iJ4kicaGicaGicaGicaGicaGicaGicaGicaG','tKntioYGHoQZTEQ1KoQZVa','Aw5PDgLHBgL6zufWCa','zgf0ys1NCM91CgLK','y2vUDgvY','Bwf0y2G','phrYpJX0zcbJB2XZCgfUpsi2iIbZDhLSzt0ICgfKzgLUzZO1mhb4oYbJB2XVCJOJnJy2oYi+65oX66gD65cCioQ1KoQZVoUQQsdRJBdSNBtTHldQSiaG7jEg7iQ164Ui64UKlJWVDgq+pc90CJ4','C3vIAMvJDa','mZe3ndvZBKvSv2u','pUYgJoYwKEQ1KoQZVdWVB3b0Aw9UpGOGicaGicaGicaGicaGicaGicaGicaGica8B3b0Aw9UihzHBhvLpsjoq1pQTzdQS7WIia','y291CNnLvgfIBgvcB2r5','67MetKntioQ1KoQZVcJSNBtROAaP','phrKihjVD3nWyw49iG','Dw5PDhm','mtC0nZCWC1D3swro','iIbJBgfZCZ0IC3vIAMvJDc1JzwXSiJ4kicaGicaGicaGicaGicaGicaGica8Aw5WDxqGy2XHC3m9iMvKAxrHyMXLlwLUChv0igmTC3vIAMvJDc1PBNb1DciGDMfSDwu9iG','yw9Hx3rVx3nOzwv0','7zI87zwP7zIv','Ag91CG','mJa0nZa0mgzzs2TQBW','zxjYB3i','i2uZzJjMza','6Rwq6Ro866QP67oeioYcRoYGHo2pIEQWGcdQS4tTMO0','6RcCpc90zd48Dgq+lsdQS7ZSOjuG7jQu7jw9io2yHo2zQsaTpc90zd48Dgq+7kce7lk0oIa','lMr5BMfTAwmTDw5PDc10ExbL','i2yZztvMnq','7iUC6Rcekq','iIbZDhLSzt0IzM9UDc13zwLNAhq6yM9SzdSIpGOGicaGicaGicaGicaGicaGicaGidXZzwXLy3qGy2XHC3m9iMvKAxrHyMXLlwLUChv0igmTC3vIAMvJDc10ExbLigr5BMfTAwmTC3vIAMvJDc10ExbLiIbKyxrHlwDYB3vWAwq9iG','7j247kADioYGLEUZToQWGcdRP4ZRO4ZRKjJSL4JSIRxRI4JRI6qUioUlPoYlNcdROzZQT7JSNBJTLBtSO7ZSHlJSMPqU','i2zMzJbMnG','Dg90ywW','yMfJA2DYB3vUzenVBg9Y','y2XHC3nmAxn0','oYbMB250lxnPEMu6mtbWEdSGBwfYz2LUlxrVCdOZChG7igjVCMrLCJOXChGGC29SAwqGi2nJyZSGyM9YzgvYlxjHzgL1CZOZChG7ihDPzhrOoJKWjtSGBwfYz2LUlwXLzNq6yxv0BZSGBwfYz2LUlxjPz2H0oMf1Dg87ihrYyw5ZAxrPB246igfSBcaWlJjZoYi+cIaGica8B3b0Aw9UihzHBhvLpslSNPhSL4xSNQxTJ4NQSiaIia','7ikS7kce7y+j6Rca6Roe7zQnxW','6RIW7yoakoYeOoUlPo2yLsK','Ahr0Chm6lY9IDxnHBI10zwfJAgvYlxDVCMSTzgvMyxvSDc1YDgrIlMfZAweTC291DgHLyxn0ms5MAxjLyMfZzwrHDgfIyxnLlMfWCa','7ikS7kce7y+j6Rca6Roe7zQn','y2f0y2G','7j6S65+j6Rwq6Ro8','Aw5SAw5LlwjSB2nR','pUU5He5du+Q1KoQZVdWVB3b0Aw9UpGOGicaGicaGicaGicaGicaGicaGidWVC2vSzwn0pGOGicaGicaGicaGicaGicaGicaGidXKAxyGC3r5Bgu9iMzVBNqTC2L6ztOGmtfWEdSGy29SB3i6icmZndK4zgi7ig1HCMDPBI10B3a6idvWEdSIpIG','oYi+cIaGicaGicaGicaGicaGicaGicaGicaGidXIDxr0B24GDhLWzt0IyNv0Dg9UiIbJBgfZCZ0IDhLWzs10B2DNBguTyNrUigr5BMfTAwmTDw5PDc10ExbLia','Dw5PDfr5Cgu','CMrdB2rL','6Rwq6Ro86RwS67Ae','iZa4n2y1yG','AdWVDgq+phrKpUYALoYvVtWVDgq+','nxLUtK12Aa','i2zMzJLKyG','CgfYzw50rwXLBwvUDa','yNvZyw4TDgvHy2HLCI13B3jR','ndK4z2vfrKnO','cIaGicaGicaGicaGicaGicakicaGicaGicaGicaGicaGidX0zd4kicaGicaGicaGicaGicaGicaGica8Dgv4DgfYzweGy2XHC3m9iMvKAxrHyMXLlwLUChv0igmTDw5PDc1PBNb1DciGCM93CZ0ImIiGC3r5Bgu9iNjLC2L6ztPUB25LoYb3Awr0AdOXmdaLoYbIB3jKzxi6BM9UztSGyMfJA2DYB3vUzdP0CMfUC3bHCMvUDdSGDgv4Dc1HBgLNBJPJzw50zxi7igzVBNqTzMfTAwX5oMLUAgvYAxq7igzVBNqTC2L6ztOXmNb4oYb2zxj0AwnHBc1HBgLNBJPTAwrKBgu7igrPC3bSyxK6yMXVy2S7ihbHzgrPBMC6nxb4oYbIB3GTC2L6Aw5NoMjVCMrLCI1IB3G7iJ4','y291CNnLCW','cIaGicaGicaGicaGicaGicaGicaGicaGicaGica8zgL2ignSyxnZpsjZDwiTAxrLBs1YB3CIihn0EwXLpsjMBgv4oIaXoYbKAxnWBgf5oIbMBgv4oYi+cIaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGpgLUChv0ignSyxnZpsjLzgL0ywjSzs1PBNb1DcbZDwiTAg91CI1PBNb1DciGDMfSDwu9iG','zgf0ys1NCM91Ca','iIbZDhLSzt0IzM9UDc1ZAxPLoJeWChG7ignVBg9YoImZmZm7ig1HCMDPBI10B3a6nxb4oYbIB3jKzxi6mxb4ihnVBgLKicnJy2m7igjVCMrLCI1YywrPDxm6m3b4oYbWywrKAw5NoJjWEdSGD2LKDgG6otaLoYi+cIaGicaGicaGicaGicaGicaGicaGicaGidXVChrPB24GDMfSDwu9iIi+ls0G7isG7yoDic0Tpc9VChrPB24+cIaGicaGicaGicaGicaGicaGicaGicaGidXVChrPB24GDMfSDwu9iUYgJoYwKEQ1KoQZVciG','7iUC6RcektWVzgL2pGOGicaGicaGicaGicaGicaGpc90zd4','67MetKnt','Dg9tDhjPBMC','pUYEKEYxHEYEPE2pIEQWGdWVB3b0Aw9UpGOGicaGpg9WDgLVBIb2ywX1zt0I7y+j6Rca7j6q7lk07ygS66AS7iQK7yQ4iIa','7zwe7iIyl+YeOo2dNsdSOjxRS7qG7jEg7j20ioUlPoYATo2vMoYlNoQYOoYkTEUlIoQ5Jd8','zxzHBe1LDgHVza','DgfYz2v0','i2zMzJDLnG','7iob7is46Rwq7iIy','mEYWQcdTJ4NQSidSNBW','6Rcv7j2y67kv','zMXLEa','z2HSD25ZmdiWmubUyxzLCI5JB20','B25Jzq','66Er7j2aioQZOoUuLq','cIaGicaGicaGicaGicaGica','Bg9JywXLq29TCgfYzq','iw1LCMDLCW','CMvTB3zL','4P2mioYGGoYEPsdSPjeG7jIK66wy6RcaioUWNoYdNE2wIoYkTEUlIoUlPc4','iIbKyxrHlxr5Cgv2ywW9iUYeOo2dNEUkPEUGPEUlQoYCHci+7isG7yoDpc9IDxr0B24+cIaGicaGicaGicaGicaGicaGicaGicaGidXPBNb1Dcb0ExbLpsjOAwrKzw4IignSyxnZpsjJlxvUAxqTDhLWzs12ywWIihzHBhvLpsi','7iob7is46Rwq7iIy7zwz7iQ167cP67kv','z2v0sxrLBq','yxv0Aa','i2y1zJvMnq','y3vYCMvUDenSyxnZ','BMfTzq','ywn0AxzLlxjLCq','AhjLzG','mJe4nM1TtKrOBq','y3jLyxrLrwXLBwvUDa','lMmTzxzHBc1TzxrOB2q','y2XPy2S','6Rwq6Ro866QP7y647isX64k07jQPxW','y2XVC2vZDa','y2HHBMDL','AdWVDgq+phrKpUYGHoYYTdOG','64QL66cL64UO7jYe','yMXVy2S','lNr5CguTDg9Nz2XLlwj0BG','iIbJBgfZCZ0IC3vIAMvJDc10B3rHBc1JzwXSiJ48Aw5WDxqGy2XHC3m9iMvKAxrHyMXLlwLUChv0igmTC3vIDg90ywWTAw5WDxqIihzHBhvLpsi','zgf0ys10ExbLDMfS','zw1HAwW','7j2066gGioUWJYdSGQZROydTLzNSIRu','ywrK','CgfYC2u','z2v0qxr0CMLIDxrL','i2nJyW','7zw064U57jEg7j2m','C3r5Bgu','z2v0rwXLBwvUDej5swq','i2nVDxjZzvrHyMXLqM9KEsb0CJPUB3qOlNn1Bw1HCNKTCM93kq','kcGOlISPkYKRksSK','CMvKDwnL','C2v0','tKnt6Rwq6Ro8','ywXPz25Tzw50','cIaGicaGicaGicaGicaGica8Dgq+pgj1DhrVBIbJBgfZCZ0IyNrUigj0BI1YzwqGzhLUyw1PyY1KzwXLDguTCM93iJ7SGQ3SOjW8l2j1DhrVBJ48l3rKpGOGicaGicaGicaGica','7kca7j6LioYKKsdSMktRPzGG67cC7ioDoG','7zwz7iQ167cP67kv','koYlNoQWHcK','7y+j6Rca7iUC6RIW','B25bDxrOu3rHDgvdAgfUz2vK','642W7j207ysW6RcaioU2GoYHSE2vQEUlIoUlPc4G7iUC6Rce7zgC7jMaioQ1KoQZVcdRJBdSNBtTHldRPBWG7zMv7j247zw07ko87is47jQulG','y29UC3rYDwn0B3i','ywrKrxzLBNrmAxn0zw5LCG','yNrUx2rVD25SB2fKx2nVDxjZzv90ywjSzq','BgvUz3rO','yM9YzgvYq29SB3i','lI4VAw5KzxGUAhrTBa','zMLSDgvY','DgvZDa','yNrUx2rVD25SB2fKx2v2ywXFBwv0Ag9K','7j6r7jEf7j6L7y+j6Rca','CMvWBgfJzq','i2u2n2uYmG','BwfZDgvYrgf0ys9JB3vYC2vZ','7y+j6Rca7j6q7lk07ygS66AS7iQK7yQ4','zNvSBfrPBwv0ywjSzq','DxrPBhm','Bg9N','zxzHBerHDgvZ','i2zMzMzMzG','DMfS','ywn0AxzLlw9WDa','64U064U56Rwq7ikS','DgvHy2HLCG','BM9Uzq','642W7j207ysW6RcaioYxHUYkTEUlIoUlPc4','ywrTAw5qDW','yNrUx2rVD25SB2fKx3bYzv9LDMfS','yNrUuMvWB3j0tw9Kzq','yM9VA19UzxC','4P2mioYDUoYMNsdSI6tTJkG','mZuYmZeZmvbjsvrMqG','7zwe7iIy64QL66cL64UO7jYeioYzUcdRGPJRQlJSP4dRIPqGj+YeOo2dNEUkPEUGPEUlQoYCHcFROzWG7j286RseioYNGoYGLE2vMoYxRcdSOidSNQxTLzJSI5ZQSQdSIRxRI4JQUyW/','C29Tzq','zM9YrwfJAa','lMmTC3vIAMvJDc10ExbL','nZyYsw9Ts0jS','zgv0ywLSCW','7isG7yoD64QL66cL64UO7jYe','7y+j6Rca7j287kcv7j2aioQWGsdRIQxROkxRI6JSNitSNzGG66Ei7kEa66EjioYDVoYEHEUlIoUlPc4G7zwC67kiioUnLcdSNBZSOjuG7zMv7j24io2vMoYeUoYALc4G64UK7jQ066gC65oCio2vMoYlNoQYOoYkTEUlIoQ5Jd8','7y+j6Rca67cP67kv'];a19_0x51d5=function(){return _0x35ebe4;};return a19_0x51d5();}function a19_0x3c9a(_0x1bc7e6,_0x4fc9b4){_0x1bc7e6=_0x1bc7e6-0xac;const _0x1b6a49=a19_0x51d5();let _0x2472fd=_0x1b6a49[_0x1bc7e6];if(a19_0x3c9a['fVfkyX']===undefined){var _0x4bc410=function(_0x5108f0){const _0x3796d7='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0xc6b3d8='',_0x5b39de='',_0x393c40=_0xc6b3d8+_0x4bc410;for(let _0x3aa0a0=0x0,_0x144756,_0x3b4648,_0x30a53c=0x0;_0x3b4648=_0x5108f0['charAt'](_0x30a53c++);~_0x3b4648&&(_0x144756=_0x3aa0a0%0x4?_0x144756*0x40+_0x3b4648:_0x3b4648,_0x3aa0a0++%0x4)?_0xc6b3d8+=_0x393c40['charCodeAt'](_0x30a53c+0xa)-0xa!==0x0?String['fromCharCode'](0xff&_0x144756>>(-0x2*_0x3aa0a0&0x6)):_0x3aa0a0:0x0){_0x3b4648=_0x3796d7['indexOf'](_0x3b4648);}for(let _0x429bf3=0x0,_0x464e69=_0xc6b3d8['length'];_0x429bf3<_0x464e69;_0x429bf3++){_0x5b39de+='%'+('00'+_0xc6b3d8['charCodeAt'](_0x429bf3)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x5b39de);};a19_0x3c9a['ZtfJIH']=_0x4bc410,a19_0x3c9a['OoMRvp']={},a19_0x3c9a['fVfkyX']=!![];}const _0x51d518=_0x1b6a49[0x0],_0x3c9a53=_0x1bc7e6+_0x51d518,_0x2c78ee=a19_0x3c9a['OoMRvp'][_0x3c9a53];if(!_0x2c78ee){const _0x47090c=function(_0x3f24fc){this['gxlzlG']=_0x3f24fc,this['GZwCsV']=[0x1,0x0,0x0],this['COUcHw']=function(){return'newState';},this['LPiUQl']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['NcqALU']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x47090c['prototype']['FotEjr']=function(){const _0x209d83=new RegExp(this['LPiUQl']+this['NcqALU']),_0x3a2a88=_0x209d83['test'](this['COUcHw']['toString']())?--this['GZwCsV'][0x1]:--this['GZwCsV'][0x0];return this['BIwdFK'](_0x3a2a88);},_0x47090c['prototype']['BIwdFK']=function(_0x11ef8c){if(!Boolean(~_0x11ef8c))return _0x11ef8c;return this['yMXmat'](this['gxlzlG']);},_0x47090c['prototype']['yMXmat']=function(_0x10dca9){for(let _0x10dbf4=0x0,_0x204618=this['GZwCsV']['length'];_0x10dbf4<_0x204618;_0x10dbf4++){this['GZwCsV']['push'](Math['round'](Math['random']())),_0x204618=this['GZwCsV']['length'];}return _0x10dca9(this['GZwCsV'][0x0]);},new _0x47090c(a19_0x3c9a)['FotEjr'](),_0x2472fd=a19_0x3c9a['ZtfJIH'](_0x2472fd),a19_0x3c9a['OoMRvp'][_0x3c9a53]=_0x2472fd;}else _0x2472fd=_0x2c78ee;return _0x2472fd;}(function(_0x337838,_0x3542f8){const _0x326340=a19_0x3c9a,_0x6fa53=_0x337838();while(!![]){try{const _0x47a7bc=-parseInt(_0x326340(0x118))/0x1*(parseInt(_0x326340(0x13f))/0x2)+-parseInt(_0x326340(0x185))/0x3*(-parseInt(_0x326340(0xd0))/0x4)+-parseInt(_0x326340(0xfb))/0x5+parseInt(_0x326340(0x11c))/0x6*(parseInt(_0x326340(0xf0))/0x7)+-parseInt(_0x326340(0xb6))/0x8*(parseInt(_0x326340(0x180))/0x9)+parseInt(_0x326340(0xf6))/0xa+parseInt(_0x326340(0xbc))/0xb;if(_0x47a7bc===_0x3542f8)break;else _0x6fa53['push'](_0x6fa53['shift']());}catch(_0x38b749){_0x6fa53['push'](_0x6fa53['shift']());}}}(a19_0x51d5,0x3d380));let masterTeacher='-';const storedConfig=localStorage[a19_0x6c328f(0x138)]('firebaseConfig'),firebaseConfig=storedConfig?JSON[a19_0x6c328f(0x14f)](storedConfig):{'apiKey':'AIzaSyCO37zrsZEjKTokMCNWbIc1C_o5BZMqh8E','databaseURL':a19_0x6c328f(0x10c),'projectId':a19_0x6c328f(0x11b)};if(!firebase['apps'][a19_0x6c328f(0x165)])firebase[a19_0x6c328f(0xea)](firebaseConfig);const database=firebase['database'](),auth=firebase[a19_0x6c328f(0x139)]();initClassContext();let currentClass=window[a19_0x6c328f(0x13b)];document[a19_0x6c328f(0x154)]('currentClassDisplay')[a19_0x6c328f(0xcb)]=formatClassHudText(),document[a19_0x6c328f(0x154)]('backLink')[a19_0x6c328f(0x13e)]=classNavHref('index1.html');const adminPw=localStorage[a19_0x6c328f(0x138)](a19_0x6c328f(0x17b));auth[a19_0x6c328f(0x160)](async _0x3aa0a0=>{const _0x970443=a19_0x6c328f;if(_0x3aa0a0){console[_0x970443(0x172)](_0x970443(0xd4)+_0x3aa0a0[_0x970443(0x14c)]);const _0x144756=document[_0x970443(0x154)](_0x970443(0x17d));if(_0x144756)_0x144756[_0x970443(0x153)][_0x970443(0xad)]=_0x970443(0x110);await initializePage();}else adminPw?auth['signInWithEmailAndPassword'](_0x970443(0x12e),adminPw)[_0x970443(0xc0)](()=>{const _0xf88228=_0x970443;console['log'](_0xf88228(0xda));})[_0x970443(0x10e)](async _0x3b4648=>{const _0x383b90=_0x970443;console[_0x383b90(0xfc)](_0x383b90(0x17f),_0x3b4648),await appAlert(_0x383b90(0x104)),location['href']='../index.html';}):(await appAlert('보안\x20인증이\x20필요한\x20페이지입니다.'),location[_0x970443(0x13e)]=_0x970443(0x167));});async function initializePage(){const _0x121dfa=a19_0x6c328f,_0x30a53c=(function(){let _0x464e69=!![];return function(_0x47090c,_0x3f24fc){const _0x209d83=_0x464e69?function(){const _0x29849d=a19_0x3c9a;if(_0x3f24fc){const _0x3a2a88=_0x3f24fc[_0x29849d(0x192)](_0x47090c,arguments);return _0x3f24fc=null,_0x3a2a88;}}:function(){};return _0x464e69=![],_0x209d83;};}()),_0x429bf3=_0x30a53c(this,function(){const _0x2bf4b3=a19_0x3c9a;return _0x429bf3[_0x2bf4b3(0x124)]()['search'](_0x2bf4b3(0x156))['toString']()[_0x2bf4b3(0x162)](_0x429bf3)['search']('(((.+)+)+)+$');});_0x429bf3();try{const _0x11ef8c=await classDbRef(_0x121dfa(0xbe))[_0x121dfa(0x12f)](_0x121dfa(0xdd)),_0x10dca9=_0x11ef8c['val']()||{};masterTeacher=_0x10dca9[_0x121dfa(0x178)]||'-',_0x10dca9[_0x121dfa(0x11e)]?renderCourseTableFromDB(_0x10dca9['courses']):document[_0x121dfa(0x154)](_0x121dfa(0xf2))['innerHTML']=_0x121dfa(0xee);}catch(_0x10dbf4){console[_0x121dfa(0xfc)](_0x121dfa(0xc9),_0x10dbf4);}}function updateSelectColor(_0x204618){const _0xaecc3=a19_0x6c328f;if(!_0x204618)return;const _0x3ec5ef=_0x204618[_0xaecc3(0xdd)];let _0xd3a0f7=_0xaecc3(0x174),_0x47af2c=_0xaecc3(0xc8),_0x3b051e=_0xaecc3(0x151);if(_0x3ec5ef===_0xaecc3(0x159))_0xd3a0f7=_0xaecc3(0xfd);else{if(_0x3ec5ef==='비NCS교과')_0xd3a0f7=_0xaecc3(0x101);else{if(_0x3ec5ef===_0xaecc3(0xd5))_0xd3a0f7=_0xaecc3(0x13a);else{if(_0x3ec5ef===_0xaecc3(0x10f))_0xd3a0f7=_0xaecc3(0x105);else{if(_0x3ec5ef==='필수능력단위')_0xd3a0f7=_0xaecc3(0xe1);else{if(_0x3ec5ef==='선택능력단위')_0xd3a0f7=_0xaecc3(0x129);else{if(_0x3ec5ef===_0xaecc3(0x16b))_0xd3a0f7='#e6fffa',_0x47af2c=_0xaecc3(0x116),_0x3b051e='#087f5b';else _0x3ec5ef==='평가자체크리스트'&&(_0xd3a0f7=_0xaecc3(0x119),_0x47af2c=_0xaecc3(0x16d),_0x3b051e='#e67e22');}}}}}}_0x204618['style'][_0xaecc3(0x107)]=_0xd3a0f7,_0x204618[_0xaecc3(0x153)][_0xaecc3(0xd3)]=_0x47af2c,_0x204618[_0xaecc3(0x153)][_0xaecc3(0x166)]=_0x3b051e;}function handleSubjectTypeChange(_0x3361a0,_0x47ed5c){const _0x14c949=a19_0x6c328f,_0x3d8765=_0x3361a0[_0x14c949(0xdd)]===_0x14c949(0x159),_0x50615c=document[_0x14c949(0xc3)](_0x14c949(0xb4)+_0x47ed5c+'\x22]');_0x50615c[_0x14c949(0x183)](_0x1d54e3=>{const _0x54b1fa=_0x14c949,_0x5544fb=_0x1d54e3['querySelector']('.unit-type-container'),_0x367557=_0x1d54e3[_0x54b1fa(0xca)](_0x54b1fa(0x141));if(_0x5544fb)_0x5544fb[_0x54b1fa(0x153)][_0x54b1fa(0xad)]=_0x3d8765?_0x54b1fa(0x12d):_0x54b1fa(0x179);if(_0x367557)_0x367557[_0x54b1fa(0x153)]['display']=_0x3d8765?_0x54b1fa(0x148):_0x54b1fa(0x179);});}function renderCourseTableFromDB(_0x122a59){const _0x4040bd=_0x122a59['map'](_0x11b47a=>{const _0x44b895=a19_0x3c9a;let _0x73f917=0x0;return _0x11b47a['details'][_0x44b895(0x183)](_0x4e26f6=>_0x73f917+=Number(_0x4e26f6['hour'])),{'subject':_0x11b47a[_0x44b895(0xef)],'type':_0x11b47a['type']||'','unit':_0x11b47a[_0x44b895(0xcc)],'unitType':_0x11b47a[_0x44b895(0x113)]||'','evalMethod':_0x11b47a[_0x44b895(0x127)]||'작업장평가','details':_0x11b47a[_0x44b895(0x186)],'totalHours':_0x73f917};});renderTable(_0x4040bd);}function renderTable(_0x2a34c4){const _0x4a893e=a19_0x6c328f,_0x91b126=document[_0x4a893e(0x154)](_0x4a893e(0xf2));_0x91b126[_0x4a893e(0xe3)]='';const _0x43ccf0={'':0x0,'소양교과':0x1,'NCS교과':0x2,'비NCS교과':0x3},_0x2b3f14=[..._0x2a34c4][_0x4a893e(0xd7)]((_0x39fbf9,_0x96ff79)=>{const _0x33e2b2=_0x4a893e,_0x4c1347=_0x43ccf0[_0x39fbf9['type']||'']??0x63,_0x5b30a0=_0x43ccf0[_0x96ff79[_0x33e2b2(0xb9)]||'']??0x63;if(_0x4c1347!==_0x5b30a0)return _0x4c1347-_0x5b30a0;if(_0x39fbf9[_0x33e2b2(0xef)]!==_0x96ff79[_0x33e2b2(0xef)])return(_0x39fbf9[_0x33e2b2(0xef)]||'')['localeCompare'](_0x96ff79[_0x33e2b2(0xef)]||'');return(_0x39fbf9[_0x33e2b2(0xcc)]||'')[_0x33e2b2(0x132)](_0x96ff79[_0x33e2b2(0xcc)]||'');});let _0x1e7b6d=0x0;const _0x3a5dd3={};_0x2b3f14[_0x4a893e(0x183)](_0x38cb9c=>{const _0x489c03=_0x4a893e;if(!_0x3a5dd3[_0x38cb9c['subject']])_0x3a5dd3[_0x38cb9c[_0x489c03(0xef)]]={'units':[],'total':0x0,'type':_0x38cb9c[_0x489c03(0xb9)]||''};_0x3a5dd3[_0x38cb9c[_0x489c03(0xef)]]['units'][_0x489c03(0xe4)](_0x38cb9c),_0x38cb9c[_0x489c03(0x186)][_0x489c03(0x183)](_0x2fe302=>{const _0x5a0f35=_0x489c03;_0x3a5dd3[_0x38cb9c['subject']]['total']+=Number(_0x2fe302[_0x5a0f35(0xfa)]),_0x1e7b6d+=Number(_0x2fe302[_0x5a0f35(0xfa)]);});});const _0x43e938=[...new Set(_0x2b3f14['map'](_0x4fcde5=>_0x4fcde5[_0x4a893e(0xef)]))],_0x49125c=document[_0x4a893e(0x140)]('tr');_0x49125c[_0x4a893e(0x18a)]='summary-row',_0x49125c[_0x4a893e(0xe3)]=_0x4a893e(0xcf)+_0x43e938[_0x4a893e(0x165)]+'종</td><td>능력단위:\x20'+_0x2a34c4[_0x4a893e(0x165)]+_0x4a893e(0xff)+_0x1e7b6d+_0x4a893e(0x146)+_0x1e7b6d+_0x4a893e(0x117),_0x91b126[_0x4a893e(0x191)](_0x49125c),_0x43e938['forEach'](_0x39f375=>{const _0x488cb7=_0x4a893e,_0xe974c5=_0x3a5dd3[_0x39f375][_0x488cb7(0xf5)],_0x56c1ab=_0x3a5dd3[_0x39f375][_0x488cb7(0xb9)];_0xe974c5[_0x488cb7(0x183)]((_0x1a0cb7,_0x366003)=>{const _0x120705=_0x488cb7,_0x27c718=document[_0x120705(0x140)]('tr');if(_0x366003===0x0)_0x27c718[_0x120705(0x18a)]='top-border-thick';const _0x5b0753=_0x39f375[_0x120705(0x16c)](/\s+/g,'_');_0x27c718[_0x120705(0xb5)](_0x120705(0x120),_0x5b0753);const _0x5be99e=_0x56c1ab==='NCS교과'?_0x120705(0x148):_0x120705(0x179);_0x27c718['innerHTML']=_0x120705(0x131)+(_0x366003===0x0?'\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td\x20rowspan=\x22'+_0xe974c5['length']+_0x120705(0xf7)+_0x39f375+_0x120705(0x103)+_0x5b0753+_0x120705(0x121)+(_0x56c1ab===_0x120705(0xd5)?_0x120705(0xe6):'')+_0x120705(0xf1)+(_0x56c1ab===_0x120705(0x159)?_0x120705(0xe6):'')+'>NCS교과</option>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<option\x20value=\x22비NCS교과\x22\x20'+(_0x56c1ab==='비NCS교과'?_0x120705(0xe6):'')+_0x120705(0x111)+_0x3a5dd3[_0x39f375][_0x120705(0x106)]+_0x120705(0x122):'')+_0x120705(0x11d)+_0x1a0cb7[_0x120705(0xcc)]+'</textarea>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22unit-type-container\x22\x20style=\x22display:'+_0x5be99e+_0x120705(0x112)+(_0x1a0cb7[_0x120705(0x113)]===_0x120705(0xdc)?_0x120705(0x13d):'')+'\x22\x20data-typeval=\x22필수능력단위\x22>필수</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20type=\x22button\x22\x20class=\x22type-toggle-btn\x20dynamic-unit-type\x20'+(_0x1a0cb7[_0x120705(0x113)]===_0x120705(0x187)?_0x120705(0x176):'')+_0x120705(0x136)+(_0x1a0cb7['unitType']||'')+'\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<select\x20class=\x22editable-input\x20c-eval-method\x20dynamic-eval-method\x22\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20style=\x22display:'+_0x5be99e+_0x120705(0x109)+(_0x1a0cb7[_0x120705(0x127)]===_0x120705(0x16b)?'selected':'')+_0x120705(0x125)+(_0x1a0cb7[_0x120705(0x127)]===_0x120705(0x16f)?'selected':'')+'>평가자체크리스트</option>\x0a</select>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22font-size:\x2011px;\x20color:\x20#27ae60;\x20margin-top:\x205px;\x22>('+_0x1a0cb7[_0x120705(0xde)]+'시간)</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</td>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td\x20style=\x22height:\x201px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22sub-item-container\x22\x20style=\x22height:\x20100%;\x20display:\x20flex;\x20flex-direction:\x20column;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+_0x1a0cb7[_0x120705(0x186)]['map'](_0x4f2079=>_0x120705(0xb2)+_0x4f2079[_0x120705(0x13c)]+_0x120705(0xc7))[_0x120705(0x190)]('')+_0x120705(0xe8)+_0x1a0cb7[_0x120705(0x186)]['map'](_0x3bf6f9=>_0x120705(0x11f)+_0x3bf6f9[_0x120705(0xfa)]+_0x120705(0xc5))[_0x120705(0x190)]('')+'\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</td>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+(_0x366003===0x0?_0x120705(0xf4)+_0xe974c5[_0x120705(0x165)]+_0x120705(0x14a)+_0x3a5dd3[_0x39f375][_0x120705(0x106)]+_0x120705(0x18d):'')+_0x120705(0x15b),_0x91b126[_0x120705(0x191)](_0x27c718);});}),setTimeout(()=>{const _0x2af95a=_0x4a893e;document[_0x2af95a(0xc3)](_0x2af95a(0x18b))[_0x2af95a(0x183)](_0x478470=>{updateSelectColor(_0x478470);});},0x32);}async function downloadCourseTableExcel(){const _0x2b3fd4=a19_0x6c328f;classDbRef('masterData')[_0x2b3fd4(0x12f)](_0x2b3fd4(0xdd),async _0x1e9898=>{const _0xa62305=_0x2b3fd4,_0xffeac6=_0x1e9898[_0xa62305(0x175)]();if(!_0xffeac6||!_0xffeac6[_0xa62305(0x11e)])return await appAlert(_0xa62305(0x17a));const _0x5908bc=_0xffeac6[_0xa62305(0x11e)],_0x1d689f=_0x5908bc[_0xa62305(0x182)](_0x5b7773=>!_0x5b7773[_0xa62305(0xb9)]||_0x5b7773['type']==='');if(_0x1d689f)return await appAlert(_0xa62305(0xe7));const _0x5907cb=_0x5908bc['some'](_0x48ffa4=>_0x48ffa4[_0xa62305(0xb9)]===_0xa62305(0x159)&&(!_0x48ffa4[_0xa62305(0x113)]||_0x48ffa4[_0xa62305(0x113)]===''));if(_0x5907cb){if(!await appConfirm(_0xa62305(0x126)))return;}const _0x2e0f0e=XLSX['utils'][_0xa62305(0x17e)](),_0x2215c3=[],_0xc82a3=[],_0x154296={'font':{'sz':0xa,'name':'맑은\x20고딕'},'alignment':{'vertical':_0xa62305(0xec),'horizontal':_0xa62305(0xec),'shrinkToFit':!![],'wrapText':!![]}},_0x95df67={'소양교과':[],'NCS교과':[],'비NCS교과':[]};_0xffeac6[_0xa62305(0x11e)][_0xa62305(0x183)](_0xb71ec6=>{const _0x449d2c=_0xa62305;if(_0x95df67[_0xb71ec6[_0x449d2c(0xb9)]])_0x95df67[_0xb71ec6[_0x449d2c(0xb9)]][_0x449d2c(0xe4)](_0xb71ec6);}),Object[_0xa62305(0x18e)](_0x95df67)[_0xa62305(0x183)](_0x33afc4=>{const _0x83f3d8=_0xa62305,_0x2011ec=_0x95df67[_0x33afc4];if(_0x2011ec[_0x83f3d8(0x165)]===0x0)return;let _0x15b571=0x0;_0x2011ec[_0x83f3d8(0x183)](_0x1a80c7=>{const _0x10f9ab=_0x83f3d8;_0x1a80c7[_0x10f9ab(0x186)][_0x10f9ab(0x183)](_0x22ceaf=>_0x15b571+=Number(_0x22ceaf[_0x10f9ab(0xfa)]));});let _0x417ae5=_0x2215c3[_0x83f3d8(0x165)];_0x2215c3[_0x83f3d8(0xe4)]([_0x33afc4+'\x20('+_0x15b571+_0x83f3d8(0x102),'','','','','','','','']),_0xc82a3[_0x83f3d8(0xe4)]({'s':{'r':_0x417ae5,'c':0x0},'e':{'r':_0x417ae5,'c':0x8}});const _0x33e32a={};_0x2011ec['forEach'](_0x58086e=>{const _0x1b67e9=_0x83f3d8;if(!_0x33e32a[_0x58086e[_0x1b67e9(0xef)]])_0x33e32a[_0x58086e[_0x1b67e9(0xef)]]={'units':[],'totalH':0x0};_0x33e32a[_0x58086e[_0x1b67e9(0xef)]][_0x1b67e9(0xf5)]['push'](_0x58086e),_0x58086e[_0x1b67e9(0x186)][_0x1b67e9(0x183)](_0x53ff26=>_0x33e32a[_0x58086e[_0x1b67e9(0xef)]][_0x1b67e9(0xb3)]+=Number(_0x53ff26[_0x1b67e9(0xfa)]));});if(_0x33afc4===_0x83f3d8(0xd5))_0x2215c3['push'](['교과목',_0x83f3d8(0x147),_0x83f3d8(0xd8),'상세교수학습방법',_0x83f3d8(0x177),'','','','']),Object[_0x83f3d8(0x18e)](_0x33e32a)[_0x83f3d8(0x183)](_0x523ff4=>{const _0x3ed454=_0x83f3d8,_0x2c18c1=_0x33e32a[_0x523ff4],_0x12183d=_0x2215c3[_0x3ed454(0x165)];_0x2c18c1['units'][_0x3ed454(0x183)]((_0x23a928,_0x4b616f)=>{const _0x3c79a9=_0x3ed454;let _0x34c6fe=0x0;_0x23a928[_0x3c79a9(0x186)][_0x3c79a9(0x183)](_0x538c82=>_0x34c6fe+=Number(_0x538c82[_0x3c79a9(0xfa)])),_0x2215c3[_0x3c79a9(0xe4)]([_0x4b616f===0x0?_0x523ff4:'',_0x23a928[_0x3c79a9(0xcc)]+'\x20('+_0x34c6fe+_0x3c79a9(0x102),_0x3c79a9(0x12c),'-',masterTeacher||'','','','','']);});if(_0x2c18c1['units'][_0x3ed454(0x165)]>0x1)_0xc82a3[_0x3ed454(0xe4)]({'s':{'r':_0x12183d,'c':0x0},'e':{'r':_0x2215c3[_0x3ed454(0x165)]-0x1,'c':0x0}});});else{if(_0x33afc4===_0x83f3d8(0x159))_0x2215c3[_0x83f3d8(0xe4)]([_0x83f3d8(0xd9),_0x83f3d8(0x115),'코드',_0x83f3d8(0x147),_0x83f3d8(0xbb),'시간','교수',_0x83f3d8(0x12a),'담당']),_0x2215c3[_0x83f3d8(0xe4)]([_0x83f3d8(0x15e),'(필/선/자)','','(시간)',_0x83f3d8(0x18f),'시간',_0x83f3d8(0x15d),_0x83f3d8(0x15d),'교사']),Object['keys'](_0x33e32a)[_0x83f3d8(0x183)](_0x381d34=>{const _0x27af29=_0x83f3d8,_0x41c89a=_0x33e32a[_0x381d34],_0x49e474=_0x2215c3[_0x27af29(0x165)];_0x41c89a['units'][_0x27af29(0x183)]((_0x322c8b,_0x567a6d)=>{const _0x327c09=_0x27af29,_0x5e85fa=_0x2215c3[_0x327c09(0x165)];let _0xd717f7=0x0;_0x322c8b[_0x327c09(0x186)][_0x327c09(0x183)](_0x1cccc7=>_0xd717f7+=Number(_0x1cccc7['hour']));let _0x947982='',_0x4bf49a=_0x322c8b['unit'];const _0x1c3e9c=_0x322c8b[_0x327c09(0xcc)][_0x327c09(0xed)](/\[(.*?)\]/);_0x1c3e9c&&(_0x947982=_0x1c3e9c[0x0],_0x4bf49a=_0x322c8b[_0x327c09(0xcc)]['replace'](_0x1c3e9c[0x0],'')[_0x327c09(0xd1)]());_0x322c8b[_0x327c09(0x186)][_0x327c09(0x183)]((_0x2140ea,_0x55e60f)=>{const _0x119b1f=_0x327c09,_0x38e0ff=_0x55e60f===0x0?_0x119b1f(0xf9):'',_0x4d12e2=_0x55e60f===0x0?'강의법+\x0a학생실습':'';_0x2215c3[_0x119b1f(0xe4)]([_0x567a6d===0x0&&_0x55e60f===0x0?_0x381d34+'\x20('+_0x41c89a[_0x119b1f(0xb3)]+_0x119b1f(0x102):'',_0x55e60f===0x0?_0x322c8b[_0x119b1f(0x113)]||'미기입':'',_0x55e60f===0x0?_0x947982:'',_0x55e60f===0x0?_0x4bf49a+'\x20('+_0xd717f7+_0x119b1f(0x102):'',_0x2140ea[_0x119b1f(0x13c)],_0x2140ea[_0x119b1f(0xfa)],_0x38e0ff,_0x4d12e2,masterTeacher||'']);});if(_0x322c8b[_0x327c09(0x186)][_0x327c09(0x165)]>0x1){for(let _0x4f3052=0x1;_0x4f3052<=0x3;_0x4f3052++)_0xc82a3['push']({'s':{'r':_0x5e85fa,'c':_0x4f3052},'e':{'r':_0x2215c3[_0x327c09(0x165)]-0x1,'c':_0x4f3052}});_0xc82a3[_0x327c09(0xe4)]({'s':{'r':_0x5e85fa,'c':0x6},'e':{'r':_0x2215c3[_0x327c09(0x165)]-0x1,'c':0x6}}),_0xc82a3['push']({'s':{'r':_0x5e85fa,'c':0x7},'e':{'r':_0x2215c3[_0x327c09(0x165)]-0x1,'c':0x7}});}});const _0x2dabb2=_0x41c89a['units'][_0x27af29(0x157)]((_0x4625b7,_0xf5feea)=>_0x4625b7+_0xf5feea['details'][_0x27af29(0x165)],0x0);if(_0x2dabb2>0x1)_0xc82a3[_0x27af29(0xe4)]({'s':{'r':_0x49e474,'c':0x0},'e':{'r':_0x49e474+_0x2dabb2-0x1,'c':0x0}});});else _0x33afc4==='비NCS교과'&&(_0x2215c3['push']([_0x83f3d8(0xd9),_0x83f3d8(0x115),'단원','교수','상세교수','담당','','','']),Object[_0x83f3d8(0x18e)](_0x33e32a)['forEach'](_0x2d8d21=>{const _0x2ef68c=_0x83f3d8,_0x5cb111=_0x33e32a[_0x2d8d21],_0x2fe629=_0x2215c3['length'];_0x5cb111[_0x2ef68c(0xf5)]['forEach']((_0x5a6c50,_0x2e8bb9)=>{const _0x1433df=_0x2ef68c;_0x5a6c50[_0x1433df(0x186)][_0x1433df(0x183)]((_0x2d698d,_0x22f947)=>{const _0x4d0515=_0x1433df;_0x2215c3[_0x4d0515(0xe4)]([_0x2e8bb9===0x0&&_0x22f947===0x0?_0x2d8d21+'\x20('+_0x5cb111[_0x4d0515(0xb3)]+_0x4d0515(0x102):'',_0x22f947===0x0?_0x5a6c50[_0x4d0515(0x113)]||_0x4d0515(0xdb):'',_0x2d698d[_0x4d0515(0x13c)],_0x4d0515(0x12c),'학생실습',masterTeacher||'','','','']);});});const _0x2d5ef0=_0x5cb111[_0x2ef68c(0xf5)][_0x2ef68c(0x157)]((_0x12caf4,_0x59f705)=>_0x12caf4+_0x59f705[_0x2ef68c(0x186)][_0x2ef68c(0x165)],0x0);if(_0x2d5ef0>0x1)_0xc82a3[_0x2ef68c(0xe4)]({'s':{'r':_0x2fe629,'c':0x0},'e':{'r':_0x2fe629+_0x2d5ef0-0x1,'c':0x0}});}));}_0x2215c3[_0x83f3d8(0xe4)]([]);});const _0x2432b2=XLSX['utils'][_0xa62305(0xf8)](_0x2215c3);_0x2432b2[_0xa62305(0x133)]=_0xc82a3;for(let _0x1e84ab in _0x2432b2){if(_0x1e84ab[0x0]!=='!')_0x2432b2[_0x1e84ab]['s']=_0x154296;}_0x2432b2['!cols']=[{'wch':0x23},{'wch':0xf},{'wch':0x14},{'wch':0x23},{'wch':0x2d},{'wch':0xa},{'wch':0xf},{'wch':0xf},{'wch':0xf}],XLSX[_0xa62305(0x171)][_0xa62305(0xbf)](_0x2e0f0e,_0x2432b2,'교과목편성내용'),XLSX[_0xa62305(0xac)](_0x2e0f0e,_0xa62305(0x143)+currentClass+_0xa62305(0xcd));});}function setUnitType(_0x3799f7,_0x43f8a1){const _0x1bb9ac=a19_0x6c328f,_0x4d4362=_0x3799f7[_0x1bb9ac(0x11a)],_0x1b6baa=_0x4d4362[_0x1bb9ac(0xc3)](_0x1bb9ac(0x149)),_0x29f69d=_0x4d4362[_0x1bb9ac(0xca)](_0x1bb9ac(0x18c));_0x29f69d['value']===_0x43f8a1?(_0x29f69d[_0x1bb9ac(0xdd)]='',_0x1b6baa[_0x1bb9ac(0x183)](_0x377745=>_0x377745['classList'][_0x1bb9ac(0x134)](_0x1bb9ac(0x13d),_0x1bb9ac(0x176)))):(_0x29f69d[_0x1bb9ac(0xdd)]=_0x43f8a1,_0x1b6baa[_0x1bb9ac(0x183)](_0x66c736=>_0x66c736['classList'][_0x1bb9ac(0x134)](_0x1bb9ac(0x13d),'active-opt')),_0x43f8a1==='필수능력단위'?_0x3799f7['classList'][_0x1bb9ac(0x14e)]('active-req'):_0x3799f7[_0x1bb9ac(0x108)][_0x1bb9ac(0x14e)](_0x1bb9ac(0x176)));}async function downloadEvalMethodExcel(){const _0xe3b593=a19_0x6c328f;if(!await appConfirm(_0xe3b593(0x188)))return;const _0x156446=await classDbRef(_0xe3b593(0xbe))[_0xe3b593(0x12f)](_0xe3b593(0xdd)),_0x52e7a6=await classDbRef('fullTimetable')[_0xe3b593(0x12f)](_0xe3b593(0xdd)),_0x1ebffa=_0x156446[_0xe3b593(0x175)](),_0x2038d7=_0x52e7a6[_0xe3b593(0x175)]();if(!_0x1ebffa||!_0x1ebffa[_0xe3b593(0x11e)]||!_0x2038d7)return await appAlert('데이터가\x20부족합니다.');const _0x46beee={};_0x2038d7[_0xe3b593(0x183)](_0x3f3e5c=>{const _0x1b025c=_0xe3b593;if(_0x3f3e5c['능력단위']&&_0x3f3e5c['날짜']){if(!_0x46beee[_0x3f3e5c[_0x1b025c(0x147)]]||_0x3f3e5c['날짜']>_0x46beee[_0x3f3e5c['능력단위']])_0x46beee[_0x3f3e5c[_0x1b025c(0x147)]]=_0x3f3e5c['날짜'];}});const _0xf15483=XLSX['utils'][_0xe3b593(0x17e)](),_0x2287d9=[],_0x456a80=[],_0x2f29ae={'font':{'sz':0xa,'name':_0xe3b593(0x130)},'alignment':{'vertical':_0xe3b593(0xec),'horizontal':_0xe3b593(0xec),'wrapText':!![],'shrinkToFit':!![]}},_0x45d0a7={'소양교과':[],'NCS교과':[],'비NCS교과':[]};_0x1ebffa[_0xe3b593(0x11e)][_0xe3b593(0x183)](_0x25cfdf=>{const _0x27978f=_0xe3b593;if(_0x45d0a7[_0x25cfdf['type']])_0x45d0a7[_0x25cfdf[_0x27978f(0xb9)]][_0x27978f(0xe4)](_0x25cfdf);});const _0x3ee9a9=['교과목','교과구분','코드',_0xe3b593(0x147),'교수학습방법',_0xe3b593(0x137),_0xe3b593(0xe2),_0xe3b593(0x189),_0xe3b593(0x15f),_0xe3b593(0x177)];Object[_0xe3b593(0x18e)](_0x45d0a7)[_0xe3b593(0x183)](_0x326ea0=>{const _0x5c7b4=_0xe3b593,_0x20f6f4=_0x45d0a7[_0x326ea0];if(_0x20f6f4[_0x5c7b4(0x165)]===0x0)return;let _0x829268=_0x2287d9[_0x5c7b4(0x165)];_0x2287d9['push']([_0x326ea0,'','','','','','','','','']),_0x456a80[_0x5c7b4(0xe4)]({'s':{'r':_0x829268,'c':0x0},'e':{'r':_0x829268,'c':0x9}}),_0x2287d9[_0x5c7b4(0xe4)](_0x3ee9a9),_0x20f6f4[_0x5c7b4(0x183)](_0x4f6769=>{const _0x510a18=_0x5c7b4,_0x5b1e8b=_0x46beee[_0x4f6769[_0x510a18(0xcc)]]||'',_0x2d9855=(_0x4f6769[_0x510a18(0xcc)][_0x510a18(0xed)](/\[(.*?)\]/)||['',''])[0x0],_0x3469f1=_0x4f6769['unit'][_0x510a18(0x16c)](/\[(.*?)\]/,'')[_0x510a18(0xd1)]();let _0x43ae0e=0x0;_0x4f6769[_0x510a18(0x186)]&&_0x4f6769['details']['forEach'](_0x36d701=>{const _0xa9a45b=_0x510a18;_0x43ae0e+=Number(_0x36d701[_0xa9a45b(0xfa)]||0x0);});if(_0x326ea0===_0x510a18(0xd5))_0x2287d9[_0x510a18(0xe4)]([_0x4f6769[_0x510a18(0xef)],'소양교과','',_0x4f6769['unit'],_0x510a18(0x12c),'-',_0x43ae0e+'h',_0x510a18(0x10b),_0x5b1e8b,masterTeacher]);else{if(_0x326ea0===_0x510a18(0x159))_0x2287d9[_0x510a18(0xe4)]([_0x4f6769[_0x510a18(0xef)],_0x4f6769[_0x510a18(0x113)]||'미기입',_0x2d9855,_0x3469f1,_0x510a18(0xf9),_0x510a18(0xd2),_0x43ae0e+'h',_0x4f6769[_0x510a18(0x127)]||_0x510a18(0x16b),_0x5b1e8b,masterTeacher]);else _0x326ea0==='비NCS교과'&&_0x2287d9[_0x510a18(0xe4)]([_0x4f6769[_0x510a18(0xef)],_0x4f6769[_0x510a18(0x113)]||_0x510a18(0x123),'',_0x4f6769[_0x510a18(0xcc)],_0x510a18(0x12c),_0x510a18(0x14d),_0x43ae0e+'h',_0x510a18(0x10b),_0x5b1e8b,masterTeacher]);}}),_0x2287d9[_0x5c7b4(0xe4)]([]);});const _0x5d61f3=XLSX['utils'][_0xe3b593(0xf8)](_0x2287d9);_0x5d61f3['!merges']=_0x456a80;for(let _0x17e49a in _0x5d61f3){if(_0x17e49a[0x0]!=='!')_0x5d61f3[_0x17e49a]['s']=_0x2f29ae;}_0x5d61f3['!cols']=[{'wch':0x19},{'wch':0xc},{'wch':0x12},{'wch':0x1e},{'wch':0xc},{'wch':0x14},{'wch':0xa},{'wch':0xf},{'wch':0xf},{'wch':0xc}],XLSX['utils'][_0xe3b593(0xbf)](_0xf15483,_0x5d61f3,_0xe3b593(0xb7)),XLSX['writeFile'](_0xf15483,'평가방법및내용_'+currentClass+'.xlsx');}async function downloadPreEvaluationPlan(){const _0x326533=a19_0x6c328f;await appAlert(_0x326533(0xc1));const _0xf62253=await classDbRef(_0x326533(0xbe))[_0x326533(0x12f)](_0x326533(0xdd)),_0x2d33d3=await classDbRef(_0x326533(0x170))['once'](_0x326533(0xdd)),_0x10630c=_0xf62253[_0x326533(0x175)](),_0x500ab3=_0x2d33d3['val']();if(!_0x10630c||!_0x10630c['courses']||!_0x500ab3)return await appAlert(_0x326533(0x161));const _0x561697=_0x500ab3['map'](_0x38bf9f=>_0x38bf9f['날짜'])[_0x326533(0x168)](_0x2e3652=>_0x2e3652)[_0x326533(0xd7)](),_0x4f6ecd=new Date(_0x561697[0x0]),_0x2cf00d={};_0x500ab3[_0x326533(0x183)](_0xb91954=>{const _0x30a862=_0x326533;_0xb91954[_0x30a862(0x147)]&&_0xb91954['날짜']&&((!_0x2cf00d[_0xb91954['능력단위']]||_0xb91954['날짜']<_0x2cf00d[_0xb91954[_0x30a862(0x147)]])&&(_0x2cf00d[_0xb91954[_0x30a862(0x147)]]=_0xb91954['날짜']));});const _0x386b12=XLSX['utils'][_0x326533(0x17e)](),_0x30afc8=[[_0x326533(0xfe),'','','','',''],[_0x326533(0x115),'교과목',_0x326533(0x147),_0x326533(0x189),_0x326533(0x12b),_0x326533(0xc6)]],_0x1bd4f2=[{'s':{'r':0x0,'c':0x0},'e':{'r':0x0,'c':0x5}}],_0x3a0007={'소양교과':_0x326533(0xd5),'NCS교과':_0x326533(0xe9),'비NCS교과':_0x326533(0xf3)},_0x5dddc1={};_0x10630c[_0x326533(0x11e)][_0x326533(0x183)](_0x43bc7d=>{const _0x23f9e0=_0x326533,_0x56a1a3=_0x3a0007[_0x43bc7d[_0x23f9e0(0xb9)]]||_0x43bc7d[_0x23f9e0(0xb9)];if(!_0x5dddc1[_0x56a1a3])_0x5dddc1[_0x56a1a3]={};if(!_0x5dddc1[_0x56a1a3][_0x43bc7d['subject']])_0x5dddc1[_0x56a1a3][_0x43bc7d[_0x23f9e0(0xef)]]=[];_0x5dddc1[_0x56a1a3][_0x43bc7d[_0x23f9e0(0xef)]][_0x23f9e0(0xe4)](_0x43bc7d);}),Object[_0x326533(0x18e)](_0x5dddc1)[_0x326533(0x183)](_0x288e4a=>{const _0x3e7edb=_0x326533,_0x374038=_0x30afc8[_0x3e7edb(0x165)],_0x3dcdbd=_0x5dddc1[_0x288e4a];Object[_0x3e7edb(0x18e)](_0x3dcdbd)[_0x3e7edb(0x183)](_0x4e08be=>{const _0x418daf=_0x3e7edb,_0x22e837=_0x30afc8[_0x418daf(0x165)],_0x529118=_0x3dcdbd[_0x4e08be];_0x529118[_0x418daf(0x183)](_0x1bc406=>{const _0x31b86f=_0x418daf,_0x376a83=_0x1bc406[_0x31b86f(0xcc)][_0x31b86f(0x16c)](/\[(.*?)\]/,'')[_0x31b86f(0xd1)]();let _0x3f0e34='';const _0x54f46d=_0x2cf00d[_0x1bc406[_0x31b86f(0xcc)]];if(_0x54f46d){let _0x167298=new Date(_0x54f46d);_0x167298['setDate'](_0x167298[_0x31b86f(0xba)]()-0xe);if(_0x167298<_0x4f6ecd)_0x167298=_0x4f6ecd;_0x3f0e34=_0x167298[_0x31b86f(0xe5)]()[_0x31b86f(0xe0)]('T')[0x0];}_0x30afc8['push']([_0x288e4a,_0x4e08be,_0x376a83,'기타(선다형)',_0x3f0e34,_0x31b86f(0x152)]);}),_0x529118[_0x418daf(0x165)]>0x1&&_0x1bd4f2[_0x418daf(0xe4)]({'s':{'r':_0x22e837,'c':0x1},'e':{'r':_0x30afc8[_0x418daf(0x165)]-0x1,'c':0x1}});});const _0x33ab8c=_0x30afc8['length']-_0x374038;_0x33ab8c>0x1&&_0x1bd4f2['push']({'s':{'r':_0x374038,'c':0x0},'e':{'r':_0x30afc8['length']-0x1,'c':0x0}});});const _0x1d03bc=XLSX[_0x326533(0x171)][_0x326533(0xf8)](_0x30afc8);_0x1d03bc[_0x326533(0x133)]=_0x1bd4f2;const _0xffd90b={'font':{'sz':0xa,'name':_0x326533(0x130)},'alignment':{'vertical':_0x326533(0xec),'horizontal':_0x326533(0xec),'shrinkToFit':!![],'wrapText':!![]}};for(let _0x5c8a3d in _0x1d03bc){if(_0x5c8a3d[0x0]!=='!')_0x1d03bc[_0x5c8a3d]['s']=_0xffd90b;}if(_0x1d03bc['A1'])_0x1d03bc['A1']['s']={'font':{'sz':0xe,'bold':!![]},'alignment':_0xffd90b[_0x326533(0x15a)]};_0x1d03bc['!cols']=[{'wch':0x14},{'wch':0x1e},{'wch':0x23},{'wch':0xf},{'wch':0xf},{'wch':0xf}],XLSX[_0x326533(0x171)][_0x326533(0xbf)](_0x386b12,_0x1d03bc,_0x326533(0x10d)),XLSX['writeFile'](_0x386b12,_0x326533(0x10a)+currentClass+_0x326533(0xcd));}async function saveAllDataWithAlert(){const _0x19e702=a19_0x6c328f;try{const _0x55a5f0=document[_0x19e702(0xc3)](_0x19e702(0x155));let _0xa42d9f=![],_0x19824c=![],_0x37cdbe='';_0x55a5f0[_0x19e702(0x183)](_0x3649a2=>{const _0x1ef253=_0x19e702,_0x2d805d=_0x3649a2[_0x1ef253(0xca)](_0x1ef253(0x184));if(_0x2d805d)_0x37cdbe=_0x2d805d[_0x1ef253(0xdd)];const _0x455329=_0x3649a2[_0x1ef253(0xca)](_0x1ef253(0x18c));if(_0x37cdbe===_0x1ef253(0x159)){_0xa42d9f=!![];if(!_0x455329||_0x455329[_0x1ef253(0xdd)]==='')_0x19824c=!![];}});if(_0xa42d9f&&_0x19824c){if(await appConfirm(_0x19e702(0x181)))_0x37cdbe='',_0x55a5f0[_0x19e702(0x183)](_0x2a3a01=>{const _0x10992b=_0x19e702,_0x3d0302=_0x2a3a01['querySelector'](_0x10992b(0x184));if(_0x3d0302)_0x37cdbe=_0x3d0302[_0x10992b(0xdd)];const _0x35e8dc=_0x2a3a01[_0x10992b(0xca)](_0x10992b(0x18c)),_0xcf60c3=_0x2a3a01[_0x10992b(0xca)](_0x10992b(0xce));if(_0x37cdbe===_0x10992b(0x159)&&_0x35e8dc&&_0x35e8dc[_0x10992b(0xdd)]===''){_0x35e8dc['value']='선택능력단위';if(_0xcf60c3)_0xcf60c3[_0x10992b(0x108)]['add']('active-opt');}});else return;}await saveAllData(),await appAlert(_0x19e702(0xb8)),initializePage();}catch(_0x2747d0){console['error'](_0x19e702(0x15c),_0x2747d0),await appAlert(_0x19e702(0x135));}}async function saveAllData(){const _0x160d1d=a19_0x6c328f;let _0x4e8826=[];try{const _0x4468ac=await classDbRef(_0x160d1d(0x16e))[_0x160d1d(0x12f)](_0x160d1d(0xdd));_0x4e8826=_0x4468ac['val']()||[];}catch(_0x4690c5){console[_0x160d1d(0xaf)](_0x160d1d(0xc4),_0x4690c5);}const _0x415c58=document[_0x160d1d(0xc3)](_0x160d1d(0x155)),_0x467670=[],_0x5f1c7d=/[0-9]{2,}/;let _0x3f4fba='',_0x4b527a='';return _0x415c58['forEach'](_0x99b2f6=>{const _0x1a5735=_0x160d1d,_0x14847f=_0x99b2f6[_0x1a5735(0xca)]('.c-unit-input');if(_0x14847f){const _0x31a427=_0x99b2f6[_0x1a5735(0xca)](_0x1a5735(0xdf));if(_0x31a427)_0x3f4fba=_0x31a427[_0x1a5735(0xdd)];let _0x36bd4e=_0x3f4fba;const _0x547e1b=_0x99b2f6[_0x1a5735(0xca)](_0x1a5735(0x184));if(_0x547e1b)_0x4b527a=_0x547e1b[_0x1a5735(0xdd)];let _0xf70213=_0x4b527a;if(!_0xf70213&&_0x5f1c7d[_0x1a5735(0x169)](_0x14847f[_0x1a5735(0xdd)]))_0xf70213=_0x1a5735(0x159);const _0x519409=[];_0x99b2f6['querySelectorAll'](_0x1a5735(0xb0))[_0x1a5735(0x183)]((_0x524e94,_0x2b57a8)=>{const _0x53c111=_0x1a5735,_0x38d6c6=_0x99b2f6['querySelectorAll'](_0x53c111(0xc2))[_0x2b57a8];_0x519409['push']({'name':_0x524e94[_0x53c111(0xdd)],'hour':_0x38d6c6?_0x38d6c6[_0x53c111(0xdd)]:'0'});});const _0x52b4f2=_0x99b2f6[_0x1a5735(0xca)](_0x1a5735(0x18c));let _0x126d9d=_0x52b4f2?_0x52b4f2[_0x1a5735(0xdd)]:'';const _0x32a054=_0x99b2f6[_0x1a5735(0xca)](_0x1a5735(0x141));let _0x1ba95=_0x32a054?_0x32a054[_0x1a5735(0xdd)]:_0x1a5735(0x16b);const _0x2a4a20=_0x4e8826[_0x1a5735(0xae)](_0x31128c=>_0x31128c[_0x1a5735(0xcc)]===_0x14847f[_0x1a5735(0xdd)])||{};let _0x1d24a8=_0x2a4a20[_0x1a5735(0x114)]||'',_0x37c192=_0x2a4a20[_0x1a5735(0x173)]||[];_0x467670[_0x1a5735(0xe4)]({'subject':_0x36bd4e,'type':_0xf70213,'unit':_0x14847f['value'],'unitType':_0x126d9d,'evalMethod':_0x1ba95,'details':_0x519409,'rdCode':_0x1d24a8,'evalDates':_0x37c192});}}),classDbRef(_0x160d1d(0x16e))[_0x160d1d(0x158)](_0x467670);}initializePage(),document[a19_0x6c328f(0x163)]('DOMContentLoaded',()=>{const _0x1561b9=a19_0x6c328f;document[_0x1561b9(0x154)](_0x1561b9(0x17c))[_0x1561b9(0x163)](_0x1561b9(0x142),downloadPreEvaluationPlan),document[_0x1561b9(0x154)](_0x1561b9(0x164))[_0x1561b9(0x163)](_0x1561b9(0x142),downloadCourseTableExcel),document[_0x1561b9(0x154)](_0x1561b9(0x16a))[_0x1561b9(0x163)](_0x1561b9(0x142),downloadEvalMethodExcel),document[_0x1561b9(0x154)]('btn_save_all_data')[_0x1561b9(0x163)](_0x1561b9(0x142),saveAllDataWithAlert);const _0x229cc4=document[_0x1561b9(0x154)](_0x1561b9(0xf2));_0x229cc4[_0x1561b9(0x163)](_0x1561b9(0x142),function(_0x3127c6){const _0x377e0e=_0x1561b9,_0x1ad5c9=_0x3127c6[_0x377e0e(0x128)]['closest'](_0x377e0e(0x100)),_0x4412be=_0x3127c6[_0x377e0e(0x128)][_0x377e0e(0x144)](_0x377e0e(0xbd));if(_0x1ad5c9)setUnitType(_0x1ad5c9,_0x1ad5c9['getAttribute'](_0x377e0e(0x14b)));else _0x4412be&&_0x4412be[_0x377e0e(0x11a)]['parentElement'][_0x377e0e(0x134)]();}),_0x229cc4[_0x1561b9(0x163)](_0x1561b9(0x145),function(_0x19bc60){const _0x48097d=_0x1561b9,_0x19ed09=_0x19bc60[_0x48097d(0x128)][_0x48097d(0x144)](_0x48097d(0xb1)),_0x5e9c2d=_0x19bc60[_0x48097d(0x128)][_0x48097d(0x144)](_0x48097d(0xd6));if(_0x19ed09)handleSubjectTypeChange(_0x19ed09,_0x19ed09[_0x48097d(0x150)](_0x48097d(0xeb))),updateSelectColor(_0x19ed09);else _0x5e9c2d&&updateSelectColor(_0x5e9c2d);});});
+
+// 수정 후 >> [계승 및 멀티 DB 대응]
+// 2. 전역 변수들을 미리 선언합니다.
+let masterTeacher = "-";
+
+// 3. 파이어베이스 및 보안 설정을 초기화합니다.
+const storedConfig = localStorage.getItem('firebaseConfig');
+const firebaseConfig = storedConfig ? JSON.parse(storedConfig) : {
+    apiKey: "AIzaSyCO37zrsZEjKTokMCNWbIc1C_o5BZMqh8E",
+    databaseURL: "https://busan-teacher-work-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "busan-teacher-work"
+};
+if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
+const database = firebase.database();
+const auth = firebase.auth();
+initClassContext();
+let currentClass = window.currentClass;
+
+// 4. 뒤로가기 링크 및 학급 표시를 세팅합니다.
+document.getElementById('currentClassDisplay').innerText = formatClassHudText();
+document.getElementById('backLink').href = classNavHref('index1.html');
+
+// 5. 보안 인증 확인 후 데이터를 불러옵니다.
+const adminPw = localStorage.getItem('adminPw');
+
+auth.onAuthStateChanged(async (user) => {
+    if (user) {
+        // ✅ [인증 성공] 관리자 전용 버튼 표시 및 시동
+        console.log("🔒 보안 인증 확인됨: " + user.email);
+        
+        // 관리자 전용 버튼이 있다면 표시하는 배선 (필요시 추가)
+        const reportBtn = document.getElementById('btnReportMode');
+        if(reportBtn) reportBtn.style.display = 'inline-block';
+
+        await initializePage(); 
+    } else if (adminPw) {
+        // 🔑 [자동 로그인 시도]
+        auth.signInWithEmailAndPassword('ghlwns0201@naver.com', adminPw)
+            .then(() => {
+                console.log("🔒 자동 로그인 성공");
+                // 성공 시 initializePage()는 위쪽(user 존재 시)에서 자동으로 실행됨
+            })
+            .catch(async (err) => {
+                console.error("❌ 인증 실패", err);
+                await appAlert("인증 정보가 만료되었습니다. 다시 로그인해주세요.");
+                location.href = '../index.html';
+            });
+    } else {
+        // ⚠️ [인증 없음] 즉시 퇴거
+        await appAlert("보안 인증이 필요한 페이지입니다.");
+        location.href = '../index.html';
+    }
+});
+
+// [연비/멀티DB 대응] 데이터 로드 로직
+async function initializePage() {
+    try {
+        const snap = await classDbRef('masterData').once('value');
+        const d = snap.val() || {};
+        masterTeacher = d.teacher || "-";
+        if (d.courses) {
+            renderCourseTableFromDB(d.courses);
+        } else {
+            document.getElementById('courseTableBody').innerHTML = 
+                '<tr><td colspan="6" style="padding:50px; color:#666;">등록된 교과목 데이터가 없습니다.</td></tr>';
+        }
+    } catch (e) {
+        console.error("데이터 로드 실패:", e);
+    }
+}
+
+function updateSelectColor(select) {
+    if (!select) return;
+    const val = select.value;
+    let bgColor = "#ffffff";
+    let textColor = "#333333";
+    let borderColor = "#ccc";
+
+    // 📍 [교과목 분류 및 단위 유형 색상]
+    if (val === "NCS교과") bgColor = "#e3f2fd";
+    else if (val === "비NCS교과") bgColor = "#f3e5f5";
+    else if (val === "소양교과") bgColor = "#f5f5f5";
+    else if (val === "재량교과") bgColor = "#fff0f6"; // 재량교과 분홍빛 추가
+    else if (val === "필수능력단위") bgColor = "#fff1f0"; // bgColor로 수정 완료
+    else if (val === "선택능력단위") bgColor = "#fff7e6"; // bgColor로 수정 완료
+
+    // 📍 [평가방법별 전용 색상 주입]
+    else if (val === "작업장평가") {
+        bgColor = "#e6fffa";   // 연한 민트색
+        textColor = "#087f5b";  // 진한 초록색
+        borderColor = "#087f5b";
+    }
+    else if (val === "평가자체크리스트") {
+        bgColor = "#fff9db";   // 연한 노란색
+        textColor = "#e67e22";  // 주황색
+        borderColor = "#e67e22";
+    }
+
+    select.style.backgroundColor = bgColor;
+    select.style.color = textColor;
+    select.style.borderColor = borderColor;
+}
+
+function handleSubjectTypeChange(selectElement, groupId) {
+    const isNCS = selectElement.value === 'NCS교과';
+    const rows = document.querySelectorAll(`tr[data-group="${groupId}"]`);
+    rows.forEach(row => {
+        // 📍 엔진 체크: 버튼 뭉치와 평가방법 드롭박스를 row 안에서 정확히 찾아냅니다.
+        const unitTypeContainer = row.querySelector('.unit-type-container');
+        const evalMethodSelect = row.querySelector('.c-eval-method');
+        
+        // 📍 배선 연결: NCS교과일 때만 보이고, 아닐 때는 숨깁니다.
+        if(unitTypeContainer) unitTypeContainer.style.display = isNCS ? 'flex' : 'none';
+        if(evalMethodSelect) evalMethodSelect.style.display = isNCS ? 'block' : 'none';
+    });
+}
+
+
+function renderCourseTableFromDB(courses) {
+    const list = courses.map(c => {
+        let total = 0; c.details.forEach(d => total += Number(d.hour));
+        return { 
+            subject: c.subject, 
+            type: c.type || "", 
+            unit: c.unit, 
+            unitType: c.unitType || "", 
+            evalMethod: c.evalMethod || "작업장평가", // 평가방법 데이터 추가
+            details: c.details, 
+            totalHours: total 
+        };
+    });
+    renderTable(list);
+}
+
+// 📍 [함수 수정] 화면에 평가방법 드롭박스 렌더링
+function renderTable(list) {
+    const tbody = document.getElementById('courseTableBody'); 
+    tbody.innerHTML = '';
+    const typeOrder = { "": 0, "소양교과": 1, "NCS교과": 2, "비NCS교과": 3 };
+
+    // 1. 데이터를 타입별로 정렬
+    const sortedList = [...list].sort((a, b) => {
+        const orderA = typeOrder[a.type || ""] ?? 99;
+        const orderB = typeOrder[b.type || ""] ?? 99;
+        if (orderA !== orderB) return orderA - orderB;
+        if (a.subject !== b.subject) return (a.subject || "").localeCompare(b.subject || "");
+        return (a.unit || "").localeCompare(b.unit || "");
+    });
+
+    // 2. 그룹화 작업 (여기서 각 과목의 최종 type을 확정합니다)
+    let gH = 0; const grp = {};
+    sortedList.forEach(item => {
+        if(!grp[item.subject]) grp[item.subject] = { units: [], total: 0, type: item.type || "" };
+        grp[item.subject].units.push(item);
+        item.details.forEach(d => { grp[item.subject].total += Number(d.hour); gH += Number(d.hour); });
+    });
+
+    const subs = [...new Set(sortedList.map(item => item.subject))];
+    const sumTr = document.createElement('tr'); sumTr.className = 'summary-row';
+    sumTr.innerHTML = `<td>교과목: ${subs.length}종</td><td>능력단위: ${list.length}개</td><td>- 과정 요약 현황 -</td><td>전체: ${gH}h</td><td>전체: ${gH}h</td><td>요약</td>`;
+    tbody.appendChild(sumTr);
+
+    // 3. 실제 행 생성
+    subs.forEach(s => {
+        const us = grp[s].units;
+        const currentType = grp[s].type; // 📍 이 과목의 현재 분류 (NCS교과 등)
+
+        us.forEach((u, i) => {
+            const tr = document.createElement('tr'); 
+            if(i === 0) tr.className = 'top-border-thick';
+            const rowGroupId = s.replace(/\s+/g, '_');
+            tr.setAttribute('data-group', rowGroupId);
+            
+            // 📍 핵심 수리: display 속성을 결정할 때 currentType 변수를 직접 사용하여 오류를 차단함
+            const displayStyle = (currentType === 'NCS교과') ? 'block' : 'none';
+
+            tr.innerHTML = `
+                ${i === 0 ? `
+                <td rowspan="${us.length}" class="subject-cell">
+                    <input class="editable-input c-subject-input" value="${s}" style="font-weight:bold;">
+                    <select class="editable-input c-subject-type dynamic-subject-type" data-groupid="${rowGroupId}" style="font-size:10px; color:#333; margin-top:5px; border:1px solid #ccc; border-radius:3px; padding:2px; width:90%;">
+                        <option value="">-- 선택 --</option>
+                        <option value="소양교과" ${currentType === '소양교과' ? 'selected' : ''}>소양교과</option>
+                        <option value="NCS교과" ${currentType === 'NCS교과' ? 'selected' : ''}>NCS교과</option>
+                        <option value="비NCS교과" ${currentType === '비NCS교과' ? 'selected' : ''}>비NCS교과</option>
+                    </select>
+                    <div style="font-size: 11px; color: #3498db; margin-top: 5px;">(${grp[s].total}시간)</div>
+                </td>` : ''}
+                
+                <td>
+                    <textarea class="editable-input c-unit-input" rows="2" style="resize:none; width:100%; border:none; background:transparent; text-align:center; font-family:inherit; font-size:12px; vertical-align:middle; display:block; padding:5px; box-sizing:border-box;">${u.unit}</textarea>
+                    <div class="unit-type-container" style="display:${displayStyle};">
+                        <button type="button" class="type-toggle-btn dynamic-unit-type ${u.unitType === '필수능력단위' ? 'active-req' : ''}" data-typeval="필수능력단위">필수</button>
+                        <button type="button" class="type-toggle-btn dynamic-unit-type ${u.unitType === '선택능력단위' ? 'active-opt' : ''}" data-typeval="선택능력단위">선택</button>
+                        <input type="hidden" class="c-unit-type-val" value="${u.unitType || ''}">
+                    </div>
+                    <select class="editable-input c-eval-method dynamic-eval-method" 
+        style="display:${displayStyle}; font-size:10px; margin-top:3px; border:1px solid #ccc; border-radius:3px; width:90%; margin-left:auto; margin-right:auto; transition: all 0.2s;">
+    <option value="작업장평가" ${u.evalMethod === '작업장평가' ? 'selected' : ''}>작업장평가</option>
+    <option value="평가자체크리스트" ${u.evalMethod === '평가자체크리스트' ? 'selected' : ''}>평가자체크리스트</option>
+</select>
+                    <div style="font-size: 11px; color: #27ae60; margin-top: 5px;">(${u.totalHours}시간)</div>
+                </td>
+
+                <td style="height: 1px;">
+                    <div class="sub-item-container" style="height: 100%; display: flex; flex-direction: column;">
+                        ${u.details.map(d => `
+                            <div class="sub-item-row" style="flex: 1; display: flex;">
+                                <textarea class="editable-input sub-detail-input" style="resize:none; width:100%; height: 100%; border:none; background:transparent; text-align:left; font-family:inherit; font-size:12px; padding:8px 10px; box-sizing:border-box; display:block;">${d.name}</textarea>
+                            </div>
+                        `).join('')}
+                    </div>
+                </td>
+
+                <td style="height: 1px;">
+                    <div class="sub-item-container" style="height: 100%; display: flex; flex-direction: column;">
+                        ${u.details.map(d => `
+                            <div class="sub-item-row" style="flex: 1; display: flex;">
+                                <input class="editable-input sub-hour-input" value="${d.hour}" style="width:100%; height: 100%; border:none; background:transparent; text-align:center; font-family:inherit; font-size:12px; box-sizing:border-box; display:block;">
+                            </div>
+                        `).join('')}
+                    </div>
+                </td>
+
+                ${i === 0 ? `<td rowspan="${us.length}" class="subject-total-cell"><input class="editable-input c-subtotal-input" value="${grp[s].total}"></td>` : ''}
+                <td><button class="btn btn-red dynamic-delete-row">삭제</button></td>
+            `;
+            tbody.appendChild(tr);
+        });
+    });
+
+setTimeout(() => {
+        document.querySelectorAll('.c-subject-type, .c-eval-method').forEach(sel => {
+            updateSelectColor(sel);
+        });
+    }, 50);
+}
+
+async function downloadCourseTableExcel() {
+    classDbRef('masterData').once('value', async snap => {
+        const d = snap.val();
+        if(!d || !d.courses) return await appAlert("데이터가 없습니다.");
+        
+        const courses = d.courses;
+        
+        // 📍 1단계: 교과목 분류(소양/NCS/비NCS) 확인
+        const isTypeMissing = courses.some(c => !c.type || c.type === "");
+        if (isTypeMissing) {
+            return await appAlert("교과목 분류를 해주세요.");
+        }
+
+        // 📍 2단계: 필수/선택 정보 확인 (NCS교과인 경우만 해당)
+        const isUnitTypeMissing = courses.some(c => c.type === "NCS교과" && (!c.unitType || c.unitType === ""));
+        if (isUnitTypeMissing) {
+            if (!await appConfirm("필수/선택 정보 없이 다운하시겠습니까?")) {
+                return; // 취소 시 중단
+            }
+        }
+        const wb = XLSX.utils.book_new();
+        const exportData = [];
+        const merges = [];
+        const commonStyle = { font: { sz: 10, name: '맑은 고딕' }, alignment: { vertical: "center", horizontal: "center", shrinkToFit: true, wrapText: true } };
+
+        const sections = { "소양교과": [], "NCS교과": [], "비NCS교과": [] };
+        d.courses.forEach(c => { if (sections[c.type]) sections[c.type].push(c); });
+
+        Object.keys(sections).forEach(typeName => {
+            const sectionCourses = sections[typeName];
+            if (sectionCourses.length === 0) return;
+            let sectionTotal = 0;
+            sectionCourses.forEach(c => { c.details.forEach(det => sectionTotal += Number(det.hour)); });
+            let sRow = exportData.length;
+            exportData.push([`${typeName} (${sectionTotal}시간)`, "", "", "", "", "", "", "", ""]);
+            merges.push({ s: { r: sRow, c: 0 }, e: { r: sRow, c: 8 } });
+
+            const subjectGroups = {};
+            sectionCourses.forEach(c => {
+                if (!subjectGroups[c.subject]) subjectGroups[c.subject] = { units: [], totalH: 0 };
+                subjectGroups[c.subject].units.push(c);
+                c.details.forEach(det => subjectGroups[c.subject].totalH += Number(det.hour));
+            });
+
+            if (typeName === "소양교과") {
+                exportData.push(["교과목", "능력단위", "교수학습방법", "상세교수학습방법", "담당교사", "", "", "", ""]);
+                Object.keys(subjectGroups).forEach(subName => {
+                    const group = subjectGroups[subName];
+                    const subStartRow = exportData.length;
+                    group.units.forEach((u, uIdx) => {
+                        let unitTotal = 0; u.details.forEach(det => unitTotal += Number(det.hour));
+                        exportData.push([uIdx === 0 ? subName : "", `${u.unit} (${unitTotal}시간)`, "강의법", "-", masterTeacher || "", "", "", "", ""]);
+                    });
+                    if (group.units.length > 1) merges.push({ s: { r: subStartRow, c: 0 }, e: { r: exportData.length - 1, c: 0 } });
+                });
+            } else if (typeName === "NCS교과") {
+                exportData.push(["교과목", "교과구분", "코드", "능력단위", "능력단위요소", "시간", "교수", "상세교수", "담당"]);
+                exportData.push(["(시간)", "(필/선/자)", "", "(시간)", "요소명", "시간", "학습방법", "학습방법", "교사"]);
+                Object.keys(subjectGroups).forEach(subName => {
+                    const group = subjectGroups[subName];
+                    const subStartRow = exportData.length;
+                    group.units.forEach((u, uIdx) => {
+                        const unitStartRow = exportData.length;
+                        let unitTotal = 0; u.details.forEach(det => unitTotal += Number(det.hour));
+                        let unitCode = "", unitNameOnly = u.unit;
+                        const codeMatch = u.unit.match(/\[(.*?)\]/);
+                        if (codeMatch) { unitCode = codeMatch[0]; unitNameOnly = u.unit.replace(codeMatch[0], "").trim(); }
+
+                        u.details.forEach((det, dIdx) => {
+                            const teachMethod = (dIdx === 0) ? "혼합형" : "";
+                            const teachDetail = (dIdx === 0) ? "강의법+\n학생실습" : "";
+                            exportData.push([
+                                (uIdx === 0 && dIdx === 0) ? `${subName} (${group.totalH}시간)` : "",
+                                dIdx === 0 ? (u.unitType || "미기입") : "",
+                                dIdx === 0 ? unitCode : "",
+                                dIdx === 0 ? `${unitNameOnly} (${unitTotal}시간)` : "",
+                                det.name, det.hour, teachMethod, teachDetail, masterTeacher || ""
+                            ]);
+                        });
+                        if (u.details.length > 1) {
+                            for(let col=1; col<=3; col++) merges.push({ s: { r: unitStartRow, c: col }, e: { r: exportData.length - 1, c: col } });
+                            merges.push({ s: { r: unitStartRow, c: 6 }, e: { r: exportData.length - 1, c: 6 } });
+                            merges.push({ s: { r: unitStartRow, c: 7 }, e: { r: exportData.length - 1, c: 7 } });
+                        }
+                    });
+                    const totalRows = group.units.reduce((acc, curr) => acc + curr.details.length, 0);
+                    if (totalRows > 1) merges.push({ s: { r: subStartRow, c: 0 }, e: { r: subStartRow + totalRows - 1, c: 0 } });
+                });
+            } else if (typeName === "비NCS교과") {
+                exportData.push(["교과목", "교과구분", "단원", "교수", "상세교수", "담당", "", "", ""]);
+                Object.keys(subjectGroups).forEach(subName => {
+                    const group = subjectGroups[subName];
+                    const subStartRow = exportData.length;
+                    group.units.forEach((u, uIdx) => {
+                        u.details.forEach((det, dIdx) => {
+                            exportData.push([
+                                (uIdx === 0 && dIdx === 0) ? `${subName} (${group.totalH}시간)` : "", 
+                                dIdx === 0 ? (u.unitType || "미기입") : "", det.name, "강의법", "학생실습", masterTeacher || "", "", "", ""
+                            ]);
+                        });
+                    });
+                    const totalRows = group.units.reduce((acc, curr) => acc + curr.details.length, 0);
+                    if (totalRows > 1) merges.push({ s: { r: subStartRow, c: 0 }, e: { r: subStartRow + totalRows - 1, c: 0 } });
+                });
+            }
+            exportData.push([]); 
+        });
+
+        const ws = XLSX.utils.aoa_to_sheet(exportData);
+        ws['!merges'] = merges;
+        for (let i in ws) { if (i[0] !== '!') ws[i].s = commonStyle; }
+        ws['!cols'] = [{wch: 35}, {wch: 15}, {wch: 20}, {wch: 35}, {wch: 45}, {wch: 10}, {wch: 15}, {wch: 15}, {wch: 15}];
+        XLSX.utils.book_append_sheet(wb, ws, "교과목편성내용");
+        XLSX.writeFile(wb, `교과목편성내용_${currentClass}.xlsx`);
+    });
+}
+
+
+function setUnitType(btn, typeValue) {
+    const container = btn.parentElement;
+    const buttons = container.querySelectorAll('.type-toggle-btn');
+    const hiddenInput = container.querySelector('.c-unit-type-val');
+    
+    // 📍 신규 로직: 필수를 선택하면 같은 과목 내 다른 능력단위들을 자동으로 '선택'으로 세팅할 준비를 합니다.
+    if (hiddenInput.value === typeValue) {
+        hiddenInput.value = ""; 
+        buttons.forEach(b => b.classList.remove('active-req', 'active-opt'));
+    } else {
+        hiddenInput.value = typeValue; 
+        buttons.forEach(b => b.classList.remove('active-req', 'active-opt'));
+        if (typeValue === '필수능력단위') {
+            btn.classList.add('active-req');
+            // 💡 여기서 즉시 나머지를 바꾸지 않고, 저장 시점에 일괄 처리하는 것이 데이터 무결성에 안전합니다.
+        } else {
+            btn.classList.add('active-opt');
+        }
+    }
+}
+// 📍 [신규 추가] 평가방법 및 내용 엑셀 다운로드 엔진
+async function downloadEvalMethodExcel() {
+    if (!await appConfirm("평가일정은 각 능력단위의 마지막 일입니다. 한번 더 일정 확인 하세요. 다운로드 하시겠습니까?")) {
+        return;
+    }
+    const masterSnap = await classDbRef('masterData').once('value');
+    const timetableSnap = await classDbRef('fullTimetable').once('value');
+    const d = masterSnap.val();
+    const fullTimetable = timetableSnap.val();
+
+    if(!d || !d.courses || !fullTimetable) return await appAlert("데이터가 부족합니다.");
+
+    // 능력단위별 마지막 수업일(평가시기) 추출
+    const unitEndMap = {};
+    fullTimetable.forEach(r => {
+        if(r.능력단위 && r.날짜) {
+            if(!unitEndMap[r.능력단위] || r.날짜 > unitEndMap[r.능력단위]) unitEndMap[r.능력단위] = r.날짜;
+        }
+    });
+
+    const wb = XLSX.utils.book_new();
+    const exportData = [];
+    const merges = [];
+    const commonStyle = { font: { sz: 10, name: '맑은 고딕' }, alignment: { vertical: "center", horizontal: "center", wrapText: true, shrinkToFit: true } };
+
+    const sections = { "소양교과": [], "NCS교과": [], "비NCS교과": [] };
+    d.courses.forEach(c => { if (sections[c.type]) sections[c.type].push(c); });
+
+    // 📍 업데이트된 통합 헤더 (훈련시간 추가: 10개 열)
+    const unifiedHeader = ["교과목", "교과구분", "코드", "능력단위", "교수학습방법", "상세교수학습방법", "훈련시간", "평가방법", "평가시기", "담당교사"];
+
+    Object.keys(sections).forEach(typeName => {
+        const sectionCourses = sections[typeName];
+        if (sectionCourses.length === 0) return;
+
+        // 섹션 타이틀
+        let sRow = exportData.length;
+        exportData.push([typeName, "", "", "", "", "", "", "", "", ""]);
+        merges.push({ s: { r: sRow, c: 0 }, e: { r: sRow, c: 9 } }); // 9번 열까지 병합
+
+        exportData.push(unifiedHeader);
+
+        sectionCourses.forEach(c => {
+            const evalDate = unitEndMap[c.unit] || "";
+            const unitCode = (c.unit.match(/\[(.*?)\]/) || ["", ""])[0];
+            const unitNameOnly = c.unit.replace(/\[(.*?)\]/, "").trim();
+            
+            // 📍 훈련시간 계산 (다른 엑셀 기능의 로직을 그대로 이식)
+            let unitTotalHour = 0;
+            if (c.details) {
+                c.details.forEach(det => { unitTotalHour += Number(det.hour || 0); });
+            }
+
+            if (typeName === "소양교과") {
+                exportData.push([
+                    c.subject, "소양교과", "", c.unit, 
+                    "강의법", "-", `${unitTotalHour}h`, "기타(선다형)", evalDate, masterTeacher
+                ]);
+            } 
+            else if (typeName === "NCS교과") {
+                exportData.push([
+                    c.subject, c.unitType || "미기입", unitCode, unitNameOnly,
+                    "혼합형", "강의법+\n학생실습", `${unitTotalHour}h`, c.evalMethod || "작업장평가", evalDate, masterTeacher
+                ]);
+            }
+            else if (typeName === "비NCS교과") {
+                exportData.push([
+                    c.subject, c.unitType || "비NCS", "", c.unit, 
+                    "강의법", "이론 및 사례학습", `${unitTotalHour}h`, "기타(선다형)", evalDate, masterTeacher
+                ]);
+            }
+        });
+        exportData.push([]); 
+    });
+
+    const ws = XLSX.utils.aoa_to_sheet(exportData);
+    ws['!merges'] = merges;
+    for (let i in ws) { if (i[0] !== '!') ws[i].s = commonStyle; }
+    
+    // 📍 열 너비 재배치 (10개 열에 맞춰 최적화)
+    ws['!cols'] = [
+        {wch: 25}, {wch: 12}, {wch: 18}, {wch: 30}, {wch: 12}, 
+        {wch: 20}, {wch: 10}, {wch: 15}, {wch: 15}, {wch: 12}
+    ];
+    
+    XLSX.utils.book_append_sheet(wb, ws, "평가방법및내용");
+    XLSX.writeFile(wb, `평가방법및내용_${currentClass}.xlsx`);
+}
+
+async function downloadPreEvaluationPlan() {
+    // 📍 안내 문구 추가
+    await appAlert("최초 수업일 2주 전 기준입니다.");
+    const masterSnap = await classDbRef('masterData').once('value');
+    const timetableSnap = await classDbRef('fullTimetable').once('value');
+    
+    const d = masterSnap.val();
+    const fullTimetable = timetableSnap.val();
+
+    if(!d || !d.courses || !fullTimetable) return await appAlert("데이터가 부족합니다. 시간표와 교과 데이터를 확인해주세요.");
+
+    const allDates = fullTimetable.map(r => r.날짜).filter(date => date).sort();
+    const courseStartDate = new Date(allDates[0]);
+
+    const unitStartMap = {};
+    fullTimetable.forEach(r => {
+        if(r.능력단위 && r.날짜) {
+            if(!unitStartMap[r.능력단위] || r.날짜 < unitStartMap[r.능력단위]) {
+                unitStartMap[r.능력단위] = r.날짜;
+            }
+        }
+    });
+
+    const wb = XLSX.utils.book_new();
+    const exportData = [
+        ["교과목별 사전평가 계획", "", "", "", "", ""],
+        ["교과구분", "교과목", "능력단위", "평가방법", "1차 평가일", "2차 평가일"]
+    ];
+    const merges = [{ s: { r: 0, c: 0 }, e: { r: 0, c: 5 } }];
+
+    const sectionsMapping = { "소양교과": "소양교과", "NCS교과": "NCS 전공교과", "비NCS교과": "비NCS 교과(이론)" };
+    
+    // 📍 1단계: 데이터를 교과구분 -> 교과목 순으로 그룹화 (병합을 위해)
+    const groupedData = {};
+    d.courses.forEach(c => {
+        const typeTitle = sectionsMapping[c.type] || c.type;
+        if (!groupedData[typeTitle]) groupedData[typeTitle] = {};
+        if (!groupedData[typeTitle][c.subject]) groupedData[typeTitle][c.subject] = [];
+        groupedData[typeTitle][c.subject].push(c);
+    });
+
+    // 📍 2단계: 그룹화된 데이터를 순회하며 exportData 구성 및 병합 좌표 계산
+    Object.keys(groupedData).forEach(typeTitle => {
+        const typeStartRow = exportData.length;
+        const subjects = groupedData[typeTitle];
+        
+        Object.keys(subjects).forEach(subName => {
+            const subStartRow = exportData.length;
+            const units = subjects[subName];
+            
+            units.forEach(u => {
+                const unitNameOnly = u.unit.replace(/\[(.*?)\]/, "").trim();
+                let evalDateStr = "";
+                const unitStartDateStr = unitStartMap[u.unit];
+                if (unitStartDateStr) {
+                    let evalDate = new Date(unitStartDateStr);
+                    evalDate.setDate(evalDate.getDate() - 14);
+                    if (evalDate < courseStartDate) evalDate = courseStartDate;
+                    evalDateStr = evalDate.toISOString().split('T')[0];
+                }
+
+                exportData.push([typeTitle, subName, unitNameOnly, "기타(선다형)", evalDateStr, "해당없음"]);
+            });
+
+            // 교과목 병합 (B열)
+            if (units.length > 1) {
+                merges.push({ s: { r: subStartRow, c: 1 }, e: { r: exportData.length - 1, c: 1 } });
+            }
+        });
+
+        // 교과구분 병합 (A열)
+        const typeRowsCount = exportData.length - typeStartRow;
+        if (typeRowsCount > 1) {
+            merges.push({ s: { r: typeStartRow, c: 0 }, e: { r: exportData.length - 1, c: 0 } });
+        }
+    });
+
+    const ws = XLSX.utils.aoa_to_sheet(exportData);
+    ws['!merges'] = merges;
+
+    // 📍 3단계: 스타일 및 열 너비 정밀 세팅
+    const commonStyle = {
+        font: { sz: 10, name: '맑은 고딕' },
+        alignment: { vertical: "center", horizontal: "center", shrinkToFit: true, wrapText: true }
+    };
+
+    for (let i in ws) {
+        if (i[0] !== '!') ws[i].s = commonStyle;
+    }
+
+    // 제목줄(1행)은 조금 더 크게
+    if(ws['A1']) ws['A1'].s = { font: { sz: 14, bold: true }, alignment: commonStyle.alignment };
+
+    ws['!cols'] = [{wch: 20}, {wch: 30}, {wch: 35}, {wch: 15}, {wch: 15}, {wch: 15}];
+
+    XLSX.utils.book_append_sheet(wb, ws, "사전평가계획");
+    XLSX.writeFile(wb, `사전평가계획_${currentClass}.xlsx`);
+}
+
+async function saveAllDataWithAlert() {
+    try {
+        const rows = document.querySelectorAll('#courseTableBody tr:not(.summary-row)');
+        let hasNCS = false;
+        let missingUnitType = false;
+        
+        // 💡 [핵심 배선 1] 위쪽 행의 교과구분을 기억할 변수
+        let lastSubjectType = ""; 
+
+        // 1단계 검사: 병합된 셀을 고려하여 모든 행의 타입을 정확히 판별합니다.
+        rows.forEach(r => {
+            const typeSelect = r.querySelector('.c-subject-type');
+            // 드롭박스가 존재하는 첫 번째 줄이면 기억 장치 갱신
+            if (typeSelect) lastSubjectType = typeSelect.value;
+
+            const unitTypeVal = r.querySelector('.c-unit-type-val');
+            
+            if (lastSubjectType === 'NCS교과') {
+                hasNCS = true;
+                if (!unitTypeVal || unitTypeVal.value === "") missingUnitType = true;
+            }
+        });
+
+        // 2단계 실행: 안내창 확인 후 일괄 적용
+        if (hasNCS && missingUnitType) {
+            if (await appConfirm("필수능력단위 외 나머지는 '선택능력단위'로 일괄 지정하여 저장하시겠습니까?")) {
+                lastSubjectType = ""; // 변수 초기화 후 다시 순회
+                rows.forEach(r => {
+                    const typeSelect = r.querySelector('.c-subject-type');
+                    if (typeSelect) lastSubjectType = typeSelect.value;
+
+                    const unitTypeVal = r.querySelector('.c-unit-type-val');
+                    const optBtn = r.querySelector('.type-toggle-btn:nth-child(2)');
+
+                    // 기억해둔 타입이 NCS교과인데 필수/선택이 비어있다면 선택으로 강제 주입
+                    if (lastSubjectType === 'NCS교과' && unitTypeVal && unitTypeVal.value === "") {
+                        unitTypeVal.value = "선택능력단위";
+                        if(optBtn) optBtn.classList.add('active-opt');
+                    }
+                });
+            } else {
+                return; // 취소 시 중단
+            }
+        }
+
+        await saveAllData(); 
+        await appAlert("✅ 모든 변경사항이 서버에 안전하게 저장되었습니다.");
+        initializePage(); // 최신 엔진으로 화면 갱신 
+    } catch (error) {
+        console.error("저장 중 오류 발생:", error);
+        await appAlert("❌ 저장 중 오류가 발생했습니다.");
+    }
+}
+
+// 📍 [정밀 수리] 실제 데이터를 수집하여 파이어베이스로 쏘는 메인 펌프
+async function saveAllData() {
+    // 💡 [핵심 배선 1] 덮어쓰기 전, 기존 DB에 있는 안전한 원본 데이터를 먼저 퍼옵니다.
+    let existingCourses = [];
+    try {
+        const snap = await classDbRef('masterData/courses').once('value');
+        existingCourses = snap.val() || [];
+    } catch(e) { console.warn("기존 데이터 로드 실패", e); }
+
+    const rows = document.querySelectorAll('#courseTableBody tr:not(.summary-row)');
+    const list = [];
+    const ncsCodePattern = /[0-9]{2,}/; 
+
+    // 💡 [핵심 배선 2] 과목명과 교과구분을 기억하는 메모리 장치 가동
+    let lastSubjectName = "";
+    let lastSubjectType = "";
+
+    rows.forEach(r => {
+        const u = r.querySelector('.c-unit-input'); 
+        if(u) {
+            // 1. 교과목 이름 수집 (병합 셀 기억)
+            const sInput = r.querySelector('.c-subject-input');
+            if(sInput) lastSubjectName = sInput.value;
+            let s = lastSubjectName;
+
+            // 2. 교과구분 수집 (병합 셀 기억)
+            const typeSelect = r.querySelector('.c-subject-type');
+            if(typeSelect) lastSubjectType = typeSelect.value;
+            let type = lastSubjectType;
+
+            // 수동 선택 안했어도 패턴이 NCS면 자동 보정
+            if (!type && ncsCodePattern.test(u.value)) type = "NCS교과";
+
+            // 3. 세부내용 및 시간 추출
+            const ds = []; 
+            r.querySelectorAll('.sub-detail-input').forEach((inpt, idx) => { 
+                const hourInpt = r.querySelectorAll('.sub-hour-input')[idx];
+                ds.push({ name: inpt.value, hour: hourInpt ? hourInpt.value : "0" }); 
+            });
+
+            // 4. 필수/선택 및 평가방법 수집
+            const unitTypeVal = r.querySelector('.c-unit-type-val');
+            let unitType = unitTypeVal ? unitTypeVal.value : "";
+
+            const evalMethodSelect = r.querySelector('.c-eval-method');
+            let evalMethod = evalMethodSelect ? evalMethodSelect.value : "작업장평가";
+
+            // 💡 [핵심 배선 3] 기존 데이터에서 RD코드와 평가일정을 찾아 안전하게 옮겨 담습니다.
+            const oldData = existingCourses.find(c => c.unit === u.value) || {};
+            let rdCode = oldData.rdCode || "";
+            let evalDates = oldData.evalDates || [];
+
+            // 5. 리스트에 담기
+            list.push({ 
+                subject: s, 
+                type: type, 
+                unit: u.value, 
+                unitType: unitType, 
+                evalMethod: evalMethod,
+                details: ds,
+                rdCode: rdCode,       // 📍 순정 데이터 보존
+                evalDates: evalDates  // 📍 순정 데이터 보존
+            });
+        }
+    });
+
+    // 서버 전송 (교사님 시스템의 courses 경로에 저장)
+    return classDbRef('masterData/courses').set(list);
+}
+
+
+initializePage();
+
+// 📍 [보안 추가] 대시보드(HTML)에서 엔진룸(JS)으로 모든 배선 숨기기 (이벤트 위임 기술 적용)
+
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. 고정 다운로드 및 저장 버튼 연결
+    document.getElementById('btn_download_pre_eval').addEventListener('click', downloadPreEvaluationPlan);
+    document.getElementById('btn_download_course_table').addEventListener('click', downloadCourseTableExcel);
+    document.getElementById('btn_download_eval_method').addEventListener('click', downloadEvalMethodExcel);
+    document.getElementById('btn_save_all_data').addEventListener('click', saveAllDataWithAlert);
+
+    // 2. 📍 동적 생성 부품 제어 (이벤트 위임 기술)
+    const courseTableBody = document.getElementById('courseTableBody');
+
+    // 2-1. 클릭(Click) 감지 센서: 필수/선택 토글 버튼 및 행 삭제 버튼
+    courseTableBody.addEventListener('click', function(e) {
+        const typeBtn = e.target.closest('.dynamic-unit-type');
+        const delBtn = e.target.closest('.dynamic-delete-row');
+
+        if (typeBtn) {
+            setUnitType(typeBtn, typeBtn.getAttribute('data-typeval'));
+        } else if (delBtn) {
+            // 버튼의 부모(td)의 부모(tr)를 찾아 삭제
+            delBtn.parentElement.parentElement.remove();
+        }
+    });
+
+    // 2-2. 변경(Change) 감지 센서: 셀렉트 박스(교과구분, 평가방법) 값 변경
+    courseTableBody.addEventListener('change', function(e) {
+        const subTypeSel = e.target.closest('.dynamic-subject-type');
+        const evalMethodSel = e.target.closest('.dynamic-eval-method');
+
+        if (subTypeSel) {
+            handleSubjectTypeChange(subTypeSel, subTypeSel.getAttribute('data-groupid'));
+            updateSelectColor(subTypeSel);
+        } else if (evalMethodSel) {
+            updateSelectColor(evalMethodSel);
+        }
+    });
+});

@@ -1,4 +1,15 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>보강 수업 상세 관리 | 자동차 교육과정 통합 시스템</title><script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script><script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script><script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script><script src="https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js"></script><style>/* [Section Name] 순정 디자인 및 아코디언 전용 스타일 */
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>보강 수업 상세 관리 | 자동차 교육과정 통합 시스템</title>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js"></script>
+    <style>
+        /* [Section Name] 순정 디자인 및 아코디언 전용 스타일 */
         body { font-family: 'Malgun Gothic', sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; color: #333; }
         .excel-container { max-width: 1400px; margin: 20px auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
         .excel-header-title { text-align: center; font-size: 24px; font-weight: bold; text-decoration: underline; margin-bottom: 20px; }
@@ -365,7 +376,14 @@
         .mini-attend-table .bg-late { background-color: #fef9c3 !important; color: #854d0e; }
         .mini-attend-table .bg-early { background-color: #e0f2fe !important; color: #0369a1; }
         .mini-attend-table .bg-out { background-color: #dcfce7 !important; color: #166534; }
-        .mini-attend-table .bg-none { background-color: #f1f5f9 !important; color: #94a3b8; }</style></head><body style="padding-top: 80px;"><style>/* 🚀 하네스 레이아웃 (PC 버튼 크기·여백은 common-harness.css) */
+        .mini-attend-table .bg-none { background-color: #f1f5f9 !important; color: #94a3b8; }
+    </style>
+</head>
+<body style="padding-top: 80px;"> <!-- 📍 하네스 천장 밀착 및 본문 침범 방지용 공용 여백 -->
+
+<!-- 📍 [메인 하네스 V5 (반응형 완전체)] 화면 최상단 고정 통합 버스바 -->
+<style>
+    /* 🚀 하네스 레이아웃 (PC 버튼 크기·여백은 common-harness.css) */
     #globalMainHarness { flex-wrap: nowrap !important; }
     #navButtonBank { flex-wrap: nowrap !important; }
 
@@ -399,7 +417,317 @@
         #harnessRightBank { order: 2; flex: 1; display: flex; justify-content: flex-end; }
         #navButtonBank { order: 3; flex-wrap: wrap !important; width: 100%; margin: 0 !important; }
         .nav-btn-global { max-width: calc(25% - 4px); font-size: 9px !important; }
-    }</style><link rel="stylesheet" href="../common-harness.css"><script src="../common-harness.js"></script><div id="globalMainHarness" style="position: fixed; top: 0; left: 0; width: 100%; background: #1a252f; z-index: 9999; padding: 10px 20px; box-sizing: border-box; box-shadow: 0 4px 15px rgba(0,0,0,0.3); border-bottom: 3px solid #e67e22; display: flex; justify-content: space-between; align-items: center;"><div id="harnessLeftBank" style="flex-shrink: 0;"><button class="btn" style="background: transparent; color: #f1c40f; border: 1px solid #f1c40f; width: 90px; padding: 6px 0; font-size: 12px; font-weight: bold; box-sizing: border-box; cursor: pointer;" onclick='location.href="select_class.html"'>◀ 반 선택</button></div><div id="navButtonBank" style="display: flex; justify-content: center; gap: 6px; flex-grow: 1; margin: 0 15px;"><button class="nav-btn-global" style="background: #3498db;" onclick='location.href=classNavHref("index1.html")'>🏠 메인화면</button> <button class="nav-btn-global" style="background: #e67e22;" onclick='location.href=classNavHref("일일출석부.html")'>📅 일일출석부</button> <button class="nav-btn-global" style="background: #27ae60;" onclick='location.href=classNavHref("능력단위시간표.html")'>📊 출석률/보강</button> <button class="nav-btn-global" style="background: #8e44ad;" onclick='location.href=classNavHref("단위개월출석부.html")'>📈 단위출석부</button> <button class="nav-btn-global" style="background: #2c3e50;" onclick='location.href=classNavHref("평가계획서.html")'>📄 계획서류</button> <button class="nav-btn-global" style="background: #16a085;" onclick='location.href=classNavHref("../평가지/평가지.html")'>📋 내부평가</button> <button class="nav-btn-global" style="background: #d35400;" onclick='location.href=classNavHref("상담일지.html")'>🤝 상담/이력서</button></div><div id="harnessRightBank" style="flex-shrink: 0;"><div style="background: #000000; color: #f1c40f; padding: 8px 22px; border-radius: 6px; border: 2px solid #f1c40f; font-weight: 900; font-size: 16px; box-shadow: 0 0 12px rgba(241, 196, 15, 0.8); white-space: nowrap; letter-spacing: 1px;"><span style="color: #ffffff; font-size: 14px; margin-right: 5px;">▶ 현재 학급:</span> <span id="currentClassDisplay" style="font-size: 19px; text-shadow: 0 0 5px #f1c40f;">로딩 중...</span></div></div></div><div class="excel-container"><div style="display: none;"><a href="#" id="backMain"></a> <span id="dispClass"></span></div><div id="mediaResetBar" style="display: none; justify-content: flex-end; align-items: center; margin-bottom: 15px; gap: 8px;"><button id="btnResetMedia" class="btn-detail" style="display: none; background:#e74c3c; height: 32px; padding: 0 10px; font-size: 11px;">🗑️ 미디어 초기화</button> <button id="btnCancelSelect" class="btn-detail" style="display:none; background:#666; height: 32px; padding: 0 10px; font-size: 11px;">취소</button></div><script>(()=>{var e,t;"historyTime"===new URLSearchParams(window.location.search).get("sort")&&(e=document.getElementById("mediaResetBar"),t=document.getElementById("btnResetMedia"),e&&(e.style.display="flex"),t)&&(t.style.display="inline-block")})()</script><div class="excel-header-title">🔧 보강 수업 정밀 기록부</div><div class="tab-menu"><div id="btn_tab_main" class="tab-btn">📋 능력단위 시간표 보기</div><div id="btn_tab_calendar" class="tab-btn">📅 요일별(달력) 보기</div><div id="btn_tab_weekly" class="tab-btn">📊 주차별 보기</div><div class="tab-btn active">🔧 보강수업 보기</div></div><div class="sort-btns" style="display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap;"><div style="display: flex; gap: 5px;"><button id="btn_sort_subject" class="btn-detail">🔤 과목순</button> <button id="btn_sort_student" class="btn-detail">👤 성명순</button> <button id="btn_sort_hrd" class="btn-detail">📅 HRD 등록일순</button></div><div style="display: flex; gap: 5px; margin-left: auto;"><button id="btn_sort_history" class="btn-detail" style="background:#565656;">⏰ 보강일순 및 싸인등록</button> <button id="btnReportMode" class="btn-detail" style="background:#565656; display:none;">📄 결과보고서용</button></div></div><table class="attendance-table"><thead></thead><tbody id="makeupBody"><tr><td colspan="7" style="padding:50px;">데이터 분석 중...</td></tr></tbody></table></div><link rel="stylesheet" href="../common-dialog.css"><script src="../common-class-db.js"></script><script src="../common-dialog.js"></script><script src="보강수업.js"></script><div id="signModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:30000; justify-content:center; align-items:center;"><div class="sign-modal-box"><div class="sign-info-area"><h3 class="sign-title">👤 훈련생 확인 서명</h3><p class="sign-desc">빈 칸에 서명해 주세요.</p></div><div class="sign-canvas-area"><canvas id="signCanvas" width="720" height="300" style="border:2px solid #34495e; background:#fdfdfd; cursor:crosshair; touch-action:none; border-radius:5px; display:block;"></canvas></div><div class="sign-btn-group"><button id="btn_sign_clear" class="btn-detail" style="background:#e74c3c;">다시 쓰기</button> <button id="btn_sign_save" class="btn-detail" style="background:#27ae60;">서명 완료 및 저장</button> <button id="btn_sign_close" class="btn-detail" style="background:#666;">닫기 ✖</button></div></div></div><div id="reportModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:10000; overflow-y:auto; padding:20px 0;"><div class="modal-content" style="background:white; width:210mm; margin:0 auto; padding:0; position:relative; box-shadow:0 0 50px rgba(0,0,0,0.5);"><div style="position:sticky; top:0; background:#f8f9fa; padding:15px; text-align:right; z-index:100; border-bottom:1px solid #ddd; display: flex; justify-content: space-between; align-items: center;" class="no-print"><div class="page-nav-btns"><button id="btnPage1" class="btn-page-nav active">1 페이지</button> <button id="btnPage2" class="btn-page-nav">2 페이지</button> <button id="btnPage3" class="btn-page-nav">3 페이지</button></div><div><button id="btn_prepare_print" style="padding:10px 25px; background:#27ae60; color:white; border:none; border-radius:5px; cursor:pointer; font-weight:bold; margin-right:10px;">🖨️ PDF 저장 / 인쇄하기</button> <button id="btn_report_close" style="padding:10px 20px; background:#666; color:white; border:none; border-radius:5px; cursor:pointer;">창 닫기 ✖</button></div></div><div id="printArea"><div class="report-page" id="reportPage1" style="font-family: 'Malgun Gothic'; position: relative; height: 297mm; padding: 28mm 25mm; box-sizing: border-box; background: white;"><div class="report-red-zone"><div class="report-header-top" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; height: 25mm;"><div style="width: 30mm; height: 25mm; display: flex; align-items: center; justify-content: center;"><img id="view_topLogo_L" src="" style="max-width: 100%; max-height: 100%; object-fit: contain;"></div><div style="text-align: center; flex: 1; padding: 0 10px;"><div style="font-size: 10pt; color: #000; line-height: 1.2;">자동차분야 부산에서 가장 오래된 직업학교‼</div><div style="font-size: 21pt; font-weight: bold; color: #000; margin: 3px 0; line-height: 1.2;">부산자동차직업학교</div><div style="font-size: 11pt; color: #000; font-family: 'Arial', sans-serif;">Busan Automobile Vocational School</div></div><div style="width: 30mm; height: 25mm; display: flex; align-items: center; justify-content: center;"><img id="view_topLogo_R" src="" style="max-width: 100%; max-height: 100%; object-fit: contain;"></div></div><div class="report-context" style="font-size: 10pt; color: #000; line-height: 1.5; text-align: left;"><div>수신 : 내부결재용</div><div>(경유)</div><div style="font-weight: bold; border-bottom: 2px solid #000; padding-bottom: 3px; margin-bottom: 12px; text-align: justify;">제목 : <span class="view_trainName" style="color:rgb(0, 0, 7);">[훈련명 로드 중...]</span> 보충수업 기안서</div><div style="text-align: justify; margin-bottom: 12px;">1. <span class="view_trainName" style="color:rgb(0, 0, 6);">[훈련명]</span> 훈련생 중 <span class="view_subject_name" style="font-weight:bold;">[과목명]</span> 능력단위 75% 이상 이수하지 못한 훈련생 또는 희망자에 한해 보충수업을 실시한 <span class="view_subject_name" style="font-weight:bold;">[과목명]</span> 능력단위를 아래와 같이 보충수업을 실시하여 보고합니다.</div></div></div><div class="report-blue-zone" style="margin-top: 10px;"><div style="text-align: center; margin-bottom: 8px; font-size: 10pt;">- 아 래 -</div><div id="view_mainTable_Area"><table class="report-meta-table" style="width:100%; border-collapse:collapse; border: 0.12mm solid #000; table-layout: fixed;"><thead style="background:#f0f0f0;"><tr style="height: 35px; text-align: center;"><th style="border: 0.12mm solid #000; font-size: 10pt; width: 26%; font-weight: normal; padding: 0;">훈련과정명</th><th style="border: 0.12mm solid #000; font-size: 10pt; width: 14%; font-weight: normal; padding: 0;">훈련기간</th><th style="border: 0.12mm solid #000; font-size: 10pt; width: 17%; font-weight: normal; padding: 0;">교과목명</th><th style="border: 0.12mm solid #000; font-size: 10pt; width: 12%; font-weight: normal; padding: 0;">실시일자</th><th style="border: 0.12mm solid #000; font-size: 10pt; width: 11%; font-weight: normal; padding: 0;">실시시간</th><th style="border: 0.12mm solid #000; font-size: 10pt; width: 11%; font-weight: normal; padding: 0;">대상인원</th><th style="border: 0.12mm solid #000; font-size: 10pt; width: 11%; font-weight: normal; padding: 0;">참여인원</th></tr></thead><tbody><tr style="height: 50px; text-align: center; vertical-align: middle;"><td style="border: 0.12mm solid #000; font-size: 10pt; padding: 2px; line-height: 1.5;" class="view_trainName">-</td><td style="border: 0.12mm solid #000; font-size: 10pt; padding: 0; line-height: 1.5; letter-spacing: -0.5px;" id="view_table_period">-</td><td style="border: 0.12mm solid #000; font-size: 10pt; padding: 2px; line-height: 1.5;" class="view_subject_name">-</td><td style="border: 0.12mm solid #000; font-size: 10pt; padding: 0; line-height: 1.5;" id="view_table_date">-</td><td style="border: 0.12mm solid #000; font-size: 10pt; padding: 0; line-height: 1.5;" id="view_table_time">-</td><td style="border: 0.12mm solid #000; font-size: 10pt; padding: 0;" class="view_student_count">-</td><td style="border: 0.12mm solid #000; font-size: 10pt; padding: 0;" class="view_student_count">-</td></tr></tbody></table></div><div style="margin-top: 15px; font-size: 10pt;">※ 첨부&nbsp;&nbsp;1. 참여자 명단 및 서명부</div></div><div class="report-green-zone" style="position: absolute; bottom: 35mm; left: 25mm; width: calc(100% - 50mm); height: auto;"><div style="display: flex; align-items: center; justify-content: center; height: 28mm; margin-bottom: 3px;"><div style="flex: 1; text-align: right; padding-right: 15px;"><img id="view_bottom_logo" src="" style="height: 12mm; object-fit: contain;"></div><div style="font-size: 20pt; font-weight: bold; letter-spacing: 5px; white-space: nowrap;">부산자동차직업학교장</div><div style="flex: 1; text-align: left; padding-left: 10px;"><img id="view_schoolSeal" src="" style="width: 25mm; height: 25mm; object-fit: contain;"></div></div><table style="width:100%; border-collapse:collapse; border-top: 5pt solid #bababa; font-family: 'Malgun Gothic'; table-layout: fixed;"><tr style="height: 27px; font-size: 10pt;"><td style="text-align: left; padding: 0 1.8mm; width: 33.3%;">담임 : <span id="view_teacher_name" style="color:rgb(0, 0, 1);">[로드 중]</span></td><td style="text-align: left; padding: 0 1.8mm; width: 33.3%;">교감 : 하 정 현</td><td style="text-align: left; padding: 0 1.8mm; width: 33.3%;">교장 : 박 홍 일</td></tr><tr style="height: 30px; font-size: 10pt;"><td style="text-align: left; padding: 0 1.8mm;">협조자</td><td style="text-align: left; padding: 0 1.8mm;"></td><td style="text-align: left; padding: 0 1.8mm;"></td></tr><tr style="height: 30px; font-size: 10pt;"><td style="text-align: left; padding: 0 1.8mm;">시행 행정지원팀-1</td><td style="text-align: left; padding: 0 1.8mm;" id="view_table_date_exec">-</td><td style="text-align: left; padding: 0 1.8mm;" id="view_table_reg_num">접수번호 : -</td></tr><tr style="height: 30px; font-size: 10pt;"><td colspan="2" style="text-align: left; padding: 0 1.8mm;">우)602-837 / 부산시 서구 토성동1가 12-3번지</td><td style="text-align: left; padding: 0 1.8mm;">http://www.nacar.co.kr</td></tr><tr style="height: 30px; font-size: 10pt;"><td colspan="2" style="text-align: left; padding: 0 1.8mm;">전화번호 (051)255-3533 &nbsp;&nbsp; 팩스번호 (051)255-3522</td><td style="text-align: left; padding: 0 1.8mm;">nacar@hanmail.net</td></tr></table><div style="height: 5pt; line-height: 5pt; font-size: 1pt;">&nbsp;</div></div></div><div class="report-page" id="reportPage2" style="display:none; font-family: 'Malgun Gothic';"><div style="text-align: center; height: 35pt; margin-bottom: 5px; width: 100%; display: flex; justify-content: center; align-items: center;"><div style="width: 650px; overflow: visible; text-align: center;"><span class="view_trainName" id="autoScaleTrainName_P2" style="font-size: 16pt; font-weight: bold; display: inline-block; white-space: nowrap; transform-origin: center center;">[훈련과정명 로드 중]</span></div></div><div class="view_subject_name" style="font-size: 16pt; font-weight: bold; text-align: center; margin-bottom: 5px;">[교과목명 로드 중]</div><div style="font-size: 16pt; font-weight: bold; text-align: center; margin-bottom: 20px;"><span id="view_table_date_p2">2026년 03월 10일</span> 보충수업 결과현황</div><div style="height: 10pt;"></div><table class="report-data-table" style="width:100%; border-collapse: collapse; border: 1.5px solid #000;"><thead><tr style="background: #f0f0f0; height: 45px;"><th style="border: 1px solid #000; width: 10%; font-size: 12pt;">연번</th><th style="border: 1px solid #000; width: 20%; font-size: 12pt;">참여자 명단</th><th style="border: 1px solid #000; width: 20%; font-size: 12pt;">참여 여부</th><th style="border: 1px solid #000; width: 25%; font-size: 12pt;">참여자 서명</th><th style="border: 0.12mm solid #000; width: 25%; font-size: 12pt;">담임교사 확인</th></tr></thead><tbody id="view_studentList"></tbody></table></div><div class="report-page" id="reportPage3" style="display:none; font-family: 'Malgun Gothic'; position: relative; height: 297mm; padding: 28mm 25mm; box-sizing: border-box; background: white;"><div style="text-align: center; margin-bottom: 20pt;"><span style="font-size: 20pt; font-weight: bold; border-bottom: 3px double #000; padding-bottom: 2px;">보충수업 증빙자료</span></div><div style="height: 10pt;"></div><div style="font-size: 12pt; line-height: 1.8; margin-bottom: 10pt;"><div style="display: flex; align-items: center; white-space: nowrap;"><span style="flex-shrink: 0;">□ 훈련과정 :&nbsp;</span> <span class="view_trainName" id="autoScaleTrainName" style="display: inline-block; transform-origin: left center;">[훈련과정명 정보 로드 중...]</span></div><div id="view_info_period_p3">□ 훈련기간 : [훈련기간 정보 로드 중...]</div></div><table style="width:100%; border-collapse: collapse; border: 1px solid #000; table-layout: fixed;"><colgroup><col style="width: 15%;"><col style="width: 35%;"><col style="width: 15%;"><col style="width: 35%;"></colgroup><tbody style="font-size: 11pt;"><tr style="height: 35px; text-align: center;"><td style="border: 1px solid #000; background: #f0f0f0; font-weight: bold;">참여자</td><td id="view_photoStudents" colspan="3" style="border: 1px solid #000;">-</td></tr><tr style="height: 35px; text-align: center;"><td style="border: 1px solid #000; background: #f0f0f0; font-weight: bold;">교과목명</td><td id="view_photoSubject" colspan="3" style="border: 1px solid #000; font-weight: bold; color: #000;">-</td></tr><tr style="height: 35px; text-align: center;"><td style="border: 1px solid #000; background: #f0f0f0; font-weight: bold;">실시일자</td><td id="view_photoDate" style="border: 1px solid #000;">-</td><td style="border: 1px solid #000; background: #f0f0f0; font-weight: bold;">실시시간</td><td id="view_photoTime" style="border: 1px solid #000;">-</td></tr><tr><td colspan="2" style="border: 1px solid #000; height: 75mm; vertical-align: middle; text-align: center; background: #f9f9f9; padding: 5px;"><img id="view_img1_p3" style="max-width: 100%; max-height: 100%; object-fit: contain; display: none;"> <span id="no_img1_p3" style="color: #999;">등록된 사진 없음</span></td><td colspan="2" style="border: 1px solid #000; height: 75mm; vertical-align: middle; text-align: center; background: #f9f9f9; padding: 5px;"><img id="view_img2_p3" style="max-width: 100%; max-height: 100%; object-fit: contain; display: none;"> <span id="no_img2_p3" style="color: #999;">등록된 사진 없음</span></td></tr></tbody></table></div><style>/* 📍 보고서 전용 스타일 (A4 정밀 여백 적용) */
+    }
+</style>
+<link rel="stylesheet" href="../common-harness.css">
+<script src="../common-harness.js"></script>
+
+<div id="globalMainHarness" style="position: fixed; top: 0; left: 0; width: 100%; background: #1a252f; z-index: 9999; padding: 10px 20px; box-sizing: border-box; box-shadow: 0 4px 15px rgba(0,0,0,0.3); border-bottom: 3px solid #e67e22; display: flex; justify-content: space-between; align-items: center;">
+    
+    <!-- [좌측 뱅크] 반 선택 모듈 -->
+    <div id="harnessLeftBank" style="flex-shrink: 0;">
+        <button class="btn" style="background: transparent; color: #f1c40f; border: 1px solid #f1c40f; width: 90px; padding: 6px 0; font-size: 12px; font-weight: bold; box-sizing: border-box; cursor: pointer;" onclick="location.href='select_class.html'">◀ 반 선택</button>
+    </div>
+
+    <!-- [중앙 뱅크] 공통 네비게이션 모듈 (지저분한 inline CSS 제거, 반응형 클래스로 통합) -->
+    <div id="navButtonBank" style="display: flex; justify-content: center; gap: 6px; flex-grow: 1; margin: 0 15px;">
+        <button class="nav-btn-global" style="background: #3498db;" onclick="location.href=classNavHref('index1.html')">🏠 메인화면</button>
+        <button class="nav-btn-global" style="background: #e67e22;" onclick="location.href=classNavHref('일일출석부.html')">📅 일일출석부</button>
+        <button class="nav-btn-global" style="background: #27ae60;" onclick="location.href=classNavHref('능력단위시간표.html')">📊 출석률/보강</button>
+        <button class="nav-btn-global" style="background: #8e44ad;" onclick="location.href=classNavHref('단위개월출석부.html')">📈 단위출석부</button>
+        <button class="nav-btn-global" style="background: #2c3e50;" onclick="location.href=classNavHref('평가계획서.html')">📄 계획서류</button>
+        <button class="nav-btn-global" style="background: #16a085;" onclick="location.href=classNavHref('../평가지/평가지.html')">📋 내부평가</button>
+        <button class="nav-btn-global" style="background: #d35400;" onclick="location.href=classNavHref('상담일지.html')">🤝 상담/이력서</button>
+    </div>
+
+    <!-- [우측 뱅크] 현재 학급 상태창 (HUD 계기판 스타일) -->
+    <div id="harnessRightBank" style="flex-shrink: 0;">
+        <div style="background: #000000; color: #f1c40f; padding: 8px 22px; border-radius: 6px; border: 2px solid #f1c40f; font-weight: 900; font-size: 16px; box-shadow: 0 0 12px rgba(241, 196, 15, 0.8); white-space: nowrap; letter-spacing: 1px;">
+            <span style="color: #ffffff; font-size: 14px; margin-right: 5px;">▶ 현재 학급:</span>
+            <span id="currentClassDisplay" style="font-size: 19px; text-shadow: 0 0 5px #f1c40f;">로딩 중...</span>
+        </div>
+    </div>
+
+</div>
+
+<div class="excel-container">
+    <!-- 📍 JS 경고등 방지를 위해 구형 이동 버튼 및 중복 학급 표시기 스텔스(숨김) 처리 -->
+    <div style="display: none;">
+        <a href="#" id="backMain"></a>
+        <span id="dispClass"></span>
+    </div>
+
+    <!-- 📍 보존 대상 제어 버튼 (미디어 초기화 / 취소) — 보강일순 모드에서만 표시 -->
+    <div id="mediaResetBar" style="display: none; justify-content: flex-end; align-items: center; margin-bottom: 15px; gap: 8px;">
+        <button id="btnResetMedia" class="btn-detail" style="display: none; background:#e74c3c; height: 32px; padding: 0 10px; font-size: 11px;">🗑️ 미디어 초기화</button>
+        <button id="btnCancelSelect" class="btn-detail" style="display:none; background:#666; height: 32px; padding: 0 10px; font-size: 11px;">취소</button>
+    </div>
+    <script>
+    (function () {
+        if (new URLSearchParams(window.location.search).get('sort') === 'historyTime') {
+            var bar = document.getElementById('mediaResetBar');
+            var btn = document.getElementById('btnResetMedia');
+            if (bar) bar.style.display = 'flex';
+            if (btn) btn.style.display = 'inline-block';
+        }
+    })();
+    </script>
+
+    <div class="excel-header-title">🔧 보강 수업 정밀 기록부</div>
+
+    <div class="tab-menu">
+        <div id="btn_tab_main" class="tab-btn">📋 능력단위 시간표 보기</div>
+        <div id="btn_tab_calendar" class="tab-btn">📅 요일별(달력) 보기</div>
+        <div id="btn_tab_weekly" class="tab-btn">📊 주차별 보기</div>
+        <div class="tab-btn active">🔧 보강수업 보기</div>
+    </div>
+
+<div class="sort-btns" style="display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap;">
+    <div style="display: flex; gap: 5px;">
+        <button id="btn_sort_subject" class="btn-detail">🔤 과목순</button>
+        <button id="btn_sort_student" class="btn-detail">👤 성명순</button>
+        <button id="btn_sort_hrd" class="btn-detail">📅 HRD 등록일순</button>
+    </div>
+    
+    <div style="display: flex; gap: 5px; margin-left: auto;">
+        <button id="btn_sort_history" class="btn-detail" style="background:#565656;">⏰ 보강일순 및 싸인등록</button>
+        <button id="btnReportMode" class="btn-detail" style="background:#565656; display:none;">📄 결과보고서용</button>
+    </div>
+</div>
+
+    <table class="attendance-table">
+    <thead>
+        </thead>
+    <tbody id="makeupBody">
+        <tr><td colspan="7" style="padding:50px;">데이터 분석 중...</td></tr> 
+    </tbody>
+</table>
+</div>
+
+<link rel="stylesheet" href="../common-dialog.css">
+<script src="../common-class-db.js"></script>
+<script src="../common-dialog.js"></script>
+<script src="보강수업.js"></script>
+<div id="signModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:30000; justify-content:center; align-items:center;">
+    <div class="sign-modal-box">
+        
+        <div class="sign-info-area">
+            <h3 class="sign-title">👤 훈련생 확인 서명</h3>
+            <p class="sign-desc">빈 칸에 서명해 주세요.</p>
+        </div>
+        
+        <div class="sign-canvas-area">
+            <canvas id="signCanvas" width="720" height="300" style="border:2px solid #34495e; background:#fdfdfd; cursor:crosshair; touch-action:none; border-radius:5px; display:block;"></canvas>
+        </div>
+        
+        <div class="sign-btn-group">
+            <button id="btn_sign_clear" class="btn-detail" style="background:#e74c3c;">다시 쓰기</button>
+            <button id="btn_sign_save" class="btn-detail" style="background:#27ae60;">서명 완료 및 저장</button>
+            <button id="btn_sign_close" class="btn-detail" style="background:#666;">닫기 ✖</button>
+        </div>
+
+    </div>
+</div>
+
+
+<div id="reportModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:10000; overflow-y:auto; padding:20px 0;">
+    <div class="modal-content" style="background:white; width:210mm; margin:0 auto; padding:0; position:relative; box-shadow:0 0 50px rgba(0,0,0,0.5);">
+                
+        <div style="position:sticky; top:0; background:#f8f9fa; padding:15px; text-align:right; z-index:100; border-bottom:1px solid #ddd; display: flex; justify-content: space-between; align-items: center;" class="no-print">
+            <div class="page-nav-btns">
+                <button id="btnPage1" class="btn-page-nav active">1 페이지</button>
+                <button id="btnPage2" class="btn-page-nav">2 페이지</button>
+                <button id="btnPage3" class="btn-page-nav">3 페이지</button>
+            </div>
+            <div>
+                <button id="btn_prepare_print" style="padding:10px 25px; background:#27ae60; color:white; border:none; border-radius:5px; cursor:pointer; font-weight:bold; margin-right:10px;">🖨️ PDF 저장 / 인쇄하기</button>
+                <button id="btn_report_close" style="padding:10px 20px; background:#666; color:white; border:none; border-radius:5px; cursor:pointer;">창 닫기 ✖</button>
+            </div>
+        </div>
+
+        <div id="printArea">
+            <div class="report-page" id="reportPage1" style="font-family: 'Malgun Gothic'; position: relative; height: 297mm; padding: 28mm 25mm; box-sizing: border-box; background: white;">
+    
+    <div class="report-red-zone">
+        <div class="report-header-top" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; height: 25mm;">
+            <div style="width: 30mm; height: 25mm; display: flex; align-items: center; justify-content: center;">
+                <img id="view_topLogo_L" src="" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+            </div>
+            <div style="text-align: center; flex: 1; padding: 0 10px;">
+                <div style="font-size: 10pt; color: #000; line-height: 1.2;">자동차분야 부산에서 가장 오래된 직업학교‼</div>
+                <div style="font-size: 21pt; font-weight: bold; color: #000; margin: 3px 0; line-height: 1.2;">부산자동차직업학교</div>
+                <div style="font-size: 11pt; color: #000; font-family: 'Arial', sans-serif;">Busan Automobile Vocational School</div>
+            </div>
+            <div style="width: 30mm; height: 25mm; display: flex; align-items: center; justify-content: center;">
+                <img id="view_topLogo_R" src="" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+            </div>
+        </div>
+
+        <div class="report-context" style="font-size: 10pt; color: #000; line-height: 1.5; text-align: left;">
+            <div>수신 : 내부결재용</div>
+            <div>(경유)</div>
+            <div style="font-weight: bold; border-bottom: 2px solid #000; padding-bottom: 3px; margin-bottom: 12px; text-align: justify;">
+                제목 : <span class="view_trainName" style="color:rgb(0, 0, 7);">[훈련명 로드 중...]</span> 보충수업 기안서
+            </div>
+            <div style="text-align: justify; margin-bottom: 12px;">
+                1. <span class="view_trainName" style="color:rgb(0, 0, 6);">[훈련명]</span> 훈련생 중 <span class="view_subject_name" style="font-weight:bold;">[과목명]</span> 능력단위 75% 이상 이수하지 못한 훈련생 또는 희망자에 한해 보충수업을 실시한 <span class="view_subject_name" style="font-weight:bold;">[과목명]</span> 능력단위를 아래와 같이 보충수업을 실시하여 보고합니다.
+            </div>
+        </div>
+    </div>
+
+    <div class="report-blue-zone" style="margin-top: 10px;">
+        <div style="text-align: center; margin-bottom: 8px; font-size: 10pt;">- 아 래 -</div>
+        <div id="view_mainTable_Area">
+            <table class="report-meta-table" style="width:100%; border-collapse:collapse; border: 0.12mm solid #000; table-layout: fixed;">
+                <thead style="background:#f0f0f0;">
+                    <tr style="height: 35px; text-align: center;">
+                        <th style="border: 0.12mm solid #000; font-size: 10pt; width: 26%; font-weight: normal; padding: 0;">훈련과정명</th>
+                        <th style="border: 0.12mm solid #000; font-size: 10pt; width: 14%; font-weight: normal; padding: 0;">훈련기간</th>
+                        <th style="border: 0.12mm solid #000; font-size: 10pt; width: 17%; font-weight: normal; padding: 0;">교과목명</th>
+                        <th style="border: 0.12mm solid #000; font-size: 10pt; width: 12%; font-weight: normal; padding: 0;">실시일자</th>
+                        <th style="border: 0.12mm solid #000; font-size: 10pt; width: 11%; font-weight: normal; padding: 0;">실시시간</th>
+                        <th style="border: 0.12mm solid #000; font-size: 10pt; width: 11%; font-weight: normal; padding: 0;">대상인원</th>
+                        <th style="border: 0.12mm solid #000; font-size: 10pt; width: 11%; font-weight: normal; padding: 0;">참여인원</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="height: 50px; text-align: center; vertical-align: middle;">
+                        <td style="border: 0.12mm solid #000; font-size: 10pt; padding: 2px; line-height: 1.5;" class="view_trainName">-</td>
+                        <td style="border: 0.12mm solid #000; font-size: 10pt; padding: 0; line-height: 1.5; letter-spacing: -0.5px;" id="view_table_period">-</td>
+                        <td style="border: 0.12mm solid #000; font-size: 10pt; padding: 2px; line-height: 1.5;" class="view_subject_name">-</td>
+                        <td style="border: 0.12mm solid #000; font-size: 10pt; padding: 0; line-height: 1.5;" id="view_table_date">-</td>
+                        <td style="border: 0.12mm solid #000; font-size: 10pt; padding: 0; line-height: 1.5;" id="view_table_time">-</td>
+                        <td style="border: 0.12mm solid #000; font-size: 10pt; padding: 0;" class="view_student_count">-</td>
+                        <td style="border: 0.12mm solid #000; font-size: 10pt; padding: 0;" class="view_student_count">-</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div style="margin-top: 15px; font-size: 10pt;">※ 첨부&nbsp;&nbsp;1. 참여자 명단 및 서명부</div>
+    </div>
+
+    <div class="report-green-zone" style="position: absolute; bottom: 35mm; left: 25mm; width: calc(100% - 50mm); height: auto;">
+        <div style="display: flex; align-items: center; justify-content: center; height: 28mm; margin-bottom: 3px;">
+            <div style="flex: 1; text-align: right; padding-right: 15px;">
+                <img id="view_bottom_logo" src="" style="height: 12mm; object-fit: contain;">
+            </div>
+            <div style="font-size: 20pt; font-weight: bold; letter-spacing: 5px; white-space: nowrap;">부산자동차직업학교장</div>
+            <div style="flex: 1; text-align: left; padding-left: 10px;">
+                <img id="view_schoolSeal" src="" style="width: 25mm; height: 25mm; object-fit: contain;">
+            </div>
+        </div>
+
+        <table style="width:100%; border-collapse:collapse; border-top: 5pt solid #bababa; font-family: 'Malgun Gothic'; table-layout: fixed;">
+    <tr style="height: 27px; font-size: 10pt;">
+                <td style="text-align: left; padding: 0 1.8mm; width: 33.3%;">담임 : <span id="view_teacher_name" style="color:rgb(0, 0, 1);">[로드 중]</span></td>
+                <td style="text-align: left; padding: 0 1.8mm; width: 33.3%;">교감 : 하 정 현</td>
+                <td style="text-align: left; padding: 0 1.8mm; width: 33.3%;">교장 : 박 홍 일</td>
+            </tr>
+            <tr style="height: 30px; font-size: 10pt;">
+                <td style="text-align: left; padding: 0 1.8mm;">협조자</td>
+                <td style="text-align: left; padding: 0 1.8mm;"></td>
+                <td style="text-align: left; padding: 0 1.8mm;"></td>
+            </tr>
+            <tr style="height: 30px; font-size: 10pt;">
+                <td style="text-align: left; padding: 0 1.8mm;">시행 행정지원팀-1</td>
+                <td style="text-align: left; padding: 0 1.8mm;" id="view_table_date_exec">-</td>
+                <td style="text-align: left; padding: 0 1.8mm;" id="view_table_reg_num">접수번호 : -</td>
+            </tr>
+            <tr style="height: 30px; font-size: 10pt;">
+                <td colspan="2" style="text-align: left; padding: 0 1.8mm;">우)602-837 / 부산시 서구 토성동1가 12-3번지</td>
+                <td style="text-align: left; padding: 0 1.8mm;">http://www.nacar.co.kr</td>
+            </tr>
+            <tr style="height: 30px; font-size: 10pt;">
+                <td colspan="2" style="text-align: left; padding: 0 1.8mm;">전화번호 (051)255-3533 &nbsp;&nbsp; 팩스번호 (051)255-3522</td>
+                <td style="text-align: left; padding: 0 1.8mm;">nacar@hanmail.net</td>
+            </tr>
+        </table>
+        
+        <div style="height: 5pt; line-height: 5pt; font-size: 1pt;">&nbsp;</div>
+    </div>
+</div>
+
+        
+
+    <div class="report-page" id="reportPage2" style="display:none; font-family: 'Malgun Gothic';">
+    <div style="text-align: center; height: 35pt; margin-bottom: 5px; width: 100%; display: flex; justify-content: center; align-items: center;">
+        <div style="width: 650px; overflow: visible; text-align: center;">
+            <span class="view_trainName" id="autoScaleTrainName_P2" style="font-size: 16pt; font-weight: bold; display: inline-block; white-space: nowrap; transform-origin: center center;">[훈련과정명 로드 중]</span>
+        </div>
+    </div>
+
+    <div class="view_subject_name" style="font-size: 16pt; font-weight: bold; text-align: center; margin-bottom: 5px;">[교과목명 로드 중]</div>
+    
+    <div style="font-size: 16pt; font-weight: bold; text-align: center; margin-bottom: 20px;">
+        <span id="view_table_date_p2">2026년 03월 10일</span> 보충수업 결과현황
+    </div>
+
+    <div style="height: 10pt;"></div>
+
+    <table class="report-data-table" style="width:100%; border-collapse: collapse; border: 1.5px solid #000;">
+        <thead>
+            <tr style="background: #f0f0f0; height: 45px;">
+                <th style="border: 1px solid #000; width: 10%; font-size: 12pt;">연번</th>
+                <th style="border: 1px solid #000; width: 20%; font-size: 12pt;">참여자 명단</th>
+                <th style="border: 1px solid #000; width: 20%; font-size: 12pt;">참여 여부</th>
+                <th style="border: 1px solid #000; width: 25%; font-size: 12pt;">참여자 서명</th>
+                <th style="border: 0.12mm solid #000; width: 25%; font-size: 12pt;">담임교사 확인</th>
+            </tr>
+        </thead>
+        <tbody id="view_studentList"></tbody>
+    </table>
+</div>
+
+    <div class="report-page" id="reportPage3" style="display:none; font-family: 'Malgun Gothic'; position: relative; height: 297mm; padding: 28mm 25mm; box-sizing: border-box; background: white;">
+    
+    <div style="text-align: center; margin-bottom: 20pt;">
+        <span style="font-size: 20pt; font-weight: bold; border-bottom: 3px double #000; padding-bottom: 2px;">보충수업 증빙자료</span>
+    </div>
+
+    <div style="height: 10pt;"></div>
+
+    <div style="font-size: 12pt; line-height: 1.8; margin-bottom: 10pt;">
+        <div style="display: flex; align-items: center; white-space: nowrap;">
+            <span style="flex-shrink: 0;">□ 훈련과정 :&nbsp;</span>
+            <span class="view_trainName" id="autoScaleTrainName" style="display: inline-block; transform-origin: left center;">[훈련과정명 정보 로드 중...]</span>
+        </div>
+        <div id="view_info_period_p3">□ 훈련기간 : [훈련기간 정보 로드 중...]</div>
+    </div>
+
+    <table style="width:100%; border-collapse: collapse; border: 1px solid #000; table-layout: fixed;">
+        <colgroup>
+            <col style="width: 15%;"> <col style="width: 35%;"> <col style="width: 15%;"> <col style="width: 35%;"> 
+        </colgroup>
+        <tbody style="font-size: 11pt;">
+            <tr style="height: 35px; text-align: center;">
+                <td style="border: 1px solid #000; background: #f0f0f0; font-weight: bold;">참여자</td>
+                <td id="view_photoStudents" colspan="3" style="border: 1px solid #000;">-</td>
+            </tr>
+            <tr style="height: 35px; text-align: center;">
+                <td style="border: 1px solid #000; background: #f0f0f0; font-weight: bold;">교과목명</td>
+                <td id="view_photoSubject" colspan="3" style="border: 1px solid #000; font-weight: bold; color: #000;">-</td>
+            </tr>
+            <tr style="height: 35px; text-align: center;">
+                <td style="border: 1px solid #000; background: #f0f0f0; font-weight: bold;">실시일자</td>
+                <td id="view_photoDate" style="border: 1px solid #000;">-</td>
+                <td style="border: 1px solid #000; background: #f0f0f0; font-weight: bold;">실시시간</td>
+                <td id="view_photoTime" style="border: 1px solid #000;">-</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="border: 1px solid #000; height: 75mm; vertical-align: middle; text-align: center; background: #f9f9f9; padding: 5px;">
+                    <img id="view_img1_p3" style="max-width: 100%; max-height: 100%; object-fit: contain; display: none;">
+                    <span id="no_img1_p3" style="color: #999;">등록된 사진 없음</span>
+                </td>
+                <td colspan="2" style="border: 1px solid #000; height: 75mm; vertical-align: middle; text-align: center; background: #f9f9f9; padding: 5px;">
+                    <img id="view_img2_p3" style="max-width: 100%; max-height: 100%; object-fit: contain; display: none;">
+                    <span id="no_img2_p3" style="color: #999;">등록된 사진 없음</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<style>
+    /* 📍 보고서 전용 스타일 (A4 정밀 여백 적용) */
     .report-page { 
         width: 210mm; 
         height: 297mm; 
@@ -535,4 +863,8 @@
         vertical-align: middle;
         display: inline-block; /* block에서 inline-block으로 변경하여 정렬 최적화 */
         margin: 0 auto;
-    }</style></div></div></div></body></html>
+    }
+    
+</style>
+</body>
+</html>

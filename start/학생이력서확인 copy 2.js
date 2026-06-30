@@ -22,11 +22,10 @@ let masterSubjectList = [];
 let ncsList = [];
 let selectedStudent = '';
 let openSubmissionId = '';
-let filterSido = '부산광역시';
+let filterSido = '';
 let filterSigungu = '';
 let regionFilterReady = false;
 let koreaMapReady = false;
-let employmentStatusByStudent = {};
 
 auth.onAuthStateChanged(async user => {
     const savedPw = localStorage.getItem('adminPw');
@@ -51,10 +50,9 @@ document.getElementById('btnBackCounsel')?.addEventListener('click', e => {
 
 async function bootstrap() {
     try {
-        const [attSnap, resumeSnap, employmentSnap, timeSnap, dropSnap, masterSnap] = await Promise.all([
+        const [attSnap, resumeSnap, timeSnap, dropSnap, masterSnap] = await Promise.all([
             classDbRef('dailyAttendance').once('value'),
             classDbRef('studentResumes').once('value'),
-            classDbRef('studentEmploymentStatus').once('value'),
             classDbRef('fullTimetable').once('value'),
             classDbRef('dropouts').once('value'),
             classDbRef('masterData').once('value')
@@ -74,8 +72,6 @@ async function bootstrap() {
             });
         });
         studentNames = Array.from(allStudents).sort();
-
-        employmentStatusByStudent = employmentSnap.val() || {};
 
         resumeDataByStudent = {};
         const raw = resumeSnap.val() || {};
@@ -136,67 +132,10 @@ function buildValidTrainingDays(rawTimetable) {
     }
 }
 
-function isStudentEmployed(name) {
-    return employmentStatusByStudent[name] === true;
+function getSubmissionCount(name) {
+    return (resumeDataByStudent[name] || []).length;
 }
 
-function getStudentEmploymentLabel(name) {
-    return isStudentEmployed(name) ? '취업' : '미취업';
-}
-
-function buildStudentListTableHtml(names, extraClass) {
-    const tableCls = extraClass ? `student-list-table ${extraClass}` : 'student-list-table';
-    const rows = names.map(name => {
-        const active = name === selectedStudent ? ' class="active"' : '';
-        const employ = getStudentEmploymentLabel(name);
-        const employCls = employ === '취업' ? 'employ-yes' : 'employ-no';
-        return `<tr data-name="${escAttr(name)}"${active}>
-            <td class="col-no">${getStudentRosterNumber(name)}</td>
-            <td class="col-name" title="${escAttr(name)}">${escHtml(name)}</td>
-            <td class="col-age">${escHtml(getStudentAgeLabel(name))}</td>
-            <td class="col-addr">${escHtml(getStudentAddressLabel(name))}</td>
-            <td class="col-att">${escHtml(getStudentAttendanceRateLabel(name))}</td>
-            <td class="col-employ col-employ-toggle ${employCls}" title="클릭하여 취업/미취업 변경">${escHtml(employ)}</td>
-        </tr>`;
-    }).join('');
-    return `<table class="${tableCls}">
-        <colgroup>
-            <col class="col-no">
-            <col class="col-name">
-            <col class="col-age">
-            <col class="col-addr">
-            <col class="col-att">
-            <col class="col-employ">
-        </colgroup>
-        <thead><tr>
-            <th class="col-no">번호</th>
-            <th class="col-name">이름</th>
-            <th class="col-age">나이</th>
-            <th class="col-addr">주소</th>
-            <th class="col-att">출석률</th>
-            <th class="col-employ">취업</th>
-        </tr></thead>
-        <tbody>${rows}</tbody>
-    </table>`;
-}
-
-async function toggleStudentEmployment(name) {
-    if (!name) return;
-    const next = !isStudentEmployed(name);
-    const prev = employmentStatusByStudent[name];
-    employmentStatusByStudent[name] = next;
-    try {
-        await classDbRef(`studentEmploymentStatus/${name}`).set(next);
-        renderStudentList();
-        const main = document.getElementById('resumeMainView');
-        if (main && !main.hidden) renderRegionStudentGrid();
-    } catch (e) {
-        console.error(e);
-        if (prev === undefined) delete employmentStatusByStudent[name];
-        else employmentStatusByStudent[name] = prev;
-        await appAlert('취업 상태 저장에 실패했습니다.');
-    }
-}
 function getStudentLatestBasic(name) {
     const list = resumeDataByStudent[name];
     if (!list?.length) return null;
@@ -248,19 +187,53 @@ function getStudentAttendanceRateLabel(name) {
     return `${rate}%`;
 }
 
+function getStudentSubmitLabel(name) {
+    const cnt = getSubmissionCount(name);
+    return cnt > 0 ? '제출' : '미제출';
+}
+
+function buildStudentListTableHtml(names, extraClass) {
+    const tableCls = extraClass ? `student-list-table ${extraClass}` : 'student-list-table';
+    const rows = names.map(name => {
+        const active = name === selectedStudent ? ' class="active"' : '';
+        const submit = getStudentSubmitLabel(name);
+        const submitCls = submit === '제출' ? 'submit-yes' : 'submit-no';
+        return `<tr data-name="${escAttr(name)}"${active}>
+            <td class="col-no">${getStudentRosterNumber(name)}</td>
+            <td class="col-name" title="${escAttr(name)}">${escHtml(name)}</td>
+            <td class="col-age">${escHtml(getStudentAgeLabel(name))}</td>
+            <td class="col-addr">${escHtml(getStudentAddressLabel(name))}</td>
+            <td class="col-att">${escHtml(getStudentAttendanceRateLabel(name))}</td>
+            <td class="col-submit ${submitCls}">${escHtml(submit)}</td>
+        </tr>`;
+    }).join('');
+    return `<table class="${tableCls}">
+        <colgroup>
+            <col class="col-no">
+            <col class="col-name">
+            <col class="col-age">
+            <col class="col-addr">
+            <col class="col-att">
+            <col class="col-submit">
+        </colgroup>
+        <thead><tr>
+            <th class="col-no">번호</th>
+            <th class="col-name">이름</th>
+            <th class="col-age">나이</th>
+            <th class="col-addr">주소</th>
+            <th class="col-att">출석률</th>
+            <th class="col-submit">제출</th>
+        </tr></thead>
+        <tbody>${rows}</tbody>
+    </table>`;
+}
+
 function bindStudentListTableRows(container) {
     container?.querySelectorAll('.student-list-table tbody tr').forEach(row => {
         row.addEventListener('click', () => {
             const name = row.dataset.name;
             if (name && name === selectedStudent) selectStudent('');
             else selectStudent(name);
-        });
-    });
-    container?.querySelectorAll('.col-employ-toggle').forEach(cell => {
-        cell.addEventListener('click', e => {
-            e.stopPropagation();
-            const name = cell.closest('tr')?.dataset.name;
-            if (name) toggleStudentEmployment(name);
         });
     });
 }
@@ -319,8 +292,6 @@ async function initKoreaMapPicker() {
         container: el,
         getSidoCount: getStudentCountBySido,
         getSigunguCount: getStudentCountBySigungu,
-        initialSido: filterSido,
-        initialSigungu: filterSigungu,
         onSelect(sido, sigungu) {
             applyRegionFilter(sido, sigungu, { fromMap: true });
         }
@@ -363,8 +334,13 @@ function updateFilterSummary() {
 
 function onRegionFilterChange() {
     updateFilterSummary();
-    renderStudentList();
-    if (!selectedStudent) renderMainView();
+    const filtered = getFilteredStudentNames();
+    if (selectedStudent && !filtered.includes(selectedStudent)) {
+        selectStudent('');
+    } else {
+        renderStudentList();
+        if (!selectedStudent) renderMainView();
+    }
 }
 
 function showMainView() {
@@ -403,7 +379,7 @@ function renderRegionStudentGrid() {
         return;
     }
     if (!filterSido) {
-        grid.innerHTML = '<div class="main-view-hint korea-map-table-hint">지도에서 시·도를 선택하면 학생 목록이 오른쪽에 표시됩니다.</div>';
+        grid.innerHTML = '<div class="main-view-hint korea-map-table-hint">지도에서 시·도를 선택하면 학생 목록이 아래에 표시됩니다.</div>';
         return;
     }
     grid.innerHTML = buildStudentListTableHtml(names, 'student-list-table-main');
@@ -413,11 +389,16 @@ function renderRegionStudentGrid() {
 function renderStudentList() {
     const el = document.getElementById('studentList');
     if (!el) return;
+    const names = getFilteredStudentNames();
     if (!studentNames.length) {
         el.innerHTML = '<div style="padding:20px;text-align:center;color:#94a3b8;">학생 데이터가 없습니다.</div>';
         return;
     }
-    el.innerHTML = buildStudentListTableHtml(studentNames);
+    if (!names.length) {
+        el.innerHTML = '<div style="padding:20px;text-align:center;color:#94a3b8;font-size:12px;">선택한 지역에 해당하는 학생이 없습니다.</div>';
+        return;
+    }
+    el.innerHTML = buildStudentListTableHtml(names);
     bindStudentListTableRows(el);
 }
 

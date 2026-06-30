@@ -1,1 +1,361 @@
-function a3_0x14c5(_0x386b4a,_0x358b3f){_0x386b4a=_0x386b4a-0x85;const _0x21f9e2=a3_0x29b2();let _0x51035b=_0x21f9e2[_0x386b4a];if(a3_0x14c5['qkhrWA']===undefined){var _0x435cd8=function(_0x15b035){const _0x4997f4='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x566914='',_0x1a8908='',_0x296119=_0x566914+_0x435cd8;for(let _0x12fdaf=0x0,_0x45bdde,_0x1a56a9,_0xa72e0a=0x0;_0x1a56a9=_0x15b035['charAt'](_0xa72e0a++);~_0x1a56a9&&(_0x45bdde=_0x12fdaf%0x4?_0x45bdde*0x40+_0x1a56a9:_0x1a56a9,_0x12fdaf++%0x4)?_0x566914+=_0x296119['charCodeAt'](_0xa72e0a+0xa)-0xa!==0x0?String['fromCharCode'](0xff&_0x45bdde>>(-0x2*_0x12fdaf&0x6)):_0x12fdaf:0x0){_0x1a56a9=_0x4997f4['indexOf'](_0x1a56a9);}for(let _0x52b1a3=0x0,_0x3bc40c=_0x566914['length'];_0x52b1a3<_0x3bc40c;_0x52b1a3++){_0x1a8908+='%'+('00'+_0x566914['charCodeAt'](_0x52b1a3)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x1a8908);};a3_0x14c5['iIVRCL']=_0x435cd8,a3_0x14c5['rVpqHs']={},a3_0x14c5['qkhrWA']=!![];}const _0x29b2cd=_0x21f9e2[0x0],_0x14c5bf=_0x386b4a+_0x29b2cd,_0x34a054=a3_0x14c5['rVpqHs'][_0x14c5bf];if(!_0x34a054){const _0x3cb6d5=function(_0x393f72){this['TNIsUR']=_0x393f72,this['aMgZdK']=[0x1,0x0,0x0],this['wWKEPy']=function(){return'newState';},this['SEMKhO']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['rCcjDW']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x3cb6d5['prototype']['KvMTKN']=function(){const _0x162952=new RegExp(this['SEMKhO']+this['rCcjDW']),_0x199441=_0x162952['test'](this['wWKEPy']['toString']())?--this['aMgZdK'][0x1]:--this['aMgZdK'][0x0];return this['Cchstl'](_0x199441);},_0x3cb6d5['prototype']['Cchstl']=function(_0x13b263){if(!Boolean(~_0x13b263))return _0x13b263;return this['piOSZD'](this['TNIsUR']);},_0x3cb6d5['prototype']['piOSZD']=function(_0x2b760e){for(let _0x42ffe4=0x0,_0x116abe=this['aMgZdK']['length'];_0x42ffe4<_0x116abe;_0x42ffe4++){this['aMgZdK']['push'](Math['round'](Math['random']())),_0x116abe=this['aMgZdK']['length'];}return _0x2b760e(this['aMgZdK'][0x0]);},new _0x3cb6d5(a3_0x14c5)['KvMTKN'](),_0x51035b=a3_0x14c5['iIVRCL'](_0x51035b),a3_0x14c5['rVpqHs'][_0x14c5bf]=_0x51035b;}else _0x51035b=_0x34a054;return _0x51035b;}const a3_0x5a3ef1=a3_0x14c5;function a3_0x29b2(){const _0x409f51=['AM9PBG','BgvUz3rO','y29UDgfPBMvY','y2XHC3m','iokaUIa','A29YzweTC2LNDw5NDs10B3bVlMPZB24','7zwC67cy64+eioYNGoUpHoYxKoYeNcdSI5ZcT+UpHoULVcdTGBtRPQ3TLzJSHlJSMPqUioUNIoYASoYkPoULVcdSMkZRPQZRQBqG7kEa7jET7j20ioQWLEYHSoUqQEUlIoUlPc4','C2LKB1rVCg8','mti5nJeZnNvttgj1DW','i2TVCMvHtwfWu2vQB25NqNrU','zxjYB3i','C2LNDw5NDq','AgfZu3r1zgvUDhm','i2jIzJDKma','C2vSzwn0','z2v0u2LKB0nVDw50','kcGOlISPkYKRksSK','C3rYB2TL','A2v5CW','zMvHDhvYzxm','ChjVCgvYDgLLCW','iZi1nJnLyG','Cg9PBNrLCI1LDMvUDhm','y3vYCMvUDfrHCMDLDa','Aw5PDgLHBfnPz3vUz3u','mtmZntG3mgT1AurXra','Dg9tDhjPBMC','Bw91C2vSzwf2zq','B25tzwXLy3q','pgrPDIbJBgfZCZ0IBwfPBI12Awv3lwHPBNqIpUYNGoUpHcdRNBZSNBtRUiZRN6ZRPQWOrdmUANmP66w8ioU2IoUFRoYyPoYNGcdRQRVTLOJSIRxRI4JRI6qUioYdIoUHNoQZOoY5QcdTM4qG64UK7iUCioYlNoUpHo2vTcdSO7ZSHlJSMPqUpc9KAxy+','jMD0oW','jMfTCdS','zgvMyxvSDa','C2vSzwn0zwrtAwrV','cIaGicaGicaGicaGicaGica8l2rPDJ4kicaGicaGicaGicaGicaGidXWignSyxnZpsjRB3jLys1TyxaTz3vPzguIpG','mZu2oteXmvnurhvYwq','A3joyw1L','C2LNDw5NDvrVCg8','mtfWEa','y29UC3rYDwn0B3i','s1jFu0Let19ut19hqurn','zgf0yxnLDa','pgrPDIbJBgfZCZ0IBwfPBI12Awv3lwHPBNqIpUYNGoUpHoULVcdRTOJRN6ZSMktRIPqG7ksrlI4Upc9KAxy+','C2LNDw5NDu1HCa','Dgv4Da','Dgv4Dc1HBMnOB3i','B2jQzwn0CW','BgfIzwXtzwXLy3rLza','DMLLD0jVEa','C2vSzwn0zwq','Cgf0Aa','ywXS','C2vSzwn0qwXS','zMLSBa','A29YzweTC2LKBY10B3bVlMPZB24','7iUCWRFQTBdcT+Q1RcdQSR3QS4tRPBWG7yg066AT7zwy66M0io2vToUlUsdSP4dSL60G7zwz7ioDioUQQEUHNEYDTcdSMktRPBJSQR3SL5aG7zgC7iUC65cP64Ui64UKlIdQSjNSNyaG7kEa7jET7j2eioUlPoYlNcdTGBtRPQ3TLzJRQBqG7isG7yoD7j20io2vToYGNoUqQEUlIoUlPc4','yxbWBhK','mc4ZnwvT','igLZlwfJDgL2zq','z2vVtwvYy2f0B3i','zgf0yq','Aw5PDgLHBfnPzg8','6Rsr7jET7iUC','rMvHDhvYzunVBgXLy3rPB24','zML0rxH0zw50','tKfnrv8X','z2vVugf0Aa','mJe0mty5mdrjqwHhExu','yxbWzw5K','pc9WpGOGicaGicaGicaGicaGicaGpgrPDIbPzd0IA29Yzwfem01HCeHVC3qIignSyxnZpsjRB3jLys1KmY1TyxaTAg9ZDci+pc9KAxy+cIaGicaGicaGicaGicaGica','y2XPy2S','ywrKrxzLBNrmAxn0zw5LCG','mtGXnZq3mLjrAgvKBW','cIaGicaGicaGicaGidXKAxyGy2XHC3m9iMTVCMvHlw1HCc1LEhbSB3jLCI1PBM5LCIi+cIaGicaGicaGicaGicaGica8zgL2ignSyxnZpsjRB3jLys1TyxaTAgvHzci+cIaGicaGicaGicaGicaGicaGicaGpgrPDJ4kicaGicaGicaGicaGicaGicaGicaGicaGpgrPDIbJBgfZCZ0IA29YzweTBwfWlwTPy2TLCIi+8j+xUU+4JYdSP4dRJ4tSL5dSHjWG7kEa7jETioYeOo2dNtWVzgL2pGOGicaGicaGicaGicaGicaGicaGicaGica8zgL2ignSyxnZpsjRB3jLys1TyxaTyNjLywrJCNvTyIi+','7yQ567oe7j6q7lMy64+e','zNvUy3rPB24','C3zN','Ag92zxi','yxr0CG','A29YzweTz2fKBs1ZAwD1BMD1lw1HCc5QC29U','pgj1DhrVBIb0ExbLpsjIDxr0B24IignSyxnZpsjRB3jLys1TyxaTyMfJAYiGAwq9iMTVCMvHtwfWqMfJA0j0BIi+4PEaioYGHoQ1RsdSP4dRJ4q8l2j1DhrVBJ4','BwLU','Cgf0Ac5RB3jLys1KmY1YzwDPB24','nZaW','7yQ567oe7j6q7lMy7iUC','C3r5Bgu','A29YzweTzdmTC3zN','Dw5KzwzPBMvK','i2zMzMzMzG','DhjHBNnMB3jT','Bw91C2vLBNrLCG','C3rYAw5N','7is47kkf7iUC','A29YzweTzdmTCMvNAw9U','zw5KC1DPDgG','Aw5Uzxjive1m','zM9UDc13zwLNAhq','Dgv4Dc5RB3jLys1KmY1SywjLBa','DhjHBNnSyxrLka','mtaWndeXmfL4qMDYuG','C3rYB2TLlxDPzhrO','i2TVCMvHtwfWqMfJA0j0BG','nNbTrM1puq','CMvWBgfJzq','r0fetv9tsurpx1rpx0Ts','pc9IDxr0B24+cIaGicaGicaGicaGidWVzgL2pG','Dgv4Dc5RB3jLys1KmY1SywjLBc1ZBq','i2TVCMvHrdnnyxbiB3n0','BM9Uzq','iIbKyxrHlxnPz3vUz3u9iUYeUoYIHEYlNci+7is47kkf7iUCia','oxb4','y2vUDhjVAwq','pgrPDIbJBgfZCZ0IBwfPBI12Awv3lwHPBNqIpUYDTcdSI5ZcT+UpHoYDMcdSG4hSHlGG7kEa64+eioUnSoYDTo2eSoULVcdRTOJRN6ZSMkWG7iIyioYxHUYkTEUlIoUlPc4G7iob64UOioUtNoUHREUlPoYAToYDHcdSNBtSMQNTLBqG7ko87is47jQulJWVzgL2pG','pgrPDIbJBgfZCZ0IA29YzweTBwfWlxnLAM9UzY1UB3rLiJ48yNv0Dg9Uihr5Cgu9iMj1DhrVBIiGy2XHC3m9iMTVCMvHlw1HCc1ZzwPVBMCTyNrUiIbPzd0IA29YzwfnyxbtzwPVBMDcDg4IpUYeUoYIHE2kUEUZHoYEKoY5MoYlNdWVyNv0Dg9UpJWVzgL2pG','cIaGicaGicaGicaGidWVzgL2pG','A29YzweTzdmTBgfIzwWTC20','7is47kkf7yQ567oe7j6q7lMy7iUC','r0fetv9tsuDvtKDvx09wrvjssurfuW','zM9UDc1ZAxPL','A29YzweTzdmTBgfIzwW','Cg9PBNrLCG','BwLKzgXL','DgHLBG','Bwf4','C3rYB2TLsg92zxi','y2XPzw50v2LKDgG','CMvHzhK','CxvLCNLtzwXLy3rVCG','y3vYC29Y','C2vHCMnO','z2v0u2LNDw5NDunVDw50','C2vSzwn0zwrtAwD1BMD1','igLZlxvUBwfWCgvK','mteXntCWtxPTywDR'];a3_0x29b2=function(){return _0x409f51;};return a3_0x29b2();}(function(_0x142841,_0x2b062d){const _0x2ad683=a3_0x14c5,_0xbe912e=_0x142841();while(!![]){try{const _0x3d8bd2=-parseInt(_0x2ad683(0xc6))/0x1+parseInt(_0x2ad683(0x9b))/0x2+parseInt(_0x2ad683(0xbd))/0x3+-parseInt(_0x2ad683(0x106))/0x4+parseInt(_0x2ad683(0xd7))/0x5*(-parseInt(_0x2ad683(0x9e))/0x6)+-parseInt(_0x2ad683(0xe1))/0x7+parseInt(_0x2ad683(0x101))/0x8;if(_0x3d8bd2===_0x2b062d)break;else _0xbe912e['push'](_0xbe912e['shift']());}catch(_0x4046ac){_0xbe912e['push'](_0xbe912e['shift']());}}}(a3_0x29b2,0xa82a7),function(_0x12fdaf){const _0x40276b=a3_0x14c5,_0x45bdde=(function(){let _0x544b33=!![];return function(_0x3dd5a8,_0xdd4aed){const _0x287571=_0x544b33?function(){const _0x214cb3=a3_0x14c5;if(_0xdd4aed){const _0x40973e=_0xdd4aed[_0x214cb3(0xf6)](_0x3dd5a8,arguments);return _0xdd4aed=null,_0x40973e;}}:function(){};return _0x544b33=![],_0x287571;};}()),_0x1a56a9=_0x45bdde(this,function(){const _0x388495=a3_0x14c5;return _0x1a56a9[_0x388495(0xd8)]()[_0x388495(0xb9)]('(((.+)+)+)+$')[_0x388495(0xd8)]()[_0x388495(0xe5)](_0x1a56a9)[_0x388495(0xb9)](_0x388495(0xce));});_0x1a56a9();'use strict';const _0xa72e0a={'default':'#dbeafe','hover':'#93c5fd','selected':_0x40276b(0xd3),'stroke':'#64748b','strokeHover':'#1d4ed8','hasStudents':_0x40276b(0xcb),'label':'#1e293b','labelSelected':_0x40276b(0x90)},_0x52b1a3={'container':null,'selectedSido':'','selectedSigungu':'','getSidoCount':()=>0x0,'getSigunguCount':()=>0x0,'onSelect':null,'sidoTopo':null,'sigunguTopo':null,'sigunguMap':null,'ready':![]};function _0x3bc40c(_0x2ddeda){const _0x139824=_0x40276b;return String(_0x2ddeda||'')[_0x139824(0x9f)](/&/g,_0x139824(0xdd))[_0x139824(0x9f)](/</g,'&lt;')[_0x139824(0x9f)](/>/g,_0x139824(0xdc));}function _0x3cb6d5(_0x5cc3c7){const _0x112327=_0x40276b;if(!_0x5cc3c7)return'';if(_0x5cc3c7[_0x112327(0x96)](_0x112327(0xfc)))return _0x5cc3c7[_0x112327(0x9f)](/광역시$/,'');if(_0x5cc3c7[_0x112327(0x96)]('특별시'))return _0x5cc3c7[_0x112327(0x9f)](/특별시$/,'');if(_0x5cc3c7[_0x112327(0x96)](_0x112327(0x8c)))return _0x5cc3c7[_0x112327(0x9f)](/특별자치시$/,'')||'세종';if(_0x5cc3c7[_0x112327(0x96)](_0x112327(0x108)))return _0x5cc3c7['replace'](/특별자치도$/,'');return _0x5cc3c7;}const _0x393f72={'경기도':{'dx':0x10,'dy':0x2a}};function _0x162952(_0x289ade){return _0x393f72[_0x289ade]||{'dx':0x0,'dy':0x0};}function _0x199441(){const _0x181552=_0x40276b;return typeof d3!==_0x181552(0x8f)&&typeof topojson!==_0x181552(0x8f);}async function _0x13b263(){const _0x3edb52=_0x40276b;if(_0x52b1a3[_0x3edb52(0xc5)]&&_0x52b1a3[_0x3edb52(0xe3)]&&_0x52b1a3[_0x3edb52(0xe9)])return;const [_0x14dd8e,_0x2b888c,_0x1641ec]=await Promise[_0x3edb52(0xf1)]([fetch(_0x3edb52(0xf4))[_0x3edb52(0xb2)](_0x29ee78=>_0x29ee78['json']()),fetch(_0x3edb52(0xc3))['then'](_0x50df90=>_0x50df90['json']()),fetch(_0x3edb52(0x87))[_0x3edb52(0xb2)](_0x3a1125=>_0x3a1125['json']())]);_0x52b1a3[_0x3edb52(0xc5)]=_0x14dd8e,_0x52b1a3['sigunguTopo']=_0x2b888c,_0x52b1a3['sigunguMap']=_0x1641ec;}function _0x2b760e(){const _0x26f6ad=_0x40276b,_0x3d867f=Object[_0x26f6ad(0xd0)](_0x52b1a3[_0x26f6ad(0xc5)]['objects'])[0x0];return topojson['feature'](_0x52b1a3[_0x26f6ad(0xc5)],_0x52b1a3[_0x26f6ad(0xc5)][_0x26f6ad(0xec)][_0x3d867f])['features'];}function _0x42ffe4(_0xa8fbe2){const _0xee6eb3=_0x40276b,_0x5e8ec3=_0x12fdaf[_0xee6eb3(0xe6)]&&KR_SIDO_TO_GADM[_0xa8fbe2];if(!_0x5e8ec3)return[];const _0x2a5972=Object[_0xee6eb3(0xd0)](_0x52b1a3[_0xee6eb3(0xe3)][_0xee6eb3(0xec)])[0x0],_0x2c66cd=topojson['feature'](_0x52b1a3[_0xee6eb3(0xe3)],_0x52b1a3['sigunguTopo']['objects'][_0x2a5972])[_0xee6eb3(0xd1)];return _0x2c66cd['filter'](_0x58a4b2=>_0x58a4b2['properties'][_0xee6eb3(0xff)]===_0x5e8ec3);}function _0x116abe(_0x5f01c4,_0x3dd372){const _0x3aca74=_0x40276b,_0x2a5e34=_0x12fdaf[_0x3aca74(0xad)]&&GADM_SIGUNGU_OVERRIDES[_0x5f01c4];if(_0x2a5e34&&_0x2a5e34[_0x3dd372])return _0x2a5e34[_0x3dd372];const _0x38d1b6=_0x52b1a3['sigunguMap']&&_0x52b1a3[_0x3aca74(0xe9)][_0x5f01c4];if(_0x38d1b6&&_0x38d1b6[_0x3dd372])return _0x38d1b6[_0x3dd372];return null;}function _0x35c535(){const _0x4a6469=_0x40276b,_0x5dfa4e=!!_0x52b1a3[_0x4a6469(0xdf)],_0x532b6e=!_0x52b1a3[_0x4a6469(0xdf)]?'전국':_0x52b1a3[_0x4a6469(0xbb)]?_0x3cb6d5(_0x52b1a3[_0x4a6469(0xdf)])+_0x4a6469(0xc2)+_0x52b1a3[_0x4a6469(0xbb)]:_0x3cb6d5(_0x52b1a3['selectedSido']);_0x52b1a3[_0x4a6469(0xc0)]['innerHTML']=_0x4a6469(0x107)+_0x3bc40c(_0x532b6e)+'</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+(_0x5dfa4e?_0x4a6469(0x88):'')+_0x4a6469(0xe0)+(_0x5dfa4e?_0x4a6469(0xf5):_0x4a6469(0xc4))+_0x4a6469(0x103)+(!_0x52b1a3['selectedSido']?_0x4a6469(0xa9):'')+_0x4a6469(0xaa),_0x52b1a3[_0x4a6469(0xc0)][_0x4a6469(0xb7)](_0x4a6469(0x9d))?.[_0x4a6469(0x105)](_0x4a6469(0x104),()=>_0x12cd02('','')),_0x52b1a3['container'][_0x4a6469(0xb7)](_0x4a6469(0xc7))?.[_0x4a6469(0x105)](_0x4a6469(0x104),()=>{const _0x386f27=_0x4a6469;if(_0x52b1a3[_0x386f27(0xdf)]==='세종특별자치시')_0x12cd02('','');else _0x12cd02('세종특별자치시','');});}function _0x82c6b3(_0x19e890){const _0x3b6205=_0x40276b,_0x427e5c=_0x19e890[_0x3b6205(0xb5)]||0x2d0,_0x182fd6=Math[_0x3b6205(0xb3)](0x1a4,Math[_0x3b6205(0x89)](0x230,_0x427e5c*1.15));_0x19e890['innerHTML']='';const _0x65aacd=d3['select'](_0x19e890)['append'](_0x3b6205(0x10a))[_0x3b6205(0x86)](_0x3b6205(0xee),'0\x200\x20'+_0x427e5c+'\x20'+_0x182fd6)[_0x3b6205(0x86)](_0x3b6205(0xc1),_0x3b6205(0x8e)),_0x4c2565=_0x65aacd[_0x3b6205(0x102)]('g'),_0x2d65d8=_0x2b760e(),_0x541a08=d3[_0x3b6205(0xf9)]()[_0x3b6205(0xfe)]([[0x18,0x10],[_0x427e5c-0x18,_0x182fd6-0x10]],{'type':_0x3b6205(0xfd),'features':_0x2d65d8}),_0x134442=d3[_0x3b6205(0x100)](_0x541a08),_0x4bde60=_0x4c2565[_0x3b6205(0xf2)](_0x3b6205(0x8a))['data'](_0x2d65d8)[_0x3b6205(0xbe)](_0x3b6205(0xf0))[_0x3b6205(0x86)]('class',_0x3b6205(0x95))[_0x3b6205(0x86)]('d',_0x134442)[_0x3b6205(0x86)](_0x3b6205(0xf3),_0x1b606b=>{const _0x6d9323=_0x3b6205,_0x31780f=_0x12fdaf[_0x6d9323(0xa0)][_0x1b606b[_0x6d9323(0xd2)][_0x6d9323(0xff)]];if(_0x31780f===_0x52b1a3['selectedSido'])return _0xa72e0a['selected'];if(_0x52b1a3['getSidoCount'](_0x31780f)>0x0)return _0xa72e0a[_0x6d9323(0xca)];return _0xa72e0a[_0x6d9323(0xde)];})['attr'](_0x3b6205(0xcf),_0xa72e0a['stroke'])[_0x3b6205(0x86)](_0x3b6205(0x9c),0x1)[_0x3b6205(0x8d)](_0x3b6205(0xb8),_0x3b6205(0xb0))['on']('mouseenter',function(_0xc6e92c,_0x1293c4){const _0x254ffb=_0x3b6205;_0x12fdaf[_0x254ffb(0xa0)][_0x1293c4[_0x254ffb(0xd2)]['NAME_1']]!==_0x52b1a3[_0x254ffb(0xdf)]&&d3[_0x254ffb(0xcc)](this)['attr'](_0x254ffb(0xf3),_0xa72e0a[_0x254ffb(0x85)])[_0x254ffb(0x86)](_0x254ffb(0xcf),_0xa72e0a[_0x254ffb(0xb4)])[_0x254ffb(0x86)]('stroke-width',1.5);})['on'](_0x3b6205(0xd9),function(_0x201f99,_0x3e19cb){const _0x28b4c5=_0x3b6205,_0x4eacf7=_0x12fdaf['GADM_SIDO_TO_KR'][_0x3e19cb[_0x28b4c5(0xd2)][_0x28b4c5(0xff)]],_0xe8514a=_0x4eacf7===_0x52b1a3[_0x28b4c5(0xdf)]?_0xa72e0a[_0x28b4c5(0xef)]:_0x52b1a3['getSidoCount'](_0x4eacf7)>0x0?_0xa72e0a[_0x28b4c5(0xca)]:_0xa72e0a['default'];d3['select'](this)[_0x28b4c5(0x86)](_0x28b4c5(0xf3),_0xe8514a)[_0x28b4c5(0x86)](_0x28b4c5(0xcf),_0xa72e0a[_0x28b4c5(0xcf)])[_0x28b4c5(0x86)](_0x28b4c5(0x9c),0x1);})['on'](_0x3b6205(0x104),(_0x461658,_0x47ebe2)=>{const _0x2122f7=_0x3b6205,_0x5d73c7=_0x12fdaf[_0x2122f7(0xa0)][_0x47ebe2['properties']['NAME_1']];if(!_0x5d73c7)return;if(_0x52b1a3['selectedSido']===_0x5d73c7)_0x12cd02('','');else _0x12cd02(_0x5d73c7,'');});_0x4c2565[_0x3b6205(0xf2)](_0x3b6205(0x99))['data'](_0x2d65d8)[_0x3b6205(0xbe)](_0x3b6205(0xea))[_0x3b6205(0x86)](_0x3b6205(0xc1),_0x3b6205(0xaf))[_0x3b6205(0x86)](_0x3b6205(0x91),_0x280936=>{const _0x1a05d5=_0x3b6205,_0x223eae=_0x134442[_0x1a05d5(0xa7)](_0x280936),_0x2ab47f=_0x12fdaf['GADM_SIDO_TO_KR'][_0x280936[_0x1a05d5(0xd2)][_0x1a05d5(0xff)]],_0x256fe5=_0x162952(_0x2ab47f);return _0x1a05d5(0x9a)+(_0x223eae[0x0]+_0x256fe5['dx'])+','+(_0x223eae[0x1]+_0x256fe5['dy'])+')';})[_0x3b6205(0x86)](_0x3b6205(0xeb),'middle')[_0x3b6205(0x86)]('dy',_0x3b6205(0xf7))['attr'](_0x3b6205(0xf3),_0x4b2c40=>_0x12fdaf['GADM_SIDO_TO_KR'][_0x4b2c40[_0x3b6205(0xd2)][_0x3b6205(0xff)]]===_0x52b1a3['selectedSido']?_0xa72e0a[_0x3b6205(0xed)]:_0xa72e0a['label'])['attr'](_0x3b6205(0xd4),_0x3b6205(0xa4))[_0x3b6205(0x8d)](_0x3b6205(0xae),_0x3b6205(0xe4))['style'](_0x3b6205(0x98),_0x3b6205(0x8b))[_0x3b6205(0xea)](_0x5388f3=>{const _0x2229f6=_0x3b6205,_0x51a56d=_0x12fdaf['GADM_SIDO_TO_KR'][_0x5388f3[_0x2229f6(0xd2)][_0x2229f6(0xff)]],_0x5719bc=_0x51a56d?_0x52b1a3['getSidoCount'](_0x51a56d):0x0,_0x1c16d1=_0x51a56d?_0x3cb6d5(_0x51a56d):_0x5388f3[_0x2229f6(0xd2)]['NAME_1'];return _0x5719bc?_0x1c16d1+'\x20('+_0x5719bc+')':_0x1c16d1;});}function _0x4454a5(_0x4923be){const _0x5898b7=_0x40276b,_0x8c90f9=_0x4923be[_0x5898b7(0xb5)]||0x2d0,_0x1a0620=Math[_0x5898b7(0xb3)](0x1a4,Math[_0x5898b7(0x89)](0x230,_0x8c90f9*1.05));_0x4923be['innerHTML']='';const _0x49db1c=_0x52b1a3[_0x5898b7(0xdf)];if(_0x49db1c===_0x5898b7(0xac)){_0x4923be[_0x5898b7(0x97)]='<div\x20class=\x22korea-map-sejong-panel\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p><strong>세종특별자치시</strong></p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20type=\x22button\x22\x20class=\x22korea-map-sejong-select'+(_0x52b1a3[_0x5898b7(0xbb)]===_0x5898b7(0x94)?_0x5898b7(0xf8):'')+_0x5898b7(0xa5)+(_0x52b1a3[_0x5898b7(0xba)](_0x49db1c,_0x5898b7(0x94))?'('+_0x52b1a3[_0x5898b7(0xba)](_0x49db1c,_0x5898b7(0x94))+'명)':'')+_0x5898b7(0xa1),_0x4923be[_0x5898b7(0xb7)]('.korea-map-sejong-select')?.[_0x5898b7(0x105)]('click',_0x3f0910=>{const _0x44e905=_0x5898b7,_0x16dc86=_0x3f0910[_0x44e905(0xd5)][_0x44e905(0xe7)][_0x44e905(0xc9)];if(_0x52b1a3[_0x44e905(0xbb)]===_0x16dc86)_0x12cd02(_0x49db1c,'');else _0x12cd02(_0x49db1c,_0x16dc86);});return;}const _0x19798b=_0x42ffe4(_0x49db1c);if(!_0x19798b[_0x5898b7(0xbf)]){_0x4923be[_0x5898b7(0x97)]=_0x5898b7(0xa8);return;}const _0xe54408=d3[_0x5898b7(0xcc)](_0x4923be)[_0x5898b7(0x102)]('svg')[_0x5898b7(0x86)](_0x5898b7(0xee),'0\x200\x20'+_0x8c90f9+'\x20'+_0x1a0620)[_0x5898b7(0x86)](_0x5898b7(0xc1),_0x5898b7(0x8e)),_0xa48181=_0xe54408['append']('g'),_0x509e0a={'type':'FeatureCollection','features':_0x19798b},_0xdb1565=d3[_0x5898b7(0xf9)]()[_0x5898b7(0xfe)]([[0x14,0x14],[_0x8c90f9-0x14,_0x1a0620-0x14]],_0x509e0a),_0x36bd26=d3[_0x5898b7(0x100)](_0xdb1565),_0x57af97=_0x19798b['map'](_0xd7f991=>{const _0x27565b=_0x116abe(_0x49db1c,_0xd7f991['properties']['NAME_2']);return{..._0xd7f991,'krName':_0x27565b};});_0xa48181[_0x5898b7(0xf2)](_0x5898b7(0x8a))[_0x5898b7(0xfa)](_0x57af97)[_0x5898b7(0xbe)](_0x5898b7(0xf0))[_0x5898b7(0x86)](_0x5898b7(0xc1),_0x364d1d=>_0x5898b7(0x95)+(_0x364d1d[_0x5898b7(0xe2)]?'':_0x5898b7(0xbc)))['attr']('d',_0x36bd26)[_0x5898b7(0x86)](_0x5898b7(0xf3),_0x378b8b=>{const _0x26ca7e=_0x5898b7;if(_0x378b8b['krName']&&_0x378b8b['krName']===_0x52b1a3[_0x26ca7e(0xbb)])return _0xa72e0a['selected'];if(_0x378b8b[_0x26ca7e(0xe2)]&&_0x52b1a3[_0x26ca7e(0xba)](_0x49db1c,_0x378b8b[_0x26ca7e(0xe2)])>0x0)return _0xa72e0a[_0x26ca7e(0xca)];return _0x378b8b[_0x26ca7e(0xe2)]?_0xa72e0a[_0x26ca7e(0xde)]:'#f1f5f9';})['attr'](_0x5898b7(0xcf),_0xa72e0a[_0x5898b7(0xcf)])[_0x5898b7(0x86)]('stroke-width',0.8)[_0x5898b7(0x8d)](_0x5898b7(0xb8),_0x2bb5d7=>_0x2bb5d7['krName']?_0x5898b7(0xb0):_0x5898b7(0xde))['on'](_0x5898b7(0x92),function(_0x5c0ed2,_0x7702ce){const _0x44c922=_0x5898b7;if(!_0x7702ce[_0x44c922(0xe2)])return;_0x7702ce[_0x44c922(0xe2)]!==_0x52b1a3['selectedSigungu']&&d3[_0x44c922(0xcc)](this)[_0x44c922(0x86)](_0x44c922(0xf3),_0xa72e0a[_0x44c922(0x85)])[_0x44c922(0x86)](_0x44c922(0xcf),_0xa72e0a[_0x44c922(0xb4)]);})['on'](_0x5898b7(0xd9),function(_0x4884f8,_0x410889){const _0x5b6013=_0x5898b7;if(!_0x410889['krName'])return;const _0x53c7e9=_0x410889[_0x5b6013(0xe2)]===_0x52b1a3[_0x5b6013(0xbb)]?_0xa72e0a[_0x5b6013(0xef)]:_0x52b1a3[_0x5b6013(0xba)](_0x49db1c,_0x410889[_0x5b6013(0xe2)])>0x0?_0xa72e0a[_0x5b6013(0xca)]:_0xa72e0a[_0x5b6013(0xde)];d3[_0x5b6013(0xcc)](this)[_0x5b6013(0x86)]('fill',_0x53c7e9)['attr'](_0x5b6013(0xcf),_0xa72e0a[_0x5b6013(0xcf)]);})['on'](_0x5898b7(0x104),(_0x4b467,_0x3057bd)=>{const _0x4a63d7=_0x5898b7;if(!_0x3057bd[_0x4a63d7(0xe2)])return;if(_0x52b1a3['selectedSigungu']===_0x3057bd['krName'])_0x12cd02(_0x49db1c,'');else _0x12cd02(_0x49db1c,_0x3057bd[_0x4a63d7(0xe2)]);}),_0xa48181['selectAll'](_0x5898b7(0xa2))[_0x5898b7(0xfa)](_0x57af97['filter'](_0x10a471=>_0x10a471[_0x5898b7(0xe2)]))[_0x5898b7(0xbe)](_0x5898b7(0xea))['attr']('class',_0x5898b7(0xab))['attr'](_0x5898b7(0x91),_0x5219ce=>{const _0xc7c45=_0x5898b7,_0x13e25a=_0x36bd26[_0xc7c45(0xa7)](_0x5219ce);return _0xc7c45(0x9a)+_0x13e25a[0x0]+','+_0x13e25a[0x1]+')';})[_0x5898b7(0x86)](_0x5898b7(0xeb),_0x5898b7(0xb1))[_0x5898b7(0x86)]('dy','0.35em')[_0x5898b7(0x86)]('fill',_0x4a29c9=>_0x4a29c9[_0x5898b7(0xe2)]===_0x52b1a3[_0x5898b7(0xbb)]?_0xa72e0a[_0x5898b7(0xed)]:_0xa72e0a['label'])[_0x5898b7(0x86)](_0x5898b7(0xd4),_0x5898b7(0xa4))[_0x5898b7(0x8d)](_0x5898b7(0xae),_0x5898b7(0xa6))['style'](_0x5898b7(0x98),_0x5898b7(0x8b))['text'](_0x21a29f=>{const _0x47e636=_0x5898b7,_0x2e34fb=_0x52b1a3[_0x47e636(0xba)](_0x49db1c,_0x21a29f['krName']);return _0x2e34fb?_0x21a29f[_0x47e636(0xe2)]+'('+_0x2e34fb+')':_0x21a29f[_0x47e636(0xe2)];});}function _0x40342d(){const _0x198459=_0x40276b,_0x2eb8e7=_0x52b1a3[_0x198459(0xc0)]?.[_0x198459(0xb7)](_0x198459(0xa3));if(!_0x2eb8e7||!_0x52b1a3[_0x198459(0xb6)])return;if(_0x52b1a3[_0x198459(0xdf)])_0x4454a5(_0x2eb8e7);else _0x82c6b3(_0x2eb8e7);}function _0x543c0b(){const _0x313be7=_0x40276b;if(!_0x52b1a3[_0x313be7(0xc0)])return;_0x35c535(),_0x40342d();}function _0x12cd02(_0x2626ca,_0x44538c,_0x237a67){const _0x5ee77d=_0x40276b;_0x52b1a3[_0x5ee77d(0xdf)]=_0x2626ca||'',_0x52b1a3[_0x5ee77d(0xbb)]=_0x44538c||'',_0x543c0b(),!_0x237a67&&typeof _0x52b1a3[_0x5ee77d(0xda)]===_0x5ee77d(0x109)&&_0x52b1a3[_0x5ee77d(0xda)](_0x52b1a3[_0x5ee77d(0xdf)],_0x52b1a3['selectedSigungu']);}function _0x2e9898(_0x452804,_0x2889b9){const _0x360ae2=_0x40276b,_0x301212=_0x452804||'',_0x5accd2=_0x2889b9||'';if(_0x52b1a3[_0x360ae2(0xdf)]===_0x301212&&_0x52b1a3['selectedSigungu']===_0x5accd2)return;_0x52b1a3['selectedSido']=_0x301212,_0x52b1a3['selectedSigungu']=_0x5accd2,_0x543c0b();}async function _0x5e7368(_0x6484d2){const _0x16a58c=_0x40276b;_0x52b1a3[_0x16a58c(0xc0)]=typeof _0x6484d2[_0x16a58c(0xc0)]===_0x16a58c(0x93)?document['getElementById'](_0x6484d2[_0x16a58c(0xc0)]):_0x6484d2[_0x16a58c(0xc0)];if(!_0x52b1a3['container'])return;_0x52b1a3[_0x16a58c(0xcd)]=_0x6484d2[_0x16a58c(0xcd)]||(()=>0x0),_0x52b1a3['getSigunguCount']=_0x6484d2[_0x16a58c(0xba)]||(()=>0x0),_0x52b1a3[_0x16a58c(0xda)]=_0x6484d2['onSelect']||null;if(!_0x199441()){_0x52b1a3['container'][_0x16a58c(0x97)]=_0x16a58c(0xdb);return;}_0x52b1a3[_0x16a58c(0xc0)][_0x16a58c(0x97)]=_0x16a58c(0xe8);try{await _0x13b263(),_0x52b1a3[_0x16a58c(0xb6)]=!![],_0x6484d2['initialSido']!=null&&(_0x52b1a3['selectedSido']=_0x6484d2[_0x16a58c(0xfb)],_0x52b1a3[_0x16a58c(0xbb)]=_0x6484d2[_0x16a58c(0xd6)]||''),_0x543c0b();}catch(_0x1b91cf){console[_0x16a58c(0xc8)](_0x1b91cf),_0x52b1a3['container'][_0x16a58c(0x97)]='<div\x20class=\x22main-view-hint\x22>지도\x20데이터를\x20불러오지\x20못했습니다.</div>';}}function _0xb08cbe(){const _0x5ea5f8=_0x40276b;if(!_0x52b1a3[_0x5ea5f8(0xb6)])return;_0x40342d();}_0x12fdaf['KoreaMapPicker']={'init':_0x5e7368,'syncFromFilter':_0x2e9898,'refreshCounts':_0xb08cbe,'setSelection':_0x12cd02};}(typeof window!==a3_0x5a3ef1(0x8f)?window:globalThis));
+/**
+ * korea-map-picker.js — D3.js + TopoJSON 클릭형 한반도 지도 (PC 전용)
+ */
+(function (global) {
+    'use strict';
+
+    const COLORS = {
+        default: '#dbeafe',
+        hover: '#93c5fd',
+        selected: '#2563eb',
+        stroke: '#64748b',
+        strokeHover: '#1d4ed8',
+        hasStudents: '#bbf7d0',
+        label: '#1e293b',
+        labelSelected: '#ffffff'
+    };
+
+    const state = {
+        container: null,
+        selectedSido: '',
+        selectedSigungu: '',
+        getSidoCount: () => 0,
+        getSigunguCount: () => 0,
+        onSelect: null,
+        sidoTopo: null,
+        sigunguTopo: null,
+        sigunguMap: null,
+        ready: false
+    };
+
+    function escHtml(s) {
+        return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    /** 지도·브레드크럼용 시·도 표기 (광역시는 약칭, 일반 도는 ○○도 유지) */
+    function mapSidoLabel(sido) {
+        if (!sido) return '';
+        if (sido.endsWith('광역시')) return sido.replace(/광역시$/, '');
+        if (sido.endsWith('특별시')) return sido.replace(/특별시$/, '');
+        if (sido.endsWith('특별자치시')) return sido.replace(/특별자치시$/, '') || '세종';
+        if (sido.endsWith('특별자치도')) return sido.replace(/특별자치도$/, '');
+        return sido;
+    }
+
+    const SIDO_LABEL_OFFSETS = {
+        '경기도': { dx: 16, dy: 42 }
+    };
+
+    function getSidoLabelOffset(kr) {
+        return SIDO_LABEL_OFFSETS[kr] || { dx: 0, dy: 0 };
+    }
+
+    function ensureD3() {
+        return typeof d3 !== 'undefined' && typeof topojson !== 'undefined';
+    }
+
+    async function loadMapData() {
+        if (state.sidoTopo && state.sigunguTopo && state.sigunguMap) return;
+        const [sidoTopo, sigunguTopo, sigunguMap] = await Promise.all([
+            fetch('korea-sido-topo.json').then(r => r.json()),
+            fetch('korea-sigungu-topo.json').then(r => r.json()),
+            fetch('korea-gadm-sigungu-map.json').then(r => r.json())
+        ]);
+        state.sidoTopo = sidoTopo;
+        state.sigunguTopo = sigunguTopo;
+        state.sigunguMap = sigunguMap;
+    }
+
+    function getSidoFeatures() {
+        const key = Object.keys(state.sidoTopo.objects)[0];
+        return topojson.feature(state.sidoTopo, state.sidoTopo.objects[key]).features;
+    }
+
+    function getSigunguFeaturesForSido(sidoKr) {
+        const gadmSido = global.KR_SIDO_TO_GADM && KR_SIDO_TO_GADM[sidoKr];
+        if (!gadmSido) return [];
+        const key = Object.keys(state.sigunguTopo.objects)[0];
+        const all = topojson.feature(state.sigunguTopo, state.sigunguTopo.objects[key]).features;
+        return all.filter(f => f.properties.NAME_1 === gadmSido);
+    }
+
+    function resolveKrSigungu(sidoKr, gadmName2) {
+        const overrides = global.GADM_SIGUNGU_OVERRIDES && GADM_SIGUNGU_OVERRIDES[sidoKr];
+        if (overrides && overrides[gadmName2]) return overrides[gadmName2];
+        const map = state.sigunguMap && state.sigunguMap[sidoKr];
+        if (map && map[gadmName2]) return map[gadmName2];
+        return null;
+    }
+
+    function renderShell() {
+        const isSigunguStep = !!state.selectedSido;
+        const breadcrumb = !state.selectedSido
+            ? '전국'
+            : state.selectedSigungu
+                ? `${mapSidoLabel(state.selectedSido)} › ${state.selectedSigungu}`
+                : mapSidoLabel(state.selectedSido);
+
+        state.container.innerHTML = `
+            <div class="korea-map-explorer-inner">
+                <div class="korea-map-head">
+                    <div>
+                        <div class="korea-map-kicker">🗺️ 지도에서 지역 선택</div>
+                        <div class="korea-map-breadcrumb">${escHtml(breadcrumb)}</div>
+                    </div>
+                    ${isSigunguStep ? '<button type="button" class="korea-map-back" id="koreaMapBackBtn">◀ 전국 지도</button>' : ''}
+                </div>
+                <p class="korea-map-guide">${isSigunguStep
+            ? '시·군·구 경계를 클릭하면 해당 지역 학생 목록이 오른쪽에 표시됩니다. 같은 지역을 다시 클릭하면 선택이 해제됩니다.'
+            : '한반도 지도에서 시·도를 클릭하세요. 마우스를 올리면 지역이 강조됩니다.'}</p>
+                <div id="koreaD3MapHost" class="korea-d3-map-host"></div>
+                ${!state.selectedSido ? '<div class="korea-map-sejong-note"><button type="button" class="korea-map-sejong-btn" id="koreaMapSejongBtn">세종특별자치시</button></div>' : ''}
+            </div>`;
+
+        state.container.querySelector('#koreaMapBackBtn')?.addEventListener('click', () => setSelection('', ''));
+        state.container.querySelector('#koreaMapSejongBtn')?.addEventListener('click', () => {
+            if (state.selectedSido === '세종특별자치시') setSelection('', '');
+            else setSelection('세종특별자치시', '');
+        });
+    }
+
+    function drawSidoMap(host) {
+        const width = host.clientWidth || 720;
+        const height = Math.max(420, Math.min(560, width * 1.15));
+        host.innerHTML = '';
+
+        const svg = d3.select(host).append('svg')
+            .attr('viewBox', `0 0 ${width} ${height}`)
+            .attr('class', 'korea-d3-svg');
+
+        const g = svg.append('g');
+        const features = getSidoFeatures();
+
+        const projection = d3.geoMercator().fitExtent([[24, 16], [width - 24, height - 16]], {
+            type: 'FeatureCollection',
+            features
+        });
+        const path = d3.geoPath(projection);
+
+        const regions = g.selectAll('path.korea-d3-region')
+            .data(features)
+            .join('path')
+            .attr('class', 'korea-d3-region')
+            .attr('d', path)
+            .attr('fill', d => {
+                const kr = global.GADM_SIDO_TO_KR[d.properties.NAME_1];
+                if (kr === state.selectedSido) return COLORS.selected;
+                if (state.getSidoCount(kr) > 0) return COLORS.hasStudents;
+                return COLORS.default;
+            })
+            .attr('stroke', COLORS.stroke)
+            .attr('stroke-width', 1)
+            .style('cursor', 'pointer')
+            .on('mouseenter', function (event, d) {
+                if (global.GADM_SIDO_TO_KR[d.properties.NAME_1] !== state.selectedSido) {
+                    d3.select(this).attr('fill', COLORS.hover).attr('stroke', COLORS.strokeHover).attr('stroke-width', 1.5);
+                }
+            })
+            .on('mouseleave', function (event, d) {
+                const kr = global.GADM_SIDO_TO_KR[d.properties.NAME_1];
+                const fill = kr === state.selectedSido
+                    ? COLORS.selected
+                    : (state.getSidoCount(kr) > 0 ? COLORS.hasStudents : COLORS.default);
+                d3.select(this).attr('fill', fill).attr('stroke', COLORS.stroke).attr('stroke-width', 1);
+            })
+            .on('click', (event, d) => {
+                const kr = global.GADM_SIDO_TO_KR[d.properties.NAME_1];
+                if (!kr) return;
+                if (state.selectedSido === kr) setSelection('', '');
+                else setSelection(kr, '');
+            });
+
+        g.selectAll('text.korea-d3-label')
+            .data(features)
+            .join('text')
+            .attr('class', 'korea-d3-label')
+            .attr('transform', d => {
+                const c = path.centroid(d);
+                const kr = global.GADM_SIDO_TO_KR[d.properties.NAME_1];
+                const off = getSidoLabelOffset(kr);
+                return `translate(${c[0] + off.dx},${c[1] + off.dy})`;
+            })
+            .attr('text-anchor', 'middle')
+            .attr('dy', '0.35em')
+            .attr('fill', d => global.GADM_SIDO_TO_KR[d.properties.NAME_1] === state.selectedSido ? COLORS.labelSelected : COLORS.label)
+            .attr('pointer-events', 'none')
+            .style('font-size', '11px')
+            .style('font-weight', '700')
+            .text(d => {
+                const kr = global.GADM_SIDO_TO_KR[d.properties.NAME_1];
+                const cnt = kr ? state.getSidoCount(kr) : 0;
+                const label = kr ? mapSidoLabel(kr) : d.properties.NAME_1;
+                return cnt ? `${label} (${cnt})` : label;
+            });
+    }
+
+    function drawSigunguMap(host) {
+        const width = host.clientWidth || 720;
+        const height = Math.max(420, Math.min(560, width * 1.05));
+        host.innerHTML = '';
+        const sidoKr = state.selectedSido;
+
+        if (sidoKr === '세종특별자치시') {
+            host.innerHTML = `<div class="korea-map-sejong-panel">
+                <p><strong>세종특별자치시</strong></p>
+                <button type="button" class="korea-map-sejong-select${state.selectedSigungu === '세종시' ? ' is-active' : ''}" data-sigungu="세종시">세종시 ${state.getSigunguCount(sidoKr, '세종시') ? `(${state.getSigunguCount(sidoKr, '세종시')}명)` : ''}</button>
+            </div>`;
+            host.querySelector('.korea-map-sejong-select')?.addEventListener('click', e => {
+                const sig = e.currentTarget.dataset.sigungu;
+                if (state.selectedSigungu === sig) setSelection(sidoKr, '');
+                else setSelection(sidoKr, sig);
+            });
+            return;
+        }
+
+        const features = getSigunguFeaturesForSido(sidoKr);
+        if (!features.length) {
+            host.innerHTML = '<div class="main-view-hint">이 시·도의 상세 지도 데이터를 불러올 수 없습니다. 상단 드롭다운을 이용해 주세요.</div>';
+            return;
+        }
+
+        const svg = d3.select(host).append('svg')
+            .attr('viewBox', `0 0 ${width} ${height}`)
+            .attr('class', 'korea-d3-svg');
+
+        const g = svg.append('g');
+        const collection = { type: 'FeatureCollection', features };
+
+        const projection = d3.geoMercator().fitExtent([[20, 20], [width - 20, height - 20]], collection);
+        const path = d3.geoPath(projection);
+
+        const enriched = features.map(f => {
+            const krName = resolveKrSigungu(sidoKr, f.properties.NAME_2);
+            return { ...f, krName };
+        });
+
+        g.selectAll('path.korea-d3-region')
+            .data(enriched)
+            .join('path')
+            .attr('class', d => `korea-d3-region${d.krName ? '' : ' is-unmapped'}`)
+            .attr('d', path)
+            .attr('fill', d => {
+                if (d.krName && d.krName === state.selectedSigungu) return COLORS.selected;
+                if (d.krName && state.getSigunguCount(sidoKr, d.krName) > 0) return COLORS.hasStudents;
+                return d.krName ? COLORS.default : '#f1f5f9';
+            })
+            .attr('stroke', COLORS.stroke)
+            .attr('stroke-width', 0.8)
+            .style('cursor', d => d.krName ? 'pointer' : 'default')
+            .on('mouseenter', function (event, d) {
+                if (!d.krName) return;
+                if (d.krName !== state.selectedSigungu) {
+                    d3.select(this).attr('fill', COLORS.hover).attr('stroke', COLORS.strokeHover);
+                }
+            })
+            .on('mouseleave', function (event, d) {
+                if (!d.krName) return;
+                const fill = d.krName === state.selectedSigungu
+                    ? COLORS.selected
+                    : (state.getSigunguCount(sidoKr, d.krName) > 0 ? COLORS.hasStudents : COLORS.default);
+                d3.select(this).attr('fill', fill).attr('stroke', COLORS.stroke);
+            })
+            .on('click', (event, d) => {
+                if (!d.krName) return;
+                if (state.selectedSigungu === d.krName) setSelection(sidoKr, '');
+                else setSelection(sidoKr, d.krName);
+            });
+
+        g.selectAll('text.korea-d3-label-sm')
+            .data(enriched.filter(d => d.krName))
+            .join('text')
+            .attr('class', 'korea-d3-label-sm')
+            .attr('transform', d => {
+                const c = path.centroid(d);
+                return `translate(${c[0]},${c[1]})`;
+            })
+            .attr('text-anchor', 'middle')
+            .attr('dy', '0.35em')
+            .attr('fill', d => d.krName === state.selectedSigungu ? COLORS.labelSelected : COLORS.label)
+            .attr('pointer-events', 'none')
+            .style('font-size', '9px')
+            .style('font-weight', '700')
+            .text(d => {
+                const cnt = state.getSigunguCount(sidoKr, d.krName);
+                return cnt ? `${d.krName}(${cnt})` : d.krName;
+            });
+    }
+
+    function drawMap() {
+        const host = state.container?.querySelector('#koreaD3MapHost');
+        if (!host || !state.ready) return;
+        if (state.selectedSido) drawSigunguMap(host);
+        else drawSidoMap(host);
+    }
+
+    function render() {
+        if (!state.container) return;
+        renderShell();
+        drawMap();
+    }
+
+    function setSelection(sido, sigungu, silent) {
+        state.selectedSido = sido || '';
+        state.selectedSigungu = sigungu || '';
+        render();
+        if (!silent && typeof state.onSelect === 'function') {
+            state.onSelect(state.selectedSido, state.selectedSigungu);
+        }
+    }
+
+    function syncFromFilter(sido, sigungu) {
+        const nextSido = sido || '';
+        const nextSigungu = sigungu || '';
+        if (state.selectedSido === nextSido && state.selectedSigungu === nextSigungu) return;
+        state.selectedSido = nextSido;
+        state.selectedSigungu = nextSigungu;
+        render();
+    }
+
+    async function init(options) {
+        state.container = typeof options.container === 'string'
+            ? document.getElementById(options.container)
+            : options.container;
+        if (!state.container) return;
+
+        state.getSidoCount = options.getSidoCount || (() => 0);
+        state.getSigunguCount = options.getSigunguCount || (() => 0);
+        state.onSelect = options.onSelect || null;
+
+        if (!ensureD3()) {
+            state.container.innerHTML = '<div class="main-view-hint">지도 라이브러리(D3.js)를 불러오지 못했습니다. 새로고침 후 다시 시도해 주세요.</div>';
+            return;
+        }
+
+        state.container.innerHTML = '<div class="main-view-hint">지도를 불러오는 중...</div>';
+
+        try {
+            await loadMapData();
+            state.ready = true;
+            if (options.initialSido != null) {
+                state.selectedSido = options.initialSido;
+                state.selectedSigungu = options.initialSigungu || '';
+            }
+            render();
+        } catch (e) {
+            console.error(e);
+            state.container.innerHTML = '<div class="main-view-hint">지도 데이터를 불러오지 못했습니다.</div>';
+        }
+    }
+
+    function refreshCounts() {
+        if (!state.ready) return;
+        drawMap();
+    }
+
+    global.KoreaMapPicker = {
+        init,
+        syncFromFilter,
+        refreshCounts,
+        setSelection
+    };
+})(typeof window !== 'undefined' ? window : globalThis);

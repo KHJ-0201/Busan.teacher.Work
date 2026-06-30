@@ -1,1 +1,845 @@
-const a16_0x317538=a16_0x1458;(function(_0x19c8ce,_0x130c39){const _0x425011=a16_0x1458,_0x540b80=_0x19c8ce();while(!![]){try{const _0x3e74be=parseInt(_0x425011(0x14e))/0x1*(-parseInt(_0x425011(0x13f))/0x2)+parseInt(_0x425011(0xec))/0x3*(parseInt(_0x425011(0xc6))/0x4)+-parseInt(_0x425011(0x112))/0x5+-parseInt(_0x425011(0xe8))/0x6*(parseInt(_0x425011(0x169))/0x7)+parseInt(_0x425011(0x147))/0x8+-parseInt(_0x425011(0x127))/0x9*(parseInt(_0x425011(0x115))/0xa)+parseInt(_0x425011(0x10a))/0xb;if(_0x3e74be===_0x130c39)break;else _0x540b80['push'](_0x540b80['shift']());}catch(_0x393a92){_0x540b80['push'](_0x540b80['shift']());}}}(a16_0x2fd2,0x5c529));const a16_0x40a110=(function(){let _0x52c700=!![];return function(_0x51c93e,_0x1a3b35){const _0x303f70=_0x52c700?function(){const _0x18496d=a16_0x1458;if(_0x1a3b35){const _0x3556f9=_0x1a3b35[_0x18496d(0x14b)](_0x51c93e,arguments);return _0x1a3b35=null,_0x3556f9;}}:function(){};return _0x52c700=![],_0x303f70;};}()),a16_0x4dffcb=a16_0x40a110(this,function(){const _0xfd7bb4=a16_0x1458;return a16_0x4dffcb[_0xfd7bb4(0x9a)]()[_0xfd7bb4(0x153)](_0xfd7bb4(0x95))[_0xfd7bb4(0x9a)]()[_0xfd7bb4(0x170)](a16_0x4dffcb)[_0xfd7bb4(0x153)](_0xfd7bb4(0x95));});a16_0x4dffcb();let students=[],masterDatabase=null,masterAuth=null,firebaseReady=![],currentClassName='';const MASTER_APP_NAME=a16_0x317538(0x123),AUTH_EMAIL=a16_0x317538(0xae),MASTER_CONFIG={'apiKey':a16_0x317538(0x10d),'authDomain':'busan-teacher-workall.firebaseapp.com','databaseURL':a16_0x317538(0x144),'projectId':a16_0x317538(0x150)},FB_CONTACTS_PATH=a16_0x317538(0x15e),COL_OFFSET_NUM=0x0,COL_OFFSET_NAME=0x1,COL_OFFSET_RRN=0x2,COL_OFFSET_PHONE=0x3,VCARD_ORG=a16_0x317538(0xaf),VCARD_GROUP_PREFIX=a16_0x317538(0x13e);document[a16_0x317538(0xe1)]('DOMContentLoaded',()=>{const _0x2faccb=a16_0x317538;setupClassContext(),initFirebaseAndLoadClasses(),initGuideImageLightbox(),syncGuideStepHeights(),window[_0x2faccb(0xe1)](_0x2faccb(0xfb),syncGuideStepHeights);});function syncGuideStepHeights(){const _0x28c190=a16_0x317538,_0xaed6b1=document[_0x28c190(0xda)](_0x28c190(0x11c));if(!_0xaed6b1)return;const _0x48efa7=Math[_0x28c190(0xf8)](_0xaed6b1[_0x28c190(0xe0)],0x1);document['documentElement'][_0x28c190(0x14c)][_0x28c190(0xb8)](_0x28c190(0x13d),_0x48efa7+'px');}function initGuideImageLightbox(){const _0x569533=a16_0x317538;document[_0x569533(0xe1)](_0x569533(0x107),_0x188a7c=>{const _0x3f7728=_0x569533;_0x188a7c['key']===_0x3f7728(0x110)&&(closeContactView(),closeGuideImageModal());}),document[_0x569533(0x13b)](_0x569533(0x16b))['forEach'](_0x5af78d=>{_0x5af78d['addEventListener']('keydown',_0x1b7814=>{const _0xa6b6ae=a16_0x1458;(_0x1b7814['key']===_0xa6b6ae(0xc0)||_0x1b7814[_0xa6b6ae(0xc8)]==='\x20')&&(_0x1b7814[_0xa6b6ae(0x13a)](),openGuideStepModal(_0x5af78d));});});}function openGuideStepModal(_0x17eb71){const _0x59d7ea=a16_0x317538;if(!_0x17eb71)return;const _0x23b80a=document[_0x59d7ea(0xda)](_0x59d7ea(0xa8)),_0x1efc95=document[_0x59d7ea(0xda)]('guideLightboxNum'),_0x31a426=document['getElementById'](_0x59d7ea(0x156)),_0x4751a0=document[_0x59d7ea(0xda)](_0x59d7ea(0xdf)),_0x506310=document[_0x59d7ea(0xda)](_0x59d7ea(0x11f)),_0x3e531c=document[_0x59d7ea(0xda)]('guideLightboxNoImg');if(!_0x23b80a||!_0x1efc95||!_0x31a426||!_0x4751a0||!_0x506310||!_0x3e531c)return;const _0x356005=_0x17eb71['querySelector'](_0x59d7ea(0xed)),_0x2b8333=_0x17eb71['querySelector'](_0x59d7ea(0xd8)),_0x5b0697=_0x17eb71[_0x59d7ea(0xd4)]('.guide-img-wrap\x20img'),_0x1b1b86=_0x5b0697&&_0x5b0697[_0x59d7ea(0x14c)]['display']!==_0x59d7ea(0xf5)&&!_0x5b0697[_0x59d7ea(0x171)][_0x59d7ea(0x165)]&&_0x5b0697[_0x59d7ea(0xf1)];_0x1efc95[_0x59d7ea(0x101)]=_0x356005?_0x356005[_0x59d7ea(0x101)]:'',_0x31a426[_0x59d7ea(0x87)]=_0x2b8333?_0x2b8333[_0x59d7ea(0x87)]:'';if(_0x1b1b86)_0x506310['src']=_0x5b0697[_0x59d7ea(0xf1)],_0x506310[_0x59d7ea(0x9f)]=_0x5b0697[_0x59d7ea(0x9f)]||_0x59d7ea(0x98),_0x506310[_0x59d7ea(0x14c)][_0x59d7ea(0x157)]=_0x59d7ea(0x88),_0x4751a0[_0x59d7ea(0x14c)][_0x59d7ea(0x157)]=_0x59d7ea(0x88),_0x3e531c[_0x59d7ea(0x14c)]['display']=_0x59d7ea(0xf5);else{_0x506310['src']='',_0x506310[_0x59d7ea(0x14c)][_0x59d7ea(0x157)]='none',_0x4751a0[_0x59d7ea(0x14c)][_0x59d7ea(0x157)]=_0x59d7ea(0xf5);const _0x1311e5=_0x17eb71[_0x59d7ea(0xd4)](_0x59d7ea(0xd3));_0x3e531c[_0x59d7ea(0x101)]=_0x1311e5?_0x1311e5[_0x59d7ea(0x101)]:_0x59d7ea(0x152),_0x3e531c['style'][_0x59d7ea(0x157)]='block';}_0x23b80a[_0x59d7ea(0x146)][_0x59d7ea(0xf2)](_0x59d7ea(0x82)),document[_0x59d7ea(0x9c)][_0x59d7ea(0x14c)]['overflow']=_0x59d7ea(0xdb);}function closeGuideImageModal(){const _0x1f20b4=a16_0x317538,_0x35b073=document[_0x1f20b4(0xda)](_0x1f20b4(0xa8)),_0x551055=document[_0x1f20b4(0xda)](_0x1f20b4(0x11f)),_0x594651=document[_0x1f20b4(0xda)](_0x1f20b4(0x156));if(!_0x35b073)return;_0x35b073['classList']['remove'](_0x1f20b4(0x82));_0x551055&&(_0x551055[_0x1f20b4(0xf1)]='',_0x551055[_0x1f20b4(0x14c)][_0x1f20b4(0x157)]='none');if(_0x594651)_0x594651[_0x1f20b4(0x87)]='';const _0x3d1bcd=document[_0x1f20b4(0xda)]('viewContactList');(!_0x3d1bcd||!_0x3d1bcd[_0x1f20b4(0x146)][_0x1f20b4(0xbb)](_0x1f20b4(0x82)))&&(document[_0x1f20b4(0x9c)][_0x1f20b4(0x14c)][_0x1f20b4(0x158)]='');}function showGuideImgPlaceholder(_0x3b9fbe,_0x26880f){const _0x53ec55=a16_0x317538;if(!_0x3b9fbe||_0x3b9fbe[_0x53ec55(0x171)][_0x53ec55(0x165)])return;_0x3b9fbe['dataset'][_0x53ec55(0x165)]='1',_0x3b9fbe[_0x53ec55(0x14c)][_0x53ec55(0x157)]=_0x53ec55(0xf5);const _0x194acc=_0x3b9fbe[_0x53ec55(0x86)];if(!_0x194acc||_0x194acc[_0x53ec55(0xd4)]('.guide-img-placeholder'))return;const _0x29efc6=document[_0x53ec55(0xf7)]('div');_0x29efc6['className']=_0x53ec55(0xcb),_0x29efc6[_0x53ec55(0x101)]=_0x53ec55(0x117)+_0x26880f+')',_0x194acc[_0x53ec55(0x106)](_0x29efc6);}function setStatus(_0x2bb391,_0x41e1cf){const _0x18a142=a16_0x317538,_0x9d1389=document[_0x18a142(0xda)]('statusMsg');if(!_0x9d1389)return;_0x9d1389['textContent']=_0x2bb391||'',_0x9d1389[_0x18a142(0x14c)][_0x18a142(0x91)]=_0x41e1cf?_0x18a142(0x137):_0x18a142(0xce);}function sanitizeClassKey(_0x2499c6){const _0xe3f2d2=a16_0x317538;return String(_0x2499c6??'')[_0xe3f2d2(0x108)]()[_0xe3f2d2(0xc9)](/[.#$/[\]]/g,'_');}function getLinkedClassName(){const _0x4699a9=a16_0x317538;if(typeof initClassContext===_0x4699a9(0x92))initClassContext();const _0x187ab6=window[_0x4699a9(0x16e)]||localStorage[_0x4699a9(0xac)](_0x4699a9(0x141))||'';return sanitizeClassKey(_0x187ab6);}function setupClassContext(){const _0x25793b=getLinkedClassName();_0x25793b&&(currentClassName=_0x25793b,updateCurrentClassTag()),setupBackButton();}function setupBackButton(){const _0x31a2ca=a16_0x317538,_0x4c2a42=document[_0x31a2ca(0xda)](_0x31a2ca(0x143));if(!_0x4c2a42)return;const _0x587d7b=getLinkedClassName();typeof classNavHref===_0x31a2ca(0x92)&&_0x587d7b?(_0x4c2a42[_0x31a2ca(0x101)]=_0x31a2ca(0x124),_0x4c2a42[_0x31a2ca(0xeb)]=()=>{const _0x1fb0e1=_0x31a2ca;location[_0x1fb0e1(0xef)]=classNavHref(_0x1fb0e1(0xee));}):(_0x4c2a42[_0x31a2ca(0x101)]=_0x31a2ca(0x148),_0x4c2a42[_0x31a2ca(0xeb)]=()=>{const _0x275c0e=_0x31a2ca;location[_0x275c0e(0xef)]=_0x275c0e(0x12a);});}function getVcardGroupPrefix(){return currentClassName?currentClassName+'\x20'+VCARD_GROUP_PREFIX:VCARD_GROUP_PREFIX;}function updateCurrentClassTag(){const _0x3f5ee0=a16_0x317538,_0x4a2ce0=document[_0x3f5ee0(0xda)](_0x3f5ee0(0x81));if(!_0x4a2ce0)return;if(!currentClassName){_0x4a2ce0[_0x3f5ee0(0x14c)]['display']=_0x3f5ee0(0xf5),_0x4a2ce0[_0x3f5ee0(0x101)]='';return;}_0x4a2ce0[_0x3f5ee0(0x14c)][_0x3f5ee0(0x157)]=_0x3f5ee0(0x168),_0x4a2ce0[_0x3f5ee0(0x101)]=_0x3f5ee0(0xf3)+currentClassName;}function getMasterApp(){const _0x5e6534=a16_0x317538,_0x14a808=firebase['apps']['find'](_0xf17531=>_0xf17531['name']===MASTER_APP_NAME);return _0x14a808||firebase[_0x5e6534(0x162)](MASTER_CONFIG,MASTER_APP_NAME);}async function ensureFirebaseReady(){const _0x3d4155=a16_0x317538;if(firebaseReady&&masterDatabase)return!![];const _0x36a69c=localStorage['getItem'](_0x3d4155(0x16d));if(!_0x36a69c)return![];try{const _0x4a848c=getMasterApp();return masterDatabase=_0x4a848c[_0x3d4155(0x151)](),masterAuth=_0x4a848c[_0x3d4155(0x11d)](),!masterAuth['currentUser']&&await masterAuth[_0x3d4155(0xe6)](AUTH_EMAIL,_0x36a69c),firebaseReady=!![],!![];}catch(_0x2d0320){return console[_0x3d4155(0x166)](_0x2d0320),firebaseReady=![],![];}}async function initFirebaseAndLoadClasses(){const _0x54b597=a16_0x317538,_0x498e92=localStorage[_0x54b597(0xac)]('adminPw');if(!_0x498e92){renderGroupButtons([],_0x54b597(0x90));return;}const _0x11e35c=await ensureFirebaseReady();if(!_0x11e35c){renderGroupButtons([],_0x54b597(0xba));return;}loadSavedClassList();}function loadSavedClassList(){const _0x49939b=a16_0x317538;if(!masterDatabase)return;masterDatabase[_0x49939b(0x10e)](FB_CONTACTS_PATH)['once']('value',_0x2536c7=>{const _0x55ba25=_0x49939b,_0x2614bf=_0x2536c7['val']()||{},_0x29423f=Object[_0x55ba25(0xad)](_0x2614bf)[_0x55ba25(0x154)](_0x27e7ee=>_0x2614bf[_0x27e7ee]&&Array['isArray'](_0x2614bf[_0x27e7ee]['students'])&&_0x2614bf[_0x27e7ee][_0x55ba25(0x93)][_0x55ba25(0x116)])['map'](_0x217287=>({'name':_0x217287,'count':_0x2614bf[_0x217287]['students']['length']}))[_0x55ba25(0x113)]((_0x5d2197,_0x24dc0f)=>_0x5d2197[_0x55ba25(0xa4)][_0x55ba25(0x11b)](_0x24dc0f['name'],'ko'));renderGroupButtons(_0x29423f);},_0x2587a5=>{const _0x413907=_0x49939b;console[_0x413907(0x166)](_0x2587a5),renderGroupButtons([],_0x413907(0x11e));});}function renderGroupButtons(_0x4f898f,_0x291a68){const _0x484ec7=a16_0x317538,_0x123540=document[_0x484ec7(0xda)](_0x484ec7(0x160));if(!_0x123540)return;if(!_0x4f898f[_0x484ec7(0x116)]){_0x123540['innerHTML']=_0x484ec7(0x114)+escapeHtml(_0x291a68||_0x484ec7(0x129))+_0x484ec7(0xb0);return;}_0x123540[_0x484ec7(0x87)]=_0x4f898f['map'](({name:_0x1ba85d,count:_0x660105})=>{const _0x4a4897=_0x484ec7,_0x38b192=escapeHtml(_0x1ba85d),_0x142935=_0x1ba85d===currentClassName?_0x4a4897(0x8a):'',_0x20ccc4=_0x660105?_0x660105+'명':'';return'<button\x20type=\x22button\x22\x20class=\x22btn-group-open'+_0x142935+_0x4a4897(0xa7)+_0x38b192+_0x4a4897(0xb9)+_0x38b192+_0x4a4897(0x140)+(_0x20ccc4?'<span\x20class=\x22group-btn-sub\x22>'+_0x20ccc4+_0x4a4897(0x84):'')+_0x4a4897(0x126);})[_0x484ec7(0xa6)]('');}function sortStudentsByNum(_0x4dc301){const _0x5a6455=a16_0x317538;return[..._0x4dc301][_0x5a6455(0x113)]((_0x55ff59,_0x1556c2)=>{const _0x412161=_0x5a6455,_0x5c4f9a=parseInt(String(_0x55ff59[_0x412161(0xf4)])[_0x412161(0xc9)](/\D/g,''),0xa),_0x55ffb4=parseInt(String(_0x1556c2[_0x412161(0xf4)])['replace'](/\D/g,''),0xa);if(!isNaN(_0x5c4f9a)&&!isNaN(_0x55ffb4)&&_0x5c4f9a!==_0x55ffb4)return _0x5c4f9a-_0x55ffb4;return String(_0x55ff59['num'])['localeCompare'](String(_0x1556c2[_0x412161(0xf4)]),'ko',{'numeric':!![]});});}function mapFirebaseStudents(_0x52064d){const _0xffa4a0=a16_0x317538;return sortStudentsByNum(_0x52064d[_0xffa4a0(0xe3)](_0xa54eb2=>enrichStudentFromRrn({'num':_0xa54eb2[_0xffa4a0(0xf4)]||'','name':_0xa54eb2[_0xffa4a0(0xa4)]||'','phone':_0xa54eb2[_0xffa4a0(0x102)]||'','age':_0xa54eb2['age']||'','gender':_0xa54eb2[_0xffa4a0(0x8f)]||'','rrn':_0xa54eb2['rrn']||'','extra':''})));}async function promptSaveToFirebase(_0x104e20){const _0x189bb9=a16_0x317538;if(!students[_0x189bb9(0x116)])return;const _0x2e0034=localStorage[_0x189bb9(0xac)](_0x189bb9(0x16d));if(!_0x2e0034){await appAlert(_0x189bb9(0xcd));return;}const _0x462950=await ensureFirebaseReady();if(!_0x462950){await appAlert(_0x189bb9(0x131));return;}const _0x11128d=getLinkedClassName();let _0x1e4a9a=_0x11128d||currentClassName;const _0x57bd8f=_0x1e4a9a?students[_0x189bb9(0x116)]+_0x189bb9(0x12f)+_0x1e4a9a+_0x189bb9(0xdd):students[_0x189bb9(0x116)]+_0x189bb9(0x12e),_0x597671=await appConfirm(_0x57bd8f);if(!_0x597671)return;if(!_0x1e4a9a){const _0x16ca7c=await appPrompt('저장할\x20반\x20이름을\x20입력하세요.\x0a예)\x20701반','',{'title':_0x189bb9(0xea)});if(_0x16ca7c===null)return;_0x1e4a9a=sanitizeClassKey(_0x16ca7c);if(!_0x1e4a9a){await appAlert(_0x189bb9(0x167));return;}}try{const _0x5779e0=await masterDatabase[_0x189bb9(0x10e)](FB_CONTACTS_PATH+'/'+_0x1e4a9a)['once'](_0x189bb9(0xa1));if(_0x5779e0[_0x189bb9(0xbd)]()){const _0x13aecf=await appConfirm('「'+_0x1e4a9a+_0x189bb9(0xe4));if(!_0x13aecf)return;}await masterDatabase[_0x189bb9(0x10e)](FB_CONTACTS_PATH+'/'+_0x1e4a9a)['set']({'className':_0x1e4a9a,'fileName':_0x104e20||'','updatedAt':firebase['database'][_0x189bb9(0x16f)]['TIMESTAMP'],'students':students[_0x189bb9(0xe3)](_0x510a0b=>({'num':_0x510a0b[_0x189bb9(0xf4)]||'','name':_0x510a0b['name']||'','phone':_0x510a0b[_0x189bb9(0x102)]||'','age':_0x510a0b['age']||'','gender':_0x510a0b[_0x189bb9(0x8f)]||'','rrn':_0x510a0b['rrn']||''}))}),currentClassName=_0x1e4a9a,updateCurrentClassTag(),loadSavedClassList(),setStatus(_0x189bb9(0x10c)+_0x1e4a9a+'」\x20'+students[_0x189bb9(0x116)]+_0x189bb9(0x8c)),await appAlert('「'+_0x1e4a9a+'」\x20'+students[_0x189bb9(0x116)]+_0x189bb9(0xaa));}catch(_0x1e82ca){console[_0x189bb9(0x166)](_0x1e82ca),setStatus(_0x189bb9(0xf0)+(_0x1e82ca['message']||_0x1e82ca),!![]),await appAlert(_0x189bb9(0xfd));}}function openContactViewByBtn(_0x4bbb94){const _0x59790a=a16_0x317538,_0x3d1d0d=_0x4bbb94&&_0x4bbb94[_0x59790a(0x99)](_0x59790a(0xbf));if(_0x3d1d0d)openContactView(_0x3d1d0d);}async function openContactView(_0x4369a2){const _0x3bb6b7=a16_0x317538,_0x2b1dc8=await ensureFirebaseReady();if(!_0x2b1dc8){await appAlert('공용\x20서버에\x20연결되지\x20않았습니다.\x0a메인\x20화면에서\x20다시\x20로그인해\x20주세요.');return;}const _0x229e27=document[_0x3bb6b7(0xda)](_0x3bb6b7(0xc7)),_0x2b5b13=document[_0x3bb6b7(0xda)](_0x3bb6b7(0x14f)),_0x1c4d23=document[_0x3bb6b7(0xda)](_0x3bb6b7(0xb3)),_0x80b6ab=document[_0x3bb6b7(0xda)]('studentList');if(!_0x229e27||!_0x80b6ab)return;_0x229e27[_0x3bb6b7(0x146)][_0x3bb6b7(0xf2)](_0x3bb6b7(0x82)),_0x229e27[_0x3bb6b7(0x12d)]('aria-hidden',_0x3bb6b7(0x16a)),document[_0x3bb6b7(0x9c)][_0x3bb6b7(0x14c)][_0x3bb6b7(0x158)]='hidden';if(_0x2b5b13)_0x2b5b13[_0x3bb6b7(0x101)]=_0x4369a2;if(_0x1c4d23)_0x1c4d23[_0x3bb6b7(0x101)]=_0x3bb6b7(0xe5);_0x80b6ab[_0x3bb6b7(0x87)]=_0x3bb6b7(0x83),masterDatabase[_0x3bb6b7(0x10e)](FB_CONTACTS_PATH+'/'+_0x4369a2)['once'](_0x3bb6b7(0xa1),_0x5b98fb=>{const _0x6ef06e=_0x3bb6b7,_0x42135a=_0x5b98fb[_0x6ef06e(0x139)]();if(!_0x42135a||!Array[_0x6ef06e(0x16c)](_0x42135a['students'])||!_0x42135a[_0x6ef06e(0x93)][_0x6ef06e(0x116)]){if(_0x1c4d23)_0x1c4d23[_0x6ef06e(0x101)]=_0x6ef06e(0x8e);_0x80b6ab[_0x6ef06e(0x87)]=_0x6ef06e(0x155),setStatus('「'+_0x4369a2+_0x6ef06e(0x120),!![]);return;}students=mapFirebaseStudents(_0x42135a[_0x6ef06e(0x93)]),currentClassName=_0x4369a2,updateCurrentClassTag(),loadSavedClassList(),renderStudentList();if(_0x1c4d23)_0x1c4d23[_0x6ef06e(0x101)]=students[_0x6ef06e(0x116)]+'명\x20·\x20번호순';setStatus(_0x6ef06e(0x10c)+_0x4369a2+'」\x20'+students[_0x6ef06e(0x116)]+_0x6ef06e(0xd5));},_0x173cd6=>{const _0xd2bb7b=_0x3bb6b7;console[_0xd2bb7b(0x166)](_0x173cd6);if(_0x1c4d23)_0x1c4d23[_0xd2bb7b(0x101)]=_0xd2bb7b(0x109);_0x80b6ab['innerHTML']=_0xd2bb7b(0xc1),setStatus(_0xd2bb7b(0x12c),!![]);});}function closeContactView(){const _0x16ea13=a16_0x317538,_0xb55710=document[_0x16ea13(0xda)](_0x16ea13(0xc7));if(!_0xb55710||!_0xb55710[_0x16ea13(0x146)][_0x16ea13(0xbb)](_0x16ea13(0x82)))return;_0xb55710[_0x16ea13(0x146)]['remove'](_0x16ea13(0x82)),_0xb55710['setAttribute'](_0x16ea13(0xbe),_0x16ea13(0xd7));const _0x33d3ec=document[_0x16ea13(0xda)](_0x16ea13(0xa8));(!_0x33d3ec||!_0x33d3ec[_0x16ea13(0x146)]['contains'](_0x16ea13(0x82)))&&(document['body']['style']['overflow']='');}function cellStr(_0xfb80f6){return String(_0xfb80f6??'')['trim']();}function isStudentNumberOne(_0x5b14bd){if(_0x5b14bd===0x1)return!![];const _0x2214bb=cellStr(_0x5b14bd);return _0x2214bb==='1';}function normalizeRrn(_0x457113){const _0x774970=a16_0x317538,_0x25f73d=String(_0x457113??'')['replace'](/\D/g,'');if(_0x25f73d[_0x774970(0x116)]<0x7)return cellStr(_0x457113);return _0x25f73d[_0x774970(0x85)](0x0,0x6)+'-'+_0x25f73d[_0x774970(0x85)](0x6,0x7);}function calcAgeFromRrn(_0x20e1a6){const _0x35cd0b=a16_0x317538,_0x510a29=String(_0x20e1a6??'')[_0x35cd0b(0xc9)](/\D/g,'');if(_0x510a29['length']<0x7)return'';const _0x3fba3b=parseInt(_0x510a29[_0x35cd0b(0x85)](0x0,0x2),0xa),_0x587da2=parseInt(_0x510a29[_0x35cd0b(0x85)](0x2,0x4),0xa),_0x1c66fd=parseInt(_0x510a29[_0x35cd0b(0x85)](0x4,0x6),0xa),_0xba59dc=parseInt(_0x510a29[0x6],0xa);let _0x2f4694;if([0x1,0x2,0x5,0x6][_0x35cd0b(0x163)](_0xba59dc))_0x2f4694=0x76c+_0x3fba3b;else{if([0x3,0x4,0x7,0x8][_0x35cd0b(0x163)](_0xba59dc))_0x2f4694=0x7d0+_0x3fba3b;else _0x2f4694=0x708+_0x3fba3b;}const _0x1a3f96=new Date();let _0x54859b=_0x1a3f96[_0x35cd0b(0x145)]()-_0x2f4694;const _0x3b0344=_0x1a3f96[_0x35cd0b(0x133)]()+0x1-_0x587da2;if(_0x3b0344<0x0||_0x3b0344===0x0&&_0x1a3f96[_0x35cd0b(0x125)]()<_0x1c66fd)_0x54859b--;return _0x54859b>=0x0&&_0x54859b<0x96?String(_0x54859b):'';}function calcBirthYearLabelFromRrn(_0x1b5c66){const _0x2979f1=a16_0x317538,_0x18f916=String(_0x1b5c66??'')[_0x2979f1(0xc9)](/\D/g,'');if(_0x18f916[_0x2979f1(0x116)]<0x7)return'';const _0x3442b4=parseInt(_0x18f916[_0x2979f1(0x85)](0x0,0x2),0xa),_0x5c6146=parseInt(_0x18f916[0x6],0xa);let _0x537af5;if([0x1,0x2,0x5,0x6][_0x2979f1(0x163)](_0x5c6146))_0x537af5=0x76c+_0x3442b4;else{if([0x3,0x4,0x7,0x8][_0x2979f1(0x163)](_0x5c6146))_0x537af5=0x7d0+_0x3442b4;else _0x537af5=0x708+_0x3442b4;}const _0xe75be8=String(_0x537af5%0x64)['padStart'](0x2,'0');return _0xe75be8+'년생';}function getStudentBirthYearLabel(_0x14150a){const _0x43bd97=a16_0x317538;if(_0x14150a[_0x43bd97(0x9d)])return _0x14150a[_0x43bd97(0x9d)];if(_0x14150a[_0x43bd97(0xf9)])return calcBirthYearLabelFromRrn(_0x14150a[_0x43bd97(0xf9)]);return'';}function calcGenderFromRrn(_0x59e03d){const _0x2815cf=a16_0x317538,_0x25bb34=String(_0x59e03d??'')[_0x2815cf(0xc9)](/\D/g,'');if(_0x25bb34['length']<0x7)return'';const _0x4676e9=parseInt(_0x25bb34[0x6],0xa);if(Number['isNaN'](_0x4676e9))return'';return _0x4676e9%0x2===0x1?'남':'여';}function enrichStudentFromRrn(_0x3c12b0){const _0x14f2a8=a16_0x317538,_0x1a3fcd=_0x3c12b0[_0x14f2a8(0xf9)]||'';if(!_0x3c12b0[_0x14f2a8(0x94)]&&_0x1a3fcd)_0x3c12b0[_0x14f2a8(0x94)]=calcAgeFromRrn(_0x1a3fcd);if(!_0x3c12b0[_0x14f2a8(0x8f)]&&_0x1a3fcd)_0x3c12b0['gender']=calcGenderFromRrn(_0x1a3fcd);if(!_0x3c12b0[_0x14f2a8(0x9d)]&&_0x1a3fcd)_0x3c12b0[_0x14f2a8(0x9d)]=calcBirthYearLabelFromRrn(_0x1a3fcd);return _0x3c12b0;}function formatStudentSubText(_0xb39eb7){const _0x12bcb2=a16_0x317538,_0x1c23b3=[];if(_0xb39eb7[_0x12bcb2(0x94)])_0x1c23b3[_0x12bcb2(0xd1)]('만'+_0xb39eb7[_0x12bcb2(0x94)]);if(_0xb39eb7[_0x12bcb2(0x8f)])_0x1c23b3['push'](_0xb39eb7[_0x12bcb2(0x8f)]);return _0x1c23b3['push'](_0xb39eb7['phone']||_0x12bcb2(0x10f)),_0x1c23b3['join'](_0x12bcb2(0x130));}function looksLikeStudentRow(_0x29c4f4,_0x5434b0){const _0x332cd2=a16_0x317538,_0xbb422a=cellStr(_0x29c4f4[_0x5434b0+COL_OFFSET_NAME]),_0x2c89a4=cellStr(_0x29c4f4[_0x5434b0+COL_OFFSET_RRN]),_0x76f34c=cellStr(_0x29c4f4[_0x5434b0+COL_OFFSET_PHONE]);if(!_0xbb422a)return![];const _0x31ded0=/^\d{6}[-]?\d$/[_0x332cd2(0x10b)](_0x2c89a4[_0x332cd2(0xc9)](/\s/g,'')),_0x597a1e=String(_0x76f34c)[_0x332cd2(0xc9)](/\D/g,'')[_0x332cd2(0x116)]>=0x9;return _0x31ded0||_0x597a1e;}function findStudentDataAnchor(_0x236bd4){const _0x11f4ca=a16_0x317538;for(let _0x135fb4=0x0;_0x135fb4<_0x236bd4['length'];_0x135fb4++){const _0x25676d=_0x236bd4[_0x135fb4];if(!_0x25676d||!_0x25676d[_0x11f4ca(0x116)])continue;for(let _0x17813a=0x0;_0x17813a<_0x25676d[_0x11f4ca(0x116)];_0x17813a++){if(!isStudentNumberOne(_0x25676d[_0x17813a]))continue;if(!looksLikeStudentRow(_0x25676d,_0x17813a))continue;return{'row':_0x135fb4,'numCol':_0x17813a};}}return null;}function normalizePhone(_0x5ed16a){const _0x488fde=a16_0x317538,_0x98aa32=String(_0x5ed16a??'')[_0x488fde(0xc9)](/\D/g,'');if(_0x98aa32[_0x488fde(0x116)]<0x9)return'';if(_0x98aa32['length']===0xb&&_0x98aa32[_0x488fde(0x8b)]('010'))return _0x98aa32[_0x488fde(0x85)](0x0,0x3)+'-'+_0x98aa32[_0x488fde(0x85)](0x3,0x7)+'-'+_0x98aa32[_0x488fde(0x85)](0x7);if(_0x98aa32[_0x488fde(0x116)]===0xa&&_0x98aa32['startsWith']('01'))return _0x98aa32['slice'](0x0,0x3)+'-'+_0x98aa32['slice'](0x3,0x6)+'-'+_0x98aa32[_0x488fde(0x85)](0x6);return _0x98aa32;}function escapeVcardValue(_0x3a38ea){const _0x5c6fa7=a16_0x317538;return String(_0x3a38ea??'')[_0x5c6fa7(0xc9)](/\\/g,'\x5c\x5c')[_0x5c6fa7(0xc9)](/\n/g,'\x5cn')[_0x5c6fa7(0xc9)](/,/g,'\x5c,')['replace'](/;/g,'\x5c;');}function foldVcardLine(_0x3f43f5){const _0x1e8b7a=a16_0x317538,_0x1c0349=new TextEncoder();if(_0x1c0349[_0x1e8b7a(0xe2)](_0x3f43f5)[_0x1e8b7a(0x116)]<=0x4b)return _0x3f43f5;const _0x578a2f=[];let _0x37ef1e='';for(const _0x35be4a of _0x3f43f5){const _0x5cf501=_0x37ef1e+_0x35be4a;_0x1c0349[_0x1e8b7a(0xe2)](_0x5cf501)[_0x1e8b7a(0x116)]>0x4b?(_0x578a2f[_0x1e8b7a(0xd1)](_0x37ef1e),_0x37ef1e='\x20'+_0x35be4a):_0x37ef1e=_0x5cf501;}if(_0x37ef1e)_0x578a2f[_0x1e8b7a(0xd1)](_0x37ef1e);return _0x578a2f[_0x1e8b7a(0xa6)]('\x0d\x0a');}function formatStudentLabel(_0x5a0ed3){const _0x3a5699=a16_0x317538,_0x50438a=cellStr(_0x5a0ed3['num']);return _0x50438a?_0x50438a+'.\x20'+_0x5a0ed3['name']:_0x5a0ed3[_0x3a5699(0xa4)];}function buildVcard(_0x519c4c){const _0x4a3536=a16_0x317538,_0x1d1737=(getVcardGroupPrefix()+'\x20'+formatStudentLabel(_0x519c4c))[_0x4a3536(0x108)](),_0x403a5f=String(_0x519c4c[_0x4a3536(0x102)])['replace'](/\D/g,''),_0x5a8015=[],_0xac5e23=getStudentBirthYearLabel(_0x519c4c);if(_0xac5e23)_0x5a8015['push'](_0xac5e23);if(_0x519c4c['gender'])_0x5a8015[_0x4a3536(0xd1)](_0x4a3536(0x12b)+_0x519c4c['gender']);_0x5a8015['push'](VCARD_ORG);if(_0x519c4c['extra'])_0x5a8015[_0x4a3536(0xd1)](_0x519c4c[_0x4a3536(0x104)]);const _0x2f2ca0=_0x5a8015[_0x4a3536(0xa6)](_0x4a3536(0x130)),_0x30c566=[_0x4a3536(0x149),'VERSION:3.0',foldVcardLine(_0x4a3536(0x15a)+escapeVcardValue(_0x1d1737)),foldVcardLine('N;CHARSET=UTF-8:'+escapeVcardValue(_0x519c4c[_0x4a3536(0xa4)])+';;;;'),_0x4a3536(0x97)+_0x403a5f,_0x4a3536(0xa9)+_0x403a5f,foldVcardLine(_0x4a3536(0xd0)+escapeVcardValue(_0x2f2ca0)),foldVcardLine(_0x4a3536(0xa0)+escapeVcardValue(VCARD_ORG)),_0x4a3536(0xb7)];return _0x30c566['join']('\x0d\x0a')+'\x0d\x0a';}function safeFileName(_0x2577d4){const _0xbcc058=a16_0x317538;return String(_0x2577d4||_0xbcc058(0x15d))['replace'](/[\\/:*?"<>|]/g,'_')[_0xbcc058(0x108)]()||'연락처';}function a16_0x2fd2(){const _0x52d3b9=['BM9VCgvUzxi','mZm1mdC2nuvrCNrNEq','C29YDa','phnWyw4Gy2XHC3m9iMDYB3vWlwvTChr5iJ4','mJqWmtKWC05MsuH5','BgvUz3rO','6Rca7j2065oCioYDToUVUoYNGcdSPidRUyqG7ksrcIHZDgfYDc8','zMLSzxm','pgXPignSyxnZpsjZDhvKzw50lwL0zw0Iig9Uy2XPy2S9iM9Wzw5wy2fYzej5sw5KzxGO','Dgv4Dc92y2fYzdTJAgfYC2v0pxv0zI04','Bg9JywXLq29TCgfYzq','z3vPzgvtDgvWmq','yxv0Aa','7kca7j6L65cCioUWMcdRQQNROz3SNyqG67Ai65+S7jIK7kEaioUQU+2wIoYkTEUlIoUlPc4','z3vPzgvjBwDmAwDODgjVEeLTzW','44cnioYGGoYEPEUqNcdTLzNSG53SNBqG7jEg7iQ164Ui64UKlG','y2XVC2vdB250ywn0vMLLDW','ksdcTYdSHjZRSOqG7kca7j6Lio2BHcdQT7JRO7KG67ke7yQ87jEq7isCioYxToQ4Sa','BwfZDgvYqxbW','4PEaioUPLoYDUoYCVoUHNa','z2v0rgf0zq','cIaGicaGicaGpc9IDxr0B24+','mJyXD3byvvjc','C2HHCMu','7kca7j6L65cCioQ3UoUJUEYDTcdSL4BSIRxRI4JRI6qUifbd7jEq7isCioYxKEYfGoYDHcdSMkZROkqG7kca7j6L7zw0ioYJVoYeUoYALc4','C2vSzwn0x2nSyxnZlMH0BwW','7isX67oeia','7isC67ke7jEq7isCioU2IoUFRoYyPoQ4ScdSI6tTJkG','C2v0qxr0CMLIDxrL','66QfioY2LoY2NcdSMytRO4WUcGRQS7xSMQKG7isC67ke7jEqioYGGoYEPE2vMoYlNoQYOoYkTEUlIoQ5Jd8','66QfioY2LoY2NcdSMytRO4WUcGRJGiW','imk3ia','6Ro17jQPioYeNoUYHcdSL7dQSRdSL5aG7iUK7yYO7zAi7iQ164Ui64UKlGRRQztSNBGG7zMu66M07jEq7isCioUlPoYlNcdROzZQT7JSNBJTLzWG65kKioYxKEYfGoYDHcdRI6tSI5WG7jEf66gC65oC7zw0ioYJVoYeUoYALc4','66QfioY2LoY2NoUqQcaO','z2v0tw9UDgG','mdiWmtaXltq','jMX0oW','C3r1zgvUDeXPC3q','i2mWmZKYyG','7lAu7lAC65cCio2vMEYdNEYDTcdSL4BSIRxRI4JRI6qUioUnSoYDTo2eScdTLONSNyqG7zMv7j247zw0ioYJVoYeUoYALc4','DMfS','ChjLDMvUDerLzMf1Bhq','CxvLCNLtzwXLy3rVCKfSBa','lNzJzG','ls1NDwLKzs1ZDgvWlwjHC2u','7zUi66cO7ioD','mMXps1rXBW','pc9ZCgfUpGOGicaGicaGicaGica','C2vSzwn0zwrdBgfZCW','DxnLCKfNzw50','yNrUqMfJAW','Ahr0Chm6lY9IDxnHBI10zwfJAgvYlxDVCMTHBgWTzgvMyxvSDc1YDgrIlMfZAweTC291DgHLyxn0ms5MAxjLyMfZzwrHDgfIyxnLlMfWCa','z2v0rNvSBfLLyxi','y2XHC3nmAxn0','mZy4ndm3nM5Ts21PzW','4PEaioUWMcdSHkdTG53SNlZROzW','qKvhsu46vKnbuKq','44cniooaJoYxSoUDVEYYMoYxKcdSTPtQSidJGi3RPBWG64Im65+SioYJVoYeUoYALc4','yxbWBhK','C3r5Bgu','Dgv4Dc94lxzJyxjK','nda5mJyZsMXsrLvu','y29UDgfJDfzPzxDuAxrSzq','yNvZyw4TDgvHy2HLCI13B3jRywXS','zgf0ywjHC2u','6Rca7j2065oCioYDToUVUoYNGcdSPidRUyqG7ksr','C2vHCMnO','zMLSDgvY','pgXPignSyxnZpsjLBxb0Es1TC2CIpUYGGoYEPEUqNcdTLzNSG53SNBqG7jEg7iQ164Ui64UKlJWVBgK+','z3vPzgvmAwDODgjVEfrLEhq','zgLZCgXHEq','B3zLCMzSB3C','C2HLzxrFDg9FANnVBG','rK47q0HbuLnfvd1vveyTodO','7kce7zMu67ki7zI46RcaioYxHUYwTcdSL7dRNB3SSPJRPBWG66Em65oKioYiMcdSL4BSIRxRI4JRI6qU','zgf0ytO','7jEW65297lky','C3r1zgvUDenVBNrHy3rZ','7jEr7iwa7jEq7isCidhRSOGG7zwz7ioDkoUYIo2yUcdJGiWX44cnksdSI5ZSNPeG7jYe7lMy66w8ioYWVUYNGcdRQRVTLOJSIRxRI4JRI6qUiehSL7qG67ki7zI4WRDc7jE0ioYDToUMHmk3roYxTcdSOitTMzqG7zIv7iUD7j2eio2zLEYDUo2vTcdSO7ZSHlJSMPqU','z3jVDxbcDg5mAxn0','BwvZC2fNzq','Aw5PDgLHBgL6zufWCa','Aw5JBhvKzxm','jMD0oW','zMfSBgjHy2TeB25L','zxjYB3i','67cyioYDToUMHoYDHcdSNOxROkxTLBqG7ko87is47jQulG','Aw5SAw5LlwjSB2nR','ndCYmJmYnMTgEhf5Bq','zMfSC2u','lMD1AwrLlxn0zxaTzxHWyw5KywjSzq','AxnbCNjHEq','ywrTAw5qDW','y3vYCMvUDenSyxnZ','u2vYDMvYvMfSDwu','y29UC3rYDwn0B3i','zgf0yxnLDa','DgfYz2v0','7yYm7j287j2eioYDVEYDHcdSIjGG7jEg7iQ164Ui64UKlG','pc9KAxy+cIaGicaGicaGicaGidWVzgL2pGOGicaGicaGicaGica8C3bHBIbJBgfZCZ0IC3r1zgvUDc1Hy3rPB24IpUYxSoUDVEYYMcdSTPtQSia8l3nWyw4+cIaGicaGicaGpc9SAt4','y3vYCMvUDenSyxnZvgfN','AxmTB3bLBG','pgXPignSyxnZpsjLBxb0Es1TC2CIpUU2IoUFRoYyPoUkLcdSPjhIGky8l2XPpG','imk3ioUYIo2yUoYiNdWVC3bHBJ4','C2XPy2u','CgfYzw50rwXLBwvUDa','Aw5Uzxjive1m','yMXVy2S','zg93BMXVywq','igLZlwfJDgL2zq','C3rHCNrZv2L0Aa','66QfioYeNoUYHoYxKcdSOidSNQxRKkGGWRCG7jYeioQ3UoUJUsdRSOtTIRZSL5dSHjWG7y+W7jY866gCioYxToQ4Sa','7ioy7zsm67cy','7kca7j6L65cCio2vMEYdNsdSL4BSNyW','z2vUzgvY','66Mu7j24io2zLoUPToYxKoYeNcdRUytRSidRSOJTMlGG66gC6RE47j24io2BHcdSGQZSMQNTLAaG7iIyioYEIoYkTEUlIoUlPc4','y29SB3i','zNvUy3rPB24','C3r1zgvUDhm','ywDL','kcGOlISPkYKRksSK','mdeWltmZmZmTndq0na','vevmo1rzueu9q0vmtdO','6Rca7j2065oCioYDToUVUoYNGa','z2v0qxr0CMLIDxrL','Dg9tDhjPBMC','44cnioYxSoUDVEYYMcdTJiZSNBZSNyqG64UK7jQ066gC65oC7zAi7iQ164Ui64UKlG','yM9KEq','yMLYDgHzzwfYtgfIzwW','mdeWlteXmteTmJiYmG','ywX0','t1jho0niqvjtrvq9vvrgltG6','DMfSDwu','44cnioQZTEYCOcdSSl3SL5dSHjWG44cm7jEW65297lky44cnioUyKoUkLcdJGiZSL7dRNB3SSPJSL5aG7kca7j6L44cn7j2eioYeOo2dNE2vMoYeUoYALc4','44cniooaJoYxSoUDVEYYMoYxKcdSTPtQSidJGi3RPBWG7isG7yoD7zw0ioYJVoYeUoYALc4','BMfTzq','qw5KCM9PzcbKyxrHifvstcb2y2fYzcbVCgvUigzHAwXLza','AM9PBG','iIbKyxrHlwnSyxnZlw5HBwu9iG','z3vPzgvjBwDmAwDODgjVEa','vevmo0nfteW6','66Qf7j20ioYeNoUYHoYxKcdSOidSNQxRKjJSL4JSIRxRI4JRI6qUcU2pSoYxKoYeNcdSNiqG44cm7jEW65297lkyioQ3UoUJUEoaJsdRSOtTIRZSNyqG64Im65+SioYxSoUDVEYYMoULVcdSTPtQSidTLzJSHlJSMPqU','B3bLBKnVBNrHy3rwAwv3','z2v0sxrLBq','A2v5CW','z2HSD25ZmdiWmubUyxzLCI5JB20','6Ro87y+jio2BIoUGQoYdNq','pc9ZCgfUpG','qwjVCNrfCNjVCG','4PYfioYdMo2uJcdTLzNSG50Gm+UQHsaO7jEW65297lkyioYGGoYEPsdTMztRQBqG7ywm7iQK7yQ4kq','y29UDgfJDfzPzxDdB3vUDa','66Qfimk3ioUYIo2yUoYiNcaO7ioy7zsmkq','B3bLBKnVBNrHy3rwAwv3qNLcDg4','CMvTB3zLq2HPBgq','ru5eoLzdqvje','C2v0uhjVCgvYDhK','iIbVBMnSAwnRpsjVCgvUq29UDgfJDfzPzxDcEuj0BIH0AgLZksi+cIaGicaGicaGicaGidXZCgfUignSyxnZpsjNCM91Cc1IDg4TBMfTzsi+','66gC6RE47j247j20ioUNJoUJJoUqMoYxIoYkTEUlIoUlPc4G66Mu7j24io2zLoUPToYxKoYeNcdRI6tSI5WG66gC6RE47j247zw0ioYJVoYeUoYALc4','y29UDgfPBNm','7jEr7iwaioYDVEUkLcdSPjhIGky','zxHPC3rZ','yxjPys1OAwrKzw4','zgf0ys1JBgfZCY1Uyw1L','rw50zxi','pgXPignSyxnZpsjLBxb0Es1TC2CIpUYeNoUYHoYxKoYeNcdRTOJRN6ZSMktSP4aG66Q77zAi7iQ164Ui64UKlJWVBgK+','jNf1B3q7','yxjYyxK','zNjVBunOyxjdB2rL','y3jLyxrLt2jQzwn0vvjm','mZmYueD1wevZ','DMLLD0nVBNrHy3rmAxn0','A2v5','CMvWBgfJzq','CMvS','z3vPzguTAw1NlxbSywnLAg9SzgvY','zM9YrwfJAa','7isC67keioYGGoYEPEYDGcdRQztSNBGG7zMu66M0kgLUzgv4lMH0BwWP7jEq7isCioU5HoUWGoUYIo2yUoUHNcdROzZQT7JSNBJTLzWG65kKioYcRoYAQE2vOcdSIjGG7j6i7iQ164Ui64UKlGOk7jEr7iwaioY2LoY2Nmk366QP66gDio2zLEYDUoYDGcdQT7JRJidROzWG6Rca64QL7zwP64Ui64UKlG','iZi3ywu2ma','Bg9HzfnHBxbSzvn0DwrLBNrZ','tK9urtTdsefsu0vupvvurI04oG','ChvZAa','mdeWltu1ntuTnJy2nG','lMD1AwrLlwLTzY1WBgfJzwHVBgrLCG','CxvLCNLtzwXLy3rVCG','66QficJSL7dRNB3SSPGG7kca7j6Lio2zLoUPTcK','CMvHzefZqxjYyxLcDwzMzxi','Dhj1zq','lMD1AwrLlwjVzhKGpIbW','7jEr7iwaioYYMoUMRcdSI6tTJkG6ia','z2v0rwXLBwvUDej5swq','AgLKzgvU','y2fUu2HHCMu','44cnioQ3UoUJUEYxKcdSHjZRSOtSL5aG7kca7j6L7zwy7iUC6RkG7iQ164Ui6RMmpWOO7y+W7jEq7isCioQWMEYDGcdRSjJSNlZROzWG67Ai65+S7jISioYiMcdSNOJSIRxRI4JRI6qP','B25SB2fK','z3vPzgvmAwDODgjVEeLTz1DYyxa','B2zMC2v0sgvPz2H0','ywrKrxzLBNrmAxn0zw5LCG','zw5JB2rL','BwfW','44cn7jEqioYDToUVUcdSOidSNQxRKjWG66Qf64UO7j20ioYEIoYkTEUlIoUlPc4k642U7jA07joW7iUC6RkG7iQ164Ui6RMmpW','67Ai65+S7jIK64QuioYKKEkaPG','C2LNBKLUv2L0AevTywLSqw5KugfZC3DVCMq','u2HLzxrZ','nLnyuNfwuq','y2XPy2S','67cyioYDToUMHcdSNOxROku','B25JBgLJAW','mZu0m0DKvNb2Bq','lMD1AwrLlw51Bq','Aw5KzxGXlMH0BwW','AhjLzG','7isC67keioYGGoYEPsdSI6tTJkG6ia','C3jJ','ywrK','7kcr7iAn7ksroIa','BNvT','BM9Uzq','44cnioYxSoUDVEYYMcdSLBhSNBqG7jE066AS66M0iooaJoYGGoYEPEoaJEYDHcdRIiZRN6WG7ko87is47jQulG','y3jLyxrLrwXLBwvUDa','Bwf4','CNjU','B3bLBLzJyxjKqNLjBMrLEa','CMvZAxPL','jMfTCdS','7isC67keioYGGoYEPEYxKcdSI6tTJkJTLOJSIRxRI4JRI6qUioYEOoYlNcdTM4qG64UK7iUCioYlNoUpHo2vTcdSO7ZSHlJSMPqU','pgXPignSyxnZpsjLBxb0Es1TC2CIpU2vMEYdNsdRQQNROz3SNBqG7jEg7iQ164Ui64UKlJWVBgK+','pc9KAxy+cIaGicaGicaGicaGicaGica8zgL2ignSyxnZpsjZDhvKzw50lxn1yIi+','D2fYBG','Dgv4DenVBNrLBNq','CgHVBMu','67cv7kEa7zUi','zxH0CMe','44cniooaJoYxSoUDVEYYMooaJsdSLBhSNlZROzWG7jE06RIW66w8ioYeOo2dNE2vTcdSO7ZSHlJSMPqU','yxbWzw5Kq2HPBgq','A2v5zg93BG','DhjPBq','67Ai65+S7jIK6RIWioYlPo2mQa','mJq5nZe4ndHeAfb6Euq','DgvZDa','4PYfiooaJa','quL6yvn5rg5brhviDtbTCtrhswXXqM1FvKHMDJD5nLjHCMfIr2Hv','CMvM','7kce7zMuioYxHUYDJa','rxnJyxbL'];a16_0x2fd2=function(){return _0x52d3b9;};return a16_0x2fd2();}const VCARD_MIME_ANDROID=a16_0x317538(0x14d),VCARD_MIME_DEFAULT=a16_0x317538(0x11a);function isAndroidPhone(){const _0xcb4224=a16_0x317538;return/Android/i[_0xcb4224(0x10b)](navigator[_0xcb4224(0x142)]);}function isMobileContactDevice(){const _0xba5bcc=a16_0x317538;return/Android|iPhone|iPad|iPod|Mobile|webOS|BlackBerry|IEMobile|Opera Mini/i[_0xba5bcc(0x10b)](navigator['userAgent']);}function scheduleRevokeObjectUrl(_0xf08df6){setTimeout(()=>URL['revokeObjectURL'](_0xf08df6),0xea60);}function openVcardLink(_0x26e170,_0x2fe34a,_0x18842f){const _0x3f2fb1=a16_0x317538,_0x487638=document['createElement']('a');_0x487638[_0x3f2fb1(0xef)]=_0x26e170,_0x487638[_0x3f2fb1(0x12d)](_0x3f2fb1(0xca),_0x3f2fb1(0x111));if(_0x18842f)_0x487638[_0x3f2fb1(0x89)]=_0x2fe34a;document[_0x3f2fb1(0x9c)][_0x3f2fb1(0x106)](_0x487638),_0x487638[_0x3f2fb1(0xe9)](),document['body'][_0x3f2fb1(0xb6)](_0x487638);}function vcfToAndroidDataUrl(_0x58e7ef){const _0xf2d1eb=a16_0x317538,_0x1d1b27=new TextEncoder()[_0xf2d1eb(0xe2)](_0x58e7ef);let _0x57a34d='';return _0x1d1b27[_0xf2d1eb(0xcc)](_0x1de4fa=>{const _0xae81a=_0xf2d1eb;_0x57a34d+=String[_0xae81a(0xc4)](_0x1de4fa);}),_0xf2d1eb(0x15c)+VCARD_MIME_ANDROID+';charset=utf-8;base64,'+btoa(_0x57a34d);}async function openVcardOnAndroid(_0x325810,_0x3a3201,_0x389bfb){const _0x2653d6=a16_0x317538,_0x5215ce=new File([_0x325810],_0x3a3201,{'type':VCARD_MIME_ANDROID});if(navigator[_0x2653d6(0x128)]&&typeof navigator[_0x2653d6(0xdc)]===_0x2653d6(0x92))try{if(navigator[_0x2653d6(0xdc)]({'files':[_0x5215ce]})){await navigator['share']({'files':[_0x5215ce],'title':_0x389bfb}),setStatus('「'+_0x389bfb+_0x2653d6(0xa2));return;}}catch(_0xe878b8){if(_0xe878b8&&_0xe878b8[_0x2653d6(0xa4)]===_0x2653d6(0xb1))return;}try{openVcardLink(vcfToAndroidDataUrl(_0x325810),_0x3a3201,![]),setStatus('「'+_0x389bfb+_0x2653d6(0xf6));return;}catch(_0x28718c){console[_0x2653d6(0x100)](_0x2653d6(0xa5),_0x28718c);}const _0x5198a6=URL['createObjectURL'](new Blob([_0x325810],{'type':VCARD_MIME_ANDROID}));openVcardLink(_0x5198a6,_0x3a3201,![]),scheduleRevokeObjectUrl(_0x5198a6),setStatus('「'+_0x389bfb+_0x2653d6(0x105));}async function openVcardForStudent(_0x57f0b6){const _0x1a741d=a16_0x317538;if(!_0x57f0b6[_0x1a741d(0x102)]){setStatus(_0x1a741d(0x15b),!![]);return;}const _0x531724=buildVcard(_0x57f0b6),_0x2b6b3c=safeFileName(_0x57f0b6[_0x1a741d(0xa4)])+_0x1a741d(0x13c),_0x55461e=formatStudentLabel(_0x57f0b6);if(isAndroidPhone()){await openVcardOnAndroid(_0x531724,_0x2b6b3c,_0x57f0b6[_0x1a741d(0xa4)]);return;}if(isMobileContactDevice()){const _0x5f0062=new File([_0x531724],_0x2b6b3c,{'type':VCARD_MIME_DEFAULT});if(navigator[_0x1a741d(0x128)]&&typeof navigator['canShare']===_0x1a741d(0x92)&&navigator[_0x1a741d(0xdc)]({'files':[_0x5f0062]}))try{await navigator[_0x1a741d(0x128)]({'files':[_0x5f0062],'title':_0x55461e}),setStatus('「'+_0x57f0b6['name']+_0x1a741d(0xa3));return;}catch(_0x1ac0a0){if(_0x1ac0a0&&_0x1ac0a0[_0x1a741d(0xa4)]===_0x1a741d(0xb1))return;}const _0x2350c5=URL[_0x1a741d(0xc5)](new Blob([_0x531724],{'type':VCARD_MIME_DEFAULT}));openVcardLink(_0x2350c5,_0x2b6b3c,![]),scheduleRevokeObjectUrl(_0x2350c5),setStatus('「'+_0x57f0b6[_0x1a741d(0xa4)]+_0x1a741d(0x14a));return;}const _0x151312=URL[_0x1a741d(0xc5)](new Blob([_0x531724],{'type':VCARD_MIME_DEFAULT}));openVcardLink(_0x151312,_0x2b6b3c,!![]),scheduleRevokeObjectUrl(_0x151312),setStatus('「'+_0x57f0b6['name']+_0x1a741d(0x9b));}function a16_0x1458(_0x5696d8,_0x4f6046){_0x5696d8=_0x5696d8-0x7e;const _0x2a6c7a=a16_0x2fd2();let _0x4dffcb=_0x2a6c7a[_0x5696d8];if(a16_0x1458['VdjpDT']===undefined){var _0x40a110=function(_0x1ad9d3){const _0x1d0289='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x50c9a0='',_0x1c959c='',_0x13aabe=_0x50c9a0+_0x40a110;for(let _0x52c700=0x0,_0x51c93e,_0x1a3b35,_0x303f70=0x0;_0x1a3b35=_0x1ad9d3['charAt'](_0x303f70++);~_0x1a3b35&&(_0x51c93e=_0x52c700%0x4?_0x51c93e*0x40+_0x1a3b35:_0x1a3b35,_0x52c700++%0x4)?_0x50c9a0+=_0x13aabe['charCodeAt'](_0x303f70+0xa)-0xa!==0x0?String['fromCharCode'](0xff&_0x51c93e>>(-0x2*_0x52c700&0x6)):_0x52c700:0x0){_0x1a3b35=_0x1d0289['indexOf'](_0x1a3b35);}for(let _0x3556f9=0x0,_0xaed6b1=_0x50c9a0['length'];_0x3556f9<_0xaed6b1;_0x3556f9++){_0x1c959c+='%'+('00'+_0x50c9a0['charCodeAt'](_0x3556f9)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x1c959c);};a16_0x1458['AgZiKS']=_0x40a110,a16_0x1458['BACGwy']={},a16_0x1458['VdjpDT']=!![];}const _0x2fd2c8=_0x2a6c7a[0x0],_0x1458aa=_0x5696d8+_0x2fd2c8,_0x3e7322=a16_0x1458['BACGwy'][_0x1458aa];if(!_0x3e7322){const _0x48efa7=function(_0x188a7c){this['lHxLEg']=_0x188a7c,this['hXjOgs']=[0x1,0x0,0x0],this['UDITuO']=function(){return'newState';},this['WaTnhk']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['BUBbsv']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x48efa7['prototype']['JjQotD']=function(){const _0x5af78d=new RegExp(this['WaTnhk']+this['BUBbsv']),_0x1b7814=_0x5af78d['test'](this['UDITuO']['toString']())?--this['hXjOgs'][0x1]:--this['hXjOgs'][0x0];return this['EvhsVt'](_0x1b7814);},_0x48efa7['prototype']['EvhsVt']=function(_0x17eb71){if(!Boolean(~_0x17eb71))return _0x17eb71;return this['SKGRgd'](this['lHxLEg']);},_0x48efa7['prototype']['SKGRgd']=function(_0x23b80a){for(let _0x1efc95=0x0,_0x31a426=this['hXjOgs']['length'];_0x1efc95<_0x31a426;_0x1efc95++){this['hXjOgs']['push'](Math['round'](Math['random']())),_0x31a426=this['hXjOgs']['length'];}return _0x23b80a(this['hXjOgs'][0x0]);},new _0x48efa7(a16_0x1458)['JjQotD'](),_0x4dffcb=a16_0x1458['AgZiKS'](_0x4dffcb),a16_0x1458['BACGwy'][_0x1458aa]=_0x4dffcb;}else _0x4dffcb=_0x3e7322;return _0x4dffcb;}function renderStudentList(){const _0xf02a95=a16_0x317538,_0x2f13ed=document[_0xf02a95(0xda)](_0xf02a95(0x136));if(!_0x2f13ed)return;if(!students[_0xf02a95(0x116)]){_0x2f13ed[_0xf02a95(0x87)]=_0xf02a95(0xfe);return;}_0x2f13ed[_0xf02a95(0x87)]=students[_0xf02a95(0xe3)]((_0xf6bf94,_0x411dfb)=>{const _0x2b79fa=_0xf02a95,_0x45cc55=formatStudentSubText(_0xf6bf94);return _0x2b79fa(0x119)+_0x411dfb+')\x22\x20role=\x22button\x22\x20tabindex=\x220\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22student-meta\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22student-name\x22>'+escapeHtml(formatStudentLabel(_0xf6bf94))+_0x2b79fa(0xff)+escapeHtml(_0x45cc55)+_0x2b79fa(0x80);})[_0xf02a95(0xa6)]('');}function escapeHtml(_0x37fc44){const _0x57bc5d=a16_0x317538;return String(_0x37fc44??'')['replace'](/&/g,_0x57bc5d(0xfc))[_0x57bc5d(0xc9)](/</g,_0x57bc5d(0x135))['replace'](/>/g,_0x57bc5d(0x164))[_0x57bc5d(0xc9)](/"/g,_0x57bc5d(0xc2));}function parseRowsFromSheet(_0x529ac1){const _0xfc4d36=a16_0x317538;if(!_0x529ac1||!_0x529ac1[_0xfc4d36(0x116)])return[];const _0x4217c6=findStudentDataAnchor(_0x529ac1);if(!_0x4217c6)throw new Error(_0xfc4d36(0x15f));const {row:_0x442285,numCol:_0x8073e2}=_0x4217c6,_0x5337ec=_0x8073e2+COL_OFFSET_NAME,_0x258b63=_0x8073e2+COL_OFFSET_RRN,_0xeea491=_0x8073e2+COL_OFFSET_PHONE,_0x2d0aab=[];for(let _0x46802d=_0x442285;_0x46802d<_0x529ac1[_0xfc4d36(0x116)];_0x46802d++){const _0x29ddc3=_0x529ac1[_0x46802d];if(!_0x29ddc3||!_0x29ddc3[_0xfc4d36(0x116)])break;const _0x49b646=_0x29ddc3[_0x8073e2],_0x3391cc=cellStr(_0x49b646);if(_0x46802d>_0x442285&&(_0x3391cc===''||_0x49b646==null))break;const _0x3dad88=cellStr(_0x29ddc3[_0x5337ec]);if(!_0x3dad88)continue;const _0x2fed1f=normalizeRrn(_0x29ddc3[_0x258b63]),_0x35ba95=normalizePhone(_0x29ddc3[_0xeea491]),_0x215493=calcAgeFromRrn(_0x29ddc3[_0x258b63]),_0x40490b=calcGenderFromRrn(_0x29ddc3[_0x258b63]);_0x2d0aab[_0xfc4d36(0xd1)]({'num':_0x3391cc||String(_0x49b646??''),'name':_0x3dad88,'phone':_0x35ba95,'age':_0x215493,'gender':_0x40490b,'rrn':_0x2fed1f,'extra':''});}return _0x2d0aab;}function handleExcelUpload(_0x4a31b4){const _0x40a8cb=a16_0x317538,_0xe0908=_0x4a31b4[_0x40a8cb(0x118)]&&_0x4a31b4[_0x40a8cb(0x118)][0x0];if(!_0xe0908)return;setStatus(_0x40a8cb(0xbc));const _0x441070=new FileReader();_0x441070[_0x40a8cb(0xde)]=_0x4ba27b=>{const _0x11a6e2=_0x40a8cb;try{const _0x106ba4=new Uint8Array(_0x4ba27b[_0x11a6e2(0x7e)]['result']),_0x98ef94=XLSX['read'](_0x106ba4,{'type':_0x11a6e2(0xc3)}),_0x3e23bc=_0x98ef94['SheetNames'][0x0],_0x152220=_0x98ef94[_0x11a6e2(0xe7)][_0x3e23bc],_0x5a46fc=XLSX['utils'][_0x11a6e2(0x159)](_0x152220,{'header':0x1,'defval':''});students=parseRowsFromSheet(_0x5a46fc),!students[_0x11a6e2(0x116)]?setStatus(_0x11a6e2(0x138),!![]):(students=sortStudentsByNum(students),setStatus('✅\x20'+students[_0x11a6e2(0x116)]+_0x11a6e2(0x132)+_0xe0908['name']+_0x11a6e2(0x122)),promptSaveToFirebase(_0xe0908[_0x11a6e2(0xa4)]));}catch(_0x39bc6e){console[_0x11a6e2(0x166)](_0x39bc6e),setStatus(_0x11a6e2(0xd9)+(_0x39bc6e[_0x11a6e2(0x161)]||_0x39bc6e),!![]);}_0x4a31b4[_0x11a6e2(0xa1)]='';},_0x441070['onerror']=()=>setStatus(_0x40a8cb(0x7f),!![]),_0x441070[_0x40a8cb(0xd6)](_0xe0908);}function loadSampleStudents(){const _0x83bc99=a16_0x317538;students=sortStudentsByNum([{'num':'1','name':'김민수','phone':_0x83bc99(0x9e),'age':'21','gender':'남','rrn':'030315-3','extra':'샘플'},{'num':'2','name':'이서연','phone':_0x83bc99(0x96),'age':'22','gender':'여','rrn':_0x83bc99(0x134),'extra':'샘플'},{'num':'3','name':_0x83bc99(0x103),'phone':_0x83bc99(0xd2),'age':'20','gender':'남','rrn':'060512-3','extra':'샘플'}]),currentClassName=currentClassName||_0x83bc99(0x8d),updateCurrentClassTag();const _0x30289e=document['getElementById'](_0x83bc99(0xc7)),_0x1c7c55=document[_0x83bc99(0xda)](_0x83bc99(0x14f)),_0x139ae3=document[_0x83bc99(0xda)](_0x83bc99(0xb3));_0x30289e&&(_0x30289e[_0x83bc99(0x146)][_0x83bc99(0xf2)]('is-open'),_0x30289e[_0x83bc99(0x12d)](_0x83bc99(0xbe),_0x83bc99(0x16a)),document[_0x83bc99(0x9c)]['style'][_0x83bc99(0x158)]=_0x83bc99(0xdb));if(_0x1c7c55)_0x1c7c55[_0x83bc99(0x101)]=currentClassName;if(_0x139ae3)_0x139ae3[_0x83bc99(0x101)]=students['length']+_0x83bc99(0xb4);renderStudentList(),setStatus(_0x83bc99(0xb2));}function openVcardByIndex(_0x4d0b93){const _0x56ebab=students[_0x4d0b93];if(_0x56ebab)openVcardForStudent(_0x56ebab);}window['handleExcelUpload']=handleExcelUpload,window[a16_0x317538(0xcf)]=loadSampleStudents,window[a16_0x317538(0xfa)]=openVcardByIndex,window['showGuideImgPlaceholder']=showGuideImgPlaceholder,window['openGuideStepModal']=openGuideStepModal,window['closeGuideImageModal']=closeGuideImageModal,window[a16_0x317538(0xb5)]=openContactViewByBtn,window[a16_0x317538(0xab)]=openContactView,window[a16_0x317538(0x121)]=closeContactView;
+/**
+ * 연락처 vCard 테스트 페이지
+ * 엑셀 → 이름·나이·전화 추출 → 행 클릭 시 .vcf 다운로드(모바일 연락처 추가)
+ */
+
+let students = [];
+let masterDatabase = null;
+let masterAuth = null;
+let firebaseReady = false;
+let currentClassName = '';
+
+const MASTER_APP_NAME = 'masterApp';
+const AUTH_EMAIL = 'ghlwns0201@naver.com';
+
+const MASTER_CONFIG = {
+    apiKey: 'AIzaSyDnADuHu0mq4GIlqBm_VHfv7y6RarabGhU',
+    authDomain: 'busan-teacher-workall.firebaseapp.com',
+    databaseURL: 'https://busan-teacher-workall-default-rtdb.asia-southeast1.firebasedatabase.app',
+    projectId: 'busan-teacher-workall'
+};
+const FB_CONTACTS_PATH = 'studentContacts';
+
+/** 엑셀 고정 열: 번호(A) · 이름(B) · 주민번호(C) · 전화(D) — 시작 위치는 시트마다 달라질 수 있음 */
+const COL_OFFSET_NUM = 0;
+const COL_OFFSET_NAME = 1;
+const COL_OFFSET_RRN = 2;
+const COL_OFFSET_PHONE = 3;
+
+const VCARD_ORG = '과평 훈련생';
+const VCARD_GROUP_PREFIX = '훈련생'; // 연락처 그룹/메모에 쓸 접두어
+
+document.addEventListener('DOMContentLoaded', () => {
+    setupClassContext();
+    initFirebaseAndLoadClasses();
+    initGuideImageLightbox();
+    syncGuideStepHeights();
+    window.addEventListener('resize', syncGuideStepHeights);
+});
+
+/** 1번 설명 높이를 잰 뒤 2·3번만 그 배수(--guide-tall-mult)로 고정 */
+function syncGuideStepHeights() {
+    const step1 = document.getElementById('guideStep1');
+    if (!step1) return;
+    const base = Math.max(step1.offsetHeight, 1);
+    document.documentElement.style.setProperty('--guide-step-base', base + 'px');
+}
+
+function initGuideImageLightbox() {
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeContactView();
+            closeGuideImageModal();
+        }
+    });
+    document.querySelectorAll('.guide-step-expandable').forEach((step) => {
+        step.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openGuideStepModal(step);
+            }
+        });
+    });
+}
+
+function openGuideStepModal(stepEl) {
+    if (!stepEl) return;
+
+    const box = document.getElementById('guideImgLightbox');
+    const numEl = document.getElementById('guideLightboxNum');
+    const textEl = document.getElementById('guideLightboxText');
+    const imgWrap = document.getElementById('guideLightboxImgWrap');
+    const big = document.getElementById('guideImgLightboxImg');
+    const noImg = document.getElementById('guideLightboxNoImg');
+    if (!box || !numEl || !textEl || !imgWrap || !big || !noImg) return;
+
+    const num = stepEl.querySelector('.guide-num');
+    const desc = stepEl.querySelector('.guide-body > p');
+    const img = stepEl.querySelector('.guide-img-wrap img');
+    const hasImg = img && img.style.display !== 'none' && !img.dataset.fallbackDone && img.src;
+
+    numEl.textContent = num ? num.textContent : '';
+    textEl.innerHTML = desc ? desc.innerHTML : '';
+
+    if (hasImg) {
+        big.src = img.src;
+        big.alt = img.alt || '가이드 이미지';
+        big.style.display = 'block';
+        imgWrap.style.display = 'block';
+        noImg.style.display = 'none';
+    } else {
+        big.src = '';
+        big.style.display = 'none';
+        imgWrap.style.display = 'none';
+        const ph = stepEl.querySelector('.guide-img-placeholder');
+        noImg.textContent = ph ? ph.textContent : '가이드 이미지 준비 중';
+        noImg.style.display = 'block';
+    }
+
+    box.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeGuideImageModal() {
+    const box = document.getElementById('guideImgLightbox');
+    const big = document.getElementById('guideImgLightboxImg');
+    const textEl = document.getElementById('guideLightboxText');
+    if (!box) return;
+    box.classList.remove('is-open');
+    if (big) {
+        big.src = '';
+        big.style.display = 'none';
+    }
+    if (textEl) textEl.innerHTML = '';
+    const contactView = document.getElementById('viewContactList');
+    if (!contactView || !contactView.classList.contains('is-open')) {
+        document.body.style.overflow = '';
+    }
+}
+
+/** 가이드 이미지 없을 때 안내 (start 폴더에 png 파일 추가) */
+function showGuideImgPlaceholder(img, fileName) {
+    if (!img || img.dataset.fallbackDone) return;
+    img.dataset.fallbackDone = '1';
+    img.style.display = 'none';
+    const media = img.parentElement;
+    if (!media || media.querySelector('.guide-img-placeholder')) return;
+    const ph = document.createElement('div');
+    ph.className = 'guide-img-placeholder';
+    ph.textContent = `가이드 이미지 준비 중\n(start/${fileName})`;
+    media.appendChild(ph);
+}
+
+function setStatus(msg, isError) {
+    const el = document.getElementById('statusMsg');
+    if (!el) return;
+    el.textContent = msg || '';
+    el.style.color = isError ? '#c0392b' : '#27ae60';
+}
+
+function sanitizeClassKey(name) {
+    return String(name ?? '').trim().replace(/[.#$/[\]]/g, '_');
+}
+
+/** select_class → index1 과 동일: URL ?class= 또는 localStorage selectedClass */
+function getLinkedClassName() {
+    if (typeof initClassContext === 'function') initClassContext();
+    const raw = window.currentClass || localStorage.getItem('selectedClass') || '';
+    return sanitizeClassKey(raw);
+}
+
+function setupClassContext() {
+    const linked = getLinkedClassName();
+    if (linked) {
+        currentClassName = linked;
+        updateCurrentClassTag();
+    }
+    setupBackButton();
+}
+
+function setupBackButton() {
+    const btn = document.getElementById('btnBack');
+    if (!btn) return;
+    const linked = getLinkedClassName();
+    if (typeof classNavHref === 'function' && linked) {
+        btn.textContent = '◀ 메인으로';
+        btn.onclick = () => { location.href = classNavHref('index1.html'); };
+    } else {
+        btn.textContent = '◀ 반 선택으로';
+        btn.onclick = () => { location.href = 'select_class.html'; };
+    }
+}
+
+function getVcardGroupPrefix() {
+    return currentClassName ? `${currentClassName} ${VCARD_GROUP_PREFIX}` : VCARD_GROUP_PREFIX;
+}
+
+function updateCurrentClassTag() {
+    const el = document.getElementById('currentClassTag');
+    if (!el) return;
+    if (!currentClassName) {
+        el.style.display = 'none';
+        el.textContent = '';
+        return;
+    }
+    el.style.display = 'inline-block';
+    el.textContent = `접속중: ${currentClassName}`;
+}
+
+function getMasterApp() {
+    const existing = firebase.apps.find((app) => app.name === MASTER_APP_NAME);
+    return existing || firebase.initializeApp(MASTER_CONFIG, MASTER_APP_NAME);
+}
+
+async function ensureFirebaseReady() {
+    if (firebaseReady && masterDatabase) return true;
+
+    const savedPw = localStorage.getItem('adminPw');
+    if (!savedPw) return false;
+
+    try {
+        const masterApp = getMasterApp();
+        masterDatabase = masterApp.database();
+        masterAuth = masterApp.auth();
+
+        if (!masterAuth.currentUser) {
+            await masterAuth.signInWithEmailAndPassword(AUTH_EMAIL, savedPw);
+        }
+
+        firebaseReady = true;
+        return true;
+    } catch (err) {
+        console.error(err);
+        firebaseReady = false;
+        return false;
+    }
+}
+
+async function initFirebaseAndLoadClasses() {
+    const savedPw = localStorage.getItem('adminPw');
+    if (!savedPw) {
+        renderGroupButtons([], '메인 화면에서 비밀번호 로그인 후 사용할 수 있습니다.');
+        return;
+    }
+
+    const ok = await ensureFirebaseReady();
+    if (!ok) {
+        renderGroupButtons([], '로그인이 만료되었습니다. 메인 화면에서 다시 로그인해 주세요.');
+        return;
+    }
+
+    loadSavedClassList();
+}
+
+function loadSavedClassList() {
+    if (!masterDatabase) return;
+    masterDatabase.ref(FB_CONTACTS_PATH).once('value', (snap) => {
+        const data = snap.val() || {};
+        const entries = Object.keys(data)
+            .filter((key) => data[key] && Array.isArray(data[key].students) && data[key].students.length)
+            .map((key) => ({
+                name: key,
+                count: data[key].students.length
+            }))
+            .sort((a, b) => a.name.localeCompare(b.name, 'ko'));
+        renderGroupButtons(entries);
+    }, (err) => {
+        console.error(err);
+        renderGroupButtons([], '저장된 반 목록을 불러오지 못했습니다.');
+    });
+}
+
+function renderGroupButtons(entries, emptyMsg) {
+    const list = document.getElementById('groupBtnList');
+    if (!list) return;
+
+    if (!entries.length) {
+        list.innerHTML = `<span class="group-empty">${escapeHtml(emptyMsg || '저장된 그룹이 없습니다. PC에서 엑셀을 올려 저장해 주세요.')}</span>`;
+        return;
+    }
+
+    list.innerHTML = entries.map(({ name, count }) => {
+        const safe = escapeHtml(name);
+        const active = name === currentClassName ? ' is-active' : '';
+        const countLabel = count ? `${count}명` : '';
+        return `<button type="button" class="btn-group-open${active}" data-class-name="${safe}" onclick="openContactViewByBtn(this)">
+            <span class="group-btn-name">${safe}</span>
+            ${countLabel ? `<span class="group-btn-sub">${countLabel} · 번호순</span>` : ''}
+        </button>`;
+    }).join('');
+}
+
+function sortStudentsByNum(list) {
+    return [...list].sort((a, b) => {
+        const na = parseInt(String(a.num).replace(/\D/g, ''), 10);
+        const nb = parseInt(String(b.num).replace(/\D/g, ''), 10);
+        if (!isNaN(na) && !isNaN(nb) && na !== nb) return na - nb;
+        return String(a.num).localeCompare(String(b.num), 'ko', { numeric: true });
+    });
+}
+
+function mapFirebaseStudents(rawList) {
+    return sortStudentsByNum(rawList.map((s) => enrichStudentFromRrn({
+        num: s.num || '',
+        name: s.name || '',
+        phone: s.phone || '',
+        age: s.age || '',
+        gender: s.gender || '',
+        rrn: s.rrn || '',
+        extra: ''
+    })));
+}
+
+async function promptSaveToFirebase(fileName) {
+    if (!students.length) return;
+
+    const savedPw = localStorage.getItem('adminPw');
+    if (!savedPw) {
+        await appAlert('서버 저장은 메인 화면(index.html)에서 비밀번호로 로그인한 뒤 사용할 수 있습니다.\n\n엑셀 추출·목록 확인은 그대로 가능합니다.');
+        return;
+    }
+
+    const ok = await ensureFirebaseReady();
+    if (!ok) {
+        await appAlert('공용 서버 연결에 실패했습니다.\n메인 화면에서 다시 로그인한 뒤 엑셀을 다시 업로드해 주세요.');
+        return;
+    }
+
+    const linkedClass = getLinkedClassName();
+    let className = linkedClass || currentClassName;
+
+    const confirmMsg = className
+        ? `${students.length}명 추출 완료.\n\n「${className}」 그룹에 서버에 저장하시겠습니까?\n(폰에서 같은 반으로 불러올 수 있습니다)`
+        : `${students.length}명 추출 완료.\n\n공용 서버에 저장하시겠습니까?`;
+
+    const wantSave = await appConfirm(confirmMsg);
+    if (!wantSave) return;
+
+    if (!className) {
+        const classInput = await appPrompt('저장할 반 이름을 입력하세요.\n예) 701반', '', { title: '반 이름 입력' });
+        if (classInput === null) return;
+        className = sanitizeClassKey(classInput);
+        if (!className) {
+            await appAlert('반 이름을 입력해 주세요.');
+            return;
+        }
+    }
+
+    try {
+        const existingSnap = await masterDatabase.ref(`${FB_CONTACTS_PATH}/${className}`).once('value');
+        if (existingSnap.exists()) {
+            const overwrite = await appConfirm(`「${className}」에 이미 저장된 명단이 있습니다.\n덮어쓰시겠습니까?`);
+            if (!overwrite) return;
+        }
+
+        await masterDatabase.ref(`${FB_CONTACTS_PATH}/${className}`).set({
+            className,
+            fileName: fileName || '',
+            updatedAt: firebase.database.ServerValue.TIMESTAMP,
+            students: students.map((s) => ({
+                num: s.num || '',
+                name: s.name || '',
+                phone: s.phone || '',
+                age: s.age || '',
+                gender: s.gender || '',
+                rrn: s.rrn || ''
+            }))
+        });
+
+        currentClassName = className;
+        updateCurrentClassTag();
+        loadSavedClassList();
+        setStatus(`✅ 「${className}」 ${students.length}명 서버에 저장됨 · 위 그룹 버튼에서 폰으로 열기`);
+        await appAlert(`「${className}」 ${students.length}명이 서버에 저장되었습니다.\n폰에서 위 「연락처 그룹」 버튼을 눌러 연락처를 추가하세요.`);
+    } catch (err) {
+        console.error(err);
+        setStatus('서버 저장 실패: ' + (err.message || err), true);
+        await appAlert('서버 저장에 실패했습니다. 잠시 후 다시 시도해 주세요.');
+    }
+}
+
+function openContactViewByBtn(btn) {
+    const className = btn && btn.getAttribute('data-class-name');
+    if (className) openContactView(className);
+}
+
+async function openContactView(className) {
+    const ok = await ensureFirebaseReady();
+    if (!ok) {
+        await appAlert('공용 서버에 연결되지 않았습니다.\n메인 화면에서 다시 로그인해 주세요.');
+        return;
+    }
+
+    const view = document.getElementById('viewContactList');
+    const titleEl = document.getElementById('contactViewTitle');
+    const countEl = document.getElementById('contactViewCount');
+    const list = document.getElementById('studentList');
+    if (!view || !list) return;
+
+    view.classList.add('is-open');
+    view.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+
+    if (titleEl) titleEl.textContent = className;
+    if (countEl) countEl.textContent = '불러오는 중…';
+    list.innerHTML = '<li class="empty-msg">불러오는 중…</li>';
+
+    masterDatabase.ref(`${FB_CONTACTS_PATH}/${className}`).once('value', (snap) => {
+        const data = snap.val();
+        if (!data || !Array.isArray(data.students) || !data.students.length) {
+            if (countEl) countEl.textContent = '저장된 학생 없음';
+            list.innerHTML = '<li class="empty-msg">저장된 학생이 없습니다.</li>';
+            setStatus(`「${className}」 저장된 학생이 없습니다.`, true);
+            return;
+        }
+
+        students = mapFirebaseStudents(data.students);
+        currentClassName = className;
+        updateCurrentClassTag();
+        loadSavedClassList();
+        renderStudentList();
+        if (countEl) countEl.textContent = `${students.length}명 · 번호순`;
+        setStatus(`✅ 「${className}」 ${students.length}명 (연락처 저장 화면)`);
+    }, (err) => {
+        console.error(err);
+        if (countEl) countEl.textContent = '불러오기 실패';
+        list.innerHTML = '<li class="empty-msg">서버에서 불러오지 못했습니다.</li>';
+        setStatus('서버에서 불러오기 실패', true);
+    });
+}
+
+function closeContactView() {
+    const view = document.getElementById('viewContactList');
+    if (!view || !view.classList.contains('is-open')) return;
+    view.classList.remove('is-open');
+    view.setAttribute('aria-hidden', 'true');
+    const lightbox = document.getElementById('guideImgLightbox');
+    if (!lightbox || !lightbox.classList.contains('is-open')) {
+        document.body.style.overflow = '';
+    }
+}
+
+function cellStr(val) {
+    return String(val ?? '').trim();
+}
+
+/** 번호 열 첫 칸(1번 학생)인지 */
+function isStudentNumberOne(val) {
+    if (val === 1) return true;
+    const s = cellStr(val);
+    return s === '1';
+}
+
+function normalizeRrn(raw) {
+    const digits = String(raw ?? '').replace(/\D/g, '');
+    if (digits.length < 7) return cellStr(raw);
+    return `${digits.slice(0, 6)}-${digits.slice(6, 7)}`;
+}
+
+/** 주민번호 앞6자리+뒤1자리(071107-3)로 만 나이 계산 */
+function calcAgeFromRrn(raw) {
+    const digits = String(raw ?? '').replace(/\D/g, '');
+    if (digits.length < 7) return '';
+    const yy = parseInt(digits.slice(0, 2), 10);
+    const mm = parseInt(digits.slice(2, 4), 10);
+    const dd = parseInt(digits.slice(4, 6), 10);
+    const genderDigit = parseInt(digits[6], 10);
+    let year;
+    if ([1, 2, 5, 6].includes(genderDigit)) year = 1900 + yy;
+    else if ([3, 4, 7, 8].includes(genderDigit)) year = 2000 + yy;
+    else year = 1800 + yy;
+
+    const today = new Date();
+    let age = today.getFullYear() - year;
+    const monthDiff = today.getMonth() + 1 - mm;
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dd)) age--;
+    return age >= 0 && age < 150 ? String(age) : '';
+}
+
+/** 주민번호로 출생년도 라벨 (예: 86년생, 03년생, 20년생) */
+function calcBirthYearLabelFromRrn(raw) {
+    const digits = String(raw ?? '').replace(/\D/g, '');
+    if (digits.length < 7) return '';
+    const yy = parseInt(digits.slice(0, 2), 10);
+    const genderDigit = parseInt(digits[6], 10);
+    let year;
+    if ([1, 2, 5, 6].includes(genderDigit)) year = 1900 + yy;
+    else if ([3, 4, 7, 8].includes(genderDigit)) year = 2000 + yy;
+    else year = 1800 + yy;
+
+    const shortYear = String(year % 100).padStart(2, '0');
+    return `${shortYear}년생`;
+}
+
+function getStudentBirthYearLabel(student) {
+    if (student.birthYearLabel) return student.birthYearLabel;
+    if (student.rrn) return calcBirthYearLabelFromRrn(student.rrn);
+    return '';
+}
+
+/** 주민번호 뒤 1자리로 성별 계산 (홀수=남, 짝수=여) */
+function calcGenderFromRrn(raw) {
+    const digits = String(raw ?? '').replace(/\D/g, '');
+    if (digits.length < 7) return '';
+    const genderDigit = parseInt(digits[6], 10);
+    if (Number.isNaN(genderDigit)) return '';
+    return genderDigit % 2 === 1 ? '남' : '여';
+}
+
+function enrichStudentFromRrn(student) {
+    const rrn = student.rrn || '';
+    if (!student.age && rrn) student.age = calcAgeFromRrn(rrn);
+    if (!student.gender && rrn) student.gender = calcGenderFromRrn(rrn);
+    if (!student.birthYearLabel && rrn) student.birthYearLabel = calcBirthYearLabelFromRrn(rrn);
+    return student;
+}
+
+function formatStudentSubText(student) {
+    const parts = [];
+    if (student.age) parts.push(`만${student.age}`);
+    if (student.gender) parts.push(student.gender);
+    parts.push(student.phone || '전화 없음');
+    return parts.join(' · ');
+}
+
+function looksLikeStudentRow(row, numCol) {
+    const name = cellStr(row[numCol + COL_OFFSET_NAME]);
+    const rrn = cellStr(row[numCol + COL_OFFSET_RRN]);
+    const phone = cellStr(row[numCol + COL_OFFSET_PHONE]);
+    if (!name) return false;
+    const hasRrn = /^\d{6}[-]?\d$/.test(rrn.replace(/\s/g, ''));
+    const hasPhone = String(phone).replace(/\D/g, '').length >= 9;
+    return hasRrn || hasPhone;
+}
+
+/** 시트 전체를 훑어 번호 열이 「1」인 첫 데이터 행 위치를 찾음 */
+function findStudentDataAnchor(rows) {
+    for (let r = 0; r < rows.length; r++) {
+        const row = rows[r];
+        if (!row || !row.length) continue;
+        for (let c = 0; c < row.length; c++) {
+            if (!isStudentNumberOne(row[c])) continue;
+            if (!looksLikeStudentRow(row, c)) continue;
+            return { row: r, numCol: c };
+        }
+    }
+    return null;
+}
+
+function normalizePhone(raw) {
+    const digits = String(raw ?? '').replace(/\D/g, '');
+    if (digits.length < 9) return '';
+    if (digits.length === 11 && digits.startsWith('010')) {
+        return `${digits.slice(0, 3)}-${digits.slice(3, 7)}-${digits.slice(7)}`;
+    }
+    if (digits.length === 10 && digits.startsWith('01')) {
+        return `${digits.slice(0, 3)}-${digits.slice(3, 6)}-${digits.slice(6)}`;
+    }
+    return digits;
+}
+
+function escapeVcardValue(str) {
+    return String(str ?? '')
+        .replace(/\\/g, '\\\\')
+        .replace(/\n/g, '\\n')
+        .replace(/,/g, '\\,')
+        .replace(/;/g, '\\;');
+}
+
+/** vCard 3.0 한 줄 최대 75바이트(한글 포함) 접기 */
+function foldVcardLine(line) {
+    const enc = new TextEncoder();
+    if (enc.encode(line).length <= 75) return line;
+
+    const chunks = [];
+    let current = '';
+    for (const ch of line) {
+        const next = current + ch;
+        if (enc.encode(next).length > 75) {
+            chunks.push(current);
+            current = ' ' + ch;
+        } else {
+            current = next;
+        }
+    }
+    if (current) chunks.push(current);
+    return chunks.join('\r\n');
+}
+
+/** 미리 짜 둔 형식으로 vCard 3.0 생성 */
+function formatStudentLabel(student) {
+    const num = cellStr(student.num);
+    return num ? `${num}. ${student.name}` : student.name;
+}
+
+function buildVcard(student) {
+    const displayName = `${getVcardGroupPrefix()} ${formatStudentLabel(student)}`.trim();
+    const phoneDigits = String(student.phone).replace(/\D/g, '');
+    const noteParts = [];
+    const birthYearLabel = getStudentBirthYearLabel(student);
+    if (birthYearLabel) noteParts.push(birthYearLabel);
+    if (student.gender) noteParts.push(`성별 ${student.gender}`);
+    noteParts.push(VCARD_ORG);
+    if (student.extra) noteParts.push(student.extra);
+    const note = noteParts.join(' · ');
+
+    const lines = [
+        'BEGIN:VCARD',
+        'VERSION:3.0',
+        foldVcardLine(`FN;CHARSET=UTF-8:${escapeVcardValue(displayName)}`),
+        foldVcardLine(`N;CHARSET=UTF-8:${escapeVcardValue(student.name)};;;;`),
+        `TEL;TYPE=CELL:${phoneDigits}`,
+        `TEL;CELL:${phoneDigits}`,
+        foldVcardLine(`NOTE;CHARSET=UTF-8:${escapeVcardValue(note)}`),
+        foldVcardLine(`ORG;CHARSET=UTF-8:${escapeVcardValue(VCARD_ORG)}`),
+        'END:VCARD'
+    ];
+    return lines.join('\r\n') + '\r\n';
+}
+
+function safeFileName(name) {
+    return String(name || '연락처').replace(/[\\/:*?"<>|]/g, '_').trim() || '연락처';
+}
+
+const VCARD_MIME_ANDROID = 'text/x-vcard';
+const VCARD_MIME_DEFAULT = 'text/vcard;charset=utf-8';
+
+function isAndroidPhone() {
+    return /Android/i.test(navigator.userAgent);
+}
+
+function isMobileContactDevice() {
+    return /Android|iPhone|iPad|iPod|Mobile|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+function scheduleRevokeObjectUrl(url) {
+    setTimeout(() => URL.revokeObjectURL(url), 60000);
+}
+
+function openVcardLink(url, fileName, useDownload) {
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('rel', 'noopener');
+    if (useDownload) link.download = fileName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
+function vcfToAndroidDataUrl(vcf) {
+    const bytes = new TextEncoder().encode(vcf);
+    let binary = '';
+    bytes.forEach((b) => { binary += String.fromCharCode(b); });
+    return `data:${VCARD_MIME_ANDROID};charset=utf-8;base64,${btoa(binary)}`;
+}
+
+/** 삼성·안드로이드: 공유 시트 → 연락처 앱 우선 */
+async function openVcardOnAndroid(vcf, fileName, studentName) {
+    const file = new File([vcf], fileName, { type: VCARD_MIME_ANDROID });
+
+    if (navigator.share && typeof navigator.canShare === 'function') {
+        try {
+            if (navigator.canShare({ files: [file] })) {
+                await navigator.share({ files: [file], title: studentName });
+                setStatus(`「${studentName}」 공유 창에서 「연락처」 또는 「연락처에 저장」을 선택하세요.`);
+                return;
+            }
+        } catch (err) {
+            if (err && err.name === 'AbortError') return;
+        }
+    }
+
+    try {
+        openVcardLink(vcfToAndroidDataUrl(vcf), fileName, false);
+        setStatus(`「${studentName}」 연락처 앱이 열리면 「저장」을 눌러 주세요.`);
+        return;
+    } catch (err) {
+        console.warn('Android data URL vcard open failed', err);
+    }
+
+    const url = URL.createObjectURL(new Blob([vcf], { type: VCARD_MIME_ANDROID }));
+    openVcardLink(url, fileName, false);
+    scheduleRevokeObjectUrl(url);
+    setStatus(`「${studentName}」 「연락처」 앱으로 열기를 선택해 주세요.`);
+}
+
+/** 안드로이드(삼성) · 기타 모바일 · PC */
+async function openVcardForStudent(student) {
+    if (!student.phone) {
+        setStatus('전화번호가 없어 연락처를 만들 수 없습니다.', true);
+        return;
+    }
+    const vcf = buildVcard(student);
+    const fileName = `${safeFileName(student.name)}.vcf`;
+    const label = formatStudentLabel(student);
+
+    if (isAndroidPhone()) {
+        await openVcardOnAndroid(vcf, fileName, student.name);
+        return;
+    }
+
+    if (isMobileContactDevice()) {
+        const file = new File([vcf], fileName, { type: VCARD_MIME_DEFAULT });
+        if (navigator.share && typeof navigator.canShare === 'function' && navigator.canShare({ files: [file] })) {
+            try {
+                await navigator.share({ files: [file], title: label });
+                setStatus(`「${student.name}」 「연락처에 추가」를 선택해 주세요.`);
+                return;
+            } catch (err) {
+                if (err && err.name === 'AbortError') return;
+            }
+        }
+
+        const url = URL.createObjectURL(new Blob([vcf], { type: VCARD_MIME_DEFAULT }));
+        openVcardLink(url, fileName, false);
+        scheduleRevokeObjectUrl(url);
+        setStatus(`「${student.name}」 「연락처에 추가」를 눌러 주세요.`);
+        return;
+    }
+
+    const url = URL.createObjectURL(new Blob([vcf], { type: VCARD_MIME_DEFAULT }));
+    openVcardLink(url, fileName, true);
+    scheduleRevokeObjectUrl(url);
+    setStatus(`「${student.name}」 연락처 파일을 다운로드했습니다.`);
+}
+
+function renderStudentList() {
+    const list = document.getElementById('studentList');
+    if (!list) return;
+
+    if (!students.length) {
+        list.innerHTML = '<li class="empty-msg">학생 목록이 없습니다.</li>';
+        return;
+    }
+
+    list.innerHTML = students.map((s, idx) => {
+        const sub = formatStudentSubText(s);
+        return `<li class="student-item" onclick="openVcardByIndex(${idx})" role="button" tabindex="0">
+            <div class="student-meta">
+                <div class="student-name">${escapeHtml(formatStudentLabel(s))}</div>
+                <div class="student-sub">${escapeHtml(sub)}</div>
+            </div>
+            <span class="student-action">연락처 추가</span>
+        </li>`;
+    }).join('');
+}
+
+function escapeHtml(str) {
+    return String(str ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+}
+
+function parseRowsFromSheet(rows) {
+    if (!rows || !rows.length) return [];
+
+    const anchor = findStudentDataAnchor(rows);
+    if (!anchor) {
+        throw new Error('엑셀에서 1번 학생(번호 「1」) 시작 위치를 찾지 못했습니다. A열 번호·B열 이름·D열 전화 형식을 확인해 주세요.');
+    }
+
+    const { row: startRow, numCol } = anchor;
+    const nameCol = numCol + COL_OFFSET_NAME;
+    const rrnCol = numCol + COL_OFFSET_RRN;
+    const phoneCol = numCol + COL_OFFSET_PHONE;
+    const result = [];
+
+    for (let r = startRow; r < rows.length; r++) {
+        const row = rows[r];
+        if (!row || !row.length) break;
+
+        const numRaw = row[numCol];
+        const numStr = cellStr(numRaw);
+        if (r > startRow && (numStr === '' || numRaw == null)) break;
+
+        const name = cellStr(row[nameCol]);
+        if (!name) continue;
+
+        const rrn = normalizeRrn(row[rrnCol]);
+        const phone = normalizePhone(row[phoneCol]);
+        const age = calcAgeFromRrn(row[rrnCol]);
+        const gender = calcGenderFromRrn(row[rrnCol]);
+
+        result.push({
+            num: numStr || String(numRaw ?? ''),
+            name,
+            phone,
+            age,
+            gender,
+            rrn,
+            extra: ''
+        });
+    }
+    return result;
+}
+
+function handleExcelUpload(input) {
+    const file = input.files && input.files[0];
+    if (!file) return;
+    setStatus('엑셀 읽는 중…');
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+        try {
+            const data = new Uint8Array(e.target.result);
+            const workbook = XLSX.read(data, { type: 'array' });
+            const sheetName = workbook.SheetNames[0];
+            const sheet = workbook.Sheets[sheetName];
+            const rows = XLSX.utils.sheet_to_json(sheet, { header: 1, defval: '' });
+            students = parseRowsFromSheet(rows);
+            if (!students.length) {
+                setStatus('추출된 학생이 없습니다. 데이터 행을 확인해 주세요.', true);
+            } else {
+                students = sortStudentsByNum(students);
+                setStatus(`✅ ${students.length}명 추출됨 (${file.name}) · 서버 저장 후 그룹 버튼에서 열기`);
+                promptSaveToFirebase(file.name);
+            }
+        } catch (err) {
+            console.error(err);
+            setStatus('엑셀 처리 실패: ' + (err.message || err), true);
+        }
+        input.value = '';
+    };
+    reader.onerror = () => setStatus('파일을 읽을 수 없습니다.', true);
+    reader.readAsArrayBuffer(file);
+}
+
+function loadSampleStudents() {
+    students = sortStudentsByNum([
+        { num: '1', name: '김민수', phone: '010-1111-2222', age: '21', gender: '남', rrn: '030315-3', extra: '샘플' },
+        { num: '2', name: '이서연', phone: '010-3333-4444', age: '22', gender: '여', rrn: '020101-4', extra: '샘플' },
+        { num: '3', name: '박지훈', phone: '010-5555-6666', age: '20', gender: '남', rrn: '060512-3', extra: '샘플' }
+    ]);
+    currentClassName = currentClassName || '샘플반';
+    updateCurrentClassTag();
+
+    const view = document.getElementById('viewContactList');
+    const titleEl = document.getElementById('contactViewTitle');
+    const countEl = document.getElementById('contactViewCount');
+    if (view) {
+        view.classList.add('is-open');
+        view.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+    if (titleEl) titleEl.textContent = currentClassName;
+    if (countEl) countEl.textContent = `${students.length}명 · 번호순 (샘플)`;
+    renderStudentList();
+    setStatus('✅ 샘플 학생 3명 (연락처 저장 화면 테스트)');
+}
+
+function openVcardByIndex(idx) {
+    const s = students[idx];
+    if (s) openVcardForStudent(s);
+}
+
+window.handleExcelUpload = handleExcelUpload;
+window.loadSampleStudents = loadSampleStudents;
+window.openVcardByIndex = openVcardByIndex;
+window.showGuideImgPlaceholder = showGuideImgPlaceholder;
+window.openGuideStepModal = openGuideStepModal;
+window.closeGuideImageModal = closeGuideImageModal;
+window.openContactViewByBtn = openContactViewByBtn;
+window.openContactView = openContactView;
+window.closeContactView = closeContactView;

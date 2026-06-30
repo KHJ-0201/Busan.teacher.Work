@@ -1,1 +1,371 @@
-const a11_0x471210=a11_0x189e;(function(_0x3b4646,_0x385731){const _0x3346d9=a11_0x189e,_0x460f1e=_0x3b4646();while(!![]){try{const _0x5314db=-parseInt(_0x3346d9(0x180))/0x1+parseInt(_0x3346d9(0x171))/0x2+parseInt(_0x3346d9(0x16f))/0x3*(-parseInt(_0x3346d9(0x158))/0x4)+-parseInt(_0x3346d9(0x199))/0x5*(-parseInt(_0x3346d9(0x112))/0x6)+-parseInt(_0x3346d9(0x113))/0x7+-parseInt(_0x3346d9(0x152))/0x8*(parseInt(_0x3346d9(0x182))/0x9)+parseInt(_0x3346d9(0x10c))/0xa;if(_0x5314db===_0x385731)break;else _0x460f1e['push'](_0x460f1e['shift']());}catch(_0x22afda){_0x460f1e['push'](_0x460f1e['shift']());}}}(a11_0x29df,0xa0aee));const a11_0x3b177f=(function(){let _0x50d956=!![];return function(_0x13fa23,_0x550713){const _0x1d47bf=_0x50d956?function(){const _0x2d4f65=a11_0x189e;if(_0x550713){const _0xe8da45=_0x550713[_0x2d4f65(0x106)](_0x13fa23,arguments);return _0x550713=null,_0xe8da45;}}:function(){};return _0x50d956=![],_0x1d47bf;};}()),a11_0xc1102a=a11_0x3b177f(this,function(){const _0xf35e3b=a11_0x189e;return a11_0xc1102a[_0xf35e3b(0x10a)]()[_0xf35e3b(0x101)](_0xf35e3b(0x18b))[_0xf35e3b(0x10a)]()['constructor'](a11_0xc1102a)[_0xf35e3b(0x101)](_0xf35e3b(0x18b));});a11_0xc1102a();const masterConfig={'apiKey':a11_0x471210(0x149),'authDomain':a11_0x471210(0x163),'databaseURL':a11_0x471210(0x19a),'projectId':a11_0x471210(0x19c)};if(!firebase[a11_0x471210(0x144)][a11_0x471210(0x126)])firebase[a11_0x471210(0x191)](masterConfig);const database=firebase[a11_0x471210(0x188)](),classList=[a11_0x471210(0x123),a11_0x471210(0x170),'602반',a11_0x471210(0x155),a11_0x471210(0x140),a11_0x471210(0x10f),a11_0x471210(0x17a),a11_0x471210(0x1a3)];window[a11_0x471210(0x11a)]=async function(){const _0x15fd98=a11_0x471210,_0x19fccd=localStorage[_0x15fd98(0x177)]('adminPw');if(!_0x19fccd){await appAlert('보안\x20인증이\x20필요합니다.\x20메인\x20화면으로\x20이동합니다.'),location[_0x15fd98(0x109)]=_0x15fd98(0x10e);return;}firebase[_0x15fd98(0x15a)]()['signInWithEmailAndPassword'](_0x15fd98(0x108),_0x19fccd)['then'](()=>{const _0x37e07b=_0x15fd98;console[_0x37e07b(0x127)]('🔒\x20관리자\x20인증\x20성공'),initTeacherSeals(),loadCommonSeals(),loadEtcImages(),loadDocImages();})['catch'](async _0x39b11f=>{const _0xac9fe4=_0x15fd98;console[_0xac9fe4(0x16e)](_0xac9fe4(0x121),_0x39b11f),await appAlert(_0xac9fe4(0x12b)),location[_0xac9fe4(0x109)]=_0xac9fe4(0x10e);});};function initTeacherSeals(){const _0x375e80=a11_0x471210,_0x49f473=document[_0x375e80(0x11f)](_0x375e80(0x17b));_0x49f473[_0x375e80(0x125)]='',classList[_0x375e80(0x14f)](_0x4712bb=>{const _0x1d91ff=_0x375e80,_0x57ab67=document[_0x1d91ff(0x183)]('div');_0x57ab67[_0x1d91ff(0x110)]=_0x1d91ff(0x12c),_0x57ab67[_0x1d91ff(0x125)]=_0x1d91ff(0x153)+_0x4712bb+_0x1d91ff(0x162)+_0x4712bb+_0x1d91ff(0x15b)+_0x4712bb+_0x1d91ff(0x119)+_0x4712bb+'</code>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<hr\x20style=\x22margin:\x2015px\x200;\x20border:\x200;\x20border-top:\x201px\x20dashed\x20#ccc;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h5\x20style=\x22margin:\x205px\x200;\x20color:\x20#555;\x22>싸인</h5>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22seal-preview\x22\x20id=\x22preview_sign_'+_0x4712bb+'\x22><span>미등록</span></div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22display:\x20flex;\x20gap:\x205px;\x20justify-content:\x20center;\x20margin-top:\x205px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22dynamic-btn-signpad\x22\x20data-class=\x22'+_0x4712bb+_0x1d91ff(0x11e)+_0x4712bb+_0x1d91ff(0x157)+_0x4712bb+_0x1d91ff(0x19f),_0x49f473[_0x1d91ff(0x164)](_0x57ab67),database[_0x1d91ff(0x17c)](_0x1d91ff(0x120)+_0x4712bb)[_0x1d91ff(0x128)](_0x1d91ff(0x135),_0x127369=>{const _0xe14210=_0x1d91ff;if(_0x127369[_0xe14210(0x1a2)]())updatePreview(_0xe14210(0x114)+_0x4712bb,_0x127369[_0xe14210(0x1a2)]()[_0xe14210(0x131)]);}),database[_0x1d91ff(0x17c)](_0x1d91ff(0x1a0)+_0x4712bb)[_0x1d91ff(0x128)](_0x1d91ff(0x135),_0x4588e0=>{const _0xe38c03=_0x1d91ff;if(_0x4588e0[_0xe38c03(0x1a2)]())updatePreview(_0xe38c03(0x18d)+_0x4712bb,_0x4588e0[_0xe38c03(0x1a2)]()[_0xe38c03(0x131)]);});});}function uploadTeacherSeal(_0x3bf857,_0x13a002){processImage(_0x13a002,_0x318e83=>{const _0x5510ac=a11_0x189e;database['ref'](_0x5510ac(0x120)+_0x3bf857)[_0x5510ac(0x18e)]({'imageData':_0x318e83,'updatedAt':firebase[_0x5510ac(0x188)][_0x5510ac(0x15c)][_0x5510ac(0x18c)]})[_0x5510ac(0x165)](()=>{const _0x5e8ba9=_0x5510ac;updatePreview(_0x5e8ba9(0x114)+_0x3bf857,_0x318e83);});});}function uploadTeacherSign(_0x2a3b60,_0xc5d728){processImage(_0xc5d728,_0x3e0c70=>{const _0x2e7d1c=a11_0x189e;database[_0x2e7d1c(0x17c)](_0x2e7d1c(0x1a0)+_0x2a3b60)[_0x2e7d1c(0x18e)]({'imageData':_0x3e0c70,'updatedAt':firebase['database'][_0x2e7d1c(0x15c)][_0x2e7d1c(0x18c)]})[_0x2e7d1c(0x165)](()=>{updatePreview('preview_sign_'+_0x2a3b60,_0x3e0c70);});});}function loadCommonSeals(){const _0x3623bd=a11_0x471210;['vicePrincipal',_0x3623bd(0x175)][_0x3623bd(0x14f)](_0x44e30f=>{const _0x46e9eb=_0x3623bd;database[_0x46e9eb(0x17c)](_0x46e9eb(0x13f)+_0x44e30f)[_0x46e9eb(0x128)](_0x46e9eb(0x135),_0x132c2b=>{const _0x4fac01=_0x46e9eb;if(_0x132c2b['val']())updatePreview(_0x4fac01(0x114)+_0x44e30f,_0x132c2b['val']()[_0x4fac01(0x131)]);});});}function a11_0x189e(_0x5b151c,_0x150ecf){_0x5b151c=_0x5b151c-0x100;const _0x5e4964=a11_0x29df();let _0xc1102a=_0x5e4964[_0x5b151c];if(a11_0x189e['iAplGI']===undefined){var _0x3b177f=function(_0x52ea48){const _0x171da0='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x1a7387='',_0x4a1558='',_0x58c04b=_0x1a7387+_0x3b177f;for(let _0x50d956=0x0,_0x13fa23,_0x550713,_0x1d47bf=0x0;_0x550713=_0x52ea48['charAt'](_0x1d47bf++);~_0x550713&&(_0x13fa23=_0x50d956%0x4?_0x13fa23*0x40+_0x550713:_0x550713,_0x50d956++%0x4)?_0x1a7387+=_0x58c04b['charCodeAt'](_0x1d47bf+0xa)-0xa!==0x0?String['fromCharCode'](0xff&_0x13fa23>>(-0x2*_0x50d956&0x6)):_0x50d956:0x0){_0x550713=_0x171da0['indexOf'](_0x550713);}for(let _0xe8da45=0x0,_0x19fccd=_0x1a7387['length'];_0xe8da45<_0x19fccd;_0xe8da45++){_0x4a1558+='%'+('00'+_0x1a7387['charCodeAt'](_0xe8da45)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x4a1558);};a11_0x189e['CtYewQ']=_0x3b177f,a11_0x189e['cHLJha']={},a11_0x189e['iAplGI']=!![];}const _0x29df3f=_0x5e4964[0x0],_0x189e6b=_0x5b151c+_0x29df3f,_0x41b40a=a11_0x189e['cHLJha'][_0x189e6b];if(!_0x41b40a){const _0x39b11f=function(_0x49f473){this['DYXpgq']=_0x49f473,this['pHpGsa']=[0x1,0x0,0x0],this['XDhLUJ']=function(){return'newState';},this['XzRQBY']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['sSwRRl']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x39b11f['prototype']['eTadys']=function(){const _0x4712bb=new RegExp(this['XzRQBY']+this['sSwRRl']),_0x57ab67=_0x4712bb['test'](this['XDhLUJ']['toString']())?--this['pHpGsa'][0x1]:--this['pHpGsa'][0x0];return this['sXklvi'](_0x57ab67);},_0x39b11f['prototype']['sXklvi']=function(_0x127369){if(!Boolean(~_0x127369))return _0x127369;return this['SytmkC'](this['DYXpgq']);},_0x39b11f['prototype']['SytmkC']=function(_0x4588e0){for(let _0x3bf857=0x0,_0x13a002=this['pHpGsa']['length'];_0x3bf857<_0x13a002;_0x3bf857++){this['pHpGsa']['push'](Math['round'](Math['random']())),_0x13a002=this['pHpGsa']['length'];}return _0x4588e0(this['pHpGsa'][0x0]);},new _0x39b11f(a11_0x189e)['eTadys'](),_0xc1102a=a11_0x189e['CtYewQ'](_0xc1102a),a11_0x189e['cHLJha'][_0x189e6b]=_0xc1102a;}else _0xc1102a=_0x41b40a;return _0xc1102a;}function uploadCommonImage(_0x3ba05c,_0x1762c9){processImage(_0x1762c9,_0x3cc6d6=>{const _0x4f768c=a11_0x189e;database['ref'](_0x4f768c(0x13f)+_0x3ba05c)[_0x4f768c(0x18e)]({'imageData':_0x3cc6d6,'updatedAt':firebase[_0x4f768c(0x188)]['ServerValue']['TIMESTAMP']})[_0x4f768c(0x165)](()=>{const _0xaab56f=_0x4f768c;updatePreview(_0xaab56f(0x114)+_0x3ba05c,_0x3cc6d6);});});}function loadEtcImages(){const _0xd9fcac=a11_0x471210,_0x3834ca=document[_0xd9fcac(0x11f)](_0xd9fcac(0x133));database[_0xd9fcac(0x17c)]('commonImages/etcImages')['on'](_0xd9fcac(0x135),_0x2cd86b=>{const _0x40e831=_0xd9fcac;_0x3834ca[_0x40e831(0x125)]='';const _0x5496b6=_0x2cd86b[_0x40e831(0x1a2)]();if(!_0x5496b6)return;Object[_0x40e831(0x11d)](_0x5496b6)[_0x40e831(0x14f)](([_0x404a6f,_0x3fdf94])=>{const _0x2b890f=_0x40e831,_0x27d0bf=document[_0x2b890f(0x183)](_0x2b890f(0x138));_0x27d0bf[_0x2b890f(0x110)]='etc-item',_0x27d0bf[_0x2b890f(0x125)]=_0x2b890f(0x13e)+_0x3fdf94[_0x2b890f(0x131)]+_0x2b890f(0x124)+_0x3fdf94[_0x2b890f(0x172)]+_0x2b890f(0x178)+_0x404a6f+_0x2b890f(0x194)+_0x404a6f+_0x2b890f(0x146)+_0x404a6f+_0x2b890f(0x196),_0x3834ca['appendChild'](_0x27d0bf);});});}async function addNewEtcSlot(){const _0xa3761c=a11_0x471210,_0x293be9=document['createElement'](_0xa3761c(0x130));_0x293be9[_0xa3761c(0x1a4)]=_0xa3761c(0x166),_0x293be9[_0xa3761c(0x18f)]=async function(){processImage(this,async _0x5f0a7e=>{const _0x41c488=a11_0x189e,_0x161785=await appPrompt(_0x41c488(0x16c),'새\x20이미지');if(!_0x161785)return;database[_0x41c488(0x17c)](_0x41c488(0x148))['push']({'title':_0x161785,'imageData':_0x5f0a7e,'updatedAt':firebase[_0x41c488(0x188)][_0x41c488(0x15c)][_0x41c488(0x18c)]});});},_0x293be9['click']();}function updateEtcTitle(_0x5bdf36,_0x499913){const _0x5a264d=a11_0x471210;database['ref'](_0x5a264d(0x151)+_0x5bdf36)[_0x5a264d(0x103)]({'title':_0x499913});}async function deleteEtcImage(_0xba0950){const _0x13dbeb=a11_0x471210;if(await appConfirm(_0x13dbeb(0x173)))database[_0x13dbeb(0x17c)]('commonImages/etcImages/'+_0xba0950)['remove']();}function processImage(_0x34005,_0xb1cbd8){const _0x57fb87=a11_0x471210,_0x40de5f=_0x34005[_0x57fb87(0x168)][0x0];if(!_0x40de5f)return;const _0x4c4ed1=new FileReader();_0x4c4ed1[_0x57fb87(0x11a)]=function(_0x32cd3a){const _0x149bf5=_0x57fb87,_0x78c08=new Image();_0x78c08['onload']=function(){const _0x2ec8c0=a11_0x189e,_0x20f4fe=document[_0x2ec8c0(0x183)]('canvas');let _0x4c7c7c=_0x78c08[_0x2ec8c0(0x186)],_0x150a35=_0x78c08[_0x2ec8c0(0x17e)];const _0x304e3f=0x3e8;_0x4c7c7c>_0x150a35?_0x4c7c7c>_0x304e3f&&(_0x150a35*=_0x304e3f/_0x4c7c7c,_0x4c7c7c=_0x304e3f):_0x150a35>_0x304e3f&&(_0x4c7c7c*=_0x304e3f/_0x150a35,_0x150a35=_0x304e3f);_0x20f4fe[_0x2ec8c0(0x186)]=_0x4c7c7c,_0x20f4fe[_0x2ec8c0(0x17e)]=_0x150a35;const _0x56f5df=_0x20f4fe['getContext']('2d');_0x56f5df[_0x2ec8c0(0x12f)](_0x78c08,0x0,0x0,_0x4c7c7c,_0x150a35),_0xb1cbd8(_0x20f4fe[_0x2ec8c0(0x105)](_0x2ec8c0(0x16a),0.85));},_0x78c08[_0x149bf5(0x14c)]=_0x32cd3a[_0x149bf5(0x160)][_0x149bf5(0x11c)];},_0x4c4ed1[_0x57fb87(0x12d)](_0x40de5f);}function updatePreview(_0x12be05,_0x8de91e){const _0x277e4a=a11_0x471210,_0x52542e=document[_0x277e4a(0x11f)](_0x12be05);if(_0x52542e)_0x52542e[_0x277e4a(0x125)]='<img\x20src=\x22'+_0x8de91e+'\x22>';}function loadDocImages(){const _0x2c6bdb=a11_0x471210,_0x23377d=[_0x2c6bdb(0x185),_0x2c6bdb(0x161),_0x2c6bdb(0x102),_0x2c6bdb(0x107)];_0x23377d[_0x2c6bdb(0x14f)](_0x3b79de=>{const _0x59d2ab=_0x2c6bdb;database[_0x59d2ab(0x17c)]('commonImages/docImages/'+_0x3b79de)['once'](_0x59d2ab(0x135),_0x1c3a0c=>{const _0x24cf4c=_0x59d2ab;if(_0x1c3a0c[_0x24cf4c(0x1a2)]())updatePreview('preview_'+_0x3b79de,_0x1c3a0c[_0x24cf4c(0x1a2)]()[_0x24cf4c(0x131)]);});});}async function uploadDocImage(_0x4e4151,_0x488964){processImage(_0x488964,async _0x76acd4=>{const _0x194566=a11_0x189e;database[_0x194566(0x17c)]('commonImages/docImages/'+_0x4e4151)['set']({'imageData':_0x76acd4,'updatedAt':firebase[_0x194566(0x188)]['ServerValue'][_0x194566(0x18c)]})[_0x194566(0x165)](async()=>{const _0x40f543=_0x194566;updatePreview(_0x40f543(0x114)+_0x4e4151,_0x76acd4),await appAlert(_0x40f543(0x141));})[_0x194566(0x117)](async _0x21d768=>{const _0x4bcbbc=_0x194566;await appAlert(_0x4bcbbc(0x137)+_0x21d768['message']);});});}let tSignCanvas,tSignCtx,isTDrawing=![],targetClassName='';function openTeacherSignPad(_0x563655){const _0x54fb74=a11_0x471210;targetClassName=_0x563655;const _0x50d970=document[_0x54fb74(0x11f)](_0x54fb74(0x19e)),_0x301bf2=_0x50d970['querySelector']('.sign-title');if(_0x301bf2)_0x301bf2[_0x54fb74(0x125)]='<span\x20style=\x22color:#27ae60;\x22>['+_0x563655+_0x54fb74(0x12a);_0x50d970[_0x54fb74(0x14a)][_0x54fb74(0x115)]=_0x54fb74(0x118),tSignCanvas=document[_0x54fb74(0x11f)]('teacherSignCanvas'),tSignCtx=tSignCanvas[_0x54fb74(0x18a)]('2d'),tSignCtx[_0x54fb74(0x13a)]=_0x54fb74(0x176),tSignCtx['fillRect'](0x0,0x0,tSignCanvas[_0x54fb74(0x186)],tSignCanvas[_0x54fb74(0x17e)]),tSignCtx[_0x54fb74(0x197)]=_0x54fb74(0x1a1),tSignCtx[_0x54fb74(0x179)]=0x4,tSignCtx[_0x54fb74(0x145)]=_0x54fb74(0x139),!tSignCanvas['dataset'][_0x54fb74(0x14e)]&&(setupTeacherSignEvents(),tSignCanvas[_0x54fb74(0x16d)][_0x54fb74(0x14e)]='true');}function setupTeacherSignEvents(){const _0x1ac962=a11_0x471210,_0x1d9399=_0x1b12fc=>{const _0x3e1468=a11_0x189e,_0x22b944=tSignCanvas[_0x3e1468(0x154)](),_0x59c2db=_0x1b12fc[_0x3e1468(0x10d)]?_0x1b12fc[_0x3e1468(0x10d)][0x0][_0x3e1468(0x136)]:_0x1b12fc[_0x3e1468(0x136)],_0x21814d=_0x1b12fc[_0x3e1468(0x10d)]?_0x1b12fc[_0x3e1468(0x10d)][0x0][_0x3e1468(0x132)]:_0x1b12fc[_0x3e1468(0x132)];let _0x4fbbe0,_0x2b4abc;const _0x4120da=window[_0x3e1468(0x19b)](_0x3e1468(0x167))['matches'];if(_0x4120da){const _0xc104d3=tSignCanvas[_0x3e1468(0x186)]/_0x22b944['height'],_0x231571=tSignCanvas['height']/_0x22b944[_0x3e1468(0x186)];_0x4fbbe0=(_0x22b944[_0x3e1468(0x150)]-_0x21814d)*_0xc104d3,_0x2b4abc=(_0x59c2db-_0x22b944[_0x3e1468(0x13c)])*_0x231571;}else{const _0x3bbe01=tSignCanvas[_0x3e1468(0x186)]/_0x22b944[_0x3e1468(0x186)],_0x2a094b=tSignCanvas[_0x3e1468(0x17e)]/_0x22b944['height'];_0x4fbbe0=(_0x59c2db-_0x22b944['left'])*_0x3bbe01,_0x2b4abc=(_0x21814d-_0x22b944[_0x3e1468(0x14d)])*_0x2a094b;}return{'x':_0x4fbbe0,'y':_0x2b4abc};},_0x48a3f9=_0x239b25=>{const _0x4369a2=a11_0x189e;isTDrawing=!![];const _0x49a1b5=_0x1d9399(_0x239b25);tSignCtx['beginPath'](),tSignCtx[_0x4369a2(0x143)](_0x49a1b5['x'],_0x49a1b5['y']);},_0x2b082d=_0x5c0fba=>{const _0x43813d=a11_0x189e;if(!isTDrawing)return;const _0x225995=_0x1d9399(_0x5c0fba);tSignCtx[_0x43813d(0x13d)](_0x225995['x'],_0x225995['y']),tSignCtx[_0x43813d(0x174)](),_0x5c0fba['preventDefault']();},_0x1a9ee4=()=>{isTDrawing=![];};tSignCanvas[_0x1ac962(0x122)]('mousedown',_0x48a3f9),tSignCanvas['addEventListener'](_0x1ac962(0x192),_0x2b082d),window[_0x1ac962(0x122)](_0x1ac962(0x159),_0x1a9ee4),tSignCanvas[_0x1ac962(0x122)]('touchstart',_0x48a3f9),tSignCanvas[_0x1ac962(0x122)](_0x1ac962(0x17f),_0x2b082d,{'passive':![]}),tSignCanvas[_0x1ac962(0x122)](_0x1ac962(0x111),_0x1a9ee4);}function clearTeacherSign(){const _0x583fce=a11_0x471210;tSignCtx['clearRect'](0x0,0x0,tSignCanvas[_0x583fce(0x186)],tSignCanvas[_0x583fce(0x17e)]),tSignCtx[_0x583fce(0x13a)]='#fff',tSignCtx[_0x583fce(0x104)](0x0,0x0,tSignCanvas[_0x583fce(0x186)],tSignCanvas['height']);}function closeTeacherSignModal(){const _0x256750=a11_0x471210;document[_0x256750(0x11f)](_0x256750(0x19e))[_0x256750(0x14a)][_0x256750(0x115)]='none';}async function saveTeacherDigitalSign(){const _0x31abfc=a11_0x471210,_0x569cfe=tSignCanvas['toDataURL']('image/jpeg',0.8);try{await database['ref'](_0x31abfc(0x1a0)+targetClassName)[_0x31abfc(0x18e)]({'imageData':_0x569cfe,'updatedAt':firebase['database']['ServerValue'][_0x31abfc(0x18c)]}),await appAlert(_0x31abfc(0x19d)+targetClassName+_0x31abfc(0x189)),closeTeacherSignModal(),updatePreview(_0x31abfc(0x18d)+targetClassName,_0x569cfe);}catch(_0x4e27bf){await appAlert(_0x31abfc(0x16b)+_0x4e27bf[_0x31abfc(0x13b)]);}}function a11_0x29df(){const _0x18ceee=['zgL2','CM91BMq','zMLSBfn0EwXL','BwvZC2fNzq','BgvMDa','BgLUzvrV','cIaGicaGicaGicaGicaGicaGicaGpgrPDIbJBgfZCZ0IC2vHBc1WCMv2Awv3iIbZDhLSzt0IBwfYz2LUoJa7iJ48Aw1NihnYyZ0I','y29TBw9Usw1Hz2vZl2nVBw1VBLnLywXZlW','nZaX67cy','4PYfioYxHEUHNoUtNcdSMytRO4WHioQYVEUHNoQWGcdQS6dSOjxRKjJSLRqG7j6i7jA0ioY9LoUtNoULVcdSIjJSOjxTLAaG7zwe7jQu6RcaioYxHUYkTEUlIoUlPc4','re9nq29UDgvUDeXVywrLza','Bw92zvrV','yxbWCW','BgLUzunHCa','pc9JB2rLpGOGicaGicaGicaGicaGicaGicaGidWVzgL2pGOGicaGicaGicaGicaGicaGicaGidXIDxr0B24Gy2XHC3m9iMj0BI1KzwXLDguGzhLUyw1PyY1LDgmTzgvSzxrLiIbKyxrHlwLKpsi','z2v0qxr0CMLIDxrL','y29TBw9Usw1Hz2vZl2v0y0LTywDLCW','quL6yvn5rg5brhviDtbTCtrhswXXqM1FvKHMDJD5nLjHCMfIr2Hv','C3r5Bgu','zhLUyw1PyY1IDg4TC2LNBNbHza','C3jJ','Dg9W','Aw5PDa','zM9YrwfJAa','yM90Dg9T','y29TBw9Usw1Hz2vZl2v0y0LTywDLCY8','odKYmeTLqwPPsG','cIaGicaGicaGicaGicaGica8Adq+','z2v0qM91BMrPBMDdBgLLBNrszwn0','nJaZ67cy','y2XHC3nmAxn0','iJ48l2XHyMvSpGOGicaGicaGicaGicaGicaGpc9KAxy+cIaGicaGicaGicaGicaGica8y29KzsbJBgfZCZ0IzgiTCgf0Ac1SywjLBciGC3r5Bgu9iMrPC3bSyxK6yMXVy2S7ig1HCMDPBI10B3a6nxb4oYi+DgvHy2HLCLnPz25ZlW','odGZmJG0q3bwtK5h','Bw91C2v1Ca','yxv0Aa','iJ48C3bHBJ7RR7JRK7hROz08l3nWyw4+pc9KAxy+cIaGicaGicaGicaGicaGica8BgfIzwWGy2XHC3m9iMzPBguTBgfIzwWIpVcFK4iG7kEb7j24ioUtSEUHNtXPBNb1Dcb0ExbLpsjMAwXLiIbZDhLSzt0IzgLZCgXHEtPUB25LoYiGy2XHC3m9iMr5BMfTAwmTDxbSB2fKlxnLywWIigrHDgeTy2XHC3m9iG','u2vYDMvYvMfSDwu','yNrUx3nPz25Fy2XVC2u','zhLUyw1PyY11CgXVywqTC2LNBG','y2XPy2S','DgfYz2v0','BwfRzxvWq29SB3jmB2DV','pc9Ond4kicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGica8AduGC3r5Bgu9iM1HCMDPBJOGnxb4ida7ignVBg9YoIaJntu1oYi+7kEb7j24pc9Ont4kicaGicaGicaGicaGicaGidXKAxyGy2XHC3m9iNnLywWTChjLDMLLDYiGAwq9iNbYzxzPzxDF','yNvZyw4TDgvHy2HLCI13B3jRywXSlMzPCMvIyxnLyxbWlMnVBq','yxbWzw5Kq2HPBgq','DgHLBG','zMLSzq','kg1HEc13Awr0AdOGnZy4ChGPigfUzcaOB3jPzw50yxrPB246ihbVCNrYywL0kq','zMLSzxm','zgf0ys1Pza','Aw1Hz2uVANbLzW','4P2mioYGGoYEPsdSI6tTJkG6ia','7j2066+47kEaioYGNoUQQtO','zgf0yxnLDa','zxjYB3i','m2z0ywXxvW','nJaX67cy','mtm3mZe0ngnKugXAwG','DgL0Bgu','7ikT7kcC7zwy7iUC6RkG7iQ164Ui6RMmpW','C3rYB2TL','ChjPBMnPCgfS','i2zMzG','z2v0sxrLBq','iIbKyxrHlwLKpsi','BgLUzvDPzhrO','nZaZ67cy','DgvHy2HLCLnLywXhCMLK','CMvM','DxbSB2fKx2v2ywXgAxjZDejN','AgvPz2H0','Dg91y2HTB3zL','mte0mdC1nxvTy29hvq','yNrUx3nPz25Fy2XLyxi','ota4mw5nq3PsEa','y3jLyxrLrwXLBwvUDa','zgf0ys1JBgfZCW','BwfRzxvWqNDmB2DV','D2LKDgG','zhLUyw1PyY1LDgmTzgvSzxrL','zgf0ywjHC2u','xsdRI7tSNOtSHkdSG53RI5GG7isC66Qf7j20ioUNIoYkPo2eScbeqUYxKcdRK7hROz3RKjJSL4JSIRxRI4JRI6qU','z2v0q29UDgv4Da','kcGOlISPkYKRksSK','veLnrvnuqu1q','ChjLDMLLD19ZAwDUxW','C2v0','B25JAgfUz2u','y2HHBMDL','Aw5PDgLHBgL6zufWCa','Bw91C2vTB3zL','zhLUyw1PyY1LDgmTDgL0Bgu','iJ4kicaGicaGicaGicaGicaGicaGicaGicaGpgnVzguGy2XHC3m9iMrIlxbHDgGTBgfIzwWIpMv0y0LTywDLCY8','DMLJzvbYAw5JAxbHBa','iJ7SGQ3SOjW8l2j1DhrVBJ4kicaGicaGicaGicaGicaGia','C3rYB2TLu3r5Bgu','DxbSB2fKx21HA2v1CfnLywW','mtm0nwT1EvjUtW','Ahr0Chm6lY9IDxnHBI10zwfJAgvYlxDVCMTHBgWTzgvMyxvSDc1YDgrIlMfZAweTC291DgHLyxn0ms5MAxjLyMfZzwrHDgfIyxnLlMfWCa','Bwf0y2HnzwrPyq','yNvZyw4TDgvHy2HLCI13B3jRywXS','4PYfifS','DgvHy2HLCLnPz25nB2rHBa','pc9JB2rLpGOGicaGicaGicaGica','y29TBw9Usw1Hz2vZl3rLywnOzxjtAwDUCY8','iZaWma','DMfS','7ywm7iQK7yQ4','DhLWzq','DxbSB2fKx3bYAw5JAxbHBa','C2vHCMnO','BwfRzxvWu2vHBa','DxbKyxrL','zMLSBfjLy3q','Dg9eyxrHvvjm','yxbWBhK','zxzHBezPCNn0qMC','z2HSD25ZmdiWmubUyxzLCI5JB20','AhjLzG','Dg9tDhjPBMC','DxbSB2fKx21HA2v1CenVBg9Ytg9NBW','mJq4odm3mtbvv0nuAhq','Dg91y2HLCW','lI4VAw5KzxGUAhrTBa','nZaY67cy','y2XHC3noyw1L','Dg91y2HLBMq','mJaWndzQruXWCw8','nJuWmJmYmuXJD3nJwq','ChjLDMLLD18','zgLZCgXHEq','zhLUyw1PyY11CgXVywqTC2vHBa','y2f0y2G','zMXLEa','iJ48l2XHyMvSpGOGicaGicaGicaGicaGicaGpgnVzguGy2XHC3m9iMrIlxbHDgGTBgfIzwWIpNrLywnOzxjtzwfSCY8','B25SB2fK','y29UDgfPBNm','CMvZDwX0','zw50CMLLCW','iIbZDhLSzt0IyMfJA2DYB3vUzdOJmJDHztyWoYbJB2XVCJP3AgL0ztSGyM9YzgvYoM5VBMu7ihbHzgrPBMC6nxb4idHWEdSGyM9YzgvYlxjHzgL1CZO0ChG7ign1CNnVCJPWB2LUDgvYoYbMB250lxnPEMu6mtjWEdSGzM9UDc13zwLNAhq6yM9SzdSIpUkCJE+4JYdSIQtRP4JTIRGG7yYO65oCpc9IDxr0B24+cIaGicaGicaGicaGicaGicaGicaGpgXHyMvSignSyxnZpsjMAwXLlwXHyMvSiIbZDhLSzt0IBwfYz2LUoJa7ihbHzgrPBMC6nxb4idHWEdSGzM9UDc1ZAxPLoJeYChG7iJ7WN5ocio2mJoYDVdXPBNb1Dcb0ExbLpsjMAwXLiIbZDhLSzt0IzgLZCgXHEtPUB25LoYiGy2XHC3m9iMr5BMfTAwmTDxbSB2fKlxnPz24IigrHDgeTy2XHC3m9iG','z2v0rwXLBwvUDej5swq','y29TBw9Usw1Hz2vZl3rLywnOzxjtzwfSCY8','4P2mioYDUoYMNsdSI6tTJkG6','ywrKrxzLBNrmAxn0zw5LCG','ntaX67cy','iJ48l2rPDJ4kicaGicaGicaGicaGicaGicaGica8zgL2ignSyxnZpsjLDgmTAw5MBYi+cIaGicaGicaGicaGicaGicaGicaGicaGidXPBNb1Dcb0ExbLpsj0zxH0iIbJBgfZCZ0IzxrJlw5HBwuTAw5WDxqGzhLUyw1PyY1LDgmTDgL0BguIihzHBhvLpsi','Aw5Uzxjive1m','BgvUz3rO','Bg9N','B25Jzq','lI4V7lcO7lk0l+QZHoY4Os5ODg1S','xtWVC3bHBJ4G64U07j6e7isG7ioD64UyioYeNoUQHq','7j247kADioYGLEUZToQWGcdSMkZRSjtRPBtSP4aG7jwk6RgW64kyioUNJoUJJoUqMoYxIoYkTEUlIoUlPc4','C2vHBc1JyxjK','CMvHzefZrgf0yvvsta','yNrUx2fKzf9LDgm','zhjHD0LTywDL','Aw5WDxq','Aw1Hz2veyxrH','y2XPzw50wq','zxrJsw1Hz2vbCMvH','DxbSB2fKx21HA2v1Cej3tg9NBW','DMfSDwu','y2XPzw50wa','4P2mioYyPoULMdOG'];a11_0x29df=function(){return _0x18ceee;};return a11_0x29df();}let secretClickCount=0x0,secretClickTimer;function triggerSecretDoor(){const _0x1e304a=a11_0x471210;secretClickCount++,clearTimeout(secretClickTimer),secretClickTimer=setTimeout(()=>{secretClickCount=0x0;},0x7d0),secretClickCount>=0x5&&(secretClickCount=0x0,console[_0x1e304a(0x127)]('🔓\x20엔지니어\x20모드:\x20인증\x20절차를\x20건너뛰고\x20계측\x20화면으로\x20점프합니다.'),location['href']=_0x1e304a(0x129));}document[a11_0x471210(0x122)](a11_0x471210(0x142),()=>{const _0x4b6b30=a11_0x471210;document[_0x4b6b30(0x11f)]('title_secret_door')[_0x4b6b30(0x122)](_0x4b6b30(0x15f),triggerSecretDoor),document['getElementById'](_0x4b6b30(0x12e))['addEventListener'](_0x4b6b30(0x15f),addNewEtcSlot),document[_0x4b6b30(0x11f)]('upload_vicePrincipal')[_0x4b6b30(0x122)](_0x4b6b30(0x190),function(){const _0x4769f0=_0x4b6b30;uploadCommonImage(_0x4769f0(0x195),this);}),document[_0x4b6b30(0x11f)](_0x4b6b30(0x100))[_0x4b6b30(0x122)](_0x4b6b30(0x190),function(){const _0x2a4a82=_0x4b6b30;uploadCommonImage(_0x2a4a82(0x175),this);}),document['getElementById'](_0x4b6b30(0x134))[_0x4b6b30(0x122)](_0x4b6b30(0x190),function(){const _0x3dba36=_0x4b6b30;uploadDocImage(_0x3dba36(0x185),this);}),document[_0x4b6b30(0x11f)](_0x4b6b30(0x10b))[_0x4b6b30(0x122)](_0x4b6b30(0x190),function(){uploadDocImage('makeupColorLogo',this);}),document['getElementById'](_0x4b6b30(0x198))[_0x4b6b30(0x122)](_0x4b6b30(0x190),function(){const _0x595ac4=_0x4b6b30;uploadDocImage(_0x595ac4(0x102),this);}),document[_0x4b6b30(0x11f)](_0x4b6b30(0x17d))[_0x4b6b30(0x122)](_0x4b6b30(0x190),function(){const _0x6b2113=_0x4b6b30;uploadDocImage(_0x6b2113(0x107),this);}),document[_0x4b6b30(0x11f)](_0x4b6b30(0x181))[_0x4b6b30(0x122)](_0x4b6b30(0x15f),clearTeacherSign),document[_0x4b6b30(0x11f)]('btn_sign_save')[_0x4b6b30(0x122)](_0x4b6b30(0x15f),saveTeacherDigitalSign),document[_0x4b6b30(0x11f)](_0x4b6b30(0x15d))['addEventListener']('click',closeTeacherSignModal),document[_0x4b6b30(0x11f)]('teacherSealGrid')['addEventListener'](_0x4b6b30(0x190),function(_0x3a5727){const _0x1c61f4=_0x4b6b30,_0x565de1=_0x3a5727[_0x1c61f4(0x160)];if(_0x565de1[_0x1c61f4(0x156)][_0x1c61f4(0x11b)](_0x1c61f4(0x116)))uploadTeacherSeal(_0x565de1[_0x1c61f4(0x147)]('data-class'),_0x565de1);else _0x565de1[_0x1c61f4(0x156)][_0x1c61f4(0x11b)](_0x1c61f4(0x15e))&&uploadTeacherSign(_0x565de1[_0x1c61f4(0x147)]('data-class'),_0x565de1);}),document[_0x4b6b30(0x11f)]('teacherSealGrid')[_0x4b6b30(0x122)](_0x4b6b30(0x15f),function(_0x5b6172){const _0x254434=_0x4b6b30,_0x49fe8e=_0x5b6172[_0x254434(0x160)];_0x49fe8e[_0x254434(0x156)][_0x254434(0x11b)](_0x254434(0x14b))&&openTeacherSignPad(_0x49fe8e[_0x254434(0x147)](_0x254434(0x184)));}),document['getElementById']('etcImageArea')['addEventListener'](_0x4b6b30(0x190),function(_0xf5e3ab){const _0x3bb1e2=_0x4b6b30,_0x5aa6d7=_0xf5e3ab[_0x3bb1e2(0x160)];_0x5aa6d7['classList'][_0x3bb1e2(0x11b)](_0x3bb1e2(0x193))&&updateEtcTitle(_0x5aa6d7['getAttribute'](_0x3bb1e2(0x169)),_0x5aa6d7['value']);}),document['getElementById'](_0x4b6b30(0x133))['addEventListener'](_0x4b6b30(0x15f),function(_0x193251){const _0x2bc67b=_0x4b6b30,_0x4e201b=_0x193251[_0x2bc67b(0x160)];_0x4e201b[_0x2bc67b(0x156)][_0x2bc67b(0x11b)](_0x2bc67b(0x187))&&deleteEtcImage(_0x4e201b[_0x2bc67b(0x147)]('data-id'));});});
+
+    const masterConfig = {
+        apiKey: "AIzaSyDnADuHu0mq4GIlqBm_VHfv7y6RarabGhU",
+        authDomain: "busan-teacher-workall.firebaseapp.com",
+        databaseURL: "https://busan-teacher-workall-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "busan-teacher-workall"
+    };
+
+    if (!firebase.apps.length) firebase.initializeApp(masterConfig);
+    const database = firebase.database();
+    const classList = ['501반', '601반', '602반', '603반', '701반', '702반', '703반', '테스트'];
+
+   window.onload = async function() {
+        const savedPw = localStorage.getItem('adminPw');
+
+        // 1. 로컬 스토리지에 열쇠가 없으면 즉시 퇴거
+        if (!savedPw) { 
+            await appAlert("보안 인증이 필요합니다. 메인 화면으로 이동합니다.");
+            location.href = '../index.html'; // 👈 요청하신 경로로 수정
+            return; 
+        }
+
+        // 2. 파이어베이스 서버에 열쇠가 맞는지 최종 확인
+        firebase.auth().signInWithEmailAndPassword('ghlwns0201@naver.com', savedPw)
+            .then(() => {
+                console.log("🔒 관리자 인증 성공");
+                initTeacherSeals(); 
+                loadCommonSeals(); 
+                loadEtcImages();
+                loadDocImages(); // 👈 [신규] 서류 이미지 자료 로드
+            })
+            .catch(async (err) => {
+                console.error("❌ 인증 실패:", err);
+                await appAlert("인증 정보가 올바르지 않거나 만료되었습니다.");
+                location.href = '../index.html'; // 👈 비번이 틀려도 퇴거
+            });
+    };
+
+    function initTeacherSeals() {
+        const grid = document.getElementById('teacherSealGrid');
+        grid.innerHTML = '';
+        classList.forEach(cls => {
+            const card = document.createElement('div');
+            card.className = 'seal-card';
+            card.innerHTML = `
+                <h4>${cls}</h4>
+                                <h5 style="margin: 5px 0; color: #555;">직인</h5>
+                <div class="seal-preview" id="preview_${cls}"><span>미등록</span></div>
+                <label class="file-label">📂 직인 등록<input type="file" style="display:none;" class="dynamic-upload-seal" data-class="${cls}"></label>
+                <code class="db-path-label">teacherSeals/${cls}</code>
+                
+                <hr style="margin: 15px 0; border: 0; border-top: 1px dashed #ccc;">
+                
+                                <h5 style="margin: 5px 0; color: #555;">싸인</h5>
+                <div class="seal-preview" id="preview_sign_${cls}"><span>미등록</span></div>
+                <div style="display: flex; gap: 5px; justify-content: center; margin-top: 5px;">
+                    <button class="dynamic-btn-signpad" data-class="${cls}" style="background:#27ae60; color:white; border:none; padding:5px 8px; border-radius:4px; cursor:pointer; font-size:12px; font-weight:bold;">✍️ 스마트 패드</button>
+                    <label class="file-label" style="margin:0; padding:5px 8px; font-size:12px;">📂 파일<input type="file" style="display:none;" class="dynamic-upload-sign" data-class="${cls}"></label>
+                </div>
+                <code class="db-path-label" style="display:block; margin-top:5px;">teacherSigns/${cls}</code>
+            `;
+            grid.appendChild(card);
+            
+            // 기존 직인 데이터 로드
+            database.ref(`commonImages/teacherSeals/${cls}`).once('value', snap => {
+                if(snap.val()) updatePreview(`preview_${cls}`, snap.val().imageData);
+            });
+            
+            // 신규 싸인 데이터 로드
+            database.ref(`commonImages/teacherSigns/${cls}`).once('value', snap => {
+                if(snap.val()) updatePreview(`preview_sign_${cls}`, snap.val().imageData);
+            });
+        });
+    }
+
+    function uploadTeacherSeal(className, input) {
+        processImage(input, (base64) => {
+            database.ref(`commonImages/teacherSeals/${className}`).set({
+                imageData: base64,
+                updatedAt: firebase.database.ServerValue.TIMESTAMP
+            }).then(() => { updatePreview(`preview_${className}`, base64); });
+        });
+    }
+
+    // [신규 추가] 담임선생님 싸인 전용 업로드 모듈 (teacherSigns 경로 사용)
+    function uploadTeacherSign(className, input) {
+        processImage(input, (base64) => {
+            database.ref(`commonImages/teacherSigns/${className}`).set({
+                imageData: base64,
+                updatedAt: firebase.database.ServerValue.TIMESTAMP
+            }).then(() => { updatePreview(`preview_sign_${className}`, base64); });
+        });
+    }
+
+    function loadCommonSeals() {
+        ['vicePrincipal', 'principal'].forEach(key => {
+            database.ref(`commonImages/commonSeals/${key}`).once('value', snap => {
+                if(snap.val()) updatePreview(`preview_${key}`, snap.val().imageData);
+            });
+        });
+    }
+
+    function uploadCommonImage(key, input) {
+        processImage(input, (base64) => {
+            database.ref(`commonImages/commonSeals/${key}`).set({
+                imageData: base64,
+                updatedAt: firebase.database.ServerValue.TIMESTAMP
+            }).then(() => { updatePreview(`preview_${key}`, base64); });
+        });
+    }
+
+    function loadEtcImages() {
+        const area = document.getElementById('etcImageArea');
+        database.ref(`commonImages/etcImages`).on('value', snap => {
+            area.innerHTML = '';
+            const data = snap.val();
+            if (!data) return;
+            Object.entries(data).forEach(([id, item]) => {
+                const div = document.createElement('div');
+                div.className = 'etc-item';
+                div.innerHTML = `
+                    <div class="seal-preview" style="margin:0;"><img src="${item.imageData}"></div>
+                    <div class="etc-info">
+                        <input type="text" class="etc-name-input dynamic-etc-title" value="${item.title}" data-id="${id}">
+                        <code class="db-path-label">etcImages/${id}</code>
+                    </div>
+                    <button class="btn-delete dynamic-etc-delete" data-id="${id}">삭제</button>
+                `;
+                area.appendChild(div);
+            });
+        });
+    }
+
+    async function addNewEtcSlot() {
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.onchange = async function() {
+            processImage(this, async (base64) => {
+                const title = await appPrompt("이미지 제목:", "새 이미지");
+                if(!title) return;
+                // 파이어베이스 push 기능을 사용하여 유니크한 ID 생성
+                database.ref(`commonImages/etcImages`).push({
+                    title: title,
+                    imageData: base64,
+                    updatedAt: firebase.database.ServerValue.TIMESTAMP
+                });
+            });
+        };
+        input.click();
+    }
+
+    function updateEtcTitle(id, newTitle) {
+        database.ref(`commonImages/etcImages/${id}`).update({ title: newTitle });
+    }
+
+    async function deleteEtcImage(id) {
+        if(await appConfirm("삭제하시겠습니까?")) database.ref(`commonImages/etcImages/${id}`).remove();
+    }
+
+    function processImage(input, callback) {
+        const file = input.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const img = new Image();
+            img.onload = function() {
+                const canvas = document.createElement('canvas');
+                let width = img.width; let height = img.height;
+                const MAX_SIZE = 1000;
+                if (width > height) { if (width > MAX_SIZE) { height *= MAX_SIZE / width; width = MAX_SIZE; } } 
+                else { if (height > MAX_SIZE) { width *= MAX_SIZE / height; height = MAX_SIZE; } }
+                canvas.width = width; canvas.height = height;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0, width, height);
+                callback(canvas.toDataURL('image/jpeg', 0.85));
+            };
+            img.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+    }
+
+    function updatePreview(id, data) {
+        const el = document.getElementById(id);
+        if(el) el.innerHTML = `<img src="${data}">`;
+    }
+
+
+    // 📍 [신규 추가] 서류 이미지 자료 (고정 경로) 관련 함수
+function loadDocImages() {
+    const keys = ['makeupBwLogo', 'makeupColorLogo', 'makeupSeal', 'evalFirstBg'];
+    keys.forEach(key => {
+        database.ref(`commonImages/docImages/${key}`).once('value', snap => {
+            if(snap.val()) updatePreview(`preview_${key}`, snap.val().imageData);
+        });
+    });
+}
+
+async function uploadDocImage(key, input) {
+    processImage(input, async (base64) => {
+        database.ref(`commonImages/docImages/${key}`).set({
+            imageData: base64,
+            updatedAt: firebase.database.ServerValue.TIMESTAMP
+        }).then(async () => { 
+            updatePreview(`preview_${key}`, base64); 
+            await appAlert("✅ 업로드 완료! 경로가 고정되어 있어 코드를 수정할 필요가 없습니다.");
+        }).catch(async (err) => { await appAlert("❌ 오류: " + err.message); });
+    });
+}
+
+// 📍 [신규 장착] 담임선생님 디지털 서명 패드 엔진
+let tSignCanvas, tSignCtx, isTDrawing = false;
+let targetClassName = "";
+
+function openTeacherSignPad(className) {
+    targetClassName = className;
+    const modal = document.getElementById('teacherSignModal');
+    const modalTitle = modal.querySelector('.sign-title');
+    if (modalTitle) modalTitle.innerHTML = `<span style="color:#27ae60;">[${className}]</span> 담임선생님 서명`;
+    
+    modal.style.display = 'flex';
+    tSignCanvas = document.getElementById('teacherSignCanvas');
+    tSignCtx = tSignCanvas.getContext('2d');
+    
+    // 배경 도색 (투명도 방지용 흰색 베이스)
+    tSignCtx.fillStyle = "#fff";
+    tSignCtx.fillRect(0, 0, tSignCanvas.width, tSignCanvas.height);
+    
+    tSignCtx.strokeStyle = "#000";
+    tSignCtx.lineWidth = 4; // 싸인은 약간 굵게
+    tSignCtx.lineCap = "round";
+
+    if (!tSignCanvas.dataset.init) {
+        setupTeacherSignEvents();
+        tSignCanvas.dataset.init = "true";
+    }
+}
+
+function setupTeacherSignEvents() {
+    const getPos = (e) => {
+        const rect = tSignCanvas.getBoundingClientRect();
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+        
+        let x, y;
+        const isRotated = window.matchMedia("(max-width: 768px) and (orientation: portrait)").matches;
+        
+        if (isRotated) { // 모바일 세로 모드 (-90도 회전 보정)
+            const scaleX = tSignCanvas.width / rect.height; 
+            const scaleY = tSignCanvas.height / rect.width;
+            x = (rect.bottom - clientY) * scaleX;
+            y = (clientX - rect.left) * scaleY;
+        } else { // 정상 상태 (PC 및 모바일 가로)
+            const scaleX = tSignCanvas.width / rect.width;
+            const scaleY = tSignCanvas.height / rect.height;
+            x = (clientX - rect.left) * scaleX;
+            y = (clientY - rect.top) * scaleY;
+        }
+        return { x, y };
+    };
+    const start = (e) => { isTDrawing = true; const p = getPos(e); tSignCtx.beginPath(); tSignCtx.moveTo(p.x, p.y); };
+    const move = (e) => { if (!isTDrawing) return; const p = getPos(e); tSignCtx.lineTo(p.x, p.y); tSignCtx.stroke(); e.preventDefault(); };
+    const stop = () => { isTDrawing = false; };
+    
+    tSignCanvas.addEventListener('mousedown', start);
+    tSignCanvas.addEventListener('mousemove', move);
+    window.addEventListener('mouseup', stop);
+    tSignCanvas.addEventListener('touchstart', start);
+    tSignCanvas.addEventListener('touchmove', move, {passive: false});
+    tSignCanvas.addEventListener('touchend', stop);
+}
+
+function clearTeacherSign() { 
+    tSignCtx.clearRect(0, 0, tSignCanvas.width, tSignCanvas.height); 
+    tSignCtx.fillStyle = "#fff"; 
+    tSignCtx.fillRect(0, 0, tSignCanvas.width, tSignCanvas.height); 
+}
+
+function closeTeacherSignModal() { 
+    document.getElementById('teacherSignModal').style.display = 'none'; 
+}
+
+async function saveTeacherDigitalSign() {
+    // 0.8 품질로 경량화하여 JPEG 저장 (보강수업 로직 동일)
+    const base64Data = tSignCanvas.toDataURL('image/jpeg', 0.8); 
+    
+    try {
+        await database.ref(`commonImages/teacherSigns/${targetClassName}`).set({
+            imageData: base64Data,
+            updatedAt: firebase.database.ServerValue.TIMESTAMP
+        });
+        
+        await appAlert(`✅ [${targetClassName}] 담임선생님 서명이 마스터 DB에 등록되었습니다.`);
+        closeTeacherSignModal();
+        
+        // 미리보기 화면 즉각 갱신
+        updatePreview(`preview_sign_${targetClassName}`, base64Data);
+    } catch (e) {
+        await appAlert("❌ 저장 실패: " + e.message);
+    }
+}
+
+// 📍 [보안 추가] 대시보드(HTML)에서 엔진룸(JS)으로 모든 배선 숨기기 (이벤트 리스너 매립)
+
+// [이식 완료] 시크릿 도어 로직 (HTML에서 뜯어와서 안전하게 암호화 영역으로 편입)
+let secretClickCount = 0;
+let secretClickTimer;
+
+function triggerSecretDoor() {
+    secretClickCount++;
+    clearTimeout(secretClickTimer);
+    // 2초 내에 연속으로 안 누르면 초기화
+    secretClickTimer = setTimeout(() => { secretClickCount = 0; }, 2000); 
+
+    if (secretClickCount >= 5) {
+        secretClickCount = 0; // 카운터 리셋
+        console.log("🔓 엔지니어 모드: 인증 절차를 건너뛰고 계측 화면으로 점프합니다.");
+        location.href = '../차체/계측.html';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. 단일 고정 버튼/파일 인풋 (HTML에 고정된 부품들)
+    document.getElementById('title_secret_door').addEventListener('click', triggerSecretDoor);
+    document.getElementById('btn_add_etc').addEventListener('click', addNewEtcSlot);
+    
+    document.getElementById('upload_vicePrincipal').addEventListener('change', function() { uploadCommonImage('vicePrincipal', this); });
+    document.getElementById('upload_principal').addEventListener('change', function() { uploadCommonImage('principal', this); });
+    
+    document.getElementById('upload_makeupBwLogo').addEventListener('change', function() { uploadDocImage('makeupBwLogo', this); });
+    document.getElementById('upload_makeupColorLogo').addEventListener('change', function() { uploadDocImage('makeupColorLogo', this); });
+    document.getElementById('upload_makeupSeal').addEventListener('change', function() { uploadDocImage('makeupSeal', this); });
+    document.getElementById('upload_evalFirstBg').addEventListener('change', function() { uploadDocImage('evalFirstBg', this); });
+
+    // 2. 모달창 내 디지털 서명 버튼
+    document.getElementById('btn_sign_clear').addEventListener('click', clearTeacherSign);
+    document.getElementById('btn_sign_save').addEventListener('click', saveTeacherDigitalSign);
+    document.getElementById('btn_sign_close').addEventListener('click', closeTeacherSignModal);
+
+    // 3. 📍 동적 생성 부품 제어 (이벤트 위임 기술)
+    // 담임 교사 직인 그리드 구역 (직인 업로드, 서명 업로드, 스마트패드 열기 감지)
+    document.getElementById('teacherSealGrid').addEventListener('change', function(e) {
+        const target = e.target;
+        if (target.classList.contains('dynamic-upload-seal')) {
+            uploadTeacherSeal(target.getAttribute('data-class'), target);
+        } else if (target.classList.contains('dynamic-upload-sign')) {
+            uploadTeacherSign(target.getAttribute('data-class'), target);
+        }
+    });
+
+    document.getElementById('teacherSealGrid').addEventListener('click', function(e) {
+        const target = e.target;
+        if (target.classList.contains('dynamic-btn-signpad')) {
+            openTeacherSignPad(target.getAttribute('data-class'));
+        }
+    });
+
+    // 기타 이미지 자료 구역 (제목 수정, 삭제 감지)
+    document.getElementById('etcImageArea').addEventListener('change', function(e) {
+        const target = e.target;
+        if (target.classList.contains('dynamic-etc-title')) {
+            updateEtcTitle(target.getAttribute('data-id'), target.value);
+        }
+    });
+
+    document.getElementById('etcImageArea').addEventListener('click', function(e) {
+        const target = e.target;
+        if (target.classList.contains('dynamic-etc-delete')) {
+            deleteEtcImage(target.getAttribute('data-id'));
+        }
+    });
+});
