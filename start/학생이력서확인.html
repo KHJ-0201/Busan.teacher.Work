@@ -134,6 +134,21 @@
         .resume-view-table td.resume-date-td { width: 56px; text-align: center; vertical-align: middle; padding: 6px 4px; }
         .resume-copy-val.resume-date-part { display: block; min-width: 44px; padding: 6px 4px; text-align: center; font-weight: bold; }
         .rate-highlight { font-size: 22px; font-weight: 900; color: #27ae60; }
+        .submission-type-badge {
+            display: inline-block; margin-right: 6px; padding: 2px 8px; border-radius: 999px;
+            font-size: 11px; font-weight: 800; vertical-align: middle;
+        }
+        .submission-type-badge.is-resume { background: #dbeafe; color: #1d4ed8; }
+        .submission-type-badge.is-cover-letter { background: #ede9fe; color: #6d28d9; }
+        .submission-card.is-cover-letter { border-color: #ddd6fe; }
+        .submission-card.is-cover-letter .submission-card-head { background: #f5f3ff; }
+        .submission-card.is-resume .submission-card-head { background: #f1f5f9; }
+        .resume-submit-limit-panel.is-cover-letter { border-color: #c4b5fd; background: linear-gradient(180deg, #f5f3ff 0%, #fff 100%); }
+        .resume-submit-limit-panel.is-cover-letter .resume-submit-limit-label { color: #5b21b6; }
+        .resume-submit-limit-panel.is-cover-letter .resume-submit-limit-count { color: #6d28d9; }
+        .cover-letter-view-body {
+            white-space: pre-wrap; min-height: 80px; font-size: 13px; line-height: 1.65;
+        }
         @media (max-width: 900px) {
             .layout { flex-direction: column; }
             .left-panel { width: 100%; position: relative; max-height: 280px; }
