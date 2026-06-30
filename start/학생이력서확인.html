@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>학생 이력서 확인</title>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
-    <style>
-        body { font-family: 'Malgun Gothic', sans-serif; background: #f8f9fa; margin: 0; padding: 20px; color: #333; }
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>학생 이력서 확인</title><script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script><script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script><script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script><style>body { font-family: 'Malgun Gothic', sans-serif; background: #f8f9fa; margin: 0; padding: 20px; color: #333; }
         .container { max-width: 1500px; margin: 0 auto; background: #fff; padding: 20px 30px; border-radius: 12px; box-shadow: 0 5px 25px rgba(0,0,0,0.05); }
         .header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; border-bottom: 2px solid #2980b9; padding-bottom: 12px; margin-bottom: 18px; }
         .header h2 { margin: 0; color: #1e293b; font-size: 22px; }
@@ -152,13 +142,7 @@
             .region-filter-reset { width: 100%; height: auto; }
             .filter-summary { margin-left: 0; width: 100%; text-align: center; padding-bottom: 0; }
             .resume-basic-row-triple, .resume-basic-row-double { grid-template-columns: 1fr; }
-        }
-    </style>
-</head>
-<body style="padding-top: 80px;">
-
-<style>
-    #globalMainHarness { flex-wrap: nowrap !important; }
+        }</style></head><body style="padding-top: 80px;"><style>#globalMainHarness { flex-wrap: nowrap !important; }
     #navButtonBank { flex-wrap: nowrap !important; }
     .nav-btn-global {
         color: #ffffff;
@@ -186,82 +170,4 @@
         #harnessRightBank { order: 2; flex: 1; display: flex; justify-content: flex-end; }
         #navButtonBank { order: 3; flex-wrap: wrap !important; width: 100%; margin: 0 !important; }
         .nav-btn-global { max-width: calc(25% - 4px); font-size: 9px !important; }
-    }
-</style>
-<link rel="stylesheet" href="../common-harness.css">
-<script src="../common-harness.js"></script>
-
-<div id="globalMainHarness" style="position: fixed; top: 0; left: 0; width: 100%; background: #1a252f; z-index: 9999; padding: 10px 20px; box-sizing: border-box; box-shadow: 0 4px 15px rgba(0,0,0,0.3); border-bottom: 3px solid #e67e22; display: flex; justify-content: space-between; align-items: center;">
-    <div id="harnessLeftBank" style="flex-shrink: 0;">
-        <button class="btn" style="background: transparent; color: #f1c40f; border: 1px solid #f1c40f; width: 90px; padding: 6px 0; font-size: 12px; font-weight: bold; box-sizing: border-box; cursor: pointer;" onclick="location.href='select_class.html'">◀ 반 선택</button>
-    </div>
-    <div id="navButtonBank" style="display: flex; justify-content: center; gap: 6px; flex-grow: 1; margin: 0 15px;">
-        <button class="nav-btn-global" style="background: #3498db;" onclick="location.href=classNavHref('index1.html')">🏠 메인화면</button>
-        <button class="nav-btn-global" style="background: #e67e22;" onclick="location.href=classNavHref('일일출석부.html')">📅 일일출석부</button>
-        <button class="nav-btn-global" style="background: #27ae60;" onclick="location.href=classNavHref('능력단위시간표.html')">📊 출석률/보강</button>
-        <button class="nav-btn-global" style="background: #8e44ad;" onclick="location.href=classNavHref('단위개월출석부.html')">📈 단위출석부</button>
-        <button class="nav-btn-global" style="background: #2c3e50;" onclick="location.href=classNavHref('평가계획서.html')">📄 계획서류</button>
-        <button class="nav-btn-global" style="background: #16a085;" onclick="location.href=classNavHref('../평가지/평가지.html')">📋 내부평가</button>
-        <button class="nav-btn-global" style="background: #d35400;" onclick="location.href=classNavHref('상담일지.html')">🤝 상담/이력서</button>
-    </div>
-    <div id="harnessRightBank" style="flex-shrink: 0;">
-        <div style="background: #000000; color: #f1c40f; padding: 8px 22px; border-radius: 6px; border: 2px solid #f1c40f; font-weight: 900; font-size: 16px; box-shadow: 0 0 12px rgba(241, 196, 15, 0.8); white-space: nowrap; letter-spacing: 1px;">
-            <span style="color: #ffffff; font-size: 14px; margin-right: 5px;">▶ 현재 학급:</span>
-            <span id="currentClassDisplay" style="font-size: 19px; text-shadow: 0 0 5px #f1c40f;">로딩 중...</span>
-        </div>
-    </div>
-</div>
-
-<div class="container">
-    <div class="header">
-        <h2>📄 학생 이력서 확인</h2>
-        <a href="#" id="btnBackCounsel" class="btn-nav">◀ 상담일지로</a>
-    </div>
-    <div class="layout">
-        <div class="left-panel" id="studentList">
-            <div style="padding:20px;text-align:center;color:#94a3b8;font-size:12px;">불러오는 중...</div>
-        </div>
-        <div class="right-panel">
-            <div id="resumeMainView" class="resume-main-view">
-                <div class="main-explore-row">
-                    <div class="main-map-column">
-                        <div id="koreaMapExplorer" class="korea-map-explorer"></div>
-                    </div>
-                    <div class="main-region-column">
-                        <div class="region-filter-panel region-filter-panel-main" id="regionFilterPanel">
-                            <div class="region-filter-title">📍 지역별 보기</div>
-                            <p class="region-filter-desc">시·도와 시·군·구를 선택하면 아래 목록에 해당 지역 학생만 표시됩니다. 좌측 명단은 전체 학생이며, 학생을 클릭하면 이력서를 확인할 수 있습니다.</p>
-                            <div class="region-filter-toolbar">
-                                <label class="region-filter-field">
-                                    <span>시·도</span>
-                                    <select id="filterSido" class="region-filter-select"><option value="">전체</option></select>
-                                </label>
-                                <label class="region-filter-field">
-                                    <span>시·군·구</span>
-                                    <select id="filterSigungu" class="region-filter-select" disabled><option value="">전체</option></select>
-                                </label>
-                                <button type="button" id="btnFilterReset" class="region-filter-reset">필터 초기화</button>
-                                <div id="filterSummary" class="filter-summary"></div>
-                            </div>
-                        </div>
-                        <div id="regionStudentGrid" class="region-student-grid"></div>
-                    </div>
-                </div>
-            </div>
-            <div id="resumeDetailArea" class="resume-detail-view" hidden></div>
-        </div>
-    </div>
-</div>
-<link rel="stylesheet" href="../common-dialog.css">
-<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-<script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
-<script src="../common-dialog.js"></script>
-<script src="../common-class-db.js"></script>
-<script src="kr-regions-data.js"></script>
-<script src="korea-gadm-sido-map.js"></script>
-<script src="korea-gadm-sigungu-overrides.js"></script>
-<script src="korea-map-picker.js"></script>
-<script src="student-resume-shared.js"></script>
-<script src="학생이력서확인.js"></script>
-</body>
-</html>
+    }</style><link rel="stylesheet" href="../common-harness.css"><script src="../common-harness.js"></script><div id="globalMainHarness" style="position: fixed; top: 0; left: 0; width: 100%; background: #1a252f; z-index: 9999; padding: 10px 20px; box-sizing: border-box; box-shadow: 0 4px 15px rgba(0,0,0,0.3); border-bottom: 3px solid #e67e22; display: flex; justify-content: space-between; align-items: center;"><div id="harnessLeftBank" style="flex-shrink: 0;"><button class="btn" style="background: transparent; color: #f1c40f; border: 1px solid #f1c40f; width: 90px; padding: 6px 0; font-size: 12px; font-weight: bold; box-sizing: border-box; cursor: pointer;" onclick='location.href="select_class.html"'>◀ 반 선택</button></div><div id="navButtonBank" style="display: flex; justify-content: center; gap: 6px; flex-grow: 1; margin: 0 15px;"><button class="nav-btn-global" style="background: #3498db;" onclick='location.href=classNavHref("index1.html")'>🏠 메인화면</button> <button class="nav-btn-global" style="background: #e67e22;" onclick='location.href=classNavHref("일일출석부.html")'>📅 일일출석부</button> <button class="nav-btn-global" style="background: #27ae60;" onclick='location.href=classNavHref("능력단위시간표.html")'>📊 출석률/보강</button> <button class="nav-btn-global" style="background: #8e44ad;" onclick='location.href=classNavHref("단위개월출석부.html")'>📈 단위출석부</button> <button class="nav-btn-global" style="background: #2c3e50;" onclick='location.href=classNavHref("평가계획서.html")'>📄 계획서류</button> <button class="nav-btn-global" style="background: #16a085;" onclick='location.href=classNavHref("../평가지/평가지.html")'>📋 내부평가</button> <button class="nav-btn-global" style="background: #d35400;" onclick='location.href=classNavHref("상담일지.html")'>🤝 상담/이력서</button></div><div id="harnessRightBank" style="flex-shrink: 0;"><div style="background: #000000; color: #f1c40f; padding: 8px 22px; border-radius: 6px; border: 2px solid #f1c40f; font-weight: 900; font-size: 16px; box-shadow: 0 0 12px rgba(241, 196, 15, 0.8); white-space: nowrap; letter-spacing: 1px;"><span style="color: #ffffff; font-size: 14px; margin-right: 5px;">▶ 현재 학급:</span> <span id="currentClassDisplay" style="font-size: 19px; text-shadow: 0 0 5px #f1c40f;">로딩 중...</span></div></div></div><div class="container"><div class="header"><h2>📄 학생 이력서 확인</h2><a href="#" id="btnBackCounsel" class="btn-nav">◀ 상담일지로</a></div><div class="layout"><div class="left-panel" id="studentList"><div style="padding:20px;text-align:center;color:#94a3b8;font-size:12px;">불러오는 중...</div></div><div class="right-panel"><div id="resumeMainView" class="resume-main-view"><div class="main-explore-row"><div class="main-map-column"><div id="koreaMapExplorer" class="korea-map-explorer"></div></div><div class="main-region-column"><div class="region-filter-panel region-filter-panel-main" id="regionFilterPanel"><div class="region-filter-title">📍 지역별 보기</div><p class="region-filter-desc">시·도와 시·군·구를 선택하면 아래 목록에 해당 지역 학생만 표시됩니다. 좌측 명단은 전체 학생이며, 학생을 클릭하면 이력서를 확인할 수 있습니다.</p><div class="region-filter-toolbar"><label class="region-filter-field"><span>시·도</span> <select id="filterSido" class="region-filter-select"><option value="">전체</option></select></label> <label class="region-filter-field"><span>시·군·구</span> <select id="filterSigungu" class="region-filter-select" disabled="disabled"><option value="">전체</option></select></label> <button type="button" id="btnFilterReset" class="region-filter-reset">필터 초기화</button><div id="filterSummary" class="filter-summary"></div></div></div><div id="regionStudentGrid" class="region-student-grid"></div></div></div></div><div id="resumeDetailArea" class="resume-detail-view" hidden></div></div></div></div><link rel="stylesheet" href="../common-dialog.css"><script src="https://cdn.jsdelivr.net/npm/d3@7"></script><script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script><script src="../common-dialog.js"></script><script src="../common-class-db.js"></script><script src="kr-regions-data.js"></script><script src="korea-gadm-sido-map.js"></script><script src="korea-gadm-sigungu-overrides.js"></script><script src="korea-map-picker.js"></script><script src="student-resume-shared.js"></script><script src="학생이력서확인.js"></script></body></html>

@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>훈련기준 통합 조회 센터</title>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
-    <style>
-        body { font-family: 'Malgun Gothic', sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; color: #333; }
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>훈련기준 통합 조회 센터</title><script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script><script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script><script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script><style>body { font-family: 'Malgun Gothic', sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; color: #333; }
 .container { max-width: 1400px; margin: 0 auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.1); }
 
 /* 헤더 및 상단 탭 */
@@ -141,46 +131,4 @@
         display: block !important; 
         min-width: 55px; /* 버튼 크기 고정으로 균일함 유지 */
     }
-}
-    </style>
-</head>
-<body>
-
-<div class="container">
-    <div class="header">
-        <h1>📊 훈련기준 통합 조회 센터</h1>
-        <a href="select_class.html" class="btn-back">◀ 메인으로 이동</a>
-    </div>
-
-    <div id="versionContainer" class="version-container">
-        <span class="version-label">📂 훈련기준 버전 선택:</span>
-        <div id="versionList" style="display: flex; gap: 10px; flex-wrap: wrap;">
-            <span style="color:#7f8c8d; font-size: 13px;">🔄 버전 정보를 불러오는 중...</span>
-        </div>
-    </div>
-
-    <div class="tab-container" id="partTabContainer">
-        <button class="tab-btn active dynamic-load-part" data-part="electronics">⚡ 전기전자</button>
-        <button class="tab-btn dynamic-load-part" data-part="engine">🔧 엔진</button>
-        <button class="tab-btn dynamic-load-part" data-part="chassis">⚙️ 섀시</button>
-        <button class="tab-btn dynamic-load-part" data-part="ev">🔋 전기차</button>
-    </div>
-
-    <div class="quick-nav" id="quickNav">
-        <button id="btn_toggle_nav" class="nav-toggle-btn">▶</button>
-        <h3>📋 과목 목록</h3>
-        <ul id="navList">
-            <li style="color:#999;">탭을 선택해주세요.</li>
-        </ul>
-    </div>
-
-    <div class="content-area" id="mainDisplay">
-        <div class="no-data">상단 탭을 클릭하여 데이터를 불러오세요.</div>
-    </div>
-</div>
-
-<link rel="stylesheet" href="../common-dialog.css">
-<script src="../common-dialog.js"></script>
-<script src="훈련기준.js"></script>
-</body>
-</html>
+}</style></head><body><div class="container"><div class="header"><h1>📊 훈련기준 통합 조회 센터</h1><a href="select_class.html" class="btn-back">◀ 메인으로 이동</a></div><div id="versionContainer" class="version-container"><span class="version-label">📂 훈련기준 버전 선택:</span><div id="versionList" style="display: flex; gap: 10px; flex-wrap: wrap;"><span style="color:#7f8c8d; font-size: 13px;">🔄 버전 정보를 불러오는 중...</span></div></div><div class="tab-container" id="partTabContainer"><button class="tab-btn active dynamic-load-part" data-part="electronics">⚡ 전기전자</button> <button class="tab-btn dynamic-load-part" data-part="engine">🔧 엔진</button> <button class="tab-btn dynamic-load-part" data-part="chassis">⚙️ 섀시</button> <button class="tab-btn dynamic-load-part" data-part="ev">🔋 전기차</button></div><div class="quick-nav" id="quickNav"><button id="btn_toggle_nav" class="nav-toggle-btn">▶</button><h3>📋 과목 목록</h3><ul id="navList"><li style="color:#999;">탭을 선택해주세요.</li></ul></div><div class="content-area" id="mainDisplay"><div class="no-data">상단 탭을 클릭하여 데이터를 불러오세요.</div></div></div><link rel="stylesheet" href="../common-dialog.css"><script src="../common-dialog.js"></script><script src="훈련기준.js"></script></body></html>
