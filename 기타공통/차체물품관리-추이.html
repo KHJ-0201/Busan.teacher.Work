@@ -48,11 +48,75 @@
         .detail-card {
             background: white; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px;
             border: 2px solid var(--accent-color); box-shadow: 0 2px 8px rgba(52,152,219,0.15);
+            scroll-margin-top: 16px;
         }
         .detail-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; margin-bottom: 12px; }
         .detail-head h2 { margin: 0; font-size: 18px; color: var(--primary-color); }
-        .detail-meta { font-size: 13px; color: #666; }
-        .detail-chart-wrap { height: 320px; position: relative; }
+        .detail-meta-block {
+            flex: 1 1 100%;
+            min-height: 3.05em;
+        }
+        .detail-meta-base {
+            font-size: 13px; color: #666; line-height: 1.45;
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+        }
+        .detail-meta-status {
+            font-size: 12px; color: #2980b9; font-weight: bold; line-height: 1.45;
+            min-height: 1.45em; max-height: 1.45em;
+            overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+        }
+        .batch-toolbar {
+            display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            padding: 10px 12px; margin-bottom: 12px; background: var(--light-bg);
+            border: 1px solid var(--border-color); border-radius: 8px; font-size: 13px;
+            min-height: 92px;
+        }
+        .batch-toolbar label { font-weight: bold; color: #555; display: flex; align-items: center; gap: 6px; }
+        .batch-toolbar select, .batch-toolbar input[type="number"] {
+            padding: 6px 8px; border: 1px solid var(--border-color); border-radius: 5px; font-size: 13px;
+        }
+        .batch-toolbar input[type="number"] { width: 88px; }
+        .batch-toolbar select { min-width: 110px; }
+        .btn-batch {
+            padding: 7px 14px; border: none; border-radius: 6px; font-weight: bold; font-size: 13px; cursor: pointer;
+        }
+        .btn-batch-apply { background: var(--success-color); color: white; }
+        .btn-batch-apply:hover { background: #27ae60; }
+        .btn-batch-save { background: var(--accent-color); color: white; }
+        .btn-batch-save:hover:not(:disabled) { background: #2980b9; }
+        .btn-batch-save:disabled { background: #bdc3c7; color: #7f8c8d; cursor: not-allowed; }
+        #btnSaveChartEdits { min-width: 72px; }
+        #btnResetManualAdjust { min-width: 156px; }
+        .btn-batch-clear { background: #95a5a6; color: white; }
+        .btn-batch-clear:hover { background: #7f8c8d; }
+        .btn-batch-reset { background: #e67e22; color: white; }
+        .btn-batch-reset:hover:not(:disabled) { background: #d35400; }
+        .btn-batch-reset:disabled { background: #bdc3c7; color: #7f8c8d; cursor: not-allowed; }
+        .batch-hint { font-size: 11px; color: #777; flex: 1 1 220px; line-height: 1.45; }
+        .batch-count { font-size: 12px; font-weight: bold; color: var(--primary-color); white-space: nowrap; min-width: 72px; }
+        .adjust-mode-wrap {
+            display: inline-flex; align-items: center; gap: 6px; flex-wrap: nowrap;
+            flex-shrink: 0;
+            visibility: hidden; opacity: 0; pointer-events: none;
+        }
+        .adjust-mode-wrap.is-visible {
+            visibility: visible; opacity: 1; pointer-events: auto;
+        }
+        .adjust-mode-label { font-size: 12px; font-weight: bold; color: #555; white-space: nowrap; }
+        .adjust-mode-toggle {
+            display: inline-flex; border: 1px solid var(--border-color); border-radius: 6px; overflow: hidden;
+        }
+        .btn-adjust-mode {
+            padding: 6px 12px; border: none; background: white; color: #555;
+            font-size: 12px; font-weight: bold; cursor: pointer; white-space: nowrap;
+        }
+        .btn-adjust-mode + .btn-adjust-mode { border-left: 1px solid var(--border-color); }
+        .btn-adjust-mode:hover { background: #ecf0f1; }
+        .btn-adjust-mode.active { background: var(--accent-color); color: white; }
+        .btn-adjust-mode.active:hover { background: #2980b9; }
+        .detail-chart-wrap { height: 320px; position: relative; cursor: default; }
+        .detail-chart-wrap.is-dragging { cursor: ns-resize; }
+        .detail-chart-wrap.is-range-drag { cursor: ew-resize; }
         .chart-grid {
             display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px;
         }
@@ -76,4 +140,4 @@
         @media (max-width: 700px) {
             .period-badge { margin-left: 0; width: 100%; text-align: center; }
             .detail-chart-wrap { height: 240px; }
-        }</style></head><body><div class="container"><header><div><h1>📈 재고 수량 추이 대시보드</h1><p>2022년 1월부터 현재 월까지 · 소모품·기자재 항목별 월말 재고 변화</p></div><div class="header-actions"><button type="button" class="btn-nav btn-refresh" id="btnRefreshCharts">새로고침</button> <a href="차체물품관리.html" class="btn-nav">🛠️ 물품관리 입력</a> <a href="index.html" class="btn-nav">◀ 기타공통 메뉴</a></div></header><div class="toolbar"><label for="filterType">분류</label> <select id="filterType"><option value="all">전체 (58종)</option><option value="consumable">소모성 도장용구 (31)</option><option value="equipment">장비 및 기자재 (27)</option></select> <label for="searchItem">품명 검색</label> <input type="search" id="searchItem" placeholder="품명 일부 입력..."> <span class="period-badge" id="periodLabel">기간 로딩 중...</span></div><div class="legend-bar"><span class="legend-item"><span class="legend-line" style="background:#3498db;"></span> 확정·실측 반영 구간</span> <span class="legend-item"><span class="legend-dot" style="background:#f39c12;"></span> 추정 구간 (소모품=변동, 장비=수량 고정)</span> <span class="legend-item"><span class="legend-line" style="background:#ccc;border-top:2px dashed #999;height:0;"></span> 데이터 없음(공백)</span></div><div class="detail-card" id="detailCard"><div class="detail-head"><h2 id="detailTitle">품목을 선택하세요</h2><span class="detail-meta" id="detailMeta"></span></div><div class="detail-chart-wrap"><canvas id="detailChart"></canvas></div></div><div class="chart-grid" id="chartGrid"></div></div><script src="data-2022-baseline.js"></script><script src="data-2022-monthly-sheets.js"></script><script src="차체물품관리.js"></script><script src="차체물품관리-추이.js"></script></body></html>
+        }</style></head><body><div class="container"><header><div><h1>📈 재고 수량 추이 대시보드</h1><p>2022년 1월부터 현재 월까지 · 소모품·기자재 항목별 월말 재고 변화</p></div><div class="header-actions"><button type="button" class="btn-nav btn-refresh" id="btnRefreshCharts">새로고침</button> <a href="차체물품관리.html" class="btn-nav">🛠️ 물품관리 입력</a> <a href="index.html" class="btn-nav">◀ 기타공통 메뉴</a></div></header><div class="toolbar"><label for="filterType">분류</label> <select id="filterType"><option value="all">전체 (58종)</option><option value="consumable">소모성 도장용구 (31)</option><option value="equipment">장비 및 기자재 (27)</option></select> <label for="searchItem">품명 검색</label> <input type="search" id="searchItem" placeholder="품명 일부 입력..."> <span class="period-badge" id="periodLabel">기간 로딩 중...</span></div><div class="legend-bar"><span class="legend-item"><span class="legend-line" style="background:#3498db;"></span> 확정·실측 반영 구간</span> <span class="legend-item"><span class="legend-dot" style="background:#f39c12;"></span> 추정 구간 (드래그로 조절 가능)</span> <span class="legend-item"><span class="legend-dot" style="background:#8e44ad;"></span> 수동 조절됨 (더블클릭=해당 월 복원 · 버튼=전체 초기화)</span> <span class="legend-item"><span class="legend-dot" style="background:#d35400;"></span> 미저장 조절 (저장 또는 Enter)</span> <span class="legend-item"><span class="legend-dot" style="background:#3498db;"></span> 실측·확정 (변경 불가)</span> <span class="legend-item"><span class="legend-dot" style="background:#e74c3c; box-shadow:0 0 0 2px #fff, 0 0 0 4px #e74c3c;"></span> 차트에서 선택된 월</span> <span class="legend-item"><span class="legend-line" style="background:#ccc;border-top:2px dashed #999;height:0;"></span> 데이터 없음(공백)</span></div><div class="detail-card" id="detailCard"><div class="detail-head"><h2 id="detailTitle">품목을 선택하세요</h2><div class="detail-meta-block"><div class="detail-meta-base" id="detailMetaBase"></div><div class="detail-meta-status" id="detailMetaStatus" aria-live="polite"></div></div></div><div class="batch-toolbar" id="batchToolbar"><span class="batch-count" id="batchSelectionCount">선택 0개월</span> <span class="adjust-mode-wrap" id="adjustModeWrap"><span class="adjust-mode-label">세로 드래그</span> <span class="adjust-mode-toggle" role="group" aria-label="세로 드래그 조절 방식"><button type="button" class="btn-adjust-mode active" data-mode="ratio" id="btnAdjustRatio">비율 조절</button> <button type="button" class="btn-adjust-mode" data-mode="uniform" id="btnAdjustUniform">동일 조절</button> </span></span><label>시작월 <select id="batchFromMonth"></select></label> <label>종료월 <select id="batchToMonth"></select></label> <label>재고 <input type="number" id="batchValue" min="0" step="1" placeholder="수량"></label> <button type="button" class="btn-batch btn-batch-save" id="btnSaveChartEdits" disabled="disabled">저장</button> <button type="button" class="btn-batch btn-batch-apply" id="btnBatchApply">기간 일괄 적용</button> <button type="button" class="btn-batch btn-batch-clear" id="btnClearSelection">선택 해제</button> <button type="button" class="btn-batch btn-batch-reset" id="btnResetManualAdjust" disabled="disabled">수동 조절 초기화</button> <span class="batch-hint">클릭 후 <strong>가로 드래그</strong>로 월 범위 선택 → <strong>비율 조절</strong> 또는 <strong>동일 조절</strong> 선택 후 <strong>세로 드래그</strong> · 조절 후 <strong>저장</strong> 또는 <strong>Enter</strong> · <strong>Esc</strong>=선택해제·미저장취소 · 실측(파랑) 월은 제외 · 더블클릭=해당 월 복원 · 하단 품목 클릭 시 상단 그래프로 이동</span></div><div class="detail-chart-wrap"><canvas id="detailChart"></canvas></div></div><div class="chart-grid" id="chartGrid"></div></div><script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script><script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script><script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script><link rel="stylesheet" href="../common-dialog.css"><script src="../common-dialog.js"></script><script src="data-2022-baseline.js"></script><script src="data-2022-monthly-sheets.js"></script><script src="차체물품관리.js"></script><script src="차체물품관리-추이.js"></script></body></html>
