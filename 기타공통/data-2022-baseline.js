@@ -1,1 +1,2469 @@
-const a0_0x3f5453=a0_0xad62;(function(_0x243665,_0x22e9ff){const _0x565ea6=a0_0xad62,_0x482687=_0x243665();while(!![]){try{const _0x458878=parseInt(_0x565ea6(0x1ab))/0x1+parseInt(_0x565ea6(0x1c0))/0x2+parseInt(_0x565ea6(0x183))/0x3+parseInt(_0x565ea6(0x1a8))/0x4+parseInt(_0x565ea6(0x195))/0x5*(parseInt(_0x565ea6(0x1a3))/0x6)+parseInt(_0x565ea6(0x1b7))/0x7*(-parseInt(_0x565ea6(0x187))/0x8)+-parseInt(_0x565ea6(0x1ac))/0x9;if(_0x458878===_0x22e9ff)break;else _0x482687['push'](_0x482687['shift']());}catch(_0x5c7322){_0x482687['push'](_0x482687['shift']());}}}(a0_0x546e,0x29f42));function a0_0xad62(_0x534758,_0x5db8eb){_0x534758=_0x534758-0x182;const _0x398090=a0_0x546e();let _0x5a7d72=_0x398090[_0x534758];if(a0_0xad62['PnOYgT']===undefined){var _0x2bac54=function(_0x14f991){const _0x33971a='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x11e4ad='',_0x37b7d0='',_0x1d2061=_0x11e4ad+_0x2bac54;for(let _0x2661a8=0x0,_0x725837,_0x5b39aa,_0x4491a8=0x0;_0x5b39aa=_0x14f991['charAt'](_0x4491a8++);~_0x5b39aa&&(_0x725837=_0x2661a8%0x4?_0x725837*0x40+_0x5b39aa:_0x5b39aa,_0x2661a8++%0x4)?_0x11e4ad+=_0x1d2061['charCodeAt'](_0x4491a8+0xa)-0xa!==0x0?String['fromCharCode'](0xff&_0x725837>>(-0x2*_0x2661a8&0x6)):_0x2661a8:0x0){_0x5b39aa=_0x33971a['indexOf'](_0x5b39aa);}for(let _0x4f7868=0x0,_0x79f15c=_0x11e4ad['length'];_0x4f7868<_0x79f15c;_0x4f7868++){_0x37b7d0+='%'+('00'+_0x11e4ad['charCodeAt'](_0x4f7868)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x37b7d0);};a0_0xad62['nhtnFn']=_0x2bac54,a0_0xad62['NlYDZJ']={},a0_0xad62['PnOYgT']=!![];}const _0x546ed6=_0x398090[0x0],_0xad62a0=_0x534758+_0x546ed6,_0x264de5=a0_0xad62['NlYDZJ'][_0xad62a0];if(!_0x264de5){const _0x2fe62f=function(_0x33043a){this['zLVBmY']=_0x33043a,this['DiGrza']=[0x1,0x0,0x0],this['coFQLU']=function(){return'newState';},this['jIOhhm']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['efzylS']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x2fe62f['prototype']['VXOWjU']=function(){const _0x4fd3b3=new RegExp(this['jIOhhm']+this['efzylS']),_0x54f27b=_0x4fd3b3['test'](this['coFQLU']['toString']())?--this['DiGrza'][0x1]:--this['DiGrza'][0x0];return this['YneBTv'](_0x54f27b);},_0x2fe62f['prototype']['YneBTv']=function(_0x3228f0){if(!Boolean(~_0x3228f0))return _0x3228f0;return this['qOIlKP'](this['zLVBmY']);},_0x2fe62f['prototype']['qOIlKP']=function(_0x1e479e){for(let _0x2703dd=0x0,_0x695c23=this['DiGrza']['length'];_0x2703dd<_0x695c23;_0x2703dd++){this['DiGrza']['push'](Math['round'](Math['random']())),_0x695c23=this['DiGrza']['length'];}return _0x1e479e(this['DiGrza'][0x0]);},new _0x2fe62f(a0_0xad62)['VXOWjU'](),_0x5a7d72=a0_0xad62['nhtnFn'](_0x5a7d72),a0_0xad62['NlYDZJ'][_0xad62a0]=_0x5a7d72;}else _0x5a7d72=_0x264de5;return _0x5a7d72;}const a0_0x2bac54=(function(){let _0x2661a8=!![];return function(_0x725837,_0x5b39aa){const _0x4491a8=_0x2661a8?function(){const _0x5558fa=a0_0xad62;if(_0x5b39aa){const _0x4f7868=_0x5b39aa[_0x5558fa(0x1c8)](_0x725837,arguments);return _0x5b39aa=null,_0x4f7868;}}:function(){};return _0x2661a8=![],_0x4491a8;};}()),a0_0x5a7d72=a0_0x2bac54(this,function(){const _0x22c3a3=a0_0xad62;return a0_0x5a7d72['toString']()[_0x22c3a3(0x1bd)](_0x22c3a3(0x1b9))['toString']()[_0x22c3a3(0x1ae)](a0_0x5a7d72)[_0x22c3a3(0x1bd)](_0x22c3a3(0x1b9));});a0_0x5a7d72();const BASELINE_2022_LOGS=[{'id':0x1,'date':a0_0x3f5453(0x185),'name':a0_0x3f5453(0x197),'type':'consumable','qty':0x6,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x2,'date':a0_0x3f5453(0x1a2),'name':a0_0x3f5453(0x197),'type':a0_0x3f5453(0x19f),'qty':0x5,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x3,'date':a0_0x3f5453(0x188),'name':a0_0x3f5453(0x197),'type':'consumable','qty':0x5,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x4,'date':'2022-04-30','name':a0_0x3f5453(0x197),'type':'consumable','qty':0x5,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x5,'date':'2022-05-31','name':a0_0x3f5453(0x197),'type':'consumable','qty':0x3,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x6,'date':'2022-06-30','name':a0_0x3f5453(0x197),'type':'consumable','qty':0x3,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x7,'date':'2022-07-31','name':a0_0x3f5453(0x197),'type':a0_0x3f5453(0x19f),'qty':0x3,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x8,'date':'2022-01-31','name':a0_0x3f5453(0x19a),'type':a0_0x3f5453(0x19f),'qty':0xb,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x9,'date':a0_0x3f5453(0x1a2),'name':a0_0x3f5453(0x19a),'type':a0_0x3f5453(0x19f),'qty':0x8,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xa,'date':a0_0x3f5453(0x188),'name':a0_0x3f5453(0x19a),'type':'consumable','qty':0xa,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xb,'date':a0_0x3f5453(0x1a5),'name':a0_0x3f5453(0x19a),'type':a0_0x3f5453(0x19f),'qty':0x8,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xc,'date':a0_0x3f5453(0x182),'name':a0_0x3f5453(0x19a),'type':'consumable','qty':0x5,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0xd,'date':a0_0x3f5453(0x1b3),'name':'용접와이어','type':a0_0x3f5453(0x19f),'qty':0x4,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xe,'date':'2022-07-31','name':a0_0x3f5453(0x19a),'type':a0_0x3f5453(0x19f),'qty':0x2,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xf,'date':a0_0x3f5453(0x185),'name':'용접장갑','type':'consumable','qty':0xf,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x10,'date':a0_0x3f5453(0x1a2),'name':a0_0x3f5453(0x1a7),'type':a0_0x3f5453(0x19f),'qty':0xf,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x11,'date':a0_0x3f5453(0x188),'name':a0_0x3f5453(0x1a7),'type':a0_0x3f5453(0x19f),'qty':0xf,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x12,'date':'2022-04-30','name':a0_0x3f5453(0x1a7),'type':a0_0x3f5453(0x19f),'qty':0xf,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x13,'date':'2022-05-31','name':a0_0x3f5453(0x1a7),'type':a0_0x3f5453(0x19f),'qty':0xf,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x14,'date':'2022-06-30','name':a0_0x3f5453(0x1a7),'type':a0_0x3f5453(0x19f),'qty':0xf,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x15,'date':a0_0x3f5453(0x1ad),'name':a0_0x3f5453(0x1a7),'type':a0_0x3f5453(0x19f),'qty':0xe,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x16,'date':a0_0x3f5453(0x185),'name':a0_0x3f5453(0x1a9),'type':a0_0x3f5453(0x19f),'qty':0xf,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x17,'date':'2022-02-28','name':a0_0x3f5453(0x1a9),'type':a0_0x3f5453(0x19f),'qty':0xf,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x18,'date':a0_0x3f5453(0x188),'name':a0_0x3f5453(0x1a9),'type':a0_0x3f5453(0x19f),'qty':0xf,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x19,'date':a0_0x3f5453(0x1a5),'name':a0_0x3f5453(0x1a9),'type':a0_0x3f5453(0x19f),'qty':0xf,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x1a,'date':a0_0x3f5453(0x182),'name':a0_0x3f5453(0x1a9),'type':'consumable','qty':0xf,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x1b,'date':a0_0x3f5453(0x1b3),'name':a0_0x3f5453(0x1a9),'type':'consumable','qty':0xf,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x1c,'date':a0_0x3f5453(0x1ad),'name':a0_0x3f5453(0x1a9),'type':a0_0x3f5453(0x19f),'qty':0xe,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x1d,'date':'2022-01-31','name':a0_0x3f5453(0x193),'type':a0_0x3f5453(0x19f),'qty':0xf,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x1e,'date':a0_0x3f5453(0x1a2),'name':a0_0x3f5453(0x193),'type':a0_0x3f5453(0x19f),'qty':0xf,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x1f,'date':a0_0x3f5453(0x188),'name':'가죽앞치마','type':a0_0x3f5453(0x19f),'qty':0xf,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x20,'date':a0_0x3f5453(0x1a5),'name':a0_0x3f5453(0x193),'type':'consumable','qty':0xf,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x21,'date':a0_0x3f5453(0x182),'name':a0_0x3f5453(0x193),'type':a0_0x3f5453(0x19f),'qty':0xf,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x22,'date':'2022-06-30','name':a0_0x3f5453(0x193),'type':'consumable','qty':0xf,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x23,'date':a0_0x3f5453(0x1ad),'name':a0_0x3f5453(0x193),'type':a0_0x3f5453(0x19f),'qty':0xa,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x24,'date':'2022-01-31','name':a0_0x3f5453(0x19d),'type':a0_0x3f5453(0x19f),'qty':0xf,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x25,'date':'2022-02-28','name':a0_0x3f5453(0x19d),'type':a0_0x3f5453(0x19f),'qty':0xf,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x26,'date':a0_0x3f5453(0x188),'name':a0_0x3f5453(0x19d),'type':'consumable','qty':0xf,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x27,'date':a0_0x3f5453(0x1a5),'name':a0_0x3f5453(0x19d),'type':a0_0x3f5453(0x19f),'qty':0xf,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x28,'date':a0_0x3f5453(0x182),'name':a0_0x3f5453(0x19d),'type':'consumable','qty':0xf,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x29,'date':'2022-06-30','name':a0_0x3f5453(0x19d),'type':'consumable','qty':0xf,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x2a,'date':a0_0x3f5453(0x1ad),'name':'용접면','type':a0_0x3f5453(0x19f),'qty':0xc,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x2b,'date':a0_0x3f5453(0x185),'name':'용접토치\x20노즐','type':'consumable','qty':0xa,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x2c,'date':'2022-02-28','name':a0_0x3f5453(0x1a4),'type':a0_0x3f5453(0x19f),'qty':0xa,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x2d,'date':'2022-03-31','name':a0_0x3f5453(0x1a4),'type':a0_0x3f5453(0x19f),'qty':0xa,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x2e,'date':a0_0x3f5453(0x1a5),'name':a0_0x3f5453(0x1a4),'type':a0_0x3f5453(0x19f),'qty':0xa,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x2f,'date':a0_0x3f5453(0x182),'name':a0_0x3f5453(0x1a4),'type':a0_0x3f5453(0x19f),'qty':0xa,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x30,'date':a0_0x3f5453(0x1b3),'name':a0_0x3f5453(0x1a4),'type':'consumable','qty':0xa,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x31,'date':'2022-07-31','name':a0_0x3f5453(0x1a4),'type':'consumable','qty':0xa,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x32,'date':a0_0x3f5453(0x185),'name':'용접토치\x20팁홀더','type':a0_0x3f5453(0x19f),'qty':0xe,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x33,'date':a0_0x3f5453(0x1a2),'name':'용접토치\x20팁홀더','type':a0_0x3f5453(0x19f),'qty':0xe,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x34,'date':a0_0x3f5453(0x188),'name':'용접토치\x20팁홀더','type':a0_0x3f5453(0x19f),'qty':0xd,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x35,'date':a0_0x3f5453(0x1a5),'name':'용접토치\x20팁홀더','type':a0_0x3f5453(0x19f),'qty':0xc,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x36,'date':'2022-05-31','name':a0_0x3f5453(0x1c3),'type':a0_0x3f5453(0x19f),'qty':0xa,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x37,'date':a0_0x3f5453(0x1b3),'name':a0_0x3f5453(0x1c3),'type':a0_0x3f5453(0x19f),'qty':0x4,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x38,'date':'2022-07-31','name':'용접토치\x20팁홀더','type':a0_0x3f5453(0x19f),'qty':0x4,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x39,'date':'2022-01-31','name':a0_0x3f5453(0x1ba),'type':a0_0x3f5453(0x19f),'qty':0x19,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x3a,'date':a0_0x3f5453(0x1a2),'name':a0_0x3f5453(0x1ba),'type':a0_0x3f5453(0x19f),'qty':0x14,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x3b,'date':a0_0x3f5453(0x188),'name':'용접토치\x20팁','type':a0_0x3f5453(0x19f),'qty':0x14,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x3c,'date':a0_0x3f5453(0x1a5),'name':a0_0x3f5453(0x1ba),'type':a0_0x3f5453(0x19f),'qty':0x14,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x3d,'date':'2022-05-31','name':a0_0x3f5453(0x1ba),'type':'consumable','qty':0x14,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x3e,'date':a0_0x3f5453(0x1b3),'name':a0_0x3f5453(0x1ba),'type':a0_0x3f5453(0x19f),'qty':0x14,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x3f,'date':a0_0x3f5453(0x1ad),'name':'용접토치\x20팁','type':'consumable','qty':0x14,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x40,'date':a0_0x3f5453(0x185),'name':a0_0x3f5453(0x1b4),'type':a0_0x3f5453(0x19f),'qty':0x2,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x41,'date':a0_0x3f5453(0x1a2),'name':a0_0x3f5453(0x1b4),'type':a0_0x3f5453(0x19f),'qty':0x2,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x42,'date':a0_0x3f5453(0x188),'name':a0_0x3f5453(0x1b4),'type':a0_0x3f5453(0x19f),'qty':0x2,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x43,'date':a0_0x3f5453(0x1a5),'name':'용접토치','type':a0_0x3f5453(0x19f),'qty':0x2,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x44,'date':a0_0x3f5453(0x182),'name':a0_0x3f5453(0x1b4),'type':a0_0x3f5453(0x19f),'qty':0x2,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x45,'date':a0_0x3f5453(0x1b3),'name':a0_0x3f5453(0x1b4),'type':a0_0x3f5453(0x19f),'qty':0x2,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x46,'date':a0_0x3f5453(0x1ad),'name':'용접토치','type':a0_0x3f5453(0x19f),'qty':0x2,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x47,'date':a0_0x3f5453(0x185),'name':a0_0x3f5453(0x1bf),'type':a0_0x3f5453(0x19f),'qty':0xc,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x48,'date':a0_0x3f5453(0x1a2),'name':a0_0x3f5453(0x1bf),'type':'consumable','qty':0x12,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x49,'date':a0_0x3f5453(0x188),'name':a0_0x3f5453(0x1bf),'type':a0_0x3f5453(0x19f),'qty':0x1,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x4a,'date':a0_0x3f5453(0x1a5),'name':a0_0x3f5453(0x1bf),'type':a0_0x3f5453(0x19f),'qty':0x1,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x4b,'date':a0_0x3f5453(0x182),'name':a0_0x3f5453(0x1bf),'type':a0_0x3f5453(0x19f),'qty':0x1,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x4c,'date':a0_0x3f5453(0x1b3),'name':a0_0x3f5453(0x1bf),'type':'consumable','qty':0x1,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x4d,'date':'2022-07-31','name':'탄산가스','type':'consumable','qty':0x1,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x4e,'date':a0_0x3f5453(0x185),'name':a0_0x3f5453(0x1a0),'type':'consumable','qty':0x1,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x4f,'date':'2022-02-28','name':'아르곤가스','type':a0_0x3f5453(0x19f),'qty':0x1,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x50,'date':a0_0x3f5453(0x188),'name':'아르곤가스','type':'consumable','qty':0x1,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x51,'date':a0_0x3f5453(0x1a5),'name':a0_0x3f5453(0x1a0),'type':a0_0x3f5453(0x19f),'qty':0x1,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x52,'date':a0_0x3f5453(0x182),'name':a0_0x3f5453(0x1a0),'type':a0_0x3f5453(0x19f),'qty':0x1,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x53,'date':a0_0x3f5453(0x1b3),'name':a0_0x3f5453(0x1a0),'type':a0_0x3f5453(0x19f),'qty':0x1,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x54,'date':a0_0x3f5453(0x1ad),'name':a0_0x3f5453(0x1a0),'type':a0_0x3f5453(0x19f),'qty':0x1,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x55,'date':a0_0x3f5453(0x185),'name':'산소','type':a0_0x3f5453(0x19f),'qty':0x3,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x56,'date':a0_0x3f5453(0x1a2),'name':'산소','type':'consumable','qty':0x2,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x57,'date':a0_0x3f5453(0x188),'name':'산소','type':a0_0x3f5453(0x19f),'qty':0x2,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x58,'date':a0_0x3f5453(0x1a5),'name':'산소','type':a0_0x3f5453(0x19f),'qty':0x2,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x59,'date':a0_0x3f5453(0x182),'name':'산소','type':a0_0x3f5453(0x19f),'qty':0x2,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x5a,'date':a0_0x3f5453(0x1b3),'name':'산소','type':a0_0x3f5453(0x19f),'qty':0x2,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x5b,'date':a0_0x3f5453(0x1ad),'name':'산소','type':a0_0x3f5453(0x19f),'qty':0x2,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x5c,'date':a0_0x3f5453(0x185),'name':a0_0x3f5453(0x19b),'type':a0_0x3f5453(0x19f),'qty':0x2,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x5d,'date':a0_0x3f5453(0x1a2),'name':a0_0x3f5453(0x19b),'type':'consumable','qty':0x2,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x5e,'date':a0_0x3f5453(0x188),'name':a0_0x3f5453(0x19b),'type':a0_0x3f5453(0x19f),'qty':0x2,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x5f,'date':a0_0x3f5453(0x1a5),'name':a0_0x3f5453(0x19b),'type':'consumable','qty':0x2,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x60,'date':a0_0x3f5453(0x182),'name':a0_0x3f5453(0x19b),'type':a0_0x3f5453(0x19f),'qty':0x2,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x61,'date':a0_0x3f5453(0x1b3),'name':a0_0x3f5453(0x19b),'type':a0_0x3f5453(0x19f),'qty':0x2,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x62,'date':a0_0x3f5453(0x1ad),'name':a0_0x3f5453(0x19b),'type':a0_0x3f5453(0x19f),'qty':0x2,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x63,'date':'2022-01-31','name':a0_0x3f5453(0x189),'type':a0_0x3f5453(0x19f),'qty':0x1,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x64,'date':a0_0x3f5453(0x1a2),'name':'혼합가스','type':a0_0x3f5453(0x19f),'qty':0x3,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x65,'date':a0_0x3f5453(0x188),'name':a0_0x3f5453(0x189),'type':a0_0x3f5453(0x19f),'qty':0x2,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x66,'date':a0_0x3f5453(0x1a5),'name':a0_0x3f5453(0x189),'type':'consumable','qty':0x1,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x67,'date':a0_0x3f5453(0x182),'name':a0_0x3f5453(0x189),'type':a0_0x3f5453(0x19f),'qty':0x1,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x68,'date':'2022-06-30','name':a0_0x3f5453(0x189),'type':a0_0x3f5453(0x19f),'qty':0x1,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x69,'date':a0_0x3f5453(0x1ad),'name':a0_0x3f5453(0x189),'type':a0_0x3f5453(0x19f),'qty':0x1,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x6a,'date':a0_0x3f5453(0x185),'name':a0_0x3f5453(0x194),'type':a0_0x3f5453(0x19f),'qty':0x320,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x6b,'date':'2022-02-28','name':a0_0x3f5453(0x194),'type':'consumable','qty':0x302,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x6c,'date':a0_0x3f5453(0x188),'name':a0_0x3f5453(0x194),'type':a0_0x3f5453(0x19f),'qty':0x2f1,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x6d,'date':'2022-04-30','name':a0_0x3f5453(0x194),'type':a0_0x3f5453(0x19f),'qty':0x2e4,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x6e,'date':a0_0x3f5453(0x182),'name':'1T연강판','type':'consumable','qty':0x2d1,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x6f,'date':a0_0x3f5453(0x1b3),'name':a0_0x3f5453(0x194),'type':a0_0x3f5453(0x19f),'qty':0x32b,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x70,'date':a0_0x3f5453(0x1ad),'name':a0_0x3f5453(0x194),'type':a0_0x3f5453(0x19f),'qty':0x320,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x71,'date':a0_0x3f5453(0x185),'name':a0_0x3f5453(0x192),'type':a0_0x3f5453(0x19f),'qty':0x3a3,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x72,'date':a0_0x3f5453(0x1a2),'name':a0_0x3f5453(0x192),'type':'consumable','qty':0x384,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x73,'date':a0_0x3f5453(0x188),'name':'센터필러','type':a0_0x3f5453(0x19f),'qty':0x356,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x74,'date':a0_0x3f5453(0x1a5),'name':'센터필러','type':a0_0x3f5453(0x19f),'qty':0x337,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x75,'date':'2022-05-31','name':a0_0x3f5453(0x192),'type':a0_0x3f5453(0x19f),'qty':0x335,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x76,'date':a0_0x3f5453(0x1b3),'name':a0_0x3f5453(0x192),'type':a0_0x3f5453(0x19f),'qty':0x464,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x77,'date':'2022-07-31','name':'센터필러','type':a0_0x3f5453(0x19f),'qty':0x458,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x78,'date':a0_0x3f5453(0x185),'name':a0_0x3f5453(0x1bb),'type':a0_0x3f5453(0x19f),'qty':0x675,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x79,'date':a0_0x3f5453(0x1a2),'name':a0_0x3f5453(0x1bb),'type':a0_0x3f5453(0x19f),'qty':0x596,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x7a,'date':a0_0x3f5453(0x188),'name':a0_0x3f5453(0x1bb),'type':a0_0x3f5453(0x19f),'qty':0x468,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x7b,'date':a0_0x3f5453(0x1a5),'name':a0_0x3f5453(0x1bb),'type':a0_0x3f5453(0x19f),'qty':0x468,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x7c,'date':a0_0x3f5453(0x182),'name':a0_0x3f5453(0x1bb),'type':'consumable','qty':0x44c,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x7d,'date':a0_0x3f5453(0x1b3),'name':a0_0x3f5453(0x1bb),'type':a0_0x3f5453(0x19f),'qty':0x72a,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x7e,'date':'2022-07-31','name':a0_0x3f5453(0x1bb),'type':a0_0x3f5453(0x19f),'qty':0x6f4,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x7f,'date':a0_0x3f5453(0x185),'name':a0_0x3f5453(0x1c5),'type':a0_0x3f5453(0x19f),'qty':0x5a,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x80,'date':a0_0x3f5453(0x1a2),'name':'에어톱\x20날','type':a0_0x3f5453(0x19f),'qty':0x5a,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x81,'date':a0_0x3f5453(0x188),'name':a0_0x3f5453(0x1c5),'type':'consumable','qty':0x50,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x82,'date':a0_0x3f5453(0x1a5),'name':a0_0x3f5453(0x1c5),'type':'consumable','qty':0x46,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x83,'date':a0_0x3f5453(0x182),'name':a0_0x3f5453(0x1c5),'type':a0_0x3f5453(0x19f),'qty':0x46,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x84,'date':a0_0x3f5453(0x1b3),'name':a0_0x3f5453(0x1c5),'type':a0_0x3f5453(0x19f),'qty':0x32,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x85,'date':'2022-07-31','name':'에어톱\x20날','type':a0_0x3f5453(0x19f),'qty':0x32,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x86,'date':a0_0x3f5453(0x185),'name':a0_0x3f5453(0x1c2),'type':a0_0x3f5453(0x19f),'qty':0x96,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x87,'date':a0_0x3f5453(0x1a2),'name':a0_0x3f5453(0x1c2),'type':'consumable','qty':0x96,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x88,'date':a0_0x3f5453(0x188),'name':'스폿드릴\x20날','type':'consumable','qty':0x96,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x89,'date':'2022-04-30','name':'스폿드릴\x20날','type':a0_0x3f5453(0x19f),'qty':0x96,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x8a,'date':'2022-05-31','name':'스폿드릴\x20날','type':'consumable','qty':0x96,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x8b,'date':a0_0x3f5453(0x1b3),'name':'스폿드릴\x20날','type':'consumable','qty':0x96,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x8c,'date':a0_0x3f5453(0x1ad),'name':a0_0x3f5453(0x1c2),'type':a0_0x3f5453(0x19f),'qty':0x96,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x8d,'date':'2022-01-31','name':a0_0x3f5453(0x18b),'type':a0_0x3f5453(0x19f),'qty':0xa,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x8e,'date':'2022-02-28','name':a0_0x3f5453(0x18b),'type':'consumable','qty':0xa,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x8f,'date':a0_0x3f5453(0x188),'name':a0_0x3f5453(0x18b),'type':'consumable','qty':0xa,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x90,'date':a0_0x3f5453(0x1a5),'name':a0_0x3f5453(0x18b),'type':a0_0x3f5453(0x19f),'qty':0xa,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x91,'date':'2022-05-31','name':'와이어브러시\x20날','type':a0_0x3f5453(0x19f),'qty':0xa,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x92,'date':a0_0x3f5453(0x1b3),'name':'와이어브러시\x20날','type':a0_0x3f5453(0x19f),'qty':0xa,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x93,'date':a0_0x3f5453(0x1ad),'name':'와이어브러시\x20날','type':a0_0x3f5453(0x19f),'qty':0xa,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x94,'date':a0_0x3f5453(0x185),'name':a0_0x3f5453(0x196),'type':a0_0x3f5453(0x19f),'qty':0x5,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x95,'date':a0_0x3f5453(0x1a2),'name':a0_0x3f5453(0x196),'type':'consumable','qty':0x17c,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x96,'date':'2022-03-31','name':a0_0x3f5453(0x196),'type':'consumable','qty':0x14e,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x97,'date':a0_0x3f5453(0x1a5),'name':a0_0x3f5453(0x196),'type':a0_0x3f5453(0x19f),'qty':0x138,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x98,'date':'2022-05-31','name':a0_0x3f5453(0x196),'type':'consumable','qty':0x12d,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x99,'date':a0_0x3f5453(0x1b3),'name':a0_0x3f5453(0x196),'type':a0_0x3f5453(0x19f),'qty':0x123,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x9a,'date':a0_0x3f5453(0x1ad),'name':a0_0x3f5453(0x196),'type':'consumable','qty':0x123,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0x9b,'date':a0_0x3f5453(0x185),'name':'토치라이터','type':a0_0x3f5453(0x19f),'qty':0x6a,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x9c,'date':a0_0x3f5453(0x1a2),'name':'토치라이터','type':'consumable','qty':0x1,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x9d,'date':'2022-03-31','name':a0_0x3f5453(0x18d),'type':a0_0x3f5453(0x19f),'qty':0x1,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x9e,'date':a0_0x3f5453(0x1a5),'name':a0_0x3f5453(0x18d),'type':a0_0x3f5453(0x19f),'qty':0x1,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0x9f,'date':a0_0x3f5453(0x182),'name':a0_0x3f5453(0x18d),'type':a0_0x3f5453(0x19f),'qty':0x1,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0xa0,'date':a0_0x3f5453(0x1b3),'name':a0_0x3f5453(0x18d),'type':'consumable','qty':0x1,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xa1,'date':a0_0x3f5453(0x1ad),'name':a0_0x3f5453(0x18d),'type':a0_0x3f5453(0x19f),'qty':0x1,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xa2,'date':a0_0x3f5453(0x185),'name':a0_0x3f5453(0x19c),'type':'consumable','qty':0x7a,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xa3,'date':a0_0x3f5453(0x1a2),'name':a0_0x3f5453(0x19c),'type':'consumable','qty':0xf,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0xa4,'date':a0_0x3f5453(0x188),'name':a0_0x3f5453(0x19c),'type':a0_0x3f5453(0x19f),'qty':0xf,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xa5,'date':a0_0x3f5453(0x1a5),'name':'보호\x20면','type':a0_0x3f5453(0x19f),'qty':0xf,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xa6,'date':a0_0x3f5453(0x182),'name':a0_0x3f5453(0x19c),'type':a0_0x3f5453(0x19f),'qty':0xf,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xa7,'date':a0_0x3f5453(0x1b3),'name':a0_0x3f5453(0x19c),'type':'consumable','qty':0xf,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xa8,'date':a0_0x3f5453(0x1ad),'name':'보호\x20면','type':'consumable','qty':0xc,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xa9,'date':a0_0x3f5453(0x185),'name':a0_0x3f5453(0x1c7),'type':'consumable','qty':0x4,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xaa,'date':'2022-02-28','name':a0_0x3f5453(0x1c7),'type':'consumable','qty':0x4,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xab,'date':a0_0x3f5453(0x188),'name':a0_0x3f5453(0x1c7),'type':'consumable','qty':0x4,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0xac,'date':a0_0x3f5453(0x1a5),'name':'플라이어','type':'consumable','qty':0x4,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0xad,'date':a0_0x3f5453(0x182),'name':a0_0x3f5453(0x1c7),'type':a0_0x3f5453(0x19f),'qty':0x4,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0xae,'date':a0_0x3f5453(0x1b3),'name':a0_0x3f5453(0x1c7),'type':a0_0x3f5453(0x19f),'qty':0x4,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xaf,'date':a0_0x3f5453(0x1ad),'name':a0_0x3f5453(0x1c7),'type':'consumable','qty':0x4,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xb0,'date':a0_0x3f5453(0x185),'name':a0_0x3f5453(0x1a1),'type':a0_0x3f5453(0x19f),'qty':0x2,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0xb1,'date':a0_0x3f5453(0x1a2),'name':a0_0x3f5453(0x1a1),'type':a0_0x3f5453(0x19f),'qty':0x2,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xb2,'date':a0_0x3f5453(0x188),'name':a0_0x3f5453(0x1a1),'type':a0_0x3f5453(0x19f),'qty':0x2,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xb3,'date':a0_0x3f5453(0x1a5),'name':'전기용접\x20홀더','type':a0_0x3f5453(0x19f),'qty':0x2,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xb4,'date':a0_0x3f5453(0x182),'name':a0_0x3f5453(0x1a1),'type':a0_0x3f5453(0x19f),'qty':0x2,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xb5,'date':'2022-06-30','name':a0_0x3f5453(0x1a1),'type':a0_0x3f5453(0x19f),'qty':0x2,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xb6,'date':'2022-07-31','name':a0_0x3f5453(0x1a1),'type':a0_0x3f5453(0x19f),'qty':0x2,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xb7,'date':a0_0x3f5453(0x185),'name':'Co2게이지','type':a0_0x3f5453(0x19f),'qty':0x0,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0xb8,'date':a0_0x3f5453(0x1a2),'name':a0_0x3f5453(0x1c6),'type':a0_0x3f5453(0x19f),'qty':0x1,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xb9,'date':a0_0x3f5453(0x188),'name':a0_0x3f5453(0x1c6),'type':a0_0x3f5453(0x19f),'qty':0x1,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xba,'date':a0_0x3f5453(0x1a5),'name':a0_0x3f5453(0x1c6),'type':a0_0x3f5453(0x19f),'qty':0x1,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xbb,'date':a0_0x3f5453(0x182),'name':a0_0x3f5453(0x1c6),'type':'consumable','qty':0x1,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xbc,'date':a0_0x3f5453(0x1b3),'name':a0_0x3f5453(0x1c6),'type':'consumable','qty':0x1,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0xbd,'date':a0_0x3f5453(0x1ad),'name':'Co2게이지','type':'consumable','qty':0x1,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xbe,'date':'2022-01-31','name':a0_0x3f5453(0x1af),'type':'consumable','qty':0x0,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xbf,'date':a0_0x3f5453(0x1a2),'name':a0_0x3f5453(0x1af),'type':a0_0x3f5453(0x19f),'qty':0xf,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0xc0,'date':a0_0x3f5453(0x188),'name':a0_0x3f5453(0x1af),'type':a0_0x3f5453(0x19f),'qty':0xf,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0xc1,'date':a0_0x3f5453(0x1a5),'name':a0_0x3f5453(0x1af),'type':a0_0x3f5453(0x19f),'qty':0xf,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0xc2,'date':a0_0x3f5453(0x182),'name':a0_0x3f5453(0x1af),'type':'consumable','qty':0xf,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0xc3,'date':a0_0x3f5453(0x1b3),'name':a0_0x3f5453(0x1af),'type':'consumable','qty':0xf,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xc4,'date':'2022-07-31','name':a0_0x3f5453(0x1af),'type':a0_0x3f5453(0x19f),'qty':0xc,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xc5,'date':a0_0x3f5453(0x185),'name':a0_0x3f5453(0x191),'type':a0_0x3f5453(0x19f),'qty':0x0,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0xc6,'date':a0_0x3f5453(0x1a2),'name':a0_0x3f5453(0x191),'type':a0_0x3f5453(0x19f),'qty':0x4,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xc7,'date':a0_0x3f5453(0x188),'name':a0_0x3f5453(0x191),'type':a0_0x3f5453(0x19f),'qty':0x4,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0xc8,'date':'2022-04-30','name':a0_0x3f5453(0x191),'type':a0_0x3f5453(0x19f),'qty':0x4,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xc9,'date':a0_0x3f5453(0x182),'name':a0_0x3f5453(0x191),'type':'consumable','qty':0x4,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xca,'date':a0_0x3f5453(0x1b3),'name':a0_0x3f5453(0x191),'type':a0_0x3f5453(0x19f),'qty':0x4,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xcb,'date':a0_0x3f5453(0x1ad),'name':a0_0x3f5453(0x191),'type':a0_0x3f5453(0x19f),'qty':0x4,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xcc,'date':a0_0x3f5453(0x185),'name':a0_0x3f5453(0x1b0),'type':a0_0x3f5453(0x19f),'qty':0x0,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0xcd,'date':'2022-02-28','name':a0_0x3f5453(0x1b0),'type':a0_0x3f5453(0x19f),'qty':0x2,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xce,'date':a0_0x3f5453(0x188),'name':'36방페이퍼','type':a0_0x3f5453(0x19f),'qty':0x2,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xcf,'date':a0_0x3f5453(0x1a5),'name':'36방페이퍼','type':a0_0x3f5453(0x19f),'qty':0x2,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xd0,'date':a0_0x3f5453(0x182),'name':a0_0x3f5453(0x1b0),'type':a0_0x3f5453(0x19f),'qty':0x2,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0xd1,'date':a0_0x3f5453(0x1b3),'name':a0_0x3f5453(0x1b0),'type':a0_0x3f5453(0x19f),'qty':0x2,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xd2,'date':a0_0x3f5453(0x1ad),'name':a0_0x3f5453(0x1b0),'type':a0_0x3f5453(0x19f),'qty':0x2,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0xd3,'date':a0_0x3f5453(0x185),'name':a0_0x3f5453(0x1c1),'type':a0_0x3f5453(0x19f),'qty':0x0,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xd4,'date':a0_0x3f5453(0x1a2),'name':'80방페이퍼','type':a0_0x3f5453(0x19f),'qty':0x4,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xd5,'date':a0_0x3f5453(0x188),'name':'80방페이퍼','type':a0_0x3f5453(0x19f),'qty':0x3,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xd6,'date':'2022-04-30','name':a0_0x3f5453(0x1c1),'type':a0_0x3f5453(0x19f),'qty':0x2,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xd7,'date':a0_0x3f5453(0x182),'name':a0_0x3f5453(0x1c1),'type':a0_0x3f5453(0x19f),'qty':0x2,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xd8,'date':a0_0x3f5453(0x1b3),'name':a0_0x3f5453(0x1c1),'type':a0_0x3f5453(0x19f),'qty':0x2,'status':'실측','memo':a0_0x3f5453(0x19e)},{'id':0xd9,'date':'2022-07-31','name':a0_0x3f5453(0x1c1),'type':a0_0x3f5453(0x19f),'qty':0x1,'status':'실측','memo':'2022\x20엑셀\x20월별재고종합'},{'id':0xda,'date':a0_0x3f5453(0x1b2),'name':a0_0x3f5453(0x197),'type':a0_0x3f5453(0x19f),'qty':0x0,'status':'실측','memo':'2022\x20엑셀\x208월\x20조사표'},{'id':0xdb,'date':a0_0x3f5453(0x1b2),'name':a0_0x3f5453(0x19a),'type':a0_0x3f5453(0x19f),'qty':0x0,'status':'실측','memo':a0_0x3f5453(0x1b8)},{'id':0xdc,'date':a0_0x3f5453(0x1b2),'name':a0_0x3f5453(0x1a7),'type':a0_0x3f5453(0x19f),'qty':0x0,'status':'실측','memo':a0_0x3f5453(0x1b8)},{'id':0xdd,'date':a0_0x3f5453(0x1b2),'name':a0_0x3f5453(0x1a9),'type':'consumable','qty':0x0,'status':'실측','memo':a0_0x3f5453(0x1b8)},{'id':0xde,'date':'2022-08-31','name':a0_0x3f5453(0x193),'type':a0_0x3f5453(0x19f),'qty':0x0,'status':'실측','memo':a0_0x3f5453(0x1b8)},{'id':0xdf,'date':a0_0x3f5453(0x1b2),'name':'용접면','type':a0_0x3f5453(0x19f),'qty':0x0,'status':'실측','memo':a0_0x3f5453(0x1b8)},{'id':0xe0,'date':a0_0x3f5453(0x1b2),'name':a0_0x3f5453(0x1a4),'type':a0_0x3f5453(0x19f),'qty':0x0,'status':'실측','memo':'2022\x20엑셀\x208월\x20조사표'},{'id':0xe1,'date':a0_0x3f5453(0x1b2),'name':a0_0x3f5453(0x1c3),'type':'consumable','qty':0x0,'status':'실측','memo':a0_0x3f5453(0x1b8)},{'id':0xe2,'date':a0_0x3f5453(0x1b2),'name':'용접토치\x20팁','type':a0_0x3f5453(0x19f),'qty':0x0,'status':'실측','memo':a0_0x3f5453(0x1b8)},{'id':0xe3,'date':a0_0x3f5453(0x1b2),'name':a0_0x3f5453(0x1b4),'type':a0_0x3f5453(0x19f),'qty':0x0,'status':'실측','memo':a0_0x3f5453(0x1b8)},{'id':0xe4,'date':a0_0x3f5453(0x1b2),'name':'탄산가스','type':'consumable','qty':0x0,'status':'실측','memo':a0_0x3f5453(0x1b8)},{'id':0xe5,'date':a0_0x3f5453(0x1b2),'name':'아르곤가스','type':a0_0x3f5453(0x19f),'qty':0x0,'status':'실측','memo':a0_0x3f5453(0x1b8)},{'id':0xe6,'date':a0_0x3f5453(0x1b2),'name':'산소','type':a0_0x3f5453(0x19f),'qty':0x0,'status':'실측','memo':a0_0x3f5453(0x1b8)},{'id':0xe7,'date':a0_0x3f5453(0x1b2),'name':a0_0x3f5453(0x19b),'type':a0_0x3f5453(0x19f),'qty':0x0,'status':'실측','memo':a0_0x3f5453(0x1b8)},{'id':0xe8,'date':a0_0x3f5453(0x1b2),'name':a0_0x3f5453(0x189),'type':'consumable','qty':0x0,'status':'실측','memo':a0_0x3f5453(0x1b8)},{'id':0xe9,'date':a0_0x3f5453(0x1b2),'name':'1T연강판','type':'consumable','qty':0x0,'status':'실측','memo':a0_0x3f5453(0x1b8)},{'id':0xea,'date':'2022-08-31','name':a0_0x3f5453(0x192),'type':a0_0x3f5453(0x19f),'qty':0x0,'status':'실측','memo':a0_0x3f5453(0x1b8)},{'id':0xeb,'date':a0_0x3f5453(0x1b2),'name':a0_0x3f5453(0x1bb),'type':a0_0x3f5453(0x19f),'qty':0x0,'status':'실측','memo':'2022\x20엑셀\x208월\x20조사표'},{'id':0xec,'date':a0_0x3f5453(0x1b2),'name':a0_0x3f5453(0x1c5),'type':'consumable','qty':0x0,'status':'실측','memo':a0_0x3f5453(0x1b8)},{'id':0xed,'date':a0_0x3f5453(0x1b2),'name':a0_0x3f5453(0x1c2),'type':a0_0x3f5453(0x19f),'qty':0x0,'status':'실측','memo':a0_0x3f5453(0x1b8)},{'id':0xee,'date':a0_0x3f5453(0x1b2),'name':'와이어브러시\x20날','type':a0_0x3f5453(0x19f),'qty':0x0,'status':'실측','memo':a0_0x3f5453(0x1b8)},{'id':0xef,'date':a0_0x3f5453(0x1b2),'name':a0_0x3f5453(0x196),'type':'consumable','qty':0x0,'status':'실측','memo':a0_0x3f5453(0x1b8)},{'id':0xf0,'date':a0_0x3f5453(0x1b2),'name':a0_0x3f5453(0x18d),'type':a0_0x3f5453(0x19f),'qty':0x0,'status':'실측','memo':'2022\x20엑셀\x208월\x20조사표'},{'id':0xf1,'date':a0_0x3f5453(0x1b2),'name':a0_0x3f5453(0x19c),'type':'consumable','qty':0x0,'status':'실측','memo':'2022\x20엑셀\x208월\x20조사표'},{'id':0xf2,'date':a0_0x3f5453(0x1b2),'name':a0_0x3f5453(0x1c7),'type':a0_0x3f5453(0x19f),'qty':0x0,'status':'실측','memo':a0_0x3f5453(0x1b8)},{'id':0xf3,'date':a0_0x3f5453(0x1b2),'name':a0_0x3f5453(0x1a1),'type':a0_0x3f5453(0x19f),'qty':0x0,'status':'실측','memo':a0_0x3f5453(0x1b8)},{'id':0xf4,'date':a0_0x3f5453(0x1b2),'name':'Co2게이지','type':a0_0x3f5453(0x19f),'qty':0x0,'status':'실측','memo':a0_0x3f5453(0x1b8)},{'id':0xf5,'date':a0_0x3f5453(0x1b2),'name':a0_0x3f5453(0x1af),'type':a0_0x3f5453(0x19f),'qty':0x0,'status':'실측','memo':a0_0x3f5453(0x1b8)},{'id':0xf6,'date':'2022-08-31','name':a0_0x3f5453(0x191),'type':a0_0x3f5453(0x19f),'qty':0x0,'status':'실측','memo':a0_0x3f5453(0x1b8)},{'id':0xf7,'date':a0_0x3f5453(0x1b2),'name':'36방페이퍼','type':a0_0x3f5453(0x19f),'qty':0x64,'status':'실측','memo':a0_0x3f5453(0x1b8)},{'id':0xf8,'date':'2022-08-31','name':'80방페이퍼','type':a0_0x3f5453(0x19f),'qty':0x64,'status':'실측','memo':a0_0x3f5453(0x1b8)},{'id':0xf9,'date':a0_0x3f5453(0x185),'name':a0_0x3f5453(0x197),'type':'consumable','qty':0x4,'status':'구입','memo':'2022\x20엑셀\x201월\x20조사표'},{'id':0xfa,'date':a0_0x3f5453(0x185),'name':a0_0x3f5453(0x1c3),'type':'consumable','qty':0xa,'status':'구입','memo':'2022\x20엑셀\x201월\x20조사표'},{'id':0xfb,'date':a0_0x3f5453(0x185),'name':'용접토치\x20팁','type':a0_0x3f5453(0x19f),'qty':0xa,'status':'구입','memo':a0_0x3f5453(0x1b5)},{'id':0xfc,'date':'2022-01-31','name':a0_0x3f5453(0x1b4),'type':'consumable','qty':0x2,'status':'구입','memo':a0_0x3f5453(0x1b5)},{'id':0xfd,'date':a0_0x3f5453(0x185),'name':a0_0x3f5453(0x1c6),'type':'consumable','qty':0x5,'status':'구입','memo':a0_0x3f5453(0x1b5)},{'id':0xfe,'date':a0_0x3f5453(0x185),'name':'돌그라인더','type':a0_0x3f5453(0x19f),'qty':0x64,'status':'구입','memo':'2022\x20엑셀\x201월\x20조사표'},{'id':0xff,'date':a0_0x3f5453(0x185),'name':a0_0x3f5453(0x191),'type':'consumable','qty':0x64,'status':'구입','memo':'2022\x20엑셀\x201월\x20조사표'},{'id':0x100,'date':a0_0x3f5453(0x185),'name':a0_0x3f5453(0x1b0),'type':a0_0x3f5453(0x19f),'qty':0x64,'status':'구입','memo':'2022\x20엑셀\x201월\x20조사표'},{'id':0x101,'date':'2022-01-31','name':a0_0x3f5453(0x1c1),'type':a0_0x3f5453(0x19f),'qty':0x64,'status':'구입','memo':a0_0x3f5453(0x1b5)},{'id':0x102,'date':a0_0x3f5453(0x1a2),'name':a0_0x3f5453(0x19a),'type':a0_0x3f5453(0x19f),'qty':0x9,'status':'구입','memo':a0_0x3f5453(0x1bc)},{'id':0x103,'date':'2022-02-28','name':a0_0x3f5453(0x1bf),'type':a0_0x3f5453(0x19f),'qty':0x9,'status':'구입','memo':a0_0x3f5453(0x1bc)},{'id':0x104,'date':a0_0x3f5453(0x1a2),'name':a0_0x3f5453(0x189),'type':a0_0x3f5453(0x19f),'qty':0x2,'status':'구입','memo':a0_0x3f5453(0x1bc)},{'id':0x105,'date':a0_0x3f5453(0x188),'name':a0_0x3f5453(0x19a),'type':a0_0x3f5453(0x19f),'qty':0x6,'status':'구입','memo':'2022\x20엑셀\x203월\x20조사표'},{'id':0x106,'date':a0_0x3f5453(0x188),'name':'탄산가스','type':a0_0x3f5453(0x19f),'qty':0x6,'status':'구입','memo':a0_0x3f5453(0x1b6)},{'id':0x107,'date':a0_0x3f5453(0x1a5),'name':'탄산가스','type':a0_0x3f5453(0x19f),'qty':0x4,'status':'구입','memo':a0_0x3f5453(0x18a)},{'id':0x108,'date':a0_0x3f5453(0x182),'name':'탄산가스','type':'consumable','qty':0x9,'status':'구입','memo':'2022\x20엑셀\x205월\x20조사표'},{'id':0x109,'date':a0_0x3f5453(0x182),'name':a0_0x3f5453(0x1bb),'type':a0_0x3f5453(0x19f),'qty':0x5dc,'status':'구입','memo':a0_0x3f5453(0x1c4)},{'id':0x10a,'date':a0_0x3f5453(0x1b3),'name':a0_0x3f5453(0x1bf),'type':a0_0x3f5453(0x19f),'qty':0x5,'status':'구입','memo':a0_0x3f5453(0x18e)},{'id':0x10b,'date':'2022-06-30','name':'1T연강판','type':a0_0x3f5453(0x19f),'qty':0xc8,'status':'구입','memo':a0_0x3f5453(0x18e)},{'id':0x10c,'date':'2022-06-30','name':'센터필러','type':'consumable','qty':0x1f4,'status':'구입','memo':a0_0x3f5453(0x18e)},{'id':0x10d,'date':a0_0x3f5453(0x1b3),'name':a0_0x3f5453(0x1bb),'type':a0_0x3f5453(0x19f),'qty':0x5dc,'status':'구입','memo':a0_0x3f5453(0x18e)},{'id':0x10e,'date':a0_0x3f5453(0x1ad),'name':'탄산가스','type':a0_0x3f5453(0x19f),'qty':0x7,'status':'구입','memo':a0_0x3f5453(0x18c)},{'id':0x3e9,'date':a0_0x3f5453(0x190),'name':a0_0x3f5453(0x198),'type':a0_0x3f5453(0x1be),'qty':0x1,'status':'수리','memo':'MIG용접기\x20메인PCD\x20교체'},{'id':0x3ea,'date':'2022-01-28','name':a0_0x3f5453(0x199),'type':a0_0x3f5453(0x1be),'qty':0xa,'status':'파손','memo':a0_0x3f5453(0x18f)},{'id':0x3eb,'date':a0_0x3f5453(0x184),'name':a0_0x3f5453(0x1a6),'type':a0_0x3f5453(0x1be),'qty':0xa,'status':'파손','memo':a0_0x3f5453(0x1aa)},{'id':0x3ec,'date':a0_0x3f5453(0x186),'name':'스폿\x20드릴','type':a0_0x3f5453(0x1be),'qty':0xa,'status':'수리','memo':a0_0x3f5453(0x1b1)}];function a0_0x546e(){const _0xb5d5d9=['mtaWmZG5nM5UDejADa','mJaYmI0WmY0Zmq','7zI87zwP6Rca7iQK','mJaYmIdSL5hSHyaGnoYBLcdSOBdSGQZTKzW','7jMa7j207jA067Im65+S7iUCioUcOa','mJaYmIdSL5hSHyaGn+YBLcdSOBdSGQZTKzW','7yAG7lMy65287j207ysW','mJaYmIdSL5hSHyaGnUYBLcdSOBdSGQZTKzW','7jEq7jA07yAXio2mJoYgKmk36Rwq7lk0','mJaYmI0Wms0Yna','7zw067cu65286RIWio2mQoU5Oa','7is87ysW7zwe65+S','6Rca7ko97jwE7lMy66Ei','mvtSL7dQSjxTJja','nuHpEejhyG','67kO7yQ47is8642uioUYQo2kUa','7kce6RIW7jQP7kcr67sj','tuLhioYuQoYyPo2iRcdSMQNSOjhQUla','7jEq7jA0io2gSq','7jQP7kcr7jMa7j207jA0','7zse66gC7yYq','67o07zI4ioUPTa','7jQP7kcr66M0','mJaYmIdSL5hSHyaG7jUu67oe7j6S6RoG7kkf7zwP','y29UC3vTywjSzq','7jwe66w06RoK6Rca7iQK','7kce6RIW7jQP7kcrio2zGoUnLa','mJaYmI0WmI0Yoa','mta2odKWA2fYALzl','7jQP7kcr7yAG7lMyioUfUoYMKa','mJaYmI0Wnc0Zma','7jEq7jA0ioQ3UoUDVoYDUoUnLa','7jQP7kcr7j6L6Rcr','mta3ndi4oePuB3Potq','7jQP7kcr6REa66Ei6RcC','7jEq7jA06RE465287j24642uio2mJoYgKmk36Rwq7lk0','mtuXovbJBePxwa','mJiXnJa3mgjeAhPntq','mJaYmI0WnY0Zmq','y29UC3rYDwn0B3i','64+m6RE465287j24642u','mZBRSkNTJPJSNBtTJBW','7kce66Y47jEf7lk0ioYiMoUMRa','mJaYmI0Woc0Zmq','mJaYmI0WnI0Zma','7jQP7kcr7yAG7lMy','mJaYmIdSL5hSHyaGmEYBLcdSOBdSGQZTKzW','mJaYmIdSL5hSHyaGm+YBLcdSOBdSGQZTKzW','n3LdrK9hsG','mJaYmIdSL5hSHyaGooYBLcdSOBdSGQZTKzW','kcGOlISPkYKRksSK','7jQP7kcr7yAG7lMyio2mGq','m1qG6Rcv7yYq','mJaYmIdSL5hSHyaGmUYBLcdSOBdSGQZTKzW','C2vHCMnO','zxf1AxbTzw50','7yoe7ikW6Rca7iQK','ndC5nZHQu3rNwLu','oddRSkNTJPJSNBtTJBW','7iQK7y+/65oC66A0ioUcOa','7jQP7kcr7yAG7lMyio2mGE2zGoUnLa','mJaYmIdSL5hSHyaGnEYBLcdSOBdSGQZTKzW','7jEq7jA07yAXioUcOa','q28Y6Rkm7j207kEa','7zsm65287j207jA0','yxbWBhK','mJaYmI0Wns0Zmq','nJK0otKYwezzy3vW','mJaYmI0Wms0Yoa','mJaYmI0Wms0Zmq','mJaYmI0WmI0Xna'];a0_0x546e=function(){return _0xb5d5d9;};return a0_0x546e();}
+// 2022년 엑셀 2번·3번 기준 데이터 (자동 생성)
+const BASELINE_2022_LOGS = [
+    {
+        "id": 1,
+        "date": "2022-01-31",
+        "name": "전기용접봉",
+        "type": "consumable",
+        "qty": 6,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 2,
+        "date": "2022-02-28",
+        "name": "전기용접봉",
+        "type": "consumable",
+        "qty": 5,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 3,
+        "date": "2022-03-31",
+        "name": "전기용접봉",
+        "type": "consumable",
+        "qty": 5,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 4,
+        "date": "2022-04-30",
+        "name": "전기용접봉",
+        "type": "consumable",
+        "qty": 5,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 5,
+        "date": "2022-05-31",
+        "name": "전기용접봉",
+        "type": "consumable",
+        "qty": 3,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 6,
+        "date": "2022-06-30",
+        "name": "전기용접봉",
+        "type": "consumable",
+        "qty": 3,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 7,
+        "date": "2022-07-31",
+        "name": "전기용접봉",
+        "type": "consumable",
+        "qty": 3,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 8,
+        "date": "2022-01-31",
+        "name": "용접와이어",
+        "type": "consumable",
+        "qty": 11,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 9,
+        "date": "2022-02-28",
+        "name": "용접와이어",
+        "type": "consumable",
+        "qty": 8,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 10,
+        "date": "2022-03-31",
+        "name": "용접와이어",
+        "type": "consumable",
+        "qty": 10,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 11,
+        "date": "2022-04-30",
+        "name": "용접와이어",
+        "type": "consumable",
+        "qty": 8,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 12,
+        "date": "2022-05-31",
+        "name": "용접와이어",
+        "type": "consumable",
+        "qty": 5,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 13,
+        "date": "2022-06-30",
+        "name": "용접와이어",
+        "type": "consumable",
+        "qty": 4,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 14,
+        "date": "2022-07-31",
+        "name": "용접와이어",
+        "type": "consumable",
+        "qty": 2,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 15,
+        "date": "2022-01-31",
+        "name": "용접장갑",
+        "type": "consumable",
+        "qty": 15,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 16,
+        "date": "2022-02-28",
+        "name": "용접장갑",
+        "type": "consumable",
+        "qty": 15,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 17,
+        "date": "2022-03-31",
+        "name": "용접장갑",
+        "type": "consumable",
+        "qty": 15,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 18,
+        "date": "2022-04-30",
+        "name": "용접장갑",
+        "type": "consumable",
+        "qty": 15,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 19,
+        "date": "2022-05-31",
+        "name": "용접장갑",
+        "type": "consumable",
+        "qty": 15,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 20,
+        "date": "2022-06-30",
+        "name": "용접장갑",
+        "type": "consumable",
+        "qty": 15,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 21,
+        "date": "2022-07-31",
+        "name": "용접장갑",
+        "type": "consumable",
+        "qty": 14,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 22,
+        "date": "2022-01-31",
+        "name": "용접귀마개",
+        "type": "consumable",
+        "qty": 15,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 23,
+        "date": "2022-02-28",
+        "name": "용접귀마개",
+        "type": "consumable",
+        "qty": 15,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 24,
+        "date": "2022-03-31",
+        "name": "용접귀마개",
+        "type": "consumable",
+        "qty": 15,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 25,
+        "date": "2022-04-30",
+        "name": "용접귀마개",
+        "type": "consumable",
+        "qty": 15,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 26,
+        "date": "2022-05-31",
+        "name": "용접귀마개",
+        "type": "consumable",
+        "qty": 15,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 27,
+        "date": "2022-06-30",
+        "name": "용접귀마개",
+        "type": "consumable",
+        "qty": 15,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 28,
+        "date": "2022-07-31",
+        "name": "용접귀마개",
+        "type": "consumable",
+        "qty": 14,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 29,
+        "date": "2022-01-31",
+        "name": "가죽앞치마",
+        "type": "consumable",
+        "qty": 15,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 30,
+        "date": "2022-02-28",
+        "name": "가죽앞치마",
+        "type": "consumable",
+        "qty": 15,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 31,
+        "date": "2022-03-31",
+        "name": "가죽앞치마",
+        "type": "consumable",
+        "qty": 15,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 32,
+        "date": "2022-04-30",
+        "name": "가죽앞치마",
+        "type": "consumable",
+        "qty": 15,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 33,
+        "date": "2022-05-31",
+        "name": "가죽앞치마",
+        "type": "consumable",
+        "qty": 15,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 34,
+        "date": "2022-06-30",
+        "name": "가죽앞치마",
+        "type": "consumable",
+        "qty": 15,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 35,
+        "date": "2022-07-31",
+        "name": "가죽앞치마",
+        "type": "consumable",
+        "qty": 10,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 36,
+        "date": "2022-01-31",
+        "name": "용접면",
+        "type": "consumable",
+        "qty": 15,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 37,
+        "date": "2022-02-28",
+        "name": "용접면",
+        "type": "consumable",
+        "qty": 15,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 38,
+        "date": "2022-03-31",
+        "name": "용접면",
+        "type": "consumable",
+        "qty": 15,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 39,
+        "date": "2022-04-30",
+        "name": "용접면",
+        "type": "consumable",
+        "qty": 15,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 40,
+        "date": "2022-05-31",
+        "name": "용접면",
+        "type": "consumable",
+        "qty": 15,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 41,
+        "date": "2022-06-30",
+        "name": "용접면",
+        "type": "consumable",
+        "qty": 15,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 42,
+        "date": "2022-07-31",
+        "name": "용접면",
+        "type": "consumable",
+        "qty": 12,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 43,
+        "date": "2022-01-31",
+        "name": "용접토치 노즐",
+        "type": "consumable",
+        "qty": 10,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 44,
+        "date": "2022-02-28",
+        "name": "용접토치 노즐",
+        "type": "consumable",
+        "qty": 10,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 45,
+        "date": "2022-03-31",
+        "name": "용접토치 노즐",
+        "type": "consumable",
+        "qty": 10,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 46,
+        "date": "2022-04-30",
+        "name": "용접토치 노즐",
+        "type": "consumable",
+        "qty": 10,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 47,
+        "date": "2022-05-31",
+        "name": "용접토치 노즐",
+        "type": "consumable",
+        "qty": 10,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 48,
+        "date": "2022-06-30",
+        "name": "용접토치 노즐",
+        "type": "consumable",
+        "qty": 10,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 49,
+        "date": "2022-07-31",
+        "name": "용접토치 노즐",
+        "type": "consumable",
+        "qty": 10,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 50,
+        "date": "2022-01-31",
+        "name": "용접토치 팁홀더",
+        "type": "consumable",
+        "qty": 14,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 51,
+        "date": "2022-02-28",
+        "name": "용접토치 팁홀더",
+        "type": "consumable",
+        "qty": 14,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 52,
+        "date": "2022-03-31",
+        "name": "용접토치 팁홀더",
+        "type": "consumable",
+        "qty": 13,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 53,
+        "date": "2022-04-30",
+        "name": "용접토치 팁홀더",
+        "type": "consumable",
+        "qty": 12,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 54,
+        "date": "2022-05-31",
+        "name": "용접토치 팁홀더",
+        "type": "consumable",
+        "qty": 10,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 55,
+        "date": "2022-06-30",
+        "name": "용접토치 팁홀더",
+        "type": "consumable",
+        "qty": 4,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 56,
+        "date": "2022-07-31",
+        "name": "용접토치 팁홀더",
+        "type": "consumable",
+        "qty": 4,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 57,
+        "date": "2022-01-31",
+        "name": "용접토치 팁",
+        "type": "consumable",
+        "qty": 25,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 58,
+        "date": "2022-02-28",
+        "name": "용접토치 팁",
+        "type": "consumable",
+        "qty": 20,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 59,
+        "date": "2022-03-31",
+        "name": "용접토치 팁",
+        "type": "consumable",
+        "qty": 20,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 60,
+        "date": "2022-04-30",
+        "name": "용접토치 팁",
+        "type": "consumable",
+        "qty": 20,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 61,
+        "date": "2022-05-31",
+        "name": "용접토치 팁",
+        "type": "consumable",
+        "qty": 20,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 62,
+        "date": "2022-06-30",
+        "name": "용접토치 팁",
+        "type": "consumable",
+        "qty": 20,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 63,
+        "date": "2022-07-31",
+        "name": "용접토치 팁",
+        "type": "consumable",
+        "qty": 20,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 64,
+        "date": "2022-01-31",
+        "name": "용접토치",
+        "type": "consumable",
+        "qty": 2,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 65,
+        "date": "2022-02-28",
+        "name": "용접토치",
+        "type": "consumable",
+        "qty": 2,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 66,
+        "date": "2022-03-31",
+        "name": "용접토치",
+        "type": "consumable",
+        "qty": 2,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 67,
+        "date": "2022-04-30",
+        "name": "용접토치",
+        "type": "consumable",
+        "qty": 2,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 68,
+        "date": "2022-05-31",
+        "name": "용접토치",
+        "type": "consumable",
+        "qty": 2,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 69,
+        "date": "2022-06-30",
+        "name": "용접토치",
+        "type": "consumable",
+        "qty": 2,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 70,
+        "date": "2022-07-31",
+        "name": "용접토치",
+        "type": "consumable",
+        "qty": 2,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 71,
+        "date": "2022-01-31",
+        "name": "탄산가스",
+        "type": "consumable",
+        "qty": 12,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 72,
+        "date": "2022-02-28",
+        "name": "탄산가스",
+        "type": "consumable",
+        "qty": 18,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 73,
+        "date": "2022-03-31",
+        "name": "탄산가스",
+        "type": "consumable",
+        "qty": 1,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 74,
+        "date": "2022-04-30",
+        "name": "탄산가스",
+        "type": "consumable",
+        "qty": 1,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 75,
+        "date": "2022-05-31",
+        "name": "탄산가스",
+        "type": "consumable",
+        "qty": 1,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 76,
+        "date": "2022-06-30",
+        "name": "탄산가스",
+        "type": "consumable",
+        "qty": 1,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 77,
+        "date": "2022-07-31",
+        "name": "탄산가스",
+        "type": "consumable",
+        "qty": 1,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 78,
+        "date": "2022-01-31",
+        "name": "아르곤가스",
+        "type": "consumable",
+        "qty": 1,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 79,
+        "date": "2022-02-28",
+        "name": "아르곤가스",
+        "type": "consumable",
+        "qty": 1,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 80,
+        "date": "2022-03-31",
+        "name": "아르곤가스",
+        "type": "consumable",
+        "qty": 1,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 81,
+        "date": "2022-04-30",
+        "name": "아르곤가스",
+        "type": "consumable",
+        "qty": 1,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 82,
+        "date": "2022-05-31",
+        "name": "아르곤가스",
+        "type": "consumable",
+        "qty": 1,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 83,
+        "date": "2022-06-30",
+        "name": "아르곤가스",
+        "type": "consumable",
+        "qty": 1,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 84,
+        "date": "2022-07-31",
+        "name": "아르곤가스",
+        "type": "consumable",
+        "qty": 1,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 85,
+        "date": "2022-01-31",
+        "name": "산소",
+        "type": "consumable",
+        "qty": 3,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 86,
+        "date": "2022-02-28",
+        "name": "산소",
+        "type": "consumable",
+        "qty": 2,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 87,
+        "date": "2022-03-31",
+        "name": "산소",
+        "type": "consumable",
+        "qty": 2,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 88,
+        "date": "2022-04-30",
+        "name": "산소",
+        "type": "consumable",
+        "qty": 2,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 89,
+        "date": "2022-05-31",
+        "name": "산소",
+        "type": "consumable",
+        "qty": 2,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 90,
+        "date": "2022-06-30",
+        "name": "산소",
+        "type": "consumable",
+        "qty": 2,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 91,
+        "date": "2022-07-31",
+        "name": "산소",
+        "type": "consumable",
+        "qty": 2,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 92,
+        "date": "2022-01-31",
+        "name": "프로판",
+        "type": "consumable",
+        "qty": 2,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 93,
+        "date": "2022-02-28",
+        "name": "프로판",
+        "type": "consumable",
+        "qty": 2,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 94,
+        "date": "2022-03-31",
+        "name": "프로판",
+        "type": "consumable",
+        "qty": 2,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 95,
+        "date": "2022-04-30",
+        "name": "프로판",
+        "type": "consumable",
+        "qty": 2,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 96,
+        "date": "2022-05-31",
+        "name": "프로판",
+        "type": "consumable",
+        "qty": 2,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 97,
+        "date": "2022-06-30",
+        "name": "프로판",
+        "type": "consumable",
+        "qty": 2,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 98,
+        "date": "2022-07-31",
+        "name": "프로판",
+        "type": "consumable",
+        "qty": 2,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 99,
+        "date": "2022-01-31",
+        "name": "혼합가스",
+        "type": "consumable",
+        "qty": 1,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 100,
+        "date": "2022-02-28",
+        "name": "혼합가스",
+        "type": "consumable",
+        "qty": 3,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 101,
+        "date": "2022-03-31",
+        "name": "혼합가스",
+        "type": "consumable",
+        "qty": 2,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 102,
+        "date": "2022-04-30",
+        "name": "혼합가스",
+        "type": "consumable",
+        "qty": 1,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 103,
+        "date": "2022-05-31",
+        "name": "혼합가스",
+        "type": "consumable",
+        "qty": 1,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 104,
+        "date": "2022-06-30",
+        "name": "혼합가스",
+        "type": "consumable",
+        "qty": 1,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 105,
+        "date": "2022-07-31",
+        "name": "혼합가스",
+        "type": "consumable",
+        "qty": 1,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 106,
+        "date": "2022-01-31",
+        "name": "1T연강판",
+        "type": "consumable",
+        "qty": 800,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 107,
+        "date": "2022-02-28",
+        "name": "1T연강판",
+        "type": "consumable",
+        "qty": 770,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 108,
+        "date": "2022-03-31",
+        "name": "1T연강판",
+        "type": "consumable",
+        "qty": 753,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 109,
+        "date": "2022-04-30",
+        "name": "1T연강판",
+        "type": "consumable",
+        "qty": 740,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 110,
+        "date": "2022-05-31",
+        "name": "1T연강판",
+        "type": "consumable",
+        "qty": 721,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 111,
+        "date": "2022-06-30",
+        "name": "1T연강판",
+        "type": "consumable",
+        "qty": 811,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 112,
+        "date": "2022-07-31",
+        "name": "1T연강판",
+        "type": "consumable",
+        "qty": 800,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 113,
+        "date": "2022-01-31",
+        "name": "센터필러",
+        "type": "consumable",
+        "qty": 931,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 114,
+        "date": "2022-02-28",
+        "name": "센터필러",
+        "type": "consumable",
+        "qty": 900,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 115,
+        "date": "2022-03-31",
+        "name": "센터필러",
+        "type": "consumable",
+        "qty": 854,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 116,
+        "date": "2022-04-30",
+        "name": "센터필러",
+        "type": "consumable",
+        "qty": 823,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 117,
+        "date": "2022-05-31",
+        "name": "센터필러",
+        "type": "consumable",
+        "qty": 821,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 118,
+        "date": "2022-06-30",
+        "name": "센터필러",
+        "type": "consumable",
+        "qty": 1124,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 119,
+        "date": "2022-07-31",
+        "name": "센터필러",
+        "type": "consumable",
+        "qty": 1112,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 120,
+        "date": "2022-01-31",
+        "name": "3T 강판",
+        "type": "consumable",
+        "qty": 1653,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 121,
+        "date": "2022-02-28",
+        "name": "3T 강판",
+        "type": "consumable",
+        "qty": 1430,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 122,
+        "date": "2022-03-31",
+        "name": "3T 강판",
+        "type": "consumable",
+        "qty": 1128,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 123,
+        "date": "2022-04-30",
+        "name": "3T 강판",
+        "type": "consumable",
+        "qty": 1128,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 124,
+        "date": "2022-05-31",
+        "name": "3T 강판",
+        "type": "consumable",
+        "qty": 1100,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 125,
+        "date": "2022-06-30",
+        "name": "3T 강판",
+        "type": "consumable",
+        "qty": 1834,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 126,
+        "date": "2022-07-31",
+        "name": "3T 강판",
+        "type": "consumable",
+        "qty": 1780,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 127,
+        "date": "2022-01-31",
+        "name": "에어톱 날",
+        "type": "consumable",
+        "qty": 90,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 128,
+        "date": "2022-02-28",
+        "name": "에어톱 날",
+        "type": "consumable",
+        "qty": 90,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 129,
+        "date": "2022-03-31",
+        "name": "에어톱 날",
+        "type": "consumable",
+        "qty": 80,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 130,
+        "date": "2022-04-30",
+        "name": "에어톱 날",
+        "type": "consumable",
+        "qty": 70,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 131,
+        "date": "2022-05-31",
+        "name": "에어톱 날",
+        "type": "consumable",
+        "qty": 70,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 132,
+        "date": "2022-06-30",
+        "name": "에어톱 날",
+        "type": "consumable",
+        "qty": 50,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 133,
+        "date": "2022-07-31",
+        "name": "에어톱 날",
+        "type": "consumable",
+        "qty": 50,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 134,
+        "date": "2022-01-31",
+        "name": "스폿드릴 날",
+        "type": "consumable",
+        "qty": 150,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 135,
+        "date": "2022-02-28",
+        "name": "스폿드릴 날",
+        "type": "consumable",
+        "qty": 150,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 136,
+        "date": "2022-03-31",
+        "name": "스폿드릴 날",
+        "type": "consumable",
+        "qty": 150,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 137,
+        "date": "2022-04-30",
+        "name": "스폿드릴 날",
+        "type": "consumable",
+        "qty": 150,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 138,
+        "date": "2022-05-31",
+        "name": "스폿드릴 날",
+        "type": "consumable",
+        "qty": 150,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 139,
+        "date": "2022-06-30",
+        "name": "스폿드릴 날",
+        "type": "consumable",
+        "qty": 150,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 140,
+        "date": "2022-07-31",
+        "name": "스폿드릴 날",
+        "type": "consumable",
+        "qty": 150,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 141,
+        "date": "2022-01-31",
+        "name": "와이어브러시 날",
+        "type": "consumable",
+        "qty": 10,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 142,
+        "date": "2022-02-28",
+        "name": "와이어브러시 날",
+        "type": "consumable",
+        "qty": 10,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 143,
+        "date": "2022-03-31",
+        "name": "와이어브러시 날",
+        "type": "consumable",
+        "qty": 10,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 144,
+        "date": "2022-04-30",
+        "name": "와이어브러시 날",
+        "type": "consumable",
+        "qty": 10,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 145,
+        "date": "2022-05-31",
+        "name": "와이어브러시 날",
+        "type": "consumable",
+        "qty": 10,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 146,
+        "date": "2022-06-30",
+        "name": "와이어브러시 날",
+        "type": "consumable",
+        "qty": 10,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 147,
+        "date": "2022-07-31",
+        "name": "와이어브러시 날",
+        "type": "consumable",
+        "qty": 10,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 148,
+        "date": "2022-01-31",
+        "name": "벨트센더 벨트",
+        "type": "consumable",
+        "qty": 5,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 149,
+        "date": "2022-02-28",
+        "name": "벨트센더 벨트",
+        "type": "consumable",
+        "qty": 380,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 150,
+        "date": "2022-03-31",
+        "name": "벨트센더 벨트",
+        "type": "consumable",
+        "qty": 334,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 151,
+        "date": "2022-04-30",
+        "name": "벨트센더 벨트",
+        "type": "consumable",
+        "qty": 312,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 152,
+        "date": "2022-05-31",
+        "name": "벨트센더 벨트",
+        "type": "consumable",
+        "qty": 301,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 153,
+        "date": "2022-06-30",
+        "name": "벨트센더 벨트",
+        "type": "consumable",
+        "qty": 291,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 154,
+        "date": "2022-07-31",
+        "name": "벨트센더 벨트",
+        "type": "consumable",
+        "qty": 291,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 155,
+        "date": "2022-01-31",
+        "name": "토치라이터",
+        "type": "consumable",
+        "qty": 106,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 156,
+        "date": "2022-02-28",
+        "name": "토치라이터",
+        "type": "consumable",
+        "qty": 1,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 157,
+        "date": "2022-03-31",
+        "name": "토치라이터",
+        "type": "consumable",
+        "qty": 1,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 158,
+        "date": "2022-04-30",
+        "name": "토치라이터",
+        "type": "consumable",
+        "qty": 1,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 159,
+        "date": "2022-05-31",
+        "name": "토치라이터",
+        "type": "consumable",
+        "qty": 1,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 160,
+        "date": "2022-06-30",
+        "name": "토치라이터",
+        "type": "consumable",
+        "qty": 1,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 161,
+        "date": "2022-07-31",
+        "name": "토치라이터",
+        "type": "consumable",
+        "qty": 1,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 162,
+        "date": "2022-01-31",
+        "name": "보호 면",
+        "type": "consumable",
+        "qty": 122,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 163,
+        "date": "2022-02-28",
+        "name": "보호 면",
+        "type": "consumable",
+        "qty": 15,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 164,
+        "date": "2022-03-31",
+        "name": "보호 면",
+        "type": "consumable",
+        "qty": 15,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 165,
+        "date": "2022-04-30",
+        "name": "보호 면",
+        "type": "consumable",
+        "qty": 15,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 166,
+        "date": "2022-05-31",
+        "name": "보호 면",
+        "type": "consumable",
+        "qty": 15,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 167,
+        "date": "2022-06-30",
+        "name": "보호 면",
+        "type": "consumable",
+        "qty": 15,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 168,
+        "date": "2022-07-31",
+        "name": "보호 면",
+        "type": "consumable",
+        "qty": 12,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 169,
+        "date": "2022-01-31",
+        "name": "플라이어",
+        "type": "consumable",
+        "qty": 4,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 170,
+        "date": "2022-02-28",
+        "name": "플라이어",
+        "type": "consumable",
+        "qty": 4,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 171,
+        "date": "2022-03-31",
+        "name": "플라이어",
+        "type": "consumable",
+        "qty": 4,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 172,
+        "date": "2022-04-30",
+        "name": "플라이어",
+        "type": "consumable",
+        "qty": 4,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 173,
+        "date": "2022-05-31",
+        "name": "플라이어",
+        "type": "consumable",
+        "qty": 4,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 174,
+        "date": "2022-06-30",
+        "name": "플라이어",
+        "type": "consumable",
+        "qty": 4,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 175,
+        "date": "2022-07-31",
+        "name": "플라이어",
+        "type": "consumable",
+        "qty": 4,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 176,
+        "date": "2022-01-31",
+        "name": "전기용접 홀더",
+        "type": "consumable",
+        "qty": 2,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 177,
+        "date": "2022-02-28",
+        "name": "전기용접 홀더",
+        "type": "consumable",
+        "qty": 2,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 178,
+        "date": "2022-03-31",
+        "name": "전기용접 홀더",
+        "type": "consumable",
+        "qty": 2,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 179,
+        "date": "2022-04-30",
+        "name": "전기용접 홀더",
+        "type": "consumable",
+        "qty": 2,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 180,
+        "date": "2022-05-31",
+        "name": "전기용접 홀더",
+        "type": "consumable",
+        "qty": 2,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 181,
+        "date": "2022-06-30",
+        "name": "전기용접 홀더",
+        "type": "consumable",
+        "qty": 2,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 182,
+        "date": "2022-07-31",
+        "name": "전기용접 홀더",
+        "type": "consumable",
+        "qty": 2,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 183,
+        "date": "2022-01-31",
+        "name": "Co2게이지",
+        "type": "consumable",
+        "qty": 0,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 184,
+        "date": "2022-02-28",
+        "name": "Co2게이지",
+        "type": "consumable",
+        "qty": 1,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 185,
+        "date": "2022-03-31",
+        "name": "Co2게이지",
+        "type": "consumable",
+        "qty": 1,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 186,
+        "date": "2022-04-30",
+        "name": "Co2게이지",
+        "type": "consumable",
+        "qty": 1,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 187,
+        "date": "2022-05-31",
+        "name": "Co2게이지",
+        "type": "consumable",
+        "qty": 1,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 188,
+        "date": "2022-06-30",
+        "name": "Co2게이지",
+        "type": "consumable",
+        "qty": 1,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 189,
+        "date": "2022-07-31",
+        "name": "Co2게이지",
+        "type": "consumable",
+        "qty": 1,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 190,
+        "date": "2022-01-31",
+        "name": "돌그라인더",
+        "type": "consumable",
+        "qty": 0,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 191,
+        "date": "2022-02-28",
+        "name": "돌그라인더",
+        "type": "consumable",
+        "qty": 15,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 192,
+        "date": "2022-03-31",
+        "name": "돌그라인더",
+        "type": "consumable",
+        "qty": 15,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 193,
+        "date": "2022-04-30",
+        "name": "돌그라인더",
+        "type": "consumable",
+        "qty": 15,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 194,
+        "date": "2022-05-31",
+        "name": "돌그라인더",
+        "type": "consumable",
+        "qty": 15,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 195,
+        "date": "2022-06-30",
+        "name": "돌그라인더",
+        "type": "consumable",
+        "qty": 15,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 196,
+        "date": "2022-07-31",
+        "name": "돌그라인더",
+        "type": "consumable",
+        "qty": 12,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 197,
+        "date": "2022-01-31",
+        "name": "해바라기 패빠",
+        "type": "consumable",
+        "qty": 0,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 198,
+        "date": "2022-02-28",
+        "name": "해바라기 패빠",
+        "type": "consumable",
+        "qty": 4,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 199,
+        "date": "2022-03-31",
+        "name": "해바라기 패빠",
+        "type": "consumable",
+        "qty": 4,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 200,
+        "date": "2022-04-30",
+        "name": "해바라기 패빠",
+        "type": "consumable",
+        "qty": 4,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 201,
+        "date": "2022-05-31",
+        "name": "해바라기 패빠",
+        "type": "consumable",
+        "qty": 4,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 202,
+        "date": "2022-06-30",
+        "name": "해바라기 패빠",
+        "type": "consumable",
+        "qty": 4,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 203,
+        "date": "2022-07-31",
+        "name": "해바라기 패빠",
+        "type": "consumable",
+        "qty": 4,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 204,
+        "date": "2022-01-31",
+        "name": "36방페이퍼",
+        "type": "consumable",
+        "qty": 0,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 205,
+        "date": "2022-02-28",
+        "name": "36방페이퍼",
+        "type": "consumable",
+        "qty": 2,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 206,
+        "date": "2022-03-31",
+        "name": "36방페이퍼",
+        "type": "consumable",
+        "qty": 2,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 207,
+        "date": "2022-04-30",
+        "name": "36방페이퍼",
+        "type": "consumable",
+        "qty": 2,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 208,
+        "date": "2022-05-31",
+        "name": "36방페이퍼",
+        "type": "consumable",
+        "qty": 2,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 209,
+        "date": "2022-06-30",
+        "name": "36방페이퍼",
+        "type": "consumable",
+        "qty": 2,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 210,
+        "date": "2022-07-31",
+        "name": "36방페이퍼",
+        "type": "consumable",
+        "qty": 2,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 211,
+        "date": "2022-01-31",
+        "name": "80방페이퍼",
+        "type": "consumable",
+        "qty": 0,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 212,
+        "date": "2022-02-28",
+        "name": "80방페이퍼",
+        "type": "consumable",
+        "qty": 4,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 213,
+        "date": "2022-03-31",
+        "name": "80방페이퍼",
+        "type": "consumable",
+        "qty": 3,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 214,
+        "date": "2022-04-30",
+        "name": "80방페이퍼",
+        "type": "consumable",
+        "qty": 2,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 215,
+        "date": "2022-05-31",
+        "name": "80방페이퍼",
+        "type": "consumable",
+        "qty": 2,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 216,
+        "date": "2022-06-30",
+        "name": "80방페이퍼",
+        "type": "consumable",
+        "qty": 2,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 217,
+        "date": "2022-07-31",
+        "name": "80방페이퍼",
+        "type": "consumable",
+        "qty": 1,
+        "status": "실측",
+        "memo": "2022 엑셀 월별재고종합"
+    },
+    {
+        "id": 218,
+        "date": "2022-08-31",
+        "name": "전기용접봉",
+        "type": "consumable",
+        "qty": 0,
+        "status": "실측",
+        "memo": "2022 엑셀 8월 조사표"
+    },
+    {
+        "id": 219,
+        "date": "2022-08-31",
+        "name": "용접와이어",
+        "type": "consumable",
+        "qty": 0,
+        "status": "실측",
+        "memo": "2022 엑셀 8월 조사표"
+    },
+    {
+        "id": 220,
+        "date": "2022-08-31",
+        "name": "용접장갑",
+        "type": "consumable",
+        "qty": 0,
+        "status": "실측",
+        "memo": "2022 엑셀 8월 조사표"
+    },
+    {
+        "id": 221,
+        "date": "2022-08-31",
+        "name": "용접귀마개",
+        "type": "consumable",
+        "qty": 0,
+        "status": "실측",
+        "memo": "2022 엑셀 8월 조사표"
+    },
+    {
+        "id": 222,
+        "date": "2022-08-31",
+        "name": "가죽앞치마",
+        "type": "consumable",
+        "qty": 0,
+        "status": "실측",
+        "memo": "2022 엑셀 8월 조사표"
+    },
+    {
+        "id": 223,
+        "date": "2022-08-31",
+        "name": "용접면",
+        "type": "consumable",
+        "qty": 0,
+        "status": "실측",
+        "memo": "2022 엑셀 8월 조사표"
+    },
+    {
+        "id": 224,
+        "date": "2022-08-31",
+        "name": "용접토치 노즐",
+        "type": "consumable",
+        "qty": 0,
+        "status": "실측",
+        "memo": "2022 엑셀 8월 조사표"
+    },
+    {
+        "id": 225,
+        "date": "2022-08-31",
+        "name": "용접토치 팁홀더",
+        "type": "consumable",
+        "qty": 0,
+        "status": "실측",
+        "memo": "2022 엑셀 8월 조사표"
+    },
+    {
+        "id": 226,
+        "date": "2022-08-31",
+        "name": "용접토치 팁",
+        "type": "consumable",
+        "qty": 0,
+        "status": "실측",
+        "memo": "2022 엑셀 8월 조사표"
+    },
+    {
+        "id": 227,
+        "date": "2022-08-31",
+        "name": "용접토치",
+        "type": "consumable",
+        "qty": 0,
+        "status": "실측",
+        "memo": "2022 엑셀 8월 조사표"
+    },
+    {
+        "id": 228,
+        "date": "2022-08-31",
+        "name": "탄산가스",
+        "type": "consumable",
+        "qty": 0,
+        "status": "실측",
+        "memo": "2022 엑셀 8월 조사표"
+    },
+    {
+        "id": 229,
+        "date": "2022-08-31",
+        "name": "아르곤가스",
+        "type": "consumable",
+        "qty": 0,
+        "status": "실측",
+        "memo": "2022 엑셀 8월 조사표"
+    },
+    {
+        "id": 230,
+        "date": "2022-08-31",
+        "name": "산소",
+        "type": "consumable",
+        "qty": 0,
+        "status": "실측",
+        "memo": "2022 엑셀 8월 조사표"
+    },
+    {
+        "id": 231,
+        "date": "2022-08-31",
+        "name": "프로판",
+        "type": "consumable",
+        "qty": 0,
+        "status": "실측",
+        "memo": "2022 엑셀 8월 조사표"
+    },
+    {
+        "id": 232,
+        "date": "2022-08-31",
+        "name": "혼합가스",
+        "type": "consumable",
+        "qty": 0,
+        "status": "실측",
+        "memo": "2022 엑셀 8월 조사표"
+    },
+    {
+        "id": 233,
+        "date": "2022-08-31",
+        "name": "1T연강판",
+        "type": "consumable",
+        "qty": 0,
+        "status": "실측",
+        "memo": "2022 엑셀 8월 조사표"
+    },
+    {
+        "id": 234,
+        "date": "2022-08-31",
+        "name": "센터필러",
+        "type": "consumable",
+        "qty": 0,
+        "status": "실측",
+        "memo": "2022 엑셀 8월 조사표"
+    },
+    {
+        "id": 235,
+        "date": "2022-08-31",
+        "name": "3T 강판",
+        "type": "consumable",
+        "qty": 0,
+        "status": "실측",
+        "memo": "2022 엑셀 8월 조사표"
+    },
+    {
+        "id": 236,
+        "date": "2022-08-31",
+        "name": "에어톱 날",
+        "type": "consumable",
+        "qty": 0,
+        "status": "실측",
+        "memo": "2022 엑셀 8월 조사표"
+    },
+    {
+        "id": 237,
+        "date": "2022-08-31",
+        "name": "스폿드릴 날",
+        "type": "consumable",
+        "qty": 0,
+        "status": "실측",
+        "memo": "2022 엑셀 8월 조사표"
+    },
+    {
+        "id": 238,
+        "date": "2022-08-31",
+        "name": "와이어브러시 날",
+        "type": "consumable",
+        "qty": 0,
+        "status": "실측",
+        "memo": "2022 엑셀 8월 조사표"
+    },
+    {
+        "id": 239,
+        "date": "2022-08-31",
+        "name": "벨트센더 벨트",
+        "type": "consumable",
+        "qty": 0,
+        "status": "실측",
+        "memo": "2022 엑셀 8월 조사표"
+    },
+    {
+        "id": 240,
+        "date": "2022-08-31",
+        "name": "토치라이터",
+        "type": "consumable",
+        "qty": 0,
+        "status": "실측",
+        "memo": "2022 엑셀 8월 조사표"
+    },
+    {
+        "id": 241,
+        "date": "2022-08-31",
+        "name": "보호 면",
+        "type": "consumable",
+        "qty": 0,
+        "status": "실측",
+        "memo": "2022 엑셀 8월 조사표"
+    },
+    {
+        "id": 242,
+        "date": "2022-08-31",
+        "name": "플라이어",
+        "type": "consumable",
+        "qty": 0,
+        "status": "실측",
+        "memo": "2022 엑셀 8월 조사표"
+    },
+    {
+        "id": 243,
+        "date": "2022-08-31",
+        "name": "전기용접 홀더",
+        "type": "consumable",
+        "qty": 0,
+        "status": "실측",
+        "memo": "2022 엑셀 8월 조사표"
+    },
+    {
+        "id": 244,
+        "date": "2022-08-31",
+        "name": "Co2게이지",
+        "type": "consumable",
+        "qty": 0,
+        "status": "실측",
+        "memo": "2022 엑셀 8월 조사표"
+    },
+    {
+        "id": 245,
+        "date": "2022-08-31",
+        "name": "돌그라인더",
+        "type": "consumable",
+        "qty": 0,
+        "status": "실측",
+        "memo": "2022 엑셀 8월 조사표"
+    },
+    {
+        "id": 246,
+        "date": "2022-08-31",
+        "name": "해바라기 패빠",
+        "type": "consumable",
+        "qty": 0,
+        "status": "실측",
+        "memo": "2022 엑셀 8월 조사표"
+    },
+    {
+        "id": 247,
+        "date": "2022-08-31",
+        "name": "36방페이퍼",
+        "type": "consumable",
+        "qty": 100,
+        "status": "실측",
+        "memo": "2022 엑셀 8월 조사표"
+    },
+    {
+        "id": 248,
+        "date": "2022-08-31",
+        "name": "80방페이퍼",
+        "type": "consumable",
+        "qty": 100,
+        "status": "실측",
+        "memo": "2022 엑셀 8월 조사표"
+    },
+    {
+        "id": 249,
+        "date": "2022-01-31",
+        "name": "전기용접봉",
+        "type": "consumable",
+        "qty": 4,
+        "status": "구입",
+        "memo": "2022 엑셀 1월 조사표"
+    },
+    {
+        "id": 250,
+        "date": "2022-01-31",
+        "name": "용접토치 팁홀더",
+        "type": "consumable",
+        "qty": 10,
+        "status": "구입",
+        "memo": "2022 엑셀 1월 조사표"
+    },
+    {
+        "id": 251,
+        "date": "2022-01-31",
+        "name": "용접토치 팁",
+        "type": "consumable",
+        "qty": 10,
+        "status": "구입",
+        "memo": "2022 엑셀 1월 조사표"
+    },
+    {
+        "id": 252,
+        "date": "2022-01-31",
+        "name": "용접토치",
+        "type": "consumable",
+        "qty": 2,
+        "status": "구입",
+        "memo": "2022 엑셀 1월 조사표"
+    },
+    {
+        "id": 253,
+        "date": "2022-01-31",
+        "name": "Co2게이지",
+        "type": "consumable",
+        "qty": 5,
+        "status": "구입",
+        "memo": "2022 엑셀 1월 조사표"
+    },
+    {
+        "id": 254,
+        "date": "2022-01-31",
+        "name": "돌그라인더",
+        "type": "consumable",
+        "qty": 100,
+        "status": "구입",
+        "memo": "2022 엑셀 1월 조사표"
+    },
+    {
+        "id": 255,
+        "date": "2022-01-31",
+        "name": "해바라기 패빠",
+        "type": "consumable",
+        "qty": 100,
+        "status": "구입",
+        "memo": "2022 엑셀 1월 조사표"
+    },
+    {
+        "id": 256,
+        "date": "2022-01-31",
+        "name": "36방페이퍼",
+        "type": "consumable",
+        "qty": 100,
+        "status": "구입",
+        "memo": "2022 엑셀 1월 조사표"
+    },
+    {
+        "id": 257,
+        "date": "2022-01-31",
+        "name": "80방페이퍼",
+        "type": "consumable",
+        "qty": 100,
+        "status": "구입",
+        "memo": "2022 엑셀 1월 조사표"
+    },
+    {
+        "id": 258,
+        "date": "2022-02-28",
+        "name": "용접와이어",
+        "type": "consumable",
+        "qty": 9,
+        "status": "구입",
+        "memo": "2022 엑셀 2월 조사표"
+    },
+    {
+        "id": 259,
+        "date": "2022-02-28",
+        "name": "탄산가스",
+        "type": "consumable",
+        "qty": 9,
+        "status": "구입",
+        "memo": "2022 엑셀 2월 조사표"
+    },
+    {
+        "id": 260,
+        "date": "2022-02-28",
+        "name": "혼합가스",
+        "type": "consumable",
+        "qty": 2,
+        "status": "구입",
+        "memo": "2022 엑셀 2월 조사표"
+    },
+    {
+        "id": 261,
+        "date": "2022-03-31",
+        "name": "용접와이어",
+        "type": "consumable",
+        "qty": 6,
+        "status": "구입",
+        "memo": "2022 엑셀 3월 조사표"
+    },
+    {
+        "id": 262,
+        "date": "2022-03-31",
+        "name": "탄산가스",
+        "type": "consumable",
+        "qty": 6,
+        "status": "구입",
+        "memo": "2022 엑셀 3월 조사표"
+    },
+    {
+        "id": 263,
+        "date": "2022-04-30",
+        "name": "탄산가스",
+        "type": "consumable",
+        "qty": 4,
+        "status": "구입",
+        "memo": "2022 엑셀 4월 조사표"
+    },
+    {
+        "id": 264,
+        "date": "2022-05-31",
+        "name": "탄산가스",
+        "type": "consumable",
+        "qty": 9,
+        "status": "구입",
+        "memo": "2022 엑셀 5월 조사표"
+    },
+    {
+        "id": 265,
+        "date": "2022-05-31",
+        "name": "3T 강판",
+        "type": "consumable",
+        "qty": 1500,
+        "status": "구입",
+        "memo": "2022 엑셀 5월 조사표"
+    },
+    {
+        "id": 266,
+        "date": "2022-06-30",
+        "name": "탄산가스",
+        "type": "consumable",
+        "qty": 5,
+        "status": "구입",
+        "memo": "2022 엑셀 6월 조사표"
+    },
+    {
+        "id": 267,
+        "date": "2022-06-30",
+        "name": "1T연강판",
+        "type": "consumable",
+        "qty": 200,
+        "status": "구입",
+        "memo": "2022 엑셀 6월 조사표"
+    },
+    {
+        "id": 268,
+        "date": "2022-06-30",
+        "name": "센터필러",
+        "type": "consumable",
+        "qty": 500,
+        "status": "구입",
+        "memo": "2022 엑셀 6월 조사표"
+    },
+    {
+        "id": 269,
+        "date": "2022-06-30",
+        "name": "3T 강판",
+        "type": "consumable",
+        "qty": 1500,
+        "status": "구입",
+        "memo": "2022 엑셀 6월 조사표"
+    },
+    {
+        "id": 270,
+        "date": "2022-07-31",
+        "name": "탄산가스",
+        "type": "consumable",
+        "qty": 7,
+        "status": "구입",
+        "memo": "2022 엑셀 7월 조사표"
+    },
+    {
+        "id": 1001,
+        "date": "2022-01-24",
+        "name": "MIG 씨오투 용접기",
+        "type": "equipment",
+        "qty": 1,
+        "status": "수리",
+        "memo": "MIG용접기 메인PCD 교체"
+    },
+    {
+        "id": 1002,
+        "date": "2022-01-28",
+        "name": "에어 톱",
+        "type": "equipment",
+        "qty": 10,
+        "status": "파손",
+        "memo": "에어톱 파손·교체"
+    },
+    {
+        "id": 1003,
+        "date": "2022-01-28",
+        "name": "에어 그라인더",
+        "type": "equipment",
+        "qty": 10,
+        "status": "파손",
+        "memo": "에어그라인더 파손·교체"
+    },
+    {
+        "id": 1004,
+        "date": "2022-02-14",
+        "name": "스폿 드릴",
+        "type": "equipment",
+        "qty": 10,
+        "status": "수리",
+        "memo": "전문업체 수리"
+    }
+];

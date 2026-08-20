@@ -1,1 +1,247 @@
-function a6_0x5d1e(_0x46682d,_0x27a7b3){_0x46682d=_0x46682d-0xe2;const _0x5eec42=a6_0x4678();let _0x4717e3=_0x5eec42[_0x46682d];if(a6_0x5d1e['krbESb']===undefined){var _0x5ce442=function(_0x329950){const _0x37cfde='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x39f691='',_0x35050c='',_0x1d611f=_0x39f691+_0x5ce442;for(let _0x421351=0x0,_0x90a359,_0x5239e1,_0x3a5a62=0x0;_0x5239e1=_0x329950['charAt'](_0x3a5a62++);~_0x5239e1&&(_0x90a359=_0x421351%0x4?_0x90a359*0x40+_0x5239e1:_0x5239e1,_0x421351++%0x4)?_0x39f691+=_0x1d611f['charCodeAt'](_0x3a5a62+0xa)-0xa!==0x0?String['fromCharCode'](0xff&_0x90a359>>(-0x2*_0x421351&0x6)):_0x421351:0x0){_0x5239e1=_0x37cfde['indexOf'](_0x5239e1);}for(let _0xe4ef20=0x0,_0x1effee=_0x39f691['length'];_0xe4ef20<_0x1effee;_0xe4ef20++){_0x35050c+='%'+('00'+_0x39f691['charCodeAt'](_0xe4ef20)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x35050c);};a6_0x5d1e['tHNIqg']=_0x5ce442,a6_0x5d1e['PmXrBp']={},a6_0x5d1e['krbESb']=!![];}const _0x467826=_0x5eec42[0x0],_0x5d1e4b=_0x46682d+_0x467826,_0x2f7b00=a6_0x5d1e['PmXrBp'][_0x5d1e4b];if(!_0x2f7b00){const _0x1bb25a=function(_0x5b13d5){this['fTuGCe']=_0x5b13d5,this['qssTcq']=[0x1,0x0,0x0],this['uTMykk']=function(){return'newState';},this['CWdYXz']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['cQeShw']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x1bb25a['prototype']['SiXnxW']=function(){const _0x44c89e=new RegExp(this['CWdYXz']+this['cQeShw']),_0x126c06=_0x44c89e['test'](this['uTMykk']['toString']())?--this['qssTcq'][0x1]:--this['qssTcq'][0x0];return this['zsPdZS'](_0x126c06);},_0x1bb25a['prototype']['zsPdZS']=function(_0x4fe2ea){if(!Boolean(~_0x4fe2ea))return _0x4fe2ea;return this['XkJQhu'](this['fTuGCe']);},_0x1bb25a['prototype']['XkJQhu']=function(_0x2dd553){for(let _0x9df515=0x0,_0x3fbba5=this['qssTcq']['length'];_0x9df515<_0x3fbba5;_0x9df515++){this['qssTcq']['push'](Math['round'](Math['random']())),_0x3fbba5=this['qssTcq']['length'];}return _0x2dd553(this['qssTcq'][0x0]);},new _0x1bb25a(a6_0x5d1e)['SiXnxW'](),_0x4717e3=a6_0x5d1e['tHNIqg'](_0x4717e3),a6_0x5d1e['PmXrBp'][_0x5d1e4b]=_0x4717e3;}else _0x4717e3=_0x2f7b00;return _0x4717e3;}(function(_0x14a6aa,_0x50eca9){const _0x1fe4b4=a6_0x5d1e,_0xb77428=_0x14a6aa();while(!![]){try{const _0x164a0d=parseInt(_0x1fe4b4(0xe7))/0x1+parseInt(_0x1fe4b4(0x13c))/0x2+parseInt(_0x1fe4b4(0xea))/0x3+parseInt(_0x1fe4b4(0xf8))/0x4*(-parseInt(_0x1fe4b4(0x109))/0x5)+parseInt(_0x1fe4b4(0xee))/0x6*(parseInt(_0x1fe4b4(0x13f))/0x7)+-parseInt(_0x1fe4b4(0x128))/0x8*(parseInt(_0x1fe4b4(0x13b))/0x9)+-parseInt(_0x1fe4b4(0x11f))/0xa;if(_0x164a0d===_0x50eca9)break;else _0xb77428['push'](_0xb77428['shift']());}catch(_0x3dcdd5){_0xb77428['push'](_0xb77428['shift']());}}}(a6_0x4678,0x46475),(function(){const _0x52c598=a6_0x5d1e,_0x421351=(function(){let _0x349b77=!![];return function(_0x55f84a,_0x29d36e){const _0x2f38c9=_0x349b77?function(){const _0x5860a4=a6_0x5d1e;if(_0x29d36e){const _0x14954c=_0x29d36e[_0x5860a4(0x130)](_0x55f84a,arguments);return _0x29d36e=null,_0x14954c;}}:function(){};return _0x349b77=![],_0x2f38c9;};}()),_0x90a359=_0x421351(this,function(){const _0x1d0d8=a6_0x5d1e;return _0x90a359[_0x1d0d8(0x10f)]()['search'](_0x1d0d8(0x120))[_0x1d0d8(0x10f)]()[_0x1d0d8(0xf3)](_0x90a359)[_0x1d0d8(0x126)](_0x1d0d8(0x120));});_0x90a359();'use strict';const _0x5239e1=()=>window[_0x52c598(0x12c)],_0x3a5a62=_0x5239e1()['COVER_LETTER_DAILY_SUBMIT_LIMIT']||0x5;function _0xe4ef20(_0x1eaf4e){const _0x21074b=_0x52c598,_0x43ee3a=_0x5239e1()[_0x21074b(0xed)](_0x5239e1()['getTodayStrKst']());return classDbRef(_0x21074b(0xf4)+_0x1eaf4e+'/'+_0x43ee3a);}function _0x1effee(_0x3aa452){const _0x22b071=_0x52c598;return typeof _0x3aa452===_0x22b071(0x10e)&&!isNaN(_0x3aa452)?_0x3aa452:0x0;}async function _0x1bb25a(_0x58775f){const _0x45c6a9=_0x52c598,_0x277ea5=_0xe4ef20(_0x58775f),_0x419b6a=await _0x277ea5['transaction'](_0x58bfab=>{const _0xdddb57=_0x1effee(_0x58bfab);if(_0xdddb57>=_0x3a5a62)return;return _0xdddb57+0x1;});if(!_0x419b6a[_0x45c6a9(0x137)])return{'ok':![],'count':_0x1effee(_0x419b6a[_0x45c6a9(0x114)]?.[_0x45c6a9(0x111)]())};const _0x437a34=_0x1effee(_0x419b6a[_0x45c6a9(0x114)][_0x45c6a9(0x111)]());if(_0x437a34>_0x3a5a62)return{'ok':![],'count':_0x437a34};return{'ok':!![],'count':_0x437a34};}async function _0x5b13d5(_0xdb6fd8){const _0x39e993=_0x52c598,_0x424bf6=_0xe4ef20(_0xdb6fd8);await _0x424bf6[_0x39e993(0x117)](_0x40ab00=>{const _0x859af9=_0x1effee(_0x40ab00);if(_0x859af9<=0x0)return 0x0;return _0x859af9-0x1;});}async function _0x44c89e(_0x4ec452){const _0x3dbbcf=_0x52c598;if(!_0x4ec452)return 0x0;try{await _0x126c06();const _0x6a44fe=await _0xe4ef20(_0x4ec452)[_0x3dbbcf(0x12f)](_0x3dbbcf(0x103));return _0x1effee(_0x6a44fe[_0x3dbbcf(0x111)]());}catch(_0x1396e6){return 0x0;}}async function _0x126c06(){const _0x4aa158=_0x52c598;if(typeof firebase===_0x4aa158(0x12e)||!firebase[_0x4aa158(0x12a)])throw new Error(_0x4aa158(0xff));const _0x425d21=firebase[_0x4aa158(0x12a)]();if(_0x425d21[_0x4aa158(0x123)])return _0x425d21[_0x4aa158(0x123)];const _0x1a4b8f=await _0x425d21[_0x4aa158(0xef)]();return _0x1a4b8f[_0x4aa158(0xfe)];}function _0x4fe2ea(_0x528b29,_0x1e21a4){const _0x42e57e=_0x52c598,_0xc41079=String(_0x528b29?.[_0x42e57e(0x133)]||_0x528b29?.['message']||'');if(_0xc41079['includes'](_0x42e57e(0xfa))||_0xc41079[_0x42e57e(0xe6)]('permission_denied')){if(_0x1e21a4==='count')return _0x42e57e(0x122);if(_0x1e21a4===_0x42e57e(0xfb))return _0x42e57e(0xec);return _0x42e57e(0x102);}if(_0xc41079[_0x42e57e(0xe6)]('auth/operation-not-allowed'))return _0x42e57e(0xe2);if(_0xc41079[_0x42e57e(0xe6)](_0x42e57e(0xf1)))return'Firebase\x20로그인\x20오류:\x20'+_0xc41079;return _0xc41079||'네트워크를\x20확인\x20후\x20다시\x20시도해\x20주세요.';}function _0x2dd553(_0x24ae26){const _0xd5d770=_0x52c598;if(!_0x24ae26)return'';try{return localStorage[_0xd5d770(0x136)](_0x5239e1()[_0xd5d770(0x13a)](_0x24ae26))||'';}catch(_0x511de4){return'';}}function _0x9df515(_0x4ca0a5,_0x11fefe){const _0x3ad688=_0x52c598;if(!_0x4ca0a5)return;localStorage['setItem'](_0x5239e1()[_0x3ad688(0x13a)](_0x4ca0a5),String(_0x11fefe||''));}async function _0x3fbba5(){const _0x365052=_0x52c598,_0x2dde61=document[_0x365052(0x11d)](_0x365052(0x112)),_0x377f4a=document[_0x365052(0x11d)](_0x365052(0x121));if(!selectedStudentName||!_0x2dde61)return;const _0x360ab9=await _0x44c89e(selectedStudentName),_0x41567d=Math[_0x365052(0xf7)](0x0,_0x3a5a62-_0x360ab9);_0x2dde61['textContent']=_0x41567d>0x0?'오늘\x20자기소개서\x20전송\x20가능\x20'+_0x41567d+'/'+_0x3a5a62+_0x365052(0xe3):_0x365052(0xf6)+_0x3a5a62+_0x365052(0x116),_0x2dde61[_0x365052(0x104)][_0x365052(0x140)](_0x365052(0x138),_0x41567d<=0x0);if(_0x377f4a)_0x377f4a['disabled']=_0x41567d<=0x0;}function _0x1e5582(){const _0x334a2a=_0x52c598,_0x4c4de5=document[_0x334a2a(0x11d)](_0x334a2a(0x10c));if(!_0x4c4de5)return;if(!selectedStudentName){_0x4c4de5[_0x334a2a(0x11e)]=_0x334a2a(0x134);return;}const _0x4f9524=_0x2dd553(selectedStudentName);_0x4c4de5['innerHTML']='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22resume-panel\x20cover-letter-panel\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22resume-panel-head\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20type=\x22button\x22\x20id=\x22btnBackToResume\x22\x20class=\x22resume-back-btn\x22>←\x20이력서\x20작성으로</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h3\x20class=\x22resume-panel-title\x22>✍️\x20자기소개서\x20작성</h3>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20class=\x22resume-panel-desc\x22>'+_0x1fa599(selectedStudentName)+'\x20·\x20자유롭게\x20작성한\x20뒤\x20「자기소개서\x20보내기」를\x20누르면\x20담임선생님께\x20전달됩니다.\x20하루\x20최대\x20'+_0x3a5a62+_0x334a2a(0x135)+_0x1fa599(_0x4f9524)+_0x334a2a(0xfd),document['getElementById']('btnBackToResume')?.['addEventListener'](_0x334a2a(0xf5),()=>{const _0x21cb09=_0x334a2a;selectedStudentName&&_0x9df515(selectedStudentName,document[_0x21cb09(0x11d)](_0x21cb09(0xfc))?.[_0x21cb09(0x103)]||'');if(typeof window['renderStudentResumeView']===_0x21cb09(0x12d))window[_0x21cb09(0x125)]();});const _0x269373=document[_0x334a2a(0x11d)]('coverLetterContent');_0x269373?.['addEventListener'](_0x334a2a(0x115),()=>{const _0x141570=_0x334a2a;if(selectedStudentName)_0x9df515(selectedStudentName,_0x269373[_0x141570(0x103)]);}),document[_0x334a2a(0x11d)](_0x334a2a(0x121))?.[_0x334a2a(0x13e)]('click',_0x1336df),_0x3fbba5(),_0x269373?.[_0x334a2a(0xf9)]();}function _0x1fa599(_0x29c091){const _0x4a0938=_0x52c598;return String(_0x29c091||'')['replace'](/&/g,'&amp;')[_0x4a0938(0xe8)](/</g,_0x4a0938(0x129))[_0x4a0938(0xe8)](/>/g,_0x4a0938(0x124));}async function _0x1336df(){const _0x3cd88e=_0x52c598;if(!await requireSelectedStudent())return;const _0x2160b0=(document[_0x3cd88e(0x11d)]('coverLetterContent')?.[_0x3cd88e(0x103)]||'')[_0x3cd88e(0xeb)](),_0x5f2c54=document[_0x3cd88e(0x11d)](_0x3cd88e(0x11c));if(!_0x2160b0){_0x5f2c54&&(_0x5f2c54[_0x3cd88e(0x119)]=_0x3cd88e(0x131),_0x5f2c54[_0x3cd88e(0x104)]['remove'](_0x3cd88e(0x108)));await appAlert(_0x3cd88e(0x118)),document[_0x3cd88e(0x11d)]('coverLetterContent')?.[_0x3cd88e(0xf9)]();return;}let _0x412d15=![];try{_0x5f2c54&&(_0x5f2c54[_0x3cd88e(0x119)]='전송\x20중...',_0x5f2c54[_0x3cd88e(0x104)][_0x3cd88e(0x132)](_0x3cd88e(0x108)));try{await _0x126c06();}catch(_0x4b2b20){const _0x19dc0e=_0x4fe2ea(_0x4b2b20,'auth');if(_0x5f2c54)_0x5f2c54[_0x3cd88e(0x119)]='❌\x20전송에\x20실패했습니다.\x20'+_0x19dc0e;await appAlert('Firebase\x20로그인에\x20실패했습니다.\x0a'+_0x19dc0e);return;}let _0x5a1bba;try{_0x5a1bba=await _0x1bb25a(selectedStudentName);}catch(_0x4ce791){const _0x44ef7d=_0x4fe2ea(_0x4ce791,_0x3cd88e(0xe4));if(_0x5f2c54)_0x5f2c54[_0x3cd88e(0x119)]=_0x3cd88e(0x13d)+_0x44ef7d;await appAlert(_0x3cd88e(0xf2)+_0x44ef7d);return;}if(!_0x5a1bba['ok']){const _0x440db6=_0x3cd88e(0xe5)+_0x3a5a62+_0x3cd88e(0x10b);if(_0x5f2c54)_0x5f2c54['textContent']='❌\x20'+_0x440db6[_0x3cd88e(0xe8)]('\x0a','\x20');await appAlert(_0x440db6),await _0x3fbba5();return;}_0x412d15=!![];const _0x1676a1=new Date()[_0x3cd88e(0x11b)](),_0x92f871=classDbRef(_0x3cd88e(0x12b)+selectedStudentName)[_0x3cd88e(0x101)]();try{await _0x92f871[_0x3cd88e(0x100)]({'basic':{'name':selectedStudentName},'content':_0x2160b0,'studentName':selectedStudentName,'submittedAt':_0x1676a1,'submissionId':_0x92f871[_0x3cd88e(0x139)],'documentType':_0x3cd88e(0x11a)});}catch(_0x571280){throw Object[_0x3cd88e(0x10d)](_0x571280,{'_coverStep':_0x3cd88e(0xfb)});}_0x412d15=![],_0x9df515(selectedStudentName,_0x2160b0),localStorage[_0x3cd88e(0x10a)](_0x5239e1()[_0x3cd88e(0x106)](selectedStudentName),JSON[_0x3cd88e(0x107)]({'content':_0x2160b0,'lastSubmittedAt':_0x1676a1})),_0x5f2c54&&(_0x5f2c54[_0x3cd88e(0x119)]='✅\x20담임선생님께\x20자기소개서가\x20전달되었습니다.',_0x5f2c54['classList'][_0x3cd88e(0x105)](_0x3cd88e(0x108))),await appAlert(_0x3cd88e(0x127)),await _0x3fbba5();}catch(_0x40cdf6){if(_0x412d15)try{await _0x5b13d5(selectedStudentName);}catch(_0x13703a){}const _0x3dd3b5=_0x40cdf6?.[_0x3cd88e(0xf0)]||_0x3cd88e(0xe9),_0x4b9db9=_0x4fe2ea(_0x40cdf6,_0x3dd3b5);_0x5f2c54&&(_0x5f2c54[_0x3cd88e(0x119)]=_0x3cd88e(0x13d)+_0x4b9db9,_0x5f2c54['classList'][_0x3cd88e(0x132)]('is-success')),await appAlert(_0x3cd88e(0x110)+_0x4b9db9),await _0x3fbba5();}}window[_0x52c598(0x113)]=_0x1e5582;}()));function a6_0x4678(){const _0x14f21a=['A2v5','z2v0q292zxjmzxr0zxjmB2nHBfn0B3jHz2vlzxK','owfir3LPEa','odG4mdm4EgT1Bvjq','4P2mioYGHoYgOEYxKcdSI6tTJkJTLOJSIRxRI4JRI6qUia','ywrKrxzLBNrmAxn0zw5LCG','mJK4nZGXA05tsKzA','Dg9Nz2XL','rMLYzwjHC2uGq29UC29SzsdIHPiGqxv0AgvUDgLJyxrPB24G4OAsifnPz24TAw4GBwv0Ag9KiokgKIdSNBxRQOuOqw5VBNLTB3vZksdSGQZSMQKG7isK7kcv7j20io2vHoYALo2vQEUlIoUlPc4','7zQmicJTLzZQTA0G7iUC6RceioQ4SoYKGcdcTYdTLzNSG53RS4qP','y291BNq','7jIK64Qy7j2aioYDToUVUcdSNPdQUldSHOZQSjZSHjZRPBWG','Aw5JBhvKzxm','mta5ntq5v3v1vwPW','CMvWBgfJzq','Dw5RBM93BG','nduWmZaWChf0Be5R','DhjPBq','7j6q6RIW7iAm6RcC7isCkhn0DwrLBNrszxn1BwvZksbeqIdQTOZTLzWG7jIK66wy7j6f64Ui64UKlIdSNBxRQOuG66gC6RE47j24ie9oimk3iezPCMvIyxnLioQ3NoY5MsdQSOZSI5ZRPBWG7zMv7j247zw0ioYJVoYeUoYALc4','z2v0q292zxjmzxr0zxjtDwjTAxrdB3vUDerHDgvlzxK','ntrxswrJse4','C2LNBKLUqw5VBNLTB3vZBhK','x2nVDMvYu3rLCa','yxv0Ac8','7kce7iAHio2AN+YiMcdTMzxSNBJSL5aG7iUK7yYO7zAi7iQ164Ui64UKlGO','y29UC3rYDwn0B3i','C3r1zgvUDfjLC3vTzvn1yM1PDenVDw50CY8','y2XPy2S','7jIK64QyioYEKoQ4SoYgJoQWNoYeNcdSOitSHQeG','Bwf4','nti3nJrTrfboBue','zM9JDxm','uevstuLtu0LptL9eru5jruq','y292zxi','y292zxjmzxr0zxjdB250zw50','pc90zxH0yxjLyt4kicaGicaGicaGicaGicaGidXWigLKpsjJB3zLCKXLDhrLCKrHAwX5tgLTAxriAw50iIbJBgfZCZ0ICMvZDw1LlwrHAwX5lwXPBwL0lwHPBNqIpUYyPoUkMcdSOitSHQeG6Rca64QLio2AN+YiMcdTMzxSNBGG7ksrlI4Upc9WpGOGicaGicaGicaGicaGicaGpgj1DhrVBIb0ExbLpsjIDxr0B24IigLKpsjIDg5tDwjTAxrdB3zLCKXLDhrLCIiGy2XHC3m9iNjLC3vTzs1ZDwjTAxqTyNrUiJ7WN5oKioYEKoQ4SoYgJoQWNoYeNcdRS7tRGRtQUla8l2j1DhrVBJ4kicaGicaGicaGicaGicaGidXWigLKpsjJB3zLCKXLDhrLCLn1yM1PDfn0yxr1CYiGy2XHC3m9iNjLC3vTzs1ZDwjTAxqTC3rHDhvZiIbHCMLHlwXPDMu9iNbVBgL0zsi+pc9WpGOGicaGicaGicaGica8l2rPDJ4','DxnLCG','rMLYzwjHC2uGqxv0AcbUB3qGBg9HzgvK','C2v0','ChvZAa','7isC67keiercioQ2Jo2vNcdSMktRPzJSNOxRI4JRI6qUioYDTEUQHsdROzZQT7JSNBGGt04GWRCGrMLYzwjHC2uG6REC7lMzioQYJoYlNoULVcdTMzxSNBJTLBqG7ko87is47jQulG','DMfSDwu','y2XHC3nmAxn0','ywrK','z2v0q292zxjmzxr0zxjmyxn0u3vIBwL0s2v5','C3rYAw5NAwz5','AxmTC3vJy2vZCW','mtG1A2fjBvrI','C2v0sxrLBq','7zQmioYGHoYgOE2vMoYfQoYkTEUlIoUlPc4k64k07j28ko2vNoQ1RsdSI5ZQSiqG6RIW7ksaksdRI6tSI5WG7iUC64+e7zw0ioYJVoYeUoYALc4','DMLLD0fYzwe','yxnZAwDU','BNvTyMvY','Dg9tDhjPBMC','7j6q6RIW7iAm6RcC7isCioYGHoYgOEYxKcdSI6tTJkJTLOJSIRxRI4JRI6qUcG','DMfS','y292zxjmzxr0zxjeywLSEuXPBwL0sgLUDa','CMvUzgvYu3r1zgvUDenVDMvYtgv0DgvYvMLLDW','C25HChnOB3q','Aw5WDxq','7zQm66w8ioUQQoUrKcdSGQZSMQNTLOJSIRxRI4JRI6qUioUcToYDVcdRI6tSI5WG7kce7iAH7zwGioYiMcdSNOJSIRxRI4JRI6qU','DhjHBNnHy3rPB24','7j6q6RIW7iAm6RcC7isCioUcToYAQEYDHcdSNOxROkxTLBqG7ko87is47jQulG','Dgv4DenVBNrLBNq','y292zxjmzxr0zxi','Dg9ju09tDhjPBMC','y292zxjmzxr0zxjtDwjTAxrtDgf0Dxm','z2v0rwXLBwvUDej5swq','Aw5Uzxjive1m','odm0mdbVwLviC04','kcGOlISPkYKRksSK','yNrUu3vIBwL0q292zxjmzxr0zxi','7kce7iAHio2AN+YiMcHZDhvKzw50uMvZDw1Lu3vIBwL0q291BNrZksbeqIdQTOZTLzWG7jIK66wy7j6f64Ui64UKlIbgAxjLyMfZzsdQT5ZSUzNSNyqG7zMv7j247zw0ioYJVoYeUoYALc4','y3vYCMvUDfvZzxi','jMD0oW','CMvUzgvYu3r1zgvUDfjLC3vTzvzPzxC','C2vHCMnO','7j6q6RIW7iAm6RcC7isC6RcaioYGHoYgOEUqMoYxIoYkTEUlIoUlPc4','mJqYodm3nMnOswrkyG','jMX0oW','yxv0Aa','C3r1zgvUDfjLC3vTzxmV','u3r1zgvUDfjLC3vTzvnOyxjLza','zNvUy3rPB24','Dw5KzwzPBMvK','B25Jzq','yxbWBhK','4P2mioYEKoQ4SoYgJoQWNoYeNcdRGRtSMQNSNyqG7j6f66cL7zw0ioYJVoYeUoYALc4','CMvTB3zL','y29Kzq','phaGy2XHC3m9iNjLC3vTzs1LBxb0Es1OAw50iJ7SG4hRI6JSL5dSHjWG67o47j24ioYDToUMHoYDHcdSHkdTG53TLzWG65kKioYEKoQ4SoYgJoQWNoYeNoULVcdSNPhSHlhTLAaG7iIyioYEIoYkTEUlIoUlPc48l3a+','7zQm6RMm7kEaioYGHoYgOE2vOcdSIjGG7j6i7iQ164Ui64UKlJWVCd4kicaGicaGicaGicaGicaGidWVzgL2pGOGicaGicaGicaGicaGicaGphrLEhrHCMvHigLKpsjJB3zLCKXLDhrLCKnVBNrLBNqIignSyxnZpsjJB3zLCI1Szxr0zxiTDgv4DgfYzweIihjVD3m9iJe4iIbWBgfJzwHVBgrLCJ0I7j6q6RIW7iAm6RcC7isC66w8ioYEKoYCOoUHREQYJcdSNPhSHlhTLzJSHlJSMPqUiJ4','z2v0sxrLBq','y29TBwL0DgvK','AxmTzxHOyxvZDgvK'];a6_0x4678=function(){return _0x14f21a;};return a6_0x4678();}
+/**
+ * student-resume-cover-letter.js — 학생 자기소개서 작성·전송
+ * 이력서와 동일한 Firebase 경로(studentResumes / studentResumeSubmitCounts) 사용 — 기존 DB 규칙 그대로 동작
+ */
+(function () {
+    'use strict';
+
+    const SRS = () => window.StudentResumeShared;
+    const COVER_LETTER_DAILY_SUBMIT_LIMIT = SRS().COVER_LETTER_DAILY_SUBMIT_LIMIT || 5;
+
+    function getDailySubmitCountRef(studentName) {
+        const dateKey = SRS().getCoverLetterSubmitCountDateKey(SRS().getTodayStrKst());
+        return classDbRef(`studentResumeSubmitCounts/${studentName}/${dateKey}`);
+    }
+
+    function parseSubmitCount(val) {
+        return typeof val === 'number' && !isNaN(val) ? val : 0;
+    }
+
+    async function reserveDailySubmitSlot(studentName) {
+        const ref = getDailySubmitCountRef(studentName);
+        const result = await ref.transaction(current => {
+            const n = parseSubmitCount(current);
+            if (n >= COVER_LETTER_DAILY_SUBMIT_LIMIT) return;
+            return n + 1;
+        });
+        if (!result.committed) return { ok: false, count: parseSubmitCount(result.snapshot?.val()) };
+        const count = parseSubmitCount(result.snapshot.val());
+        if (count > COVER_LETTER_DAILY_SUBMIT_LIMIT) return { ok: false, count };
+        return { ok: true, count };
+    }
+
+    async function releaseDailySubmitSlot(studentName) {
+        const ref = getDailySubmitCountRef(studentName);
+        await ref.transaction(current => {
+            const n = parseSubmitCount(current);
+            if (n <= 0) return 0;
+            return n - 1;
+        });
+    }
+
+    async function fetchTodaySubmitCount(studentName) {
+        if (!studentName) return 0;
+        try {
+            await ensureStudentResumeAuth();
+            const snap = await getDailySubmitCountRef(studentName).once('value');
+            return parseSubmitCount(snap.val());
+        } catch (e) {
+            return 0;
+        }
+    }
+
+    async function ensureStudentResumeAuth() {
+        if (typeof firebase === 'undefined' || !firebase.auth) {
+            throw new Error('Firebase Auth not loaded');
+        }
+        const auth = firebase.auth();
+        if (auth.currentUser) return auth.currentUser;
+        const cred = await auth.signInAnonymously();
+        return cred.user;
+    }
+
+    function submitErrorHint(err, step) {
+        const code = String(err?.code || err?.message || '');
+        if (code.includes('PERMISSION_DENIED') || code.includes('permission_denied')) {
+            if (step === 'count') {
+                return '전송 횟수(studentResumeSubmitCounts) DB 권한 오류입니다. Firebase 규칙을 확인해 주세요.';
+            }
+            if (step === 'cover') {
+                return '자기소개서(studentResumes) DB 권한 오류입니다. 익명 로그인 ON · Firebase 규칙 게시를 확인해 주세요.';
+            }
+            return '서버 DB 권한 오류입니다. 익명 로그인 ON · Firebase 규칙 게시를 확인해 주세요.';
+        }
+        if (code.includes('auth/operation-not-allowed')) {
+            return 'Firebase Console → Authentication → Sign-in method → 익명(Anonymous) 사용 설정이 필요합니다.';
+        }
+        if (code.includes('auth/')) return 'Firebase 로그인 오류: ' + code;
+        return code || '네트워크를 확인 후 다시 시도해 주세요.';
+    }
+
+    function loadLocalCoverLetter(name) {
+        if (!name) return '';
+        try {
+            return localStorage.getItem(SRS().getCoverLetterLocalStorageKey(name)) || '';
+        } catch (e) {
+            return '';
+        }
+    }
+
+    function saveLocalCoverLetter(name, text) {
+        if (!name) return;
+        localStorage.setItem(SRS().getCoverLetterLocalStorageKey(name), String(text || ''));
+    }
+
+    async function updateDailySubmitStatusUI() {
+        const hintEl = document.getElementById('coverLetterDailyLimitHint');
+        const btn = document.getElementById('btnSubmitCoverLetter');
+        if (!selectedStudentName || !hintEl) return;
+        const used = await fetchTodaySubmitCount(selectedStudentName);
+        const left = Math.max(0, COVER_LETTER_DAILY_SUBMIT_LIMIT - used);
+        hintEl.textContent = left > 0
+            ? `오늘 자기소개서 전송 가능 ${left}/${COVER_LETTER_DAILY_SUBMIT_LIMIT}회 (한국 시간 기준 · 학생별)`
+            : `오늘 자기소개서 전송 ${COVER_LETTER_DAILY_SUBMIT_LIMIT}회를 모두 사용했습니다. 내일 다시 전송할 수 있습니다.`;
+        hintEl.classList.toggle('is-exhausted', left <= 0);
+        if (btn) btn.disabled = left <= 0;
+    }
+
+    function renderCoverLetterView() {
+        const vArea = document.getElementById('viewArea');
+        if (!vArea) return;
+
+        if (!selectedStudentName) {
+            vArea.innerHTML = '<p class="resume-empty-hint">상단에서 본인 이름을 선택한 뒤 자기소개서를 작성할 수 있습니다.</p>';
+            return;
+        }
+
+        const saved = loadLocalCoverLetter(selectedStudentName);
+        vArea.innerHTML = `
+            <div class="resume-panel cover-letter-panel">
+                <div class="resume-panel-head">
+                    <button type="button" id="btnBackToResume" class="resume-back-btn">← 이력서 작성으로</button>
+                    <h3 class="resume-panel-title">✍️ 자기소개서 작성</h3>
+                    <p class="resume-panel-desc">${escHtml(selectedStudentName)} · 자유롭게 작성한 뒤 「자기소개서 보내기」를 누르면 담임선생님께 전달됩니다. 하루 최대 ${COVER_LETTER_DAILY_SUBMIT_LIMIT}회까지 전송할 수 있습니다.</p>
+                </div>
+                <textarea id="coverLetterContent" class="cover-letter-textarea" rows="18" placeholder="자기소개서를 자유롭게 작성하세요.">${escHtml(saved)}</textarea>
+                <p id="coverLetterDailyLimitHint" class="resume-daily-limit-hint">오늘 전송 가능 횟수 확인 중...</p>
+                <button type="button" id="btnSubmitCoverLetter" class="resume-submit-btn">📤 자기소개서 보내기</button>
+                <p id="coverLetterSubmitStatus" class="resume-submit-status" aria-live="polite"></p>
+            </div>`;
+
+        document.getElementById('btnBackToResume')?.addEventListener('click', () => {
+            if (selectedStudentName) {
+                saveLocalCoverLetter(selectedStudentName, document.getElementById('coverLetterContent')?.value || '');
+            }
+            if (typeof window.renderStudentResumeView === 'function') window.renderStudentResumeView();
+        });
+
+        const textarea = document.getElementById('coverLetterContent');
+        textarea?.addEventListener('input', () => {
+            if (selectedStudentName) saveLocalCoverLetter(selectedStudentName, textarea.value);
+        });
+
+        document.getElementById('btnSubmitCoverLetter')?.addEventListener('click', submitCoverLetter);
+        updateDailySubmitStatusUI();
+        textarea?.focus();
+    }
+
+    function escHtml(s) {
+        return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    async function submitCoverLetter() {
+        if (!(await requireSelectedStudent())) return;
+
+        const content = (document.getElementById('coverLetterContent')?.value || '').trim();
+        const statusEl = document.getElementById('coverLetterSubmitStatus');
+
+        if (!content) {
+            if (statusEl) {
+                statusEl.textContent = '❌ 자기소개서 내용을 입력해 주세요.';
+                statusEl.classList.remove('is-success');
+            }
+            await appAlert('자기소개서 내용을 입력해 주세요.');
+            document.getElementById('coverLetterContent')?.focus();
+            return;
+        }
+
+        let slotReserved = false;
+        try {
+            if (statusEl) {
+                statusEl.textContent = '전송 중...';
+                statusEl.classList.remove('is-success');
+            }
+
+            try {
+                await ensureStudentResumeAuth();
+            } catch (authErr) {
+                const hint = submitErrorHint(authErr, 'auth');
+                if (statusEl) statusEl.textContent = '❌ 전송에 실패했습니다. ' + hint;
+                await appAlert('Firebase 로그인에 실패했습니다.\n' + hint);
+                return;
+            }
+
+            let slot;
+            try {
+                slot = await reserveDailySubmitSlot(selectedStudentName);
+            } catch (countErr) {
+                const hint = submitErrorHint(countErr, 'count');
+                if (statusEl) statusEl.textContent = '❌ 전송에 실패했습니다. ' + hint;
+                await appAlert('전송 횟수 확인에 실패했습니다.\n' + hint);
+                return;
+            }
+
+            if (!slot.ok) {
+                const limitMsg = `오늘은 이미 자기소개서를 ${COVER_LETTER_DAILY_SUBMIT_LIMIT}회 전송하셨습니다.\n내일(한국 시간 기준) 다시 시도해 주세요.`;
+                if (statusEl) statusEl.textContent = '❌ ' + limitMsg.replace('\n', ' ');
+                await appAlert(limitMsg);
+                await updateDailySubmitStatusUI();
+                return;
+            }
+            slotReserved = true;
+
+            const submittedAt = new Date().toISOString();
+            const ref = classDbRef(`studentResumes/${selectedStudentName}`).push();
+            try {
+                await ref.set({
+                    basic: { name: selectedStudentName },
+                    content,
+                    studentName: selectedStudentName,
+                    submittedAt,
+                    submissionId: ref.key,
+                    documentType: 'coverLetter'
+                });
+            } catch (coverErr) {
+                throw Object.assign(coverErr, { _coverStep: 'cover' });
+            }
+            slotReserved = false;
+
+            saveLocalCoverLetter(selectedStudentName, content);
+            localStorage.setItem(SRS().getCoverLetterLastSubmitKey(selectedStudentName), JSON.stringify({
+                content,
+                lastSubmittedAt: submittedAt
+            }));
+
+            if (statusEl) {
+                statusEl.textContent = '✅ 담임선생님께 자기소개서가 전달되었습니다.';
+                statusEl.classList.add('is-success');
+            }
+            await appAlert('자기소개서가 전송되었습니다.');
+            await updateDailySubmitStatusUI();
+        } catch (e) {
+            if (slotReserved) {
+                try { await releaseDailySubmitSlot(selectedStudentName); } catch (_) { /* ignore */ }
+            }
+            const step = e?._coverStep || 'unknown';
+            const hint = submitErrorHint(e, step);
+            if (statusEl) {
+                statusEl.textContent = '❌ 전송에 실패했습니다. ' + hint;
+                statusEl.classList.remove('is-success');
+            }
+            await appAlert('자기소개서 전송에 실패했습니다.\n' + hint);
+            await updateDailySubmitStatusUI();
+        }
+    }
+
+    window.renderStudentCoverLetterView = renderCoverLetterView;
+})();

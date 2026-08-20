@@ -1,1 +1,226 @@
-function a0_0x141f(_0x50a482,_0x2c385a){_0x50a482=_0x50a482-0x1f1;var _0x2a640f=a0_0x51e8();var _0x4afbaa=_0x2a640f[_0x50a482];if(a0_0x141f['ufvcMm']===undefined){var _0x3f86dc=function(_0x399281){var _0x4b9b4b='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';var _0x492b6a='',_0x2f0a8c='',_0x3fe366=_0x492b6a+_0x3f86dc;for(var _0x393c46=0x0,_0x33b960,_0x4a4be1,_0x3e55b6=0x0;_0x4a4be1=_0x399281['charAt'](_0x3e55b6++);~_0x4a4be1&&(_0x33b960=_0x393c46%0x4?_0x33b960*0x40+_0x4a4be1:_0x4a4be1,_0x393c46++%0x4)?_0x492b6a+=_0x3fe366['charCodeAt'](_0x3e55b6+0xa)-0xa!==0x0?String['fromCharCode'](0xff&_0x33b960>>(-0x2*_0x393c46&0x6)):_0x393c46:0x0){_0x4a4be1=_0x4b9b4b['indexOf'](_0x4a4be1);}for(var _0x43c69b=0x0,_0xe997c8=_0x492b6a['length'];_0x43c69b<_0xe997c8;_0x43c69b++){_0x2f0a8c+='%'+('00'+_0x492b6a['charCodeAt'](_0x43c69b)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x2f0a8c);};a0_0x141f['LsNugO']=_0x3f86dc,a0_0x141f['xWiboo']={},a0_0x141f['ufvcMm']=!![];}var _0x51e8d3=_0x2a640f[0x0],_0x141f57=_0x50a482+_0x51e8d3,_0x5b3889=a0_0x141f['xWiboo'][_0x141f57];if(!_0x5b3889){var _0xc5c7d5=function(_0xbde8c){this['JpnElY']=_0xbde8c,this['ZloFvq']=[0x1,0x0,0x0],this['VgbrvB']=function(){return'newState';},this['NxisQC']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['COEmoX']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0xc5c7d5['prototype']['NtrgIR']=function(){var _0x1dfb45=new RegExp(this['NxisQC']+this['COEmoX']),_0x408614=_0x1dfb45['test'](this['VgbrvB']['toString']())?--this['ZloFvq'][0x1]:--this['ZloFvq'][0x0];return this['hSpFnY'](_0x408614);},_0xc5c7d5['prototype']['hSpFnY']=function(_0x2983d7){if(!Boolean(~_0x2983d7))return _0x2983d7;return this['LInAid'](this['JpnElY']);},_0xc5c7d5['prototype']['LInAid']=function(_0x25e46e){for(var _0x2a2af0=0x0,_0x4588b2=this['ZloFvq']['length'];_0x2a2af0<_0x4588b2;_0x2a2af0++){this['ZloFvq']['push'](Math['round'](Math['random']())),_0x4588b2=this['ZloFvq']['length'];}return _0x25e46e(this['ZloFvq'][0x0]);},new _0xc5c7d5(a0_0x141f)['NtrgIR'](),_0x4afbaa=a0_0x141f['LsNugO'](_0x4afbaa),a0_0x141f['xWiboo'][_0x141f57]=_0x4afbaa;}else _0x4afbaa=_0x5b3889;return _0x4afbaa;}(function(_0x327a81,_0x2b89a7){var _0x13e3b4=a0_0x141f,_0x192fb9=_0x327a81();while(!![]){try{var _0x4af71a=parseInt(_0x13e3b4(0x21e))/0x1*(parseInt(_0x13e3b4(0x239))/0x2)+parseInt(_0x13e3b4(0x1f7))/0x3+parseInt(_0x13e3b4(0x23b))/0x4+parseInt(_0x13e3b4(0x205))/0x5+parseInt(_0x13e3b4(0x1f4))/0x6*(parseInt(_0x13e3b4(0x202))/0x7)+parseInt(_0x13e3b4(0x1f5))/0x8+-parseInt(_0x13e3b4(0x1fd))/0x9*(parseInt(_0x13e3b4(0x21a))/0xa);if(_0x4af71a===_0x2b89a7)break;else _0x192fb9['push'](_0x192fb9['shift']());}catch(_0x428f08){_0x192fb9['push'](_0x192fb9['shift']());}}}(a0_0x51e8,0x9aa89),function(_0x393c46){var _0x18a97d=a0_0x141f,_0x33b960=(function(){var _0x17094b=!![];return function(_0x5d1261,_0x138948){var _0x4e106e=_0x17094b?function(){var _0x4e3a97=a0_0x141f;if(_0x138948){var _0x16c9a5=_0x138948[_0x4e3a97(0x203)](_0x5d1261,arguments);return _0x138948=null,_0x16c9a5;}}:function(){};return _0x17094b=![],_0x4e106e;};}()),_0x4a4be1=_0x33b960(this,function(){var _0x4ce76e=a0_0x141f;return _0x4a4be1[_0x4ce76e(0x206)]()[_0x4ce76e(0x213)]('(((.+)+)+)+$')[_0x4ce76e(0x206)]()[_0x4ce76e(0x1fe)](_0x4a4be1)[_0x4ce76e(0x213)](_0x4ce76e(0x240));});_0x4a4be1();'use strict';var _0x3e55b6=0x300,_0x43c69b=_0x393c46['alert'][_0x18a97d(0x22f)](_0x393c46),_0xe997c8=_0x393c46[_0x18a97d(0x210)][_0x18a97d(0x22f)](_0x393c46),_0xc5c7d5=_0x393c46[_0x18a97d(0x227)][_0x18a97d(0x22f)](_0x393c46);function _0xbde8c(){return _0x393c46['innerWidth']<=_0x3e55b6;}function _0x1dfb45(_0x253045,_0x5fb913){var _0x130315=_0x18a97d;if(_0x5fb913)return _0x5fb913;var _0x196c7b=String(_0x253045||'');if(/삭제|초기화|위험|복구 불가|❗|⚠️|소멸|영구/['test'](_0x196c7b))return'danger';if(/✅|완료|성공|저장되었|복사 완료/[_0x130315(0x200)](_0x196c7b))return'success';if(/\?$|하시겠습니까|진행하시|동의/[_0x130315(0x200)](_0x196c7b))return _0x130315(0x210);return _0x130315(0x219);}function _0x408614(_0x26a78a,_0x5db73c){var _0x25edcc=_0x18a97d;if(_0x5db73c)return _0x5db73c;if(_0x26a78a===_0x25edcc(0x223))return'주의';if(_0x26a78a===_0x25edcc(0x220))return'완료';if(_0x26a78a===_0x25edcc(0x210))return'확인';return'안내';}function _0x2983d7(_0x2ac96a){var _0x3d1007=_0x18a97d;if(_0x2ac96a==='danger')return'⚠️';if(_0x2ac96a===_0x3d1007(0x220))return'✅';if(_0x2ac96a===_0x3d1007(0x210))return'❓';return'ℹ️';}var _0x25e46e=null,_0x2a2af0=null,_0x4588b2=null,_0x17be5d=null,_0x465b55=null,_0x498862=null,_0x49784f=null,_0x1cbb35=null,_0x34130c=null,_0x383ac7=null,_0x4e74f5=_0x18a97d(0x23c);function _0x533ab9(){var _0x43350b=_0x18a97d;if(_0x25e46e)return;_0x25e46e=document[_0x43350b(0x212)](_0x43350b(0x22c)),_0x25e46e['id']='appDialogRoot',_0x25e46e['className']=_0x43350b(0x236),_0x25e46e[_0x43350b(0x201)]='<div\x20class=\x22app-dialog-overlay\x22></div>'+_0x43350b(0x215)+_0x43350b(0x233)+_0x43350b(0x209)+_0x43350b(0x237)+'</div>'+_0x43350b(0x226)+_0x43350b(0x20a)+_0x43350b(0x20c)+_0x43350b(0x228)+_0x43350b(0x216)+_0x43350b(0x20d)+_0x43350b(0x22b)+_0x43350b(0x228)+_0x43350b(0x228),document['body'][_0x43350b(0x1f1)](_0x25e46e),_0x2a2af0=_0x25e46e[_0x43350b(0x1f3)](_0x43350b(0x1fb)),_0x4588b2=_0x25e46e[_0x43350b(0x1f3)](_0x43350b(0x20f)),_0x17be5d=_0x25e46e[_0x43350b(0x1f3)](_0x43350b(0x22e)),_0x465b55=_0x25e46e[_0x43350b(0x1f3)](_0x43350b(0x1f2)),_0x498862=_0x25e46e[_0x43350b(0x1f3)](_0x43350b(0x234)),_0x49784f=_0x25e46e['querySelector']('.app-dialog-input'),_0x1cbb35=_0x25e46e[_0x43350b(0x1f3)]('.app-dialog-btn-cancel'),_0x34130c=_0x25e46e[_0x43350b(0x1f3)](_0x43350b(0x23d)),_0x2a2af0['addEventListener']('click',function(){var _0x5da473=_0x43350b;if(_0x4e74f5===_0x5da473(0x23c))_0x34afc4(null);else{if(_0x4e74f5===_0x5da473(0x210))_0x34afc4(![]);else{if(_0x4e74f5===_0x5da473(0x227))_0x34afc4(null);}}}),_0x1cbb35[_0x43350b(0x21c)](_0x43350b(0x1fc),function(){var _0x459861=_0x43350b;if(_0x4e74f5===_0x459861(0x210))_0x34afc4(![]);else{if(_0x4e74f5===_0x459861(0x227))_0x34afc4(null);}}),_0x34130c[_0x43350b(0x21c)](_0x43350b(0x1fc),function(){var _0x46cbe6=_0x43350b;if(_0x4e74f5===_0x46cbe6(0x23c))_0x34afc4(!![]);else{if(_0x4e74f5==='confirm')_0x34afc4(!![]);else{if(_0x4e74f5===_0x46cbe6(0x227))_0x34afc4(_0x49784f['value']);}}}),_0x49784f[_0x43350b(0x21c)](_0x43350b(0x235),function(_0x423eca){var _0x362fdc=_0x43350b;if(_0x423eca[_0x362fdc(0x22d)]===_0x362fdc(0x217))_0x34130c['click']();if(_0x423eca[_0x362fdc(0x22d)]===_0x362fdc(0x230))_0x1cbb35[_0x362fdc(0x1fc)]();}),document[_0x43350b(0x21c)](_0x43350b(0x235),function(_0x5d6a0a){var _0x393159=_0x43350b;if(!_0x25e46e[_0x393159(0x21d)][_0x393159(0x21f)]('is-open'))return;if(_0x5d6a0a[_0x393159(0x22d)]===_0x393159(0x230)){if(_0x4e74f5===_0x393159(0x23c))_0x34afc4(!![]);else{if(_0x4e74f5===_0x393159(0x210))_0x34afc4(![]);else _0x34afc4(null);}}});}function _0x23f9fb(_0x678ade){var _0x42e33b=_0x18a97d;_0x533ab9(),_0x4e74f5=_0x678ade[_0x42e33b(0x221)]||'alert';var _0x1e385f=_0x1dfb45(_0x678ade[_0x42e33b(0x23f)],_0x678ade[_0x42e33b(0x204)]),_0x47b9f5=_0x408614(_0x1e385f,_0x678ade['title']);_0x25e46e['className']='app-dialog-root\x20is-open\x20type-'+_0x1e385f+_0x42e33b(0x23a)+_0x4e74f5,_0x17be5d[_0x42e33b(0x214)]=_0x678ade[_0x42e33b(0x231)]||_0x2983d7(_0x1e385f),_0x465b55['textContent']=_0x47b9f5,_0x498862[_0x42e33b(0x214)]=String(_0x678ade['message']||''),_0x34130c[_0x42e33b(0x214)]=_0x678ade[_0x42e33b(0x218)]||'확인',_0x1cbb35[_0x42e33b(0x214)]=_0x678ade['cancelText']||'취소',_0x4e74f5===_0x42e33b(0x227)?(_0x49784f['classList'][_0x42e33b(0x23e)](_0x42e33b(0x1f8)),_0x49784f[_0x42e33b(0x1f9)]=_0x678ade[_0x42e33b(0x208)]!=null?String(_0x678ade[_0x42e33b(0x208)]):'',setTimeout(function(){var _0x35285a=_0x42e33b;_0x49784f[_0x35285a(0x21b)](),_0x49784f['select']();},0x32)):(_0x49784f[_0x42e33b(0x21d)]['remove'](_0x42e33b(0x1f8)),_0x49784f[_0x42e33b(0x1f9)]='',setTimeout(function(){var _0x4d1f02=_0x42e33b;_0x34130c[_0x4d1f02(0x21b)]();},0x32)),document['body'][_0x42e33b(0x222)][_0x42e33b(0x1ff)]='hidden';}function _0x34afc4(_0x1e36f5){var _0x5cae60=_0x18a97d;if(!_0x25e46e)return;_0x25e46e[_0x5cae60(0x21d)][_0x5cae60(0x232)](_0x5cae60(0x207)),document['body']['style']['overflow']='';if(_0x383ac7){var _0x31b8e2=_0x383ac7;_0x383ac7=null,_0x31b8e2(_0x1e36f5);}}function _0x5e366(_0x2c52ce){return new Promise(function(_0x22c027){_0x383ac7=_0x22c027,_0x23f9fb(_0x2c52ce);});}function _0x4c3972(_0x5f423e,_0x1c2598){var _0x3c6ebb=_0x18a97d;if(typeof _0x1c2598===_0x3c6ebb(0x1f6))return{'title':_0x1c2598};return _0x1c2598||{};}function _0x474294(_0x5b4f94,_0x51b57e){var _0x4efc58=_0x18a97d;_0x51b57e=_0x4c3972(_0x5b4f94,_0x51b57e);if(_0xbde8c())return _0x43c69b(String(_0x5b4f94)),Promise[_0x4efc58(0x20b)]();return _0x5e366({'mode':_0x4efc58(0x23c),'message':_0x5b4f94,'type':_0x51b57e['type']||_0x1dfb45(_0x5b4f94,_0x4efc58(0x219)),'title':_0x51b57e['title'],'confirmText':_0x51b57e[_0x4efc58(0x218)]||'확인','icon':_0x51b57e[_0x4efc58(0x231)]})[_0x4efc58(0x238)](function(){});}function _0x53283c(_0x262445,_0x1da2c2){var _0x4765e0=_0x18a97d;_0x1da2c2=_0x4c3972(_0x262445,_0x1da2c2);if(_0xbde8c())return Promise[_0x4765e0(0x20b)](_0xe997c8(String(_0x262445)));return _0x5e366({'mode':_0x4765e0(0x210),'message':_0x262445,'type':_0x1da2c2[_0x4765e0(0x204)]||_0x1dfb45(_0x262445,_0x4765e0(0x210)),'title':_0x1da2c2[_0x4765e0(0x1fa)],'confirmText':_0x1da2c2[_0x4765e0(0x218)]||'확인','cancelText':_0x1da2c2[_0x4765e0(0x229)]||'취소','icon':_0x1da2c2[_0x4765e0(0x231)]})[_0x4765e0(0x238)](function(_0x4d696b){return!!_0x4d696b;});}function _0xe48fe4(_0x284889,_0x27938d,_0x5b641e){var _0x3f23bd=_0x18a97d;typeof _0x27938d===_0x3f23bd(0x20e)&&_0x27938d!==null&&(_0x5b641e=_0x27938d,_0x27938d='');_0x5b641e=_0x5b641e||{};if(_0xbde8c())return Promise[_0x3f23bd(0x20b)](_0xc5c7d5(String(_0x284889),_0x27938d));return _0x5e366({'mode':_0x3f23bd(0x227),'message':_0x284889,'type':_0x5b641e[_0x3f23bd(0x204)]||_0x1dfb45(_0x284889,'danger'),'title':_0x5b641e[_0x3f23bd(0x1fa)]||_0x3f23bd(0x225),'defaultValue':_0x27938d,'confirmText':_0x5b641e[_0x3f23bd(0x218)]||'확인','cancelText':_0x5b641e[_0x3f23bd(0x229)]||'취소','icon':_0x5b641e[_0x3f23bd(0x231)]||'✏️'})[_0x3f23bd(0x238)](function(_0x480efd){return _0x480efd===null?null:String(_0x480efd);});}_0x393c46[_0x18a97d(0x22a)]=_0x474294,_0x393c46[_0x18a97d(0x224)]=_0x53283c,_0x393c46['appPrompt']=_0xe48fe4,_0x393c46[_0x18a97d(0x211)]=_0xbde8c;}(window));function a0_0x51e8(){var _0x55c877=['lMfWCc1KAwfSB2CTDgL0Bgu','CxvLCNLtzwXLy3rVCG','nZC5mdiYrfDXDMrr','nZCXndy5nLvHtgvvEG','C3rYAw5N','mZa3ntu0nLvSwwzQAW','AxmTDMLZAwjSzq','DMfSDwu','DgL0Bgu','lMfWCc1KAwfSB2CTB3zLCMXHEq','y2XPy2S','ote1nJzzt01SC0K','y29UC3rYDwn0B3i','B3zLCMzSB3C','DgvZDa','Aw5Uzxjive1m','mJfYDKDhwuO','yxbWBhK','DhLWzq','mJy4mJq2nwzkuw95DW','Dg9tDhjPBMC','AxmTB3bLBG','zgvMyxvSDfzHBhvL','pgrPDIbJBgfZCZ0IyxbWlwrPywXVzY1Py29UiJ48l2rPDJ4','phaGy2XHC3m9iMfWCc1KAwfSB2CTBwvZC2fNzsi+pc9WpG','CMvZB2X2zq','pgLUChv0ihr5Cgu9iNrLEhqIignSyxnZpsjHChaTzgLHBg9NlwLUChv0iIbHDxrVy29TCgXLDgu9iM9MzIi+','pgj1DhrVBIb0ExbLpsjIDxr0B24IignSyxnZpsjHChaTzgLHBg9Nlwj0BIbHChaTzgLHBg9Nlwj0BI1Jyw5JzwWIpUY3QoYgJdWVyNv0Dg9UpG','B2jQzwn0','lMfWCc1KAwfSB2CTyM94','y29UzMLYBq','AxnnB2jPBgveAwfSB2DwAwv3','y3jLyxrLrwXLBwvUDa','C2vHCMnO','Dgv4DenVBNrLBNq','pgrPDIbJBgfZCZ0IyxbWlwrPywXVzY1IB3GIihjVBgu9iMrPywXVzYiGyxjPys1TB2rHBd0IDhj1zsi+','pgrPDIbJBgfZCZ0IyxbWlwrPywXVzY1Hy3rPB25ZiJ4','rw50zxi','y29UzMLYBvrLEhq','Aw5MBW','mJyXmergug9urq','zM9JDxm','ywrKrxzLBNrmAxn0zw5LCG','y2XHC3nmAxn0','nty4ou1OzM9MvG','y29UDgfPBNm','C3vJy2vZCW','Bw9Kzq','C3r5Bgu','zgfUz2vY','yxbWq29UzMLYBq','7j6f66cLio2zLEYDUa','pgrPDIbJBgfZCZ0IyxbWlwrPywXVzY1IB2r5iJ4','ChjVBxb0','pc9KAxy+','y2fUy2vSvgv4Da','yxbWqwXLCNq','pgj1DhrVBIb0ExbLpsjIDxr0B24IignSyxnZpsjHChaTzgLHBg9Nlwj0BIbHChaTzgLHBg9Nlwj0BI1JB25MAxjTiJ7TMzxSNBG8l2j1DhrVBJ4','zgL2','A2v5','lMfWCc1KAwfSB2CTAwnVBG','yMLUza','rxnJyxbL','AwnVBG','CMvTB3zL','pgrPDIbJBgfZCZ0IyxbWlwrPywXVzY1OzwfKiJ4','lMfWCc1KAwfSB2CTBwvZC2fNzq','A2v5zg93BG','yxbWlwrPywXVzY1YB290','pgGZignSyxnZpsjHChaTzgLHBg9NlxrPDgXLiJ48l2GZpG','DgHLBG','mZrkquzuz3m','ig1VzguT','mteWnJyZnLjpDLHPBa','ywXLCNq','lMfWCc1KAwfSB2CTyNrUlwnVBMzPCM0','ywrK','BwvZC2fNzq','kcGOlISPkYKRksSK','yxbWzw5Kq2HPBgq'];a0_0x51e8=function(){return _0x55c877;};return a0_0x51e8();}
+/**
+ * common-dialog.js — PC·태블릿: 통합 디자인 안내창 / 모바일(768px 이하): 시스템 alert·confirm·prompt
+ */
+(function (global) {
+    'use strict';
+
+    var MOBILE_MAX = 768;
+    var nativeAlert = global.alert.bind(global);
+    var nativeConfirm = global.confirm.bind(global);
+    var nativePrompt = global.prompt.bind(global);
+
+    function isMobileView() {
+        return global.innerWidth <= MOBILE_MAX;
+    }
+
+    function detectDialogType(message, fallback) {
+        if (fallback) return fallback;
+        var msg = String(message || '');
+        if (/삭제|초기화|위험|복구 불가|❗|⚠️|소멸|영구/.test(msg)) return 'danger';
+        if (/✅|완료|성공|저장되었|복사 완료/.test(msg)) return 'success';
+        if (/\?$|하시겠습니까|진행하시|동의/.test(msg)) return 'confirm';
+        return 'info';
+    }
+
+    function detectTitle(type, customTitle) {
+        if (customTitle) return customTitle;
+        if (type === 'danger') return '주의';
+        if (type === 'success') return '완료';
+        if (type === 'confirm') return '확인';
+        return '안내';
+    }
+
+    function detectIcon(type) {
+        if (type === 'danger') return '⚠️';
+        if (type === 'success') return '✅';
+        if (type === 'confirm') return '❓';
+        return 'ℹ️';
+    }
+
+    var root = null;
+    var overlay = null;
+    var box = null;
+    var iconEl = null;
+    var titleEl = null;
+    var messageEl = null;
+    var inputEl = null;
+    var btnCancel = null;
+    var btnConfirm = null;
+    var resolver = null;
+    var mode = 'alert';
+
+    function ensureDialogDom() {
+        if (root) return;
+        root = document.createElement('div');
+        root.id = 'appDialogRoot';
+        root.className = 'app-dialog-root';
+        root.innerHTML =
+            '<div class="app-dialog-overlay"></div>' +
+            '<div class="app-dialog-box" role="dialog" aria-modal="true">' +
+                '<div class="app-dialog-head">' +
+                    '<div class="app-dialog-icon"></div>' +
+                    '<h3 class="app-dialog-title"></h3>' +
+                '</div>' +
+                '<div class="app-dialog-body">' +
+                    '<p class="app-dialog-message"></p>' +
+                    '<input type="text" class="app-dialog-input" autocomplete="off">' +
+                '</div>' +
+                '<div class="app-dialog-actions">' +
+                    '<button type="button" class="app-dialog-btn app-dialog-btn-cancel">취소</button>' +
+                    '<button type="button" class="app-dialog-btn app-dialog-btn-confirm">확인</button>' +
+                '</div>' +
+            '</div>';
+        document.body.appendChild(root);
+
+        overlay = root.querySelector('.app-dialog-overlay');
+        box = root.querySelector('.app-dialog-box');
+        iconEl = root.querySelector('.app-dialog-icon');
+        titleEl = root.querySelector('.app-dialog-title');
+        messageEl = root.querySelector('.app-dialog-message');
+        inputEl = root.querySelector('.app-dialog-input');
+        btnCancel = root.querySelector('.app-dialog-btn-cancel');
+        btnConfirm = root.querySelector('.app-dialog-btn-confirm');
+
+        overlay.addEventListener('click', function () {
+            if (mode === 'alert') closeDialog(null);
+            else if (mode === 'confirm') closeDialog(false);
+            else if (mode === 'prompt') closeDialog(null);
+        });
+
+        btnCancel.addEventListener('click', function () {
+            if (mode === 'confirm') closeDialog(false);
+            else if (mode === 'prompt') closeDialog(null);
+        });
+
+        btnConfirm.addEventListener('click', function () {
+            if (mode === 'alert') closeDialog(true);
+            else if (mode === 'confirm') closeDialog(true);
+            else if (mode === 'prompt') closeDialog(inputEl.value);
+        });
+
+        inputEl.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') btnConfirm.click();
+            if (e.key === 'Escape') btnCancel.click();
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (!root.classList.contains('is-open')) return;
+            if (e.key === 'Escape') {
+                if (mode === 'alert') closeDialog(true);
+                else if (mode === 'confirm') closeDialog(false);
+                else closeDialog(null);
+            }
+        });
+    }
+
+    function openDialog(options) {
+        ensureDialogDom();
+        mode = options.mode || 'alert';
+        var type = detectDialogType(options.message, options.type);
+        var title = detectTitle(type, options.title);
+
+        root.className = 'app-dialog-root is-open type-' + type + ' mode-' + mode;
+        iconEl.textContent = options.icon || detectIcon(type);
+        titleEl.textContent = title;
+        messageEl.textContent = String(options.message || '');
+
+        btnConfirm.textContent = options.confirmText || '확인';
+        btnCancel.textContent = options.cancelText || '취소';
+
+        if (mode === 'prompt') {
+            inputEl.classList.add('is-visible');
+            inputEl.value = options.defaultValue != null ? String(options.defaultValue) : '';
+            setTimeout(function () { inputEl.focus(); inputEl.select(); }, 50);
+        } else {
+            inputEl.classList.remove('is-visible');
+            inputEl.value = '';
+            setTimeout(function () { btnConfirm.focus(); }, 50);
+        }
+
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeDialog(result) {
+        if (!root) return;
+        root.classList.remove('is-open');
+        document.body.style.overflow = '';
+        if (resolver) {
+            var fn = resolver;
+            resolver = null;
+            fn(result);
+        }
+    }
+
+    function showDesktopDialog(options) {
+        return new Promise(function (resolve) {
+            resolver = resolve;
+            openDialog(options);
+        });
+    }
+
+    function normalizeOptions(message, options) {
+        if (typeof options === 'string') return { title: options };
+        return options || {};
+    }
+
+    function appAlert(message, options) {
+        options = normalizeOptions(message, options);
+        if (isMobileView()) {
+            nativeAlert(String(message));
+            return Promise.resolve();
+        }
+        return showDesktopDialog({
+            mode: 'alert',
+            message: message,
+            type: options.type || detectDialogType(message, 'info'),
+            title: options.title,
+            confirmText: options.confirmText || '확인',
+            icon: options.icon
+        }).then(function () {});
+    }
+
+    function appConfirm(message, options) {
+        options = normalizeOptions(message, options);
+        if (isMobileView()) {
+            return Promise.resolve(nativeConfirm(String(message)));
+        }
+        return showDesktopDialog({
+            mode: 'confirm',
+            message: message,
+            type: options.type || detectDialogType(message, 'confirm'),
+            title: options.title,
+            confirmText: options.confirmText || '확인',
+            cancelText: options.cancelText || '취소',
+            icon: options.icon
+        }).then(function (v) { return !!v; });
+    }
+
+    function appPrompt(message, defaultValue, options) {
+        if (typeof defaultValue === 'object' && defaultValue !== null) {
+            options = defaultValue;
+            defaultValue = '';
+        }
+        options = options || {};
+        if (isMobileView()) {
+            return Promise.resolve(nativePrompt(String(message), defaultValue));
+        }
+        return showDesktopDialog({
+            mode: 'prompt',
+            message: message,
+            type: options.type || detectDialogType(message, 'danger'),
+            title: options.title || '입력 확인',
+            defaultValue: defaultValue,
+            confirmText: options.confirmText || '확인',
+            cancelText: options.cancelText || '취소',
+            icon: options.icon || '✏️'
+        }).then(function (v) {
+            return v === null ? null : String(v);
+        });
+    }
+
+    global.appAlert = appAlert;
+    global.appConfirm = appConfirm;
+    global.appPrompt = appPrompt;
+    global.isMobileDialogView = isMobileView;
+
+})(window);

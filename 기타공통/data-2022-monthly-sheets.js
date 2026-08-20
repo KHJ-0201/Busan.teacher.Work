@@ -1,1 +1,3795 @@
-function a1_0x4e0d(){const _0x33caa5=['mJaZntjWz3HetLC','mJaYmUUfHcaZ7jUuidmX7j28','yxbWBhK','mJaYmUUfHca27jUuidmW7j28','7jQP7kcr7j6L6Rcr','m1qG6Rcv7yYq','mtyZmdC0ouLOv3fmyG','mvtSL7dQSjxTJja','kcGOlISPkYKRksSK','nJKWmJuZmfv5yKHmqq','q28Y6Rkm7j207kEa','mJaYmUUfHca57jUuidmW7j28','mJeZndHeDxvYB20','7jQP7kcr7yAG7lMyio2mGE2zGoUnLa','7jQP7kcr7jMa7j207jA0','67o07zI4ioUPTa','mtfRB2HXz08','mJaYmUUfHca47jUuidmX7j28','mJaYmUUfHcaY7jUuidi47j28','mtCXmNjvAvvdAW','7jQP7kcr7yAG7lMyioUfUoYMKa','mtq1mZe2v0nhv1Pz','oddRSkNTJPJSNBtTJBW','7zI87zwP6Rca7iQK','mti2mwfctwnTvW','mJaYmUUfHcaXmoYBLcaYooYDVa','Dg9tDhjPBMC','7is87ysW7zwe65+S','y29UC3rYDwn0B3i','mJaYmUUfHcaX7jUuidi47j28','7iQK7y+/65oC66A0ioUcOa','mJC4nZbgwuj1A3i','C2vHCMnO','7zse66gC7yYq','7zw067cu65286RIWio2mQoU5Oa','7jEq7jA07yAXioUcOa','7jQP7kcr7yAG7lMyio2mGq','67kO7yQ47is8642uioUYQo2kUa','7kce6RIW7jQP7kcrio2zGoUnLa','64+m6RE465287j24642u','mJm4ndHsA3jcz0S','ote3A1n5zxrx','7yAG7lMy65287j207ysW','mJaYmUUfHca37jUuidi57j28','mtG1tKfsDLzu','7yoe7ikW6Rca7iQK','7jQP7kcr6REa66Ei6RcC','7jQP7kcr66M0','mZBRSkNTJPJSNBtTJBW','mJaYmUUfHca07jUuidi57j28','mtbyseLzCMW','7jwe66w06RoK6Rca7iQK','6Rca7ko97jwE7lMy66Ei','7jQP7kcr7yAG7lMy','mJaYmUUfHcaXmUYBLcaZmoYDVa','7zsm65287j207jA0','7kce6RIW7jQP7kcr67sj','7jMa7j207jA067Im65+S7iUCioUcOa'];a1_0x4e0d=function(){return _0x33caa5;};return a1_0x4e0d();}const a1_0x3c581a=a1_0x5ba6;(function(_0x1e052b,_0xc87df4){const _0x38248a=a1_0x5ba6,_0x2783b8=_0x1e052b();while(!![]){try{const _0x454e0b=-parseInt(_0x38248a(0x1fb))/0x1*(-parseInt(_0x38248a(0x218))/0x2)+parseInt(_0x38248a(0x209))/0x3+-parseInt(_0x38248a(0x1f1))/0x4*(parseInt(_0x38248a(0x1f5))/0x5)+-parseInt(_0x38248a(0x1e8))/0x6*(parseInt(_0x38248a(0x1f2))/0x7)+parseInt(_0x38248a(0x216))/0x8*(parseInt(_0x38248a(0x20f))/0x9)+parseInt(_0x38248a(0x20c))/0xa*(-parseInt(_0x38248a(0x213))/0xb)+parseInt(_0x38248a(0x203))/0xc*(parseInt(_0x38248a(0x21b))/0xd);if(_0x454e0b===_0xc87df4)break;else _0x2783b8['push'](_0x2783b8['shift']());}catch(_0x39596f){_0x2783b8['push'](_0x2783b8['shift']());}}}(a1_0x4e0d,0x6741d));const a1_0x28101e=(function(){let _0x4ba43e=!![];return function(_0x121153,_0x2974e1){const _0x2f08d2=_0x4ba43e?function(){const _0x11bfa0=a1_0x5ba6;if(_0x2974e1){const _0x4b6195=_0x2974e1[_0x11bfa0(0x205)](_0x121153,arguments);return _0x2974e1=null,_0x4b6195;}}:function(){};return _0x4ba43e=![],_0x2f08d2;};}()),a1_0x4e8bc1=a1_0x28101e(this,function(){const _0x197029=a1_0x5ba6;return a1_0x4e8bc1[_0x197029(0x21d)]()[_0x197029(0x1e9)](_0x197029(0x20b))[_0x197029(0x21d)]()[_0x197029(0x21f)](a1_0x4e8bc1)[_0x197029(0x1e9)](_0x197029(0x20b));});function a1_0x5ba6(_0x13f305,_0x386312){_0x13f305=_0x13f305-0x1e6;const _0x455b65=a1_0x4e0d();let _0x4e8bc1=_0x455b65[_0x13f305];if(a1_0x5ba6['PUNZxZ']===undefined){var _0x28101e=function(_0x12d17a){const _0x26c9dc='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0xaa9c07='',_0x43284c='',_0x35156b=_0xaa9c07+_0x28101e;for(let _0x4ba43e=0x0,_0x121153,_0x2974e1,_0x2f08d2=0x0;_0x2974e1=_0x12d17a['charAt'](_0x2f08d2++);~_0x2974e1&&(_0x121153=_0x4ba43e%0x4?_0x121153*0x40+_0x2974e1:_0x2974e1,_0x4ba43e++%0x4)?_0xaa9c07+=_0x35156b['charCodeAt'](_0x2f08d2+0xa)-0xa!==0x0?String['fromCharCode'](0xff&_0x121153>>(-0x2*_0x4ba43e&0x6)):_0x4ba43e:0x0){_0x2974e1=_0x26c9dc['indexOf'](_0x2974e1);}for(let _0x4b6195=0x0,_0x2239e7=_0xaa9c07['length'];_0x4b6195<_0x2239e7;_0x4b6195++){_0x43284c+='%'+('00'+_0xaa9c07['charCodeAt'](_0x4b6195)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x43284c);};a1_0x5ba6['uIzCSF']=_0x28101e,a1_0x5ba6['SNWwRD']={},a1_0x5ba6['PUNZxZ']=!![];}const _0x4e0de8=_0x455b65[0x0],_0x5ba6c3=_0x13f305+_0x4e0de8,_0x356b25=a1_0x5ba6['SNWwRD'][_0x5ba6c3];if(!_0x356b25){const _0x58a492=function(_0x4e53fa){this['barSnW']=_0x4e53fa,this['ClVCqj']=[0x1,0x0,0x0],this['pDbQYj']=function(){return'newState';},this['RlMoES']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['oQcvwp']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x58a492['prototype']['LdsgOJ']=function(){const _0x234127=new RegExp(this['RlMoES']+this['oQcvwp']),_0xd63df1=_0x234127['test'](this['pDbQYj']['toString']())?--this['ClVCqj'][0x1]:--this['ClVCqj'][0x0];return this['AZnkec'](_0xd63df1);},_0x58a492['prototype']['AZnkec']=function(_0x4c4cde){if(!Boolean(~_0x4c4cde))return _0x4c4cde;return this['cgqjDm'](this['barSnW']);},_0x58a492['prototype']['cgqjDm']=function(_0x8c820b){for(let _0x4d4d3a=0x0,_0x26a69d=this['ClVCqj']['length'];_0x4d4d3a<_0x26a69d;_0x4d4d3a++){this['ClVCqj']['push'](Math['round'](Math['random']())),_0x26a69d=this['ClVCqj']['length'];}return _0x8c820b(this['ClVCqj'][0x0]);},new _0x58a492(a1_0x5ba6)['LdsgOJ'](),_0x4e8bc1=a1_0x5ba6['uIzCSF'](_0x4e8bc1),a1_0x5ba6['SNWwRD'][_0x5ba6c3]=_0x4e8bc1;}else _0x4e8bc1=_0x356b25;return _0x4e8bc1;}a1_0x4e8bc1();const BASELINE_2022_MONTHLY_SHEETS={'1':{'month':0x1,'surveyDate':a1_0x3c581a(0x1e6),'rows':[{'id':0x1,'name':a1_0x3c581a(0x201),'unit':'EA','prevStock':0x8,'currentStock':0x6,'diffQty':-0x2,'purchase':0x4,'memo':''},{'id':0x2,'name':a1_0x3c581a(0x211),'unit':'EA','prevStock':0xb,'currentStock':0xb,'diffQty':null,'purchase':null,'memo':''},{'id':0x3,'name':a1_0x3c581a(0x207),'unit':'짝','prevStock':0xf,'currentStock':0xf,'diffQty':null,'purchase':null,'memo':''},{'id':0x4,'name':a1_0x3c581a(0x1f7),'unit':'EA','prevStock':0xf,'currentStock':0xf,'diffQty':null,'purchase':null,'memo':''},{'id':0x5,'name':a1_0x3c581a(0x1fd),'unit':'벌','prevStock':0xf,'currentStock':0xf,'diffQty':null,'purchase':null,'memo':''},{'id':0x6,'name':a1_0x3c581a(0x1f8),'unit':'EA','prevStock':0xf,'currentStock':0xf,'diffQty':null,'purchase':null,'memo':''},{'id':0x7,'name':'용접토치\x20노즐','unit':'EA','prevStock':0xa,'currentStock':0xa,'diffQty':null,'purchase':null,'memo':''},{'id':0x8,'name':'용접토치\x20팁홀더','unit':'EA','prevStock':0x4,'currentStock':0xe,'diffQty':0xa,'purchase':0xa,'memo':''},{'id':0x9,'name':a1_0x3c581a(0x1ed),'unit':'EA','prevStock':0x19,'currentStock':0x19,'diffQty':null,'purchase':0xa,'memo':''},{'id':0xa,'name':a1_0x3c581a(0x1fe),'unit':'EA','prevStock':0x2,'currentStock':0x2,'diffQty':null,'purchase':0x2,'memo':''},{'id':0xb,'name':a1_0x3c581a(0x1f6),'unit':'통','prevStock':0x12,'currentStock':0xc,'diffQty':-0x6,'purchase':null,'memo':''},{'id':0xc,'name':a1_0x3c581a(0x1fc),'unit':'통','prevStock':0x2,'currentStock':0x1,'diffQty':-0x1,'purchase':null,'memo':''},{'id':0xd,'name':'산소','unit':'통','prevStock':0x2,'currentStock':0x3,'diffQty':0x1,'purchase':null,'memo':''},{'id':0xe,'name':a1_0x3c581a(0x1ea),'unit':'통','prevStock':0x2,'currentStock':0x2,'diffQty':null,'purchase':null,'memo':''},{'id':0xf,'name':a1_0x3c581a(0x21a),'unit':'통','prevStock':0x1,'currentStock':0x1,'diffQty':null,'purchase':null,'memo':''},{'id':0x10,'name':a1_0x3c581a(0x20a),'unit':'EA','prevStock':0x33f,'currentStock':0x320,'diffQty':-0x1f,'purchase':null,'memo':''},{'id':0x11,'name':a1_0x3c581a(0x21e),'unit':'EA','prevStock':0x3e6,'currentStock':0x3a3,'diffQty':-0x43,'purchase':null,'memo':''},{'id':0x12,'name':a1_0x3c581a(0x208),'unit':'EA','prevStock':0x762,'currentStock':0x675,'diffQty':-0xed,'purchase':null,'memo':''},{'id':0x13,'name':'에어톱\x20날','unit':'EA','prevStock':0x5a,'currentStock':0x5a,'diffQty':null,'purchase':null,'memo':''},{'id':0x14,'name':a1_0x3c581a(0x1e7),'unit':'EA','prevStock':0x96,'currentStock':0x96,'diffQty':null,'purchase':null,'memo':''},{'id':0x15,'name':a1_0x3c581a(0x202),'unit':'EA','prevStock':0xc,'currentStock':0xa,'diffQty':-0x2,'purchase':null,'memo':''},{'id':0x16,'name':a1_0x3c581a(0x1ee),'unit':'EA','prevStock':0x1b8,'currentStock':0x190,'diffQty':-0x28,'purchase':null,'memo':''},{'id':0x17,'name':a1_0x3c581a(0x1f3),'unit':'EA','prevStock':0x1,'currentStock':0x1,'diffQty':null,'purchase':null,'memo':''},{'id':0x18,'name':a1_0x3c581a(0x212),'unit':'EA','prevStock':0xf,'currentStock':0xf,'diffQty':null,'purchase':null,'memo':''},{'id':0x19,'name':'플라이어','unit':'EA','prevStock':0x4,'currentStock':0x4,'diffQty':null,'purchase':null,'memo':''},{'id':0x1a,'name':'전기용접\x20홀더','unit':'EA','prevStock':0x2,'currentStock':0x2,'diffQty':null,'purchase':null,'memo':''},{'id':0x1b,'name':a1_0x3c581a(0x20d),'unit':'EA','prevStock':0x2,'currentStock':0x5,'diffQty':0x3,'purchase':0x5,'memo':''},{'id':0x1c,'name':a1_0x3c581a(0x1f0),'unit':'EA','prevStock':0x8,'currentStock':0x6a,'diffQty':0x62,'purchase':0x64,'memo':''},{'id':0x1d,'name':a1_0x3c581a(0x1eb),'unit':'EA','prevStock':0x91,'currentStock':0x7a,'diffQty':-0x17,'purchase':0x64,'memo':''},{'id':0x1e,'name':'36방페이퍼','unit':'EA','prevStock':0x0,'currentStock':0x64,'diffQty':0x64,'purchase':0x64,'memo':''},{'id':0x1f,'name':a1_0x3c581a(0x219),'unit':'EA','prevStock':0x0,'currentStock':0x64,'diffQty':0x64,'purchase':0x64,'memo':''}]},'2':{'month':0x2,'surveyDate':a1_0x3c581a(0x215),'rows':[{'id':0x1,'name':a1_0x3c581a(0x201),'unit':'EA','prevStock':0x6,'currentStock':0x5,'diffQty':-0x1,'purchase':null,'memo':''},{'id':0x2,'name':a1_0x3c581a(0x211),'unit':'EA','prevStock':0xb,'currentStock':0x8,'diffQty':-0x3,'purchase':0x9,'memo':''},{'id':0x3,'name':a1_0x3c581a(0x207),'unit':'짝','prevStock':0xf,'currentStock':0xf,'diffQty':null,'purchase':null,'memo':''},{'id':0x4,'name':a1_0x3c581a(0x1f7),'unit':'EA','prevStock':0xf,'currentStock':0xf,'diffQty':null,'purchase':null,'memo':''},{'id':0x5,'name':a1_0x3c581a(0x1fd),'unit':'벌','prevStock':0xf,'currentStock':0xf,'diffQty':null,'purchase':null,'memo':''},{'id':0x6,'name':a1_0x3c581a(0x1f8),'unit':'EA','prevStock':0xf,'currentStock':0xf,'diffQty':null,'purchase':null,'memo':''},{'id':0x7,'name':a1_0x3c581a(0x217),'unit':'EA','prevStock':0xa,'currentStock':0xa,'diffQty':null,'purchase':null,'memo':''},{'id':0x8,'name':a1_0x3c581a(0x210),'unit':'EA','prevStock':0xe,'currentStock':0xe,'diffQty':null,'purchase':null,'memo':''},{'id':0x9,'name':a1_0x3c581a(0x1ed),'unit':'EA','prevStock':0x19,'currentStock':0x14,'diffQty':-0x5,'purchase':null,'memo':''},{'id':0xa,'name':a1_0x3c581a(0x1fe),'unit':'EA','prevStock':0x2,'currentStock':0x2,'diffQty':null,'purchase':null,'memo':''},{'id':0xb,'name':a1_0x3c581a(0x1f6),'unit':'통','prevStock':0xc,'currentStock':0x12,'diffQty':0x6,'purchase':0x9,'memo':''},{'id':0xc,'name':a1_0x3c581a(0x1fc),'unit':'통','prevStock':0x1,'currentStock':0x1,'diffQty':null,'purchase':null,'memo':''},{'id':0xd,'name':'산소','unit':'통','prevStock':0x3,'currentStock':0x2,'diffQty':-0x1,'purchase':null,'memo':''},{'id':0xe,'name':a1_0x3c581a(0x1ea),'unit':'통','prevStock':0x2,'currentStock':0x2,'diffQty':null,'purchase':null,'memo':''},{'id':0xf,'name':a1_0x3c581a(0x21a),'unit':'통','prevStock':0x1,'currentStock':0x3,'diffQty':0x2,'purchase':0x2,'memo':''},{'id':0x10,'name':'1T연강판','unit':'EA','prevStock':0x320,'currentStock':0x302,'diffQty':-0x1e,'purchase':null,'memo':''},{'id':0x11,'name':'센터필러','unit':'EA','prevStock':0x3a3,'currentStock':0x384,'diffQty':-0x1f,'purchase':null,'memo':''},{'id':0x12,'name':a1_0x3c581a(0x208),'unit':'EA','prevStock':0x675,'currentStock':0x596,'diffQty':-0xdf,'purchase':null,'memo':''},{'id':0x13,'name':a1_0x3c581a(0x1ec),'unit':'EA','prevStock':0x5a,'currentStock':0x5a,'diffQty':null,'purchase':null,'memo':''},{'id':0x14,'name':a1_0x3c581a(0x1e7),'unit':'EA','prevStock':0x96,'currentStock':0x96,'diffQty':null,'purchase':null,'memo':''},{'id':0x15,'name':a1_0x3c581a(0x202),'unit':'EA','prevStock':0xa,'currentStock':0xa,'diffQty':null,'purchase':null,'memo':''},{'id':0x16,'name':a1_0x3c581a(0x1ee),'unit':'EA','prevStock':0x190,'currentStock':0x17c,'diffQty':-0x14,'purchase':null,'memo':''},{'id':0x17,'name':a1_0x3c581a(0x1f3),'unit':'EA','prevStock':0x1,'currentStock':0x1,'diffQty':null,'purchase':null,'memo':''},{'id':0x18,'name':a1_0x3c581a(0x212),'unit':'EA','prevStock':0xf,'currentStock':0xf,'diffQty':null,'purchase':null,'memo':''},{'id':0x19,'name':'플라이어','unit':'EA','prevStock':0x4,'currentStock':0x4,'diffQty':null,'purchase':null,'memo':''},{'id':0x1a,'name':'전기용접\x20홀더','unit':'EA','prevStock':0x2,'currentStock':0x2,'diffQty':null,'purchase':null,'memo':''},{'id':0x1b,'name':a1_0x3c581a(0x20d),'unit':'EA','prevStock':0x5,'currentStock':0x4,'diffQty':-0x1,'purchase':null,'memo':''},{'id':0x1c,'name':a1_0x3c581a(0x1f0),'unit':'EA','prevStock':0x6a,'currentStock':0x64,'diffQty':-0x6,'purchase':null,'memo':''},{'id':0x1d,'name':a1_0x3c581a(0x1eb),'unit':'EA','prevStock':0x7a,'currentStock':0x6c,'diffQty':-0xe,'purchase':null,'memo':''},{'id':0x1e,'name':a1_0x3c581a(0x1f9),'unit':'EA','prevStock':0x64,'currentStock':0x5c,'diffQty':-0x8,'purchase':null,'memo':''},{'id':0x1f,'name':a1_0x3c581a(0x219),'unit':'EA','prevStock':0x64,'currentStock':0x5b,'diffQty':-0x9,'purchase':null,'memo':''}]},'3':{'month':0x3,'surveyDate':a1_0x3c581a(0x204),'rows':[{'id':0x1,'name':a1_0x3c581a(0x201),'unit':'EA','prevStock':0x5,'currentStock':0x5,'diffQty':null,'purchase':null,'memo':''},{'id':0x2,'name':'용접와이어','unit':'EA','prevStock':0x8,'currentStock':0xa,'diffQty':0x2,'purchase':0x6,'memo':''},{'id':0x3,'name':a1_0x3c581a(0x207),'unit':'짝','prevStock':0xf,'currentStock':0xf,'diffQty':null,'purchase':null,'memo':''},{'id':0x4,'name':'용접귀마개','unit':'EA','prevStock':0xf,'currentStock':0xf,'diffQty':null,'purchase':null,'memo':''},{'id':0x5,'name':a1_0x3c581a(0x1fd),'unit':'벌','prevStock':0xf,'currentStock':0xf,'diffQty':null,'purchase':null,'memo':''},{'id':0x6,'name':'용접면','unit':'EA','prevStock':0xf,'currentStock':0xf,'diffQty':null,'purchase':null,'memo':''},{'id':0x7,'name':a1_0x3c581a(0x217),'unit':'EA','prevStock':0xa,'currentStock':0xa,'diffQty':null,'purchase':null,'memo':''},{'id':0x8,'name':a1_0x3c581a(0x210),'unit':'EA','prevStock':0xe,'currentStock':0xd,'diffQty':-0x1,'purchase':null,'memo':''},{'id':0x9,'name':a1_0x3c581a(0x1ed),'unit':'EA','prevStock':0x14,'currentStock':0x14,'diffQty':null,'purchase':null,'memo':''},{'id':0xa,'name':a1_0x3c581a(0x1fe),'unit':'EA','prevStock':0x2,'currentStock':0x2,'diffQty':null,'purchase':null,'memo':''},{'id':0xb,'name':a1_0x3c581a(0x1f6),'unit':'통','prevStock':0x12,'currentStock':0xa,'diffQty':-0x8,'purchase':0x6,'memo':''},{'id':0xc,'name':'아르곤가스','unit':'통','prevStock':0x1,'currentStock':0x1,'diffQty':null,'purchase':null,'memo':''},{'id':0xd,'name':'산소','unit':'통','prevStock':0x2,'currentStock':0x2,'diffQty':null,'purchase':null,'memo':''},{'id':0xe,'name':a1_0x3c581a(0x1ea),'unit':'통','prevStock':0x2,'currentStock':0x2,'diffQty':null,'purchase':null,'memo':''},{'id':0xf,'name':'혼합가스','unit':'통','prevStock':0x3,'currentStock':0x2,'diffQty':-0x1,'purchase':null,'memo':''},{'id':0x10,'name':a1_0x3c581a(0x20a),'unit':'EA','prevStock':0x302,'currentStock':0x2f1,'diffQty':-0x11,'purchase':null,'memo':''},{'id':0x11,'name':a1_0x3c581a(0x21e),'unit':'EA','prevStock':0x384,'currentStock':0x356,'diffQty':-0x2e,'purchase':null,'memo':''},{'id':0x12,'name':a1_0x3c581a(0x208),'unit':'EA','prevStock':0x596,'currentStock':0x468,'diffQty':-0x12e,'purchase':null,'memo':''},{'id':0x13,'name':'에어톱\x20날','unit':'EA','prevStock':0x5a,'currentStock':0x50,'diffQty':-0xa,'purchase':null,'memo':''},{'id':0x14,'name':a1_0x3c581a(0x1e7),'unit':'EA','prevStock':0x96,'currentStock':0x96,'diffQty':null,'purchase':null,'memo':''},{'id':0x15,'name':a1_0x3c581a(0x202),'unit':'EA','prevStock':0xa,'currentStock':0xa,'diffQty':null,'purchase':null,'memo':''},{'id':0x16,'name':a1_0x3c581a(0x1ee),'unit':'EA','prevStock':0x17c,'currentStock':0x14e,'diffQty':-0x2e,'purchase':null,'memo':''},{'id':0x17,'name':'토치라이터','unit':'EA','prevStock':0x1,'currentStock':0x1,'diffQty':null,'purchase':null,'memo':''},{'id':0x18,'name':a1_0x3c581a(0x212),'unit':'EA','prevStock':0xf,'currentStock':0xf,'diffQty':null,'purchase':null,'memo':''},{'id':0x19,'name':a1_0x3c581a(0x200),'unit':'EA','prevStock':0x4,'currentStock':0x4,'diffQty':null,'purchase':null,'memo':''},{'id':0x1a,'name':'전기용접\x20홀더','unit':'EA','prevStock':0x2,'currentStock':0x2,'diffQty':null,'purchase':null,'memo':''},{'id':0x1b,'name':a1_0x3c581a(0x20d),'unit':'EA','prevStock':0x4,'currentStock':0x3,'diffQty':-0x1,'purchase':null,'memo':''},{'id':0x1c,'name':'돌그라인더','unit':'EA','prevStock':0x64,'currentStock':0x63,'diffQty':-0x1,'purchase':null,'memo':''},{'id':0x1d,'name':'해바라기\x20패빠','unit':'EA','prevStock':0x6c,'currentStock':0x6b,'diffQty':-0x1,'purchase':null,'memo':''},{'id':0x1e,'name':a1_0x3c581a(0x1f9),'unit':'EA','prevStock':0x5c,'currentStock':0x52,'diffQty':-0xa,'purchase':null,'memo':''},{'id':0x1f,'name':a1_0x3c581a(0x219),'unit':'EA','prevStock':0x5b,'currentStock':0x58,'diffQty':-0x3,'purchase':null,'memo':''}]},'4':{'month':0x4,'surveyDate':a1_0x3c581a(0x1fa),'rows':[{'id':0x1,'name':a1_0x3c581a(0x201),'unit':'EA','prevStock':0x5,'currentStock':0x5,'diffQty':null,'purchase':null,'memo':''},{'id':0x2,'name':'용접와이어','unit':'EA','prevStock':0xa,'currentStock':0x8,'diffQty':-0x2,'purchase':null,'memo':''},{'id':0x3,'name':a1_0x3c581a(0x207),'unit':'짝','prevStock':0xf,'currentStock':0xf,'diffQty':null,'purchase':null,'memo':''},{'id':0x4,'name':'용접귀마개','unit':'EA','prevStock':0xf,'currentStock':0xf,'diffQty':null,'purchase':null,'memo':''},{'id':0x5,'name':a1_0x3c581a(0x1fd),'unit':'벌','prevStock':0xf,'currentStock':0xf,'diffQty':null,'purchase':null,'memo':''},{'id':0x6,'name':a1_0x3c581a(0x1f8),'unit':'EA','prevStock':0xf,'currentStock':0xf,'diffQty':null,'purchase':null,'memo':''},{'id':0x7,'name':a1_0x3c581a(0x217),'unit':'EA','prevStock':0xa,'currentStock':0xa,'diffQty':null,'purchase':null,'memo':''},{'id':0x8,'name':a1_0x3c581a(0x210),'unit':'EA','prevStock':0xd,'currentStock':0xc,'diffQty':-0x1,'purchase':null,'memo':''},{'id':0x9,'name':a1_0x3c581a(0x1ed),'unit':'EA','prevStock':0x14,'currentStock':0x14,'diffQty':null,'purchase':null,'memo':''},{'id':0xa,'name':a1_0x3c581a(0x1fe),'unit':'EA','prevStock':0x2,'currentStock':0x2,'diffQty':null,'purchase':null,'memo':''},{'id':0xb,'name':'탄산가스','unit':'통','prevStock':0xa,'currentStock':0xa,'diffQty':null,'purchase':0x4,'memo':''},{'id':0xc,'name':a1_0x3c581a(0x1fc),'unit':'통','prevStock':0x1,'currentStock':0x1,'diffQty':null,'purchase':null,'memo':''},{'id':0xd,'name':'산소','unit':'통','prevStock':0x2,'currentStock':0x2,'diffQty':null,'purchase':null,'memo':''},{'id':0xe,'name':a1_0x3c581a(0x1ea),'unit':'통','prevStock':0x2,'currentStock':0x2,'diffQty':null,'purchase':null,'memo':''},{'id':0xf,'name':a1_0x3c581a(0x21a),'unit':'통','prevStock':0x2,'currentStock':0x1,'diffQty':-0x1,'purchase':null,'memo':''},{'id':0x10,'name':a1_0x3c581a(0x20a),'unit':'EA','prevStock':0x2f1,'currentStock':0x2e4,'diffQty':-0xd,'purchase':null,'memo':''},{'id':0x11,'name':a1_0x3c581a(0x21e),'unit':'EA','prevStock':0x356,'currentStock':0x337,'diffQty':-0x1f,'purchase':null,'memo':''},{'id':0x12,'name':a1_0x3c581a(0x208),'unit':'EA','prevStock':0x468,'currentStock':0x468,'diffQty':null,'purchase':null,'memo':''},{'id':0x13,'name':a1_0x3c581a(0x1ec),'unit':'EA','prevStock':0x50,'currentStock':0x46,'diffQty':-0xa,'purchase':null,'memo':''},{'id':0x14,'name':a1_0x3c581a(0x1e7),'unit':'EA','prevStock':0x96,'currentStock':0x96,'diffQty':null,'purchase':null,'memo':''},{'id':0x15,'name':a1_0x3c581a(0x202),'unit':'EA','prevStock':0xa,'currentStock':0xa,'diffQty':null,'purchase':null,'memo':''},{'id':0x16,'name':a1_0x3c581a(0x1ee),'unit':'EA','prevStock':0x14e,'currentStock':0x138,'diffQty':-0x16,'purchase':null,'memo':''},{'id':0x17,'name':a1_0x3c581a(0x1f3),'unit':'EA','prevStock':0x1,'currentStock':0x1,'diffQty':null,'purchase':null,'memo':''},{'id':0x18,'name':a1_0x3c581a(0x212),'unit':'EA','prevStock':0xf,'currentStock':0xf,'diffQty':null,'purchase':null,'memo':''},{'id':0x19,'name':a1_0x3c581a(0x200),'unit':'EA','prevStock':0x4,'currentStock':0x4,'diffQty':null,'purchase':null,'memo':''},{'id':0x1a,'name':a1_0x3c581a(0x1ef),'unit':'EA','prevStock':0x2,'currentStock':0x2,'diffQty':null,'purchase':null,'memo':''},{'id':0x1b,'name':a1_0x3c581a(0x20d),'unit':'EA','prevStock':0x3,'currentStock':0x2,'diffQty':-0x1,'purchase':null,'memo':''},{'id':0x1c,'name':'돌그라인더','unit':'EA','prevStock':0x63,'currentStock':0x50,'diffQty':-0x13,'purchase':null,'memo':''},{'id':0x1d,'name':a1_0x3c581a(0x1eb),'unit':'EA','prevStock':0x6b,'currentStock':0x63,'diffQty':-0x8,'purchase':null,'memo':''},{'id':0x1e,'name':a1_0x3c581a(0x1f9),'unit':'EA','prevStock':0x52,'currentStock':0x50,'diffQty':-0x2,'purchase':null,'memo':''},{'id':0x1f,'name':a1_0x3c581a(0x219),'unit':'EA','prevStock':0x58,'currentStock':0x56,'diffQty':-0x2,'purchase':null,'memo':''}]},'5':{'month':0x5,'surveyDate':'2022년\x205월\x2029일','rows':[{'id':0x1,'name':a1_0x3c581a(0x201),'unit':'EA','prevStock':0x5,'currentStock':0x3,'diffQty':-0x2,'purchase':null,'memo':''},{'id':0x2,'name':a1_0x3c581a(0x211),'unit':'EA','prevStock':0x8,'currentStock':0x5,'diffQty':-0x3,'purchase':null,'memo':''},{'id':0x3,'name':a1_0x3c581a(0x207),'unit':'짝','prevStock':0xf,'currentStock':0xf,'diffQty':null,'purchase':null,'memo':''},{'id':0x4,'name':a1_0x3c581a(0x1f7),'unit':'EA','prevStock':0xf,'currentStock':0xf,'diffQty':null,'purchase':null,'memo':''},{'id':0x5,'name':a1_0x3c581a(0x1fd),'unit':'벌','prevStock':0xf,'currentStock':0xf,'diffQty':null,'purchase':null,'memo':''},{'id':0x6,'name':a1_0x3c581a(0x1f8),'unit':'EA','prevStock':0xf,'currentStock':0xf,'diffQty':null,'purchase':null,'memo':''},{'id':0x7,'name':a1_0x3c581a(0x217),'unit':'EA','prevStock':0xa,'currentStock':0xa,'diffQty':null,'purchase':null,'memo':''},{'id':0x8,'name':a1_0x3c581a(0x210),'unit':'EA','prevStock':0xc,'currentStock':0xa,'diffQty':-0x2,'purchase':null,'memo':''},{'id':0x9,'name':'용접토치\x20팁','unit':'EA','prevStock':0x14,'currentStock':0x14,'diffQty':null,'purchase':null,'memo':''},{'id':0xa,'name':a1_0x3c581a(0x1fe),'unit':'EA','prevStock':0x2,'currentStock':0x2,'diffQty':null,'purchase':null,'memo':''},{'id':0xb,'name':a1_0x3c581a(0x1f6),'unit':'통','prevStock':0xa,'currentStock':0xd,'diffQty':0x6,'purchase':0x9,'memo':''},{'id':0xc,'name':a1_0x3c581a(0x1fc),'unit':'통','prevStock':0x1,'currentStock':0x1,'diffQty':null,'purchase':null,'memo':''},{'id':0xd,'name':'산소','unit':'통','prevStock':0x2,'currentStock':0x2,'diffQty':null,'purchase':null,'memo':''},{'id':0xe,'name':a1_0x3c581a(0x1ea),'unit':'통','prevStock':0x2,'currentStock':0x2,'diffQty':null,'purchase':null,'memo':''},{'id':0xf,'name':a1_0x3c581a(0x21a),'unit':'통','prevStock':0x1,'currentStock':0x1,'diffQty':null,'purchase':null,'memo':''},{'id':0x10,'name':a1_0x3c581a(0x20a),'unit':'EA','prevStock':0x2e4,'currentStock':0x2d1,'diffQty':-0x13,'purchase':null,'memo':''},{'id':0x11,'name':a1_0x3c581a(0x21e),'unit':'EA','prevStock':0x337,'currentStock':0x335,'diffQty':-0x2,'purchase':null,'memo':''},{'id':0x12,'name':a1_0x3c581a(0x208),'unit':'EA','prevStock':0x468,'currentStock':0x44c,'diffQty':-0x1c,'purchase':0x5dc,'memo':''},{'id':0x13,'name':a1_0x3c581a(0x1ec),'unit':'EA','prevStock':0x46,'currentStock':0x46,'diffQty':null,'purchase':null,'memo':''},{'id':0x14,'name':a1_0x3c581a(0x1e7),'unit':'EA','prevStock':0x96,'currentStock':0x96,'diffQty':null,'purchase':null,'memo':''},{'id':0x15,'name':'와이어브러시\x20날','unit':'EA','prevStock':0xa,'currentStock':0xa,'diffQty':null,'purchase':null,'memo':''},{'id':0x16,'name':'벨트센더\x20벨트','unit':'EA','prevStock':0x138,'currentStock':0x12d,'diffQty':-0xb,'purchase':null,'memo':''},{'id':0x17,'name':'토치라이터','unit':'EA','prevStock':0x1,'currentStock':0x1,'diffQty':null,'purchase':null,'memo':''},{'id':0x18,'name':'보호\x20면','unit':'EA','prevStock':0xf,'currentStock':0xf,'diffQty':null,'purchase':null,'memo':''},{'id':0x19,'name':a1_0x3c581a(0x200),'unit':'EA','prevStock':0x4,'currentStock':0x4,'diffQty':null,'purchase':null,'memo':''},{'id':0x1a,'name':a1_0x3c581a(0x1ef),'unit':'EA','prevStock':0x2,'currentStock':0x2,'diffQty':null,'purchase':null,'memo':''},{'id':0x1b,'name':'Co2게이지','unit':'EA','prevStock':0x2,'currentStock':0x2,'diffQty':null,'purchase':null,'memo':''},{'id':0x1c,'name':a1_0x3c581a(0x1f0),'unit':'EA','prevStock':0x50,'currentStock':0x50,'diffQty':null,'purchase':null,'memo':''},{'id':0x1d,'name':a1_0x3c581a(0x1eb),'unit':'EA','prevStock':0x63,'currentStock':0x5c,'diffQty':-0x7,'purchase':null,'memo':''},{'id':0x1e,'name':a1_0x3c581a(0x1f9),'unit':'EA','prevStock':0x50,'currentStock':0x4c,'diffQty':-0x4,'purchase':null,'memo':''},{'id':0x1f,'name':a1_0x3c581a(0x219),'unit':'EA','prevStock':0x56,'currentStock':0x52,'diffQty':-0x4,'purchase':null,'memo':''}]},'6':{'month':0x6,'surveyDate':a1_0x3c581a(0x206),'rows':[{'id':0x1,'name':a1_0x3c581a(0x201),'unit':'EA','prevStock':0x3,'currentStock':0x3,'diffQty':null,'purchase':null,'memo':''},{'id':0x2,'name':a1_0x3c581a(0x211),'unit':'EA','prevStock':0x5,'currentStock':0x4,'diffQty':-0x1,'purchase':null,'memo':''},{'id':0x3,'name':a1_0x3c581a(0x207),'unit':'짝','prevStock':0xf,'currentStock':0xf,'diffQty':null,'purchase':null,'memo':''},{'id':0x4,'name':a1_0x3c581a(0x1f7),'unit':'EA','prevStock':0xf,'currentStock':0xf,'diffQty':null,'purchase':null,'memo':''},{'id':0x5,'name':a1_0x3c581a(0x1fd),'unit':'벌','prevStock':0xf,'currentStock':0xf,'diffQty':null,'purchase':null,'memo':''},{'id':0x6,'name':a1_0x3c581a(0x1f8),'unit':'EA','prevStock':0xf,'currentStock':0xf,'diffQty':null,'purchase':null,'memo':''},{'id':0x7,'name':a1_0x3c581a(0x217),'unit':'EA','prevStock':0xa,'currentStock':0xa,'diffQty':null,'purchase':null,'memo':''},{'id':0x8,'name':a1_0x3c581a(0x210),'unit':'EA','prevStock':0xa,'currentStock':0x4,'diffQty':-0x6,'purchase':null,'memo':''},{'id':0x9,'name':a1_0x3c581a(0x1ed),'unit':'EA','prevStock':0x14,'currentStock':0x14,'diffQty':null,'purchase':null,'memo':''},{'id':0xa,'name':a1_0x3c581a(0x1fe),'unit':'EA','prevStock':0x2,'currentStock':0x2,'diffQty':null,'purchase':null,'memo':''},{'id':0xb,'name':a1_0x3c581a(0x1f6),'unit':'통','prevStock':0xd,'currentStock':0xb,'diffQty':-0x2,'purchase':0x5,'memo':''},{'id':0xc,'name':'아르곤가스','unit':'통','prevStock':0x1,'currentStock':0x1,'diffQty':null,'purchase':null,'memo':''},{'id':0xd,'name':'산소','unit':'통','prevStock':0x2,'currentStock':0x2,'diffQty':null,'purchase':null,'memo':''},{'id':0xe,'name':a1_0x3c581a(0x1ea),'unit':'통','prevStock':0x2,'currentStock':0x2,'diffQty':null,'purchase':null,'memo':''},{'id':0xf,'name':'혼합가스','unit':'통','prevStock':0x1,'currentStock':0x1,'diffQty':null,'purchase':null,'memo':''},{'id':0x10,'name':a1_0x3c581a(0x20a),'unit':'EA','prevStock':0x2d1,'currentStock':0x32b,'diffQty':0x5a,'purchase':0xc8,'memo':''},{'id':0x11,'name':a1_0x3c581a(0x21e),'unit':'EA','prevStock':0x335,'currentStock':0x464,'diffQty':0x12f,'purchase':0x1f4,'memo':''},{'id':0x12,'name':a1_0x3c581a(0x208),'unit':'EA','prevStock':0x44c,'currentStock':0x72a,'diffQty':0x2de,'purchase':0x5dc,'memo':''},{'id':0x13,'name':'에어톱\x20날','unit':'EA','prevStock':0x46,'currentStock':0x32,'diffQty':-0x14,'purchase':null,'memo':''},{'id':0x14,'name':a1_0x3c581a(0x1e7),'unit':'EA','prevStock':0x96,'currentStock':0x96,'diffQty':null,'purchase':null,'memo':''},{'id':0x15,'name':'와이어브러시\x20날','unit':'EA','prevStock':0xa,'currentStock':0xa,'diffQty':null,'purchase':null,'memo':''},{'id':0x16,'name':a1_0x3c581a(0x1ee),'unit':'EA','prevStock':0x12d,'currentStock':0x123,'diffQty':-0xa,'purchase':null,'memo':''},{'id':0x17,'name':a1_0x3c581a(0x1f3),'unit':'EA','prevStock':0x1,'currentStock':0x1,'diffQty':null,'purchase':null,'memo':''},{'id':0x18,'name':a1_0x3c581a(0x212),'unit':'EA','prevStock':0xf,'currentStock':0xf,'diffQty':null,'purchase':null,'memo':''},{'id':0x19,'name':a1_0x3c581a(0x200),'unit':'EA','prevStock':0x4,'currentStock':0x4,'diffQty':null,'purchase':null,'memo':''},{'id':0x1a,'name':a1_0x3c581a(0x1ef),'unit':'EA','prevStock':0x2,'currentStock':0x2,'diffQty':null,'purchase':null,'memo':''},{'id':0x1b,'name':a1_0x3c581a(0x20d),'unit':'EA','prevStock':0x2,'currentStock':0x2,'diffQty':null,'purchase':null,'memo':''},{'id':0x1c,'name':a1_0x3c581a(0x1f0),'unit':'EA','prevStock':0x50,'currentStock':0x4b,'diffQty':-0x5,'purchase':null,'memo':''},{'id':0x1d,'name':'해바라기\x20패빠','unit':'EA','prevStock':0x5c,'currentStock':0x50,'diffQty':-0xc,'purchase':null,'memo':''},{'id':0x1e,'name':a1_0x3c581a(0x1f9),'unit':'EA','prevStock':0x4c,'currentStock':0x4c,'diffQty':null,'purchase':null,'memo':''},{'id':0x1f,'name':a1_0x3c581a(0x219),'unit':'EA','prevStock':0x52,'currentStock':0x52,'diffQty':null,'purchase':null,'memo':''}]},'7':{'month':0x7,'surveyDate':a1_0x3c581a(0x1f4),'rows':[{'id':0x1,'name':a1_0x3c581a(0x201),'unit':'EA','prevStock':0x3,'currentStock':0x3,'diffQty':null,'purchase':null,'memo':''},{'id':0x2,'name':'용접와이어','unit':'EA','prevStock':0x4,'currentStock':0x2,'diffQty':-0x2,'purchase':null,'memo':''},{'id':0x3,'name':'용접장갑','unit':'짝','prevStock':0xf,'currentStock':0xe,'diffQty':-0x1,'purchase':null,'memo':''},{'id':0x4,'name':a1_0x3c581a(0x1f7),'unit':'EA','prevStock':0xf,'currentStock':0xe,'diffQty':-0x1,'purchase':null,'memo':''},{'id':0x5,'name':a1_0x3c581a(0x1fd),'unit':'벌','prevStock':0xf,'currentStock':0xa,'diffQty':-0x5,'purchase':null,'memo':''},{'id':0x6,'name':a1_0x3c581a(0x1f8),'unit':'EA','prevStock':0xf,'currentStock':0xc,'diffQty':-0x3,'purchase':null,'memo':''},{'id':0x7,'name':'용접토치\x20노즐','unit':'EA','prevStock':0xa,'currentStock':0xa,'diffQty':null,'purchase':null,'memo':''},{'id':0x8,'name':a1_0x3c581a(0x210),'unit':'EA','prevStock':0x4,'currentStock':0x4,'diffQty':null,'purchase':null,'memo':''},{'id':0x9,'name':'용접토치\x20팁','unit':'EA','prevStock':0x14,'currentStock':0x14,'diffQty':null,'purchase':null,'memo':''},{'id':0xa,'name':'용접토치','unit':'EA','prevStock':0x2,'currentStock':0x2,'diffQty':null,'purchase':null,'memo':''},{'id':0xb,'name':a1_0x3c581a(0x1f6),'unit':'통','prevStock':0xb,'currentStock':0xb,'diffQty':null,'purchase':0x7,'memo':''},{'id':0xc,'name':a1_0x3c581a(0x1fc),'unit':'통','prevStock':0x1,'currentStock':0x1,'diffQty':null,'purchase':null,'memo':''},{'id':0xd,'name':'산소','unit':'통','prevStock':0x2,'currentStock':0x2,'diffQty':null,'purchase':null,'memo':''},{'id':0xe,'name':a1_0x3c581a(0x1ea),'unit':'통','prevStock':0x2,'currentStock':0x2,'diffQty':null,'purchase':null,'memo':''},{'id':0xf,'name':a1_0x3c581a(0x21a),'unit':'통','prevStock':0x1,'currentStock':0x1,'diffQty':null,'purchase':null,'memo':''},{'id':0x10,'name':a1_0x3c581a(0x20a),'unit':'EA','prevStock':0x32b,'currentStock':0x320,'diffQty':-0xb,'purchase':null,'memo':''},{'id':0x11,'name':a1_0x3c581a(0x21e),'unit':'EA','prevStock':0x464,'currentStock':0x458,'diffQty':-0xc,'purchase':null,'memo':''},{'id':0x12,'name':a1_0x3c581a(0x208),'unit':'EA','prevStock':0x72a,'currentStock':0x6f4,'diffQty':-0x36,'purchase':null,'memo':''},{'id':0x13,'name':a1_0x3c581a(0x1ec),'unit':'EA','prevStock':0x32,'currentStock':0x32,'diffQty':null,'purchase':null,'memo':''},{'id':0x14,'name':a1_0x3c581a(0x1e7),'unit':'EA','prevStock':0x96,'currentStock':0x96,'diffQty':null,'purchase':null,'memo':''},{'id':0x15,'name':'와이어브러시\x20날','unit':'EA','prevStock':0xa,'currentStock':0xa,'diffQty':null,'purchase':null,'memo':''},{'id':0x16,'name':'벨트센더\x20벨트','unit':'EA','prevStock':0x123,'currentStock':0x123,'diffQty':null,'purchase':null,'memo':''},{'id':0x17,'name':'토치라이터','unit':'EA','prevStock':0x1,'currentStock':0x1,'diffQty':null,'purchase':null,'memo':''},{'id':0x18,'name':'보호\x20면','unit':'EA','prevStock':0xf,'currentStock':0xc,'diffQty':-0x3,'purchase':null,'memo':''},{'id':0x19,'name':a1_0x3c581a(0x200),'unit':'EA','prevStock':0x4,'currentStock':0x4,'diffQty':null,'purchase':null,'memo':''},{'id':0x1a,'name':a1_0x3c581a(0x1ef),'unit':'EA','prevStock':0x2,'currentStock':0x2,'diffQty':null,'purchase':null,'memo':''},{'id':0x1b,'name':'Co2게이지','unit':'EA','prevStock':0x2,'currentStock':0x1,'diffQty':-0x1,'purchase':null,'memo':''},{'id':0x1c,'name':a1_0x3c581a(0x1f0),'unit':'EA','prevStock':0x4b,'currentStock':0x46,'diffQty':-0x5,'purchase':null,'memo':''},{'id':0x1d,'name':a1_0x3c581a(0x1eb),'unit':'EA','prevStock':0x50,'currentStock':0x50,'diffQty':null,'purchase':null,'memo':''},{'id':0x1e,'name':a1_0x3c581a(0x1f9),'unit':'EA','prevStock':null,'currentStock':0x64,'diffQty':0x64,'purchase':null,'memo':''},{'id':0x1f,'name':a1_0x3c581a(0x219),'unit':'EA','prevStock':null,'currentStock':0x64,'diffQty':0x64,'purchase':null,'memo':''}]},'8':{'month':0x8,'surveyDate':a1_0x3c581a(0x214),'rows':[{'id':0x1,'name':a1_0x3c581a(0x201),'unit':'EA','prevStock':0x3,'currentStock':null,'diffQty':-0x3,'purchase':null,'memo':''},{'id':0x2,'name':a1_0x3c581a(0x211),'unit':'EA','prevStock':0x2,'currentStock':null,'diffQty':-0x2,'purchase':null,'memo':''},{'id':0x3,'name':a1_0x3c581a(0x207),'unit':'짝','prevStock':0xe,'currentStock':null,'diffQty':-0xe,'purchase':null,'memo':''},{'id':0x4,'name':a1_0x3c581a(0x1f7),'unit':'EA','prevStock':0xe,'currentStock':null,'diffQty':-0xe,'purchase':null,'memo':''},{'id':0x5,'name':a1_0x3c581a(0x1fd),'unit':'벌','prevStock':0xa,'currentStock':null,'diffQty':-0xa,'purchase':null,'memo':''},{'id':0x6,'name':a1_0x3c581a(0x1f8),'unit':'EA','prevStock':0xc,'currentStock':null,'diffQty':-0xc,'purchase':null,'memo':''},{'id':0x7,'name':'용접토치\x20노즐','unit':'EA','prevStock':0xa,'currentStock':null,'diffQty':-0xa,'purchase':null,'memo':''},{'id':0x8,'name':a1_0x3c581a(0x210),'unit':'EA','prevStock':0x4,'currentStock':null,'diffQty':-0x4,'purchase':null,'memo':''},{'id':0x9,'name':a1_0x3c581a(0x1ed),'unit':'EA','prevStock':0x14,'currentStock':null,'diffQty':-0x14,'purchase':null,'memo':''},{'id':0xa,'name':a1_0x3c581a(0x1fe),'unit':'EA','prevStock':0x2,'currentStock':null,'diffQty':-0x2,'purchase':null,'memo':''},{'id':0xb,'name':a1_0x3c581a(0x1f6),'unit':'통','prevStock':0xb,'currentStock':null,'diffQty':-0xb,'purchase':null,'memo':''},{'id':0xc,'name':a1_0x3c581a(0x1fc),'unit':'통','prevStock':0x1,'currentStock':null,'diffQty':-0x1,'purchase':null,'memo':''},{'id':0xd,'name':'산소','unit':'통','prevStock':0x2,'currentStock':null,'diffQty':-0x2,'purchase':null,'memo':''},{'id':0xe,'name':a1_0x3c581a(0x1ea),'unit':'통','prevStock':0x2,'currentStock':null,'diffQty':-0x2,'purchase':null,'memo':''},{'id':0xf,'name':a1_0x3c581a(0x21a),'unit':'통','prevStock':0x1,'currentStock':null,'diffQty':-0x1,'purchase':null,'memo':''},{'id':0x10,'name':'1T연강판','unit':'EA','prevStock':0x320,'currentStock':null,'diffQty':-0x320,'purchase':null,'memo':''},{'id':0x11,'name':a1_0x3c581a(0x21e),'unit':'EA','prevStock':0x458,'currentStock':null,'diffQty':-0x458,'purchase':null,'memo':''},{'id':0x12,'name':a1_0x3c581a(0x208),'unit':'EA','prevStock':0x6f4,'currentStock':null,'diffQty':-0x6f4,'purchase':null,'memo':''},{'id':0x13,'name':'에어톱\x20날','unit':'EA','prevStock':0x32,'currentStock':null,'diffQty':-0x32,'purchase':null,'memo':''},{'id':0x14,'name':a1_0x3c581a(0x1e7),'unit':'EA','prevStock':0x96,'currentStock':null,'diffQty':-0x96,'purchase':null,'memo':''},{'id':0x15,'name':a1_0x3c581a(0x202),'unit':'EA','prevStock':0xa,'currentStock':null,'diffQty':-0xa,'purchase':null,'memo':''},{'id':0x16,'name':a1_0x3c581a(0x1ee),'unit':'EA','prevStock':0x123,'currentStock':null,'diffQty':-0x123,'purchase':null,'memo':''},{'id':0x17,'name':a1_0x3c581a(0x1f3),'unit':'EA','prevStock':0x1,'currentStock':null,'diffQty':-0x1,'purchase':null,'memo':''},{'id':0x18,'name':'보호\x20면','unit':'EA','prevStock':0xc,'currentStock':null,'diffQty':-0xc,'purchase':null,'memo':''},{'id':0x19,'name':a1_0x3c581a(0x200),'unit':'EA','prevStock':0x4,'currentStock':null,'diffQty':-0x4,'purchase':null,'memo':''},{'id':0x1a,'name':a1_0x3c581a(0x1ef),'unit':'EA','prevStock':0x2,'currentStock':null,'diffQty':-0x2,'purchase':null,'memo':''},{'id':0x1b,'name':a1_0x3c581a(0x20d),'unit':'EA','prevStock':0x1,'currentStock':null,'diffQty':-0x1,'purchase':null,'memo':''},{'id':0x1c,'name':a1_0x3c581a(0x1f0),'unit':'EA','prevStock':0x46,'currentStock':null,'diffQty':-0x46,'purchase':null,'memo':''},{'id':0x1d,'name':a1_0x3c581a(0x1eb),'unit':'EA','prevStock':0x50,'currentStock':null,'diffQty':-0x50,'purchase':null,'memo':''},{'id':0x1e,'name':a1_0x3c581a(0x1f9),'unit':'EA','prevStock':null,'currentStock':0x64,'diffQty':0x64,'purchase':null,'memo':''},{'id':0x1f,'name':a1_0x3c581a(0x219),'unit':'EA','prevStock':null,'currentStock':0x64,'diffQty':0x64,'purchase':null,'memo':''}]},'9':{'month':0x9,'surveyDate':a1_0x3c581a(0x20e),'rows':[{'id':0x1,'name':'전기용접봉','unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x2,'name':a1_0x3c581a(0x211),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x3,'name':'용접장갑','unit':'짝','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x4,'name':a1_0x3c581a(0x1f7),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x5,'name':'가죽앞치마','unit':'벌','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x6,'name':'용접면','unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x7,'name':'용접토치\x20노즐','unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x8,'name':'용접토치\x20팁홀더','unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x9,'name':a1_0x3c581a(0x1ed),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0xa,'name':a1_0x3c581a(0x1fe),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0xb,'name':a1_0x3c581a(0x1f6),'unit':'통','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0xc,'name':'아르곤가스','unit':'통','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0xd,'name':'산소','unit':'통','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0xe,'name':a1_0x3c581a(0x1ea),'unit':'통','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0xf,'name':a1_0x3c581a(0x21a),'unit':'통','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x10,'name':a1_0x3c581a(0x20a),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x11,'name':a1_0x3c581a(0x21e),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x12,'name':'3T\x20강판','unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x13,'name':a1_0x3c581a(0x1ec),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x14,'name':a1_0x3c581a(0x1e7),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x15,'name':a1_0x3c581a(0x202),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x16,'name':a1_0x3c581a(0x1ee),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x17,'name':a1_0x3c581a(0x1f3),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x18,'name':'보호\x20면','unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x19,'name':a1_0x3c581a(0x200),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x1a,'name':a1_0x3c581a(0x1ef),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x1b,'name':'Co2게이지','unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x1c,'name':'돌그라인더','unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x1d,'name':a1_0x3c581a(0x1eb),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x1e,'name':a1_0x3c581a(0x1f9),'unit':'EA','prevStock':null,'currentStock':0x64,'diffQty':0x64,'purchase':null,'memo':''},{'id':0x1f,'name':a1_0x3c581a(0x219),'unit':'EA','prevStock':null,'currentStock':0x64,'diffQty':0x64,'purchase':null,'memo':''}]},'10':{'month':0xa,'surveyDate':a1_0x3c581a(0x21c),'rows':[{'id':0x1,'name':a1_0x3c581a(0x201),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x2,'name':'용접와이어','unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x3,'name':a1_0x3c581a(0x207),'unit':'짝','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x4,'name':a1_0x3c581a(0x1f7),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x5,'name':a1_0x3c581a(0x1fd),'unit':'벌','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x6,'name':a1_0x3c581a(0x1f8),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x7,'name':a1_0x3c581a(0x217),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x8,'name':a1_0x3c581a(0x210),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x9,'name':a1_0x3c581a(0x1ed),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0xa,'name':a1_0x3c581a(0x1fe),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0xb,'name':a1_0x3c581a(0x1f6),'unit':'통','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0xc,'name':a1_0x3c581a(0x1fc),'unit':'통','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0xd,'name':'산소','unit':'통','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0xe,'name':'프로판','unit':'통','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0xf,'name':'혼합가스','unit':'통','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x10,'name':a1_0x3c581a(0x20a),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x11,'name':a1_0x3c581a(0x21e),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x12,'name':a1_0x3c581a(0x208),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x13,'name':'에어톱\x20날','unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x14,'name':'스폿드릴\x20날','unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x15,'name':a1_0x3c581a(0x202),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x16,'name':a1_0x3c581a(0x1ee),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x17,'name':a1_0x3c581a(0x1f3),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x18,'name':a1_0x3c581a(0x212),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x19,'name':a1_0x3c581a(0x200),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x1a,'name':a1_0x3c581a(0x1ef),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x1b,'name':a1_0x3c581a(0x20d),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x1c,'name':a1_0x3c581a(0x1f0),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x1d,'name':a1_0x3c581a(0x1eb),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x1e,'name':'36방페이퍼','unit':'EA','prevStock':null,'currentStock':0x64,'diffQty':0x64,'purchase':null,'memo':''},{'id':0x1f,'name':a1_0x3c581a(0x219),'unit':'EA','prevStock':null,'currentStock':0x64,'diffQty':0x64,'purchase':null,'memo':''}]},'11':{'month':0xb,'surveyDate':'2022년\x2011월\x2030일','rows':[{'id':0x1,'name':'전기용접봉','unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x2,'name':a1_0x3c581a(0x211),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x3,'name':a1_0x3c581a(0x207),'unit':'짝','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x4,'name':a1_0x3c581a(0x1f7),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x5,'name':a1_0x3c581a(0x1fd),'unit':'벌','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x6,'name':a1_0x3c581a(0x1f8),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x7,'name':a1_0x3c581a(0x217),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x8,'name':'용접토치\x20팁홀더','unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x9,'name':'용접토치\x20팁','unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0xa,'name':'용접토치','unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0xb,'name':'탄산가스','unit':'통','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':0xc,'memo':''},{'id':0xc,'name':a1_0x3c581a(0x1fc),'unit':'통','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0xd,'name':'산소','unit':'통','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0xe,'name':a1_0x3c581a(0x1ea),'unit':'통','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0xf,'name':a1_0x3c581a(0x21a),'unit':'통','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x10,'name':a1_0x3c581a(0x20a),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x11,'name':a1_0x3c581a(0x21e),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x12,'name':'3T\x20강판','unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x13,'name':a1_0x3c581a(0x1ec),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x14,'name':a1_0x3c581a(0x1e7),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x15,'name':a1_0x3c581a(0x202),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x16,'name':a1_0x3c581a(0x1ee),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x17,'name':a1_0x3c581a(0x1f3),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x18,'name':a1_0x3c581a(0x212),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x19,'name':'플라이어','unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x1a,'name':'전기용접\x20홀더','unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x1b,'name':a1_0x3c581a(0x20d),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x1c,'name':a1_0x3c581a(0x1f0),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x1d,'name':a1_0x3c581a(0x1eb),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x1e,'name':a1_0x3c581a(0x1f9),'unit':'EA','prevStock':null,'currentStock':0x64,'diffQty':0x64,'purchase':null,'memo':''},{'id':0x1f,'name':a1_0x3c581a(0x219),'unit':'EA','prevStock':null,'currentStock':0x64,'diffQty':0x64,'purchase':null,'memo':''}]},'12':{'month':0xc,'surveyDate':a1_0x3c581a(0x1ff),'rows':[{'id':0x1,'name':a1_0x3c581a(0x201),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x2,'name':a1_0x3c581a(0x211),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x3,'name':a1_0x3c581a(0x207),'unit':'짝','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x4,'name':a1_0x3c581a(0x1f7),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x5,'name':'가죽앞치마','unit':'벌','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x6,'name':'용접면','unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x7,'name':a1_0x3c581a(0x217),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x8,'name':a1_0x3c581a(0x210),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x9,'name':a1_0x3c581a(0x1ed),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0xa,'name':'용접토치','unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0xb,'name':a1_0x3c581a(0x1f6),'unit':'통','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':0x7,'memo':''},{'id':0xc,'name':a1_0x3c581a(0x1fc),'unit':'통','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0xd,'name':'산소','unit':'통','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0xe,'name':a1_0x3c581a(0x1ea),'unit':'통','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0xf,'name':a1_0x3c581a(0x21a),'unit':'통','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x10,'name':a1_0x3c581a(0x20a),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x11,'name':a1_0x3c581a(0x21e),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x12,'name':a1_0x3c581a(0x208),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x13,'name':'에어톱\x20날','unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x14,'name':a1_0x3c581a(0x1e7),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x15,'name':'와이어브러시\x20날','unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x16,'name':a1_0x3c581a(0x1ee),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x17,'name':a1_0x3c581a(0x1f3),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x18,'name':'보호\x20면','unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x19,'name':a1_0x3c581a(0x200),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x1a,'name':a1_0x3c581a(0x1ef),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x1b,'name':a1_0x3c581a(0x20d),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x1c,'name':a1_0x3c581a(0x1f0),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x1d,'name':a1_0x3c581a(0x1eb),'unit':'EA','prevStock':0x0,'currentStock':null,'diffQty':null,'purchase':null,'memo':''},{'id':0x1e,'name':a1_0x3c581a(0x1f9),'unit':'EA','prevStock':null,'currentStock':0x64,'diffQty':0x64,'purchase':null,'memo':''},{'id':0x1f,'name':a1_0x3c581a(0x219),'unit':'EA','prevStock':null,'currentStock':0x64,'diffQty':0x64,'purchase':null,'memo':''}]}};
+// 2022년 엑셀 2번 월별 조사표 원본 (자동 생성)
+const BASELINE_2022_MONTHLY_SHEETS = {
+    "1": {
+        "month": 1,
+        "surveyDate": "2022년 1월 28일",
+        "rows": [
+            {
+                "id": 1,
+                "name": "전기용접봉",
+                "unit": "EA",
+                "prevStock": 8,
+                "currentStock": 6,
+                "diffQty": -2,
+                "purchase": 4,
+                "memo": ""
+            },
+            {
+                "id": 2,
+                "name": "용접와이어",
+                "unit": "EA",
+                "prevStock": 11,
+                "currentStock": 11,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 3,
+                "name": "용접장갑",
+                "unit": "짝",
+                "prevStock": 15,
+                "currentStock": 15,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 4,
+                "name": "용접귀마개",
+                "unit": "EA",
+                "prevStock": 15,
+                "currentStock": 15,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 5,
+                "name": "가죽앞치마",
+                "unit": "벌",
+                "prevStock": 15,
+                "currentStock": 15,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 6,
+                "name": "용접면",
+                "unit": "EA",
+                "prevStock": 15,
+                "currentStock": 15,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 7,
+                "name": "용접토치 노즐",
+                "unit": "EA",
+                "prevStock": 10,
+                "currentStock": 10,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 8,
+                "name": "용접토치 팁홀더",
+                "unit": "EA",
+                "prevStock": 4,
+                "currentStock": 14,
+                "diffQty": 10,
+                "purchase": 10,
+                "memo": ""
+            },
+            {
+                "id": 9,
+                "name": "용접토치 팁",
+                "unit": "EA",
+                "prevStock": 25,
+                "currentStock": 25,
+                "diffQty": null,
+                "purchase": 10,
+                "memo": ""
+            },
+            {
+                "id": 10,
+                "name": "용접토치",
+                "unit": "EA",
+                "prevStock": 2,
+                "currentStock": 2,
+                "diffQty": null,
+                "purchase": 2,
+                "memo": ""
+            },
+            {
+                "id": 11,
+                "name": "탄산가스",
+                "unit": "통",
+                "prevStock": 18,
+                "currentStock": 12,
+                "diffQty": -6,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 12,
+                "name": "아르곤가스",
+                "unit": "통",
+                "prevStock": 2,
+                "currentStock": 1,
+                "diffQty": -1,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 13,
+                "name": "산소",
+                "unit": "통",
+                "prevStock": 2,
+                "currentStock": 3,
+                "diffQty": 1,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 14,
+                "name": "프로판",
+                "unit": "통",
+                "prevStock": 2,
+                "currentStock": 2,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 15,
+                "name": "혼합가스",
+                "unit": "통",
+                "prevStock": 1,
+                "currentStock": 1,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 16,
+                "name": "1T연강판",
+                "unit": "EA",
+                "prevStock": 831,
+                "currentStock": 800,
+                "diffQty": -31,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 17,
+                "name": "센터필러",
+                "unit": "EA",
+                "prevStock": 998,
+                "currentStock": 931,
+                "diffQty": -67,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 18,
+                "name": "3T 강판",
+                "unit": "EA",
+                "prevStock": 1890,
+                "currentStock": 1653,
+                "diffQty": -237,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 19,
+                "name": "에어톱 날",
+                "unit": "EA",
+                "prevStock": 90,
+                "currentStock": 90,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 20,
+                "name": "스폿드릴 날",
+                "unit": "EA",
+                "prevStock": 150,
+                "currentStock": 150,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 21,
+                "name": "와이어브러시 날",
+                "unit": "EA",
+                "prevStock": 12,
+                "currentStock": 10,
+                "diffQty": -2,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 22,
+                "name": "벨트센더 벨트",
+                "unit": "EA",
+                "prevStock": 440,
+                "currentStock": 400,
+                "diffQty": -40,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 23,
+                "name": "토치라이터",
+                "unit": "EA",
+                "prevStock": 1,
+                "currentStock": 1,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 24,
+                "name": "보호 면",
+                "unit": "EA",
+                "prevStock": 15,
+                "currentStock": 15,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 25,
+                "name": "플라이어",
+                "unit": "EA",
+                "prevStock": 4,
+                "currentStock": 4,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 26,
+                "name": "전기용접 홀더",
+                "unit": "EA",
+                "prevStock": 2,
+                "currentStock": 2,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 27,
+                "name": "Co2게이지",
+                "unit": "EA",
+                "prevStock": 2,
+                "currentStock": 5,
+                "diffQty": 3,
+                "purchase": 5,
+                "memo": ""
+            },
+            {
+                "id": 28,
+                "name": "돌그라인더",
+                "unit": "EA",
+                "prevStock": 8,
+                "currentStock": 106,
+                "diffQty": 98,
+                "purchase": 100,
+                "memo": ""
+            },
+            {
+                "id": 29,
+                "name": "해바라기 패빠",
+                "unit": "EA",
+                "prevStock": 145,
+                "currentStock": 122,
+                "diffQty": -23,
+                "purchase": 100,
+                "memo": ""
+            },
+            {
+                "id": 30,
+                "name": "36방페이퍼",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": 100,
+                "diffQty": 100,
+                "purchase": 100,
+                "memo": ""
+            },
+            {
+                "id": 31,
+                "name": "80방페이퍼",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": 100,
+                "diffQty": 100,
+                "purchase": 100,
+                "memo": ""
+            }
+        ]
+    },
+    "2": {
+        "month": 2,
+        "surveyDate": "2022년 2월 28일",
+        "rows": [
+            {
+                "id": 1,
+                "name": "전기용접봉",
+                "unit": "EA",
+                "prevStock": 6,
+                "currentStock": 5,
+                "diffQty": -1,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 2,
+                "name": "용접와이어",
+                "unit": "EA",
+                "prevStock": 11,
+                "currentStock": 8,
+                "diffQty": -3,
+                "purchase": 9,
+                "memo": ""
+            },
+            {
+                "id": 3,
+                "name": "용접장갑",
+                "unit": "짝",
+                "prevStock": 15,
+                "currentStock": 15,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 4,
+                "name": "용접귀마개",
+                "unit": "EA",
+                "prevStock": 15,
+                "currentStock": 15,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 5,
+                "name": "가죽앞치마",
+                "unit": "벌",
+                "prevStock": 15,
+                "currentStock": 15,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 6,
+                "name": "용접면",
+                "unit": "EA",
+                "prevStock": 15,
+                "currentStock": 15,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 7,
+                "name": "용접토치 노즐",
+                "unit": "EA",
+                "prevStock": 10,
+                "currentStock": 10,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 8,
+                "name": "용접토치 팁홀더",
+                "unit": "EA",
+                "prevStock": 14,
+                "currentStock": 14,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 9,
+                "name": "용접토치 팁",
+                "unit": "EA",
+                "prevStock": 25,
+                "currentStock": 20,
+                "diffQty": -5,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 10,
+                "name": "용접토치",
+                "unit": "EA",
+                "prevStock": 2,
+                "currentStock": 2,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 11,
+                "name": "탄산가스",
+                "unit": "통",
+                "prevStock": 12,
+                "currentStock": 18,
+                "diffQty": 6,
+                "purchase": 9,
+                "memo": ""
+            },
+            {
+                "id": 12,
+                "name": "아르곤가스",
+                "unit": "통",
+                "prevStock": 1,
+                "currentStock": 1,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 13,
+                "name": "산소",
+                "unit": "통",
+                "prevStock": 3,
+                "currentStock": 2,
+                "diffQty": -1,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 14,
+                "name": "프로판",
+                "unit": "통",
+                "prevStock": 2,
+                "currentStock": 2,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 15,
+                "name": "혼합가스",
+                "unit": "통",
+                "prevStock": 1,
+                "currentStock": 3,
+                "diffQty": 2,
+                "purchase": 2,
+                "memo": ""
+            },
+            {
+                "id": 16,
+                "name": "1T연강판",
+                "unit": "EA",
+                "prevStock": 800,
+                "currentStock": 770,
+                "diffQty": -30,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 17,
+                "name": "센터필러",
+                "unit": "EA",
+                "prevStock": 931,
+                "currentStock": 900,
+                "diffQty": -31,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 18,
+                "name": "3T 강판",
+                "unit": "EA",
+                "prevStock": 1653,
+                "currentStock": 1430,
+                "diffQty": -223,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 19,
+                "name": "에어톱 날",
+                "unit": "EA",
+                "prevStock": 90,
+                "currentStock": 90,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 20,
+                "name": "스폿드릴 날",
+                "unit": "EA",
+                "prevStock": 150,
+                "currentStock": 150,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 21,
+                "name": "와이어브러시 날",
+                "unit": "EA",
+                "prevStock": 10,
+                "currentStock": 10,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 22,
+                "name": "벨트센더 벨트",
+                "unit": "EA",
+                "prevStock": 400,
+                "currentStock": 380,
+                "diffQty": -20,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 23,
+                "name": "토치라이터",
+                "unit": "EA",
+                "prevStock": 1,
+                "currentStock": 1,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 24,
+                "name": "보호 면",
+                "unit": "EA",
+                "prevStock": 15,
+                "currentStock": 15,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 25,
+                "name": "플라이어",
+                "unit": "EA",
+                "prevStock": 4,
+                "currentStock": 4,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 26,
+                "name": "전기용접 홀더",
+                "unit": "EA",
+                "prevStock": 2,
+                "currentStock": 2,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 27,
+                "name": "Co2게이지",
+                "unit": "EA",
+                "prevStock": 5,
+                "currentStock": 4,
+                "diffQty": -1,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 28,
+                "name": "돌그라인더",
+                "unit": "EA",
+                "prevStock": 106,
+                "currentStock": 100,
+                "diffQty": -6,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 29,
+                "name": "해바라기 패빠",
+                "unit": "EA",
+                "prevStock": 122,
+                "currentStock": 108,
+                "diffQty": -14,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 30,
+                "name": "36방페이퍼",
+                "unit": "EA",
+                "prevStock": 100,
+                "currentStock": 92,
+                "diffQty": -8,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 31,
+                "name": "80방페이퍼",
+                "unit": "EA",
+                "prevStock": 100,
+                "currentStock": 91,
+                "diffQty": -9,
+                "purchase": null,
+                "memo": ""
+            }
+        ]
+    },
+    "3": {
+        "month": 3,
+        "surveyDate": "2022년 3월 31일",
+        "rows": [
+            {
+                "id": 1,
+                "name": "전기용접봉",
+                "unit": "EA",
+                "prevStock": 5,
+                "currentStock": 5,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 2,
+                "name": "용접와이어",
+                "unit": "EA",
+                "prevStock": 8,
+                "currentStock": 10,
+                "diffQty": 2,
+                "purchase": 6,
+                "memo": ""
+            },
+            {
+                "id": 3,
+                "name": "용접장갑",
+                "unit": "짝",
+                "prevStock": 15,
+                "currentStock": 15,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 4,
+                "name": "용접귀마개",
+                "unit": "EA",
+                "prevStock": 15,
+                "currentStock": 15,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 5,
+                "name": "가죽앞치마",
+                "unit": "벌",
+                "prevStock": 15,
+                "currentStock": 15,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 6,
+                "name": "용접면",
+                "unit": "EA",
+                "prevStock": 15,
+                "currentStock": 15,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 7,
+                "name": "용접토치 노즐",
+                "unit": "EA",
+                "prevStock": 10,
+                "currentStock": 10,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 8,
+                "name": "용접토치 팁홀더",
+                "unit": "EA",
+                "prevStock": 14,
+                "currentStock": 13,
+                "diffQty": -1,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 9,
+                "name": "용접토치 팁",
+                "unit": "EA",
+                "prevStock": 20,
+                "currentStock": 20,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 10,
+                "name": "용접토치",
+                "unit": "EA",
+                "prevStock": 2,
+                "currentStock": 2,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 11,
+                "name": "탄산가스",
+                "unit": "통",
+                "prevStock": 18,
+                "currentStock": 10,
+                "diffQty": -8,
+                "purchase": 6,
+                "memo": ""
+            },
+            {
+                "id": 12,
+                "name": "아르곤가스",
+                "unit": "통",
+                "prevStock": 1,
+                "currentStock": 1,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 13,
+                "name": "산소",
+                "unit": "통",
+                "prevStock": 2,
+                "currentStock": 2,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 14,
+                "name": "프로판",
+                "unit": "통",
+                "prevStock": 2,
+                "currentStock": 2,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 15,
+                "name": "혼합가스",
+                "unit": "통",
+                "prevStock": 3,
+                "currentStock": 2,
+                "diffQty": -1,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 16,
+                "name": "1T연강판",
+                "unit": "EA",
+                "prevStock": 770,
+                "currentStock": 753,
+                "diffQty": -17,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 17,
+                "name": "센터필러",
+                "unit": "EA",
+                "prevStock": 900,
+                "currentStock": 854,
+                "diffQty": -46,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 18,
+                "name": "3T 강판",
+                "unit": "EA",
+                "prevStock": 1430,
+                "currentStock": 1128,
+                "diffQty": -302,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 19,
+                "name": "에어톱 날",
+                "unit": "EA",
+                "prevStock": 90,
+                "currentStock": 80,
+                "diffQty": -10,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 20,
+                "name": "스폿드릴 날",
+                "unit": "EA",
+                "prevStock": 150,
+                "currentStock": 150,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 21,
+                "name": "와이어브러시 날",
+                "unit": "EA",
+                "prevStock": 10,
+                "currentStock": 10,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 22,
+                "name": "벨트센더 벨트",
+                "unit": "EA",
+                "prevStock": 380,
+                "currentStock": 334,
+                "diffQty": -46,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 23,
+                "name": "토치라이터",
+                "unit": "EA",
+                "prevStock": 1,
+                "currentStock": 1,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 24,
+                "name": "보호 면",
+                "unit": "EA",
+                "prevStock": 15,
+                "currentStock": 15,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 25,
+                "name": "플라이어",
+                "unit": "EA",
+                "prevStock": 4,
+                "currentStock": 4,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 26,
+                "name": "전기용접 홀더",
+                "unit": "EA",
+                "prevStock": 2,
+                "currentStock": 2,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 27,
+                "name": "Co2게이지",
+                "unit": "EA",
+                "prevStock": 4,
+                "currentStock": 3,
+                "diffQty": -1,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 28,
+                "name": "돌그라인더",
+                "unit": "EA",
+                "prevStock": 100,
+                "currentStock": 99,
+                "diffQty": -1,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 29,
+                "name": "해바라기 패빠",
+                "unit": "EA",
+                "prevStock": 108,
+                "currentStock": 107,
+                "diffQty": -1,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 30,
+                "name": "36방페이퍼",
+                "unit": "EA",
+                "prevStock": 92,
+                "currentStock": 82,
+                "diffQty": -10,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 31,
+                "name": "80방페이퍼",
+                "unit": "EA",
+                "prevStock": 91,
+                "currentStock": 88,
+                "diffQty": -3,
+                "purchase": null,
+                "memo": ""
+            }
+        ]
+    },
+    "4": {
+        "month": 4,
+        "surveyDate": "2022년 4월 29일",
+        "rows": [
+            {
+                "id": 1,
+                "name": "전기용접봉",
+                "unit": "EA",
+                "prevStock": 5,
+                "currentStock": 5,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 2,
+                "name": "용접와이어",
+                "unit": "EA",
+                "prevStock": 10,
+                "currentStock": 8,
+                "diffQty": -2,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 3,
+                "name": "용접장갑",
+                "unit": "짝",
+                "prevStock": 15,
+                "currentStock": 15,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 4,
+                "name": "용접귀마개",
+                "unit": "EA",
+                "prevStock": 15,
+                "currentStock": 15,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 5,
+                "name": "가죽앞치마",
+                "unit": "벌",
+                "prevStock": 15,
+                "currentStock": 15,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 6,
+                "name": "용접면",
+                "unit": "EA",
+                "prevStock": 15,
+                "currentStock": 15,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 7,
+                "name": "용접토치 노즐",
+                "unit": "EA",
+                "prevStock": 10,
+                "currentStock": 10,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 8,
+                "name": "용접토치 팁홀더",
+                "unit": "EA",
+                "prevStock": 13,
+                "currentStock": 12,
+                "diffQty": -1,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 9,
+                "name": "용접토치 팁",
+                "unit": "EA",
+                "prevStock": 20,
+                "currentStock": 20,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 10,
+                "name": "용접토치",
+                "unit": "EA",
+                "prevStock": 2,
+                "currentStock": 2,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 11,
+                "name": "탄산가스",
+                "unit": "통",
+                "prevStock": 10,
+                "currentStock": 10,
+                "diffQty": null,
+                "purchase": 4,
+                "memo": ""
+            },
+            {
+                "id": 12,
+                "name": "아르곤가스",
+                "unit": "통",
+                "prevStock": 1,
+                "currentStock": 1,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 13,
+                "name": "산소",
+                "unit": "통",
+                "prevStock": 2,
+                "currentStock": 2,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 14,
+                "name": "프로판",
+                "unit": "통",
+                "prevStock": 2,
+                "currentStock": 2,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 15,
+                "name": "혼합가스",
+                "unit": "통",
+                "prevStock": 2,
+                "currentStock": 1,
+                "diffQty": -1,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 16,
+                "name": "1T연강판",
+                "unit": "EA",
+                "prevStock": 753,
+                "currentStock": 740,
+                "diffQty": -13,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 17,
+                "name": "센터필러",
+                "unit": "EA",
+                "prevStock": 854,
+                "currentStock": 823,
+                "diffQty": -31,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 18,
+                "name": "3T 강판",
+                "unit": "EA",
+                "prevStock": 1128,
+                "currentStock": 1128,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 19,
+                "name": "에어톱 날",
+                "unit": "EA",
+                "prevStock": 80,
+                "currentStock": 70,
+                "diffQty": -10,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 20,
+                "name": "스폿드릴 날",
+                "unit": "EA",
+                "prevStock": 150,
+                "currentStock": 150,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 21,
+                "name": "와이어브러시 날",
+                "unit": "EA",
+                "prevStock": 10,
+                "currentStock": 10,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 22,
+                "name": "벨트센더 벨트",
+                "unit": "EA",
+                "prevStock": 334,
+                "currentStock": 312,
+                "diffQty": -22,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 23,
+                "name": "토치라이터",
+                "unit": "EA",
+                "prevStock": 1,
+                "currentStock": 1,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 24,
+                "name": "보호 면",
+                "unit": "EA",
+                "prevStock": 15,
+                "currentStock": 15,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 25,
+                "name": "플라이어",
+                "unit": "EA",
+                "prevStock": 4,
+                "currentStock": 4,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 26,
+                "name": "전기용접 홀더",
+                "unit": "EA",
+                "prevStock": 2,
+                "currentStock": 2,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 27,
+                "name": "Co2게이지",
+                "unit": "EA",
+                "prevStock": 3,
+                "currentStock": 2,
+                "diffQty": -1,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 28,
+                "name": "돌그라인더",
+                "unit": "EA",
+                "prevStock": 99,
+                "currentStock": 80,
+                "diffQty": -19,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 29,
+                "name": "해바라기 패빠",
+                "unit": "EA",
+                "prevStock": 107,
+                "currentStock": 99,
+                "diffQty": -8,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 30,
+                "name": "36방페이퍼",
+                "unit": "EA",
+                "prevStock": 82,
+                "currentStock": 80,
+                "diffQty": -2,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 31,
+                "name": "80방페이퍼",
+                "unit": "EA",
+                "prevStock": 88,
+                "currentStock": 86,
+                "diffQty": -2,
+                "purchase": null,
+                "memo": ""
+            }
+        ]
+    },
+    "5": {
+        "month": 5,
+        "surveyDate": "2022년 5월 29일",
+        "rows": [
+            {
+                "id": 1,
+                "name": "전기용접봉",
+                "unit": "EA",
+                "prevStock": 5,
+                "currentStock": 3,
+                "diffQty": -2,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 2,
+                "name": "용접와이어",
+                "unit": "EA",
+                "prevStock": 8,
+                "currentStock": 5,
+                "diffQty": -3,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 3,
+                "name": "용접장갑",
+                "unit": "짝",
+                "prevStock": 15,
+                "currentStock": 15,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 4,
+                "name": "용접귀마개",
+                "unit": "EA",
+                "prevStock": 15,
+                "currentStock": 15,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 5,
+                "name": "가죽앞치마",
+                "unit": "벌",
+                "prevStock": 15,
+                "currentStock": 15,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 6,
+                "name": "용접면",
+                "unit": "EA",
+                "prevStock": 15,
+                "currentStock": 15,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 7,
+                "name": "용접토치 노즐",
+                "unit": "EA",
+                "prevStock": 10,
+                "currentStock": 10,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 8,
+                "name": "용접토치 팁홀더",
+                "unit": "EA",
+                "prevStock": 12,
+                "currentStock": 10,
+                "diffQty": -2,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 9,
+                "name": "용접토치 팁",
+                "unit": "EA",
+                "prevStock": 20,
+                "currentStock": 20,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 10,
+                "name": "용접토치",
+                "unit": "EA",
+                "prevStock": 2,
+                "currentStock": 2,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 11,
+                "name": "탄산가스",
+                "unit": "통",
+                "prevStock": 10,
+                "currentStock": 13,
+                "diffQty": 6,
+                "purchase": 9,
+                "memo": ""
+            },
+            {
+                "id": 12,
+                "name": "아르곤가스",
+                "unit": "통",
+                "prevStock": 1,
+                "currentStock": 1,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 13,
+                "name": "산소",
+                "unit": "통",
+                "prevStock": 2,
+                "currentStock": 2,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 14,
+                "name": "프로판",
+                "unit": "통",
+                "prevStock": 2,
+                "currentStock": 2,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 15,
+                "name": "혼합가스",
+                "unit": "통",
+                "prevStock": 1,
+                "currentStock": 1,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 16,
+                "name": "1T연강판",
+                "unit": "EA",
+                "prevStock": 740,
+                "currentStock": 721,
+                "diffQty": -19,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 17,
+                "name": "센터필러",
+                "unit": "EA",
+                "prevStock": 823,
+                "currentStock": 821,
+                "diffQty": -2,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 18,
+                "name": "3T 강판",
+                "unit": "EA",
+                "prevStock": 1128,
+                "currentStock": 1100,
+                "diffQty": -28,
+                "purchase": 1500,
+                "memo": ""
+            },
+            {
+                "id": 19,
+                "name": "에어톱 날",
+                "unit": "EA",
+                "prevStock": 70,
+                "currentStock": 70,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 20,
+                "name": "스폿드릴 날",
+                "unit": "EA",
+                "prevStock": 150,
+                "currentStock": 150,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 21,
+                "name": "와이어브러시 날",
+                "unit": "EA",
+                "prevStock": 10,
+                "currentStock": 10,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 22,
+                "name": "벨트센더 벨트",
+                "unit": "EA",
+                "prevStock": 312,
+                "currentStock": 301,
+                "diffQty": -11,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 23,
+                "name": "토치라이터",
+                "unit": "EA",
+                "prevStock": 1,
+                "currentStock": 1,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 24,
+                "name": "보호 면",
+                "unit": "EA",
+                "prevStock": 15,
+                "currentStock": 15,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 25,
+                "name": "플라이어",
+                "unit": "EA",
+                "prevStock": 4,
+                "currentStock": 4,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 26,
+                "name": "전기용접 홀더",
+                "unit": "EA",
+                "prevStock": 2,
+                "currentStock": 2,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 27,
+                "name": "Co2게이지",
+                "unit": "EA",
+                "prevStock": 2,
+                "currentStock": 2,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 28,
+                "name": "돌그라인더",
+                "unit": "EA",
+                "prevStock": 80,
+                "currentStock": 80,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 29,
+                "name": "해바라기 패빠",
+                "unit": "EA",
+                "prevStock": 99,
+                "currentStock": 92,
+                "diffQty": -7,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 30,
+                "name": "36방페이퍼",
+                "unit": "EA",
+                "prevStock": 80,
+                "currentStock": 76,
+                "diffQty": -4,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 31,
+                "name": "80방페이퍼",
+                "unit": "EA",
+                "prevStock": 86,
+                "currentStock": 82,
+                "diffQty": -4,
+                "purchase": null,
+                "memo": ""
+            }
+        ]
+    },
+    "6": {
+        "month": 6,
+        "surveyDate": "2022년 6월 30일",
+        "rows": [
+            {
+                "id": 1,
+                "name": "전기용접봉",
+                "unit": "EA",
+                "prevStock": 3,
+                "currentStock": 3,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 2,
+                "name": "용접와이어",
+                "unit": "EA",
+                "prevStock": 5,
+                "currentStock": 4,
+                "diffQty": -1,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 3,
+                "name": "용접장갑",
+                "unit": "짝",
+                "prevStock": 15,
+                "currentStock": 15,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 4,
+                "name": "용접귀마개",
+                "unit": "EA",
+                "prevStock": 15,
+                "currentStock": 15,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 5,
+                "name": "가죽앞치마",
+                "unit": "벌",
+                "prevStock": 15,
+                "currentStock": 15,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 6,
+                "name": "용접면",
+                "unit": "EA",
+                "prevStock": 15,
+                "currentStock": 15,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 7,
+                "name": "용접토치 노즐",
+                "unit": "EA",
+                "prevStock": 10,
+                "currentStock": 10,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 8,
+                "name": "용접토치 팁홀더",
+                "unit": "EA",
+                "prevStock": 10,
+                "currentStock": 4,
+                "diffQty": -6,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 9,
+                "name": "용접토치 팁",
+                "unit": "EA",
+                "prevStock": 20,
+                "currentStock": 20,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 10,
+                "name": "용접토치",
+                "unit": "EA",
+                "prevStock": 2,
+                "currentStock": 2,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 11,
+                "name": "탄산가스",
+                "unit": "통",
+                "prevStock": 13,
+                "currentStock": 11,
+                "diffQty": -2,
+                "purchase": 5,
+                "memo": ""
+            },
+            {
+                "id": 12,
+                "name": "아르곤가스",
+                "unit": "통",
+                "prevStock": 1,
+                "currentStock": 1,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 13,
+                "name": "산소",
+                "unit": "통",
+                "prevStock": 2,
+                "currentStock": 2,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 14,
+                "name": "프로판",
+                "unit": "통",
+                "prevStock": 2,
+                "currentStock": 2,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 15,
+                "name": "혼합가스",
+                "unit": "통",
+                "prevStock": 1,
+                "currentStock": 1,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 16,
+                "name": "1T연강판",
+                "unit": "EA",
+                "prevStock": 721,
+                "currentStock": 811,
+                "diffQty": 90,
+                "purchase": 200,
+                "memo": ""
+            },
+            {
+                "id": 17,
+                "name": "센터필러",
+                "unit": "EA",
+                "prevStock": 821,
+                "currentStock": 1124,
+                "diffQty": 303,
+                "purchase": 500,
+                "memo": ""
+            },
+            {
+                "id": 18,
+                "name": "3T 강판",
+                "unit": "EA",
+                "prevStock": 1100,
+                "currentStock": 1834,
+                "diffQty": 734,
+                "purchase": 1500,
+                "memo": ""
+            },
+            {
+                "id": 19,
+                "name": "에어톱 날",
+                "unit": "EA",
+                "prevStock": 70,
+                "currentStock": 50,
+                "diffQty": -20,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 20,
+                "name": "스폿드릴 날",
+                "unit": "EA",
+                "prevStock": 150,
+                "currentStock": 150,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 21,
+                "name": "와이어브러시 날",
+                "unit": "EA",
+                "prevStock": 10,
+                "currentStock": 10,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 22,
+                "name": "벨트센더 벨트",
+                "unit": "EA",
+                "prevStock": 301,
+                "currentStock": 291,
+                "diffQty": -10,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 23,
+                "name": "토치라이터",
+                "unit": "EA",
+                "prevStock": 1,
+                "currentStock": 1,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 24,
+                "name": "보호 면",
+                "unit": "EA",
+                "prevStock": 15,
+                "currentStock": 15,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 25,
+                "name": "플라이어",
+                "unit": "EA",
+                "prevStock": 4,
+                "currentStock": 4,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 26,
+                "name": "전기용접 홀더",
+                "unit": "EA",
+                "prevStock": 2,
+                "currentStock": 2,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 27,
+                "name": "Co2게이지",
+                "unit": "EA",
+                "prevStock": 2,
+                "currentStock": 2,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 28,
+                "name": "돌그라인더",
+                "unit": "EA",
+                "prevStock": 80,
+                "currentStock": 75,
+                "diffQty": -5,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 29,
+                "name": "해바라기 패빠",
+                "unit": "EA",
+                "prevStock": 92,
+                "currentStock": 80,
+                "diffQty": -12,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 30,
+                "name": "36방페이퍼",
+                "unit": "EA",
+                "prevStock": 76,
+                "currentStock": 76,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 31,
+                "name": "80방페이퍼",
+                "unit": "EA",
+                "prevStock": 82,
+                "currentStock": 82,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            }
+        ]
+    },
+    "7": {
+        "month": 7,
+        "surveyDate": "2022년 7월 29일",
+        "rows": [
+            {
+                "id": 1,
+                "name": "전기용접봉",
+                "unit": "EA",
+                "prevStock": 3,
+                "currentStock": 3,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 2,
+                "name": "용접와이어",
+                "unit": "EA",
+                "prevStock": 4,
+                "currentStock": 2,
+                "diffQty": -2,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 3,
+                "name": "용접장갑",
+                "unit": "짝",
+                "prevStock": 15,
+                "currentStock": 14,
+                "diffQty": -1,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 4,
+                "name": "용접귀마개",
+                "unit": "EA",
+                "prevStock": 15,
+                "currentStock": 14,
+                "diffQty": -1,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 5,
+                "name": "가죽앞치마",
+                "unit": "벌",
+                "prevStock": 15,
+                "currentStock": 10,
+                "diffQty": -5,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 6,
+                "name": "용접면",
+                "unit": "EA",
+                "prevStock": 15,
+                "currentStock": 12,
+                "diffQty": -3,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 7,
+                "name": "용접토치 노즐",
+                "unit": "EA",
+                "prevStock": 10,
+                "currentStock": 10,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 8,
+                "name": "용접토치 팁홀더",
+                "unit": "EA",
+                "prevStock": 4,
+                "currentStock": 4,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 9,
+                "name": "용접토치 팁",
+                "unit": "EA",
+                "prevStock": 20,
+                "currentStock": 20,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 10,
+                "name": "용접토치",
+                "unit": "EA",
+                "prevStock": 2,
+                "currentStock": 2,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 11,
+                "name": "탄산가스",
+                "unit": "통",
+                "prevStock": 11,
+                "currentStock": 11,
+                "diffQty": null,
+                "purchase": 7,
+                "memo": ""
+            },
+            {
+                "id": 12,
+                "name": "아르곤가스",
+                "unit": "통",
+                "prevStock": 1,
+                "currentStock": 1,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 13,
+                "name": "산소",
+                "unit": "통",
+                "prevStock": 2,
+                "currentStock": 2,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 14,
+                "name": "프로판",
+                "unit": "통",
+                "prevStock": 2,
+                "currentStock": 2,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 15,
+                "name": "혼합가스",
+                "unit": "통",
+                "prevStock": 1,
+                "currentStock": 1,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 16,
+                "name": "1T연강판",
+                "unit": "EA",
+                "prevStock": 811,
+                "currentStock": 800,
+                "diffQty": -11,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 17,
+                "name": "센터필러",
+                "unit": "EA",
+                "prevStock": 1124,
+                "currentStock": 1112,
+                "diffQty": -12,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 18,
+                "name": "3T 강판",
+                "unit": "EA",
+                "prevStock": 1834,
+                "currentStock": 1780,
+                "diffQty": -54,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 19,
+                "name": "에어톱 날",
+                "unit": "EA",
+                "prevStock": 50,
+                "currentStock": 50,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 20,
+                "name": "스폿드릴 날",
+                "unit": "EA",
+                "prevStock": 150,
+                "currentStock": 150,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 21,
+                "name": "와이어브러시 날",
+                "unit": "EA",
+                "prevStock": 10,
+                "currentStock": 10,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 22,
+                "name": "벨트센더 벨트",
+                "unit": "EA",
+                "prevStock": 291,
+                "currentStock": 291,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 23,
+                "name": "토치라이터",
+                "unit": "EA",
+                "prevStock": 1,
+                "currentStock": 1,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 24,
+                "name": "보호 면",
+                "unit": "EA",
+                "prevStock": 15,
+                "currentStock": 12,
+                "diffQty": -3,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 25,
+                "name": "플라이어",
+                "unit": "EA",
+                "prevStock": 4,
+                "currentStock": 4,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 26,
+                "name": "전기용접 홀더",
+                "unit": "EA",
+                "prevStock": 2,
+                "currentStock": 2,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 27,
+                "name": "Co2게이지",
+                "unit": "EA",
+                "prevStock": 2,
+                "currentStock": 1,
+                "diffQty": -1,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 28,
+                "name": "돌그라인더",
+                "unit": "EA",
+                "prevStock": 75,
+                "currentStock": 70,
+                "diffQty": -5,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 29,
+                "name": "해바라기 패빠",
+                "unit": "EA",
+                "prevStock": 80,
+                "currentStock": 80,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 30,
+                "name": "36방페이퍼",
+                "unit": "EA",
+                "prevStock": null,
+                "currentStock": 100,
+                "diffQty": 100,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 31,
+                "name": "80방페이퍼",
+                "unit": "EA",
+                "prevStock": null,
+                "currentStock": 100,
+                "diffQty": 100,
+                "purchase": null,
+                "memo": ""
+            }
+        ]
+    },
+    "8": {
+        "month": 8,
+        "surveyDate": "2022년 8월 31일",
+        "rows": [
+            {
+                "id": 1,
+                "name": "전기용접봉",
+                "unit": "EA",
+                "prevStock": 3,
+                "currentStock": null,
+                "diffQty": -3,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 2,
+                "name": "용접와이어",
+                "unit": "EA",
+                "prevStock": 2,
+                "currentStock": null,
+                "diffQty": -2,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 3,
+                "name": "용접장갑",
+                "unit": "짝",
+                "prevStock": 14,
+                "currentStock": null,
+                "diffQty": -14,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 4,
+                "name": "용접귀마개",
+                "unit": "EA",
+                "prevStock": 14,
+                "currentStock": null,
+                "diffQty": -14,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 5,
+                "name": "가죽앞치마",
+                "unit": "벌",
+                "prevStock": 10,
+                "currentStock": null,
+                "diffQty": -10,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 6,
+                "name": "용접면",
+                "unit": "EA",
+                "prevStock": 12,
+                "currentStock": null,
+                "diffQty": -12,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 7,
+                "name": "용접토치 노즐",
+                "unit": "EA",
+                "prevStock": 10,
+                "currentStock": null,
+                "diffQty": -10,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 8,
+                "name": "용접토치 팁홀더",
+                "unit": "EA",
+                "prevStock": 4,
+                "currentStock": null,
+                "diffQty": -4,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 9,
+                "name": "용접토치 팁",
+                "unit": "EA",
+                "prevStock": 20,
+                "currentStock": null,
+                "diffQty": -20,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 10,
+                "name": "용접토치",
+                "unit": "EA",
+                "prevStock": 2,
+                "currentStock": null,
+                "diffQty": -2,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 11,
+                "name": "탄산가스",
+                "unit": "통",
+                "prevStock": 11,
+                "currentStock": null,
+                "diffQty": -11,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 12,
+                "name": "아르곤가스",
+                "unit": "통",
+                "prevStock": 1,
+                "currentStock": null,
+                "diffQty": -1,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 13,
+                "name": "산소",
+                "unit": "통",
+                "prevStock": 2,
+                "currentStock": null,
+                "diffQty": -2,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 14,
+                "name": "프로판",
+                "unit": "통",
+                "prevStock": 2,
+                "currentStock": null,
+                "diffQty": -2,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 15,
+                "name": "혼합가스",
+                "unit": "통",
+                "prevStock": 1,
+                "currentStock": null,
+                "diffQty": -1,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 16,
+                "name": "1T연강판",
+                "unit": "EA",
+                "prevStock": 800,
+                "currentStock": null,
+                "diffQty": -800,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 17,
+                "name": "센터필러",
+                "unit": "EA",
+                "prevStock": 1112,
+                "currentStock": null,
+                "diffQty": -1112,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 18,
+                "name": "3T 강판",
+                "unit": "EA",
+                "prevStock": 1780,
+                "currentStock": null,
+                "diffQty": -1780,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 19,
+                "name": "에어톱 날",
+                "unit": "EA",
+                "prevStock": 50,
+                "currentStock": null,
+                "diffQty": -50,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 20,
+                "name": "스폿드릴 날",
+                "unit": "EA",
+                "prevStock": 150,
+                "currentStock": null,
+                "diffQty": -150,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 21,
+                "name": "와이어브러시 날",
+                "unit": "EA",
+                "prevStock": 10,
+                "currentStock": null,
+                "diffQty": -10,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 22,
+                "name": "벨트센더 벨트",
+                "unit": "EA",
+                "prevStock": 291,
+                "currentStock": null,
+                "diffQty": -291,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 23,
+                "name": "토치라이터",
+                "unit": "EA",
+                "prevStock": 1,
+                "currentStock": null,
+                "diffQty": -1,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 24,
+                "name": "보호 면",
+                "unit": "EA",
+                "prevStock": 12,
+                "currentStock": null,
+                "diffQty": -12,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 25,
+                "name": "플라이어",
+                "unit": "EA",
+                "prevStock": 4,
+                "currentStock": null,
+                "diffQty": -4,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 26,
+                "name": "전기용접 홀더",
+                "unit": "EA",
+                "prevStock": 2,
+                "currentStock": null,
+                "diffQty": -2,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 27,
+                "name": "Co2게이지",
+                "unit": "EA",
+                "prevStock": 1,
+                "currentStock": null,
+                "diffQty": -1,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 28,
+                "name": "돌그라인더",
+                "unit": "EA",
+                "prevStock": 70,
+                "currentStock": null,
+                "diffQty": -70,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 29,
+                "name": "해바라기 패빠",
+                "unit": "EA",
+                "prevStock": 80,
+                "currentStock": null,
+                "diffQty": -80,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 30,
+                "name": "36방페이퍼",
+                "unit": "EA",
+                "prevStock": null,
+                "currentStock": 100,
+                "diffQty": 100,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 31,
+                "name": "80방페이퍼",
+                "unit": "EA",
+                "prevStock": null,
+                "currentStock": 100,
+                "diffQty": 100,
+                "purchase": null,
+                "memo": ""
+            }
+        ]
+    },
+    "9": {
+        "month": 9,
+        "surveyDate": "2022년 9월 30일",
+        "rows": [
+            {
+                "id": 1,
+                "name": "전기용접봉",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 2,
+                "name": "용접와이어",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 3,
+                "name": "용접장갑",
+                "unit": "짝",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 4,
+                "name": "용접귀마개",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 5,
+                "name": "가죽앞치마",
+                "unit": "벌",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 6,
+                "name": "용접면",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 7,
+                "name": "용접토치 노즐",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 8,
+                "name": "용접토치 팁홀더",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 9,
+                "name": "용접토치 팁",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 10,
+                "name": "용접토치",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 11,
+                "name": "탄산가스",
+                "unit": "통",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 12,
+                "name": "아르곤가스",
+                "unit": "통",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 13,
+                "name": "산소",
+                "unit": "통",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 14,
+                "name": "프로판",
+                "unit": "통",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 15,
+                "name": "혼합가스",
+                "unit": "통",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 16,
+                "name": "1T연강판",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 17,
+                "name": "센터필러",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 18,
+                "name": "3T 강판",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 19,
+                "name": "에어톱 날",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 20,
+                "name": "스폿드릴 날",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 21,
+                "name": "와이어브러시 날",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 22,
+                "name": "벨트센더 벨트",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 23,
+                "name": "토치라이터",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 24,
+                "name": "보호 면",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 25,
+                "name": "플라이어",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 26,
+                "name": "전기용접 홀더",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 27,
+                "name": "Co2게이지",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 28,
+                "name": "돌그라인더",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 29,
+                "name": "해바라기 패빠",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 30,
+                "name": "36방페이퍼",
+                "unit": "EA",
+                "prevStock": null,
+                "currentStock": 100,
+                "diffQty": 100,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 31,
+                "name": "80방페이퍼",
+                "unit": "EA",
+                "prevStock": null,
+                "currentStock": 100,
+                "diffQty": 100,
+                "purchase": null,
+                "memo": ""
+            }
+        ]
+    },
+    "10": {
+        "month": 10,
+        "surveyDate": "2022년 10월 28일",
+        "rows": [
+            {
+                "id": 1,
+                "name": "전기용접봉",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 2,
+                "name": "용접와이어",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 3,
+                "name": "용접장갑",
+                "unit": "짝",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 4,
+                "name": "용접귀마개",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 5,
+                "name": "가죽앞치마",
+                "unit": "벌",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 6,
+                "name": "용접면",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 7,
+                "name": "용접토치 노즐",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 8,
+                "name": "용접토치 팁홀더",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 9,
+                "name": "용접토치 팁",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 10,
+                "name": "용접토치",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 11,
+                "name": "탄산가스",
+                "unit": "통",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 12,
+                "name": "아르곤가스",
+                "unit": "통",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 13,
+                "name": "산소",
+                "unit": "통",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 14,
+                "name": "프로판",
+                "unit": "통",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 15,
+                "name": "혼합가스",
+                "unit": "통",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 16,
+                "name": "1T연강판",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 17,
+                "name": "센터필러",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 18,
+                "name": "3T 강판",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 19,
+                "name": "에어톱 날",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 20,
+                "name": "스폿드릴 날",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 21,
+                "name": "와이어브러시 날",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 22,
+                "name": "벨트센더 벨트",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 23,
+                "name": "토치라이터",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 24,
+                "name": "보호 면",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 25,
+                "name": "플라이어",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 26,
+                "name": "전기용접 홀더",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 27,
+                "name": "Co2게이지",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 28,
+                "name": "돌그라인더",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 29,
+                "name": "해바라기 패빠",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 30,
+                "name": "36방페이퍼",
+                "unit": "EA",
+                "prevStock": null,
+                "currentStock": 100,
+                "diffQty": 100,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 31,
+                "name": "80방페이퍼",
+                "unit": "EA",
+                "prevStock": null,
+                "currentStock": 100,
+                "diffQty": 100,
+                "purchase": null,
+                "memo": ""
+            }
+        ]
+    },
+    "11": {
+        "month": 11,
+        "surveyDate": "2022년 11월 30일",
+        "rows": [
+            {
+                "id": 1,
+                "name": "전기용접봉",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 2,
+                "name": "용접와이어",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 3,
+                "name": "용접장갑",
+                "unit": "짝",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 4,
+                "name": "용접귀마개",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 5,
+                "name": "가죽앞치마",
+                "unit": "벌",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 6,
+                "name": "용접면",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 7,
+                "name": "용접토치 노즐",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 8,
+                "name": "용접토치 팁홀더",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 9,
+                "name": "용접토치 팁",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 10,
+                "name": "용접토치",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 11,
+                "name": "탄산가스",
+                "unit": "통",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": 12,
+                "memo": ""
+            },
+            {
+                "id": 12,
+                "name": "아르곤가스",
+                "unit": "통",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 13,
+                "name": "산소",
+                "unit": "통",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 14,
+                "name": "프로판",
+                "unit": "통",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 15,
+                "name": "혼합가스",
+                "unit": "통",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 16,
+                "name": "1T연강판",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 17,
+                "name": "센터필러",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 18,
+                "name": "3T 강판",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 19,
+                "name": "에어톱 날",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 20,
+                "name": "스폿드릴 날",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 21,
+                "name": "와이어브러시 날",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 22,
+                "name": "벨트센더 벨트",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 23,
+                "name": "토치라이터",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 24,
+                "name": "보호 면",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 25,
+                "name": "플라이어",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 26,
+                "name": "전기용접 홀더",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 27,
+                "name": "Co2게이지",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 28,
+                "name": "돌그라인더",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 29,
+                "name": "해바라기 패빠",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 30,
+                "name": "36방페이퍼",
+                "unit": "EA",
+                "prevStock": null,
+                "currentStock": 100,
+                "diffQty": 100,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 31,
+                "name": "80방페이퍼",
+                "unit": "EA",
+                "prevStock": null,
+                "currentStock": 100,
+                "diffQty": 100,
+                "purchase": null,
+                "memo": ""
+            }
+        ]
+    },
+    "12": {
+        "month": 12,
+        "surveyDate": "2022년 12월 30일",
+        "rows": [
+            {
+                "id": 1,
+                "name": "전기용접봉",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 2,
+                "name": "용접와이어",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 3,
+                "name": "용접장갑",
+                "unit": "짝",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 4,
+                "name": "용접귀마개",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 5,
+                "name": "가죽앞치마",
+                "unit": "벌",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 6,
+                "name": "용접면",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 7,
+                "name": "용접토치 노즐",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 8,
+                "name": "용접토치 팁홀더",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 9,
+                "name": "용접토치 팁",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 10,
+                "name": "용접토치",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 11,
+                "name": "탄산가스",
+                "unit": "통",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": 7,
+                "memo": ""
+            },
+            {
+                "id": 12,
+                "name": "아르곤가스",
+                "unit": "통",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 13,
+                "name": "산소",
+                "unit": "통",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 14,
+                "name": "프로판",
+                "unit": "통",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 15,
+                "name": "혼합가스",
+                "unit": "통",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 16,
+                "name": "1T연강판",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 17,
+                "name": "센터필러",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 18,
+                "name": "3T 강판",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 19,
+                "name": "에어톱 날",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 20,
+                "name": "스폿드릴 날",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 21,
+                "name": "와이어브러시 날",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 22,
+                "name": "벨트센더 벨트",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 23,
+                "name": "토치라이터",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 24,
+                "name": "보호 면",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 25,
+                "name": "플라이어",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 26,
+                "name": "전기용접 홀더",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 27,
+                "name": "Co2게이지",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 28,
+                "name": "돌그라인더",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 29,
+                "name": "해바라기 패빠",
+                "unit": "EA",
+                "prevStock": 0,
+                "currentStock": null,
+                "diffQty": null,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 30,
+                "name": "36방페이퍼",
+                "unit": "EA",
+                "prevStock": null,
+                "currentStock": 100,
+                "diffQty": 100,
+                "purchase": null,
+                "memo": ""
+            },
+            {
+                "id": 31,
+                "name": "80방페이퍼",
+                "unit": "EA",
+                "prevStock": null,
+                "currentStock": 100,
+                "diffQty": 100,
+                "purchase": null,
+                "memo": ""
+            }
+        ]
+    }
+};

@@ -1,1 +1,579 @@
-function a8_0x1d03(){const _0xb49a6d=['nJCWody5ru9dzhfW','phrYigrHDgeTCM93lwLKEd0I','ywrKCMvZC1nPzg8','ywrKrxzLBNrmAxn0zw5LCG','7kce7iAHio2AN+YiMcdTMzxSNBGG7iUK7yYOoG','yNrUuMvZDw1Lu29YDfnRAwXS','yxnZAwDU','zM9YrwfJAa','DMfS','7zQm66w8ioUQQoUrKcdSGQZSMQNTLOJSIRxRI4JRI6qUioUcToYDVcdRI6tSI5WG7kce7iAH7zwGioYiMcdSNOJSIRxRI4JRI6qU','7zQm6RMm7kEaioYGHoYgOE2vOcdSIjGG7j6i7iQ164Ui64UKlIdSIjJSOjxSNyaG7j20ioQ4SoQ4SoYxKcdSOidSNQxRKjWG66Ei7kEa66EjioYGHoYgOsdRGRtSMQNRP4WG67Ai65+S7jISioYiMcdSNOJSIRxRI4JRI6qUpc9WpGOGicaGicaGicaGicaGicaGpc9KAxy+cIaGicaGicaGicaGicaGica8zgL2igLKpsjYzxn1BwvgB3jTv3jHCciGy2XHC3m9iNjLC3vTzs1MB3jTlxDYyxaIpGOGicaGicaGicaGicaGicaGicaGia','DgfYz2v0','yMfZAwm','A2v5','yNvPBgrezwzHDwX0uMvZDw1LrM9YBq','C2TPBgW','y29UDgvUDa','C2TPBgXZq2vYDhm','Dg9tDhjPBMC','BgfIzwW','CMvZDw1L','C25HChnOB3q','y2fSy3vSyxrLvw5PDe1VBNrOugvYC29UywXsyxrL','CMvZDw1LrM9YBvDYyxa','lNjLC3vTzs1JB250zw50','CMvZDw1Lu3vIBwL0u3rHDhvZ','y2XVC2vZDa','mtmWntmYt3bXyM9A','zNvSBa','7j6q64+z7lcO7kcv67Me6RIW64QL7ikS','lNjLC3vTzs15','jMfTCdS','7jIK64QyioYGHoYgOsa','pgj1DhrVBIb0ExbLpsjIDxr0B24IignSyxnZpsjYzxn1BwuTCxvPy2STy2vYDc1IDg4IigrHDgeTy2vYDd0I','jNf1B3q7','CMvZDw1Lqxr0zw5Kyw5JzvjHDgu','CxvLCNLtzwXLy3rVCG','7iob7is47ko87iAm','y2fYzwvY','7kce7iAHio2AN+YiMcHZDhvKzw50uMvZDw1Lu3vIBwL0q291BNrZksbeqIdQTOZTLzWG7jIK66wy7j6f64Ui64UKlIbgAxjLyMfZzsdQT5ZSUzNSNyqG64UK7iUCioQYJoYlNo2wIoUkLoYNGcdTMzxSNBJTLBqG7ko87is47jQulG','zMLSDgvY','7j2066cL7isCioYGHoYgOEYxKcdSI6tTJkJTLOJSIRxRI4JRI6qUcG','B25Jzq','yNrUuMvZDw1LqwrKq2fYzwvY','CgfYzw50rwXLBwvUDa','zNvUy3rPB24','AM9PBG','CMvZDw1LqwrKCMvZC1nPzg8','7j6q64+z7lcO7kcv67Me7ikW7jEf6RIW7ikS','C3rYAw5NAwz5','y2HHBMDL','7zQmicJTLzZQTA0G7iUC6RceioQ4SoYKGcdcTYdTLzNSG53RS4qP','mtrIEujyCxe','zw1WDhLszxn1BwvsB3C','zxGPidaW7zQm7ikSioQ3VoUSTc4GmddRHyqGmddSM5qG7yE07ikS','yxv0Ac9VCgvYyxrPB24TBM90lwfSBg93zwq','7iUCWRFQTBdcT+Q1Ra','Dhi6BgfZDc1JAgLSzcaUCMvZDw1LlwnVBNrLBNq','ywrKCMvZC1nPz3vUz3u','rMLYzwjHC2uG66gC6RE47j24ioYyPoULMdOG','CMvZDw1LqMfZAwnbzgrYzxnZrgv0ywLS','CMvZDw1LqMfZAwnfBwfPBa','zgf0yxnLDa','nti0otCYmfv0zhvTrG','CgvYBwLZC2LVBL9Kzw5Pzwq','C2HVCNq','yNrUuMvZDw1Lu29YDenHCMvLCG','DMLLD0fYzwe','BM9YBwfSAxPLqMfZAwnbzgrYzxnZ','7j2066cL7isC6RcaioYGHoYgOEUqMoYxIoYkTEUlIoUlPc4','CMvZDw1LqMfZAwnqAg9Uzq','y2XHC3nmAxn0','ogXsrw9XDW','cIaGicaGicaGicaGicaGica8l2rPDJ4kicaGicaGicaGicaGpc9KAxy+','7j6q64+z7lcO7lcO7lk07iIy66AS6RIW64QL7ikS','cIaGicaGicaGicaGidXZzwn0Aw9UignSyxnZpsjYzxn1BwuTC2vJDgLVBIi+cIaGicaGicaGicaGicaGica8AdqGy2XHC3m9iNjLC3vTzs1Zzwn0Aw9UlxrPDgXLiJ4XlIdQUldSTiJSNPdRO4W8l2G0pGOGicaGicaGicaGicaGicaGpgrPDIbJBgfZCZ0ICMvZDw1LlwjHC2LJlwDYAwqIpGOGicaGicaGicaGicaGicaGicaGidXSywjLBcbJBgfZCZ0ICMvZDw1LlwzPzwXKiJ48C3bHBJ7SNBtRPOq8l3nWyw4+pgLUChv0ihr5Cgu9iNrLEhqIigLKpsjYzxn1BwvcyxnPy05HBwuIignSyxnZpsjMB3jTlxjLC3vTzs1PBNb1DciGCMvHzg9UBhK+pc9SywjLBd4kicaGicaGicaGicaGicaGicaGica8BgfIzwWGy2XHC3m9iNjLC3vTzs1MAwvSzci+phnWyw4+7jEW65297lkypc9ZCgfUpJXPBNb1Dcb0ExbLpsj0zwWIigLKpsjYzxn1BwvcyxnPy1bOB25LiIbJBgfZCZ0IzM9YBs1Yzxn1BwuTAw5WDxqIihbSywnLAg9SzgvYpsiWmtaTmdaWmc0WmdaWiJ48l2XHyMvSpGOGicaGicaGicaGicaGicaGicaGidXSywjLBcbJBgfZCZ0ICMvZDw1LlwzPzwXKihjLC3vTzs1MAwvSzc1MDwXSiJ48C3bHBJ5Llw1HAwW8l3nWyw4+pgLUChv0ihr5Cgu9iMvTywLSiIbPzd0ICMvZDw1LqMfZAwnfBwfPBciGy2XHC3m9iMzVCM0TCMvZDw1LlwLUChv0iIbWBgfJzwHVBgrLCJ0IzxHHBxbSzubLBwfPBc5JB20IpJWVBgfIzwW+cIaGicaGicaGicaGicaGicaGicaGpgXHyMvSignSyxnZpsjYzxn1BwuTzMLLBgqIpJXZCgfUpUYlNmk364+eidXLBsbJBgfZCZ0ICMvZDw1LlxjLCxvPCMvKlw1HCMSIigfYAweTAgLKzgvUpsj0CNvLiJ4Qpc9LBt48l3nWyw4+phnLBgvJDcbPzd0ICMvZDw1LqwrKCMvZC1nPzg8IignSyxnZpsjMB3jTlxjLC3vTzs1ZzwXLy3qIihjLCxvPCMvKpJWVC2vSzwn0pJWVBgfIzwW+cIaGicaGicaGicaGicaGicaGicaGpgXHyMvSignSyxnZpsjYzxn1BwuTzMLLBgqIpJXZCgfUpUYlNmk36RwWWRFQTAWGpgvTignSyxnZpsjYzxn1BwuTCMvXDwLYzwqTBwfYAYiGyxjPys1OAwrKzw49iNrYDwuIpIO8l2vTpJWVC3bHBJ48C2vSzwn0igLKpsjYzxn1BwvbzgrYzxnZu2LNDw5NDsiGy2XHC3m9iMzVCM0TCMvZDw1LlxnLBgvJDciGzgLZywjSzwqGCMvXDwLYzwq+pc9ZzwXLy3q+pc9SywjLBd4kicaGicaGicaGicaGicaGicaGica8BgfIzwWGy2XHC3m9iNjLC3vTzs1MAwvSzcbYzxn1BwuTzMLLBgqTzNvSBci+phnWyw4+7iob7is47ko87iAmidXLBsbJBgfZCZ0ICMvZDw1LlxjLCxvPCMvKlw1HCMSIigfYAweTAgLKzgvUpsj0CNvLiJ4Qpc9LBt48l3nWyw4+pgLUChv0ihr5Cgu9iNrLEhqIigLKpsjYzxn1BwvcyxnPy0fKzhjLC3nezxrHAwWIignSyxnZpsjMB3jTlxjLC3vTzs1PBNb1DciGCgXHy2vOB2XKzxi9iUUpMCk37zI47iIyioUtSsdSG4hSHlJSO7ZSHOWIihjLCxvPCMvKpJWVBgfIzwW+cIaGicaGicaGicaGicaGica8l2rPDJ4kicaGicaGicaGicaGpc9Zzwn0Aw9UpGOGicaGicaGicaGica8C2vJDgLVBIbJBgfZCZ0ICMvZDw1LlxnLy3rPB24IpGOGicaGicaGicaGicaGicaGpgrPDIbJBgfZCZ0ICMvZDw1LlxnLy3rPB24TAgvHzci+cIaGicaGicaGicaGicaGicaGicaGpgG0ignSyxnZpsjYzxn1BwuTC2vJDgLVBI10AxrSzsi+mI4G6Rk966cL7ikS7zwTpc9Ond4kicaGicaGicaGicaGicaGicaGica8zgL2ignSyxnZpsjYzxn1BwuTC2vJDgLVBI1IDg5ZiJ4kicaGicaGicaGicaGicaGicaGicaGicaGpgj1DhrVBIb0ExbLpsjIDxr0B24IigLKpsjIDg5szxn1BwvtB3j0q2fYzwvYiIbJBgfZCZ0ICMvZDw1Llw1PBMKTyNrUiJ7WN5ofioUcOoYNNoYiNcdSOjxROkW8l2j1DhrVBJ4kicaGicaGicaGicaGicaGicaGicaGicaGpgj1DhrVBIb0ExbLpsjIDxr0B24IigLKpsjIDg5szxn1BwvbzgrdyxjLzxiIignSyxnZpsjYzxn1BwuTBwLUAs1IDg4GCMvZDw1Llw1PBMKTyNrUlwfKzci+77YlioY2LoQWGdWVyNv0Dg9UpGOGicaGicaGicaGicaGicaGicaGidWVzgL2pGOGicaGicaGicaGicaGicaGpc9KAxy+cIaGicaGicaGicaGicaGica8zgL2ignSyxnZpsjYzxn1BwuTDgfIBguTD3jHCci+cIaGicaGicaGicaGicaGicaGicaGphrHyMXLignSyxnZpsjYzxn1BwuTDgfIBguIpGOGicaGicaGicaGicaGicaGicaGicaGica8DgHLywq+phrYpJX0AcbZDhLSzt0ID2LKDgG6mZGLiJ7RHyqGlYdSM5qGlYdSNBWGkoYEHEYcRoYDVcK8l3rOpJX0Ad7TMOZSGQZRQOuGko2hToYcRoYDVcK8l3rOpJX0AcbZDhLSzt0ID2LKDgG6mZzWEci+pc90Ad48l3rYpJWVDgHLywq+cIaGicaGicaGicaGicaGicaGicaGicaGidX0yM9KEsbPzd0ICMvZDw1Lq2fYzwvYqM9KEsi+pc90yM9KEt4kicaGicaGicaGicaGicaGicaGica8l3rHyMXLpGOGicaGicaGicaGicaGicaGpc9KAxy+cIaGicaGicaGicaGidWVC2vJDgLVBJ4kicaGicaGicaGicaGphnLy3rPB24Gy2XHC3m9iNjLC3vTzs1Zzwn0Aw9UiJ4kicaGicaGicaGicaGicaGidXKAxyGy2XHC3m9iNjLC3vTzs1Zzwn0Aw9UlwHLywqIpGOGicaGicaGicaGicaGicaGicaGidXOncbJBgfZCZ0ICMvZDw1LlxnLy3rPB24TDgL0BguIpJmUioY1NoYIHE2vMEUGPtWVAdq+cIaGicaGicaGicaGicaGicaGicaGpgrPDIbJBgfZCZ0ICMvZDw1LlxnLy3rPB24TyNrUCYi+cIaGicaGicaGicaGicaGicaGicaGicaGidXIDxr0B24GDhLWzt0IyNv0Dg9UiIbPzd0IyNrUuMvZDw1LqwrKrMLUywXfzhuIignSyxnZpsjYzxn1BwuTBwLUAs1IDg4GCMvZDw1Llw1PBMKTyNrUlwfKzci+77YlioY2LoQWGdWVyNv0Dg9UpGOGicaGicaGicaGicaGicaGicaGidWVzgL2pGOGicaGicaGicaGicaGicaGpc9KAxy+cIaGicaGicaGicaGicaGica8zgL2ignSyxnZpsjYzxn1BwuTDgfIBguTD3jHCci+cIaGicaGicaGicaGicaGicaGicaGphrHyMXLignSyxnZpsjYzxn1BwuTDgfIBguIpGOGicaGicaGicaGicaGicaGicaGicaGica8DgHLywq+phrYpJX0AcbZDhLSzt0ID2LKDgG6mZGLiJ7RHyqGlYdSM5qGlYdSNBWGkoYEHE2vMEYDVcK8l3rOpJX0Ad7TLzNQTzdRQOuGkoYHUoYxHEYDVcK8l3rOpJX0AcbZDhLSzt0ID2LKDgG6mZzWEci+pc90Ad48l3rYpJWVDgHLywq+cIaGicaGicaGicaGicaGicaGicaGicaGidX0yM9KEsbPzd0ICMvZDw1LrMLUywXfzhvcB2r5iJ48l3rIB2r5pGOGicaGicaGicaGicaGicaGicaGidWVDgfIBgu+cIaGicaGicaGicaGicaGica8l2rPDJ4kicaGicaGicaGicaGpc9Zzwn0Aw9UpGOGicaGicaGicaGica8C2vJDgLVBIbJBgfZCZ0ICMvZDw1LlxnLy3rPB24IpGOGicaGicaGicaGicaGicaGpgrPDIbJBgfZCZ0ICMvZDw1LlxnLy3rPB24TAgvHzci+cIaGicaGicaGicaGicaGicaGicaGpgG0ignSyxnZpsjYzxn1BwuTC2vJDgLVBI10AxrSzsi+nc4G7yQ56RIW7ikS7zwTlUYEKoQYQEYMNs7SG4hSNQxSIjJSG4e8l2G0pGOGicaGicaGicaGicaGicaGicaGidXKAxyGy2XHC3m9iNjLC3vTzs1Zzwn0Aw9Ulwj0BNmIpGOGicaGicaGicaGicaGicaGicaGicaGica8ysbOCMvMpsjODhrWCZOVl3D3DY5Xlw5LDc5VCI5RCI8IihrHCMDLDd0Ix2jSyw5RiIbYzwW9iM5VB3bLBMvYig5VCMvMzxjYzxiIignSyxnZpsjYzxn1BwuTBwLUAs1IDg4GCMvZDw1Llw1PBMKTyNrUlxfUzxqIihrPDgXLpslTLzZQTA3SGRdSL4xSNBJROkxQS7xRI6GG7ygq64s3koYEKoQYQEYMNsdSOBdTMOWPiJ7WN5sxio2bKoUeTYdSG4JSSl08l2e+cIaGicaGicaGicaGicaGicaGicaGicaGidXIDxr0B24GDhLWzt0IyNv0Dg9UiIbPzd0IyNrUuMvZDw1Lu29YDfnRAwXSiIbJBgfZCZ0ICMvZDw1Llw1PBMKTyNrUiJ7WN5ofioUcOoYNNoYiNcdSOjxROkW8l2j1DhrVBJ4kicaGicaGicaGicaGicaGicaGica8l2rPDJ4kicaGicaGicaGicaGicaGidWVzgL2pGOGicaGicaGicaGicaGicaGpgrPDIbJBgfZCZ0ICMvZDw1Llxf1AwnRlwnLCNrZiJ4kicaGicaGicaGicaGicaGicaGica8CcbJBgfZCZ0ICMvZDw1Llxf1AwnRlwnLCNrZlwXHyMvSiJ7SNPdSO7WG7lEO65oD7zwy64QuioYEKoQYQEYMNsdIGjqG7yg066AT7zwy66M0ioYvHoUEMcdRQQNROz3SL5aG7lAu6Rca65cP64Ui64UKpc9WpGOGicaGicaGicaGicaGicaGicaGidXKAxyGy2XHC3m9iNjLC3vTzs1XDwLJAY1Jzxj0CY1IDg5ZiJ4kicaGicaGicaGicaGicaGicaGicaGicaG','CMvZDw1Lu2TPBgXcB2r5','zgf5','lNjLC3vTzs1T','4PYfioUlToYEHoYeOoYdNEUlMoQ7McdSOitRI6ZRKjJSL4JSIRxRI4JRI6qUioYDTcdQUldQUldSL5aG7lwC7iUGioUcToYAQEYDTcdSOidSNQxRKjJSL4JSIRxRI4JRI6qU','64k07jQP7j2eioYEHEUGPE2vMoYeUoYALa','7kcv67Me6RIW64QL7ikS','Aw5Zzxj0qwrQywnLBNrive1m','zgLZywjSzwq','y29TBwL0DgvK','zxjYB3i','CMvMCMvZAfn0DwrLBNrszxn1BwvjzK9Wzw4','Bw9UDgG','7zQmioYGHoYgOE2vMoYfQoYkTEUlIoUlPc4k64k07j28ko2vNoQ1RsdSI5ZQSiqG6RIW7ksaksdRI6tSI5WG7iUC64+e7zw0ioYJVoYeUoYALc4','y2fYzwvYsgLZDg9YEq','y3vYCMvUDfvZzxi','yxv0Aa','lNjLC3vTzs1YB3CTzgvS','CMvZDw1LrgfPBhLmAw1PDeHPBNq','DMfSDwu','nJq1mg9brKLMyW','jMX0oW','mtzXC3LsuM4','CxvLCNLtzwXLy3rVCKfSBa','64sK7yQ47jUm7ygS66w8io2zLEYDUcdTM4qG64UK7iUCioYlNoUpHo2vTcdSO7ZSHlJSMPqU','ndm5mZmYA1fiy1z5','DhjPBq','iJ48C3bHBIbJBgfZCZ0ICMvZDw1Llxf1AwnRlwnLCNqTBgfIzwWTzNvSBci+','y2vYDa','DxnLCG','CMvZDw1LqMfZAwnoyw1L','Dg90ywXbDhrLBMrHBMnLuMf0zq','yMvMB3jLzw5K','iJ4kicaGicaGicaGicaGphrKignSyxnZpsjYzxn1BwuTzgf0zs1JzwXSiJ4kicaGicaGicaGicaGicaGidXPBNb1Dcb0ExbLpsj0zxH0iIbJBgfZCZ0ICMvZDw1LlxKGCMvZDw1LlwrHDguTAw5WDxqIig1HEgXLBMD0Ad0InciGCgXHy2vOB2XKzxi9iUUfHciGDMfSDwu9iG','7jIK64Qy7j2aioYDToUVUca','iIbPBNb1Dg1Vzgu9iM51BwvYAwmIpGOGicaGicaGicaGicaGicaGphnWyw4Gy2XHC3m9iNjLC3vTzs1KyxrLlxnLCci+lZWVC3bHBJ4kicaGicaGicaGicaGicaGidXPBNb1Dcb0ExbLpsj0zxH0iIbJBgfZCZ0ICMvZDw1LlwqGCMvZDw1LlwrHDguTAw5WDxqIig1HEgXLBMD0Ad0ImIiGCgXHy2vOB2XKzxi9iUYDVciGDMfSDwu9iG','z2v0vg9KyxLtDhjlC3q','BNvTyMvY','CMvZDw1LrMLUywXfzhvcB2r5','BMfTzq','zMLUywXfzhvJyxrPB24','rMLYzwjHC2uG66gC6RE47j247jEqioYlPo2mQo2wIoYkTEUlIoUlPc4k','AxmTCMvXDwLYzwqTBwLZC2LUzW','Aw5WDxqSihrLEhrHCMvH','Aw5Uzxjive1m','DgfIx3jLC3vTzq','Aw5JBhvKzxm','Dgv4DenVBNrLBNq','kcGOlISPkYKRksSK','pc9ZCgfUpJWVyNv0Dg9UpG','AxmTC3vJy2vZCW','CMvWBgfJzq','7kce7iAHio2AN+YiMcdTMzxSNBJSL5aG7iUK7yYO7zAi7iQ164Ui64UKlGO','yNrUr29dB3zLCKXLDhrLCG','x3jLC3vTzvn0zxa','zM9JDxm','lNjLC3vTzs1K','zwr1y2f0Aw9Uq2fYzwvY','z2v0uMvZDw1Ltg9JywXtDg9YywDLs2v5','y29UC3rYDwn0B3i','jMD0oW','4P2mioYGHoYgOEYxKcdSI6tTJkJTLOJSIRxRI4JRI6qUia','67o07iIy64+e7j6L','zM9YBwf0rNvSBefKzhjLC3m','C2vHCMnO','BwvZC2fNzq','CMvZDw1Lq2fYzwvYqM9KEq','C2v0','CMvUzgvYu3r1zgvUDenVDMvYtgv0DgvYvMLLDW','CMvUzgvYu3r1zgvUDfjLC3vTzvzPzxC','CMvTB3zL','EwvHCG','y291BNq','DhjHBNnHy3rPB24','AxmTzxHOyxvZDgvK','CMvZDw1LqwrKCMvZC1nPz3vUz3u','BwfW','rMLYzwjHC2uGqxv0AcbUB3qGBg9HzgvK','nZa1odK4mffdB3jAtq','mtaWmZK5mJvZy2nxt24','lNjLC3vTzs1MAwvSza','iIbPBNb1Dg1Vzgu9iM51BwvYAwmIpGOGicaGicaGicaGica8l3rKpGOGicaGicaGicaGica8Dgq+phrLEhrHCMvHignSyxnZpsjYzxn1BwuTy29UDgvUDcbMB3jTlxjLC3vTzs10zxH0iIbYB3DZpsiYiIbWBgfJzwHVBgrLCJ0I','ChvZAa','C29YDfjLC3vTzvjVD3ncEurHDgu','C3vIBwL0DgvKqxq','7j2066cL7isCiercioYGGoYEPsdSI6tTJkG6','yNrUuMvZDw1LqwrKrMLUywXfzhu','7kcv67Me7ikW7jEf6RIW7ikS','y2XPy2S','z2v0rwXLBwvUDej5swq','rMLYzwjHC2uGq29UC29SzsdIHPiGqxv0AgvUDgLJyxrPB24G4OAsifnPz24TAw4GBwv0Ag9KiokgKIdSNBxRQOuOqw5VBNLTB3vZksdSGQZSMQKG7isK7kcv7j20io2vHoYALo2vQEUlIoUlPc4','7iUCWRFRJ4q','CgHVBMu','7j2066cL7isCioYDTEUQHsdROzZQT7JSNBGG7iUK7yYOoG','Aw5WDxq','BgvUz3rO','ywn0AxzL'];a8_0x1d03=function(){return _0xb49a6d;};return a8_0x1d03();}function a8_0x9ab4(_0x42406d,_0x31e11b){_0x42406d=_0x42406d-0x102;const _0x1bfa36=a8_0x1d03();let _0x3b0cff=_0x1bfa36[_0x42406d];if(a8_0x9ab4['qZlaIY']===undefined){var _0x36f983=function(_0x26e87f){const _0x37f69f='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x923ad8='',_0x1680c3='',_0x250080=_0x923ad8+_0x36f983;for(let _0x20f0cf=0x0,_0x4d28e8,_0x278521,_0xa35f72=0x0;_0x278521=_0x26e87f['charAt'](_0xa35f72++);~_0x278521&&(_0x4d28e8=_0x20f0cf%0x4?_0x4d28e8*0x40+_0x278521:_0x278521,_0x20f0cf++%0x4)?_0x923ad8+=_0x250080['charCodeAt'](_0xa35f72+0xa)-0xa!==0x0?String['fromCharCode'](0xff&_0x4d28e8>>(-0x2*_0x20f0cf&0x6)):_0x20f0cf:0x0){_0x278521=_0x37f69f['indexOf'](_0x278521);}for(let _0x10e9d2=0x0,_0x49b5a0=_0x923ad8['length'];_0x10e9d2<_0x49b5a0;_0x10e9d2++){_0x1680c3+='%'+('00'+_0x923ad8['charCodeAt'](_0x10e9d2)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x1680c3);};a8_0x9ab4['Zfzbmc']=_0x36f983,a8_0x9ab4['qMrVIQ']={},a8_0x9ab4['qZlaIY']=!![];}const _0x1d0328=_0x1bfa36[0x0],_0x9ab462=_0x42406d+_0x1d0328,_0x320831=a8_0x9ab4['qMrVIQ'][_0x9ab462];if(!_0x320831){const _0x5583af=function(_0x2aa52d){this['ydFiHr']=_0x2aa52d,this['ktPPik']=[0x1,0x0,0x0],this['mDcAIP']=function(){return'newState';},this['HcKkRB']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['ctPDwP']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x5583af['prototype']['hLCmpp']=function(){const _0x275486=new RegExp(this['HcKkRB']+this['ctPDwP']),_0x4620c5=_0x275486['test'](this['mDcAIP']['toString']())?--this['ktPPik'][0x1]:--this['ktPPik'][0x0];return this['HnJdEd'](_0x4620c5);},_0x5583af['prototype']['HnJdEd']=function(_0x18900e){if(!Boolean(~_0x18900e))return _0x18900e;return this['oRaQYO'](this['ydFiHr']);},_0x5583af['prototype']['oRaQYO']=function(_0x9f5980){for(let _0x5b2406=0x0,_0x1a9dd0=this['ktPPik']['length'];_0x5b2406<_0x1a9dd0;_0x5b2406++){this['ktPPik']['push'](Math['round'](Math['random']())),_0x1a9dd0=this['ktPPik']['length'];}return _0x9f5980(this['ktPPik'][0x0]);},new _0x5583af(a8_0x9ab4)['hLCmpp'](),_0x3b0cff=a8_0x9ab4['Zfzbmc'](_0x3b0cff),a8_0x9ab4['qMrVIQ'][_0x9ab462]=_0x3b0cff;}else _0x3b0cff=_0x320831;return _0x3b0cff;}(function(_0x32fa32,_0x45dab8){const _0x5ae61b=a8_0x9ab4,_0x49cd00=_0x32fa32();while(!![]){try{const _0x250c85=-parseInt(_0x5ae61b(0x192))/0x1*(-parseInt(_0x5ae61b(0x1ab))/0x2)+parseInt(_0x5ae61b(0x12f))/0x3*(-parseInt(_0x5ae61b(0x12c))/0x4)+parseInt(_0x5ae61b(0x10a))/0x5+-parseInt(_0x5ae61b(0x12a))/0x6+-parseInt(_0x5ae61b(0x165))/0x7*(parseInt(_0x5ae61b(0x113))/0x8)+parseInt(_0x5ae61b(0x177))/0x9+parseInt(_0x5ae61b(0x164))/0xa;if(_0x250c85===_0x45dab8)break;else _0x49cd00['push'](_0x49cd00['shift']());}catch(_0x26829a){_0x49cd00['push'](_0x49cd00['shift']());}}}(a8_0x1d03,0xb0825),(function(){const _0x345f3f=a8_0x9ab4,_0x20f0cf=(function(){let _0x4052aa=!![];return function(_0x816afe,_0x49d948){const _0x4e33e0=_0x4052aa?function(){if(_0x49d948){const _0x388850=_0x49d948['apply'](_0x816afe,arguments);return _0x49d948=null,_0x388850;}}:function(){};return _0x4052aa=![],_0x4e33e0;};}()),_0x4d28e8=_0x20f0cf(this,function(){const _0x5e3d91=a8_0x9ab4;return _0x4d28e8[_0x5e3d91(0x189)]()[_0x5e3d91(0x156)](_0x5e3d91(0x146))[_0x5e3d91(0x189)]()[_0x5e3d91(0x151)](_0x4d28e8)[_0x5e3d91(0x156)]('(((.+)+)+)+$');});_0x4d28e8();'use strict';const _0x278521=()=>window['StudentResumeShared'],_0xa35f72=0x5,_0x10e9d2=[{'full':_0x345f3f(0x194),'short':_0x345f3f(0x11c)},{'full':_0x345f3f(0x1a7),'short':_0x345f3f(0x16d)},{'full':_0x345f3f(0x115),'short':'차체수리'},{'full':'자동차보수도장기능사','short':_0x345f3f(0x154)}];function _0x49b5a0(_0x3a52d2){const _0x47707f=_0x345f3f,_0x58f502=_0x278521()[_0x47707f(0x13a)]();return classDbRef('studentResumeSubmitCounts/'+_0x3a52d2+'/'+_0x58f502);}function _0x5583af(_0x54399b){const _0x2619c2=_0x345f3f;return typeof _0x54399b===_0x2619c2(0x13b)&&!isNaN(_0x54399b)?_0x54399b:0x0;}async function _0x2aa52d(_0x112183){const _0x2c35bc=_0x345f3f,_0x4ad5e1=_0x49b5a0(_0x112183),_0x437cbf=await _0x4ad5e1[_0x2c35bc(0x15f)](_0x14ccc3=>{const _0x40fae5=_0x5583af(_0x14ccc3);if(_0x40fae5>=_0xa35f72)return;return _0x40fae5+0x1;});if(!_0x437cbf[_0x2c35bc(0x11f)])return{'ok':![],'count':_0x5583af(_0x437cbf[_0x2c35bc(0x18c)]?.['val']())};const _0x18af1d=_0x5583af(_0x437cbf[_0x2c35bc(0x18c)][_0x2c35bc(0x17f)]());if(_0x18af1d>_0xa35f72)return{'ok':![],'count':_0x18af1d};return{'ok':!![],'count':_0x18af1d};}async function _0x275486(_0x3de89e){const _0x569166=_0x49b5a0(_0x3de89e);await _0x569166['transaction'](_0x2d71a2=>{const _0x29e196=_0x5583af(_0x2d71a2);if(_0x29e196<=0x0)return 0x0;return _0x29e196-0x1;});}async function _0x4620c5(_0x183bea){const _0x383915=_0x345f3f;if(!_0x183bea)return 0x0;try{await _0x9f5980();const _0x291f22=await _0x49b5a0(_0x183bea)[_0x383915(0x1a1)]('value');return _0x5583af(_0x291f22[_0x383915(0x17f)]());}catch(_0x56a73b){return 0x0;}}async function _0x18900e(){const _0x16ae5e=_0x345f3f,_0x2e16d9=document[_0x16ae5e(0x16f)](_0x16ae5e(0x128)),_0x56f5cf=document[_0x16ae5e(0x16f)]('btnSubmitResume');if(!selectedStudentName||!_0x2e16d9)return;const _0x41dc56=await _0x4620c5(selectedStudentName),_0x185f12=Math['max'](0x0,_0xa35f72-_0x41dc56);_0x2e16d9[_0x16ae5e(0x145)]=_0x185f12>0x0?'오늘\x20전송\x20가능\x20'+_0x185f12+'/'+_0xa35f72+_0x16ae5e(0x1aa):_0x16ae5e(0x197)+_0xa35f72+_0x16ae5e(0x180),_0x2e16d9[_0x16ae5e(0x112)]['toggle'](_0x16ae5e(0x160),_0x185f12<=0x0);if(_0x56f5cf)_0x56f5cf[_0x16ae5e(0x11e)]=_0x185f12<=0x0;}async function _0x9f5980(){const _0x1edd08=_0x345f3f;if(typeof firebase==='undefined'||!firebase[_0x1edd08(0x126)])throw new Error(_0x1edd08(0x163));const _0x163b7a=firebase['auth']();if(_0x163b7a[_0x1edd08(0x125)])return _0x163b7a[_0x1edd08(0x125)];const _0x2d8d71=await _0x163b7a['signInAnonymously']();return _0x2d8d71[_0x1edd08(0x133)];}function _0x5b2406(_0x16ca61,_0x4d0020){const _0x4efbf0=_0x345f3f,_0xa9495b=String(_0x16ca61?.['code']||_0x16ca61?.[_0x4efbf0(0x157)]||'');if(_0xa9495b[_0x4efbf0(0x144)]('PERMISSION_DENIED')||_0xa9495b['includes'](_0x4efbf0(0x10b))){if(_0x4d0020==='count')return _0x4efbf0(0x19e);if(_0x4d0020===_0x4efbf0(0x18b))return'이력서(studentResumes)\x20DB\x20권한\x20오류입니다.\x20익명\x20로그인\x20ON\x20+\x20Firebase\x20규칙\x20게시를\x20확인해\x20주세요.';return'서버\x20DB\x20권한\x20오류입니다.\x20익명\x20로그인\x20ON\x20·\x20Firebase\x20규칙\x20게시\x20·\x20테스트\x20중인\x20반\x20DB가\x20맞는지\x20확인해\x20주세요.';}if(_0xa9495b[_0x4efbf0(0x144)](_0x4efbf0(0x102)))return _0x4efbf0(0x170);if(_0xa9495b[_0x4efbf0(0x144)]('auth/'))return _0x4efbf0(0x106)+_0xa9495b;return _0xa9495b||_0x4efbf0(0x12e);}function _0x1a9dd0(_0x1d22eb){const _0x13ed64=_0x345f3f;if(!_0x1d22eb||!_0x278521())return 0x0;return _0x278521()[_0x13ed64(0x18d)](_0x1d22eb,validTrainingDays,fullAttendanceData,validTrainingDays,dropoutData);}function _0x242a8c(_0x134f2f){if(!_0x134f2f)return null;try{const _0x4ab832=localStorage['getItem'](_0x278521()['getResumeLocalStorageKey'](_0x134f2f));if(!_0x4ab832)return null;const _0x321be2=JSON['parse'](_0x4ab832);return _0x321be2&&typeof _0x321be2==='object'?_0x321be2:null;}catch(_0x9a84e1){return null;}}function _0x2baa69(_0x23f1c1,_0x378ba9){const _0x5320a3=_0x345f3f;if(!_0x23f1c1||!_0x378ba9)return;localStorage['setItem'](_0x278521()[_0x5320a3(0x150)](_0x23f1c1),JSON[_0x5320a3(0x1a8)](_0x378ba9));}function _0x16b8e1(){const _0x322b1e=_0x345f3f,_0x5d7e1b=document['getElementById']('resumeAddressSido')?.[_0x322b1e(0x129)]||'',_0x324285=document['getElementById']('resumeAddressSigungu')?.['value']||'',_0x56ea8b=document[_0x322b1e(0x16f)]('resumeBasicAddressDetail')?.[_0x322b1e(0x129)]?.[_0x322b1e(0x130)]()||'',_0x3d8bcd={'addressSido':_0x5d7e1b,'addressSigungu':_0x324285,'addressDetail':_0x56ea8b},_0x508af4={'name':document[_0x322b1e(0x16f)](_0x322b1e(0x134))?.[_0x322b1e(0x129)]||'','email':document[_0x322b1e(0x16f)](_0x322b1e(0x108))?.[_0x322b1e(0x129)]||'','phone':document[_0x322b1e(0x16f)](_0x322b1e(0x111))?.[_0x322b1e(0x129)]||'',..._0x3d8bcd,'address':_0x278521()[_0x322b1e(0x155)](_0x3d8bcd)},_0x5011ad=_0x148b7d('resumeCareerBody'),_0x4594c4=_0x148b7d(_0x322b1e(0x13c)),_0x5349a2=_0x148b7d(_0x322b1e(0x117)),_0xf49558=document['getElementById'](_0x322b1e(0x19a)),_0x2fa07b=_0xf49558?parseFloat(_0xf49558[_0x322b1e(0x109)][_0x322b1e(0x129)]||_0xf49558['textContent'])||0x0:0x0;return{'basic':_0x508af4,'careerHistory':_0x5011ad,'finalEducation':_0x4594c4,'skillsCerts':_0x5349a2,'totalAttendanceRate':_0x2fa07b};}const _0x5b9105=[{'key':'addressSido','label':_0x345f3f(0x171),'id':_0x345f3f(0x1a6)},{'key':_0x345f3f(0x105),'label':_0x345f3f(0x103),'id':_0x345f3f(0x161)},{'key':'addressDetail','label':_0x345f3f(0x19c),'id':_0x345f3f(0x107)}];function _0x56cba4(_0x2f0891){const _0x28af23=_0x345f3f;return _0x5b9105['filter'](_0x3ea23d=>!String(_0x2f0891?.[_0x3ea23d[_0x28af23(0x184)]]||'')['trim']())[_0x28af23(0x162)](_0x575dfa=>_0x575dfa['label']);}function _0x75ee66(_0x44ced4){_0x5b9105['forEach'](_0x2beacb=>{const _0x791879=a8_0x9ab4,_0x100ad4=document[_0x791879(0x16f)](_0x2beacb['id']),_0x32cc7a=_0x100ad4?.[_0x791879(0x191)](_0x791879(0x166));if(_0x32cc7a)_0x32cc7a[_0x791879(0x112)]['toggle'](_0x791879(0x140),_0x44ced4[_0x791879(0x144)](_0x2beacb[_0x791879(0x18a)]));});}function _0x79f7b8(){_0x75ee66([]);}function _0x148b7d(_0x2b1f7c){const _0x3373df=_0x345f3f,_0x159aaa=document[_0x3373df(0x16f)](_0x2b1f7c);if(!_0x159aaa)return[];return Array['from'](_0x159aaa[_0x3373df(0x12d)]('tr'))[_0x3373df(0x162)](_0xa1a68b=>({'year':_0xa1a68b[_0x3373df(0x19b)]('.resume-y')?.[_0x3373df(0x129)]?.[_0x3373df(0x130)]()||'','month':_0xa1a68b[_0x3373df(0x19b)]('.resume-m')?.[_0x3373df(0x129)]?.[_0x3373df(0x130)]()||'','day':_0xa1a68b[_0x3373df(0x19b)](_0x3373df(0x14e))?.[_0x3373df(0x129)]?.['trim']()||'','content':_0xa1a68b[_0x3373df(0x19b)]('.resume-content')?.[_0x3373df(0x129)]?.[_0x3373df(0x130)]()||''}))[_0x3373df(0x19f)](_0x14d485=>_0x14d485[_0x3373df(0x15d)]||_0x14d485[_0x3373df(0x122)]||_0x14d485[_0x3373df(0x118)]||_0x14d485['content']);}function _0xe6d07a(_0xc6529e,_0x49f634){const _0xfbdeef=_0x345f3f,_0x22c79d=document[_0xfbdeef(0x16f)](_0xc6529e);if(!_0x22c79d)return;const _0x4f3aea=_0x49f634?.[_0xfbdeef(0x175)]?_0x49f634:[_0x278521()['emptyResumeRow']()];_0x22c79d['innerHTML']=_0x4f3aea['map']((_0x29ffca,_0x159a8b)=>_0xba7ea6(_0xc6529e,_0x29ffca,_0x159a8b))[_0xfbdeef(0x1a5)]('');}function _0x29ca6c(_0x48c2ff){const _0x147eb1=_0x345f3f;if(_0x48c2ff===_0x147eb1(0x158))return _0x147eb1(0x1ad);if(_0x48c2ff===_0x147eb1(0x13c))return'ex)\x2000학교.\x2000년\x2000월\x20졸업';return _0x147eb1(0x11b);}function _0xba7ea6(_0xa54933,_0x11b918,_0x31e729){const _0x23063d=_0x345f3f,_0x16ab9c=_0xa54933===_0x23063d(0x158)?_0x23063d(0x19d):_0xa54933===_0x23063d(0x13c)?'finaledu':_0x23063d(0x186),_0x51541a=_0x2268ab(_0x29ca6c(_0xa54933));return _0x23063d(0x178)+_0x31e729+_0x23063d(0x137)+_0x2268ab(_0x11b918[_0x23063d(0x15d)])+'\x22\x20inputmode=\x22numeric\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22resume-date-sep\x22>/</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22text\x22\x20class=\x22resume-m\x20resume-date-input\x22\x20maxlength=\x222\x22\x20placeholder=\x22월\x22\x20value=\x22'+_0x2268ab(_0x11b918[_0x23063d(0x122)])+_0x23063d(0x139)+_0x2268ab(_0x11b918[_0x23063d(0x118)])+_0x23063d(0x167)+_0x51541a+'\x22>'+_0x573e55(_0x11b918[_0x23063d(0x187)])+'</textarea></td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td\x20class=\x22resume-row-action\x22><button\x20type=\x22button\x22\x20class=\x22resume-row-del\x22\x20data-target=\x22'+_0x16ab9c+'\x22\x20aria-label=\x22행\x20삭제\x22>✕</button></td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</tr>';}function _0x2268ab(_0x5c24e5){const _0x8bf0a2=_0x345f3f;return String(_0x5c24e5||'')[_0x8bf0a2(0x149)](/&/g,_0x8bf0a2(0x196))[_0x8bf0a2(0x149)](/"/g,_0x8bf0a2(0x199))[_0x8bf0a2(0x149)](/</g,_0x8bf0a2(0x12b));}function _0x573e55(_0x2ef388){const _0x1c0f87=_0x345f3f;return String(_0x2ef388||'')[_0x1c0f87(0x149)](/&/g,_0x1c0f87(0x196))['replace'](/</g,'&lt;')['replace'](/>/g,_0x1c0f87(0x152));}function _0x28220e(_0x180c14,_0x25075f){const _0xc64854=_0x345f3f,_0x4d318f=_0x180c14?.[_0xc64854(0x183)]||{},_0x28f275=document[_0xc64854(0x16f)](_0xc64854(0x134));if(_0x28f275)_0x28f275[_0xc64854(0x129)]=_0x25075f||'';const _0x1c4a3f=_0x278521()['normalizeBasicAddress'](_0x4d318f),_0x365047=document['getElementById']('resumeBasicEmail'),_0x3cd14=document[_0xc64854(0x16f)]('resumeBasicPhone');if(_0x365047)_0x365047[_0xc64854(0x129)]=_0x1c4a3f['email']||'';if(_0x3cd14)_0x3cd14[_0xc64854(0x129)]=_0x1c4a3f[_0xc64854(0x172)]||'';_0x35c1da(_0x1c4a3f);const _0x99453a=document['getElementById'](_0xc64854(0x19a)),_0x38c0b6=_0x1a9dd0(_0x25075f);_0x99453a&&(_0x99453a[_0xc64854(0x145)]=_0x38c0b6+'%',_0x99453a[_0xc64854(0x109)][_0xc64854(0x129)]=String(_0x38c0b6)),_0xe6d07a(_0xc64854(0x158),_0x180c14?.['careerHistory']??_0x180c14?.[_0xc64854(0x14f)]),_0xe6d07a(_0xc64854(0x13c),_0x180c14?.[_0xc64854(0x13e)]),_0xe6d07a(_0xc64854(0x117),_0x180c14?.['skillsCerts']);}function _0x1a2411(){const _0x43bf87=_0x345f3f;if(!selectedStudentName){const _0x4a9a9f=document['getElementById'](_0x43bf87(0x18e));if(_0x4a9a9f)_0x4a9a9f[_0x43bf87(0x142)]='<p\x20class=\x22resume-empty-hint\x22>상단에서\x20본인\x20이름을\x20선택한\x20뒤\x20이력서를\x20작성할\x20수\x20있습니다.</p>';return;}const _0x55f84d=_0x242a8c(selectedStudentName);_0x55f84d?_0x28220e(_0x55f84d,selectedStudentName):_0x28220e(_0x278521()[_0x43bf87(0x185)](selectedStudentName,_0x1a9dd0(selectedStudentName)),selectedStudentName),_0x3ab98a();}function _0x35c1da(_0x2de4c8){const _0x2dc34f=_0x345f3f,_0x2368e4=_0x278521()[_0x2dc34f(0x10f)](_0x2de4c8||{}),_0x274c62=document['getElementById'](_0x2dc34f(0x1a6)),_0xd8ffe9=document[_0x2dc34f(0x16f)]('resumeAddressSigungu'),_0x5b4c96=document[_0x2dc34f(0x16f)](_0x2dc34f(0x107));typeof fillSidoSelect===_0x2dc34f(0x1a4)&&(fillSidoSelect(_0x274c62,_0x2368e4['addressSido']||''),fillSigunguSelect(_0xd8ffe9,_0x2368e4[_0x2dc34f(0x179)]||'',_0x2368e4[_0x2dc34f(0x105)]||''));if(_0x5b4c96)_0x5b4c96[_0x2dc34f(0x129)]=_0x2368e4['addressDetail']||'';}function _0x3ab98a(){const _0x5e0be6=_0x345f3f;if(!selectedStudentName)return;const _0x27ae8d=_0x1a9dd0(selectedStudentName),_0x3c27b1=document[_0x5e0be6(0x16f)]('resumeAttendanceRate');_0x3c27b1&&(_0x3c27b1[_0x5e0be6(0x145)]=_0x27ae8d+'%',_0x3c27b1['dataset']['value']=String(_0x27ae8d));}function _0x3405b1(){const _0xbedd82=_0x345f3f,_0x4172bc=document[_0xbedd82(0x16f)](_0xbedd82(0x10e));if(!_0x4172bc)return;_0x4172bc[_0xbedd82(0x142)]='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22resume-panel\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22resume-panel-head\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h3\x20class=\x22resume-panel-title\x22>📝\x20이력서\x20작성</h3>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20class=\x22resume-panel-desc\x22>작성\x20후\x20「이력서\x20보내기」를\x20누르면\x20담임선생님께\x20전달됩니다.\x20하루\x20최대\x20'+_0xa35f72+_0xbedd82(0x181)+(selectedStudentName?_0x253ad5():'<p\x20class=\x22resume-empty-hint\x22>상단에서\x20본인\x20이름을\x20선택한\x20뒤\x20이력서를\x20작성할\x20수\x20있습니다.</p>')+_0xbedd82(0x114),selectedStudentName&&(_0x1a2411(),_0x3367ef(),_0x18900e());}function _0x253ad5(){const _0x357403=_0x345f3f;return _0x357403(0x116)+_0x10e9d2[_0x357403(0x162)](_0x2f3023=>_0x357403(0x198)+_0x2268ab(_0x2f3023[_0x357403(0x193)])+_0x357403(0x131)+_0x573e55(_0x2f3023[_0x357403(0x193)])+'</span><span\x20class=\x22resume-quick-cert-label-short\x22>'+_0x573e55(_0x2f3023[_0x357403(0x10c)])+_0x357403(0x147))[_0x357403(0x1a5)]('')+'\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20type=\x22button\x22\x20id=\x22btnResumeAddSkill\x22\x20class=\x22resume-quick-cert-btn\x20resume-quick-cert-btn-other\x22>기타\x20추가</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22resume-table-wrap\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<table\x20class=\x22resume-table\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<thead><tr><th\x20style=\x22width:38%\x22>년\x20/\x20월\x20/\x20일\x20(취득일)</th><th>특기사항\x20·\x20자격증\x20·\x20상장수상</th><th\x20style=\x22width:36px\x22></th></tr></thead>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<tbody\x20id=\x22resumeSkillBody\x22></tbody>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</table>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</section>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<section\x20class=\x22resume-section\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h4\x20class=\x22resume-section-title\x22>5.\x20현재까지\x20총\x20출석률</h4>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20class=\x22resume-rate-note\x22>단위개월출석부와\x20동일한\x20<strong>편입(%)</strong>\x20기준\x20·\x20현재까지\x20출석\x20완료\x20시\x20100%</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22resume-rate-box\x22><span\x20id=\x22resumeAttendanceRate\x22>-</span></div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</section>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20id=\x22resumeDailyLimitHint\x22\x20class=\x22resume-daily-limit-hint\x22>오늘\x20전송\x20가능\x20횟수\x20확인\x20중...</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20type=\x22button\x22\x20id=\x22btnSubmitResume\x22\x20class=\x22resume-submit-btn\x22>📤\x20이력서\x20보내기(필수)</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20type=\x22button\x22\x20id=\x22btnGoCoverLetter\x22\x20class=\x22resume-secondary-btn\x22>✍️\x20자기소개서\x20작성(선택)</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20id=\x22resumeSubmitStatus\x22\x20class=\x22resume-submit-status\x22\x20aria-live=\x22polite\x22></p>';}function _0x3367ef(){const _0xcc2e35=_0x345f3f;document[_0xcc2e35(0x16f)](_0xcc2e35(0x1a2))?.['addEventListener'](_0xcc2e35(0x16e),()=>_0x38c8c0(_0xcc2e35(0x158))),document[_0xcc2e35(0x16f)](_0xcc2e35(0x16c))?.[_0xcc2e35(0x17a)](_0xcc2e35(0x16e),()=>_0x38c8c0(_0xcc2e35(0x13c))),document[_0xcc2e35(0x16f)]('btnResumeAddSkill')?.['addEventListener'](_0xcc2e35(0x16e),()=>_0x38c8c0(_0xcc2e35(0x117))),document['getElementById'](_0xcc2e35(0x10d))?.[_0xcc2e35(0x17a)](_0xcc2e35(0x16e),()=>_0x2ce693(_0xcc2e35(0x158))),document['getElementById'](_0xcc2e35(0x17c))?.[_0xcc2e35(0x17a)](_0xcc2e35(0x16e),()=>_0x2ce693(_0xcc2e35(0x117))),document[_0xcc2e35(0x16f)]('btnSubmitResume')?.['addEventListener'](_0xcc2e35(0x16e),_0x486156),document[_0xcc2e35(0x16f)](_0xcc2e35(0x14b))?.[_0xcc2e35(0x17a)](_0xcc2e35(0x16e),()=>{const _0x41b59b=_0xcc2e35;typeof window[_0x41b59b(0x15a)]===_0x41b59b(0x1a4)&&window[_0x41b59b(0x15a)]();}),document[_0xcc2e35(0x12d)]('.resume-quick-cert-btn')[_0xcc2e35(0x17e)](_0x368f4d=>{const _0x3202b5=_0xcc2e35;_0x368f4d[_0x3202b5(0x17a)](_0x3202b5(0x16e),()=>_0x1b69b3(_0x368f4d[_0x3202b5(0x109)][_0x3202b5(0x132)]||''));}),document[_0xcc2e35(0x16f)](_0xcc2e35(0x1a6))?.[_0xcc2e35(0x17a)](_0xcc2e35(0x1a9),function(){const _0x1d465f=_0xcc2e35;fillSigunguSelect(document['getElementById'](_0x1d465f(0x161)),this[_0x1d465f(0x129)],''),_0x79f7b8();}),document[_0xcc2e35(0x16f)](_0xcc2e35(0x161))?.[_0xcc2e35(0x17a)](_0xcc2e35(0x1a9),_0x79f7b8),document[_0xcc2e35(0x16f)]('resumeBasicAddressDetail')?.[_0xcc2e35(0x17a)](_0xcc2e35(0x174),_0x79f7b8);const _0x8ccd8e=document[_0xcc2e35(0x16f)]('resumeFormWrap');_0x8ccd8e?.[_0xcc2e35(0x17a)](_0xcc2e35(0x16e),_0x5b6b5f=>{const _0x20b7ec=_0xcc2e35,_0x12f3b5=_0x5b6b5f[_0x20b7ec(0x182)][_0x20b7ec(0x191)](_0x20b7ec(0x127));if(!_0x12f3b5)return;const _0x405a1c=_0x12f3b5['closest']('tr'),_0x173131=_0x405a1c?.[_0x20b7ec(0x1a3)];if(!_0x173131||!_0x405a1c)return;if(_0x173131[_0x20b7ec(0x12d)]('tr')['length']<=0x1){_0x405a1c[_0x20b7ec(0x12d)](_0x20b7ec(0x141))[_0x20b7ec(0x17e)](_0x38c775=>{_0x38c775['value']='';});return;}_0x405a1c[_0x20b7ec(0x15c)]();});}function _0x38c8c0(_0x16ce5f){const _0x48bafc=_0x345f3f,_0x46f440=document[_0x48bafc(0x16f)](_0x16ce5f);if(!_0x46f440)return;const _0x53f45e=_0x46f440['querySelectorAll']('tr')[_0x48bafc(0x175)];_0x46f440['insertAdjacentHTML'](_0x48bafc(0x136),_0xba7ea6(_0x16ce5f,_0x278521()[_0x48bafc(0x1ac)](),_0x53f45e));}function _0x531ed9(_0x1733c6){const _0x167efe=_0x345f3f;if(!_0x1733c6)return!![];const _0x47e7f3=_0x1733c6['querySelector'](_0x167efe(0x195))?.['value']?.[_0x167efe(0x130)](),_0x5189fa=_0x1733c6[_0x167efe(0x19b)](_0x167efe(0x119))?.[_0x167efe(0x129)]?.[_0x167efe(0x130)](),_0x514a89=_0x1733c6['querySelector'](_0x167efe(0x14e))?.[_0x167efe(0x129)]?.[_0x167efe(0x130)](),_0x10dfa9=_0x1733c6[_0x167efe(0x19b)](_0x167efe(0x18f))?.[_0x167efe(0x129)]?.[_0x167efe(0x130)]();return!_0x47e7f3&&!_0x5189fa&&!_0x514a89&&!_0x10dfa9;}function _0x1b69b3(_0x148483){const _0x47dcc5=_0x345f3f,_0x305999=document[_0x47dcc5(0x16f)](_0x47dcc5(0x117));if(!_0x305999||!_0x148483)return;const _0x3aa6e8=_0x305999['querySelectorAll']('tr'),_0x4b2cdd=_0x3aa6e8[_0x3aa6e8[_0x47dcc5(0x175)]-0x1];if(_0x4b2cdd&&_0x531ed9(_0x4b2cdd)){const _0x56344f=_0x4b2cdd['querySelector'](_0x47dcc5(0x18f));if(_0x56344f)_0x56344f[_0x47dcc5(0x129)]=_0x148483;_0x56344f?.['focus']();return;}const _0x43db94=_0x3aa6e8['length'];_0x305999[_0x47dcc5(0x11d)](_0x47dcc5(0x136),_0xba7ea6(_0x47dcc5(0x117),{'year':'','month':'','day':'','content':_0x148483},_0x43db94)),_0x305999[_0x47dcc5(0x19b)](_0x47dcc5(0x104))?.[_0x47dcc5(0x14d)]();}function _0x2ce693(_0xdeff6){const _0x511362=_0x345f3f,_0x2c635d=_0x148b7d(_0xdeff6);if(!_0x2c635d[_0x511362(0x175)])return;_0xe6d07a(_0xdeff6,_0x278521()[_0x511362(0x169)](_0x2c635d,!![]));}async function _0x486156(){const _0x38a319=_0x345f3f;if(!await requireSelectedStudent())return;const _0x20c436=_0x16b8e1();_0x20c436[_0x38a319(0x183)][_0x38a319(0x13d)]=selectedStudentName,_0x20c436['totalAttendanceRate']=_0x1a9dd0(selectedStudentName),_0x20c436['submittedAt']=new Date()['toISOString']();const _0x3d1866=document[_0x38a319(0x16f)](_0x38a319(0x190)),_0x3cf39c=_0x56cba4(_0x20c436[_0x38a319(0x183)]);if(_0x3cf39c['length']){_0x75ee66(_0x3cf39c);const _0x50394d='다음\x20필수\x20항목을\x20입력해\x20주세요.\x0a\x0a·\x20'+_0x3cf39c[_0x38a319(0x1a5)]('\x0a·\x20');_0x3d1866&&(_0x3d1866[_0x38a319(0x145)]='❌\x20시·도,\x20시·군·구,\x20상세주소는\x20필수입니다.',_0x3d1866[_0x38a319(0x112)]['remove']('is-success'));await appAlert(_0x50394d),document[_0x38a319(0x16f)](_0x3cf39c[0x0]===_0x38a319(0x171)?_0x38a319(0x1a6):_0x3cf39c[0x0]===_0x38a319(0x103)?_0x38a319(0x161):_0x38a319(0x107))?.[_0x38a319(0x14d)]();return;}_0x79f7b8();let _0x275da2=![];try{_0x3d1866&&(_0x3d1866[_0x38a319(0x145)]='전송\x20중...',_0x3d1866[_0x38a319(0x112)][_0x38a319(0x15c)]('is-success'));try{await _0x9f5980();}catch(_0xf41fb8){console[_0x38a319(0x120)](_0x38a319(0x173),_0xf41fb8);const _0x4b03bd=_0x5b2406(_0xf41fb8,'auth');if(_0x3d1866)_0x3d1866[_0x38a319(0x145)]=_0x38a319(0x153)+_0x4b03bd;await appAlert(_0x38a319(0x13f)+_0x4b03bd);return;}let _0x3d66ed;try{_0x3d66ed=await _0x2aa52d(selectedStudentName);}catch(_0x557052){console[_0x38a319(0x120)](_0x38a319(0x17b),_0x557052);const _0x3609a1=_0x5b2406(_0x557052,_0x38a319(0x15e));if(_0x3d1866)_0x3d1866['textContent']=_0x38a319(0x153)+_0x3609a1;await appAlert(_0x38a319(0x14a)+_0x3609a1);return;}if(!_0x3d66ed['ok']){const _0x5e38c8=_0x38a319(0x138)+_0xa35f72+_0x38a319(0x123);if(_0x3d1866)_0x3d1866[_0x38a319(0x145)]='❌\x20'+_0x5e38c8[_0x38a319(0x149)]('\x0a','\x20');await appAlert(_0x5e38c8),await _0x18900e();return;}_0x275da2=!![];const _0xab7ee3=classDbRef('studentResumes/'+selectedStudentName)[_0x38a319(0x168)]();try{await _0xab7ee3[_0x38a319(0x159)]({..._0x20c436,'submissionId':_0xab7ee3[_0x38a319(0x184)],'studentName':selectedStudentName});}catch(_0x2dd958){console['error'](_0x38a319(0x16b),_0x2dd958);throw Object[_0x38a319(0x17d)](_0x2dd958,{'_resumeStep':_0x38a319(0x18b)});}_0x275da2=![];const _0x56d9db={'basic':_0x20c436[_0x38a319(0x183)],'careerHistory':_0x20c436[_0x38a319(0x124)],'finalEducation':_0x20c436[_0x38a319(0x13e)],'skillsCerts':_0x20c436[_0x38a319(0x188)],'totalAttendanceRate':_0x20c436[_0x38a319(0x135)],'lastSubmittedAt':_0x20c436[_0x38a319(0x16a)]};_0x2baa69(selectedStudentName,_0x56d9db),_0x3d1866&&(_0x3d1866['textContent']=_0x38a319(0x11a),_0x3d1866[_0x38a319(0x112)]['add'](_0x38a319(0x148))),await appAlert(_0x38a319(0x110)),await _0x18900e();}catch(_0x4b3492){if(_0x275da2)try{await _0x275486(selectedStudentName);}catch(_0x351484){}console[_0x38a319(0x120)]('이력서\x20전송\x20실패:',_0x4b3492);const _0x15ffc7=_0x4b3492?.[_0x38a319(0x14c)]||'unknown',_0x599bd1=_0x5b2406(_0x4b3492,_0x15ffc7);_0x3d1866&&(_0x3d1866[_0x38a319(0x145)]='❌\x20전송에\x20실패했습니다.\x20'+_0x599bd1,_0x3d1866[_0x38a319(0x112)][_0x38a319(0x15c)](_0x38a319(0x148))),await appAlert(_0x38a319(0x1a0)+_0x599bd1),await _0x18900e();}}window[_0x345f3f(0x15b)]=_0x3405b1,window[_0x345f3f(0x121)]=function(){const _0x3856f9=_0x345f3f,_0x1acc55=document[_0x3856f9(0x16f)](_0x3856f9(0x143));if(_0x1acc55?.[_0x3856f9(0x112)]['contains'](_0x3856f9(0x176)))_0x3405b1();};}()));
+/**
+ * student-resume-student.js — 능력단위학생용 이력서 작성·전송 (Firebase 읽기 없음)
+ *
+ * 전송 시 Firebase Anonymous Auth 로 로그인한 뒤 studentResumes 경로에만 push().
+ * DB 규칙은 firebase-student-resume-rules.json 참고 (Console에 반별 프로젝트마다 적용).
+ */
+(function () {
+    'use strict';
+
+    const SRS = () => window.StudentResumeShared;
+    const RESUME_DAILY_SUBMIT_LIMIT = 5;
+    const QUICK_SKILL_CERTS = [
+        { full: '자동차정비기능사', short: '정비기능사' },
+        { full: '자동차정비산업기사', short: '정비산업기사' },
+        { full: '자동차차체수리기능사', short: '차체수리' },
+        { full: '자동차보수도장기능사', short: '보수도장' }
+    ];
+
+    function getDailySubmitCountRef(studentName) {
+        const dateKey = SRS().getTodayStrKst();
+        return classDbRef(`studentResumeSubmitCounts/${studentName}/${dateKey}`);
+    }
+
+    function parseSubmitCount(val) {
+        return typeof val === 'number' && !isNaN(val) ? val : 0;
+    }
+
+    /** 하루 전송 횟수 +1 (transaction). 5회 초과 시 { ok: false } */
+    async function reserveDailySubmitSlot(studentName) {
+        const ref = getDailySubmitCountRef(studentName);
+        const result = await ref.transaction(current => {
+            const n = parseSubmitCount(current);
+            if (n >= RESUME_DAILY_SUBMIT_LIMIT) return;
+            return n + 1;
+        });
+        if (!result.committed) return { ok: false, count: parseSubmitCount(result.snapshot?.val()) };
+        const count = parseSubmitCount(result.snapshot.val());
+        if (count > RESUME_DAILY_SUBMIT_LIMIT) return { ok: false, count };
+        return { ok: true, count };
+    }
+
+    /** 이력서 저장 실패 시 예약한 횟수 되돌리기 */
+    async function releaseDailySubmitSlot(studentName) {
+        const ref = getDailySubmitCountRef(studentName);
+        await ref.transaction(current => {
+            const n = parseSubmitCount(current);
+            if (n <= 0) return 0;
+            return n - 1;
+        });
+    }
+
+    async function fetchTodaySubmitCount(studentName) {
+        if (!studentName) return 0;
+        try {
+            await ensureStudentResumeAuth();
+            const snap = await getDailySubmitCountRef(studentName).once('value');
+            return parseSubmitCount(snap.val());
+        } catch (e) {
+            return 0;
+        }
+    }
+
+    async function updateDailySubmitStatusUI() {
+        const hintEl = document.getElementById('resumeDailyLimitHint');
+        const btn = document.getElementById('btnSubmitResume');
+        if (!selectedStudentName || !hintEl) return;
+        const used = await fetchTodaySubmitCount(selectedStudentName);
+        const left = Math.max(0, RESUME_DAILY_SUBMIT_LIMIT - used);
+        hintEl.textContent = left > 0
+            ? `오늘 전송 가능 ${left}/${RESUME_DAILY_SUBMIT_LIMIT}회 (한국 시간 기준 · 학생별)`
+            : `오늘 전송 ${RESUME_DAILY_SUBMIT_LIMIT}회를 모두 사용했습니다. 내일 다시 전송할 수 있습니다.`;
+        hintEl.classList.toggle('is-exhausted', left <= 0);
+        if (btn) btn.disabled = left <= 0;
+    }
+
+    /** 이력서 전송 전용 — 익명 로그인(다른 DB 경로 쓰기 권한과 분리) */
+    async function ensureStudentResumeAuth() {
+        if (typeof firebase === 'undefined' || !firebase.auth) {
+            throw new Error('Firebase Auth not loaded');
+        }
+        const auth = firebase.auth();
+        if (auth.currentUser) return auth.currentUser;
+        const cred = await auth.signInAnonymously();
+        return cred.user;
+    }
+
+    function resumeSubmitErrorHint(err, step) {
+        const code = String(err?.code || err?.message || '');
+        if (code.includes('PERMISSION_DENIED') || code.includes('permission_denied')) {
+            if (step === 'count') {
+                return '전송 횟수(studentResumeSubmitCounts) DB 권한 오류입니다. Firebase 규칙을 다시 게시했는지 확인해 주세요.';
+            }
+            if (step === 'resume') {
+                return '이력서(studentResumes) DB 권한 오류입니다. 익명 로그인 ON + Firebase 규칙 게시를 확인해 주세요.';
+            }
+            return '서버 DB 권한 오류입니다. 익명 로그인 ON · Firebase 규칙 게시 · 테스트 중인 반 DB가 맞는지 확인해 주세요.';
+        }
+        if (code.includes('auth/operation-not-allowed')) {
+            return 'Firebase Console → Authentication → Sign-in method → 익명(Anonymous) 사용 설정이 필요합니다.';
+        }
+        if (code.includes('auth/')) {
+            return 'Firebase 로그인 오류: ' + code;
+        }
+        return (code || '네트워크를 확인 후 다시 시도해 주세요.');
+    }
+
+    function getAttendanceRateForStudent(name) {
+        if (!name || !SRS()) return 0;
+        return SRS().calculateUnitMonthPersonalRate(
+            name,
+            validTrainingDays,
+            fullAttendanceData,
+            validTrainingDays,
+            dropoutData
+        );
+    }
+
+    function loadLocalResume(name) {
+        if (!name) return null;
+        try {
+            const raw = localStorage.getItem(SRS().getResumeLocalStorageKey(name));
+            if (!raw) return null;
+            const parsed = JSON.parse(raw);
+            return parsed && typeof parsed === 'object' ? parsed : null;
+        } catch (e) {
+            return null;
+        }
+    }
+
+    function saveLocalResume(name, data) {
+        if (!name || !data) return;
+        localStorage.setItem(SRS().getResumeLocalStorageKey(name), JSON.stringify(data));
+    }
+
+    function collectFormFromDom() {
+        const addressSido = document.getElementById('resumeAddressSido')?.value || '';
+        const addressSigungu = document.getElementById('resumeAddressSigungu')?.value || '';
+        const addressDetail = document.getElementById('resumeBasicAddressDetail')?.value?.trim() || '';
+        const addressParts = { addressSido, addressSigungu, addressDetail };
+        const basic = {
+            name: document.getElementById('resumeBasicName')?.value || '',
+            email: document.getElementById('resumeBasicEmail')?.value || '',
+            phone: document.getElementById('resumeBasicPhone')?.value || '',
+            ...addressParts,
+            address: SRS().formatFullAddress(addressParts)
+        };
+        const careerHistory = collectDynamicRows('resumeCareerBody');
+        const finalEducation = collectDynamicRows('resumeFinalEduBody');
+        const skillsCerts = collectDynamicRows('resumeSkillBody');
+        const rateEl = document.getElementById('resumeAttendanceRate');
+        const totalAttendanceRate = rateEl ? parseFloat(rateEl.dataset.value || rateEl.textContent) || 0 : 0;
+        return { basic, careerHistory, finalEducation, skillsCerts, totalAttendanceRate };
+    }
+
+    const REQUIRED_ADDRESS_FIELDS = [
+        { key: 'addressSido', label: '시·도', id: 'resumeAddressSido' },
+        { key: 'addressSigungu', label: '시·군·구', id: 'resumeAddressSigungu' },
+        { key: 'addressDetail', label: '상세주소', id: 'resumeBasicAddressDetail' }
+    ];
+
+    function getMissingRequiredAddressFields(basic) {
+        return REQUIRED_ADDRESS_FIELDS.filter(f => !String(basic?.[f.key] || '').trim()).map(f => f.label);
+    }
+
+    function setAddressRequiredErrors(missingLabels) {
+        REQUIRED_ADDRESS_FIELDS.forEach(f => {
+            const el = document.getElementById(f.id);
+            const wrap = el?.closest('.resume-field');
+            if (wrap) wrap.classList.toggle('is-required-missing', missingLabels.includes(f.label));
+        });
+    }
+
+    function clearAddressRequiredErrors() {
+        setAddressRequiredErrors([]);
+    }
+
+    function collectDynamicRows(tbodyId) {
+        const tbody = document.getElementById(tbodyId);
+        if (!tbody) return [];
+        return Array.from(tbody.querySelectorAll('tr')).map(tr => ({
+            year: tr.querySelector('.resume-y')?.value?.trim() || '',
+            month: tr.querySelector('.resume-m')?.value?.trim() || '',
+            day: tr.querySelector('.resume-d')?.value?.trim() || '',
+            content: tr.querySelector('.resume-content')?.value?.trim() || ''
+        })).filter(r => r.year || r.month || r.day || r.content);
+    }
+
+    function fillDynamicRows(tbodyId, rows) {
+        const tbody = document.getElementById(tbodyId);
+        if (!tbody) return;
+        const list = rows?.length ? rows : [SRS().emptyResumeRow()];
+        tbody.innerHTML = list.map((row, idx) => buildDynamicRowHtml(tbodyId, row, idx)).join('');
+    }
+
+    function getResumeContentPlaceholder(tbodyId) {
+        if (tbodyId === 'resumeCareerBody') return 'ex) 00회사 근무. 00년 00월 퇴사';
+        if (tbodyId === 'resumeFinalEduBody') return 'ex) 00학교. 00년 00월 졸업';
+        return '내용을 입력하세요';
+    }
+
+    function buildDynamicRowHtml(tbodyId, row, idx) {
+        const prefix = tbodyId === 'resumeCareerBody' ? 'career'
+            : tbodyId === 'resumeFinalEduBody' ? 'finaledu'
+            : 'skill';
+        const contentPh = escAttr(getResumeContentPlaceholder(tbodyId));
+        return `<tr data-row-idx="${idx}">
+            <td class="resume-date-cell">
+                <input type="text" class="resume-y resume-date-input" maxlength="4" placeholder="년" value="${escAttr(row.year)}" inputmode="numeric">
+                <span class="resume-date-sep">/</span>
+                <input type="text" class="resume-m resume-date-input" maxlength="2" placeholder="월" value="${escAttr(row.month)}" inputmode="numeric">
+                <span class="resume-date-sep">/</span>
+                <input type="text" class="resume-d resume-date-input" maxlength="2" placeholder="일" value="${escAttr(row.day)}" inputmode="numeric">
+            </td>
+            <td><textarea class="resume-content form-resume-text" rows="2" placeholder="${contentPh}">${escHtml(row.content)}</textarea></td>
+            <td class="resume-row-action"><button type="button" class="resume-row-del" data-target="${prefix}" aria-label="행 삭제">✕</button></td>
+        </tr>`;
+    }
+
+    function escAttr(s) {
+        return String(s || '').replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+    }
+
+    function escHtml(s) {
+        return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    function applyFormData(data, studentName) {
+        const basic = data?.basic || {};
+
+        const nameEl = document.getElementById('resumeBasicName');
+        if (nameEl) nameEl.value = studentName || '';
+
+        const normalized = SRS().normalizeBasicAddress(basic);
+        const emailEl = document.getElementById('resumeBasicEmail');
+        const phoneEl = document.getElementById('resumeBasicPhone');
+        if (emailEl) emailEl.value = normalized.email || '';
+        if (phoneEl) phoneEl.value = normalized.phone || '';
+        initAddressSelects(normalized);
+
+        const rateEl = document.getElementById('resumeAttendanceRate');
+        const liveRate = getAttendanceRateForStudent(studentName);
+        if (rateEl) {
+            rateEl.textContent = `${liveRate}%`;
+            rateEl.dataset.value = String(liveRate);
+        }
+
+        fillDynamicRows('resumeCareerBody', data?.careerHistory ?? data?.educationCareer);
+        fillDynamicRows('resumeFinalEduBody', data?.finalEducation);
+        fillDynamicRows('resumeSkillBody', data?.skillsCerts);
+    }
+
+    function refreshResumeForm() {
+        if (!selectedStudentName) {
+            const wrap = document.getElementById('resumeFormWrap');
+            if (wrap) wrap.innerHTML = '<p class="resume-empty-hint">상단에서 본인 이름을 선택한 뒤 이력서를 작성할 수 있습니다.</p>';
+            return;
+        }
+        const local = loadLocalResume(selectedStudentName);
+        if (local) {
+            applyFormData(local, selectedStudentName);
+        } else {
+            applyFormData(
+                SRS().buildDefaultResumeForm(
+                    selectedStudentName,
+                    getAttendanceRateForStudent(selectedStudentName)
+                ),
+                selectedStudentName
+            );
+        }
+        updateResumeRateDisplay();
+    }
+
+    function initAddressSelects(basic) {
+        const b = SRS().normalizeBasicAddress(basic || {});
+        const sidoEl = document.getElementById('resumeAddressSido');
+        const sigunguEl = document.getElementById('resumeAddressSigungu');
+        const detailEl = document.getElementById('resumeBasicAddressDetail');
+        if (typeof fillSidoSelect === 'function') {
+            fillSidoSelect(sidoEl, b.addressSido || '');
+            fillSigunguSelect(sigunguEl, b.addressSido || '', b.addressSigungu || '');
+        }
+        if (detailEl) detailEl.value = b.addressDetail || '';
+    }
+
+    function updateResumeRateDisplay() {
+        if (!selectedStudentName) return;
+        const rate = getAttendanceRateForStudent(selectedStudentName);
+        const rateEl = document.getElementById('resumeAttendanceRate');
+        if (rateEl) {
+            rateEl.textContent = `${rate}%`;
+            rateEl.dataset.value = String(rate);
+        }
+    }
+
+    function renderResumeView() {
+        const vArea = document.getElementById('viewArea');
+        if (!vArea) return;
+        vArea.innerHTML = `
+            <div class="resume-panel">
+                <div class="resume-panel-head">
+                    <h3 class="resume-panel-title">📝 이력서 작성</h3>
+                    <p class="resume-panel-desc">작성 후 「이력서 보내기」를 누르면 담임선생님께 전달됩니다. 하루 최대 ${RESUME_DAILY_SUBMIT_LIMIT}회까지 전송할 수 있습니다. 수정은 이 기기에 저장된 마지막 전송 내용만 불러올 수 있습니다.</p>
+                </div>
+                <div id="resumeFormWrap" class="resume-form-wrap">
+                    ${selectedStudentName ? buildResumeFormHtml() : '<p class="resume-empty-hint">상단에서 본인 이름을 선택한 뒤 이력서를 작성할 수 있습니다.</p>'}
+                </div>
+            </div>`;
+        if (selectedStudentName) {
+            refreshResumeForm();
+            bindResumeFormEvents();
+            updateDailySubmitStatusUI();
+        }
+    }
+
+    function buildResumeFormHtml() {
+        return `
+            <section class="resume-section">
+                <h4 class="resume-section-title">1. 기초자료</h4>
+                <div class="resume-basic-grid">
+                    <label class="resume-field"><span>이름</span><input type="text" id="resumeBasicName" class="form-resume-input" readonly></label>
+                    <label class="resume-field"><span>연락처</span><input type="tel" id="resumeBasicPhone" class="form-resume-input" placeholder="010-0000-0000"></label>
+                    <label class="resume-field resume-field-full"><span>e-mail</span><input type="email" id="resumeBasicEmail" class="form-resume-input" placeholder="example@email.com"></label>
+                    <label class="resume-field"><span>시·도 <em class="resume-required-mark" aria-hidden="true">*</em></span><select id="resumeAddressSido" class="form-resume-select" required></select></label>
+                    <label class="resume-field"><span>시·군·구 <em class="resume-required-mark" aria-hidden="true">*</em></span><select id="resumeAddressSigungu" class="form-resume-select" disabled required></select></label>
+                    <label class="resume-field resume-field-full"><span>상세주소 <em class="resume-required-mark" aria-hidden="true">*</em></span><input type="text" id="resumeBasicAddressDetail" class="form-resume-input" placeholder="동·호수 등 상세주소" required></label>
+                </div>
+            </section>
+            <section class="resume-section">
+                <div class="resume-section-head">
+                    <h4 class="resume-section-title">2. 경력사항</h4>
+                    <div class="resume-section-btns">
+                        <button type="button" id="btnResumeSortCareer" class="resume-mini-btn">📅 날짜순 정렬</button>
+                        <button type="button" id="btnResumeAddCareer" class="resume-mini-btn resume-mini-btn-add">＋ 추가</button>
+                    </div>
+                </div>
+                <div class="resume-table-wrap">
+                    <table class="resume-table">
+                        <thead><tr><th style="width:38%">년 / 월 / 일 (입사일)</th><th>회사명 (퇴사일)</th><th style="width:36px"></th></tr></thead>
+                        <tbody id="resumeCareerBody"></tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="resume-section">
+                <div class="resume-section-head">
+                    <h4 class="resume-section-title">3. 최종학력</h4>
+                    <div class="resume-section-btns">
+                        <button type="button" id="btnResumeAddFinalEdu" class="resume-mini-btn resume-mini-btn-add">＋ 추가</button>
+                    </div>
+                </div>
+                <div class="resume-table-wrap">
+                    <table class="resume-table">
+                        <thead><tr><th style="width:38%">년 / 월 / 일 (입학일)</th><th>학교명 (졸업일)</th><th style="width:36px"></th></tr></thead>
+                        <tbody id="resumeFinalEduBody"></tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="resume-section">
+                <div class="resume-section-head">
+                    <h4 class="resume-section-title">4. 특기사항.자격증.상장수상</h4>
+                    <div class="resume-section-btns">
+                        <a href="https://www.q-net.or.kr/" target="_blank" rel="noopener noreferrer" class="resume-mini-btn resume-mini-btn-qnet" title="한국산업인력공단 큐넷(자격증 조회)">🔗 큐넷 새창</a>
+                        <button type="button" id="btnResumeSortSkill" class="resume-mini-btn">📅 날짜순 정렬</button>
+                    </div>
+                </div>
+                <div class="resume-quick-certs">
+                    <p class="resume-quick-certs-label">자주 취득하는 자격증 — 클릭하면 아래 목록에 추가됩니다</p>
+                    <div class="resume-quick-certs-btns">
+                        ${QUICK_SKILL_CERTS.map(cert => `<button type="button" class="resume-quick-cert-btn" data-cert="${escAttr(cert.full)}"><span class="resume-quick-cert-label-full">${escHtml(cert.full)}</span><span class="resume-quick-cert-label-short">${escHtml(cert.short)}</span></button>`).join('')}
+                        <button type="button" id="btnResumeAddSkill" class="resume-quick-cert-btn resume-quick-cert-btn-other">기타 추가</button>
+                    </div>
+                </div>
+                <div class="resume-table-wrap">
+                    <table class="resume-table">
+                        <thead><tr><th style="width:38%">년 / 월 / 일 (취득일)</th><th>특기사항 · 자격증 · 상장수상</th><th style="width:36px"></th></tr></thead>
+                        <tbody id="resumeSkillBody"></tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="resume-section">
+                <h4 class="resume-section-title">5. 현재까지 총 출석률</h4>
+                <p class="resume-rate-note">단위개월출석부와 동일한 <strong>편입(%)</strong> 기준 · 현재까지 출석 완료 시 100%</p>
+                <div class="resume-rate-box"><span id="resumeAttendanceRate">-</span></div>
+            </section>
+            <p id="resumeDailyLimitHint" class="resume-daily-limit-hint">오늘 전송 가능 횟수 확인 중...</p>
+            <button type="button" id="btnSubmitResume" class="resume-submit-btn">📤 이력서 보내기(필수)</button>
+            <button type="button" id="btnGoCoverLetter" class="resume-secondary-btn">✍️ 자기소개서 작성(선택)</button>
+            <p id="resumeSubmitStatus" class="resume-submit-status" aria-live="polite"></p>`;
+    }
+
+    function bindResumeFormEvents() {
+        document.getElementById('btnResumeAddCareer')?.addEventListener('click', () => addDynamicRow('resumeCareerBody'));
+        document.getElementById('btnResumeAddFinalEdu')?.addEventListener('click', () => addDynamicRow('resumeFinalEduBody'));
+        document.getElementById('btnResumeAddSkill')?.addEventListener('click', () => addDynamicRow('resumeSkillBody'));
+        document.getElementById('btnResumeSortCareer')?.addEventListener('click', () => sortSectionRows('resumeCareerBody'));
+        document.getElementById('btnResumeSortSkill')?.addEventListener('click', () => sortSectionRows('resumeSkillBody'));
+        document.getElementById('btnSubmitResume')?.addEventListener('click', submitResume);
+        document.getElementById('btnGoCoverLetter')?.addEventListener('click', () => {
+            if (typeof window.renderStudentCoverLetterView === 'function') {
+                window.renderStudentCoverLetterView();
+            }
+        });
+        document.querySelectorAll('.resume-quick-cert-btn').forEach(btn => {
+            btn.addEventListener('click', () => addQuickSkillCert(btn.dataset.cert || ''));
+        });
+        document.getElementById('resumeAddressSido')?.addEventListener('change', function () {
+            fillSigunguSelect(document.getElementById('resumeAddressSigungu'), this.value, '');
+            clearAddressRequiredErrors();
+        });
+        document.getElementById('resumeAddressSigungu')?.addEventListener('change', clearAddressRequiredErrors);
+        document.getElementById('resumeBasicAddressDetail')?.addEventListener('input', clearAddressRequiredErrors);
+
+        const wrap = document.getElementById('resumeFormWrap');
+        wrap?.addEventListener('click', e => {
+            const del = e.target.closest('.resume-row-del');
+            if (!del) return;
+            const tr = del.closest('tr');
+            const tbody = tr?.parentElement;
+            if (!tbody || !tr) return;
+            if (tbody.querySelectorAll('tr').length <= 1) {
+                tr.querySelectorAll('input, textarea').forEach(el => { el.value = ''; });
+                return;
+            }
+            tr.remove();
+        });
+    }
+
+    function addDynamicRow(tbodyId) {
+        const tbody = document.getElementById(tbodyId);
+        if (!tbody) return;
+        const idx = tbody.querySelectorAll('tr').length;
+        tbody.insertAdjacentHTML('beforeend', buildDynamicRowHtml(tbodyId, SRS().emptyResumeRow(), idx));
+    }
+
+    function isResumeRowEmpty(tr) {
+        if (!tr) return true;
+        const y = tr.querySelector('.resume-y')?.value?.trim();
+        const m = tr.querySelector('.resume-m')?.value?.trim();
+        const d = tr.querySelector('.resume-d')?.value?.trim();
+        const c = tr.querySelector('.resume-content')?.value?.trim();
+        return !y && !m && !d && !c;
+    }
+
+    function addQuickSkillCert(certName) {
+        const tbody = document.getElementById('resumeSkillBody');
+        if (!tbody || !certName) return;
+        const rows = tbody.querySelectorAll('tr');
+        const lastTr = rows[rows.length - 1];
+        if (lastTr && isResumeRowEmpty(lastTr)) {
+            const contentEl = lastTr.querySelector('.resume-content');
+            if (contentEl) contentEl.value = certName;
+            contentEl?.focus();
+            return;
+        }
+        const idx = rows.length;
+        tbody.insertAdjacentHTML('beforeend', buildDynamicRowHtml('resumeSkillBody', {
+            year: '', month: '', day: '', content: certName
+        }, idx));
+        tbody.querySelector('tr:last-child .resume-content')?.focus();
+    }
+
+    function sortSectionRows(tbodyId) {
+        const rows = collectDynamicRows(tbodyId);
+        if (!rows.length) return;
+        fillDynamicRows(tbodyId, SRS().sortResumeRowsByDate(rows, true));
+    }
+
+    async function submitResume() {
+        if (!(await requireSelectedStudent())) return;
+
+        const payload = collectFormFromDom();
+        payload.basic.name = selectedStudentName;
+        payload.totalAttendanceRate = getAttendanceRateForStudent(selectedStudentName);
+        payload.submittedAt = new Date().toISOString();
+
+        const statusEl = document.getElementById('resumeSubmitStatus');
+        const missingAddress = getMissingRequiredAddressFields(payload.basic);
+        if (missingAddress.length) {
+            setAddressRequiredErrors(missingAddress);
+            const msg = '다음 필수 항목을 입력해 주세요.\n\n· ' + missingAddress.join('\n· ');
+            if (statusEl) {
+                statusEl.textContent = '❌ 시·도, 시·군·구, 상세주소는 필수입니다.';
+                statusEl.classList.remove('is-success');
+            }
+            await appAlert(msg);
+            document.getElementById(missingAddress[0] === '시·도' ? 'resumeAddressSido'
+                : missingAddress[0] === '시·군·구' ? 'resumeAddressSigungu'
+                : 'resumeBasicAddressDetail')?.focus();
+            return;
+        }
+        clearAddressRequiredErrors();
+
+        let slotReserved = false;
+        try {
+            if (statusEl) {
+                statusEl.textContent = '전송 중...';
+                statusEl.classList.remove('is-success');
+            }
+
+            try {
+                await ensureStudentResumeAuth();
+            } catch (authErr) {
+                console.error('이력서 익명 로그인 실패:', authErr);
+                const hint = resumeSubmitErrorHint(authErr, 'auth');
+                if (statusEl) statusEl.textContent = '❌ 전송에 실패했습니다. ' + hint;
+                await appAlert('Firebase 로그인에 실패했습니다.\n' + hint);
+                return;
+            }
+
+            let slot;
+            try {
+                slot = await reserveDailySubmitSlot(selectedStudentName);
+            } catch (countErr) {
+                console.error('전송 횟수 확인 실패:', countErr);
+                const hint = resumeSubmitErrorHint(countErr, 'count');
+                if (statusEl) statusEl.textContent = '❌ 전송에 실패했습니다. ' + hint;
+                await appAlert('전송 횟수 확인에 실패했습니다.\n' + hint);
+                return;
+            }
+
+            if (!slot.ok) {
+                const limitMsg = `오늘은 이미 ${RESUME_DAILY_SUBMIT_LIMIT}회 전송하셨습니다.\n내일(한국 시간 기준) 다시 시도해 주세요.`;
+                if (statusEl) statusEl.textContent = '❌ ' + limitMsg.replace('\n', ' ');
+                await appAlert(limitMsg);
+                await updateDailySubmitStatusUI();
+                return;
+            }
+            slotReserved = true;
+
+            const ref = classDbRef(`studentResumes/${selectedStudentName}`).push();
+            try {
+                await ref.set({
+                    ...payload,
+                    submissionId: ref.key,
+                    studentName: selectedStudentName
+                });
+            } catch (resumeErr) {
+                console.error('이력서 DB 저장 실패:', resumeErr);
+                throw Object.assign(resumeErr, { _resumeStep: 'resume' });
+            }
+            slotReserved = false;
+
+            const toStore = {
+                basic: payload.basic,
+                careerHistory: payload.careerHistory,
+                finalEducation: payload.finalEducation,
+                skillsCerts: payload.skillsCerts,
+                totalAttendanceRate: payload.totalAttendanceRate,
+                lastSubmittedAt: payload.submittedAt
+            };
+            saveLocalResume(selectedStudentName, toStore);
+
+            if (statusEl) {
+                statusEl.textContent = '✅ 담임선생님께 전달되었습니다. 이 기기에 최신 내용이 저장되었습니다.';
+                statusEl.classList.add('is-success');
+            }
+            await appAlert('이력서가 전송되었습니다.');
+            await updateDailySubmitStatusUI();
+        } catch (e) {
+            if (slotReserved) {
+                try { await releaseDailySubmitSlot(selectedStudentName); } catch (_) { /* ignore */ }
+            }
+            console.error('이력서 전송 실패:', e);
+            const step = e?._resumeStep || 'unknown';
+            const hint = resumeSubmitErrorHint(e, step);
+            if (statusEl) {
+                statusEl.textContent = '❌ 전송에 실패했습니다. ' + hint;
+                statusEl.classList.remove('is-success');
+            }
+            await appAlert('이력서 전송에 실패했습니다.\n' + hint);
+            await updateDailySubmitStatusUI();
+        }
+    }
+
+    window.renderStudentResumeView = renderResumeView;
+    window.refreshStudentResumeIfOpen = function () {
+        const tab = document.getElementById('tab_resume');
+        if (tab?.classList.contains('active')) renderResumeView();
+    };
+})();

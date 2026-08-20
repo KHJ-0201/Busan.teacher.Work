@@ -18,18 +18,14 @@ let resumeDataByStudent = {};
 let fullAttendanceData = {};
 let validTrainingDays = [];
 let dropoutData = {};
-let earlyCompletionData = {};
 let masterSubjectList = [];
 let ncsList = [];
 let selectedStudent = '';
 let openSubmissionId = '';
-let filterSido = '부산광역시';
+let filterSido = '';
 let filterSigungu = '';
 let regionFilterReady = false;
 let koreaMapReady = false;
-let employmentStatusByStudent = {};
-let submitCountsByStudent = {};
-let coverLetterDataByStudent = {};
 
 auth.onAuthStateChanged(async user => {
     const savedPw = localStorage.getItem('adminPw');
@@ -54,20 +50,15 @@ document.getElementById('btnBackCounsel')?.addEventListener('click', e => {
 
 async function bootstrap() {
     try {
-        const [attSnap, resumeSnap, coverSnap, employmentSnap, timeSnap, dropSnap, earlySnap, masterSnap, countSnap] = await Promise.all([
+        const [attSnap, resumeSnap, timeSnap, dropSnap, masterSnap] = await Promise.all([
             classDbRef('dailyAttendance').once('value'),
             classDbRef('studentResumes').once('value'),
-            classDbRef('studentCoverLetters').once('value'),
-            classDbRef('studentEmploymentStatus').once('value'),
             classDbRef('fullTimetable').once('value'),
             classDbRef('dropouts').once('value'),
-            classDbRef('earlyCompletions').once('value'),
-            classDbRef('masterData').once('value'),
-            classDbRef('studentResumeSubmitCounts').once('value')
+            classDbRef('masterData').once('value')
         ]);
         fullAttendanceData = attSnap.val() || {};
         dropoutData = dropSnap.val() || {};
-        earlyCompletionData = earlySnap.val() || {};
         const master = masterSnap.val() || {};
         if (master.courses) {
             masterSubjectList = [...new Set(master.courses.map(c => c.subject))];
@@ -82,53 +73,15 @@ async function bootstrap() {
         });
         studentNames = Array.from(allStudents).sort();
 
-        employmentStatusByStudent = employmentSnap.val() || {};
-        submitCountsByStudent = countSnap.val() || {};
-
         resumeDataByStudent = {};
-        coverLetterDataByStudent = {};
         const raw = resumeSnap.val() || {};
         Object.keys(raw).forEach(studentName => {
             const entries = raw[studentName];
             if (!entries || typeof entries !== 'object') return;
-            Object.entries(entries).forEach(([id, data]) => {
-                const item = {
-                    id,
-                    storagePath: 'studentResumes',
-                    ...data
-                };
-                if (StudentResumeShared.isCoverLetterResumeEntry(data)) {
-                    item.documentType = 'coverLetter';
-                    if (!coverLetterDataByStudent[studentName]) coverLetterDataByStudent[studentName] = [];
-                    coverLetterDataByStudent[studentName].push(item);
-                } else {
-                    item.documentType = 'resume';
-                    if (!resumeDataByStudent[studentName]) resumeDataByStudent[studentName] = [];
-                    resumeDataByStudent[studentName].push(item);
-                }
-            });
-        });
-        Object.keys(resumeDataByStudent).forEach(name => {
-            resumeDataByStudent[name].sort((a, b) => String(b.submittedAt || '').localeCompare(String(a.submittedAt || '')));
-        });
-        Object.keys(coverLetterDataByStudent).forEach(name => {
-            coverLetterDataByStudent[name].sort((a, b) => String(b.submittedAt || '').localeCompare(String(a.submittedAt || '')));
-        });
-
-        const rawCover = coverSnap.val() || {};
-        Object.keys(rawCover).forEach(studentName => {
-            const entries = rawCover[studentName];
-            if (!entries || typeof entries !== 'object') return;
-            if (!coverLetterDataByStudent[studentName]) coverLetterDataByStudent[studentName] = [];
-            Object.entries(entries).forEach(([id, data]) => {
-                coverLetterDataByStudent[studentName].push({
-                    id,
-                    documentType: 'coverLetter',
-                    storagePath: 'studentCoverLetters',
-                    ...data
-                });
-            });
-            coverLetterDataByStudent[studentName].sort((a, b) => String(b.submittedAt || '').localeCompare(String(a.submittedAt || '')));
+            resumeDataByStudent[studentName] = Object.entries(entries).map(([id, data]) => ({
+                id,
+                ...data
+            })).sort((a, b) => String(b.submittedAt || '').localeCompare(String(a.submittedAt || '')));
         });
 
         initRegionFilter();
@@ -179,90 +132,10 @@ function buildValidTrainingDays(rawTimetable) {
     }
 }
 
-function isStudentEmployed(name) {
-    return employmentStatusByStudent[name] === true;
+function getSubmissionCount(name) {
+    return (resumeDataByStudent[name] || []).length;
 }
 
-function getStudentEmploymentLabel(name) {
-    return isStudentEmployed(name) ? '취업' : '미취업';
-}
-
-function isStudentDropout(name) {
-    return !!dropoutData[name];
-}
-
-function isStudentEarlyCompletion(name) {
-    return !!earlyCompletionData[name];
-}
-
-function isStudentInactiveOnRoster(name) {
-    return isStudentDropout(name) || isStudentEarlyCompletion(name);
-}
-
-function getStudentRosterStatusLabel(name) {
-    if (isStudentDropout(name)) return '중도탈락';
-    if (isStudentEarlyCompletion(name)) return '조기수료';
-    return '';
-}
-
-function buildStudentListTableHtml(names, extraClass) {
-    const tableCls = extraClass ? `student-list-table ${extraClass}` : 'student-list-table';
-    const rows = names.map(name => {
-        const rowClasses = [];
-        if (name === selectedStudent) rowClasses.push('active');
-        if (isStudentInactiveOnRoster(name)) rowClasses.push('status-inactive');
-        const classAttr = rowClasses.length ? ` class="${rowClasses.join(' ')}"` : '';
-        const statusLabel = getStudentRosterStatusLabel(name);
-        const titleAttr = statusLabel ? ` title="${escAttr(statusLabel)}"` : '';
-        const employ = getStudentEmploymentLabel(name);
-        const employCls = employ === '취업' ? 'employ-yes' : 'employ-no';
-        return `<tr data-name="${escAttr(name)}"${classAttr}${titleAttr}>
-            <td class="col-no">${getStudentRosterNumber(name)}</td>
-            <td class="col-name" title="${escAttr(name)}">${escHtml(name)}</td>
-            <td class="col-age">${escHtml(getStudentAgeLabel(name))}</td>
-            <td class="col-addr">${escHtml(getStudentAddressLabel(name))}</td>
-            <td class="col-att">${escHtml(getStudentAttendanceRateLabel(name))}</td>
-            <td class="col-employ col-employ-toggle ${employCls}" title="클릭하여 취업/미취업 변경">${escHtml(employ)}</td>
-        </tr>`;
-    }).join('');
-    return `<table class="${tableCls}">
-        <colgroup>
-            <col class="col-no">
-            <col class="col-name">
-            <col class="col-age">
-            <col class="col-addr">
-            <col class="col-att">
-            <col class="col-employ">
-        </colgroup>
-        <thead><tr>
-            <th class="col-no">번호</th>
-            <th class="col-name">이름</th>
-            <th class="col-age">나이</th>
-            <th class="col-addr">주소</th>
-            <th class="col-att">출석률</th>
-            <th class="col-employ">취업</th>
-        </tr></thead>
-        <tbody>${rows}</tbody>
-    </table>`;
-}
-
-async function toggleStudentEmployment(name) {
-    if (!name) return;
-    const next = !isStudentEmployed(name);
-    const prev = employmentStatusByStudent[name];
-    employmentStatusByStudent[name] = next;
-    try {
-        await classDbRef(`studentEmploymentStatus/${name}`).set(next);
-        renderStudentList();
-        const main = document.getElementById('resumeMainView');
-        if (main && !main.hidden) renderRegionStudentGrid();
-    } catch (e) {
-        console.error(e);
-        if (prev === undefined) delete employmentStatusByStudent[name];
-        else employmentStatusByStudent[name] = prev;
-        await appAlert('취업 상태 저장에 실패했습니다.');
-    }
-}
 function getStudentLatestBasic(name) {
     const list = resumeDataByStudent[name];
     if (!list?.length) return null;
@@ -314,19 +187,53 @@ function getStudentAttendanceRateLabel(name) {
     return `${rate}%`;
 }
 
+function getStudentSubmitLabel(name) {
+    const cnt = getSubmissionCount(name);
+    return cnt > 0 ? '제출' : '미제출';
+}
+
+function buildStudentListTableHtml(names, extraClass) {
+    const tableCls = extraClass ? `student-list-table ${extraClass}` : 'student-list-table';
+    const rows = names.map(name => {
+        const active = name === selectedStudent ? ' class="active"' : '';
+        const submit = getStudentSubmitLabel(name);
+        const submitCls = submit === '제출' ? 'submit-yes' : 'submit-no';
+        return `<tr data-name="${escAttr(name)}"${active}>
+            <td class="col-no">${getStudentRosterNumber(name)}</td>
+            <td class="col-name" title="${escAttr(name)}">${escHtml(name)}</td>
+            <td class="col-age">${escHtml(getStudentAgeLabel(name))}</td>
+            <td class="col-addr">${escHtml(getStudentAddressLabel(name))}</td>
+            <td class="col-att">${escHtml(getStudentAttendanceRateLabel(name))}</td>
+            <td class="col-submit ${submitCls}">${escHtml(submit)}</td>
+        </tr>`;
+    }).join('');
+    return `<table class="${tableCls}">
+        <colgroup>
+            <col class="col-no">
+            <col class="col-name">
+            <col class="col-age">
+            <col class="col-addr">
+            <col class="col-att">
+            <col class="col-submit">
+        </colgroup>
+        <thead><tr>
+            <th class="col-no">번호</th>
+            <th class="col-name">이름</th>
+            <th class="col-age">나이</th>
+            <th class="col-addr">주소</th>
+            <th class="col-att">출석률</th>
+            <th class="col-submit">제출</th>
+        </tr></thead>
+        <tbody>${rows}</tbody>
+    </table>`;
+}
+
 function bindStudentListTableRows(container) {
     container?.querySelectorAll('.student-list-table tbody tr').forEach(row => {
         row.addEventListener('click', () => {
             const name = row.dataset.name;
             if (name && name === selectedStudent) selectStudent('');
             else selectStudent(name);
-        });
-    });
-    container?.querySelectorAll('.col-employ-toggle').forEach(cell => {
-        cell.addEventListener('click', e => {
-            e.stopPropagation();
-            const name = cell.closest('tr')?.dataset.name;
-            if (name) toggleStudentEmployment(name);
         });
     });
 }
@@ -385,8 +292,6 @@ async function initKoreaMapPicker() {
         container: el,
         getSidoCount: getStudentCountBySido,
         getSigunguCount: getStudentCountBySigungu,
-        initialSido: filterSido,
-        initialSigungu: filterSigungu,
         onSelect(sido, sigungu) {
             applyRegionFilter(sido, sigungu, { fromMap: true });
         }
@@ -429,8 +334,13 @@ function updateFilterSummary() {
 
 function onRegionFilterChange() {
     updateFilterSummary();
-    renderStudentList();
-    if (!selectedStudent) renderMainView();
+    const filtered = getFilteredStudentNames();
+    if (selectedStudent && !filtered.includes(selectedStudent)) {
+        selectStudent('');
+    } else {
+        renderStudentList();
+        if (!selectedStudent) renderMainView();
+    }
 }
 
 function showMainView() {
@@ -469,7 +379,7 @@ function renderRegionStudentGrid() {
         return;
     }
     if (!filterSido) {
-        grid.innerHTML = '<div class="main-view-hint korea-map-table-hint">지도에서 시·도를 선택하면 학생 목록이 오른쪽에 표시됩니다.</div>';
+        grid.innerHTML = '<div class="main-view-hint korea-map-table-hint">지도에서 시·도를 선택하면 학생 목록이 아래에 표시됩니다.</div>';
         return;
     }
     grid.innerHTML = buildStudentListTableHtml(names, 'student-list-table-main');
@@ -479,11 +389,16 @@ function renderRegionStudentGrid() {
 function renderStudentList() {
     const el = document.getElementById('studentList');
     if (!el) return;
+    const names = getFilteredStudentNames();
     if (!studentNames.length) {
         el.innerHTML = '<div style="padding:20px;text-align:center;color:#94a3b8;">학생 데이터가 없습니다.</div>';
         return;
     }
-    el.innerHTML = buildStudentListTableHtml(studentNames);
+    if (!names.length) {
+        el.innerHTML = '<div style="padding:20px;text-align:center;color:#94a3b8;font-size:12px;">선택한 지역에 해당하는 학생이 없습니다.</div>';
+        return;
+    }
+    el.innerHTML = buildStudentListTableHtml(names);
     bindStudentListTableRows(el);
 }
 
@@ -499,144 +414,26 @@ function selectStudent(name) {
     }
 }
 
-function getResumeDailySubmitLimit() {
-    return window.StudentResumeShared?.RESUME_DAILY_SUBMIT_LIMIT ?? 5;
-}
-
-function getTodaySubmitCountForStudent(name) {
-    const dateKey = StudentResumeShared.getTodayStrKst();
-    const raw = submitCountsByStudent?.[name]?.[dateKey];
-    const n = Number(raw);
-    return Number.isFinite(n) && n >= 0 ? n : 0;
-}
-
-function getCoverLetterDailySubmitLimit() {
-    return 5;
-}
-
-function getTodayCoverLetterSubmitCountForStudent(name) {
-    const dateKey = StudentResumeShared.getCoverLetterSubmitCountDateKey(StudentResumeShared.getTodayStrKst());
-    const raw = submitCountsByStudent?.[name]?.[dateKey];
-    const n = Number(raw);
-    return Number.isFinite(n) && n >= 0 ? n : 0;
-}
-
-function buildSubmitLimitPanelHtml(studentName, kind) {
-    const isCover = kind === 'coverLetter';
-    const limit = isCover ? getCoverLetterDailySubmitLimit() : getResumeDailySubmitLimit();
-    const used = isCover
-        ? getTodayCoverLetterSubmitCountForStudent(studentName)
-        : getTodaySubmitCountForStudent(studentName);
-    const left = Math.max(0, limit - used);
-    const dateKey = StudentResumeShared.getTodayStrKst();
-    const resetDisabled = used === 0 ? ' disabled' : '';
-    const label = isCover ? '✍️ 오늘 자기소개서 전송' : '📨 오늘 이력서 전송';
-    const btnId = isCover ? 'btnResetCoverSubmitCount' : 'btnResetSubmitCount';
-    return `
-        <div class="resume-submit-limit-panel${isCover ? ' is-cover-letter' : ''}">
-            <div class="resume-submit-limit-info">
-                <span class="resume-submit-limit-label">${label} (한국시간 ${escHtml(dateKey)})</span>
-                <span class="resume-submit-limit-count${used >= limit ? ' is-exhausted' : ''}">사용 ${used}/${limit}회 · <strong>남은 ${left}회</strong></span>
-            </div>
-            <button type="button" id="${btnId}" class="btn-reset-submit-count"${resetDisabled} title="학생이 오늘 다시 전송할 수 있도록 횟수를 0으로 되돌립니다">오늘 횟수 초기화</button>
-        </div>`;
-}
-
-async function resetTodaySubmitCount(studentName) {
-    const used = getTodaySubmitCountForStudent(studentName);
-    if (used === 0) {
-        await appAlert('오늘 사용한 전송 횟수가 없습니다.');
-        return;
-    }
-    const limit = getResumeDailySubmitLimit();
-    const dateKey = StudentResumeShared.getTodayStrKst();
-    if (!(await appConfirm(`${studentName} 학생의 오늘(${dateKey}) 이력서 전송 횟수(${used}/${limit}회)를 초기화하시겠습니까?\n\n학생은 다시 오늘 ${limit}회까지 전송할 수 있습니다.`))) return;
-    try {
-        await classDbRef(`studentResumeSubmitCounts/${studentName}/${dateKey}`).remove();
-        if (submitCountsByStudent[studentName]) {
-            delete submitCountsByStudent[studentName][dateKey];
-            if (!Object.keys(submitCountsByStudent[studentName]).length) {
-                delete submitCountsByStudent[studentName];
-            }
-        }
-        renderSubmissions();
-        await appAlert('오늘 전송 횟수가 초기화되었습니다.');
-    } catch (err) {
-        console.error(err);
-        await appAlert('초기화에 실패했습니다. Firebase 규칙에 담임 초기화 권한이 있는지 확인하세요.');
-    }
-}
-
-async function resetTodayCoverLetterSubmitCount(studentName) {
-    const used = getTodayCoverLetterSubmitCountForStudent(studentName);
-    if (used === 0) {
-        await appAlert('오늘 사용한 자기소개서 전송 횟수가 없습니다.');
-        return;
-    }
-    const limit = getCoverLetterDailySubmitLimit();
-    const countKey = StudentResumeShared.getCoverLetterSubmitCountDateKey(StudentResumeShared.getTodayStrKst());
-    if (!(await appConfirm(`${studentName} 학생의 오늘(${StudentResumeShared.getTodayStrKst()}) 자기소개서 전송 횟수(${used}/${limit}회)를 초기화하시겠습니까?\n\n학생은 다시 오늘 ${limit}회까지 전송할 수 있습니다.`))) return;
-    try {
-        await classDbRef(`studentResumeSubmitCounts/${studentName}/${countKey}`).remove();
-        if (submitCountsByStudent[studentName]) {
-            delete submitCountsByStudent[studentName][countKey];
-            if (!Object.keys(submitCountsByStudent[studentName]).length) {
-                delete submitCountsByStudent[studentName];
-            }
-        }
-        renderSubmissions();
-        await appAlert('오늘 자기소개서 전송 횟수가 초기화되었습니다.');
-    } catch (err) {
-        console.error(err);
-        await appAlert('초기화에 실패했습니다. Firebase 규칙에 담임 초기화 권한이 있는지 확인하세요.');
-    }
-}
-
-function bindSubmitLimitPanel(area) {
-    area.querySelector('#btnResetSubmitCount')?.addEventListener('click', async () => {
-        if (!selectedStudent) return;
-        await resetTodaySubmitCount(selectedStudent);
-    });
-    area.querySelector('#btnResetCoverSubmitCount')?.addEventListener('click', async () => {
-        if (!selectedStudent) return;
-        await resetTodayCoverLetterSubmitCount(selectedStudent);
-    });
-}
-
 function renderSubmissions() {
     const area = document.getElementById('resumeDetailArea');
     if (!area || !selectedStudent) return;
 
-    const resumeList = resumeDataByStudent[selectedStudent] || [];
-    const coverList = coverLetterDataByStudent[selectedStudent] || [];
-    const limitPanels = `
-        ${buildSubmitLimitPanelHtml(selectedStudent, 'resume')}
-        ${buildSubmitLimitPanelHtml(selectedStudent, 'coverLetter')}`;
-
-    if (!resumeList.length && !coverList.length) {
+    const list = resumeDataByStudent[selectedStudent] || [];
+    if (!list.length) {
         area.innerHTML = `
             <button type="button" id="btnBackToMain" class="region-filter-reset" style="margin-bottom:14px;">← 지역별 보기</button>
-            ${limitPanels}
-            <div class="empty-state"><strong>${escHtml(selectedStudent)}</strong> 학생의 제출된 이력서·자기소개서가 없습니다.</div>`;
+            <div class="empty-state"><strong>${escHtml(selectedStudent)}</strong> 학생의 제출된 이력서가 없습니다.</div>`;
         document.getElementById('btnBackToMain')?.addEventListener('click', () => selectStudent(''));
-        bindSubmitLimitPanel(area);
         return;
     }
 
-    const merged = [
-        ...resumeList.map(item => ({ ...item, documentType: 'resume' })),
-        ...coverList.map(item => ({ ...item, documentType: 'coverLetter' }))
-    ].sort((a, b) => String(b.submittedAt || '').localeCompare(String(a.submittedAt || '')));
-
     area.innerHTML = `
         <button type="button" id="btnBackToMain" class="region-filter-reset" style="margin-bottom:14px;">← 지역별 보기</button>
-        ${limitPanels}
-        <h3 style="margin:0 0 14px;color:#1e293b;">${escHtml(selectedStudent)} — 제출 이력 (${merged.length}건 · 이력서 ${resumeList.length} · 자기소개서 ${coverList.length})</h3>
-        <p style="font-size:12px;color:#64748b;margin:0 0 14px;">📄 이력서와 ✍️ 자기소개서가 구분되어 표시됩니다. 텍스트를 클릭하면 클립보드에 복사됩니다. · 최신순</p>
-        <div class="submission-list">${merged.map(item => buildSubmissionCard(item)).join('')}</div>`;
+        <h3 style="margin:0 0 14px;color:#1e293b;">${escHtml(selectedStudent)} — 제출 이력 (${list.length}건)</h3>
+        <p style="font-size:12px;color:#64748b;margin:0 0 14px;">텍스트를 클릭하면 클립보드에 복사됩니다. · 최신순</p>
+        <div class="submission-list">${list.map(item => buildSubmissionCard(item)).join('')}</div>`;
 
     document.getElementById('btnBackToMain')?.addEventListener('click', () => selectStudent(''));
-    bindSubmitLimitPanel(area);
 
     area.querySelectorAll('.submission-card-head').forEach(head => {
         head.addEventListener('click', e => {
@@ -657,19 +454,11 @@ function renderSubmissions() {
         btn.addEventListener('click', async e => {
             e.stopPropagation();
             const id = btn.dataset.id;
-            const docType = btn.dataset.docType || 'resume';
             if (!id || !selectedStudent) return;
-            const typeLabel = docType === 'coverLetter' ? '자기소개서' : '이력서';
-            if (!(await appConfirm(`[${formatSubmitDate(btn.dataset.at)}] ${typeLabel}를 삭제하시겠습니까?`))) return;
+            if (!(await appConfirm(`[${formatSubmitDate(btn.dataset.at)}] 이력서를 삭제하시겠습니까?`))) return;
             try {
-                const storagePath = btn.dataset.storage || (docType === 'coverLetter' ? 'studentResumes' : 'studentResumes');
-                const dbPath = `${storagePath}/${selectedStudent}/${id}`;
-                await classDbRef(dbPath).remove();
-                if (docType === 'coverLetter') {
-                    coverLetterDataByStudent[selectedStudent] = (coverLetterDataByStudent[selectedStudent] || []).filter(x => x.id !== id);
-                } else {
-                    resumeDataByStudent[selectedStudent] = (resumeDataByStudent[selectedStudent] || []).filter(x => x.id !== id);
-                }
+                await classDbRef(`studentResumes/${selectedStudent}/${id}`).remove();
+                resumeDataByStudent[selectedStudent] = (resumeDataByStudent[selectedStudent] || []).filter(x => x.id !== id);
                 renderStudentList();
                 renderSubmissions();
             } catch (err) {
@@ -693,30 +482,15 @@ function buildSubmissionCard(item) {
     const at = item.submittedAt || '';
     const label = formatSubmitDate(at);
     const openCls = item.id === openSubmissionId ? ' is-open' : '';
-    const docType = item.documentType === 'coverLetter' ? 'coverLetter' : 'resume';
-    const storagePath = item.storagePath || (docType === 'coverLetter' ? 'studentResumes' : 'studentResumes');
-    const badge = docType === 'coverLetter'
-        ? '<span class="submission-type-badge is-cover-letter">✍️ 자기소개서</span>'
-        : '<span class="submission-type-badge is-resume">📄 이력서</span>';
-    const cardCls = docType === 'coverLetter' ? ' is-cover-letter' : ' is-resume';
-    return `<div class="submission-card${openCls}${cardCls}" data-id="${escAttr(item.id)}" data-doc-type="${escAttr(docType)}">
+    return `<div class="submission-card${openCls}" data-id="${escAttr(item.id)}">
         <div class="submission-card-head">
-            <span class="submission-date">${badge} 📅 ${escHtml(label)}</span>
+            <span class="submission-date">📅 ${escHtml(label)}</span>
             <div class="submission-actions">
-                <button type="button" class="btn-del" data-id="${escAttr(item.id)}" data-at="${escAttr(at)}" data-doc-type="${escAttr(docType)}" data-storage="${escAttr(storagePath)}">삭제</button>
+                <button type="button" class="btn-del" data-id="${escAttr(item.id)}" data-at="${escAttr(at)}">삭제</button>
             </div>
         </div>
-        <div class="submission-body">${docType === 'coverLetter' ? buildCoverLetterDetailHtml(item) : buildResumeDetailHtml(item)}</div>
+        <div class="submission-body">${buildResumeDetailHtml(item)}</div>
     </div>`;
-}
-
-function buildCoverLetterDetailHtml(item) {
-    const content = item.content || '';
-    return `
-        <div class="resume-view-section">
-            <h4>자기소개서 내용</h4>
-            <div class="cover-letter-view-body resume-copy-val" data-copy="${escAttr(content)}">${escHtml(content) || '내용 없음'}</div>
-        </div>`;
 }
 
 function buildResumeDetailHtml(item) {
@@ -724,8 +498,7 @@ function buildResumeDetailHtml(item) {
     const studentName = b.name || item.studentName || selectedStudent;
     const birthDate = StudentResumeShared.getStudentBirthDateFromAttendance(studentName, fullAttendanceData)
         || b.birthDate || '';
-    const career = StudentResumeShared.sortResumeRowsByDate(item.careerHistory || item.educationCareer || [], true);
-    const finalEdu = StudentResumeShared.sortResumeRowsByDate(item.finalEducation || [], true);
+    const edu = StudentResumeShared.sortResumeRowsByDate(item.educationCareer || [], true);
     const skills = StudentResumeShared.sortResumeRowsByDate(item.skillsCerts || [], true);
     const rate = item.totalAttendanceRate != null ? `${item.totalAttendanceRate}%` : '-';
 
@@ -735,19 +508,15 @@ function buildResumeDetailHtml(item) {
             ${buildBasicInfoHtml(b, birthDate)}
         </div>
         <div class="resume-view-section">
-            <h4>2. 경력사항</h4>
-            ${buildRowsTable(career, '회사명 (퇴사일)')}
+            <h4>2. 학력 및 경력사항</h4>
+            ${buildRowsTable(edu, '학력 및 경력사항')}
         </div>
         <div class="resume-view-section">
-            <h4>3. 최종학력</h4>
-            ${buildRowsTable(finalEdu, '학교명 (졸업일)')}
+            <h4>3. 특기사항 · 자격증 · 상장수상</h4>
+            ${buildRowsTable(skills, '내용')}
         </div>
         <div class="resume-view-section">
-            <h4>4. 특기사항.자격증.상장수상</h4>
-            ${buildRowsTable(skills, '특기사항 · 자격증 · 상장수상')}
-        </div>
-        <div class="resume-view-section">
-            <h4>5. 현재까지 총 출석률</h4>
+            <h4>4. 현재까지 총 출석률</h4>
             <div class="resume-copy-val rate-highlight" data-copy="${escAttr(rate)}">${escHtml(rate)}</div>
         </div>`;
 }

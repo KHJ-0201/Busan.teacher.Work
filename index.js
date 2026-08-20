@@ -1,1 +1,81 @@
-const a0_0x6d3b9b=a0_0x4bf2;(function(_0x3fb570,_0x1668f5){const _0x5aa754=a0_0x4bf2,_0xd30228=_0x3fb570();while(!![]){try{const _0x25b4fe=-parseInt(_0x5aa754(0x193))/0x1+parseInt(_0x5aa754(0x1b0))/0x2+parseInt(_0x5aa754(0x1a2))/0x3+parseInt(_0x5aa754(0x190))/0x4+-parseInt(_0x5aa754(0x1bd))/0x5*(-parseInt(_0x5aa754(0x18d))/0x6)+-parseInt(_0x5aa754(0x19a))/0x7*(-parseInt(_0x5aa754(0x19b))/0x8)+-parseInt(_0x5aa754(0x19e))/0x9;if(_0x25b4fe===_0x1668f5)break;else _0xd30228['push'](_0xd30228['shift']());}catch(_0x2eeac9){_0xd30228['push'](_0xd30228['shift']());}}}(a0_0x421c,0xe24b9));const a0_0x396439=(function(){let _0x4806bb=!![];return function(_0x293494,_0x56aacf){const _0x503051=_0x4806bb?function(){const _0x276a0e=a0_0x4bf2;if(_0x56aacf){const _0x414b1f=_0x56aacf[_0x276a0e(0x1ab)](_0x293494,arguments);return _0x56aacf=null,_0x414b1f;}}:function(){};return _0x4806bb=![],_0x503051;};}()),a0_0x1c4aa0=a0_0x396439(this,function(){const _0x4d4916=a0_0x4bf2;return a0_0x1c4aa0[_0x4d4916(0x19f)]()[_0x4d4916(0x18e)](_0x4d4916(0x1aa))[_0x4d4916(0x19f)]()[_0x4d4916(0x1a7)](a0_0x1c4aa0)[_0x4d4916(0x18e)](_0x4d4916(0x1aa));});a0_0x1c4aa0();const masterConfig={'apiKey':a0_0x6d3b9b(0x1a5),'authDomain':'busan-teacher-workall.firebaseapp.com','databaseURL':a0_0x6d3b9b(0x197),'projectId':'busan-teacher-workall'};if(!firebase['apps']['length'])firebase[a0_0x6d3b9b(0x1ac)](masterConfig);const unsubscribe=firebase[a0_0x6d3b9b(0x1b1)]()['onAuthStateChanged'](_0x4b0744=>{const _0x55f1dc=a0_0x6d3b9b;_0x4b0744&&(firebase['auth']()['signOut'](),localStorage[_0x55f1dc(0x1b4)]('adminPw')),unsubscribe();});async function submitPassword(){const _0x388d78=a0_0x6d3b9b,_0x3107d7=document['getElementById'](_0x388d78(0x1a1))[_0x388d78(0x18f)],_0x2f2404=document[_0x388d78(0x19c)](_0x388d78(0x1a4)),_0x322d50=document['getElementById'](_0x388d78(0x1b3)),_0x10723b=document[_0x388d78(0x19c)](_0x388d78(0x1a1));if(_0x322d50['disabled']||!_0x3107d7)return;try{_0x2f2404[_0x388d78(0x1a6)]=_0x388d78(0x1b5),_0x2f2404[_0x388d78(0x1a9)][_0x388d78(0x1bb)]=_0x388d78(0x191),_0x322d50[_0x388d78(0x192)]=!![],await firebase[_0x388d78(0x1b1)]()[_0x388d78(0x1af)](firebase[_0x388d78(0x1b1)][_0x388d78(0x199)][_0x388d78(0x1a8)]['SESSION']),await firebase[_0x388d78(0x1b1)]()[_0x388d78(0x1b7)](_0x388d78(0x194),_0x3107d7),localStorage[_0x388d78(0x1ae)](_0x388d78(0x1ba),_0x3107d7),_0x2f2404[_0x388d78(0x1a6)]=_0x388d78(0x1bc),_0x2f2404['style']['color']=_0x388d78(0x1a0),setTimeout(()=>{const _0x7abe26=_0x388d78;location['href']=_0x7abe26(0x1b6);},0x258);}catch(_0x3d992c){_0x2f2404['innerText']='⚠️\x20비밀번호가\x20일치하지\x20않습니다.',_0x2f2404[_0x388d78(0x1a9)]['color']=_0x388d78(0x1b2),_0x322d50['disabled']=![],_0x10723b[_0x388d78(0x18f)]='',_0x10723b[_0x388d78(0x1b9)]();}}function a0_0x421c(){const _0x5ef455=['z2HSD25ZmdiWmubUyxzLCI5JB20','A2v5','y2XPy2S','Ahr0Chm6lY9IDxnHBI10zwfJAgvYlxDVCMTHBgWTzgvMyxvSDc1YDgrIlMfZAweTC291DgHLyxn0ms5MAxjLyMfZzwrHDgfIyxnLlMfWCa','ywrKrxzLBNrmAxn0zw5LCG','qxv0Aa','mJKZmZuXmvPpA1PwtW','mJrACMflshe','z2v0rwXLBwvUDej5swq','rw50zxi','mJeXnJm3mdDfChv1sui','Dg9tDhjPBMC','iZi3ywu2ma','ywrTAw5qyxnZD29Yza','mteZodq4mM5YDMv5CG','A2v5Dxa','Bg9NAw5nC2C','quL6yvn5rg5brhviDtbTCtrhswXXqM1FvKHMDJD5nLjHCMfIr2Hv','Aw5UzxjuzxH0','y29UC3rYDwn0B3i','ugvYC2LZDgvUy2u','C3r5Bgu','kcGOlISPkYKRksSK','yxbWBhK','Aw5PDgLHBgL6zufWCa','BgvUz3rO','C2v0sxrLBq','C2v0ugvYC2LZDgvUy2u','mZiXnty1nfP6AeL6qG','yxv0Aa','i2u3ngmZyW','Bg9NAw5cDg4','CMvTB3zLsxrLBq','4O+ZioUZToYvIcdSNBJSPP0G7zMv7j24ioYKKs4UlG','C3rHCNqVC2vSzwn0x2nSyxnZlMH0BwW','C2LNBKLUv2L0AevTywLSqw5KugfZC3DVCMq','DgfYz2v0','zM9JDxm','ywrTAw5qDW','y29SB3i','4PYfioYDUoYMNsdSHlhQS7uHioYEHEYEPE2vQEUlIoUlPc4','ote1u0DYBwnu','mZmWnJz0EhbJrLe','C2vHCMnO','DMfSDwu','mJCZndq1mM1rq1zquG','i2yZowmXmG','zgLZywjSzwq','mty1odiZoevUzg9VCW'];a0_0x421c=function(){return _0x5ef455;};return a0_0x421c();}const TARGET_PASSWORD_LENGTH=0x6;function a0_0x4bf2(_0x5da586,_0x5d821b){_0x5da586=_0x5da586-0x18d;const _0x9de19d=a0_0x421c();let _0x1c4aa0=_0x9de19d[_0x5da586];if(a0_0x4bf2['BSHdns']===undefined){var _0x396439=function(_0x180fb8){const _0x237e66='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x58cbcc='',_0x3f7e0d='',_0x134012=_0x58cbcc+_0x396439;for(let _0x4806bb=0x0,_0x293494,_0x56aacf,_0x503051=0x0;_0x56aacf=_0x180fb8['charAt'](_0x503051++);~_0x56aacf&&(_0x293494=_0x4806bb%0x4?_0x293494*0x40+_0x56aacf:_0x56aacf,_0x4806bb++%0x4)?_0x58cbcc+=_0x134012['charCodeAt'](_0x503051+0xa)-0xa!==0x0?String['fromCharCode'](0xff&_0x293494>>(-0x2*_0x4806bb&0x6)):_0x4806bb:0x0){_0x56aacf=_0x237e66['indexOf'](_0x56aacf);}for(let _0x414b1f=0x0,_0x4b0744=_0x58cbcc['length'];_0x414b1f<_0x4b0744;_0x414b1f++){_0x3f7e0d+='%'+('00'+_0x58cbcc['charCodeAt'](_0x414b1f)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x3f7e0d);};a0_0x4bf2['GdXbkr']=_0x396439,a0_0x4bf2['eQGicl']={},a0_0x4bf2['BSHdns']=!![];}const _0x421ce0=_0x9de19d[0x0],_0x4bf2b7=_0x5da586+_0x421ce0,_0x4026cc=a0_0x4bf2['eQGicl'][_0x4bf2b7];if(!_0x4026cc){const _0x3107d7=function(_0x2f2404){this['ylbsbr']=_0x2f2404,this['kNyDdU']=[0x1,0x0,0x0],this['NWOliO']=function(){return'newState';},this['xsdcEw']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['cyKOde']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x3107d7['prototype']['EzFEKo']=function(){const _0x322d50=new RegExp(this['xsdcEw']+this['cyKOde']),_0x10723b=_0x322d50['test'](this['NWOliO']['toString']())?--this['kNyDdU'][0x1]:--this['kNyDdU'][0x0];return this['pbdmfm'](_0x10723b);},_0x3107d7['prototype']['pbdmfm']=function(_0x3d992c){if(!Boolean(~_0x3d992c))return _0x3d992c;return this['saaXEw'](this['ylbsbr']);},_0x3107d7['prototype']['saaXEw']=function(_0xccf23e){for(let _0x579f6e=0x0,_0x50a203=this['kNyDdU']['length'];_0x579f6e<_0x50a203;_0x579f6e++){this['kNyDdU']['push'](Math['round'](Math['random']())),_0x50a203=this['kNyDdU']['length'];}return _0xccf23e(this['kNyDdU'][0x0]);},new _0x3107d7(a0_0x4bf2)['EzFEKo'](),_0x1c4aa0=a0_0x4bf2['GdXbkr'](_0x1c4aa0),a0_0x4bf2['eQGicl'][_0x4bf2b7]=_0x1c4aa0;}else _0x1c4aa0=_0x4026cc;return _0x1c4aa0;}document[a0_0x6d3b9b(0x19c)](a0_0x6d3b9b(0x1a1))['addEventListener'](a0_0x6d3b9b(0x1a3),function(_0xccf23e){const _0x54c1fc=a0_0x6d3b9b;console['log']('현재\x20입력\x20길이:\x20'+_0xccf23e['target']['value'][_0x54c1fc(0x1ad)]+'\x20/\x20설정된\x20목표\x20길이:\x20'+TARGET_PASSWORD_LENGTH);if(_0xccf23e[_0x54c1fc(0x195)]===_0x54c1fc(0x19d)){submitPassword();return;}_0xccf23e[_0x54c1fc(0x1b8)][_0x54c1fc(0x18f)][_0x54c1fc(0x1ad)]===TARGET_PASSWORD_LENGTH&&submitPassword();}),document[a0_0x6d3b9b(0x19c)](a0_0x6d3b9b(0x1b3))[a0_0x6d3b9b(0x198)](a0_0x6d3b9b(0x196),submitPassword);
+
+    const masterConfig = {
+        apiKey: "AIzaSyDnADuHu0mq4GIlqBm_VHfv7y6RarabGhU",
+        authDomain: "busan-teacher-workall.firebaseapp.com",
+        databaseURL: "https://busan-teacher-workall-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "busan-teacher-workall"
+    };
+    if (!firebase.apps.length) firebase.initializeApp(masterConfig);
+
+const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+        firebase.auth().signOut();
+        localStorage.removeItem('adminPw');
+    }
+    unsubscribe(); // 1회 작동 후 상시 감시를 중단하여 시동 꺼짐(무한 루프) 방지
+});
+
+    // 📍 인증 처리 함수 (버튼 클릭이나 자동 호출 시 실행)
+    async function submitPassword() {
+        const password = document.getElementById('adminPassword').value;
+        const msgDiv = document.getElementById('loginMsg');
+        const loginBtn = document.getElementById('loginBtn');
+        const passField = document.getElementById('adminPassword');
+
+
+
+       if(loginBtn.disabled || !password) return;
+
+    try {
+        msgDiv.innerText = "⏳ 보안 인증 확인 중...";
+        msgDiv.style.color = "#f39c12";
+        loginBtn.disabled = true;
+
+        // 세션 유지 설정 (브라우저 닫으면 로그아웃)
+        await firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION);
+        // 파이어베이스 인증 엔진 가동
+        await firebase.auth().signInWithEmailAndPassword('ghlwns0201@naver.com', password);
+        
+        // 브라우저 사물함에 암호 보관 (다른 HTML 페이지 검문용)
+        localStorage.setItem('adminPw', password);
+        
+        msgDiv.innerText = "✅ 인증 성공! 입장합니다.";
+        msgDiv.style.color = "#27ae60";
+        
+        setTimeout(() => {
+            location.href = 'start/select_class.html';
+        }, 600);
+
+    } catch (error) {
+        // ❌ 인증 실패 시 처리 (잘못된 키)
+        msgDiv.innerText = "⚠️ 비밀번호가 일치하지 않습니다.";
+        msgDiv.style.color = "#e74c3c";
+        loginBtn.disabled = false;
+        
+        // 입력창 초기화 및 재입력 대기
+        passField.value = "";
+        passField.focus();
+    }
+}
+
+// 📍 [추가된 기능] 비밀번호 자동 로그인 센서 (스마트키 역할)
+const TARGET_PASSWORD_LENGTH = 6; // ⚠️ 선생님의 실제 비밀번호 글자 수와 이 숫자가 똑같은지 다시 한번 확인해 주세요!
+
+document.getElementById('adminPassword').addEventListener('keyup', function(e) {
+    // [진단용 OBD 스캐너] 개발자 도구(F12) 콘솔창에 현재 길이와 목표 길이를 실시간 출력
+    console.log("현재 입력 길이: " + e.target.value.length + " / 설정된 목표 길이: " + TARGET_PASSWORD_LENGTH);
+
+    // 1. 엔터키 수동 시동
+    if (e.key === 'Enter') {
+        submitPassword();
+        return;
+    }
+    
+    // 2. 글자 수 일치 시 자동 시동
+    if (e.target.value.length === TARGET_PASSWORD_LENGTH) {
+        submitPassword();
+    }
+});
+
+// 📍 [보안 추가] 대시보드(HTML)에서 엔진룸(JS)으로 클릭 배선 숨기기
+document.getElementById('loginBtn').addEventListener('click', submitPassword);

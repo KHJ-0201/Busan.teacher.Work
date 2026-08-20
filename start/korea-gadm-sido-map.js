@@ -1,1 +1,33 @@
-function a1_0xc5e7(){const _0x4c854a=['6Rsr7ko86Rsr7jET7iUC','nde2mZC2su5MDe9K','7lAP7lkT67Ab64+e','Dw5KzwzPBMvK','mJiXmZe0mwvnzfjWrq','mtLjD3n2sMO','r0fetv9tsurpx1rpx0Ts','nJq5ndDdBvjzBgW','7kcC7ko87yQ567oe7j6q7lMy64+e','7kce652864kO64+e','A2v5CW','zM9YrwfJAa','y29UC3rYDwn0B3i','mJHczvbyDMq','7j247lkC6Rsr7jET7iUC','mZiXmtG0mNfys3zXEq','7lAP7lkT64kO64+e','ndK5nZq5nwL6ALfrrq','64Ya6RwS6Rsr7jET7iUC','ntCXndjxqNvMAuq','Dg9tDhjPBMC','kcGOlISPkYKRksSK','7isC7jQ47yQ567oe7iUC','6Rcv7jUq7yQ567oe7j6q7lMy64+e','ntK0mZyWovfbAePVuG','64Ya7kce6Rsr7jET7iUC','67Aa7ikW6Rsr7jET7iUC','C2vHCMnO'];a1_0xc5e7=function(){return _0x4c854a;};return a1_0xc5e7();}const a1_0x5abafa=a1_0x8687;function a1_0x8687(_0x3283cf,_0x533d34){_0x3283cf=_0x3283cf-0x117;const _0x4e8da4=a1_0xc5e7();let _0x517276=_0x4e8da4[_0x3283cf];if(a1_0x8687['PXtYPQ']===undefined){var _0x435d04=function(_0x37ed61){const _0x385f74='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x447a9f='',_0x5787d8='',_0x1ccd11=_0x447a9f+_0x435d04;for(let _0x2ae067=0x0,_0x316d1f,_0x2bb148,_0x394474=0x0;_0x2bb148=_0x37ed61['charAt'](_0x394474++);~_0x2bb148&&(_0x316d1f=_0x2ae067%0x4?_0x316d1f*0x40+_0x2bb148:_0x2bb148,_0x2ae067++%0x4)?_0x447a9f+=_0x1ccd11['charCodeAt'](_0x394474+0xa)-0xa!==0x0?String['fromCharCode'](0xff&_0x316d1f>>(-0x2*_0x2ae067&0x6)):_0x2ae067:0x0){_0x2bb148=_0x385f74['indexOf'](_0x2bb148);}for(let _0x5252d9=0x0,_0x27ba1f=_0x447a9f['length'];_0x5252d9<_0x27ba1f;_0x5252d9++){_0x5787d8+='%'+('00'+_0x447a9f['charCodeAt'](_0x5252d9)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x5787d8);};a1_0x8687['YejDex']=_0x435d04,a1_0x8687['DDLUJF']={},a1_0x8687['PXtYPQ']=!![];}const _0xc5e7b7=_0x4e8da4[0x0],_0x868731=_0x3283cf+_0xc5e7b7,_0x43aa00=a1_0x8687['DDLUJF'][_0x868731];if(!_0x43aa00){const _0x401496=function(_0x2a5c94){this['cVxmDi']=_0x2a5c94,this['eQQerg']=[0x1,0x0,0x0],this['VidLXh']=function(){return'newState';},this['gVBbgQ']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['mqtspx']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x401496['prototype']['LMcVMf']=function(){const _0x190217=new RegExp(this['gVBbgQ']+this['mqtspx']),_0x1c53b2=_0x190217['test'](this['VidLXh']['toString']())?--this['eQQerg'][0x1]:--this['eQQerg'][0x0];return this['keLHyS'](_0x1c53b2);},_0x401496['prototype']['keLHyS']=function(_0x5798d0){if(!Boolean(~_0x5798d0))return _0x5798d0;return this['JFozci'](this['cVxmDi']);},_0x401496['prototype']['JFozci']=function(_0x4a0226){for(let _0x1f7ad1=0x0,_0x2b29e1=this['eQQerg']['length'];_0x1f7ad1<_0x2b29e1;_0x1f7ad1++){this['eQQerg']['push'](Math['round'](Math['random']())),_0x2b29e1=this['eQQerg']['length'];}return _0x4a0226(this['eQQerg'][0x0]);},new _0x401496(a1_0x8687)['LMcVMf'](),_0x517276=a1_0x8687['YejDex'](_0x517276),a1_0x8687['DDLUJF'][_0x868731]=_0x517276;}else _0x517276=_0x43aa00;return _0x517276;}(function(_0x199816,_0x598cc3){const _0x2a7fd9=a1_0x8687,_0xd05e91=_0x199816();while(!![]){try{const _0x30f306=-parseInt(_0x2a7fd9(0x11f))/0x1*(parseInt(_0x2a7fd9(0x12d))/0x2)+-parseInt(_0x2a7fd9(0x121))/0x3*(parseInt(_0x2a7fd9(0x127))/0x4)+parseInt(_0x2a7fd9(0x12b))/0x5+-parseInt(_0x2a7fd9(0x129))/0x6+parseInt(_0x2a7fd9(0x11e))/0x7+parseInt(_0x2a7fd9(0x11b))/0x8+parseInt(_0x2a7fd9(0x132))/0x9;if(_0x30f306===_0x598cc3)break;else _0xd05e91['push'](_0xd05e91['shift']());}catch(_0x5ab5dc){_0xd05e91['push'](_0xd05e91['shift']());}}}(a1_0xc5e7,0xc2ecb),function(_0x2ae067){const _0x2e7a4b=a1_0x8687,_0x316d1f=(function(){let _0x27ba1f=!![];return function(_0x401496,_0x2a5c94){const _0x190217=_0x27ba1f?function(){if(_0x2a5c94){const _0x1c53b2=_0x2a5c94['apply'](_0x401496,arguments);return _0x2a5c94=null,_0x1c53b2;}}:function(){};return _0x27ba1f=![],_0x190217;};}()),_0x2bb148=_0x316d1f(this,function(){const _0x26ff60=a1_0x8687;return _0x2bb148[_0x26ff60(0x12e)]()[_0x26ff60(0x119)](_0x26ff60(0x12f))['toString']()[_0x26ff60(0x126)](_0x2bb148)[_0x26ff60(0x119)](_0x26ff60(0x12f));});_0x2bb148();'use strict';const _0x394474={'Seoul':_0x2e7a4b(0x130),'Busan':_0x2e7a4b(0x118),'Daegu':_0x2e7a4b(0x12c),'Incheon':_0x2e7a4b(0x128),'Gwangju':_0x2e7a4b(0x11a),'Daejeon':_0x2e7a4b(0x117),'Ulsan':'울산광역시','Gyeonggi-do':'경기도','Gangwon-do':_0x2e7a4b(0x131),'Chungcheongbuk-do':_0x2e7a4b(0x11c),'Chungcheongnam-do':_0x2e7a4b(0x12a),'Jeollabuk-do':'전북특별자치도','Jeollanam-do':_0x2e7a4b(0x123),'Gyeongsangbuk-do':'경상북도','Gyeongsangnam-do':'경상남도','Jeju':_0x2e7a4b(0x122)},_0x5252d9={};Object[_0x2e7a4b(0x124)](_0x394474)[_0x2e7a4b(0x125)](_0x5798d0=>{_0x5252d9[_0x394474[_0x5798d0]]=_0x5798d0;}),_0x2ae067[_0x2e7a4b(0x120)]=_0x394474,_0x2ae067['KR_SIDO_TO_GADM']=_0x5252d9;}(typeof window!==a1_0x5abafa(0x11d)?window:globalThis));
+/**
+ * GADM NAME_1 → kr-regions-data 시·도 명칭
+ */
+(function (global) {
+    'use strict';
+
+    const GADM_SIDO_TO_KR = {
+        'Seoul': '서울특별시',
+        'Busan': '부산광역시',
+        'Daegu': '대구광역시',
+        'Incheon': '인천광역시',
+        'Gwangju': '광주광역시',
+        'Daejeon': '대전광역시',
+        'Ulsan': '울산광역시',
+        'Gyeonggi-do': '경기도',
+        'Gangwon-do': '강원특별자치도',
+        'Chungcheongbuk-do': '충청북도',
+        'Chungcheongnam-do': '충청남도',
+        'Jeollabuk-do': '전북특별자치도',
+        'Jeollanam-do': '전라남도',
+        'Gyeongsangbuk-do': '경상북도',
+        'Gyeongsangnam-do': '경상남도',
+        'Jeju': '제주특별자치도'
+    };
+
+    const KR_SIDO_TO_GADM = {};
+    Object.keys(GADM_SIDO_TO_KR).forEach(gadm => {
+        KR_SIDO_TO_GADM[GADM_SIDO_TO_KR[gadm]] = gadm;
+    });
+
+    global.GADM_SIDO_TO_KR = GADM_SIDO_TO_KR;
+    global.KR_SIDO_TO_GADM = KR_SIDO_TO_GADM;
+})(typeof window !== 'undefined' ? window : globalThis);

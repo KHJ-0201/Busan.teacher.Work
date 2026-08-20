@@ -1,1 +1,336 @@
-const a23_0x260802=a23_0x379d;(function(_0x4e1618,_0x1a9ffe){const _0x19a592=a23_0x379d,_0x39e440=_0x4e1618();while(!![]){try{const _0x4fa484=parseInt(_0x19a592(0x1a9))/0x1+-parseInt(_0x19a592(0x18a))/0x2*(-parseInt(_0x19a592(0x1a4))/0x3)+parseInt(_0x19a592(0x141))/0x4+-parseInt(_0x19a592(0x195))/0x5*(parseInt(_0x19a592(0x131))/0x6)+parseInt(_0x19a592(0x164))/0x7*(parseInt(_0x19a592(0x128))/0x8)+-parseInt(_0x19a592(0x19c))/0x9*(parseInt(_0x19a592(0x11c))/0xa)+-parseInt(_0x19a592(0x17d))/0xb;if(_0x4fa484===_0x1a9ffe)break;else _0x39e440['push'](_0x39e440['shift']());}catch(_0x2ffa2c){_0x39e440['push'](_0x39e440['shift']());}}}(a23_0x2802,0xb721c));const a23_0x5a9712=(function(){let _0x24a9e7=!![];return function(_0x1d3a64,_0x4de421){const _0x5f44e4=_0x24a9e7?function(){const _0x419b56=a23_0x379d;if(_0x4de421){const _0x36644a=_0x4de421[_0x419b56(0x138)](_0x1d3a64,arguments);return _0x4de421=null,_0x36644a;}}:function(){};return _0x24a9e7=![],_0x5f44e4;};}()),a23_0x44fc7f=a23_0x5a9712(this,function(){const _0x17d60b=a23_0x379d;return a23_0x44fc7f[_0x17d60b(0x17c)]()[_0x17d60b(0x110)](_0x17d60b(0x184))[_0x17d60b(0x17c)]()[_0x17d60b(0x1a8)](a23_0x44fc7f)['search'](_0x17d60b(0x184));});a23_0x44fc7f();function a23_0x2802(){const _0x1d9935=['yNv0Dg9U','C21VB3rO','y3jLyxrLuMfUz2u','iJ4kicaGicaGicaGicaGicaGicaGicaGicaGicaGidX0ywjSzsbPzd0Iy3rF','yxv0Aa','DgfYz2v0','Dw5PDa','iIbZDhLSzt0ICgfKzgLUzZO0ChGGohb4oYbMB250lxnPEMu6mtfWEdSGy3vYC29YoNbVAw50zxi7igjHy2TNCM91BMq6i2zMzJSGy29SB3i6i2q2mZaZmtSGyM9YzgvYoJfWEcbZB2XPzcaJzdyZmdmXoYbIB3jKzxiTCMfKAxvZoJrWEdSIpGOGicaGicaGicaGicaGicaG','phrYpJX0zcbJBgfZCZ0IzwXLBwvUDc10AxrSzsi+','BgvUz3rO','zgf0ys1ZDwjPzhG','8j+tIYdTKzWG6RwS7kgW6RcaioUZTEYcRoUqMoYxIoYkTEUlIoUlPcekcLVTLzZQUiaV7jEr7iwaioU2MEYxRoUeO+Q4ScdSP4dSUAHDcJeUioU2MEYxRoUeO+Q4ScHdDhjSk1yPio2BHcaN7jUq67o4io2yLEYlNsdSNkdSP4aNioYeOo2dNqOYlIaN642U7jA07joW6RIWjYdRMjdRIPqGj+UcToYAQEUNJcdRJA7SLRtSK7dQUlaNioYeOo2dNqOk4Oc7io2fJoUrKoUMRcdSL4BSNBqG64k07jQP66EmioQ5LoUbLo2vMoQYJcdSNOxROkxRKkNRI4JRI6qU','qLvuve9o','z2v0rwXLBwvUDej5swq','Dhj1zq','zw1HAwW','cIaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGpc90yM9KEt4kicaGicaGicaGicaGicaGicaGicaGicaGicaGidWVDgfIBgu+cIaGicaGicaGicaGicaGicaGicaGicaGidWVzgL2pG','zgf0ys1ZCgXPDa','iIbZDhLSzt0I','lNrHyI1IDg4','Dg9Nz2XLtw9Kzq','z2v0sxrLBq','mJfdsw5KExe','CxvPy2Toyxy','pc9ZCgfUpGOGicaGicaGicaGicaGicaGphnWyw4GC3r5Bgu9iMzVBNqTC2L6ztOXnhb4oYbJB2XVCJOJzJfJndbMoYbTyxjNAw4TBgvMDdOXmhb4oYi+wW','pgXPig9Uy2XPy2S9iNDPBMrVDY5Zy3jVBgXuBYH7Dg9WoJaSigjLAgf2Aw9YoIDZBw9VDgGNFsKIpJXZDhjVBMC+8j+uNsdSTzZSG4hRI6JSNlZROzWG7j2064+zpc9ZDhjVBMC+pc9SAt4','Bg9JyxrPB24','zxHLy0nVBw1HBMq','cIaGicaGicaGpgrPDIbJBgfZCZ0IC3vIAMvJDc1OzwfKzxiIpGOGicaGicaGicaGica8zgL2pGOGicaGicaGicaGicaGicaGphnWyw4GC3r5Bgu9iMzVBNqTC2L6ztOXnNb4oYbMB250lxDLAwDODdPIB2XKoYi+','6Rwq6Ro866QP66QfioYxHUYDJa','CgfYDfrHyKnVBNrHAw5LCG','B25JBgLJAW','pc9KAxy+cIaGicaGicaGicaGicaGica8l2rPDJ4kicaGicaGicaGicaGicaGia','pc9KAxy+','y3jLyxrLrwXLBwvUDa','4P2mioUZTEYcRcdSI6tTJkG','zgf0yq','7ywm7iQK7yQ4','BMfTzq','CxvLCNLtzwXLy3rVCKfSBa','BwfZDgvYq29UzMLN','AhjLzG','64UO7jUq66QfioUVUoQ4SoYEHq','xqOGicaGpc9ZCgfUpGO8l2rPDJ4kicaGicaGicaGicaGicaGicaGicaGicaGicaGidX0ywjSzsbJBgfZCZ0IC3rKlxrHyMXLiIbZDhLSzt0IyMfJA2DYB3vUzdOJzMzMoYi+cIaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGphrOzwfKpGOGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGica8DhiGC3r5Bgu9iMjHy2TNCM91BMq6i2yXzJrMnZSIpGOGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGphrOihn0EwXLpsj3Awr0AdO0mcu7iJ7SNQxRUytRQOu8l3rOpGOGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGphrOihn0EwXLpsj3Awr0AdOXnsu7iJ7RI6JSNiq8l3rOpGOGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGphrOihn0EwXLpsj3Awr0AdOYnsu7iJ7TMzZSMQNQTAZRTOq8l3rOpGOGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGphrOihn0EwXLpsj3Awr0AdOYmcu7iJ7TMzZSMQNSNBJSM5a8l3rOpGOGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGica8l3rYpGOGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGidWVDgHLywq+cIaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGphrIB2r5pGOGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGica','phrYpJX0zcbZDhLSzt0IyM9YzgvYoJa7ihbHzgrPBMC6nhb4oYi+','DMvYC2LVBKXPC3q','Dg9tDhjPBMC','mJyXmZeYmJztrxPcrfG','4P2mioYDUoYMNsdSI6tTJkG','DgLTzxn0yw1W','Bg9N','8j+uKIdRS7tSLyGG7j247kADio2zLEYDUoUqQdOG','y29UDgvUDhm','phnWyw4GC3r5Bgu9iMnVBg9YoInLnZrJm2m7igzVBNqTD2vPz2H0oMjVBgq7iJ7INyWG65oX66gD65cCio2BIoUGQoQ4SoYKGcdRSOtSOitSNBqG7jEg7iQ164Ui64UKlIdQTidSOjZTG5hSL5dSHjWG7jEr7iwa7j2eioYxHEUHNoUtNo2vToYJVoYeUoYALc48l3nWyw4+','kcGOlISPkYKRksSK','C29YDa','ywrK','ywrTAw5qDW','7kkfktWVC3bHBJ4kicaGidXZCgfUihn0EwXLpsjMB250lxnPEMu6mtbWEdSGy29SB3i6iZu1ntSGzM9UDc13zwLNAhq6BM9YBwfSoYbIywnRz3jVDw5KoNjNyMeOmJu1ldi1nsWYntuSmc41ktSGCgfKzgLUzZOYChGGnNb4oYbIB3jKzxiTCMfKAxvZoJrWEdSGyM9YzgvYoJfWEcbZB2XPzcaJyMnKngu2oYi+cIaGicaGicaG','C2nYB2XSsw50B1zPzxC','nKrTCxDNzG','zwXLy3rYB25Py3m','y2XHC3m','C2vSzwn0tM9Kzq','B25Jzq','CMvTB3zL','pc90ywjSzt48l2rPDJ4','phrYpJX0zcbZDhLSzt0IyM9YzgvYoJa7ihbHzgrPBMC6nhb4oYi+4OcIia','pgrPDIbZDhLSzt0ID2HPDguTC3bHy2u6ihbYzs1SAw5LoYbSAw5LlwHLAwDODdOGms42oYbWywrKAw5NoJvWEdSIpG','pc90zd48l3rYpG','BMf2tgLZDa','mZaXmeHJv1btDq','zgf0ys1Wyxj0','cIaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGica8Dhi+cIaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGphrKihn0EwXLpsjMB250lxDLAwDODdPIB2XKoYbJB2XVCJOJmMmZztuWoYi+','pgjYpG','xsdTJiZTIRJSL5aG65oX66gD65cCio2BIoUGQoQ4SoYKGoYDTcdSL4BSIRxRI4JRI6qUpc9KAxy+','lNrHyI1IDg4Uywn0AxzL','BwfPBKrPC3bSyxK','ou14rfH3sq','zwXLBwvUDhm','pc9KAxy+cIaGicaGicaGicaGicaGicaGicaGpgrPDIbJBgfZCZ0IA3n0lwL0zw0GCY1IzYi+pgi+6RIW7iIGoJWVyJ48yNi+','y29WEq','pc90zd48DgqGC3r5Bgu9iNbHzgrPBMC6ideWChG7ihzLCNrPy2fSlwfSAwDUoIb0B3a7iJ4','pc90zd4kicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGica8DgqGC3r5Bgu9iNrLEhqTywXPz246y2vUDgvYoYi+','67o17ikS7zwGio2rNoULVcdSSl7SNyqG7iIyioYxHUYkTEUlIoUlPc4','7j247kADioYGLEUZToQWGcdRP4ZRO4ZRKjJSL4JSIRxRI4JRI6qU','mte2nJaXmeHjC2fxAG','Aw5PDgLHBgL6zufWCa','pgrPDIbJBgfZCZ0IBM8Tzgf0ysi+4P2mifS','C2LNBKLUv2L0AevTywLSqw5KugfZC3DVCMq','y29UC3rYDwn0B3i','mti5mJq4mg1rCNvAtW','l2rHDgeV','lMr5BMfTAwmTy29WEs10ywjSzq','CMvM','iIbKyxrHlxnWBgL0psi','BMnZvMvYC2LVBNmV','DMfS','Dg9Nz2XL','BMnZvMvYC2LVBNm','y2XHC3noyw1L','y29WEvrHyMXLvg9dBgLWyM9HCMq','C2vHCMnO','zgL2','C3rVCfbYB3bHz2f0Aw9U','Aw5Uzxjive1m','pc90yM9KEt48l3rHyMXLpGOGicaGicaGicaGica8zgL2ihn0EwXLpsjWywrKAw5NoJe1ChG7igjHy2TNCM91BMq6i2zMzJSGyM9YzgvYoJfWEcbZB2XPzcaJzgvLmMu2oYbIB3jKzxiTDg9WoM5VBMu7iJ4kicaGicaGicaGicaGicaGidXKAxyGC3r5Bgu9iMzVBNqTD2vPz2H0oMjVBgq7ig1HCMDPBI1IB3r0B206mtbWEdSIpVcFKQeG7ko87jQuio2vTEYlRcdSL63RN4KGkeSUuY5bktWVzgL2pGOGicaGicaGicaGicaGicaGpgrPDIbJBgfZCZ0IA3n0lwjVEci+cIaGicaGicaGicaGicaGicaGicaGpgrPDIbJBgfZCZ0IA3n0lwL0zw0GAY1IzYi+pgi+7kEa7iUDoJWVyJ48yNi+','lMr5BMfTAwmTBg9Hzc1Wyxj0','DhjPBq','z2HSD25ZmdiWmubUyxzLCI5JB20','zM9YrwfJAa','yxbWzw5Kq2HPBgq','y29SBgfWC2vK','zgf0ys10yxjNzxq','mtq1nZm4mtbpvMzrtvm','y2fYzf8','B25bDxrOu3rHDgvdAgfUz2vK','iIbZDhLSzt0ICgfKzgLUzZOZChGGohb4oYbMB250lxnPEMu6mtfWEdSGyMfJA2DYB3vUzdOJztC0yZnJoYbJB2XVCJP3AgL0ztSGyM9YzgvYoM5VBMu7igjVCMrLCI1YywrPDxm6nhb4oYbJDxjZB3i6Cg9PBNrLCJSGzM9UDc13zwLNAhq6yM9SzdSIpVcFKyyG7zwC6RIaio2rNoUHNcdRS7xSGQW8l2j1DhrVBJ4kicaGicaGicaGicaGicaGicaGicaGicaGpc9KAxy+cIaGicaGicaGicaGicaGicaGicaGicaGidXKAxyGC3r5Bgu9iG','lM5HDI10B2DNBguTyNrU','AM9PBG','y29UDgfPBNm','y2XHC3nmAxn0','lMr5BMfTAwmTDg9Nz2XLlw1Vzgu','C3vIAMvJDe5HBwu','cIaGicaGicaGicaGidWVyNv0Dg9UpGOGicaGicaGidWVzgL2pGOGicaGicaGidXKAxyGy2XHC3m9iNn1yMPLy3qTyM9KEsi+idXKAxyGy2XHC3m9iNn1yMPLy3qTAw5MBYi+pgi+8j+oRYdTM4JROkJRQQNTKzW6pc9IpIa','DMfSDwu','mJG0odaWoeTwyvnXyW','cIaGicaGicaGicaGicaGicaGicaGicaGidXKAxyGC3r5Bgu9iM1HCMDPBI10B3a6mJbWEdSGyM9YzgvYoJfWEcbZB2XPzcaJmZq5ogrIoYbIB3jKzxiTCMfKAxvZoJHWEdSGB3zLCMzSB3C6AgLKzgvUoYi+cIaGicaGicaGicaGicaGicaGicaGicaGicaGica8zgL2ihn0EwXLpsjIywnRz3jVDw5KoInLogy0zMq7ihbHzgrPBMC6ohb4ide1ChG7igzVBNqTD2vPz2H0oMjVBgq7ignVBg9YoImYmtyXogm7igzVBNqTC2L6ztOXm3b4oYbIB3jKzxiTyM90Dg9ToJfWEcbZB2XPzcaJmZq5ogrIoYbKAxnWBgf5oIbMBgv4oYbQDxn0Awz5lwnVBNrLBNq6ihnWywnLlwjLDhDLzw47igfSAwDUlwL0zw1ZoIbJzw50zxi7iJ4kicaGidXZCgfUpVcFM6dVUi8G7ko87jQuio2BIoUGQcdSNQxRUyqG67cpioUpHoQ1RcaO7lsDia','CMvTB3zLqwXSuMfUz2vZ','yxbWCW','8j+tHcdTHRxTLAK','iIbZDhLSzt0ICgfKzgLUzZOYChGGnNb4oYbMB250lxnPEMu6mtbWEdSGyMfJA2DYB3vUzdOJztC0yZnJoYbJB2XVCJP3AgL0ztSGyM9YzgvYoM5VBMu7igjVCMrLCI1YywrPDxm6m3b4oYbJDxjZB3i6Cg9PBNrLCJSIpU2rNcdRS7xSGQW8l2j1DhrVBJ48l2rPDJ4kicaGicaGicaGicaGicaGicaGicaGicaGpgrPDIbZDhLSzt0I','ywrKuMfUz2u','y2f0y2G','lI4VAw5KzxGUAhrTBa','mtHiAhvdBgm','BwfW','ywrKrxzLBNrmAxn0zw5LCG','CxvLCNLtzwXLy3rVCG','C3vIAMvJDc1JyxjK','67ke7kceia','pgrPDIbZDhLSzt0IDgv4Dc1HBgLNBJOGCMLNAhq7ig1HCMDPBI1IB3r0B206idvWEdSIpJXIDxr0B24Gy2XHC3m9iMr5BMfTAwmTy29WEs10ywjSzsiGzgf0ys10yxjNzxq9iMTZyv8','yxbWBhK','pgrPDIbZDhLSzt0ID2HPDguTC3bHy2u6ihbYzs1SAw5LoYbSAw5LlwHLAwDODdOGms42oYbWywrKAw5NoJeWChG7iJ4','A2v5CW','DMfSDwvZ','xtWVC3bHBJ4kicaGicaGicaGicaGpc9KAxy+cIaGicaGicaGicaGidXIDxr0B24Gy2XHC3m9iMr5BMfTAwmTDg9Nz2XLlw1VzguIigrHDgeTC3vIAwr4psi','z2v0u2vSzwn0Aw9U','DMvYC2LVBI1IDg4','pc90zd4kicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGidWVDhi+cIaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGia','y29Kzq','ndiZmZq3mM5XvwPKza','C3bSAxq','lNzLCNnPB24TyNrU','y2XPy2S','ywn0AxzL','y2fWywnPDhK','Aw5UzxjuzxH0','zxf1AxbTzw50CW','CgfYC2u','AxnbCNjHEq','y2XVC2vZDa','Ahr0Chm6lY9IDxnHBI10zwfJAgvYlxDVCMTHBgWTzgvMyxvSDc1YDgrIlMfZAweTC291DgHLyxn0ms5MAxjLyMfZzwrHDgfIyxnLlMfWCa','z2v0qxr0CMLIDxrL'];a23_0x2802=function(){return _0x1d9935;};return a23_0x2802();}const storedMaster=localStorage[a23_0x260802(0x163)](a23_0x260802(0x176)),firebaseConfig=storedMaster?JSON[a23_0x260802(0x149)](storedMaster):{'apiKey':'AIzaSyDnADuHu0mq4GIlqBm_VHfv7y6RarabGhU','databaseURL':a23_0x260802(0x14c),'projectId':'busan-teacher-workall'};if(!firebase[a23_0x260802(0x12b)][a23_0x260802(0x157)])firebase[a23_0x260802(0x1a5)](firebaseConfig);const database=firebase['database'](),auth=firebase[a23_0x260802(0x152)](),urlParams=new URLSearchParams(window[a23_0x260802(0x168)][a23_0x260802(0x110)]);let currentClass=urlParams['get'](a23_0x260802(0x18c))||a23_0x260802(0x173);window['copyTableToClipboard']=async _0x1d6041=>{const _0x6135b4=a23_0x260802,_0x4c51e4=document['getElementById'](_0x1d6041);if(!_0x4c51e4)return await appAlert(_0x6135b4(0x1a2));const _0x2d8490=document[_0x6135b4(0x150)]();_0x2d8490[_0x6135b4(0x18d)](_0x4c51e4),window[_0x6135b4(0x13d)]()[_0x6135b4(0x12a)](),window[_0x6135b4(0x13d)]()[_0x6135b4(0x12e)](_0x2d8490);try{document[_0x6135b4(0x169)](_0x6135b4(0x19f)),await appAlert(_0x6135b4(0x159));}catch(_0x2c9cbf){await appAlert(_0x6135b4(0x171));}window['getSelection']()[_0x6135b4(0x12a)]();};function a23_0x379d(_0x5034fc,_0x25d079){_0x5034fc=_0x5034fc-0x10b;const _0x5ba855=a23_0x2802();let _0x44fc7f=_0x5ba855[_0x5034fc];if(a23_0x379d['hCSoel']===undefined){var _0x5a9712=function(_0x1dfb23){const _0x61965e='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x15f4b3='',_0x560587='',_0x1ad316=_0x15f4b3+_0x5a9712;for(let _0x24a9e7=0x0,_0x1d3a64,_0x4de421,_0x5f44e4=0x0;_0x4de421=_0x1dfb23['charAt'](_0x5f44e4++);~_0x4de421&&(_0x1d3a64=_0x24a9e7%0x4?_0x1d3a64*0x40+_0x4de421:_0x4de421,_0x24a9e7++%0x4)?_0x15f4b3+=_0x1ad316['charCodeAt'](_0x5f44e4+0xa)-0xa!==0x0?String['fromCharCode'](0xff&_0x1d3a64>>(-0x2*_0x24a9e7&0x6)):_0x24a9e7:0x0){_0x4de421=_0x61965e['indexOf'](_0x4de421);}for(let _0x36644a=0x0,_0x1d6041=_0x15f4b3['length'];_0x36644a<_0x1d6041;_0x36644a++){_0x560587+='%'+('00'+_0x15f4b3['charCodeAt'](_0x36644a)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x560587);};a23_0x379d['OOavbW']=_0x5a9712,a23_0x379d['iHthFs']={},a23_0x379d['hCSoel']=!![];}const _0x2802ce=_0x5ba855[0x0],_0x379de2=_0x5034fc+_0x2802ce,_0x3db8f1=a23_0x379d['iHthFs'][_0x379de2];if(!_0x3db8f1){const _0x4c51e4=function(_0x2d8490){this['GiiTHg']=_0x2d8490,this['ZjeLFo']=[0x1,0x0,0x0],this['NHsuLP']=function(){return'newState';},this['khtIvr']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['HmZIai']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x4c51e4['prototype']['IwpOTF']=function(){const _0x2c9cbf=new RegExp(this['khtIvr']+this['HmZIai']),_0x5886fb=_0x2c9cbf['test'](this['NHsuLP']['toString']())?--this['ZjeLFo'][0x1]:--this['ZjeLFo'][0x0];return this['kHEcWs'](_0x5886fb);},_0x4c51e4['prototype']['kHEcWs']=function(_0x576dcb){if(!Boolean(~_0x576dcb))return _0x576dcb;return this['GFUEJp'](this['GiiTHg']);},_0x4c51e4['prototype']['GFUEJp']=function(_0x2e4c9e){for(let _0x4a3c8c=0x0,_0x45ba80=this['ZjeLFo']['length'];_0x4a3c8c<_0x45ba80;_0x4a3c8c++){this['ZjeLFo']['push'](Math['round'](Math['random']())),_0x45ba80=this['ZjeLFo']['length'];}return _0x2e4c9e(this['ZjeLFo'][0x0]);},new _0x4c51e4(a23_0x379d)['IwpOTF'](),_0x44fc7f=a23_0x379d['OOavbW'](_0x44fc7f),a23_0x379d['iHthFs'][_0x379de2]=_0x44fc7f;}else _0x44fc7f=_0x3db8f1;return _0x44fc7f;}function toggleNav(){const _0x38aeb1=a23_0x260802,_0x5886fb=document['getElementById'](_0x38aeb1(0x165)),_0x576dcb=document[_0x38aeb1(0x134)](_0x38aeb1(0x120));_0x5886fb[_0x38aeb1(0x123)][_0x38aeb1(0x10c)](_0x38aeb1(0x11a)),_0x576dcb[_0x38aeb1(0x147)]=_0x5886fb[_0x38aeb1(0x123)][_0x38aeb1(0x122)](_0x38aeb1(0x11a))?'◀':'▶';}const adminPw=localStorage[a23_0x260802(0x163)](a23_0x260802(0x187));let currentTargetVersionId=null,currentPartName=a23_0x260802(0x18b);function loadVersions(){const _0x431b09=a23_0x260802;database[_0x431b09(0x1ac)](_0x431b09(0x10d))[_0x431b09(0x18e)](_0x431b09(0x127),_0x2e4c9e=>{const _0x163a42=_0x431b09,_0x4a3c8c=_0x2e4c9e[_0x163a42(0x10b)]()||{},_0x45ba80=document[_0x163a42(0x15b)](_0x163a42(0x17b));_0x45ba80[_0x163a42(0x113)]='';const _0x5d3d0d=Object[_0x163a42(0x13a)](_0x4a3c8c)[_0x163a42(0x185)]((_0xe03553,_0x2862a2)=>_0x4a3c8c[_0xe03553][_0x163a42(0x17f)]-_0x4a3c8c[_0x2862a2][_0x163a42(0x17f)]);if(_0x5d3d0d[_0x163a42(0x157)]===0x0){_0x45ba80['innerHTML']=_0x163a42(0x183);return;}_0x5d3d0d[_0x163a42(0x118)]((_0x507b8d,_0x2dfc3c)=>{const _0x3fa0b3=_0x163a42,_0x7a0803=_0x4a3c8c[_0x507b8d],_0x5dbd37=document['createElement'](_0x3fa0b3(0x14e));_0x5dbd37[_0x3fa0b3(0x10e)]=_0x3fa0b3(0x13e),_0x5dbd37['innerText']=_0x7a0803[_0x3fa0b3(0x174)]||_0x3fa0b3(0x136)+(_0x2dfc3c+0x1),_0x5dbd37[_0x3fa0b3(0x16d)]=()=>selectVersion(_0x507b8d,_0x5dbd37),_0x45ba80[_0x3fa0b3(0x119)](_0x5dbd37);});const _0x29da87=_0x45ba80[_0x163a42(0x134)](_0x163a42(0x143));_0x29da87&&selectVersion(_0x5d3d0d[0x0],_0x29da87);});}function selectVersion(_0x3dcde0,_0x1a99da){const _0x3636ba=a23_0x260802;document[_0x3636ba(0x175)](_0x3636ba(0x143))[_0x3636ba(0x118)](_0x13fe8b=>_0x13fe8b[_0x3636ba(0x123)]['remove']('active'));if(_0x1a99da)_0x1a99da[_0x3636ba(0x123)][_0x3636ba(0x186)](_0x3636ba(0x145));currentTargetVersionId=_0x3dcde0;const _0x1139a7=document[_0x3636ba(0x134)](_0x3636ba(0x19a));loadPart(currentPartName,_0x1139a7);}auth[a23_0x260802(0x11e)](async _0x1e6886=>{const _0x24bb19=a23_0x260802;if(_0x1e6886)console[_0x24bb19(0x180)](_0x24bb19(0x181)+_0x1e6886[_0x24bb19(0x15d)]),loadVersions();else adminPw?auth[_0x24bb19(0x1a7)](_0x24bb19(0x117),adminPw)[_0x24bb19(0x12f)](async _0x1bc5da=>{const _0x389724=_0x24bb19;console['error'](_0x389724(0x17e),_0x1bc5da),await appAlert(_0x389724(0x1a3)),location['href']=_0x389724(0x130);}):(await appAlert('보안\x20인증이\x20필요한\x20페이지입니다.'),location[_0x24bb19(0x177)]=_0x24bb19(0x130));});function loadPart(_0x1f2009,_0x266b19){const _0x26b7e4=a23_0x260802;currentPartName=_0x1f2009,document[_0x26b7e4(0x175)](_0x26b7e4(0x161))[_0x26b7e4(0x118)](_0x39573b=>_0x39573b[_0x26b7e4(0x123)][_0x26b7e4(0x18f)]('active'));if(_0x266b19)_0x266b19[_0x26b7e4(0x123)]['add']('active');const _0x3ad010=document[_0x26b7e4(0x15b)](_0x26b7e4(0x19b));if(!currentTargetVersionId){_0x3ad010['innerHTML']='<div\x20class=\x22no-data\x22>👆\x20상단에서\x20훈련기준\x20버전을\x20먼저\x20선택해\x20주세요.</div>';return;}_0x3ad010[_0x26b7e4(0x113)]='<div\x20class=\x22no-data\x22>🔄\x20데이터를\x20전송받는\x20중...</div>',database[_0x26b7e4(0x1ac)](_0x26b7e4(0x1ae)+currentTargetVersionId+_0x26b7e4(0x1aa)+_0x1f2009)[_0x26b7e4(0x18e)]('value',_0x1239c3=>{const _0x4f40e6=_0x26b7e4,_0x29daf8=_0x1239c3[_0x4f40e6(0x10b)]();if(!_0x29daf8){_0x3ad010['innerHTML']=_0x4f40e6(0x1a6)+_0x1f2009+_0x4f40e6(0x199);return;}const _0x46c617=_0x29daf8[_0x4f40e6(0x172)]||_0x29daf8;_0x3ad010[_0x4f40e6(0x113)]='';const _0x2c2bf1=Array[_0x4f40e6(0x14a)](_0x46c617)?_0x46c617:Object[_0x4f40e6(0x13b)](_0x46c617);window['toggleMode']=(_0x140a8a,_0x379ee9)=>{const _0x1369b6=_0x4f40e6,_0x4f1e39=document[_0x1369b6(0x15b)](_0x1369b6(0x11d)+_0x140a8a),_0x445682=_0x2c2bf1[_0x140a8a];if(_0x4f1e39&&_0x445682)_0x4f1e39[_0x1369b6(0x113)]=_0x210a5e(_0x445682,_0x140a8a,_0x379ee9);};function _0x210a5e(_0x43dec5,_0x2a1cc1,_0x30d9b2){const _0x1a1241=_0x4f40e6;let _0x1810ce='';const _0x20ecb5=Array[_0x1a1241(0x14a)](_0x43dec5['elements'])?_0x43dec5[_0x1a1241(0x19d)]:Object[_0x1a1241(0x13b)](_0x43dec5[_0x1a1241(0x19d)]||{});let _0x1a2f4e='',_0x42fc93='',_0x15d29='';const _0x2da9bc='border:\x201px\x20dashed\x20#ff7675;\x20padding:\x208px;\x20background:\x20#fff5f5;',_0x250096='width:100%;\x20border-collapse:collapse;\x20border:0;\x20margin:0;\x20padding:0;';_0x20ecb5[_0x1a1241(0x118)]((_0x140de6,_0x3d98d5)=>{const _0x322df2=_0x1a1241;if(!_0x140de6)return;if(_0x140de6['k'])_0x1a2f4e=_0x140de6['k'];if(_0x140de6['s'])_0x42fc93=_0x140de6['s'];if(_0x140de6['t'])_0x15d29=_0x140de6['t'];const _0x161cdb=Array[_0x322df2(0x14a)](_0x140de6['contents'])?_0x140de6[_0x322df2(0x182)]:[_0x140de6[_0x322df2(0x182)]];let _0x19504e=_0x30d9b2?'\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22text-align:\x20right;\x20margin-bottom:\x205px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22dynamic-copy-table\x22\x20data-target=\x22ct_'+_0x2a1cc1+'_'+_0x3d98d5+_0x322df2(0x11f)+_0x2da9bc+_0x322df2(0x151)+_0x2a1cc1+'_'+_0x3d98d5+_0x322df2(0x160)+_0x250096+'\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+_0x161cdb[_0x322df2(0x132)](_0x3373da=>_0x322df2(0x17a)+_0x3373da+'</td></tr>')[_0x322df2(0x121)]('')+'\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</table>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>':_0x322df2(0x139)+_0x161cdb[_0x322df2(0x121)](_0x322df2(0x198))+_0x322df2(0x16f);_0x1810ce+=_0x322df2(0x156)+(_0x3d98d5+0x1)+'.\x20'+(_0x140de6[_0x322df2(0x174)]||_0x322df2(0x178))+_0x322df2(0x1a0)+_0x19504e+_0x322df2(0x193);});const _0x4f5bea=(_0x360bc4,_0x168150,_0x1e8296)=>{const _0x8b7cc3=_0x1a1241;if(!_0x360bc4)return'-';const _0x1997e4=_0x360bc4[_0x8b7cc3(0x142)]('•')[_0x8b7cc3(0x132)](_0x134133=>_0x134133[_0x8b7cc3(0x116)]())['filter'](_0x5cae4b=>_0x5cae4b!=='');if(_0x168150)return _0x8b7cc3(0x137)+_0x2a1cc1+'_'+_0x1e8296+_0x8b7cc3(0x12d)+_0x2da9bc+'\x22><table\x20id=\x22ksa_'+_0x2a1cc1+'_'+_0x1e8296+_0x8b7cc3(0x160)+_0x250096+'\x22>'+_0x1997e4[_0x8b7cc3(0x132)](_0x18ce62=>_0x8b7cc3(0x191)+_0x18ce62+_0x8b7cc3(0x193))[_0x8b7cc3(0x121)]('')+_0x8b7cc3(0x190);return _0x8b7cc3(0x192)+_0x1997e4['map'](_0x570a52=>'•\x20'+_0x570a52)[_0x8b7cc3(0x121)](_0x8b7cc3(0x198))+_0x8b7cc3(0x16f);};let _0x465c0e='';return _0x43dec5['equipments']&&_0x43dec5[_0x1a1241(0x148)][_0x1a1241(0x157)]>0x0?_0x465c0e=_0x1a1241(0x129)+_0x43dec5[_0x1a1241(0x148)]['length']+_0x1a1241(0x188)+(_0x43dec5['subjectName']||'-')+'\x20['+(_0x43dec5[_0x1a1241(0x140)]||'-')+_0x1a1241(0x179)+_0x43dec5[_0x1a1241(0x148)][_0x1a1241(0x132)](_0x1bb527=>_0x1a1241(0x197)+(_0x1bb527[_0x1a1241(0x174)]||'-')+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td\x20style=\x22text-align:center;\x22>'+(_0x1bb527[_0x1a1241(0x154)]||'-')+_0x1a1241(0x1a1)+(_0x1bb527['type']||'-')+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td\x20style=\x22text-align:center;\x22>'+(_0x1bb527[_0x1a1241(0x146)]||'-')+_0x1a1241(0x13f))[_0x1a1241(0x121)]('')+_0x1a1241(0x15e):_0x465c0e='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22margin-top:20px;\x20padding:15px;\x20background:#f9f9f9;\x20border:1px\x20dashed\x20#ccc;\x20border-radius:8px;\x20text-align:center;\x20font-size:12px;\x20color:#999;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20ℹ️\x20등록된\x20훈련\x20장비\x20정보가\x20없습니다.\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>',_0x1a1241(0x16a)+(_0x43dec5[_0x1a1241(0x125)]||'교과목명\x20없음')+_0x1a1241(0x166)+(_0x43dec5[_0x1a1241(0x140)]||'-')+_0x1a1241(0x13c)+_0x2a1cc1+_0x1a1241(0x1ad)+!_0x30d9b2+_0x1a1241(0x155)+(_0x30d9b2?_0x1a1241(0x12c):'✂️\x20분리')+_0x1a1241(0x126)+(_0x43dec5['goal']||'-')+'</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<table\x20class=\x22std-table\x22><thead><tr><th\x20style=\x22width:220px;\x22>능력단위\x20요소</th><th>세부\x20훈련내용</th></tr></thead><tbody>'+_0x1810ce+_0x1a1241(0x114)+_0x4f5bea(_0x1a2f4e,_0x30d9b2,'k')+_0x1a1241(0x19e)+_0x4f5bea(_0x42fc93,_0x30d9b2,'s')+'</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22kst-item\x20t-bg\x22><b>태도:</b><br>'+_0x4f5bea(_0x15d29,_0x30d9b2,'t')+_0x1a1241(0x16e)+_0x465c0e+'\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>';}const _0x357350=document[_0x4f40e6(0x15b)](_0x4f40e6(0x194));_0x357350[_0x4f40e6(0x113)]=_0x4f40e6(0x167),_0x2c2bf1['forEach']((_0x1a9451,_0x2f5bc5)=>{const _0x2d6fc0=_0x4f40e6,_0x2ee965=document[_0x2d6fc0(0x170)](_0x2d6fc0(0x111));_0x2ee965['className']=_0x2d6fc0(0x135),_0x2ee965['id']=_0x2d6fc0(0x11d)+_0x2f5bc5,_0x2ee965[_0x2d6fc0(0x113)]=_0x210a5e(_0x1a9451,_0x2f5bc5,![]),_0x3ad010[_0x2d6fc0(0x119)](_0x2ee965);const _0x3c490b=_0x2ee965[_0x2d6fc0(0x134)]('.subject-header');_0x3c490b[_0x2d6fc0(0x16d)]=_0xd6fccc=>{const _0xd19af8=_0x2d6fc0;if(_0xd6fccc['target']['tagName']===_0xd19af8(0x15a))return;_0x2ee965[_0xd19af8(0x123)]['toggle'](_0xd19af8(0x145));};const _0x2e0dcb=document[_0x2d6fc0(0x170)]('li');_0x2e0dcb[_0x2d6fc0(0x147)]=_0x1a9451[_0x2d6fc0(0x125)]||_0x2d6fc0(0x16b),_0x2e0dcb[_0x2d6fc0(0x16d)]=()=>{const _0x37a8f8=_0x2d6fc0,_0x17bf00=document['getElementById'](_0x37a8f8(0x11d)+_0x2f5bc5);_0x17bf00[_0x37a8f8(0x123)][_0x37a8f8(0x186)](_0x37a8f8(0x145)),_0x17bf00[_0x37a8f8(0x189)]({'behavior':_0x37a8f8(0x14f),'block':'start'});},_0x357350[_0x2d6fc0(0x119)](_0x2e0dcb);});const _0x1749ab=document['getElementById'](_0x4f40e6(0x165)),_0x4b99cc=document[_0x4f40e6(0x134)](_0x4f40e6(0x120));if(_0x1749ab){if(_0x1749ab['classList'][_0x4f40e6(0x122)](_0x4f40e6(0x11a))){if(_0x4b99cc)_0x4b99cc[_0x4f40e6(0x147)]='◀';}else{if(_0x4b99cc)_0x4b99cc[_0x4f40e6(0x147)]='▶';}}});}document[a23_0x260802(0x133)]('DOMContentLoaded',()=>{const _0x1cb2f3=a23_0x260802;document[_0x1cb2f3(0x15b)]('btn_toggle_nav')[_0x1cb2f3(0x133)](_0x1cb2f3(0x144),toggleNav),document['getElementById'](_0x1cb2f3(0x16c))[_0x1cb2f3(0x133)](_0x1cb2f3(0x144),function(_0x86ba2f){const _0x3b5d87=_0x1cb2f3,_0x36d1b1=_0x86ba2f[_0x3b5d87(0x153)][_0x3b5d87(0x14b)](_0x3b5d87(0x115));_0x36d1b1&&loadPart(_0x36d1b1[_0x3b5d87(0x14d)](_0x3b5d87(0x196)),_0x36d1b1);}),document['getElementById'](_0x1cb2f3(0x19b))[_0x1cb2f3(0x133)](_0x1cb2f3(0x144),function(_0x16baf3){const _0x2788b1=_0x1cb2f3,_0x5c805c=_0x16baf3[_0x2788b1(0x153)][_0x2788b1(0x14b)](_0x2788b1(0x124)),_0x233d40=_0x16baf3[_0x2788b1(0x153)][_0x2788b1(0x14b)](_0x2788b1(0x1ab));if(_0x5c805c){_0x16baf3[_0x2788b1(0x112)]();const _0x146ddc=_0x5c805c[_0x2788b1(0x14d)](_0x2788b1(0x158)),_0x183f7e=_0x5c805c['getAttribute'](_0x2788b1(0x15f))===_0x2788b1(0x15c);if(window[_0x2788b1(0x162)])window[_0x2788b1(0x162)](_0x146ddc,_0x183f7e);}else{if(_0x233d40){_0x16baf3[_0x2788b1(0x112)]();if(window[_0x2788b1(0x10f)])window[_0x2788b1(0x10f)](_0x233d40['getAttribute'](_0x2788b1(0x11b)));}}});});
+
+    // 📍 [계승 및 멀티 DB 대응] LocalStorage에서 반별 설정을 가져옵니다.
+    const storedMaster = localStorage.getItem('masterConfig');
+    const firebaseConfig = storedMaster ? JSON.parse(storedMaster) : {
+    apiKey: "AIzaSyDnADuHu0mq4GIlqBm_VHfv7y6RarabGhU", 
+    databaseURL: "https://busan-teacher-workall-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "busan-teacher-workall"
+};
+    if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
+    const database = firebase.database();
+    const auth = firebase.auth();
+
+    // 📍 현재 반 정보 가져오기 (데이터 로드용 변수 유지)
+    const urlParams = new URLSearchParams(window.location.search);
+    let currentClass = urlParams.get('class') || "테스트";
+
+
+    // 📍 전역 함수: 표 구조 클립보드 복사
+    window.copyTableToClipboard = async (tableId) => {
+        const table = document.getElementById(tableId);
+        if (!table) return await appAlert("복사할 표를 찾을 수 없습니다.");
+        const range = document.createRange();
+        range.selectNode(table);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        try {
+            document.execCommand('copy');
+            await appAlert("📋 표 구조가 복사되었습니다!\n\n[한글/엑셀 붙여넣기 지침]\n1. 붙여넣기(Ctrl+V) 후 '원본 형식 유지' 선택\n2. '덮어쓰기' 또는 '내용만 덮어쓰기' 선택\n\n※ 테두리 없이 내용만 깔끔하게 입력됩니다.");
+        } catch (err) { await appAlert("❌ 복사 실패"); }
+        window.getSelection().removeAllRanges();
+    };
+
+    // 📍 퀵 네비게이터 접기/펴기
+    function toggleNav() {
+        const nav = document.getElementById('quickNav');
+        const btn = document.querySelector('.nav-toggle-btn');
+        nav.classList.toggle('collapsed');
+        btn.innerText = nav.classList.contains('collapsed') ? '◀' : '▶';
+    }
+
+    // 📍 [보안 강화] 인증 확인 후 시동을 거는 통합 로직
+const adminPw = localStorage.getItem('adminPw');
+
+// 📍 전역 변수 추가 (현재 선택된 버전과 탭을 기억하는 메모리 칩)
+let currentTargetVersionId = null;
+let currentPartName = 'electronics'; 
+
+// 📍 [신규 함수] 파이어베이스에서 버전 목록을 불러와 버튼으로 생성
+function loadVersions() {
+    database.ref('ncsVersions').once('value', snap => {
+        const versions = snap.val() || {};
+        const versionListDiv = document.getElementById('versionList');
+        versionListDiv.innerHTML = '';
+        
+        // 생성된 시간(timestamp) 순서대로 정렬
+        const keys = Object.keys(versions).sort((a, b) => versions[a].timestamp - versions[b].timestamp);
+        
+        if (keys.length === 0) {
+            versionListDiv.innerHTML = '<span style="color:#e74c3c; font-weight:bold;">❌ 등록된 훈련기준 버전이 없습니다. 관제탑에서 엑셀을 업로드해주세요.</span>';
+            return;
+        }
+
+        // 각 버전별로 버튼 생성
+        keys.forEach((vId, index) => {
+            const vData = versions[vId];
+            const btn = document.createElement('button');
+            btn.className = 'version-btn';
+            btn.innerText = vData.name || `버전 ${index + 1}`;
+            btn.onclick = () => selectVersion(vId, btn);
+            versionListDiv.appendChild(btn);
+        });
+
+        // 초기 로딩 시 가장 첫 번째(또는 최근) 버전 자동 클릭
+        const firstVersionBtn = versionListDiv.querySelector('.version-btn');
+        if (firstVersionBtn) {
+            selectVersion(keys[0], firstVersionBtn);
+        }
+    });
+}
+
+// 📍 [신규 함수] 특정 버전 버튼을 클릭했을 때 작동하는 기어
+function selectVersion(vId, btn) {
+    // 1. 버튼 색상 변경 (기어 활성화)
+    document.querySelectorAll('.version-btn').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+    
+    // 2. 현재 버전 ID 갱신
+    currentTargetVersionId = vId;
+    
+    // 3. 현재 선택되어 있는 하단 탭(전기/엔진 등)의 데이터를 새로운 버전으로 다시 불러오기
+    const activeTabBtn = document.querySelector('.tab-btn.active');
+    loadPart(currentPartName, activeTabBtn);
+}
+
+auth.onAuthStateChanged(async (user) => {
+    if (user) {
+        // ✅ [상황 1] 인증 성공: 첫 화면에서 파트를 부르는 대신 "버전 목록"을 먼저 부름
+        console.log("🔒 보안 인증 확인됨: " + user.email);
+        loadVersions(); // 📍 수정됨
+    } else if (adminPw) {
+        // 🔑 [상황 2] 자동 로그인 시도
+        auth.signInWithEmailAndPassword('ghlwns0201@naver.com', adminPw)
+            .catch(async (err) => {
+                console.error("❌ 인증 실패", err);
+                await appAlert("인증 정보가 만료되었습니다.");
+                location.href = '../index.html';
+            });
+    } else {
+        // ⚠️ [상황 3] 인증 없음: 퇴거
+        await appAlert("보안 인증이 필요한 페이지입니다.");
+        location.href = '../index.html';
+    }
+});
+
+// ❌ [삭제] 기존의 window.onload 즉시 실행 로직을 제거했습니다.
+// window.onload = async function() { loadPart('electronics', ...); };
+
+    function loadPart(partName, btn) {
+        currentPartName = partName; // 📍 현재 누른 탭 기억
+
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        if (btn) btn.classList.add('active');
+
+        const display = document.getElementById('mainDisplay');
+        
+        // 📍 방어 로직: 버전을 먼저 선택하지 않았다면 차단
+        if (!currentTargetVersionId) {
+            display.innerHTML = '<div class="no-data">👆 상단에서 훈련기준 버전을 먼저 선택해 주세요.</div>';
+            return;
+        }
+
+        display.innerHTML = '<div class="no-data">🔄 데이터를 전송받는 중...</div>';
+
+        // 📍 [배관 정밀 교체 완료] 선택된 버전(currentTargetVersionId) 경로로 데이터 호출
+        database.ref(`ncsVersions/${currentTargetVersionId}/data/${partName}`).once('value', snap => {
+            const result = snap.val();
+            if (!result) {
+                display.innerHTML = `<div class="no-data">❌ [${partName}] 파트에 등록된 훈련기준이 없습니다.</div>`;
+                return;
+            }
+
+            const actualData = result.data || result;
+            display.innerHTML = '';
+            const dataArray = Array.isArray(actualData) ? actualData : Object.values(actualData);
+
+            window.toggleMode = (subIdx, isSplit) => {
+                const card = document.getElementById(`card_${subIdx}`);
+                const sub = dataArray[subIdx];
+                if (card && sub) card.innerHTML = createCardInner(sub, subIdx, isSplit);
+            };
+
+            function createCardInner(sub, subIdx, isSplit) {
+                let elementsHTML = '';
+                const elements = Array.isArray(sub.elements) ? sub.elements : Object.values(sub.elements || {});
+                let finalK = "", finalS = "", finalT = "";
+                const displayStyle = "border: 1px dashed #ff7675; padding: 8px; background: #fff5f5;";
+                const copyTableStyle = "width:100%; border-collapse:collapse; border:0; margin:0; padding:0;";
+
+                // 1. 세부 훈련내용(수행준거) 조립
+                elements.forEach((el, idx) => {
+                    if(!el) return;
+                    if (el.k) finalK = el.k; if (el.s) finalS = el.s; if (el.t) finalT = el.t;
+                    const contents = Array.isArray(el.contents) ? el.contents : [el.contents];
+                    let contentsHTML = isSplit ? `
+                        <div style="text-align: right; margin-bottom: 5px;">
+                            <button class="dynamic-copy-table" data-target="ct_${subIdx}_${idx}" style="padding:3px 8px; font-size:11px; background:#e74c3c; color:white; border:none; border-radius:4px; cursor:pointer; font-weight:bold;">👆 한글 표로 복사</button>
+                        </div>
+                        <div style="${displayStyle}">
+                            <table id="ct_${subIdx}_${idx}" style="${copyTableStyle}">
+                                ${contents.map(c => `<tr><td style="border:0; padding:4px;">${c}</td></tr>`).join('')}
+                            </table>
+                        </div>` : `<div style="white-space: pre-line; line-height: 1.6; padding:10px;">${contents.join('<br>')}</div>`;
+
+                    elementsHTML += `<tr><td class="element-title">${idx + 1}. ${el.name || '단원명 미기입'}</td><td style="padding: 10px; vertical-align: top;">${contentsHTML}</td></tr>`;
+                });
+
+                // 2. K.S.A 포맷팅 함수
+                const formatKSA = (text, split, ksaType) => {
+                    if (!text) return "-";
+                    const lines = text.split('•').map(s => s.trim()).filter(s => s !== "");
+                    if (split) {
+                        return `<div style="text-align: right; margin-bottom: 5px;"><button class="dynamic-copy-table" data-target="ksa_${subIdx}_${ksaType}" style="padding:2px 6px; font-size:10px; background:#e74c3c; color:white; border:none; border-radius:3px; cursor:pointer;">표 복사</button></div>
+                        <div style="${displayStyle}"><table id="ksa_${subIdx}_${ksaType}" style="${copyTableStyle}">${lines.map(line => `<tr><td style="border:0; padding:4px;">• ${line}</td></tr>`).join('')}</table></div>`;
+                    }
+                    return `<div style="white-space: pre-line; line-height: 1.6; padding:5px;">${lines.map(line => `• ${line}`).join('<br>')}</div>`;
+                };
+
+                // 3. 📍 장비 목록 HTML 생성 (반환 전에 미리 조립)
+                let equipmentHTML = '';
+                if (sub.equipments && sub.equipments.length > 0) {
+                    equipmentHTML = `
+                        <div style="margin-top:20px; border:1px solid #3498db; border-radius:8px; overflow:hidden;">
+                            <div style="background:#e8f4fd; padding:8px 15px; font-weight:bold; color:#21618c; font-size:13px; border-bottom:1px solid #3498db; display: flex; justify-content: space-between; align-items: center;">
+    <span>🛠️ 주요 훈련 장비 및 도구 (총 ${sub.equipments.length}종)</span>
+    <span style="font-size:10px; color:#555; font-weight:normal; background:rgba(255,255,255,0.5); padding:2px 6px; border-radius:4px; border:1px solid #bcd4e6;">
+        ${sub.subjectName || '-'} [${sub.code || '-'}]
+    </span>
+</div>
+                            <table class="std-table" style="background:#fff;">
+                                <thead>
+                                    <tr style="background:#f1f4f7;">
+                                        <th style="width:40%;">장비명</th>
+                                        <th style="width:15%;">단위</th>
+                                        <th style="width:25%;">활용구분</th>
+                                        <th style="width:20%;">활용인원</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${sub.equipments.map(eq => `
+                                        <tr>
+                                            <td style="font-weight:bold; color:#2c3e50;">${eq.name || '-'}</td>
+                                            <td style="text-align:center;">${eq.unit || '-'}</td>
+                                            <td style="text-align:center;">${eq.type || '-'}</td>
+                                            <td style="text-align:center;">${eq.capacity || '-'}</td>
+                                        </tr>
+                                    `).join('')}
+                                </tbody>
+                            </table>
+                        </div>`;
+                } else {
+                    equipmentHTML = `
+                        <div style="margin-top:20px; padding:15px; background:#f9f9f9; border:1px dashed #ccc; border-radius:8px; text-align:center; font-size:12px; color:#999;">
+                            ℹ️ 등록된 훈련 장비 정보가 없습니다.
+                        </div>`;
+                }
+
+                // 4. 최종 화면 출력 (모든 재료를 합쳐서 반환)
+               return `
+        <div class="subject-header">
+            <div>
+                <span style="font-size:16px; font-weight:bold;">${sub.subjectName || '교과목명 없음'}</span>
+                <span style="font-size:14px; color:#f1c40f; margin-left:10px;">[${sub.code || '-'}]</span>
+            </div>
+            <button class="dynamic-toggle-mode" data-subidx="${subIdx}" data-split="${!isSplit}" style="padding:4px 8px; font-size:11px; cursor:pointer; background:#fff; color:#d63031; border:1px solid #d63031; border-radius:4px;">
+                ${isSplit ? '📄 통합' : '✂️ 분리'}
+            </button>
+        </div>
+        <div class="subject-body"> <div class="subject-info"><b>🎯 훈련목표:</b> ${sub.goal || '-'}</div>
+            <table class="std-table"><thead><tr><th style="width:220px;">능력단위 요소</th><th>세부 훈련내용</th></tr></thead><tbody>${elementsHTML}</tbody></table>
+            <div style="padding:15px; background:#fff; border:1px solid #dee2e6; border-top:none;">
+                <div style="font-weight:bold; margin-bottom:10px;">💡 주요 핵심 역량 (K.S.A)</div>
+                <div class="kst-box">
+                    <div class="kst-item k-bg"><b>지식:</b><br>${formatKSA(finalK, isSplit, 'k')}</div>
+                    <div class="kst-item s-bg"><b>기술:</b><br>${formatKSA(finalS, isSplit, 's')}</div>
+                    <div class="kst-item t-bg"><b>태도:</b><br>${formatKSA(finalT, isSplit, 't')}</div>
+                </div>
+                ${equipmentHTML}
+            </div>
+        </div>`;
+}
+
+            // 카드 및 퀵 네비게이터 생성
+            const navList = document.getElementById('navList');
+            navList.innerHTML = `<li onclick="window.scrollTo({top:0, behavior:'smooth'})"><strong>🔝 최상단으로 이동</strong></li>`;
+            
+            dataArray.forEach((sub, subIdx) => {
+    const card = document.createElement('div');
+    card.className = 'subject-card'; // 초기엔 active 없음 (접힌 상태)
+    card.id = `card_${subIdx}`;
+    
+    // 카드 전체 구조를 감싸는 틀 생성
+    card.innerHTML = createCardInner(sub, subIdx, false);
+    display.appendChild(card);
+
+    // 📍 [핵심] 헤더 클릭 시 접기/펴기 이벤트 추가
+    const header = card.querySelector('.subject-header');
+    header.onclick = (e) => {
+        // 분리 모드 버튼 클릭 시에는 접히지 않도록 방어
+        if (e.target.tagName === 'BUTTON') return;
+        card.classList.toggle('active');
+    };
+
+    // 퀵 네비게이터 리스트 생성 (기존과 동일)
+    const li = document.createElement('li');
+    li.innerText = sub.subjectName || '교과목명 없음';
+    li.onclick = () => {
+        const targetCard = document.getElementById(`card_${subIdx}`);
+        targetCard.classList.add('active'); // 이동 시 자동으로 펼쳐주기
+        targetCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+    navList.appendChild(li);
+});
+
+            // 🚀 [자동 개방] 탭 클릭 시 무조건 열기
+            const nav = document.getElementById('quickNav');
+            const toggleBtn = document.querySelector('.nav-toggle-btn');
+            
+            if (nav) {
+                if (nav.classList.contains('collapsed')) {
+                    // 이미 닫혀있다면 아무것도 하지 않음 (닫힘 유지)
+                    if (toggleBtn) toggleBtn.innerText = '◀';
+                } else {
+                    // 열려있다면 열린 상태 유지 (화살표 방향만 확인)
+                    if (toggleBtn) toggleBtn.innerText = '▶';
+                }
+            }
+        }); // database.ref().once('value') 끝나는 지점
+    }
+
+// 📍 [보안 추가] 대시보드(HTML)에서 엔진룸(JS)으로 모든 배선 숨기기 (이벤트 위임 기술 적용)
+
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. 고정 네비게이션 버튼
+    document.getElementById('btn_toggle_nav').addEventListener('click', toggleNav);
+
+    // 2. 상단 전기/엔진/섀시/전기차 탭 버튼 (이벤트 위임)
+    document.getElementById('partTabContainer').addEventListener('click', function(e) {
+        const tabBtn = e.target.closest('.dynamic-load-part');
+        if (tabBtn) {
+            loadPart(tabBtn.getAttribute('data-part'), tabBtn);
+        }
+    });
+
+    // 3. 📍 동적으로 생성되는 과목 목록 퀵 네비게이터 클릭 감지 (이벤트 위임)
+    // - 기존 li.onclick 속성을 살려두었으나, JS 난독화를 위해 중앙 통제소로 끌어오면 더 안전합니다.
+    // - (참고: li 생성 시 onclick을 지우고 처리해도 되지만, 현재 상태에서도 난독화기(Obfuscator)가 익명함수 `() => {...}`는 안전하게 꼬아주므로 작동에 문제없습니다.)
+
+    // 4. 📍 메인 디스플레이 영역(동적 생성 표, 아코디언, 복사버튼 등) 통제소
+    document.getElementById('mainDisplay').addEventListener('click', function(e) {
+        // ① 통합/분리 토글 버튼
+        const modeBtn = e.target.closest('.dynamic-toggle-mode');
+        // ② 한글 표로 복사 버튼
+        const copyBtn = e.target.closest('.dynamic-copy-table');
+
+        if (modeBtn) {
+            // 버튼 클릭 시 아코디언(header.onclick)이 동시에 작동하는 것을 방지
+            e.stopPropagation();
+            const subIdx = modeBtn.getAttribute('data-subidx');
+            const isSplit = modeBtn.getAttribute('data-split') === 'true'; // 문자열 'true'를 boolean으로 변환
+            if (window.toggleMode) window.toggleMode(subIdx, isSplit);
+        } else if (copyBtn) {
+            e.stopPropagation();
+            if (window.copyTableToClipboard) window.copyTableToClipboard(copyBtn.getAttribute('data-target'));
+        }
+    });
+});

@@ -1,1 +1,666 @@
-(function(_0xa0e750,_0x580924){const _0x97740c=a20_0x21e9,_0x1b6383=_0xa0e750();while(!![]){try{const _0xfa0c48=-parseInt(_0x97740c(0x19f))/0x1+-parseInt(_0x97740c(0x16b))/0x2*(-parseInt(_0x97740c(0x18f))/0x3)+parseInt(_0x97740c(0x16a))/0x4*(-parseInt(_0x97740c(0x151))/0x5)+parseInt(_0x97740c(0x168))/0x6+-parseInt(_0x97740c(0x124))/0x7+-parseInt(_0x97740c(0x13b))/0x8+-parseInt(_0x97740c(0x112))/0x9*(-parseInt(_0x97740c(0x17e))/0xa);if(_0xfa0c48===_0x580924)break;else _0x1b6383['push'](_0x1b6383['shift']());}catch(_0x48b7ba){_0x1b6383['push'](_0x1b6383['shift']());}}}(a20_0x43a0,0xef58e),function(_0x5455e2){const _0xe52d52=a20_0x21e9,_0x5e9034=(function(){let _0x57c036=!![];return function(_0x4d9bb2,_0x30623b){const _0x295d6e=_0x57c036?function(){const _0x5e29a6=a20_0x21e9;if(_0x30623b){const _0x2ab4c9=_0x30623b[_0x5e29a6(0x149)](_0x4d9bb2,arguments);return _0x30623b=null,_0x2ab4c9;}}:function(){};return _0x57c036=![],_0x295d6e;};}()),_0x438f75=_0x5e9034(this,function(){const _0x5c9b56=a20_0x21e9;return _0x438f75['toString']()['search']('(((.+)+)+)+$')[_0x5c9b56(0x19c)]()[_0x5c9b56(0x176)](_0x438f75)['search'](_0x5c9b56(0x132));});_0x438f75();'use strict';const _0x20e9f5=['지각','조퇴','외출','공가','휴가',_0xe52d52(0x161),_0xe52d52(0x142),'기타',_0xe52d52(0x154)],_0xc9d93=['휴가','질병/입원','공가'],_0x1fcb1e=['질병','입원','병원','치료','몸살','아픔','아파','감기','발열','수술','통원'];function _0x63fc1e(_0xc4bebe){const _0x1acf83=_0xe52d52;if(!_0xc4bebe)return'';if(typeof _0xc4bebe===_0x1acf83(0x10e)&&/^\d{4}-\d{2}-\d{2}/[_0x1acf83(0x189)](_0xc4bebe))return _0xc4bebe['substring'](0x0,0xa);let _0x39d9d4=String(_0xc4bebe)[_0x1acf83(0x153)]();if(!isNaN(_0x39d9d4)&&_0x39d9d4[_0x1acf83(0x12b)]<0xa&&_0x39d9d4!==''){const _0x2da361=new Date((parseInt(_0x39d9d4,0xa)-0x63e1)*0x15180*0x3e8),_0x410540=_0x2da361[_0x1acf83(0x17c)]()*0xea60;return new Date(_0x2da361[_0x1acf83(0x13a)]()-_0x410540)[_0x1acf83(0x122)]()[_0x1acf83(0x14d)]('T')[0x0];}_0x39d9d4=_0x39d9d4[_0x1acf83(0x15f)](/\./g,'-')['split']('\x20')[0x0];if(_0x39d9d4[_0x1acf83(0x117)]('/')){const _0x418d84=_0x39d9d4['split']('/');if(_0x418d84[_0x1acf83(0x12b)]===0x3){const _0x53479c=_0x418d84[0x2][_0x1acf83(0x12b)]===0x2?'20'+_0x418d84[0x2]:_0x418d84[0x2];return _0x53479c+'-'+_0x418d84[0x0]['padStart'](0x2,'0')+'-'+_0x418d84[0x1][_0x1acf83(0x197)](0x2,'0');}}return _0x39d9d4[_0x1acf83(0xfa)](0x0,0xa);}function _0x31a31e(){const _0x254509=_0xe52d52,_0x515550=new Date(),_0x4ce7f8=_0x515550[_0x254509(0x17c)]()*0xea60;return new Date(_0x515550[_0x254509(0x13a)]()-_0x4ce7f8)[_0x254509(0x122)]()[_0x254509(0x14d)]('T')[0x0];}function _0x3c2772(_0x5d2c28){const _0x38e91d=_0xe52d52;return String(_0x5d2c28||'')[_0x38e91d(0x15f)](/\s+/g,'');}function _0x4b4bcf(_0x3ab6b7,_0x303e2f,_0x1ee048){const _0x89a260=_0xe52d52,_0x334058=_0x63fc1e(_0x3ab6b7['날짜']),_0x25d37b=String(_0x3ab6b7['일수']||'')['trim'](),_0x4ea9bf=String(_0x3ab6b7['교시']||'')[_0x89a260(0x153)](),_0x3a2899=String(_0x3ab6b7['교과목']||'')[_0x89a260(0x153)]();if(!_0x334058||!_0x25d37b||_0x25d37b==='-'||_0x4ea9bf['includes']('점심'))return![];const _0x23741e=_0x3c2772(_0x3a2899);if(!_0x23741e)return![];if(!_0x303e2f[_0x89a260(0x12b)]&&!_0x1ee048[_0x89a260(0x12b)])return![];return _0x303e2f[_0x89a260(0x101)](_0xeda735=>_0xeda735&&(_0xeda735[_0x89a260(0x117)](_0x23741e)||_0x23741e[_0x89a260(0x117)](_0xeda735)))||_0x1ee048[_0x89a260(0x101)](_0x549637=>_0x549637&&(_0x549637[_0x89a260(0x117)](_0x23741e)||_0x23741e[_0x89a260(0x117)](_0x549637)));}function _0x2d7c0a(_0x3e28c3,_0xca1fd1,_0x168a31){const _0x3db3fa=_0xe52d52,_0x5e96c4=new Set(),_0x503c9d=[];return _0x3e28c3[_0x3db3fa(0x169)](_0x2ca9e8=>{const _0x3a91ba=_0x3db3fa;if(!_0x4b4bcf(_0x2ca9e8,_0xca1fd1,_0x168a31))return;const _0xbdfda9=_0x63fc1e(_0x2ca9e8['날짜']);_0xbdfda9&&!_0x5e96c4[_0x3a91ba(0x139)](_0xbdfda9)&&(_0x503c9d[_0x3a91ba(0x11f)](_0xbdfda9),_0x5e96c4[_0x3a91ba(0x140)](_0xbdfda9));}),_0x503c9d[_0x3db3fa(0x102)]();}function _0x48737a(_0x44c499){const _0x4e87a8=_0xe52d52,_0x170779=[];if(!_0x44c499['length'])return _0x170779;const _0x4317a5=new Date(_0x44c499[0x0]),_0x371175=new Date(_0x44c499[_0x44c499[_0x4e87a8(0x12b)]-0x1]);let _0x4b03fd=new Date(_0x4317a5);while(_0x4b03fd<=_0x371175){const _0x2f6c77=new Date(_0x4b03fd),_0x42179b=new Date(_0x4b03fd);_0x42179b[_0x4e87a8(0x137)](_0x42179b[_0x4e87a8(0x163)]()+0x1),_0x42179b['setDate'](_0x42179b[_0x4e87a8(0x17f)]()-0x1),_0x170779[_0x4e87a8(0x11f)]({'label':_0x170779[_0x4e87a8(0x12b)]+0x1+'회차','start':_0x2f6c77[_0x4e87a8(0x122)]()[_0x4e87a8(0x14d)]('T')[0x0],'end':_0x42179b['toISOString']()[_0x4e87a8(0x14d)]('T')[0x0]}),_0x4b03fd['setMonth'](_0x4b03fd[_0x4e87a8(0x163)]()+0x1);}return _0x170779;}function _0x42db87(_0x2d6ee1,_0x45d1a2){const _0x45c4e9=_0xe52d52;if(!_0x2d6ee1[_0x45c4e9(0x12b)])return-0x1;for(let _0x37bd9c=0x0;_0x37bd9c<_0x2d6ee1['length'];_0x37bd9c++){const _0x36a48d=_0x2d6ee1[_0x37bd9c];if(_0x45d1a2>=_0x36a48d['start']&&_0x45d1a2<=_0x36a48d[_0x45c4e9(0x19a)])return _0x37bd9c;}if(_0x45d1a2<_0x2d6ee1[0x0]['start'])return 0x0;return _0x2d6ee1[_0x45c4e9(0x12b)]-0x1;}function _0x434522(_0x5c2343,_0x5d2cde){const _0x5411aa=_0xe52d52;if(!_0x5c2343||!_0x5d2cde)return'';const _0x33107a=new Date(_0x5c2343+_0x5411aa(0x13d)),_0x2c8506=new Date(_0x5d2cde+'T00:00:00'),_0x3fb0ec=Math['round']((_0x2c8506-_0x33107a)/(0x3e8*0x3c*0x3c*0x18));if(_0x3fb0ec===0x0)return _0x5411aa(0xfd);if(_0x3fb0ec>0x0)return'D-'+_0x3fb0ec;return'D+'+Math['abs'](_0x3fb0ec);}function _0x527b82(_0x440de1){const _0x283d7b=_0xe52d52;return String(_0x440de1??'')[_0x283d7b(0x15f)](/&/g,_0x283d7b(0xfb))[_0x283d7b(0x15f)](/</g,_0x283d7b(0x19d))[_0x283d7b(0x15f)](/>/g,_0x283d7b(0x198))[_0x283d7b(0x15f)](/"/g,'&quot;');}function _0xe58f3f(_0x3d845e){const _0x1d37f8=_0xe52d52;if(!_0x3d845e)return'-';const _0x39fe8e=String(_0x3d845e)[_0x1d37f8(0x14d)]('-');if(_0x39fe8e[_0x1d37f8(0x12b)]!==0x3)return _0x3d845e;return _0x39fe8e[0x1]+'/'+_0x39fe8e[0x2];}function _0x237ad3(_0x4ad5f8){const _0x3c73dc=_0xe52d52;if(!_0x4ad5f8)return'-';const _0x3711ab=String(_0x4ad5f8)[_0x3c73dc(0x14d)]('-');if(_0x3711ab[_0x3c73dc(0x12b)]!==0x3)return _0x4ad5f8;const _0x4a4b77=_0x3711ab[0x0][_0x3c73dc(0x174)](-0x2);return _0x4a4b77+'.'+_0x3711ab[0x1]+'.'+_0x3711ab[0x2];}function _0x143d80(_0x5cdf10){const _0x4bcb6b=_0xe52d52,_0x24b26c=String(_0x5cdf10||'')[_0x4bcb6b(0x153)]();if(!_0x24b26c||_0x24b26c==='-'||_0x24b26c==='00:00:00'||_0x24b26c===_0x4bcb6b(0xf8))return'-';return _0x24b26c[_0x4bcb6b(0x12b)]>=0x5?_0x24b26c[_0x4bcb6b(0xfa)](0x0,0x5):_0x24b26c;}function _0x3901f2(_0x17e8f4){const _0x38b841=_0xe52d52,_0x10627b=String(_0x17e8f4[_0x38b841(0x155)]||''),_0x511914=String(_0x17e8f4[_0x38b841(0x171)]||'');return _0x10627b[_0x38b841(0x117)](_0x38b841(0x134))||_0x511914[_0x38b841(0x117)](_0x38b841(0x134));}function _0x22c64f(_0x3b60d2){const _0x210c81=_0xe52d52;return String(_0x3b60d2||'')[_0x210c81(0x153)]()['replace'](/\s*\(신청\)/g,'')[_0x210c81(0x15f)](/\s*\(승인\)/g,'')['replace'](/\s*\(반려\)/g,'')[_0x210c81(0x153)]();}const _0x1dcdc1=new Set(['-','—','–','없음','무','.','..',_0xe52d52(0x11b)]);function _0x21414d(_0x291ccc){const _0x1a4850=_0xe52d52,_0x37f2c0=_0x22c64f(_0x291ccc);if(!_0x37f2c0)return![];return!_0x1dcdc1[_0x1a4850(0x139)](_0x37f2c0);}function _0x2bfd8b(_0x3b49c4){const _0x3ffe2d=_0xe52d52,_0xf9668b=String(_0x3b49c4[_0x3ffe2d(0x155)]||''),_0x4f43e0=String(_0x3b49c4[_0x3ffe2d(0x171)]||'');return _0xf9668b[_0x3ffe2d(0x117)](_0x3ffe2d(0x11c))||_0x4f43e0[_0x3ffe2d(0x117)](_0x3ffe2d(0x11c));}function _0x46ee51(_0x198c5a){const _0x49aaed=_0xe52d52,_0x4782d9=String(_0x198c5a['status']||''),_0x10ba9c=String(_0x198c5a['note']||'');return _0x4782d9[_0x49aaed(0x117)](_0x49aaed(0x18d))||_0x10ba9c[_0x49aaed(0x117)](_0x49aaed(0x18d));}function _0x58b7a1(_0x192d02){const _0x3423db=_0xe52d52;return String(_0x192d02[_0x3423db(0x155)]||'')[_0x3423db(0x117)](_0x3423db(0x184));}function _0x2b4e24(_0x17da23){const _0x31fc29=_0xe52d52,_0x4be1e3=String(_0x17da23||'');if(!_0x4be1e3||_0x4be1e3===_0x31fc29(0x18b)||_0x4be1e3[_0x31fc29(0x117)]('결석')||_0x4be1e3===_0x31fc29(0x14a)||_0x4be1e3===_0x31fc29(0x125))return!![];if(_0x4be1e3==='출석'||_0x4be1e3['includes']('정상'))return!![];return![];}function _0x5326c1(_0x5978af){const _0xf7ece5=_0xe52d52,_0x1326ec=String(_0x5978af['status']||''),_0x19046e=String(_0x5978af[_0xf7ece5(0x155)]||'');if(_0x1326ec[_0xf7ece5(0x117)](_0xf7ece5(0x18d))||_0x19046e[_0xf7ece5(0x117)](_0xf7ece5(0x18d)))return!![];if(_0x19046e[_0xf7ece5(0x117)](_0xf7ece5(0x184)))return!![];return _0x20e9f5[_0xf7ece5(0x101)](_0x1c4d57=>_0x1326ec[_0xf7ece5(0x117)](_0x1c4d57));}function _0x25b26d(_0x3a2575){const _0x2547e4=_0xe52d52;if(!_0x3a2575||typeof _0x3a2575!==_0x2547e4(0x14c))return![];if(_0x1e90d7(_0x3a2575))return![];if(!_0x21414d(_0x3a2575[_0x2547e4(0x155)]))return![];if(_0x3901f2(_0x3a2575))return![];if(_0x2bfd8b(_0x3a2575))return![];const _0x3a6077=String(_0x3a2575[_0x2547e4(0x171)]||'');if(_0x2b4e24(_0x3a6077))return![];return _0x5326c1(_0x3a2575);}function _0x29dcf7(_0x1ade32){const _0xd673f8=_0xe52d52;if(_0x46ee51(_0x1ade32))return _0xd673f8(0x115);if(_0x58b7a1(_0x1ade32))return'승인';return'완료';}function _0x3b99a2(_0x19188d){const _0x32a002=_0xe52d52;return _0x22c64f(_0x19188d[_0x32a002(0x155)])||'-';}function _0x1e90d7(_0x408be6){const _0x390b21=_0xe52d52,_0xc87c2a=String(_0x408be6?.['note']||''),_0x1a66d9=String(_0x408be6?.[_0x390b21(0x171)]||'');return _0xc87c2a[_0x390b21(0x117)](_0x390b21(0x105))||_0x1a66d9[_0x390b21(0x117)](_0x390b21(0x105));}function _0x382cd9(_0x2319a7){const _0x451d01=_0xe52d52,_0x1c616f=String(_0x2319a7[_0x451d01(0x171)]||''),_0x21d2b5=_0x22c64f(_0x2319a7['note']),_0x43f9ef=_0x1c616f+_0x21d2b5;if(_0x1c616f[_0x451d01(0x117)]('휴가')||_0x21d2b5[_0x451d01(0x117)]('휴가'))return'휴가';if(_0x1fcb1e['some'](_0x29c2aa=>_0x43f9ef[_0x451d01(0x117)](_0x29c2aa)))return _0x451d01(0x104);if(/질병|입원/[_0x451d01(0x189)](_0x1c616f)||/질병|입원/[_0x451d01(0x189)](_0x21d2b5))return _0x451d01(0x104);return'공가';}function _0x31dcc7(_0x252cd7){const _0x3b39ba=_0xe52d52,_0x4f9daf={};return _0xc9d93[_0x3b39ba(0x169)](_0x1ec403=>{_0x4f9daf[_0x1ec403]=0x0;}),(_0x252cd7||[])[_0x3b39ba(0x169)](_0x2f0f82=>{const _0x2cbda0=_0x3b39ba,_0x46f0bd=_0x2f0f82[_0x2cbda0(0x12f)]||'공가';if(_0x4f9daf[_0x46f0bd]!==undefined)_0x4f9daf[_0x46f0bd]++;}),_0xc9d93[_0x3b39ba(0x119)](_0x46a750=>({'label':_0x46a750,'count':_0x4f9daf[_0x46a750]}));}function _0x402573(_0xa0271b){const _0x4af70c=_0xe52d52;return(_0xa0271b||[])[_0x4af70c(0x183)]((_0x5b260e,_0x13cd7d)=>_0x5b260e+(_0x13cd7d[_0x4af70c(0x17b)]||0x0),0x0);}function _0x51f86f(_0x31cce3,_0x46fd35){const _0x27e8c4=_0x143d80(_0x31cce3),_0x4b8bd8=_0x143d80(_0x46fd35);if(_0x27e8c4==='-'&&_0x4b8bd8==='-')return'-';if(_0x4b8bd8==='-')return _0x27e8c4;if(_0x27e8c4==='-')return'('+_0x4b8bd8+')';return _0x27e8c4+'\x0a('+_0x4b8bd8+')';}function _0x1b11be(_0x186306){const _0x2d2500=_0xe52d52,_0x8df87f=String(_0x186306??'')[_0x2d2500(0x153)]();if(!_0x8df87f||_0x8df87f==='-')return _0x527b82('-');return _0x8df87f[_0x2d2500(0x14d)]('\x0a')[_0x2d2500(0x119)](_0x329794=>_0x527b82(_0x329794))[_0x2d2500(0x108)](_0x2d2500(0x191));}function _0x3785ba(_0x303530){const _0x5acbd4=_0xe52d52,_0x2f6657=String(_0x303530['status']||''),_0x54a7d1=_0x2f6657[_0x5acbd4(0x117)]('외출');if(_0x54a7d1)return{'left':_0x51f86f(_0x303530[_0x5acbd4(0x10a)],_0x303530[_0x5acbd4(0x12a)]),'right':_0x51f86f(_0x303530[_0x5acbd4(0x116)],_0x303530['returnTime'])};return{'left':_0x143d80(_0x303530[_0x5acbd4(0x10a)]),'right':_0x143d80(_0x303530[_0x5acbd4(0x116)])};}function _0x45187a(_0x4b6f92,_0x5ca5bb){const _0x30a9fa=_0xe52d52;if(!_0x4b6f92||!_0x4b6f92['uploadTime'])return _0xe58f3f(_0x5ca5bb);const _0x181d89=String(_0x4b6f92['uploadTime']),_0x5d065d=String(_0x5ca5bb||'')[_0x30a9fa(0x14d)]('-')[0x0]||String(new Date()[_0x30a9fa(0x121)]()),_0xa365e4=_0x181d89[_0x30a9fa(0x110)](/(\d{1,2})\s*월?\s*(\d{1,2})\s*일?/);if(_0xa365e4)return _0xa365e4[0x1][_0x30a9fa(0x197)](0x2,'0')+'/'+_0xa365e4[0x2][_0x30a9fa(0x197)](0x2,'0');const _0x2367e1=_0x181d89[_0x30a9fa(0x110)](/(\d{1,2})\/(\d{1,2})/);if(_0x2367e1)return _0x2367e1[0x1]['padStart'](0x2,'0')+'/'+_0x2367e1[0x2]['padStart'](0x2,'0');const _0x492830=_0x181d89[_0x30a9fa(0x110)](/(\d{4})-(\d{2})-(\d{2})/);if(_0x492830)return _0x492830[0x2]+'/'+_0x492830[0x3];return _0xe58f3f(_0x5ca5bb);}function _0x329545(_0x413362){const _0x5ee293=_0xe52d52;if(!_0x413362)return'';return _0x413362[_0x5ee293(0x15a)][_0x5ee293(0x174)](0x5)[_0x5ee293(0x15f)]('-','/')+_0x5ee293(0x19e)+_0x413362[_0x5ee293(0x19a)]['slice'](0x5)[_0x5ee293(0x15f)]('-','/');}function _0x15e8e3({dailyAttendance:_0x1a3669,rawTimetable:_0x5c2a69,subjectList:_0x4298c6,unitList:_0x45b5dd,todayKey:_0x491fc3,unitIndex:_0x16a079}){const _0x658f99=_0xe52d52,_0x135631=_0x2d7c0a(_0x5c2a69,_0x4298c6,_0x45b5dd),_0x5c9446=_0x48737a(_0x135631);if(!_0x5c9446[_0x658f99(0x12b)])return{'unitLabel':'','periodText':'','records':[],'count':0x0,'reasonCounts':[],'unitIndex':-0x1,'unitMonths':[]};const _0x3aacad=_0x42db87(_0x5c9446,_0x491fc3),_0x421b7b=typeof _0x16a079===_0x658f99(0x143)&&_0x16a079>=0x0?Math[_0x658f99(0x12c)](_0x16a079,_0x5c9446[_0x658f99(0x12b)]-0x1):_0x3aacad,_0x5d3e34=_0x5c9446[_0x421b7b],_0x22c188=[];Object[_0x658f99(0x10f)](_0x1a3669||{})[_0x658f99(0x169)](_0x1f77ec=>{const _0x1915ab=_0x658f99;if(_0x1f77ec<_0x5d3e34[_0x1915ab(0x15a)]||_0x1f77ec>_0x5d3e34[_0x1915ab(0x19a)])return;const _0xe605ff=_0x1a3669[_0x1f77ec];if(!_0xe605ff||typeof _0xe605ff!==_0x1915ab(0x14c))return;if(_0xe605ff['_metadata']&&_0xe605ff[_0x1915ab(0x16d)]['isTemporary'])return;const _0x1bdaae=_0x45187a(_0xe605ff[_0x1915ab(0x16d)],_0x1f77ec);Object['keys'](_0xe605ff)[_0x1915ab(0x169)](_0x519a92=>{const _0x187251=_0x1915ab;if(_0x519a92==='_metadata')return;const _0x20281b=_0xe605ff[_0x519a92];if(!_0x25b26d(_0x20281b))return;const _0x320b7f=_0x3785ba(_0x20281b);_0x22c188[_0x187251(0x11f)]({'occurDate':_0x1f77ec,'applyDate':_0x1bdaae,'studentName':_0x519a92,'reason':_0x3b99a2(_0x20281b),'category':_0x382cd9(_0x20281b),'inOrLeaveTime':_0x320b7f[_0x187251(0x182)],'outOrReturnTime':_0x320b7f['right'],'state':_0x29dcf7(_0x20281b)});});}),_0x22c188[_0x658f99(0x102)]((_0x30f3c7,_0x2deffe)=>{const _0x39e467=_0x658f99,_0x4a9fbe=_0x30f3c7[_0x39e467(0x120)][_0x39e467(0x123)](_0x2deffe['occurDate']);if(_0x4a9fbe!==0x0)return _0x4a9fbe;return _0x30f3c7['studentName'][_0x39e467(0x123)](_0x2deffe['studentName'],'ko');});const _0x50dcf8=_0x31dcc7(_0x22c188),_0x59c61a=_0x402573(_0x50dcf8);return{'unitLabel':_0x5d3e34[_0x658f99(0x167)],'periodText':_0x329545(_0x5d3e34),'unitStartDate':_0x5d3e34[_0x658f99(0x15a)],'unitEndDate':_0x5d3e34[_0x658f99(0x19a)],'unitIndex':_0x421b7b,'currentUnitIndex':_0x3aacad,'unitMonths':_0x5c9446,'records':_0x22c188,'reasonCounts':_0x50dcf8,'count':_0x59c61a};}function _0xc29075(_0x496825,_0x6311a){const _0x2e6321=_0xe52d52,_0x2ab469=_0x6311a||{},_0x4c23cd=!!_0x2ab469[_0x2e6321(0x180)],_0x57383a=_0x2ab469['maxRows']||(_0x4c23cd?0x6:_0x496825['length']),_0x451bee=_0x2ab469[_0x2e6321(0x126)]||_0x2e6321(0x13f);if(!_0x496825[_0x2e6321(0x12b)])return _0x2e6321(0x199)+_0x527b82(_0x451bee)+_0x2e6321(0x10b);const _0x1b5967=_0x496825[_0x2e6321(0x174)](0x0,_0x57383a),_0x100f99=_0x496825['length']>_0x57383a?_0x2e6321(0x159)+(_0x496825[_0x2e6321(0x12b)]-_0x57383a)+'건\x20더\x20있음</div>':'',_0x372751=_0x2e6321(0x177),_0x2b073c=_0x1b5967[_0x2e6321(0x119)]((_0x51ff1a,_0x15907b)=>_0x2e6321(0x133)+(_0x15907b+0x1)+_0x2e6321(0x14f)+_0x527b82(_0x237ad3(_0x51ff1a[_0x2e6321(0x120)]))+_0x2e6321(0x14f)+_0x527b82(_0x51ff1a['studentName'])+_0x2e6321(0x188)+_0x527b82(_0x51ff1a[_0x2e6321(0x17d)])+'\x22>'+_0x527b82(_0x51ff1a['reason'])+_0x2e6321(0x1a1)+_0x1b11be(_0x51ff1a[_0x2e6321(0x15e)])+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td\x20class=\x22direct-auth-time\x22>'+_0x1b11be(_0x51ff1a[_0x2e6321(0x18a)])+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20')['join'](''),_0x5ce729=_0x4c23cd?_0x2e6321(0x156):_0x2e6321(0x103);return _0x2e6321(0x157)+_0x5ce729+_0x2e6321(0x17a)+_0x372751+_0x2e6321(0x18c)+_0x2b073c+'</tbody>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</table>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+_0x100f99;}function _0x440718(_0x3a9e49,_0x11cf8c,_0x94c970,_0x5e7865){const _0x1fb8ae=_0xe52d52;if(!_0x94c970[_0x1fb8ae(0x16e)]){_0x3a9e49&&(_0x3a9e49[_0x1fb8ae(0x196)]='',_0x3a9e49[_0x1fb8ae(0x185)]='');_0x11cf8c&&(_0x11cf8c[_0x1fb8ae(0x196)]='',_0x11cf8c[_0x1fb8ae(0x185)]='');return;}_0x3a9e49&&(_0x3a9e49[_0x1fb8ae(0x196)]=_0x94c970['unitLabel'],_0x3a9e49[_0x1fb8ae(0x185)]=_0x94c970[_0x1fb8ae(0x146)]||_0x94c970[_0x1fb8ae(0x16e)]);if(_0x11cf8c&&_0x94c970[_0x1fb8ae(0x12d)]){const _0x4e4acf=_0x434522(_0x5e7865,_0x94c970[_0x1fb8ae(0x12d)]);_0x11cf8c[_0x1fb8ae(0x196)]=_0x4e4acf,_0x11cf8c['title']=_0x1fb8ae(0x160)+_0x94c970[_0x1fb8ae(0x12d)]+_0x1fb8ae(0x135)+_0x4e4acf;}else _0x11cf8c&&(_0x11cf8c['textContent']='',_0x11cf8c[_0x1fb8ae(0x185)]='');}function _0x35bbae(_0x148f94,_0x389169){const _0x24fd74=_0xe52d52;if(!_0x389169)return;const _0x4411eb=_0x148f94[_0x24fd74(0x16f)]||_0x31dcc7(_0x148f94[_0x24fd74(0x187)]),_0xfbcbd3=_0x148f94[_0x24fd74(0x146)]||_0x24fd74(0x152),_0x4971a0=_0x148f94[_0x24fd74(0x17b)]??_0x402573(_0x4411eb);_0x389169['style'][_0x24fd74(0x10c)]=_0x24fd74(0x147)+_0xc9d93[_0x24fd74(0x12b)]+_0x24fd74(0x193);const _0x1b4737=_0x4411eb['map'](_0xb4fe07=>_0x24fd74(0xf9)+_0x527b82(_0xb4fe07['label'])+_0x24fd74(0x10b))[_0x24fd74(0x108)](''),_0x326f0a=_0x4411eb['map'](_0x45ccd3=>'<div\x20class=\x22direct-auth-reason-cell\x20direct-auth-reason-count\x22>'+_0x45ccd3['count']+_0x24fd74(0x14b))['join']('');_0x389169[_0x24fd74(0x170)]=_0x24fd74(0x145)+_0x527b82(_0xfbcbd3)+_0x24fd74(0x1a0)+_0x1b4737+_0x24fd74(0x14e)+_0x4971a0+_0x24fd74(0x138)+_0x326f0a+_0x24fd74(0x164);}function _0x2bc6e3(_0x16464c,_0x48775a,_0x8ed049){const _0x4d90bc=_0xe52d52,_0xfdf4a2=_0x8ed049||{},_0x5f4df0=_0xfdf4a2[_0x4d90bc(0x126)]||_0x4d90bc(0x195),_0x1e2aba=_0xfdf4a2[_0x4d90bc(0x130)]||_0x4d90bc(0x148),_0x371495=_0x16464c&&_0x16464c[_0x4d90bc(0x12b)]?_0x16464c:_0xc9d93[_0x4d90bc(0x119)](_0x6d0b57=>({'label':_0x6d0b57,'count':0x0})),_0x476748=_0x48775a??_0x402573(_0x371495);if(!_0x476748)return'<div\x20class=\x22'+_0x1e2aba+'\x22>'+_0x527b82(_0x5f4df0)+_0x4d90bc(0x10b);const _0x5e7eed=_0x371495[_0x4d90bc(0x119)](_0x3ac18e=>_0x4d90bc(0x106)+_0x527b82(_0x3ac18e['label'])+_0x4d90bc(0x16c))[_0x4d90bc(0x108)](''),_0x3e60f0=_0x371495['map'](_0x3e7856=>_0x4d90bc(0x175)+_0x3e7856[_0x4d90bc(0x17b)]+_0x4d90bc(0x194))[_0x4d90bc(0x108)]('');return'\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22direct-auth-reason-grid\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22direct-auth-reason-row\x22>'+_0x5e7eed+_0x4d90bc(0x113)+_0x3e60f0+'</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>';}function _0x1c5851(_0x43129e,_0x19cff4,_0x304ed8,_0x279081,_0x3e8ba4,_0x507765){const _0x402118=_0xe52d52,_0x586ba4=_0x279081[_0x402118(0x16f)]||_0x31dcc7(_0x279081[_0x402118(0x187)]),_0x943490=_0x279081[_0x402118(0x17b)]??_0x402573(_0x586ba4);_0x19cff4&&(_0x943490>0x0?(_0x19cff4['textContent']=String(_0x943490),_0x19cff4['style'][_0x402118(0x18e)]='',_0x19cff4['classList']['remove']('is-zero')):(_0x19cff4[_0x402118(0x196)]='',_0x19cff4['style'][_0x402118(0x18e)]=_0x402118(0x15d),_0x19cff4[_0x402118(0x179)]['add'](_0x402118(0x141))));_0x440718(_0x304ed8,_0x3e8ba4||null,_0x279081,_0x507765||_0x31a31e());if(!_0x43129e)return;_0x43129e[_0x402118(0x170)]=_0x2bc6e3(_0x586ba4,_0x943490);}async function _0x2e9400(_0x2d400){const _0x49a7f4=_0xe52d52,[_0x73362d,_0x4d7417,_0x17d18f]=await Promise['all']([_0x2d400(_0x49a7f4(0x158))[_0x49a7f4(0x107)](_0x49a7f4(0xfe)),_0x2d400(_0x49a7f4(0x172))[_0x49a7f4(0x107)](_0x49a7f4(0xfe)),_0x2d400(_0x49a7f4(0x19b))[_0x49a7f4(0x107)](_0x49a7f4(0xfe))]),_0xc0ee95=_0x73362d['val']()||{},_0x5759ed=_0x4d7417[_0x49a7f4(0x131)]()||[],_0x164aa7=Array[_0x49a7f4(0x178)](_0x5759ed)?_0x5759ed:Object['values'](_0x5759ed),_0x4e22ed=_0x17d18f[_0x49a7f4(0x131)]()||{},_0x579903=_0xc0ee95[_0x49a7f4(0x150)]||[],_0x2c5048=[...new Set(_0x579903[_0x49a7f4(0x119)](_0x21cd45=>_0x3c2772(_0x21cd45['subject']))[_0x49a7f4(0x166)](Boolean))],_0x48a4d9=[...new Set(_0x579903[_0x49a7f4(0x119)](_0x1e9aa3=>_0x3c2772(_0x1e9aa3[_0x49a7f4(0x190)]))[_0x49a7f4(0x166)](Boolean))],_0x3c40b7=_0x31a31e(),_0xcd6030=_0x2d7c0a(_0x164aa7,_0x2c5048,_0x48a4d9),_0x4f499c=_0x48737a(_0xcd6030),_0x27a464=_0x42db87(_0x4f499c,_0x3c40b7);return{'dailyAttendance':_0x4e22ed,'rawTimetable':_0x164aa7,'subjectList':_0x2c5048,'unitList':_0x48a4d9,'todayKey':_0x3c40b7,'unitMonths':_0x4f499c,'currentUnitIndex':_0x27a464};}async function _0x350b71(_0x5cd7f7){const _0x152703=_0xe52d52,_0x378568=await _0x2e9400(_0x5cd7f7),_0x1e2264=_0x15e8e3({'dailyAttendance':_0x378568[_0x152703(0x19b)],'rawTimetable':_0x378568['rawTimetable'],'subjectList':_0x378568['subjectList'],'unitList':_0x378568[_0x152703(0x192)],'todayKey':_0x378568[_0x152703(0x173)]});return _0x1e2264;}let _0x1d3f71=null,_0x3348ea=-0x1;function _0x313661(_0x356bb0,_0x574a7e,_0x243dae,_0x2b6e59){const _0x59f37e=_0xe52d52;if(!_0x356bb0)return;if(!_0x574a7e[_0x59f37e(0x12b)]){_0x356bb0[_0x59f37e(0x170)]=_0x59f37e(0x13e);return;}const _0x13d1e4=_0x574a7e[_0x59f37e(0x119)]((_0x3e9646,_0x43cd51)=>{const _0x1c9d76=_0x59f37e,_0x89cddc=_0x43cd51===_0x243dae,_0x263a55=_0x43cd51<_0x2b6e59,_0x2077e6=['unit-select-btn',_0x89cddc?'active':'',_0x263a55?_0x1c9d76(0x11a):''][_0x1c9d76(0x166)](Boolean)[_0x1c9d76(0x108)]('\x20'),_0x2c5071=_0x329545(_0x3e9646);return _0x1c9d76(0x111)+_0x2077e6+_0x1c9d76(0xff)+_0x43cd51+_0x1c9d76(0x127)+_0x527b82(_0x2c5071)+'\x22>'+_0x527b82(_0x3e9646[_0x1c9d76(0x167)])+_0x1c9d76(0xfc);})['join']('');_0x356bb0[_0x59f37e(0x170)]='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+_0x13d1e4+_0x59f37e(0x114),_0x356bb0[_0x59f37e(0x144)](_0x59f37e(0x165))[_0x59f37e(0x169)](_0x3c52a6=>{const _0x2e15ef=_0x59f37e;_0x3c52a6[_0x2e15ef(0x15c)]('click',()=>{const _0x3bac78=_0x2e15ef,_0x266933=parseInt(_0x3c52a6['getAttribute'](_0x3bac78(0x12e)),0xa);if(Number[_0x3bac78(0x11d)](_0x266933))return;_0x100ea6(_0x266933);});});}function _0x100ea6(_0x34210e){const _0x515110=_0xe52d52,_0xa48fa4=document[_0x515110(0x15b)](_0x515110(0x186)),_0x438fe0=document[_0x515110(0x15b)](_0x515110(0x118)),_0x225b32=document[_0x515110(0x15b)]('directAuthInfoGrid'),_0x591233=document['getElementById']('directAuthUnitSelectBar'),_0x276996=_0x1d3f71;if(!_0x276996||!_0xa48fa4)return;_0x3348ea=_0x34210e;const _0x5eccd4=_0x15e8e3({'dailyAttendance':_0x276996['dailyAttendance'],'rawTimetable':_0x276996[_0x515110(0x129)],'subjectList':_0x276996['subjectList'],'unitList':_0x276996[_0x515110(0x192)],'todayKey':_0x276996['todayKey'],'unitIndex':_0x34210e});_0x313661(_0x591233,_0x276996['unitMonths'],_0x34210e,_0x276996[_0x515110(0x11e)]);const _0x5f055c=_0x34210e===_0x276996[_0x515110(0x11e)];_0x438fe0&&(_0x438fe0[_0x515110(0x196)]=_0x5eccd4[_0x515110(0x16e)]?(_0x5f055c?'이번':'지난')+_0x515110(0x13c)+_0x5eccd4[_0x515110(0x16e)]:_0x515110(0x162)),_0x35bbae(_0x5eccd4,_0x225b32),_0xa48fa4[_0x515110(0x170)]=_0xc29075(_0x5eccd4['records'],{'compact':![],'emptyText':'✅\x20'+(_0x5eccd4[_0x515110(0x16e)]||_0x515110(0x100))+_0x515110(0x181)});}async function _0x4bedec(){const _0x327bf5=_0xe52d52,_0x1fdfa4=document[_0x327bf5(0x15b)]('directAuthTableArea');if(!_0x1fdfa4)return;try{_0x1d3f71=await _0x2e9400(classDbRef);const _0x3bce41=_0x1d3f71[_0x327bf5(0x11e)]>=0x0?_0x1d3f71['currentUnitIndex']:0x0;_0x100ea6(_0x3bce41);}catch(_0x2a411f){console[_0x327bf5(0x10d)](_0x327bf5(0x128),_0x2a411f),_0x1fdfa4[_0x327bf5(0x170)]=_0x327bf5(0x109);}}_0x5455e2[_0xe52d52(0x136)]={'buildDirectAuthList':_0x15e8e3,'renderDirectAuthTableHtml':_0xc29075,'renderAlertPanel':_0x1c5851,'loadDirectAuthData':_0x350b71,'loadDirectAuthPageContext':_0x2e9400,'initStandalonePage':_0x4bedec,'getTodayDateKey':_0x31a31e};}(typeof window!=='undefined'?window:globalThis));function a20_0x21e9(_0x2ac242,_0x259723){_0x2ac242=_0x2ac242-0xf8;const _0x27ed26=a20_0x43a0();let _0x59ac23=_0x27ed26[_0x2ac242];if(a20_0x21e9['QKKgIE']===undefined){var _0x2f0c67=function(_0x3f8be0){const _0x279373='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x3ec2d4='',_0x2e5198='',_0x302c3f=_0x3ec2d4+_0x2f0c67;for(let _0x5455e2=0x0,_0x5e9034,_0x438f75,_0x20e9f5=0x0;_0x438f75=_0x3f8be0['charAt'](_0x20e9f5++);~_0x438f75&&(_0x5e9034=_0x5455e2%0x4?_0x5e9034*0x40+_0x438f75:_0x438f75,_0x5455e2++%0x4)?_0x3ec2d4+=_0x302c3f['charCodeAt'](_0x20e9f5+0xa)-0xa!==0x0?String['fromCharCode'](0xff&_0x5e9034>>(-0x2*_0x5455e2&0x6)):_0x5455e2:0x0){_0x438f75=_0x279373['indexOf'](_0x438f75);}for(let _0xc9d93=0x0,_0x1fcb1e=_0x3ec2d4['length'];_0xc9d93<_0x1fcb1e;_0xc9d93++){_0x2e5198+='%'+('00'+_0x3ec2d4['charCodeAt'](_0xc9d93)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x2e5198);};a20_0x21e9['bKjnaz']=_0x2f0c67,a20_0x21e9['mQSOQx']={},a20_0x21e9['QKKgIE']=!![];}const _0x43a056=_0x27ed26[0x0],_0x21e92c=_0x2ac242+_0x43a056,_0xf58dd8=a20_0x21e9['mQSOQx'][_0x21e92c];if(!_0xf58dd8){const _0x63fc1e=function(_0x31a31e){this['HYcvFT']=_0x31a31e,this['wTLpQq']=[0x1,0x0,0x0],this['fvBoKo']=function(){return'newState';},this['eWyzxu']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['IEWDEm']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x63fc1e['prototype']['bphcyg']=function(){const _0x3c2772=new RegExp(this['eWyzxu']+this['IEWDEm']),_0x4b4bcf=_0x3c2772['test'](this['fvBoKo']['toString']())?--this['wTLpQq'][0x1]:--this['wTLpQq'][0x0];return this['VDDeiw'](_0x4b4bcf);},_0x63fc1e['prototype']['VDDeiw']=function(_0x2d7c0a){if(!Boolean(~_0x2d7c0a))return _0x2d7c0a;return this['LPifFx'](this['HYcvFT']);},_0x63fc1e['prototype']['LPifFx']=function(_0x48737a){for(let _0x42db87=0x0,_0x434522=this['wTLpQq']['length'];_0x42db87<_0x434522;_0x42db87++){this['wTLpQq']['push'](Math['round'](Math['random']())),_0x434522=this['wTLpQq']['length'];}return _0x48737a(this['wTLpQq'][0x0]);},new _0x63fc1e(a20_0x21e9)['bphcyg'](),_0x59ac23=a20_0x21e9['bKjnaz'](_0x59ac23),a20_0x21e9['mQSOQx'][_0x21e92c]=_0x59ac23;}else _0x59ac23=_0xf58dd8;return _0x59ac23;}function a20_0x43a0(){const _0x51e1e4=['7lAC7isD7j247kcv','BM90zq','zgLYzwn0lwf1DgGTDgfIBguGzgLYzwn0lwf1DgGTDgfIBguTy29TCgfJDa','cIaGicaGicaGicaGidXKAxyGy2XHC3m9iMrPCMvJDc1HDxrOlxrHyMXLlxDYyxaIpGOGicaGicaGicaGicaGicaGphrHyMXLignSyxnZpsi','BwfZDgvYrgf0yq','pgrPDIbJBgfZCZ0IzgLYzwn0lwf1DgGTBw9Yzs1SAw5LiJ7SMBGG','C3rHCNq','z2v0rwXLBwvUDej5swq','ywrKrxzLBNrmAxn0zw5LCG','BM9Uzq','Aw5pCKXLyxzLvgLTzq','CMvWBgfJzq','64UO7jYe6RcC7jUuioYIHEUJJca','6Rk97kgW7ikS','64UO7jYe6RcC7jUu67oeioYNGEQ2JcdSI6dSSQ0','z2v0tw9UDgG','cIaGicaGicaG','w2rHDgeTDw5PDc1PBMrLEf0','zMLSDgvY','BgfIzwW','mZiYndmYmNrRwvvoDG','zM9YrwfJAa','mtj2AMvICe8','mMnXsxPhsW','pc9ZCgfUpG','x21LDgfKyxrH','Dw5PDeXHyMvS','CMvHC29Uq291BNrZ','Aw5Uzxjive1m','C3rHDhvZ','zNvSBfrPBwv0ywjSzq','Dg9KyxLlzxK','C2XPy2u','phnWyw4Gy2XHC3m9iMrPCMvJDc1HDxrOlxjLyxnVBI1JzwXSigrPCMvJDc1HDxrOlxjLyxnVBI1JB3vUDci+','y29UC3rYDwn0B3i','cIaGicaGicaGicaGidX0AgvHzd4kicaGicaGicaGicaGicaGidX0CJ4kicaGicaGicaGicaGicaGicaGica8DgG+7iIC67kipc90Ad4kicaGicaGicaGicaGicaGicaGica8DgG+67cC7ioD7j28pc90Ad4kicaGicaGicaGicaGicaGicaGica8DgG+7zUi66cO7ioD7isX66Qfpc90Ad4kicaGicaGicaGicaGicaGicaGica8DgG+7ikS7jYGpc90Ad4kicaGicaGicaGicaGicaGicaGica8DgG+7j6f7iUKkoYzUoY2NcK8l3rOpGOGicaGicaGicaGicaGicaGicaGidX0Ad7TH7tSI6qO67o16REaktWVDgG+cIaGicaGicaGicaGicaGica8l3rYpGOGicaGicaGicaGica8l3rOzwfKpG','AxnbCNjHEq','y2XHC3nmAxn0','iJ4kicaGicaGicaGicaGicaGicaGica','y291BNq','z2v0vgLTzxPVBMvpzMzZzxq','CMvHC29U','mJqWDLrWDKvI','z2v0rgf0zq','y29TCgfJDa','ioYNGEQ2JcdSI6dSSQ0G7jEg7j2m','BgvMDa','CMvKDwnL','koYkUEYDUcK','DgL0Bgu','zgLYzwn0qxv0AfrHyMXLqxjLyq','CMvJB3jKCW','pc90zd4kicaGicaGicaGicaGicaGidX0zcbJBgfZCZ0IzgLYzwn0lwf1DgGTCMvHC29UiIb0AxrSzt0I','DgvZDa','B3v0t3jszxr1CM5uAw1L','66+47y647j6f','cIaGicaGicaGicaGicaGicaGicaGphrIB2r5pG','koYlOoYYRsK','zgLZCgXHEq','mJG3mJm0muLWu1DQtq','Dw5PDa','pgjYpG','Dw5PDeXPC3q','lcbTAw5TyxGOntzWEcWGmwzYksK','6Rg0pc9ZCgfUpG','4PYfioYDToUYIcdRI6JSNiqG7kEb6RAmioYlOoYYRsdSL4BSNyW','Dgv4DenVBNrLBNq','CgfKu3rHCNq','jMD0oW','pgrPDIbJBgfZCZ0IzgLYzwn0lwf1DgGTzw1WDhKTBgLUzsi+','zw5K','zgfPBhLbDhrLBMrHBMnL','Dg9tDhjPBMC','jMX0oW','ih4G','ntqXmdj4sKvQBvG','pc9KAxy+cIaGicaGicaGicaGia','pc90zd4kicaGicaGicaGicaGicaGidX0zcbJBgfZCZ0IzgLYzwn0lwf1DgGTDgLTzsi+','mda6mda','pgrPDIbJBgfZCZ0IzgLYzwn0lwf1DgGTCMvHC29UlwnLBgWGzgLYzwn0lwf1DgGTCMvHC29UlwXHyMvSiJ4','C3vIC3rYAw5N','jMfTCdS','pc9IDxr0B24+','rc1eqvK','DMfSDwu','iIbKyxrHlxvUAxqTAw5KzxG9iG','7zw064U5ioUlQoYCHa','C29Tzq','C29YDa','zgLYzwn0lwf1DgGTDgfIBgu','7kEi67orl+YEHEYBKa','w+YEHoYlNoYEHEUGPv0','phnWyw4Gy2XHC3m9iMrPCMvJDc1HDxrOlxjLyxnVBI1JzwXSigrPCMvJDc1HDxrOlxjLyxnVBI1SywjLBci+','B25Jzq','AM9PBG','pgrPDIbJBgfZCZ0IzgLYzwn0lwf1DgGTzw1WDhKTBgLUzsiGC3r5Bgu9iMnVBg9YoInJmdm5mMi7igjHy2TNCM91BMq6i2zMzJvMntSGyM9YzgvYlwnVBg9YoInMzwq3zdC7iJ7RJBdSNBtTHldRPBWG67Ai65+S7jIK7kEaioUQU+2wIoYkTEUlIoUlPc48l2rPDJ4','Aw5uAw1L','pc9KAxy+','z3jPzfrLBxbSyxrLq29SDw1UCW','zxjYB3i','C3rYAw5N','A2v5CW','Bwf0y2G','pgj1DhrVBIb0ExbLpsjIDxr0B24IignSyxnZpsi','nJmWota5BNPpu1H2','pc9KAxy+cIaGicaGicaGicaGicaGica8zgL2ignSyxnZpsjKAxjLy3qTyxv0Ac1YzwfZB24TCM93iJ4','cIaGicaGicaGicaGidXKAxyGy2XHC3m9iNvUAxqTC2vSzwn0lwHPBNqIpUYNGoUcNcdRI6JSNitQSjZSM5tSNyqG7isG7yoD7zwy66M0io2vToUlUsdQUldQSiqG7kEb6RAmioYlOoYYRsdRGRtSL63SNyqG7zMv7j247zwGioYiMcdSNOJSIRxRI4JRI6qUpc9KAxy+cIaGicaGicaG','7iUG7lkT7ksr','B3v0vgLTzq','Aw5JBhvKzxm','zgLYzwn0qxv0AfbHz2vuAxrSzq','BwfW','CgfZDa','lI4U','koUWMoUGPcK','Axnoyu4','y3vYCMvUDfvUAxrjBMrLEa','ChvZAa','B2nJDxjeyxrL','z2v0rNvSBfLLyxi','Dg9ju09tDhjPBMC','Bg9JywXLq29TCgfYzq','odaYmda5nMzNDgnYAW','7kgW6RIW7iIy66om','zw1WDhLuzxH0','iIb0AxrSzt0I','7kEb6RAm7iUG7lkTioUHNoUtNcdSMktRPzG6','CMf3vgLTzxrHyMXL','BgvHDMvuAw1L','BgvUz3rO','BwLU','Dw5PDevUzerHDgu','zgf0ys11BML0lwLUzgv4','y2f0zwDVCNK','zw1WDhLdBgfZCW','DMfS','kcGOlISPkYKRksSK','cIaGicaGicaGicaGidX0CJ4kicaGicaGicaGicaGicaGidX0zd4','ko2AJoYiMcK','imk3ia','rgLYzwn0qxv0Aefqsq','C2v0tw9UDgG','pc9ZCgfUpJWVzgL2pGOGicaGicaGicaGica','AgfZ','z2v0vgLTzq','mZG0ode4ngfAywTpsG','ioUlQoYCHoQWNoYBLcdSP4hQTOWG7iUG7lkTimk3ia','vdaWoJaWoJaW','pgrPDIbJBgfZCZ0IDw5PDc1ZzwXLy3qTAgLUDci+64UO7jYe6RcC7jUuioYGLEUZToQWGcdSL4BSIRxRI4JRI6qUpc9KAxy+','4PYfio2vToUlUsdRI6JSNiqG7kEb6RAmioYlOoYYRsdSL4BSNyW','ywrK','AxmTEMvYBW','7zUi66cO7iIy64U5','BNvTyMvY','CxvLCNLtzwXLy3rVCKfSBa','cIaGicaGicaGicaGidXKAxyGy2XHC3m9iMLUzM8TyMfYlw1LDgeTy2vSBci+phn0CM9UzZ7RI6JSNitQUldQSiq8l3n0CM9UzZ4G','CgvYAw9Kvgv4Da','BwLUBwf4kde0ohb4lcbHDxrVksbYzxbLyxqO','zgLYzwn0lwf1DgGTzw1WDhKTBgLUzq','yxbWBhK','7ksr64+e7yoi6529','6Rg0pc9KAxy+','B2jQzwn0','C3bSAxq','cIaGicaGicaGicaGidXKAxyGy2XHC3m9iMLUzM8TyMfYlw1LDgeTy2vSBci+phnWyw4Gy2XHC3m9iNn1Bw1HCNKTDg90ywWTBgfIzwWIpUY0NsdSI6dSSQ08l3nWyw4+idXZCgfUignSyxnZpsjZDw1Tyxj5lxrVDgfSlwnVDw50iJ4','pc90zd4kicaGicaGicaGicaGicaGidX0zd4','y291CNnLCW','odyWmdy1BNzWBKTs','64UO7jYe6RcC7jUuioYGLEUZTcdSL4BSNyW','DhjPBq'];a20_0x43a0=function(){return _0x51e1e4;};return a20_0x43a0();}
+/**
+ * 직권신청.js — 일일출석부 dailyAttendance 기반 직권 신청 현황 (일일출석부.js 미수정)
+ */
+(function (global) {
+    'use strict';
+
+    /** 직권 유형 (모두 사유 note 필수 — 사유 없는 지각·조퇴는 일반 출결) */
+    const DIRECT_AUTH_TYPES = ['지각', '조퇴', '외출', '공가', '휴가', '경조사', '훈련수당', '기타', '출석인정'];
+
+    /** 알림·요약 패널 사유 분류 (휴가 / 질병·입원 / 공가 3종만) */
+    const ALERT_SUMMARY_CATEGORIES = ['휴가', '질병/입원', '공가'];
+
+    const ILLNESS_KEYWORDS = ['질병', '입원', '병원', '치료', '몸살', '아픔', '아파', '감기', '발열', '수술', '통원'];
+
+    function fixDate(val) {
+        if (!val) return '';
+        if (typeof val === 'string' && /^\d{4}-\d{2}-\d{2}/.test(val)) return val.substring(0, 10);
+        let s = String(val).trim();
+        if (!isNaN(s) && s.length < 10 && s !== '') {
+            const d = new Date((parseInt(s, 10) - 25569) * 86400 * 1000);
+            const offset = d.getTimezoneOffset() * 60000;
+            return new Date(d.getTime() - offset).toISOString().split('T')[0];
+        }
+        s = s.replace(/\./g, '-').split(' ')[0];
+        if (s.includes('/')) {
+            const p = s.split('/');
+            if (p.length === 3) {
+                const year = p[2].length === 2 ? '20' + p[2] : p[2];
+                return `${year}-${p[0].padStart(2, '0')}-${p[1].padStart(2, '0')}`;
+            }
+        }
+        return s.substring(0, 10);
+    }
+
+    function getTodayDateKey() {
+        const t = new Date();
+        const offset = t.getTimezoneOffset() * 60000;
+        return new Date(t.getTime() - offset).toISOString().split('T')[0];
+    }
+
+    function cleanCompareText(value) {
+        return String(value || '').replace(/\s+/g, '');
+    }
+
+    function isRealTrainingRow(row, subjectList, unitList) {
+        const date = fixDate(row.날짜);
+        const dayNumber = String(row.일수 || '').trim();
+        const periodText = String(row.교시 || '').trim();
+        const subjectName = String(row.교과목 || '').trim();
+        if (!date || !dayNumber || dayNumber === '-' || periodText.includes('점심')) return false;
+        const cleanSubject = cleanCompareText(subjectName);
+        if (!cleanSubject) return false;
+        if (!subjectList.length && !unitList.length) return false;
+        return subjectList.some(name => name && (name.includes(cleanSubject) || cleanSubject.includes(name)))
+            || unitList.some(name => name && (name.includes(cleanSubject) || cleanSubject.includes(name)));
+    }
+
+    function getValidTrainingDays(rawTimetable, subjectList, unitList) {
+        const dayCheck = new Set();
+        const days = [];
+        rawTimetable.forEach(row => {
+            if (!isRealTrainingRow(row, subjectList, unitList)) return;
+            const d = fixDate(row.날짜);
+            if (d && !dayCheck.has(d)) {
+                days.push(d);
+                dayCheck.add(d);
+            }
+        });
+        return days.sort();
+    }
+
+    function buildUnitMonths(validTrainingDays) {
+        const unitMonths = [];
+        if (!validTrainingDays.length) return unitMonths;
+        const start = new Date(validTrainingDays[0]);
+        const end = new Date(validTrainingDays[validTrainingDays.length - 1]);
+        let tempStart = new Date(start);
+        while (tempStart <= end) {
+            const uStart = new Date(tempStart);
+            const uEnd = new Date(tempStart);
+            uEnd.setMonth(uEnd.getMonth() + 1);
+            uEnd.setDate(uEnd.getDate() - 1);
+            unitMonths.push({
+                label: `${unitMonths.length + 1}회차`,
+                start: uStart.toISOString().split('T')[0],
+                end: uEnd.toISOString().split('T')[0]
+            });
+            tempStart.setMonth(tempStart.getMonth() + 1);
+        }
+        return unitMonths;
+    }
+
+    function getCurrentUnitIndex(unitMonths, todayKey) {
+        if (!unitMonths.length) return -1;
+        for (let i = 0; i < unitMonths.length; i++) {
+            const u = unitMonths[i];
+            if (todayKey >= u.start && todayKey <= u.end) return i;
+        }
+        if (todayKey < unitMonths[0].start) return 0;
+        return unitMonths.length - 1;
+    }
+
+    function formatUnitDday(todayKey, targetDate) {
+        if (!todayKey || !targetDate) return '';
+        const today = new Date(`${todayKey}T00:00:00`);
+        const target = new Date(`${targetDate}T00:00:00`);
+        const days = Math.round((target - today) / (1000 * 60 * 60 * 24));
+        if (days === 0) return 'D-DAY';
+        if (days > 0) return `D-${days}`;
+        return `D+${Math.abs(days)}`;
+    }
+
+    function escapeHtml(str) {
+        return String(str ?? '')
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;');
+    }
+
+    function formatShortDate(dateKey) {
+        if (!dateKey) return '-';
+        const parts = String(dateKey).split('-');
+        if (parts.length !== 3) return dateKey;
+        return `${parts[1]}/${parts[2]}`;
+    }
+
+    /** 발생일 표시 — YY.MM.DD (예: 26.06.22) */
+    function formatOccurDateDot(dateKey) {
+        if (!dateKey) return '-';
+        const parts = String(dateKey).split('-');
+        if (parts.length !== 3) return dateKey;
+        const yy = parts[0].slice(-2);
+        return `${yy}.${parts[1]}.${parts[2]}`;
+    }
+
+    function formatTimeShort(raw) {
+        const t = String(raw || '').trim();
+        if (!t || t === '-' || t === '00:00:00' || t === '00:00') return '-';
+        return t.length >= 5 ? t.substring(0, 5) : t;
+    }
+
+    function isWithdrawnDirectAuth(student) {
+        const note = String(student.note || '');
+        const status = String(student.status || '');
+        return note.includes('(회수)') || status.includes('(회수)');
+    }
+
+    function cleanAuthReasonText(note) {
+        return String(note || '').trim()
+            .replace(/\s*\(신청\)/g, '')
+            .replace(/\s*\(승인\)/g, '')
+            .replace(/\s*\(반려\)/g, '')
+            .trim();
+    }
+
+    /** 화면 placeholder — 실제 사유로 인정하지 않음 */
+    const INVALID_REASON_TEXTS = new Set(['-', '—', '–', '없음', '무', '.', '..', '...']);
+
+    /** 실제 사유(note) 존재 여부 — 직권 판별 1순위 */
+    function hasValidAuthReason(note) {
+        const reason = cleanAuthReasonText(note);
+        if (!reason) return false;
+        return !INVALID_REASON_TEXTS.has(reason);
+    }
+
+    function isRejectedDirectAuth(student) {
+        const note = String(student.note || '');
+        const status = String(student.status || '');
+        return note.includes('(반려)') || status.includes('(반려)');
+    }
+
+    function isPendingDirectAuth(student) {
+        const status = String(student.status || '');
+        const note = String(student.note || '');
+        return status.includes('(신청)') || note.includes('(신청)');
+    }
+
+    function isApprovedDirectAuth(student) {
+        return String(student.note || '').includes('(승인)');
+    }
+
+    function isExcludedAttendanceStatus(status) {
+        const st = String(status || '');
+        if (!st || st === '미편입' || st.includes('결석') || st === '중도탈락' || st === '조기수료') return true;
+        if (st === '출석' || st.includes('정상')) return true;
+        return false;
+    }
+
+    /** 신청·승인·완료(직권 유형 확정) 흐름 중 하나인지 */
+    function isDirectAuthStatusFlow(student) {
+        const st = String(student.status || '');
+        const note = String(student.note || '');
+        if (st.includes('(신청)') || note.includes('(신청)')) return true;
+        if (note.includes('(승인)')) return true;
+        return DIRECT_AUTH_TYPES.some(k => st.includes(k));
+    }
+
+    /**
+     * 직권 판별 — 사유(note) 최우선
+     * 1) 실제 사유 없음(빈값, -, (신청)만 등) → 제외
+     * 2) (회수)·(반려) → 제외
+     * 3) 신청·승인·완료(직권 유형) 흐름 + 사유 있음 → 직권
+     */
+    function isDirectAuthRecord(student) {
+        if (!student || typeof student !== 'object') return false;
+        if (isTempAttendanceRecord(student)) return false;
+        if (!hasValidAuthReason(student.note)) return false;
+        if (isWithdrawnDirectAuth(student)) return false;
+        if (isRejectedDirectAuth(student)) return false;
+
+        const st = String(student.status || '');
+        if (isExcludedAttendanceStatus(st)) return false;
+
+        return isDirectAuthStatusFlow(student);
+    }
+
+    function getDirectAuthState(student) {
+        if (isPendingDirectAuth(student)) return '신청중';
+        if (isApprovedDirectAuth(student)) return '승인';
+        return '완료';
+    }
+
+    function formatAuthReason(student) {
+        return cleanAuthReasonText(student.note) || '-';
+    }
+
+    function isTempAttendanceRecord(student) {
+        const note = String(student?.note || '');
+        const status = String(student?.status || '');
+        return note.includes('[임시입력]') || status.includes('[임시입력]');
+    }
+
+    /**
+     * 알림·요약 집계용 분류 (휴가 / 질병·입원 / 공가)
+     * - 휴가·질병/입원만 별도 집계
+     * - 그 외 모든 직권 신청(공가·외출·지각·조퇴·경조사 등)은 공가로 묶음
+     * 상세 목록의 reason 필드는 formatAuthReason() 원문 그대로 표시
+     */
+    function getDirectAuthReasonCategory(student) {
+        const status = String(student.status || '');
+        const reason = cleanAuthReasonText(student.note);
+        const combined = status + reason;
+
+        if (status.includes('휴가') || reason.includes('휴가')) return '휴가';
+        if (ILLNESS_KEYWORDS.some(k => combined.includes(k))) return '질병/입원';
+        if (/질병|입원/.test(status) || /질병|입원/.test(reason)) return '질병/입원';
+        return '공가';
+    }
+
+    /** 휴가·질병/입원·공가 건수 (항상 3항목, 상단 총 건수와 합계 일치) */
+    function buildReasonCategoryCounts(records) {
+        const categoryCounts = {};
+        ALERT_SUMMARY_CATEGORIES.forEach(label => { categoryCounts[label] = 0; });
+        (records || []).forEach(row => {
+            const cat = row.category || '공가';
+            if (categoryCounts[cat] !== undefined) categoryCounts[cat]++;
+        });
+        return ALERT_SUMMARY_CATEGORIES.map(label => ({ label, count: categoryCounts[label] }));
+    }
+
+    function sumReasonCategoryCounts(reasonCounts) {
+        return (reasonCounts || []).reduce((sum, item) => sum + (item.count || 0), 0);
+    }
+
+    function formatCombinedTime(primary, secondary) {
+        const p = formatTimeShort(primary);
+        const s = formatTimeShort(secondary);
+        if (p === '-' && s === '-') return '-';
+        if (s === '-') return p;
+        if (p === '-') return `(${s})`;
+        return `${p}\n(${s})`;
+    }
+
+    function formatTimeCellHtml(raw) {
+        const text = String(raw ?? '').trim();
+        if (!text || text === '-') return escapeHtml('-');
+        return text.split('\n').map(line => escapeHtml(line)).join('<br>');
+    }
+
+    function formatAuthTimeColumns(student) {
+        const status = String(student.status || '');
+        const isOuting = status.includes('외출');
+        if (isOuting) {
+            return {
+                left: formatCombinedTime(student.inTime, student.leaveTime),
+                right: formatCombinedTime(student.outTime, student.returnTime)
+            };
+        }
+        return {
+            left: formatTimeShort(student.inTime),
+            right: formatTimeShort(student.outTime)
+        };
+    }
+
+    function parseApplyDateFromMeta(metadata, occurDate) {
+        if (!metadata || !metadata.uploadTime) {
+            return formatShortDate(occurDate);
+        }
+        const uploadTime = String(metadata.uploadTime);
+        const year = String(occurDate || '').split('-')[0] || String(new Date().getFullYear());
+        const m = uploadTime.match(/(\d{1,2})\s*월?\s*(\d{1,2})\s*일?/);
+        if (m) {
+            return `${m[1].padStart(2, '0')}/${m[2].padStart(2, '0')}`;
+        }
+        const slash = uploadTime.match(/(\d{1,2})\/(\d{1,2})/);
+        if (slash) {
+            return `${slash[1].padStart(2, '0')}/${slash[2].padStart(2, '0')}`;
+        }
+        const dash = uploadTime.match(/(\d{4})-(\d{2})-(\d{2})/);
+        if (dash) return `${dash[2]}/${dash[3]}`;
+        return formatShortDate(occurDate);
+    }
+
+    function formatUnitPeriodText(unit) {
+        if (!unit) return '';
+        return `${unit.start.slice(5).replace('-', '/')} ~ ${unit.end.slice(5).replace('-', '/')}`;
+    }
+
+    function buildDirectAuthList({
+        dailyAttendance,
+        rawTimetable,
+        subjectList,
+        unitList,
+        todayKey,
+        unitIndex
+    }) {
+        const validTrainingDays = getValidTrainingDays(rawTimetable, subjectList, unitList);
+        const unitMonths = buildUnitMonths(validTrainingDays);
+        if (!unitMonths.length) {
+            return { unitLabel: '', periodText: '', records: [], count: 0, reasonCounts: [], unitIndex: -1, unitMonths: [] };
+        }
+
+        const defaultIndex = getCurrentUnitIndex(unitMonths, todayKey);
+        const resolvedIndex = (typeof unitIndex === 'number' && unitIndex >= 0)
+            ? Math.min(unitIndex, unitMonths.length - 1)
+            : defaultIndex;
+        const unit = unitMonths[resolvedIndex];
+        const records = [];
+
+        Object.keys(dailyAttendance || {}).forEach(dateKey => {
+            if (dateKey < unit.start || dateKey > unit.end) return;
+            const dayData = dailyAttendance[dateKey];
+            if (!dayData || typeof dayData !== 'object') return;
+            if (dayData._metadata && dayData._metadata.isTemporary) return;
+
+            const applyDate = parseApplyDateFromMeta(dayData._metadata, dateKey);
+
+            Object.keys(dayData).forEach(name => {
+                if (name === '_metadata') return;
+                const student = dayData[name];
+                if (!isDirectAuthRecord(student)) return;
+
+                const times = formatAuthTimeColumns(student);
+                records.push({
+                    occurDate: dateKey,
+                    applyDate,
+                    studentName: name,
+                    reason: formatAuthReason(student),
+                    category: getDirectAuthReasonCategory(student),
+                    inOrLeaveTime: times.left,
+                    outOrReturnTime: times.right,
+                    state: getDirectAuthState(student)
+                });
+            });
+        });
+
+        records.sort((a, b) => {
+            const byDate = a.occurDate.localeCompare(b.occurDate);
+            if (byDate !== 0) return byDate;
+            return a.studentName.localeCompare(b.studentName, 'ko');
+        });
+
+        const reasonCounts = buildReasonCategoryCounts(records);
+        const alertCount = sumReasonCategoryCounts(reasonCounts);
+
+        return {
+            unitLabel: unit.label,
+            periodText: formatUnitPeriodText(unit),
+            unitStartDate: unit.start,
+            unitEndDate: unit.end,
+            unitIndex: resolvedIndex,
+            currentUnitIndex: defaultIndex,
+            unitMonths,
+            records,
+            reasonCounts,
+            count: alertCount
+        };
+    }
+
+    function renderDirectAuthTableHtml(records, options) {
+        const opts = options || {};
+        const compact = !!opts.compact;
+        const maxRows = opts.maxRows || (compact ? 6 : records.length);
+        const emptyText = opts.emptyText || '✅ 해당 단위 직권 신청 없음';
+
+        if (!records.length) {
+            return `<div class="direct-auth-empty-line">${escapeHtml(emptyText)}</div>`;
+        }
+
+        const visible = records.slice(0, maxRows);
+        const extra = records.length > maxRows
+            ? `<div class="direct-auth-more-line">외 ${records.length - maxRows}건 더 있음</div>`
+            : '';
+
+        const head = `
+            <thead>
+                <tr>
+                    <th>순번</th>
+                    <th>발생일</th>
+                    <th>훈련생성명</th>
+                    <th>사유</th>
+                    <th>입실(외출)</th>
+                    <th>퇴실(복귀)</th>
+                </tr>
+            </thead>`;
+
+        const body = visible.map((row, idx) => `
+            <tr>
+                <td>${idx + 1}</td>
+                <td>${escapeHtml(formatOccurDateDot(row.occurDate))}</td>
+                <td>${escapeHtml(row.studentName)}</td>
+                <td class="direct-auth-reason" title="${escapeHtml(row.reason)}">${escapeHtml(row.reason)}</td>
+                <td class="direct-auth-time">${formatTimeCellHtml(row.inOrLeaveTime)}</td>
+                <td class="direct-auth-time">${formatTimeCellHtml(row.outOrReturnTime)}</td>
+            </tr>
+        `).join('');
+
+        const tableClass = compact ? 'direct-auth-table direct-auth-table-compact' : 'direct-auth-table';
+        return `
+            <div class="direct-auth-table-wrap">
+                <table class="${tableClass}">
+                    ${head}
+                    <tbody>${body}</tbody>
+                </table>
+            </div>
+            ${extra}`;
+    }
+
+    function updateDirectAuthUnitBadge(labelEl, ddayEl, data, todayKey) {
+        if (!data.unitLabel) {
+            if (labelEl) { labelEl.textContent = ''; labelEl.title = ''; }
+            if (ddayEl) { ddayEl.textContent = ''; ddayEl.title = ''; }
+            return;
+        }
+        if (labelEl) {
+            labelEl.textContent = data.unitLabel;
+            labelEl.title = data.periodText || data.unitLabel;
+        }
+        if (ddayEl && data.unitEndDate) {
+            const ddayText = formatUnitDday(todayKey, data.unitEndDate);
+            ddayEl.textContent = ddayText;
+            ddayEl.title = `단위개월 종료 ${data.unitEndDate} · ${ddayText}`;
+        } else if (ddayEl) {
+            ddayEl.textContent = '';
+            ddayEl.title = '';
+        }
+    }
+
+    function renderPageInfoGrid(data, gridEl) {
+        if (!gridEl) return;
+
+        const reasonCounts = data.reasonCounts || buildReasonCategoryCounts(data.records);
+        const periodText = data.periodText || '단위개월 정보 없음';
+        const totalCount = data.count ?? sumReasonCategoryCounts(reasonCounts);
+
+        gridEl.style.gridTemplateColumns = `minmax(148px, auto) repeat(${ALERT_SUMMARY_CATEGORIES.length}, minmax(56px, 1fr))`;
+
+        const labelCells = reasonCounts.map(item =>
+            `<div class="direct-auth-reason-cell direct-auth-reason-label">${escapeHtml(item.label)}</div>`
+        ).join('');
+        const countCells = reasonCounts.map(item =>
+            `<div class="direct-auth-reason-cell direct-auth-reason-count">${item.count}건</div>`
+        ).join('');
+
+        gridEl.innerHTML = `
+            <div class="info-bar-meta-cell"><strong>단위기간</strong> ${escapeHtml(periodText)}</div>
+            ${labelCells}
+            <div class="info-bar-meta-cell"><span class="summary-total-label">총 신청</span> <span class="summary-total-count">${totalCount}</span></div>
+            ${countCells}
+        `;
+    }
+
+    function renderAlertReasonSummaryHtml(reasonCounts, totalCount, options) {
+        const opts = options || {};
+        const emptyText = opts.emptyText || '✅ 이번 단위 직권 신청 없음';
+        const emptyClass = opts.emptyClass || 'direct-auth-empty-line';
+        const counts = (reasonCounts && reasonCounts.length)
+            ? reasonCounts
+            : ALERT_SUMMARY_CATEGORIES.map(label => ({ label, count: 0 }));
+        const alertTotal = totalCount ?? sumReasonCategoryCounts(counts);
+
+        if (!alertTotal) {
+            return `<div class="${emptyClass}">${escapeHtml(emptyText)}</div>`;
+        }
+        const labelsRow = counts.map(item =>
+            `<span class="direct-auth-reason-cell direct-auth-reason-label">${escapeHtml(item.label)}</span>`
+        ).join('');
+        const countsRow = counts.map(item =>
+            `<span class="direct-auth-reason-cell direct-auth-reason-count">${item.count}건</span>`
+        ).join('');
+        return `
+            <div class="direct-auth-reason-grid">
+                <div class="direct-auth-reason-row">${labelsRow}</div>
+                <div class="direct-auth-reason-row">${countsRow}</div>
+            </div>`;
+    }
+
+    function renderAlertPanel(listEl, countEl, labelEl, data, ddayEl, todayKey) {
+        const reasonCounts = data.reasonCounts || buildReasonCategoryCounts(data.records);
+        const alertCount = data.count ?? sumReasonCategoryCounts(reasonCounts);
+        if (countEl) {
+            if (alertCount > 0) {
+                countEl.textContent = String(alertCount);
+                countEl.style.display = '';
+                countEl.classList.remove('is-zero');
+            } else {
+                countEl.textContent = '';
+                countEl.style.display = 'none';
+                countEl.classList.add('is-zero');
+            }
+        }
+        updateDirectAuthUnitBadge(labelEl, ddayEl || null, data, todayKey || getTodayDateKey());
+        if (!listEl) return;
+        listEl.innerHTML = renderAlertReasonSummaryHtml(reasonCounts, alertCount);
+    }
+
+    async function loadDirectAuthPageContext(classDbRefFn) {
+        const [masterSnap, timetableSnap, attendanceSnap] = await Promise.all([
+            classDbRefFn('masterData').once('value'),
+            classDbRefFn('fullTimetable').once('value'),
+            classDbRefFn('dailyAttendance').once('value')
+        ]);
+
+        const masterData = masterSnap.val() || {};
+        const timetableVal = timetableSnap.val() || [];
+        const rawTimetable = Array.isArray(timetableVal) ? timetableVal : Object.values(timetableVal);
+        const dailyAttendance = attendanceSnap.val() || {};
+        const courses = masterData.courses || [];
+        const subjectList = [...new Set(courses.map(c => cleanCompareText(c.subject)).filter(Boolean))];
+        const unitList = [...new Set(courses.map(c => cleanCompareText(c.unit)).filter(Boolean))];
+        const todayKey = getTodayDateKey();
+        const validTrainingDays = getValidTrainingDays(rawTimetable, subjectList, unitList);
+        const unitMonths = buildUnitMonths(validTrainingDays);
+        const currentUnitIndex = getCurrentUnitIndex(unitMonths, todayKey);
+
+        return {
+            dailyAttendance,
+            rawTimetable,
+            subjectList,
+            unitList,
+            todayKey,
+            unitMonths,
+            currentUnitIndex
+        };
+    }
+
+    async function loadDirectAuthData(classDbRefFn) {
+        const ctx = await loadDirectAuthPageContext(classDbRefFn);
+        const result = buildDirectAuthList({
+            dailyAttendance: ctx.dailyAttendance,
+            rawTimetable: ctx.rawTimetable,
+            subjectList: ctx.subjectList,
+            unitList: ctx.unitList,
+            todayKey: ctx.todayKey
+        });
+
+        return result;
+    }
+
+    let standalonePageContext = null;
+    let standaloneSelectedUnitIndex = -1;
+
+    function renderStandaloneUnitButtons(selectBarEl, unitMonths, selectedIndex, currentIndex) {
+        if (!selectBarEl) return;
+        if (!unitMonths.length) {
+            selectBarEl.innerHTML = '<div class="unit-select-hint">단위개월 정보가 없습니다.</div>';
+            return;
+        }
+
+        const buttonsHtml = unitMonths.map((unit, idx) => {
+            const isActive = idx === selectedIndex;
+            const isPast = idx < currentIndex;
+            const classes = [
+                'unit-select-btn',
+                isActive ? 'active' : '',
+                isPast ? 'past' : ''
+            ].filter(Boolean).join(' ');
+            const period = formatUnitPeriodText(unit);
+            return `<button type="button" class="${classes}" data-unit-index="${idx}" title="${escapeHtml(period)}">${escapeHtml(unit.label)}</button>`;
+        }).join('');
+
+        selectBarEl.innerHTML = `
+            ${buttonsHtml}
+            <div class="unit-select-hint">지난 단위개월을 선택하면 해당 기간 직권 신청 내역을 확인할 수 있습니다.</div>
+        `;
+
+        selectBarEl.querySelectorAll('[data-unit-index]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const idx = parseInt(btn.getAttribute('data-unit-index'), 10);
+                if (Number.isNaN(idx)) return;
+                renderStandaloneUnitView(idx);
+            });
+        });
+    }
+
+    function renderStandaloneUnitView(unitIndex) {
+        const tableArea = document.getElementById('directAuthTableArea');
+        const titleEl = document.getElementById('directAuthPageTitle');
+        const infoGridEl = document.getElementById('directAuthInfoGrid');
+        const selectBarEl = document.getElementById('directAuthUnitSelectBar');
+        const ctx = standalonePageContext;
+
+        if (!ctx || !tableArea) return;
+
+        standaloneSelectedUnitIndex = unitIndex;
+        const data = buildDirectAuthList({
+            dailyAttendance: ctx.dailyAttendance,
+            rawTimetable: ctx.rawTimetable,
+            subjectList: ctx.subjectList,
+            unitList: ctx.unitList,
+            todayKey: ctx.todayKey,
+            unitIndex
+        });
+
+        renderStandaloneUnitButtons(selectBarEl, ctx.unitMonths, unitIndex, ctx.currentUnitIndex);
+
+        const isCurrent = unitIndex === ctx.currentUnitIndex;
+        if (titleEl) {
+            titleEl.textContent = data.unitLabel
+                ? `${isCurrent ? '이번' : '지난'} 단위개월 직권 신청 · ${data.unitLabel}`
+                : '단위개월별 직권 신청';
+        }
+        renderPageInfoGrid(data, infoGridEl);
+        tableArea.innerHTML = renderDirectAuthTableHtml(data.records, {
+            compact: false,
+            emptyText: `✅ ${data.unitLabel || '해당 단위'} 직권 신청 없음`
+        });
+    }
+
+    async function initStandalonePage() {
+        const tableArea = document.getElementById('directAuthTableArea');
+        if (!tableArea) return;
+
+        try {
+            standalonePageContext = await loadDirectAuthPageContext(classDbRef);
+            const startIndex = standalonePageContext.currentUnitIndex >= 0
+                ? standalonePageContext.currentUnitIndex
+                : 0;
+            renderStandaloneUnitView(startIndex);
+        } catch (err) {
+            console.error('직권신청 로드 오류:', err);
+            tableArea.innerHTML = `<div class="direct-auth-empty-line" style="color:#c0392b; background:#fff5f5; border-color:#fed7d7;">데이터를 불러오지 못했습니다.</div>`;
+        }
+    }
+
+    global.DirectAuthAPI = {
+        buildDirectAuthList,
+        renderDirectAuthTableHtml,
+        renderAlertPanel,
+        loadDirectAuthData,
+        loadDirectAuthPageContext,
+        initStandalonePage,
+        getTodayDateKey
+    };
+})(typeof window !== 'undefined' ? window : globalThis);

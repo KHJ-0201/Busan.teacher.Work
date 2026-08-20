@@ -1,1 +1,197 @@
-function a7_0x3878(_0x90496e,_0x4a135e){_0x90496e=_0x90496e-0x193;const _0x3333da=a7_0x2dcc();let _0x2bfd71=_0x3333da[_0x90496e];if(a7_0x3878['gQFtUV']===undefined){var _0x4f66eb=function(_0x302aec){const _0x35326a='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x38a73a='',_0x56d828='',_0x1c48c8=_0x38a73a+_0x4f66eb;for(let _0x208b85=0x0,_0xdb3285,_0x5be5e0,_0xbd5171=0x0;_0x5be5e0=_0x302aec['charAt'](_0xbd5171++);~_0x5be5e0&&(_0xdb3285=_0x208b85%0x4?_0xdb3285*0x40+_0x5be5e0:_0x5be5e0,_0x208b85++%0x4)?_0x38a73a+=_0x1c48c8['charCodeAt'](_0xbd5171+0xa)-0xa!==0x0?String['fromCharCode'](0xff&_0xdb3285>>(-0x2*_0x208b85&0x6)):_0x208b85:0x0){_0x5be5e0=_0x35326a['indexOf'](_0x5be5e0);}for(let _0x57ccf4=0x0,_0x232725=_0x38a73a['length'];_0x57ccf4<_0x232725;_0x57ccf4++){_0x56d828+='%'+('00'+_0x38a73a['charCodeAt'](_0x57ccf4)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x56d828);};a7_0x3878['WkiIDE']=_0x4f66eb,a7_0x3878['bEnoaX']={},a7_0x3878['gQFtUV']=!![];}const _0x2dcc14=_0x3333da[0x0],_0x387847=_0x90496e+_0x2dcc14,_0x1b615d=a7_0x3878['bEnoaX'][_0x387847];if(!_0x1b615d){const _0x2a84d5=function(_0x5af8b6){this['bvxYIf']=_0x5af8b6,this['jdyhqF']=[0x1,0x0,0x0],this['uiTBAF']=function(){return'newState';},this['kLrBKx']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['TESzPu']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x2a84d5['prototype']['BfBmuL']=function(){const _0x2074e6=new RegExp(this['kLrBKx']+this['TESzPu']),_0x5666c1=_0x2074e6['test'](this['uiTBAF']['toString']())?--this['jdyhqF'][0x1]:--this['jdyhqF'][0x0];return this['yhyZSY'](_0x5666c1);},_0x2a84d5['prototype']['yhyZSY']=function(_0x56a53f){if(!Boolean(~_0x56a53f))return _0x56a53f;return this['uqMmmG'](this['bvxYIf']);},_0x2a84d5['prototype']['uqMmmG']=function(_0xc85209){for(let _0x2f2721=0x0,_0x14bd84=this['jdyhqF']['length'];_0x2f2721<_0x14bd84;_0x2f2721++){this['jdyhqF']['push'](Math['round'](Math['random']())),_0x14bd84=this['jdyhqF']['length'];}return _0xc85209(this['jdyhqF'][0x0]);},new _0x2a84d5(a7_0x3878)['BfBmuL'](),_0x2bfd71=a7_0x3878['WkiIDE'](_0x2bfd71),a7_0x3878['bEnoaX'][_0x387847]=_0x2bfd71;}else _0x2bfd71=_0x1b615d;return _0x2bfd71;}function a7_0x2dcc(){const _0x30c510=['DhjPBq','odiYmdyWuxbWBLrO','C3r1zgvUDenVDMvYtgv0DgvYx2rYywz0xW','66+47y647j6f','C3r1zgvUDfjLC3vTzv9Syxn0u3vIBwL0xW','C29YDa','zMLSDgvY','yMLYDgHeyxrL','ywrKCMvZC1nPz3vUz3u','z2v0vgLTzxPVBMvpzMzZzxq','kcGOlISPkYKRksSK','z2v0vg9KyxLtDhjlC3q','Aw5JBhvKzxm','y292zxjmzxr0zxi','C2XPy2u','ywrKCMvZCW','mte0odyWEvbgAM5I','nJCWALzMtMrw','C3rHDhvZ','Dw5KzwzPBMvK','zNvUy3rPB24','C2HVDwXKq291BNrnAxnZAw5Nqxr0qxnbyNnLBNq','C2vHCMnO','AxnbCNjHEq','nvz1sxrrzW','Dg9tDhjPBMC','zM9YrwfJAa','ywrKCMvZC0rLDgfPBa','y292zxjF','mtCZntu1ogDiu0TYCG','B2jQzwn0','zg9JDw1LBNruExbL','mteXnZmYnJz3A0nmDhu','Dg9gAxHLza','zMXVB3i','mti0nta4n25HDKXODG','zgf5','mtmWntiYnJnjC3jRwvm','y29UC3rYDwn0B3i','oezvDNHpuG','BgvUz3rO','mtm2mdCXntjdDLHbENG','ywrKCMvZC1nPzg8','C3r1zgvUDenVDMvYtgv0DgvYx2XHC3rtDwjTAxrF'];a7_0x2dcc=function(){return _0x30c510;};return a7_0x2dcc();}const a7_0x259e47=a7_0x3878;(function(_0x2ce34c,_0x490e54){const _0x3dcb06=a7_0x3878,_0xca9fea=_0x2ce34c();while(!![]){try{const _0x102ebe=-parseInt(_0x3dcb06(0x1b1))/0x1+-parseInt(_0x3dcb06(0x1bb))/0x2*(parseInt(_0x3dcb06(0x195))/0x3)+-parseInt(_0x3dcb06(0x1a4))/0x4*(parseInt(_0x3dcb06(0x1ac))/0x5)+-parseInt(_0x3dcb06(0x1b4))/0x6+-parseInt(_0x3dcb06(0x1b9))/0x7+-parseInt(_0x3dcb06(0x1bd))/0x8+-parseInt(_0x3dcb06(0x1b7))/0x9*(-parseInt(_0x3dcb06(0x1a5))/0xa);if(_0x102ebe===_0x490e54)break;else _0xca9fea['push'](_0xca9fea['shift']());}catch(_0x3316ae){_0xca9fea['push'](_0xca9fea['shift']());}}}(a7_0x2dcc,0xef7b2),function(_0x208b85){const _0xdb3285=(function(){let _0x1e1f63=!![];return function(_0x4be2b8,_0x2da656){const _0x20d319=_0x1e1f63?function(){if(_0x2da656){const _0x5c1488=_0x2da656['apply'](_0x4be2b8,arguments);return _0x2da656=null,_0x5c1488;}}:function(){};return _0x1e1f63=![],_0x20d319;};}()),_0x5be5e0=_0xdb3285(this,function(){const _0x3d5c40=a7_0x3878;return _0x5be5e0[_0x3d5c40(0x1ad)]()[_0x3d5c40(0x1aa)](_0x3d5c40(0x19e))['toString']()[_0x3d5c40(0x1ba)](_0x5be5e0)[_0x3d5c40(0x1aa)](_0x3d5c40(0x19e));});_0x5be5e0();'use strict';function _0xbd5171(){const _0x4382a0=a7_0x3878;if(_0x208b85[_0x4382a0(0x19f)])return _0x208b85[_0x4382a0(0x19f)]();const _0x3a0a9d=new Date(),_0x41f4f2=_0x3a0a9d[_0x4382a0(0x19d)]()*0xea60;return new Date(_0x3a0a9d-_0x41f4f2)['toISOString']()['split']('T')[0x0];}function _0x57ccf4(_0xcc3b86,_0x26666d){const _0x237170=a7_0x3878;if(_0x208b85[_0x237170(0x1a9)])return _0x208b85[_0x237170(0x1a9)](_0xcc3b86,_0x26666d);return _0xcc3b86<=_0x26666d;}function _0x232725(_0x316822,_0x4e1d73,_0x1360c8,_0x30a1b1,_0x5f498e){const _0x3ce3e=a7_0x3878;if(!_0x316822||!_0x4e1d73?.[_0x3ce3e(0x1bc)])return 0x0;let _0x3e47a9='';for(let _0x107234 of _0x30a1b1||_0x4e1d73){const _0x19974e=_0x1360c8[_0x107234]?_0x1360c8[_0x107234][_0x316822]:null;if(_0x19974e&&_0x19974e[_0x3ce3e(0x1a6)]&&_0x19974e[_0x3ce3e(0x1a6)]!==_0x3ce3e(0x197)&&_0x19974e[_0x3ce3e(0x1a6)]!==''&&_0x19974e[_0x3ce3e(0x1a6)]!=='-'){_0x3e47a9=_0x107234;break;}}let _0x5bf287=0x0,_0x4052c1=0x0,_0x560fab=0x0,_0x259f71=0x0,_0x4c061f=0x0;const _0x2921ba=_0xbd5171(),_0x1bf4b6=_0x5f498e||{};_0x4e1d73[_0x3ce3e(0x1ae)](_0x5530f7=>{const _0x48f525=_0x3ce3e,_0x2473dc=_0x1360c8[_0x5530f7]&&_0x1360c8[_0x5530f7][_0x316822]?_0x1360c8[_0x5530f7][_0x316822]:null;if(_0x1bf4b6[_0x316822]&&_0x5530f7>=_0x1bf4b6[_0x316822]){_0x5bf287++,_0x4c061f++;return;}if(_0x3e47a9&&_0x5530f7<_0x3e47a9)return;_0x4c061f++;if(!_0x2473dc){if(_0x57ccf4(_0x5530f7,_0x2921ba))_0x5bf287++;}else{const _0xfe3341=_0x2473dc[_0x48f525(0x1a6)]||'';if(_0xfe3341['includes']('결석')||_0xfe3341===_0x48f525(0x197))_0x5bf287++;else{if(_0xfe3341['includes']('지각'))_0x4052c1++;else{if(_0xfe3341[_0x48f525(0x1a0)]('조퇴'))_0x560fab++;else{if(_0xfe3341[_0x48f525(0x1a0)]('외출'))_0x259f71++;}}}}});const _0x20cc3b=Math[_0x3ce3e(0x1b6)]((_0x4052c1+_0x560fab+_0x259f71)/0x3),_0x1571b6=_0x5bf287+_0x20cc3b,_0x40924e=_0x4c061f-_0x1571b6;return _0x4c061f>0x0?parseFloat((_0x40924e/_0x4c061f*0x64)[_0x3ce3e(0x1b5)](0x1)):0x0;}function _0x2a84d5(_0x1c9f44,_0x51a16e){const _0x502225=a7_0x3878;if(!_0x1c9f44||!_0x51a16e)return'';for(const _0x237d3a of Object['values'](_0x51a16e)){if(!_0x237d3a||typeof _0x237d3a!==_0x502225(0x1b2))continue;const _0x58122b=_0x237d3a[_0x1c9f44];if(_0x58122b&&_0x58122b['birthDate'])return String(_0x58122b[_0x502225(0x19b)])[_0x502225(0x194)]();}return'';}function _0x5af8b6(_0x26f5e8){const _0x250828=a7_0x3878,_0x48aac5=parseInt(_0x26f5e8['year'],0xa)||0x0,_0x50c704=parseInt(_0x26f5e8['month'],0xa)||0x0,_0x55494c=parseInt(_0x26f5e8[_0x250828(0x1b8)],0xa)||0x0;return _0x48aac5*0x2710+_0x50c704*0x64+_0x55494c;}function _0x2074e6(_0x18b69a,_0x344689){const _0x278eee=a7_0x3878,_0x30902c=Array[_0x278eee(0x1ab)](_0x18b69a)?_0x18b69a[_0x278eee(0x1a2)]():[];return _0x30902c[_0x278eee(0x199)]((_0x3e4aa0,_0x29770e)=>{const _0x2c331c=_0x5af8b6(_0x3e4aa0)-_0x5af8b6(_0x29770e);return _0x344689===![]?-_0x2c331c:_0x2c331c;}),_0x30902c;}function _0x5666c1(_0x531d6d){const _0x1f79df=a7_0x3878;if(typeof classStorageKey===_0x1f79df(0x1a8))return classStorageKey('studentResume_lastSubmit_'+_0x531d6d);return _0x1f79df(0x198)+_0x531d6d;}function _0x56a53f(_0x199739){const _0x1b0497=a7_0x3878;if(typeof classStorageKey===_0x1b0497(0x1a8))return classStorageKey('studentCoverLetter_draft_'+_0x199739);return _0x1b0497(0x196)+_0x199739;}function _0xc85209(_0x1e9d01){const _0x7b0c90=a7_0x3878;if(typeof classStorageKey===_0x7b0c90(0x1a8))return classStorageKey(_0x7b0c90(0x193)+_0x1e9d01);return _0x7b0c90(0x193)+_0x1e9d01;}function _0x2f2721(){return{'year':'','month':'','day':'','content':''};}function _0x14bd84(_0x24a956){const _0x270bb7=a7_0x3878,_0x34e847=_0x24a956&&typeof _0x24a956===_0x270bb7(0x1b2)?_0x24a956:{},_0x23cefd=[_0x34e847[_0x270bb7(0x1be)],_0x34e847[_0x270bb7(0x19c)],_0x34e847[_0x270bb7(0x1af)]]['map'](_0x21a0c0=>_0x21a0c0!=null?String(_0x21a0c0)[_0x270bb7(0x194)]():'')[_0x270bb7(0x19a)](Boolean);if(_0x23cefd['length'])return _0x23cefd['join']('\x20');return String(_0x34e847[_0x270bb7(0x1a3)]||'')['trim']();}function _0x4fdd23(_0x2e3241){const _0x56f608=a7_0x3878,_0x97d88c=_0x2e3241&&typeof _0x2e3241===_0x56f608(0x1b2)?{..._0x2e3241}:{};return _0x97d88c[_0x56f608(0x1be)]=_0x97d88c['addressSido']!=null?String(_0x97d88c[_0x56f608(0x1be)])[_0x56f608(0x194)]():'',_0x97d88c[_0x56f608(0x19c)]=_0x97d88c[_0x56f608(0x19c)]!=null?String(_0x97d88c[_0x56f608(0x19c)])['trim']():'',_0x97d88c['addressDetail']=_0x97d88c[_0x56f608(0x1af)]!=null?String(_0x97d88c[_0x56f608(0x1af)])['trim']():'',!_0x97d88c[_0x56f608(0x1be)]&&!_0x97d88c[_0x56f608(0x19c)]&&!_0x97d88c['addressDetail']&&_0x97d88c[_0x56f608(0x1a3)]&&(_0x97d88c[_0x56f608(0x1af)]=String(_0x97d88c[_0x56f608(0x1a3)])['trim']()),_0x97d88c[_0x56f608(0x1a3)]=_0x14bd84(_0x97d88c),_0x97d88c;}function _0x22b0e4(_0x5987eb,_0x4dd496){return{'basic':{'name':_0x5987eb||'','email':'','phone':'','addressSido':'','addressSigungu':'','addressDetail':'','address':''},'careerHistory':[_0x2f2721()],'finalEducation':[_0x2f2721()],'skillsCerts':[_0x2f2721()],'totalAttendanceRate':_0x4dd496!=null?_0x4dd496:''};}const _0x3c3b09=0x5,_0x34df78=0x5;function _0x3a220f(_0xdab9f8){const _0x179ac6=a7_0x3878,_0x2c70cc=_0xdab9f8||_0xbd5171();return _0x179ac6(0x1b0)+_0x2c70cc;}function _0x40aab7(_0x2e5d57){const _0x5d640b=a7_0x3878;return!!(_0x2e5d57&&_0x2e5d57[_0x5d640b(0x1b3)]===_0x5d640b(0x1a1));}_0x208b85['StudentResumeShared']={'RESUME_DAILY_SUBMIT_LIMIT':_0x3c3b09,'COVER_LETTER_DAILY_SUBMIT_LIMIT':_0x34df78,'getCoverLetterSubmitCountDateKey':_0x3a220f,'isCoverLetterResumeEntry':_0x40aab7,'getTodayStrKst':_0xbd5171,'calculateUnitMonthPersonalRate':_0x232725,'getStudentBirthDateFromAttendance':_0x2a84d5,'sortResumeRowsByDate':_0x2074e6,'getResumeLocalStorageKey':_0x5666c1,'getCoverLetterLocalStorageKey':_0x56a53f,'getCoverLetterLastSubmitKey':_0xc85209,'emptyResumeRow':_0x2f2721,'buildDefaultResumeForm':_0x22b0e4,'formatFullAddress':_0x14bd84,'normalizeBasicAddress':_0x4fdd23};}(typeof window!==a7_0x259e47(0x1a7)?window:globalThis));
+/**
+ * student-resume-shared.js — 학생 이력서 공통 (단위개월출석부 편입% 동일 계산)
+ */
+(function (global) {
+    'use strict';
+
+    function resolveTodayStrKst() {
+        if (global.getTodayStrKst) return global.getTodayStrKst();
+        const nowKst = new Date();
+        const offset = nowKst.getTimezoneOffset() * 60000;
+        return new Date(nowKst - offset).toISOString().split('T')[0];
+    }
+
+    function countMissingAsAbsent(dateStr, todayStr) {
+        if (global.shouldCountMissingAttAsAbsent) {
+            return global.shouldCountMissingAttAsAbsent(dateStr, todayStr);
+        }
+        return dateStr <= todayStr;
+    }
+
+    /** 단위개월출석부.js renderDetailTable — col-r2 편입(%) 와 동일 */
+    function calculateUnitMonthPersonalRate(studentName, targetDays, fullAttendanceData, validTrainingDays, dropoutData) {
+        if (!studentName || !targetDays?.length) return 0;
+
+        let enrollDate = '';
+        for (let d of validTrainingDays || targetDays) {
+            const dayData = fullAttendanceData[d] ? fullAttendanceData[d][studentName] : null;
+            if (dayData && dayData.status && dayData.status !== '미편입' && dayData.status !== '' && dayData.status !== '-') {
+                enrollDate = d;
+                break;
+            }
+        }
+
+        let pureAbsent = 0;
+        let lCount = 0;
+        let eCount = 0;
+        let oCount = 0;
+        let personalTrainingDaysCount = 0;
+        const todayStr = resolveTodayStrKst();
+        const dropouts = dropoutData || {};
+
+        targetDays.forEach(d => {
+            const att = (fullAttendanceData[d] && fullAttendanceData[d][studentName])
+                ? fullAttendanceData[d][studentName]
+                : null;
+
+            if (dropouts[studentName] && d >= dropouts[studentName]) {
+                pureAbsent++;
+                personalTrainingDaysCount++;
+                return;
+            }
+            if (enrollDate && d < enrollDate) return;
+
+            personalTrainingDaysCount++;
+            if (!att) {
+                if (countMissingAsAbsent(d, todayStr)) pureAbsent++;
+            } else {
+                const st = att.status || '';
+                if (st.includes('결석') || st === '미편입') pureAbsent++;
+                else {
+                    if (st.includes('지각')) lCount++;
+                    else if (st.includes('조퇴')) eCount++;
+                    else if (st.includes('외출')) oCount++;
+                }
+            }
+        });
+
+        const penaltyAbs = Math.floor((lCount + eCount + oCount) / 3);
+        const finalAbsent = pureAbsent + penaltyAbs;
+        const pureAttendedDays = personalTrainingDaysCount - finalAbsent;
+        return personalTrainingDaysCount > 0
+            ? parseFloat((pureAttendedDays / personalTrainingDaysCount * 100).toFixed(1))
+            : 0;
+    }
+
+    /** 일일출석부 dailyAttendance 에 저장된 birthDate (YYYY.MM.DD) */
+    function getStudentBirthDateFromAttendance(studentName, fullAttendanceData) {
+        if (!studentName || !fullAttendanceData) return '';
+        for (const dayData of Object.values(fullAttendanceData)) {
+            if (!dayData || typeof dayData !== 'object') continue;
+            const info = dayData[studentName];
+            if (info && info.birthDate) return String(info.birthDate).trim();
+        }
+        return '';
+    }
+
+    function rowToDateSortKey(row) {
+        const y = parseInt(row.year, 10) || 0;
+        const m = parseInt(row.month, 10) || 0;
+        const d = parseInt(row.day, 10) || 0;
+        return y * 10000 + m * 100 + d;
+    }
+
+    function sortResumeRowsByDate(rows, ascending) {
+        const list = Array.isArray(rows) ? rows.slice() : [];
+        list.sort((a, b) => {
+            const diff = rowToDateSortKey(a) - rowToDateSortKey(b);
+            return ascending === false ? -diff : diff;
+        });
+        return list;
+    }
+
+    function getResumeLocalStorageKey(studentName) {
+        if (typeof classStorageKey === 'function') {
+            return classStorageKey('studentResume_lastSubmit_' + studentName);
+        }
+        return 'studentResume_lastSubmit_' + studentName;
+    }
+
+    function getCoverLetterLocalStorageKey(studentName) {
+        if (typeof classStorageKey === 'function') {
+            return classStorageKey('studentCoverLetter_draft_' + studentName);
+        }
+        return 'studentCoverLetter_draft_' + studentName;
+    }
+
+    function getCoverLetterLastSubmitKey(studentName) {
+        if (typeof classStorageKey === 'function') {
+            return classStorageKey('studentCoverLetter_lastSubmit_' + studentName);
+        }
+        return 'studentCoverLetter_lastSubmit_' + studentName;
+    }
+
+    function emptyResumeRow() {
+        return { year: '', month: '', day: '', content: '' };
+    }
+
+    function formatFullAddress(basic) {
+        const b = basic && typeof basic === 'object' ? basic : {};
+        const parts = [b.addressSido, b.addressSigungu, b.addressDetail]
+            .map(v => (v != null ? String(v).trim() : ''))
+            .filter(Boolean);
+        if (parts.length) return parts.join(' ');
+        return String(b.address || '').trim();
+    }
+
+    /** 신규(시·구 분리) + 구버전(주소 한 줄) 호환 */
+    function normalizeBasicAddress(basic) {
+        const b = basic && typeof basic === 'object' ? { ...basic } : {};
+        b.addressSido = b.addressSido != null ? String(b.addressSido).trim() : '';
+        b.addressSigungu = b.addressSigungu != null ? String(b.addressSigungu).trim() : '';
+        b.addressDetail = b.addressDetail != null ? String(b.addressDetail).trim() : '';
+        if (!b.addressSido && !b.addressSigungu && !b.addressDetail && b.address) {
+            b.addressDetail = String(b.address).trim();
+        }
+        b.address = formatFullAddress(b);
+        return b;
+    }
+
+    function buildDefaultResumeForm(studentName, attendanceRate) {
+        return {
+            basic: {
+                name: studentName || '',
+                email: '',
+                phone: '',
+                addressSido: '',
+                addressSigungu: '',
+                addressDetail: '',
+                address: ''
+            },
+            careerHistory: [emptyResumeRow()],
+            finalEducation: [emptyResumeRow()],
+            skillsCerts: [emptyResumeRow()],
+            totalAttendanceRate: attendanceRate != null ? attendanceRate : ''
+        };
+    }
+
+    const RESUME_DAILY_SUBMIT_LIMIT = 5;
+    const COVER_LETTER_DAILY_SUBMIT_LIMIT = 5;
+
+    function getCoverLetterSubmitCountDateKey(dateKey) {
+        const d = dateKey || resolveTodayStrKst();
+        return 'cover_' + d;
+    }
+
+    function isCoverLetterResumeEntry(data) {
+        return !!(data && data.documentType === 'coverLetter');
+    }
+
+    global.StudentResumeShared = {
+        RESUME_DAILY_SUBMIT_LIMIT,
+        COVER_LETTER_DAILY_SUBMIT_LIMIT,
+        getCoverLetterSubmitCountDateKey,
+        isCoverLetterResumeEntry,
+        getTodayStrKst: resolveTodayStrKst,
+        calculateUnitMonthPersonalRate,
+        getStudentBirthDateFromAttendance,
+        sortResumeRowsByDate,
+        getResumeLocalStorageKey,
+        getCoverLetterLocalStorageKey,
+        getCoverLetterLastSubmitKey,
+        emptyResumeRow,
+        buildDefaultResumeForm,
+        formatFullAddress,
+        normalizeBasicAddress
+    };
+})(typeof window !== 'undefined' ? window : globalThis);

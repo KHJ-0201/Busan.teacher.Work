@@ -1,4 +1,14 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>학생 이력서 확인</title><script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script><script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script><script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script><style>body { font-family: 'Malgun Gothic', sans-serif; background: #f8f9fa; margin: 0; padding: 20px; color: #333; }
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학생 이력서 확인</title>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <style>
+        body { font-family: 'Malgun Gothic', sans-serif; background: #f8f9fa; margin: 0; padding: 20px; color: #333; }
         .container { max-width: 1500px; margin: 0 auto; background: #fff; padding: 20px 30px; border-radius: 12px; box-shadow: 0 5px 25px rgba(0,0,0,0.05); }
         .header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; border-bottom: 2px solid #2980b9; padding-bottom: 12px; margin-bottom: 18px; }
         .header h2 { margin: 0; color: #1e293b; font-size: 22px; }
@@ -115,4 +125,54 @@
             .region-filter-reset { width: 100%; height: auto; }
             .filter-summary { margin-left: 0; width: 100%; text-align: center; padding-bottom: 0; }
             .resume-basic-row-triple, .resume-basic-row-double { grid-template-columns: 1fr; }
-        }</style></head><body style="padding-top: 80px;"><div class="container"><div class="header"><h2>📄 학생 이력서 확인</h2><a href="#" id="btnBackCounsel" class="btn-nav">◀ 상담일지로</a></div><div class="layout"><div class="left-panel" id="studentList"><div style="padding:20px;text-align:center;color:#94a3b8;font-size:12px;">불러오는 중...</div></div><div class="right-panel"><div id="resumeMainView" class="resume-main-view"><div class="region-filter-panel region-filter-panel-main" id="regionFilterPanel"><div class="region-filter-title">📍 지역별 보기</div><p class="region-filter-desc">시·도와 시·군·구를 선택하면 해당 지역 학생만 좌측 명단과 아래 목록에 표시됩니다. 학생을 클릭하면 이력서를 확인할 수 있습니다.</p><div class="region-filter-toolbar"><label class="region-filter-field"><span>시·도</span> <select id="filterSido" class="region-filter-select"><option value="">전체</option></select></label> <label class="region-filter-field"><span>시·군·구</span> <select id="filterSigungu" class="region-filter-select" disabled="disabled"><option value="">전체</option></select></label> <button type="button" id="btnFilterReset" class="region-filter-reset">필터 초기화</button><div id="filterSummary" class="filter-summary"></div></div></div><div id="koreaMapExplorer" class="korea-map-explorer"></div><div id="regionStudentGrid" class="region-student-grid"></div></div><div id="resumeDetailArea" class="resume-detail-view" hidden></div></div></div></div><link rel="stylesheet" href="../common-dialog.css"><script src="https://cdn.jsdelivr.net/npm/d3@7"></script><script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script><script src="../common-dialog.js"></script><script src="../common-class-db.js"></script><script src="kr-regions-data.js"></script><script src="korea-gadm-sido-map.js"></script><script src="korea-gadm-sigungu-overrides.js"></script><script src="korea-map-picker.js"></script><script src="student-resume-shared.js"></script><script src="학생이력서확인.js"></script></body></html>
+        }
+    </style>
+</head>
+<body style="padding-top: 80px;">
+<div class="container">
+    <div class="header">
+        <h2>📄 학생 이력서 확인</h2>
+        <a href="#" id="btnBackCounsel" class="btn-nav">◀ 상담일지로</a>
+    </div>
+    <div class="layout">
+        <div class="left-panel" id="studentList">
+            <div style="padding:20px;text-align:center;color:#94a3b8;font-size:12px;">불러오는 중...</div>
+        </div>
+        <div class="right-panel">
+            <div id="resumeMainView" class="resume-main-view">
+                <div class="region-filter-panel region-filter-panel-main" id="regionFilterPanel">
+                    <div class="region-filter-title">📍 지역별 보기</div>
+                    <p class="region-filter-desc">시·도와 시·군·구를 선택하면 해당 지역 학생만 좌측 명단과 아래 목록에 표시됩니다. 학생을 클릭하면 이력서를 확인할 수 있습니다.</p>
+                    <div class="region-filter-toolbar">
+                        <label class="region-filter-field">
+                            <span>시·도</span>
+                            <select id="filterSido" class="region-filter-select"><option value="">전체</option></select>
+                        </label>
+                        <label class="region-filter-field">
+                            <span>시·군·구</span>
+                            <select id="filterSigungu" class="region-filter-select" disabled><option value="">전체</option></select>
+                        </label>
+                        <button type="button" id="btnFilterReset" class="region-filter-reset">필터 초기화</button>
+                        <div id="filterSummary" class="filter-summary"></div>
+                    </div>
+                </div>
+                <div id="koreaMapExplorer" class="korea-map-explorer"></div>
+                <div id="regionStudentGrid" class="region-student-grid"></div>
+            </div>
+            <div id="resumeDetailArea" class="resume-detail-view" hidden></div>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="../common-dialog.css">
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+<script src="../common-dialog.js"></script>
+<script src="../common-class-db.js"></script>
+<script src="kr-regions-data.js"></script>
+<script src="korea-gadm-sido-map.js"></script>
+<script src="korea-gadm-sigungu-overrides.js"></script>
+<script src="korea-map-picker.js"></script>
+<script src="student-resume-shared.js"></script>
+<script src="학생이력서확인.js"></script>
+</body>
+</html>

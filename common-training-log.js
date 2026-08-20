@@ -1,1 +1,431 @@
-function a0_0x12f0(){const _0x2115df=['cIaGicaGicaGicaGidWVzgL2pGOGicaGicaGidWVzgL2pG','pgjYpG','mdK6mda','BwfW','7kEa7kcv65cy7kEaioYvIUYDGa','CMvWBgfJzq','ywrKrxzLBNrmAxn0zw5LCG','yM9KEq','DhjHBNnPDgLVBJOGyMfJA2DYB3vUzcaWlJjZoYbJDxjZB3i6ihbVAw50zxi7','nZi2nfjju3zyqW','ko2AJoYiMcK','zM9YrwfJAa','C3bSAxq','zgL2','jYKSihrOAxmPiIb0AxrSzt0I7yg066ATioYlNcdRS7xSGQWIpG','BgvHDMvuAw1L','y3jLyxrLrwXLBwvUDa','mty6nta','66Qfpc90zd4kicaGicaGicaGicaGicaGicaGica8DgqGC3r5Bgu9iMjHy2TNCM91BMq6icnLy2yWzJe7ignVBg9YoIaJmMmZztuWoYbMB250lxDLAwDODdOGyM9SzdSGCgfKzgLUzZOGmtbWEca1ChG7igjVCMrLCI1YAwDODdOGmxb4ihnVBgLKicnJy2m7ihDPzhrOoIa2jtSIpUYHSo2hTdWVDgq+cIaGicaGicaGicaGicaGicaGicaGphrKihn0EwXLpsjJB2XVCJOGi2qZntqWmdSGzM9UDc13zwLNAhq6igjVBgq7ihbHzgrPBMC6ideWChGGnxb4oYbIB3jKzxiTCMLNAhq6idfWEcbZB2XPzcaJy2nJoYb3Awr0AdOGnIu7iJ4','ltK5otLWEa','zxHLy0nVBw1HBMq','BM9YBwfS','CMvTB3zL','Aw5JBhvKzxm','DhjHAw5PBMDmB2DpDMvYBgf5','cIaGicaGicaGpgrPDIbZDhLSzt0IBwfYz2LUlxrVCdOXnxb4oYbIB3jKzxi6mNb4ihnVBgLKicnKzgq7igjVCMrLCI1YywrPDxm6nNb4oYbWywrKAw5NoJe1ChG7igjHy2TNCM91BMq6i2y5zJLMotSIpGOGicaGicaGicaGica8zgL2ihn0EwXLpsjKAxnWBgf5oMzSzxG7igP1C3rPzNKTy29UDgvUDdPZCgfJzs1Izxr3zwvUoYbHBgLNBI1PDgvTCZPMBgv4lwvUzdSGyM9YzgvYlwjVDhrVBtOXlJvWEcbZB2XPzcaJmJDHztyWoYbWywrKAw5NlwjVDhrVBtO1ChG7ig1HCMDPBI1IB3r0B206mtbWEdSIpGOGicaGicaGicaGicaGicaGphnWyw4GC3r5Bgu9iMnVBg9YoImYyZnLnta7igzVBNqTD2vPz2H0oMjVBgq7igzVBNqTC2L6ztOXnhb4oYi+8j+tIIdSNBZSNBWG7yQ57j207ikS7zwTpc9ZCgfUpGOGicaGicaGicaGicaGicaGphnWyw4GC3r5Bgu9iMzVBNqTC2L6ztOXmxb4oYbJB2XVCJOJmZq5ogrIoYbMB250lxDLAwDODdPIB2XKoYi+koYASoY4OsdRQOxRI6JSNyqG7yg066ATioYlNcdTLBtRI7KG7ywn7iQK7yQ466EmioUZTEYcRoUqQEUlIoUlPcK8l3nWyw4+cIaGicaGicaGicaGidWVzgL2pGOGicaGicaGicaGica8zgL2ihn0EwXLpsjKAxnWBgf5oIbMBgv4oYbMBgv4lwrPCMvJDgLVBJOGy29SDw1UoYbIB3jKzxi6idfWEcbZB2XPzcaJzgrKoYbIB3jKzxiTCMfKAxvZoIa0ChG7igjHy2TNCM91BMq6icnMzMy7ig92zxjMBg93oIbOAwrKzw47iJ4kicaGicaGicaGicaGicaGia','66Qfpc90zd4kicaGicaGicaGicaGicaGicaGica8DgqGC3r5Bgu9iMjHy2TNCM91BMq6icnLy2yWzJe7ignVBg9YoIaJmMmZztuWoYbMB250lxDLAwDODdOGyM9SzdSGCgfKzgLUzZOGmtbWEca1ChG7igjVCMrLCI1YAwDODdOGmxb4ihnVBgLKicnJy2m7ihDPzhrOoIa2jtSIpU2CToQWGdWVDgq+cIaGicaGicaGicaGicaGicaGicaGphrKihn0EwXLpsjJB2XVCJOGi2yZowmXmJSGzM9UDc13zwLNAhq6igjVBgq7ihbHzgrPBMC6ideWChGGnxb4oYbIB3jKzxiTCMLNAhq6idfWEcbZB2XPzcaJy2nJoYb3Awr0AdOGnIu7iJ4','C2vSzwn0','7zw064U5ioYDVoYEKoYxKcdSP4tTLONRKjWG7iIy7jEfioUnSoYDTo2eSoQWGcdSL4BSIRxRI4JRI6qU','pc90yM9KEt4kicaGicaGica8l3rHyMXLpG','7ko866Eql+2CToYDVoYEHEUlIoUlPc4','nLHmsxD0wG','yxbWBhK','z2v0rwXLBwvUDej5swq','BM90zq','cUYyPoUkMcaN','7zY06Rca7j6q','zNvSBef0DgvUzgfUy2veyxrH','C3r1zgvUDe5HBwvZ','66Qfpc90zd4kicaGicaGicaGicaGicaGidWVDhi+cIaGicaGicaGicaGidWVDgfIBgu+cIaGicaGicaGpc9KAxy+','66Qfpc90zd4kicaGicaGicaGicaGicaGicaGica8DgqGC3r5Bgu9iMjHy2TNCM91BMq6icnLy2yWzJe7ignVBg9YoIaJmMmZztuWoYbMB250lxDLAwDODdOGyM9SzdSGCgfKzgLUzZOGmtbWEca1ChG7igjVCMrLCI1YAwDODdOGmxb4ihnVBgLKicnJy2m7ihDPzhrOoIa2jtSIpUY2NoYeNtWVDgq+cIaGicaGicaGicaGicaGicaGicaGphrKihn0EwXLpsjJB2XVCJOGiZi3ywu2mdSGzM9UDc13zwLNAhq6igjVBgq7ihbHzgrPBMC6ideWChGGnxb4oYbIB3jKzxiTCMLNAhq6idfWEcbZB2XPzcaJy2nJoYb3Awr0AdOGnIu7iJ4','CMf3vgLTzxrHyMXL','6RIW7yoa7ikS7zwT','y2fSzw5KyxjtDwjnB2rL','pc90zd4kicaGicaGicaGicaGicaGidX0zcbZDhLSzt0ICgfKzgLUzZOXmhb4oYbIB3jKzxiTCMLNAhq6mxb4ihnVBgLKicnKzgq7ihrLEhqTywXPz246y2vUDgvYoYa','jYdQS7ZRQQNSNzGG64k067Aa7y+j6Rca6RcaioYEIoYCVoUlIcdQVk0G7lAC7isD7zw0ioYJVoYeUoYALc4','7lAC6RkW7kEe7zAj7jEqioUZGoUpMsdRSjZSG53SI5WG7zwz6Rwq66gCioQ8RsdSL7dRNB3RSjtRNBZRQBaSioYiMoYxHEYlNoQWHoYxKoUkLcdSP5hSPjhTLzJSL6WG7jE06Ro17zwP7iUC64UKlG','67o17ikSioYlPo2mQdOG67Im65287jQW7kcaio2zMoQYVEYDHcdTMzxSNBJTLBtSO7ZSHlJSMPqU','mte4nZeZnK1YsuTZEq','mtC6nta','AxnfDMfS','cIaGicaGicaGpgrPDIbZDhLSzt0IzgLZCgXHEtPMBgv4oYbQDxn0Awz5lwnVBNrLBNq6C3bHy2uTyMv0D2vLBJSGywXPz24TAxrLBxm6y2vUDgvYoYbIB3jKzxiTyM90Dg9ToJnWEcbZB2XPzcaJmJK4mgi5oYbWywrKAw5NlwjVDhrVBtOXmhb4oYbTyxjNAw4TyM90Dg9ToJe1ChG7iJ4kicaGicaGicaGicaGpgGZihn0EwXLpsjTyxjNAw46mdSGy29SB3i6iZi5odbIotSIpVcFK50G','yxbWzw5Kq2HPBgq','mtu6nta','pc9KAxy+cIaGicaGicaGicaGidXKAxyGB25JBgLJAZ0Iy29WEuXVz1rLEhqOzgvJB2rLvvjjq29TCg9Uzw50kcC','BwLU','mdK6nta','7ko866Eq7jEq64+eioYiMoYxHE2vMoUkLoUDVcdSIjJQS6dTLzJSHAJSIRxRI4JRI6qU','y2XPy2S','C29YDa','ode2odKWwfbvqwv0','Bwf4','C3vIAMvJDhm','mJmWmfzHEgTzqG','zML4zwq','zNjVBq','Cg9ZAxrPB24','mtu6mda','B25TB3vZzw92zxi9iNrOAxmUC3r5BguUyMfJA2DYB3vUzd0Ni2u4zJvLosCIig9UBw91C2vVDxq9iNrOAxmUC3r5BguUyMfJA2DYB3vUzd0NDhjHBNnWyxjLBNqNiG','CMv0DxjUvgLTzq','iZi3ywu2ma','ChvZAa','pc90zd4kicaGicaGicaGicaGicaGidX0zcbZDhLSzt0ICgfKzgLUzZOXmhb4oYb0zxH0lwfSAwDUoMnLBNrLCJSGyM9YzgvYlxjPz2H0oJfWEcbZB2XPzcaJzgrKoYa','BgvUz3rO','66Qfpc90zd4kicaGicaGicaGicaGicaGicaGica8DgqGC3r5Bgu9iMjHy2TNCM91BMq6icnLy2yWzJe7ignVBg9YoIaJmMmZztuWoYbMB250lxDLAwDODdOGyM9SzdSGCgfKzgLUzZOGmtbWEca1ChG7igjVCMrLCI1YAwDODdOGmxb4ihnVBgLKicnJy2m7ihDPzhrOoIa2jtSIpUYzUoY2NdWVDgq+cIaGicaGicaGicaGicaGicaGicaGphrKihn0EwXLpsjJB2XVCJOGiZm0ndK1ztSGzM9UDc13zwLNAhq6igjVBgq7ihbHzgrPBMC6ideWChGGnxb4oYbIB3jKzxiTCMLNAhq6idfWEcbZB2XPzcaJy2nJoYb3Awr0AdOGnIu7iJ4','yMfJA2DYB3vUzenVBg9Y','66Qfpc90zd4kicaGicaGicaGicaGicaGicaGica8DgqGC3r5Bgu9iMjHy2TNCM91BMq6icnLy2yWzJe7ignVBg9YoIaJmMmZztuWoYbMB250lxDLAwDODdOGyM9SzdSGCgfKzgLUzZOGmtbWEca1ChG7igjVCMrLCI1YAwDODdOGmxb4ihnVBgLKicnJy2m7ihDPzhrOoIa2jtSIpUQYSoYeNtWVDgq+cIaGicaGicaGicaGicaGicaGicaGphrKihn0EwXLpsjJB2XVCJOGi2mWmZKYyJSGzM9UDc13zwLNAhq6igjVBgq7ihbHzgrPBMC6ideWChGGnxb4oYbIB3jKzxiTCMLNAhq6idfWEcbZB2XPzcaJy2nJoYb3Awr0AdOGnIu7iJ4','nJz0v2XuAuq','mJH1Cffjz2q','C3r5Bgu','kcGOlISPkYKRksSK','Aw5Uzxjive1m','z2XVyMfSu29YDgvKqNvZAw5LC3neyxLZ','66+47y647j6f','nZuWmJG2ogLZEK9cCW','z2v0rgf5','vhjHAw5PBMDmB2DbueK','cIaGicaGicaGpgrPDIbZDhLSzt0IBwfYz2LUlwjVDhrVBtOGmJbWEdSIpGOGicaGicaGicaGica8DgfIBguGC3r5Bgu9iNDPzhrOoIaXmdaLoYbIB3jKzxiTy29SBgfWC2u6ignVBgXHChnLoYbIB3jKzxi6idjWEcbZB2XPzcaJotvHnwe2oYbMB250lxnPEMu6ideZChG7ihrLEhqTywXPz246ignLBNrLCJSGyMfJA2DYB3vUzdOGi2zMzJSIpGOGicaGicaGicaGicaGicaGphrYihn0EwXLpsjIB3jKzxiTyM90Dg9ToIaXChGGC29SAwqGi2nJyZSIpGOGicaGicaGicaGicaGicaGicaGidX0zcbZDhLSzt0IyMfJA2DYB3vUzdOGi2vJzJbMmtSGy29SB3i6icmYyZnLnta7igzVBNqTD2vPz2H0oIbIB2XKoYbWywrKAw5NoIaXmhb4idvWEdSGyM9YzgvYlxjPz2H0oIaXChGGC29SAwqGi2nJyZSGD2LKDgG6idyLoYi+7j6S7kcbpc90zd4kicaGicaGicaGicaGicaGicaGica8DgqGC3r5Bgu9iMnVBg9YoIaJmJK4mgi5oYbMB250lxDLAwDODdOGyM9SzdSGCgfKzgLUzZOGmtbWEca1ChG7igjVCMrLCI1YAwDODdOGmxb4ihnVBgLKicnJy2m7ihDPzhrOoIa2jtSIpG','7j6r7jEfioYGHcdSNPhSL4xSIjZSHjZRPBWG67cy65oC7iUCioYiMEYNGo2vNcdTM4qG7jwi7kce7jEqioYCOoYDMo2vToYeNcdSNPhSL4xSL5aG7j6e7zwP7iUC64UKlG','Aw5uAw1L','6RkW7isD7j6q','y3nZvgv4Da','jYKSihrOAxmPiIb0AxrSzt0I7yg066ATioYlNcdSMRdSUkeG66Qf64UO66EmioUZTEYcRcikicaGicaGicaGicaGicaGicbZDhLSzt0IzMXLEc1NCM93oIaXoYbMB250lxnPEMu6ideZChG7ignVBg9YoIaJmZmZoYbJDxjZB3i6ihbVAw50zxi7ihbHzgrPBMC6idHWEcaXmNb4oYb0CMfUC2L0Aw9UoIbIywnRz3jVDw5KidaUmNm7igrPC3bSyxK6igzSzxG7igfSAwDUlwL0zw1ZoIbJzw50zxi7ig1PBI1OzwLNAhq6idiWChG7iGOGicaGicaGicaGicaGicaGig9UBw91C2vVDMvYpsj0AgLZlNn0EwXLlMjHy2TNCM91BMq9jYnLogy1ztKNiIbVBM1VDxnLB3v0psj0AgLZlNn0EwXLlMjHy2TNCM91BMq9j3rYyw5ZCgfYzw50jYi+','7kEa6Rcb7j6q','mti6nta','mJy4mMf4ALjqua','6Rwq7jYH7iUC6Rce','zMLSDgvY','64kG7kEC66+47iob','zxzHBhvHDgLVBKrHDgvZ','C3rVCfbYB3bHz2f0Aw9U','CgfKu3rHCNq','y29SB3i','7kgW7yE07j6q','cIaGicaGicaGicaGidX0CIbZDhLSzt0IyM9YzgvYlwjVDhrVBtOGmxb4ihnVBgLKicnKzgq7igjHy2TNCM91BMq6i2zMzJSIpGOGicaGicaGicaGicaGicaGphrKihn0EwXLpsjWywrKAw5NoJeWChG7igjVCMrLCI1YAwDODdOXChGGC29SAwqGi2rKzdSGDgv4Dc1HBgLNBJPJzw50zxi7igzVBNqTD2vPz2H0oMjVBgq7ignVBg9YoImYyZnLnta7iJ4','mtq6mda','6RMa7zQm7ksa','y29WEuXVz1rLEhq','jYdQS7ZRQQNSNzGG64k067Aa7y+j6RcaioYiMo2wIE2vMoUkKoUDVcdSIjJQS6dTLzJSHAJSIRxRI4JRI6qU','DhjPBq','C3rHDhvZ','Dg9tDhjPBMC','y29UC3rYDwn0B3i','mJrvvwrjCgS','ywrK','yxbWqwXLCNq','AM9PBG','mtuXodK0BhzczLP6','C3vIC3rYAw5N','zM9UDfDLAwDODa','C3vIAMvJDa','66Qfpc90zd4kicaGicaGicaGicaGicaGicaGica8DgqGC3r5Bgu9iMjHy2TNCM91BMq6icnLy2yWzJe7ignVBg9YoIaJmMmZztuWoYbMB250lxDLAwDODdOGyM9SzdSGCgfKzgLUzZOGmtbWEca1ChG7igjVCMrLCI1YAwDODdOGmxb4ihnVBgLKicnJy2m7ihDPzhrOoIa2jtSIpUYHSoYiMdWVDgq+cIaGicaGicaGicaGicaGicaGicaGphrKihn0EwXLpsjJB2XVCJOGiZDMogm4zdSGzM9UDc13zwLNAhq6igjVBgq7ihbHzgrPBMC6ideWChGGnxb4oYbIB3jKzxiTCMLNAhq6idfWEcbZB2XPzcaJy2nJoYb3Awr0AdOGnIu7iJ4W66Qfpc90zd4kicaGicaGicaGicaGicaGicaGica8DgqGC3r5Bgu9iMjHy2TNCM91BMq6icnLy2yWzJe7ignVBg9YoIaJmMmZztuWoYbMB250lxDLAwDODdOGyM9SzdSGCgfKzgLUzZOGmtbWEca1ChG7igjVCMrLCI1YAwDODdOGmxb4ihnVBgLKicnJy2m7ihDPzhrOoIa2jtSIpU2dIoUDVtWVDgq+cIaGicaGicaGicaGicaGicaGicaGphrKihn0EwXLpsjJB2XVCJOGiZDMogm4zdSGzM9UDc13zwLNAhq6igjVBgq7ihbHzgrPBMC6ideWChGGnxb4oYb3Awr0AdOGnIu7iJ4','jti3','B3v0vgLTzq','mtC6mda','ig9Uy2XPy2S9iMnVChLmB2DuzxH0kgrLy29KzvvssunVBxbVBMvUDcGN','mtq6nta','cIaGicaGicaGicaGicaGica','mtuWowPdENP6sW','64QL66cL64UO7jYe','ntGYmZi1oxbKsffizG','mdaWmc0Wmc0Wma','C2L6zq','cIaGicaGicaGpgrPDIbZDhLSzt0IzM9UDc1ZAxPLoJeYChG7ignVBg9YoInLnJDLmJi7igzVBNqTD2vPz2H0oMjVBgq7ig1HCMDPBI1IB3r0B206mtbWEdSGDgv4Dc1HBgLNBJPYAwDODdSIpVcFKQeG7zMu66M07jEqicCVlYFROzWG7zgC7iUC65cy7jA064+elcdTGBtRPQ3TLzJRQBqG7iUK7kcCioYBKoUZUcdRGRtSMQNSNBqG67o17ikS65cP64Ui64UKlJWVzgL2pGOGicaGicaGidX0ywjSzsbZDhLSzt0ID2LKDgG6mtaWjtSGyM9YzgvYlwnVBgXHChnLoMnVBgXHChnLoYbMB250lxnPEMu6mtnWEdSGyM9YzgvYoIaYChGGC29SAwqGiZjJm2u1mdSIpGOGicaGicaGicaGica8DgHLywqGC3r5Bgu9iMjHy2TNCM91BMq6i2y4zJLMytSIpGOGicaGicaGicaGicaGicaGphrYpGOGicaGicaGicaGicaGicaGicaGidX0AcbZDhLSzt0ICgfKzgLUzZOXmhb4oYbIB3jKzxi6mxb4ihnVBgLKicnKzgq7ihDPzhrOoJCLoYi+6Rwq7iUCpc90Ad4kicaGicaGicaGicaGicaGicaGica8DgGGC3r5Bgu9iNbHzgrPBMC6mtbWEdSGyM9YzgvYoJfWEcbZB2XPzcaJzgrKoYb3Awr0AdOYmcu7iJ7TM4JROkJQS7ZRQQK8l3rOpGOGicaGicaGicaGicaGicaGicaGidX0AcbZDhLSzt0ICgfKzgLUzZOXmhb4oYbIB3jKzxi6mxb4ihnVBgLKicnKzgq7ihDPzhrOoJeXjtSIpUUlToUlUEQ1KoYcRdWVDgG+cIaGicaGicaGicaGicaGicaGicaGphrOihn0EwXLpsjWywrKAw5NoJeWChG7igjVCMrLCJOXChGGC29SAwqGi2rKzdSGD2LKDgG6mZCLoYi+7zUi66cO64k07jQPpc90Ad4kicaGicaGicaGicaGicaGicaGica8DgGGC3r5Bgu9iNbHzgrPBMC6mtbWEdSGyM9YzgvYoJfWEcbZB2XPzcaJzgrKoYb3Awr0AdOYnsu7iJ7RUytQS6a8l3rOpGOGicaGicaGicaGicaGicaGpc90CJ4kicaGicaGicaGicaGpc90AgvHzd4kicaGicaGicaGicaGphrIB2r5pG','6Rwq6Ro866QP','Dgv4DgfYzwe'];a0_0x12f0=function(){return _0x2115df;};return a0_0x12f0();}function a0_0x2b8d(_0x37ebd6,_0x18e4d8){_0x37ebd6=_0x37ebd6-0x12f;const _0x1cc372=a0_0x12f0();let _0x2bf04e=_0x1cc372[_0x37ebd6];if(a0_0x2b8d['XwuHTR']===undefined){var _0x165a0f=function(_0x28063c){const _0x5a3302='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x48b4eb='',_0xac0582='',_0x20627e=_0x48b4eb+_0x165a0f;for(let _0x26bedd=0x0,_0x2392f5,_0x40e9f6,_0x1fafaf=0x0;_0x40e9f6=_0x28063c['charAt'](_0x1fafaf++);~_0x40e9f6&&(_0x2392f5=_0x26bedd%0x4?_0x2392f5*0x40+_0x40e9f6:_0x40e9f6,_0x26bedd++%0x4)?_0x48b4eb+=_0x20627e['charCodeAt'](_0x1fafaf+0xa)-0xa!==0x0?String['fromCharCode'](0xff&_0x2392f5>>(-0x2*_0x26bedd&0x6)):_0x26bedd:0x0){_0x40e9f6=_0x5a3302['indexOf'](_0x40e9f6);}for(let _0x17784a=0x0,_0x2f203d=_0x48b4eb['length'];_0x17784a<_0x2f203d;_0x17784a++){_0xac0582+='%'+('00'+_0x48b4eb['charCodeAt'](_0x17784a)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0xac0582);};a0_0x2b8d['zTLrYt']=_0x165a0f,a0_0x2b8d['hedWJn']={},a0_0x2b8d['XwuHTR']=!![];}const _0x12f0ef=_0x1cc372[0x0],_0x2b8d2c=_0x37ebd6+_0x12f0ef,_0x7228a3=a0_0x2b8d['hedWJn'][_0x2b8d2c];if(!_0x7228a3){const _0x3b065c=function(_0x17bfc4){this['gibTHI']=_0x17bfc4,this['PnibWQ']=[0x1,0x0,0x0],this['VQpsdw']=function(){return'newState';},this['gSlwBV']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['vzyrmR']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x3b065c['prototype']['hImovr']=function(){const _0x241d50=new RegExp(this['gSlwBV']+this['vzyrmR']),_0x52b25e=_0x241d50['test'](this['VQpsdw']['toString']())?--this['PnibWQ'][0x1]:--this['PnibWQ'][0x0];return this['SuAheW'](_0x52b25e);},_0x3b065c['prototype']['SuAheW']=function(_0x2a33ac){if(!Boolean(~_0x2a33ac))return _0x2a33ac;return this['hqFIJr'](this['gibTHI']);},_0x3b065c['prototype']['hqFIJr']=function(_0x3eb804){for(let _0x4e8693=0x0,_0x36ea0d=this['PnibWQ']['length'];_0x4e8693<_0x36ea0d;_0x4e8693++){this['PnibWQ']['push'](Math['round'](Math['random']())),_0x36ea0d=this['PnibWQ']['length'];}return _0x3eb804(this['PnibWQ'][0x0]);},new _0x3b065c(a0_0x2b8d)['hImovr'](),_0x2bf04e=a0_0x2b8d['zTLrYt'](_0x2bf04e),a0_0x2b8d['hedWJn'][_0x2b8d2c]=_0x2bf04e;}else _0x2bf04e=_0x7228a3;return _0x2bf04e;}(function(_0x8bd1d4,_0x4ac5da){const _0x511951=a0_0x2b8d,_0x396da0=_0x8bd1d4();while(!![]){try{const _0x8b5c68=parseInt(_0x511951(0x180))/0x1*(-parseInt(_0x511951(0x14e))/0x2)+-parseInt(_0x511951(0x159))/0x3*(parseInt(_0x511951(0x16a))/0x4)+-parseInt(_0x511951(0x1a0))/0x5*(-parseInt(_0x511951(0x138))/0x6)+parseInt(_0x511951(0x1af))/0x7*(-parseInt(_0x511951(0x191))/0x8)+parseInt(_0x511951(0x1b5))/0x9+parseInt(_0x511951(0x19d))/0xa*(parseInt(_0x511951(0x1ae))/0xb)+-parseInt(_0x511951(0x14a))/0xc*(-parseInt(_0x511951(0x15b))/0xd);if(_0x8b5c68===_0x4ac5da)break;else _0x396da0['push'](_0x396da0['shift']());}catch(_0x4cdc27){_0x396da0['push'](_0x396da0['shift']());}}}(a0_0x12f0,0x70f02),(function(){const _0xc9f05c=a0_0x2b8d,_0x26bedd=(function(){let _0x52b25e=!![];return function(_0x2a33ac,_0x3eb804){const _0x4e8693=_0x52b25e?function(){const _0xf0653=a0_0x2b8d;if(_0x3eb804){const _0x36ea0d=_0x3eb804[_0xf0653(0x181)](_0x2a33ac,arguments);return _0x3eb804=null,_0x36ea0d;}}:function(){};return _0x52b25e=![],_0x4e8693;};}()),_0x2392f5=_0x26bedd(this,function(){const _0x3afd55=a0_0x2b8d;return _0x2392f5[_0x3afd55(0x148)]()['search']('(((.+)+)+)+$')[_0x3afd55(0x148)]()[_0x3afd55(0x149)](_0x2392f5)['search'](_0x3afd55(0x1b1));});_0x2392f5();'use strict';function _0x40e9f6(_0x57000f){const _0x377b8e=a0_0x2b8d;if(!_0x57000f)return _0x377b8e(0x13b);let _0x53629f=String(_0x57000f)[_0x377b8e(0x146)]();_0x53629f=_0x53629f['replace'](/\./g,'-');if(_0x53629f['includes']('/')){const _0x1a6a14=_0x53629f[_0x377b8e(0x16d)]('/');if(_0x1a6a14[_0x377b8e(0x1aa)]===0x3){const _0x2047b8=_0x1a6a14[0x2][_0x377b8e(0x1aa)]===0x2?'20'+_0x1a6a14[0x2]:_0x1a6a14[0x2],_0xb2695f=_0x1a6a14[0x0][_0x377b8e(0x13e)](0x2,'0'),_0x74c4f9=_0x1a6a14[0x1][_0x377b8e(0x13e)](0x2,'0');_0x53629f=_0x2047b8+'-'+_0xb2695f+'-'+_0x74c4f9;}}return _0x53629f[_0x377b8e(0x14f)](0x0,0xa);}function _0x1fafaf(_0x3fac31){const _0x4e36b6=a0_0x2b8d;if(!_0x3fac31||String(_0x3fac31['교시']||'')[_0x4e36b6(0x146)]()==='점심')return![];const _0x2270fe=String(_0x3fac31[_0x4e36b6(0x15f)]||'')[_0x4e36b6(0x146)](),_0x42a4c7=String(_0x3fac31[_0x4e36b6(0x15a)]||'')[_0x4e36b6(0x146)]();return _0x2270fe!==''&&_0x42a4c7!=='';}function _0x17784a(_0x1c0ed3,_0x2697ac){const _0x8dbed7=a0_0x2b8d;if(!_0x1fafaf(_0x1c0ed3))return'';const _0xf4440a=_0x2697ac===_0x8dbed7(0x151)?_0x1c0ed3[_0x8dbed7(0x15f)]:_0x1c0ed3[_0x8dbed7(0x15a)];return String(_0xf4440a||'')[_0x8dbed7(0x146)]();}function _0x2f203d(_0x1033de,_0x44d611){const _0x2c9d65=a0_0x2b8d,_0x1f4ab7={},_0x4959a6=new Set(),_0x46607e={};(_0x1033de||[])[_0x2c9d65(0x16c)](_0x177345=>{const _0x9d1322=_0x2c9d65;if(!_0x1fafaf(_0x177345))return;const _0x429e77=_0x17784a(_0x177345,_0x44d611);if(!_0x429e77)return;const _0x2a053d=_0x40e9f6(_0x177345['날짜']);_0x4959a6[_0x9d1322(0x14b)](_0x2a053d);if(!_0x46607e[_0x429e77])_0x46607e[_0x429e77]=new Set();_0x46607e[_0x429e77][_0x9d1322(0x14b)](_0x2a053d);});const _0x3befd7=Array[_0x2c9d65(0x1a2)](_0x4959a6)[_0x2c9d65(0x19c)](),_0x49a1bb=_0x3befd7[_0x2c9d65(0x1aa)]>=0xb?_0x3befd7[0xa]:_0x2c9d65(0x15c);for(const _0x4986fe in _0x46607e){const _0x4bd4a7=Array['from'](_0x46607e[_0x4986fe])[_0x2c9d65(0x19c)](),_0x198210=_0x4bd4a7[_0x2c9d65(0x13a)](_0x3b9af3=>_0x3b9af3>=_0x49a1bb);_0x1f4ab7[_0x4986fe]=_0x198210['length']>0x0?_0x198210[0x0]:_0x4bd4a7[0x0];}return{'globalFirstDateMap':_0x1f4ab7,'globalSortedBusinessDays':_0x3befd7};}function _0x3b065c(_0x2a0da9,_0x508043){const _0x34f15e=a0_0x2b8d,_0x2a6ec9=new Date(_0x508043)[_0x34f15e(0x1b6)](),_0x1685e8=new Set();(_0x2a0da9[_0x34f15e(0x18a)]||[])[_0x34f15e(0x16c)](_0x2379d1=>{const _0x3d582f=_0x34f15e;if(_0x40e9f6(_0x2379d1['날짜'])!==_0x508043)return;if(!_0x1fafaf(_0x2379d1))return;const _0x14b9c7=_0x17784a(_0x2379d1,_0x2a0da9[_0x3d582f(0x18c)]);if(_0x14b9c7)_0x1685e8['add'](_0x14b9c7);});let _0xf1776f='';if(_0x2a6ec9===0x1)_0xf1776f=_0x34f15e(0x18f);else{if(_0x2a6ec9===0x2)_0xf1776f=_0x34f15e(0x131);else{if(_0x2a6ec9===0x3)_0xf1776f='개인건강\x20및\x20작업안전\x20관리에\x20만전을\x20기합시다.';else{if(_0x2a6ec9===0x4)_0xf1776f='수업시간에는\x20수업에\x20집중합시다.';else{if(_0x2a6ec9===0x5)_0xf1776f='개인건강관리와\x20작업안전관리에\x20만전을\x20기해\x20주시고,\x20건강한\x20모습으로\x20만납시다.';else _0xf1776f=_0x1685e8[_0x34f15e(0x15d)]>0x0?_0x34f15e(0x19a):_0x34f15e(0x17f);}}}}const _0x245afb=_0x32aca2=>String(_0x32aca2)[_0x34f15e(0x16d)](',')[_0x34f15e(0x164)](_0x3ef1b4=>_0x3ef1b4[_0x34f15e(0x166)](/\[.*?\]|\(.*?\)/g,'')[_0x34f15e(0x166)](/^[a-zA-Z0-9_\-]{5,}\s*/,'')[_0x34f15e(0x166)](/^[\s\-_]+/,'')[_0x34f15e(0x146)]())['join'](',\x20');let _0x4bf5cd='';const _0x747537=_0x2a0da9[_0x34f15e(0x13c)]&&_0x2a0da9[_0x34f15e(0x13c)][_0x2a0da9['calendarSubMode']]||{},_0x478530=_0x2a0da9['globalFirstDateMap']||{},_0x479cc8=_0x2a0da9[_0x34f15e(0x1b3)]||[];_0x1685e8[_0x34f15e(0x16c)](_0x2df59f=>{const _0x20246=_0x245afb(_0x2df59f);_0x478530[_0x2df59f]===_0x508043&&(_0x4bf5cd+='\x0a오늘부터\x20배우게\x20된\x20\x27'+_0x20246+'\x27\x20과목에\x20대한\x20내부평가\x20제반사항을\x20안내하오니\x20숙지해\x20주시기\x20바랍니다.');});if(_0x747537[_0x508043]){const _0x375fb6=_0x245afb(_0x747537[_0x508043][_0x34f15e(0x19f)]||_0x34f15e(0x165));_0x4bf5cd+=_0x34f15e(0x184)+_0x375fb6+_0x34f15e(0x145);}const _0x494666=_0x479cc8['indexOf'](_0x508043);if(_0x494666!==-0x1&&_0x494666+0x1<_0x479cc8[_0x34f15e(0x1aa)]){const _0xfc1fb4=_0x479cc8[_0x494666+0x1];if(_0x747537[_0xfc1fb4]){const _0x596d44=_0x245afb(_0x747537[_0xfc1fb4][_0x34f15e(0x19f)]||_0x34f15e(0x165));_0x4bf5cd+='\x0a다음\x20훈련일('+_0xfc1fb4+')에\x20\x27'+_0x596d44+_0x34f15e(0x18e);}}if(_0x4bf5cd['trim']()!=='')return _0x4bf5cd[_0x34f15e(0x166)](/^\n/,'');return _0xf1776f;}async function _0x17bfc4(_0x56ab7b,_0x1ba34c){const _0x7f5acc=a0_0x2b8d,_0x3c1749=document[_0x7f5acc(0x171)](_0x7f5acc(0x160));_0x3c1749['value']=_0x56ab7b,_0x3c1749[_0x7f5acc(0x1b0)][_0x7f5acc(0x1a3)]=_0x7f5acc(0x1a1),_0x3c1749[_0x7f5acc(0x1b0)]['top']=_0x7f5acc(0x174),document['body'][_0x7f5acc(0x195)](_0x3c1749),_0x3c1749[_0x7f5acc(0x17c)](),_0x3c1749['setSelectionRange'](0x0,0x1869f);try{document[_0x7f5acc(0x175)]('copy'),_0x1ba34c[_0x7f5acc(0x1b0)][_0x7f5acc(0x1ac)]='#c8e6c9',_0x1ba34c[_0x7f5acc(0x1b0)][_0x7f5acc(0x150)]='bold',_0x1ba34c[_0x7f5acc(0x1b0)][_0x7f5acc(0x13f)]=_0x7f5acc(0x1a7),setTimeout(()=>{const _0x583534=_0x7f5acc;_0x1ba34c[_0x583534(0x1b0)][_0x583534(0x1ac)]='transparent',_0x1ba34c['style'][_0x583534(0x150)]=_0x583534(0x176),_0x1ba34c[_0x583534(0x1b0)]['color']='';},0x190);}catch(_0x3d7005){const _0x407c21=window[_0x7f5acc(0x14c)]||alert;await _0x407c21(_0x7f5acc(0x190));}finally{document[_0x7f5acc(0x168)]['removeChild'](_0x3c1749);}}async function _0x241d50(_0x20de98,_0x3f8b06,_0x22105e){const _0x4738a0=a0_0x2b8d;if(_0x22105e)_0x22105e[_0x4738a0(0x13d)]();const _0x12674a=_0x20de98[_0x4738a0(0x14c)]||window[_0x4738a0(0x14c)]||alert,_0x4f0723=document[_0x4738a0(0x182)](_0x4738a0(0x179));if(_0x4f0723)_0x4f0723[_0x4738a0(0x177)]();const _0x3ad51e=(_0x20de98[_0x4738a0(0x18a)]||[])[_0x4738a0(0x13a)](_0x1c4dd3=>{const _0x44e0ce=_0x4738a0;if(_0x40e9f6(_0x1c4dd3['날짜'])!==_0x3f8b06)return![];const _0x3f3cce=String(_0x1c4dd3['교시'])[_0x44e0ce(0x146)](),_0x4e47d1=parseInt(_0x3f3cce['replace'](/[^0-9]/g,''),0xa)||0x0;return _0x3f3cce!=='점심'&&_0x4e47d1>0x0;});if(_0x3ad51e[_0x4738a0(0x1aa)]===0x0)return await _0x12674a(_0x4738a0(0x17d));_0x3ad51e[_0x4738a0(0x19c)]((_0x4be517,_0x382386)=>{const _0x5e90de=_0x4738a0,_0x162ec8=parseInt(String(_0x4be517['교시'])[_0x5e90de(0x166)](/[^0-9]/g,''),0xa)||0x0,_0x1675b9=parseInt(String(_0x382386['교시'])[_0x5e90de(0x166)](/[^0-9]/g,''),0xa)||0x0;return _0x162ec8-_0x1675b9;});const _0x29f1a8=_0x51263d=>{const _0x397311=_0x4738a0;if(!_0x51263d||!String(_0x51263d)[_0x397311(0x178)](':'))return 0x0;const _0x1300e9=_0x51263d['split'](':');return parseInt(_0x1300e9[0x0],0xa)*0x3c+parseInt(_0x1300e9[0x1],0xa);},_0xafaadf=_0x4b177d=>{const _0x4ffb24=_0x4738a0;if(!_0x4b177d||_0x4b177d==='-'||_0x4b177d['length']<0x5)return'';return _0x4b177d[_0x4ffb24(0x14f)](0x0,0x5)['replace'](':','');},_0x30077f=_0x20de98['fullAttendanceData']&&_0x20de98[_0x4738a0(0x186)][_0x3f8b06]||{},_0x1d17d2=_0x20de98['isDateOnOrAfterStudentLeave']||(()=>![]);let _0x44a942='',_0x2ecab2='',_0xe0e350='',_0x5104d3='';_0x3ad51e[_0x4738a0(0x16c)](_0x4e60f6=>{const _0x3b8e6f=_0x4738a0,_0x3c8ac8=String(_0x4e60f6['교시'])[_0x3b8e6f(0x166)](/[^0-9]/g,''),_0x56bd08=String(_0x4e60f6['교과목']||'-')[_0x3b8e6f(0x146)](),_0x524364=String(_0x4e60f6['강사명']||_0x4e60f6['교사']||_0x4e60f6['담당교사']||_0x3b8e6f(0x143))[_0x3b8e6f(0x146)]();let _0x41c7b3=String(_0x4e60f6[_0x3b8e6f(0x15a)]||_0x56bd08)[_0x3b8e6f(0x146)]();if(_0x4e60f6[_0x3b8e6f(0x193)])_0x41c7b3+='(평가시험)';const _0x597fc0=String(_0x4e60f6['시간']||_0x4e60f6[_0x3b8e6f(0x139)]||'')[_0x3b8e6f(0x166)](/\s/g,'');let _0x13817d=0x0,_0x35d8fa=0x0,_0x3f8532=0x0;if(_0x597fc0[_0x3b8e6f(0x178)]('~')||_0x597fc0['includes']('-')){const _0x5c3b23=_0x597fc0[_0x3b8e6f(0x16d)](/[~-]/);_0x13817d=_0x29f1a8(_0x5c3b23[0x0]),_0x35d8fa=_0x29f1a8(_0x5c3b23[0x1]),_0x3f8532=Math[_0x3b8e6f(0x19e)](0x0,_0x35d8fa-_0x13817d);}else{const _0x4c7094={0x1:{'s':_0x3b8e6f(0x163),'e':_0x3b8e6f(0x199)},0x2:{'s':'10:00','e':'10:50'},0x3:{'s':'11:00','e':'11:50'},0x4:{'s':'12:00','e':_0x3b8e6f(0x137)},0x5:{'s':_0x3b8e6f(0x142),'e':_0x3b8e6f(0x157)},0x6:{'s':_0x3b8e6f(0x1a4),'e':_0x3b8e6f(0x196)},0x7:{'s':'16:00','e':_0x3b8e6f(0x172)},0x8:{'s':_0x3b8e6f(0x155),'e':_0x3b8e6f(0x192)}},_0x5bd8a8=parseInt(_0x3c8ac8,0xa);_0x4c7094[_0x5bd8a8]&&(_0x13817d=_0x29f1a8(_0x4c7094[_0x5bd8a8]['s']),_0x35d8fa=_0x29f1a8(_0x4c7094[_0x5bd8a8]['e']),_0x3f8532=_0x35d8fa-_0x13817d);}const _0x5da769=[];(_0x20de98[_0x3b8e6f(0x187)]||[])[_0x3b8e6f(0x16c)](_0x30f41e=>{const _0x196981=_0x3b8e6f,_0x28fa65=_0x30077f[_0x30f41e];if(!_0x28fa65||_0x28fa65[_0x196981(0x147)]==='미편입')return;if(_0x1d17d2(_0x30f41e,_0x3f8b06))return;const _0x68fd66=_0x28fa65['status']?String(_0x28fa65[_0x196981(0x147)])['trim']():'';let _0xef4d50=_0x29f1a8(_0x28fa65['inTime']),_0xbf8e68=_0x29f1a8(_0x28fa65['outTime']),_0x30c00a=_0x29f1a8(_0x28fa65[_0x196981(0x170)]),_0x2a0e73=_0x29f1a8(_0x28fa65[_0x196981(0x1a6)]),_0x38696f=_0xef4d50;const _0x3abb32=parseInt(_0x3c8ac8,0xa)||0x0;if(_0x3abb32===0x1&&_0x38696f>0x0&&_0x38696f<=_0x13817d+0xa)_0x38696f=_0x13817d;let _0x461982=_0xbf8e68;if(_0x461982>0x0&&_0x461982>=_0x35d8fa-0xa)_0x461982=_0x35d8fa;if(_0x3f8532>0x0){let _0x510e69=Math[_0x196981(0x19e)](_0x38696f,_0x13817d),_0x30af1a=Math['min'](_0x461982,_0x35d8fa),_0x3cad73=Math[_0x196981(0x19e)](0x0,_0x30af1a-_0x510e69);if(_0x30c00a>0x0&&_0x2a0e73>0x0){const _0x384065=Math[_0x196981(0x19e)](_0x30c00a,_0x13817d),_0x4a86de=Math[_0x196981(0x198)](_0x2a0e73,_0x35d8fa);_0x3cad73-=Math[_0x196981(0x19e)](0x0,_0x4a86de-_0x384065);}if(_0x3cad73<_0x3f8532||_0x68fd66[_0x196981(0x178)]('휴가')||_0x68fd66[_0x196981(0x178)]('공가'))_0x5da769[_0x196981(0x1a8)](_0x30f41e);}});const _0x132361=_0x5da769['join'](',\x20'),_0x247d54=_0x56bd08===_0x44a942?'//':_0x56bd08,_0x317284=_0x524364===_0x2ecab2?'//':_0x524364;let _0x2b660e=_0x41c7b3;if(_0x41c7b3===_0xe0e350&&!_0x4e60f6['isEval'])_0x2b660e='//';const _0x245e19=encodeURIComponent(_0x56bd08)[_0x3b8e6f(0x166)](/'/g,_0x3b8e6f(0x153)),_0x20bc4d=encodeURIComponent(_0x524364)['replace'](/'/g,'%27'),_0x359582=encodeURIComponent(_0x41c7b3)['replace'](/'/g,_0x3b8e6f(0x153)),_0xd08af8=encodeURIComponent(_0x132361)[_0x3b8e6f(0x166)](/'/g,_0x3b8e6f(0x153)),_0x4a6ed7=_0x3b8e6f(0x169),_0x3cc83c=_0x3b8e6f(0x1a5);_0x5104d3+=_0x3b8e6f(0x141)+_0x3c8ac8+_0x3b8e6f(0x18d)+_0x4a6ed7+'\x22\x20'+_0x3cc83c+_0x3b8e6f(0x156)+_0x245e19+'\x27),\x20this)\x22\x20title=\x22클릭\x20시\x20복사\x22>'+_0x247d54+_0x3b8e6f(0x18d)+_0x4a6ed7+'\x22\x20'+_0x3cc83c+_0x3b8e6f(0x156)+_0x20bc4d+_0x3b8e6f(0x16f)+_0x317284+_0x3b8e6f(0x1a9)+_0x4a6ed7+'\x22\x20'+_0x3cc83c+_0x3b8e6f(0x156)+_0x359582+_0x3b8e6f(0x16f)+_0x2b660e+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td\x20style=\x22padding:10px;\x20text-align:center;\x20font-size:11.5px;\x20color:#c0392b;\x20font-weight:bold;\x20line-height:1.4;\x20word-break:keep-all;\x20'+_0x4a6ed7+'\x22\x20'+_0x3cc83c+_0x3b8e6f(0x156)+_0xd08af8+_0x3b8e6f(0x16f)+_0x132361+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</tr>',_0x44a942=_0x56bd08,_0x2ecab2=_0x524364,_0xe0e350=_0x41c7b3;});const _0x218480=[],_0x1decfd=[],_0x400f9f=[],_0x21932d=[],_0x3bdd6={};let _0x4665c8=0x0;(_0x20de98[_0x4738a0(0x187)]||[])[_0x4738a0(0x16c)](_0x11ce83=>{const _0x2fe770=_0x4738a0;if(_0x1d17d2(_0x11ce83,_0x3f8b06)){_0x4665c8++;return;}const _0x113307=_0x30077f[_0x11ce83];if(!_0x113307||!_0x113307['status'])return;const _0x3633b6=_0x113307[_0x2fe770(0x147)][_0x2fe770(0x146)](),_0x161bb0=_0xafaadf(_0x113307[_0x2fe770(0x132)]),_0x280515=_0xafaadf(_0x113307[_0x2fe770(0x154)]),_0x3be89c=_0xafaadf(_0x113307[_0x2fe770(0x170)]),_0x1d2ac4=_0xafaadf(_0x113307[_0x2fe770(0x1a6)]);if(_0x3633b6!=='출석'&&_0x3633b6!==_0x2fe770(0x1b4)&&_0x3633b6!==''){if(_0x3633b6[_0x2fe770(0x178)]('결석'))_0x1decfd['push'](_0x11ce83);else{if(_0x3633b6['includes']('휴가'))_0x21932d[_0x2fe770(0x1a8)](_0x11ce83);else{if(_0x3633b6[_0x2fe770(0x178)]('지각'))_0x218480[_0x2fe770(0x1a8)](_0x11ce83+'('+_0x161bb0+')');if(_0x3633b6[_0x2fe770(0x178)]('조퇴'))_0x400f9f[_0x2fe770(0x1a8)](_0x11ce83+'('+_0x280515+')');if(_0x3633b6[_0x2fe770(0x178)]('외출')){if(!_0x3bdd6['외출'])_0x3bdd6['외출']=[];_0x3bdd6['외출'][_0x2fe770(0x1a8)](_0x11ce83+'('+_0x3be89c+'~'+_0x1d2ac4+')');}if(_0x3633b6[_0x2fe770(0x178)]('공가')||!_0x3633b6[_0x2fe770(0x178)]('지각')&&!_0x3633b6[_0x2fe770(0x178)]('결석')&&!_0x3633b6[_0x2fe770(0x178)]('조퇴')&&!_0x3633b6['includes']('휴가')&&!_0x3633b6[_0x2fe770(0x178)]('외출')){let _0x39a9a1=_0x113307[_0x2fe770(0x183)]?String(_0x113307[_0x2fe770(0x183)])[_0x2fe770(0x146)]():_0x3633b6;!_0x39a9a1['includes'](_0x2fe770(0x16b))&&(_0x39a9a1=_0x39a9a1[_0x2fe770(0x166)](/\s*\(신청\)/g,'')['replace'](/\s*\(승인\)/g,'')[_0x2fe770(0x146)]());if(!_0x3bdd6[_0x39a9a1])_0x3bdd6[_0x39a9a1]=[];_0x3bdd6[_0x39a9a1][_0x2fe770(0x1a8)](_0x11ce83);}}}}});const _0x2658ec=(_0x20de98[_0x4738a0(0x187)]||[])[_0x4738a0(0x1aa)],_0x234a5c=_0x2658ec-_0x4665c8,_0x27009e=_0x1decfd['length'],_0x4f72ec=_0x234a5c-_0x27009e,_0x20eb08=_0x3bdd6['외출']?_0x3bdd6['외출'][_0x4738a0(0x1aa)]:0x0,_0x48637a=_0x4738a0(0x130)+_0x234a5c+_0x4738a0(0x189)+_0x4f72ec+_0x4738a0(0x1ad)+_0x27009e+_0x4738a0(0x17b)+_0x21932d[_0x4738a0(0x1aa)]+'명</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td\x20style=\x22background:\x20#ecf0f1;\x20color:\x20#2c3e50;\x20font-weight:\x20bold;\x20padding:\x2010px\x205px;\x20border-right:\x201px\x20solid\x20#ccc;\x20width:\x206%;\x22>지각</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td\x20style=\x22color:\x20#8e44ad;\x20font-weight:\x20bold;\x20padding:\x2010px\x205px;\x20border-right:\x201px\x20solid\x20#ccc;\x20width:\x206%;\x22>'+_0x218480['length']+_0x4738a0(0x173)+_0x400f9f[_0x4738a0(0x1aa)]+_0x4738a0(0x1ab)+_0x20eb08+_0x4738a0(0x152)+_0x4665c8+_0x4738a0(0x188),_0x16fd85=_0x20231e=>_0x20231e[_0x4738a0(0x1aa)]>0x0?_0x20231e[_0x4738a0(0x14d)](',\x20'):'',_0xe86bb0=_0x16fd85(_0x218480),_0x371f3f=_0x16fd85(_0x1decfd),_0x5e46e5=_0x16fd85(_0x400f9f),_0x4a7f9f=_0x16fd85(_0x21932d),_0x3d46ae=[];for(const _0x35eefd in _0x3bdd6)_0x3d46ae['push'](_0x35eefd+':'+_0x3bdd6[_0x35eefd][_0x4738a0(0x14d)](',\x20'));const _0x490137=_0x3d46ae['length']>0x0?_0x3d46ae[_0x4738a0(0x14d)](_0x4738a0(0x162)):'',_0x586365=_0x3d46ae[_0x4738a0(0x1aa)]>0x0?_0x3d46ae[_0x4738a0(0x14d)]('\x0a'):'',_0xea8f=encodeURIComponent(_0xe86bb0)['replace'](/'/g,_0x4738a0(0x153)),_0x22b0ef=encodeURIComponent(_0x371f3f)[_0x4738a0(0x166)](/'/g,'%27'),_0x30b35d=encodeURIComponent(_0x5e46e5)[_0x4738a0(0x166)](/'/g,_0x4738a0(0x153)),_0x17056b=encodeURIComponent(_0x4a7f9f)[_0x4738a0(0x166)](/'/g,_0x4738a0(0x153)),_0x135865=encodeURIComponent(_0x586365)[_0x4738a0(0x166)](/'/g,_0x4738a0(0x153)),_0x14d6f7=_0x3b065c(_0x20de98,_0x3f8b06),_0x3f0734=encodeURIComponent(_0x14d6f7)['replace'](/'/g,_0x4738a0(0x153)),_0x5b597f=(_0xd2e350,_0x3d4b99,_0x2d40b0,_0x3759b9)=>'\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22display:\x20flex;\x20'+(_0x3759b9?'':'border-bottom:\x201px\x20solid\x20#ddd;')+'\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22width:\x2080px;\x20background:\x20#fdf2e9;\x20color:\x20#d35400;\x20font-weight:\x20bold;\x20display:\x20flex;\x20align-items:\x20center;\x20justify-content:\x20center;\x20border-right:\x201px\x20solid\x20#ddd;\x20padding:\x208px;\x20flex-shrink:\x200;\x22>'+_0xd2e350+_0x4738a0(0x197)+_0x3d4b99+_0x4738a0(0x135)+_0x2d40b0+'</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>',_0x3f9847=document[_0x4738a0(0x171)](_0x4738a0(0x16e));_0x3f9847['id']=_0x4738a0(0x179),_0x3f9847[_0x4738a0(0x1b0)][_0x4738a0(0x134)]='position:fixed;\x20top:0;\x20left:0;\x20width:100%;\x20height:100%;\x20background:rgba(0,0,0,0.6);\x20z-index:6000;\x20display:flex;\x20justify-content:center;\x20align-items:center;';const _0x499fc0=document[_0x4738a0(0x171)](_0x4738a0(0x16e));_0x499fc0['style']['cssText']='background:#fff;\x20padding:20px;\x20border-radius:10px;\x20border:2px\x20solid\x20#2980b9;\x20width:1100px;\x20max-width:95%;\x20max-height:90vh;\x20overflow-y:auto;\x20box-shadow:0\x2010px\x2030px\x20rgba(0,0,0,0.3);';let _0x3cbb43=_0x4738a0(0x194)+_0x3f8b06+'\x20훈련일지</h3>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20onclick=\x22this.parentElement.parentElement.parentElement.remove()\x22\x20style=\x22background:none;\x20border:none;\x20font-size:20px;\x20font-weight:bold;\x20cursor:pointer;\x20color:#7f8c8d;\x22>✖</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20'+_0x48637a+_0x4738a0(0x15e)+_0x5104d3+_0x4738a0(0x17e);_0x3cbb43+='\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22margin-top:20px;\x20border:2px\x20solid\x20#ddd;\x20border-radius:6px;\x20padding:15px;\x20background:#f9f9f9;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22display:flex;\x20justify-content:space-between;\x20align-items:flex-end;\x20border-bottom:1.5px\x20solid\x20#f1c40f;\x20padding-bottom:5px;\x20margin-bottom:10px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20style=\x22color:#d35400;\x20font-weight:bold;\x20font-size:14px;\x22>📢\x20지시\x20전달사항</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20style=\x22font-size:11px;\x20color:#3498db;\x20font-weight:bold;\x22>(클릭\x20시\x20복사)</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20onclick=\x22copyLogText(decodeURIComponent(\x27'+_0x3f0734+'\x27),\x20this)\x22\x20title=\x22클릭\x20시\x20복사\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20style=\x22font-size:13px;\x20color:#555;\x20line-height:1.6;\x20white-space:\x20pre-wrap;\x20word-break:\x20break-all;\x20text-align:left;\x20cursor:pointer;\x20padding:8px;\x20border-radius:4px;\x20transition:background\x200.2s;\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20onmouseover=\x22this.style.background=\x27#e3f2fd\x27\x22\x20onmouseout=\x22this.style.background=\x27transparent\x27\x22>'+_0x14d6f7[_0x4738a0(0x146)]()+'</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>',_0x3cbb43+=_0x4738a0(0x17a)+_0x5b597f(_0x4738a0(0x136),_0xea8f,_0xe86bb0,![])+_0x4738a0(0x158)+_0x5b597f(_0x4738a0(0x133),_0x22b0ef,_0x371f3f,![])+_0x4738a0(0x158)+_0x5b597f(_0x4738a0(0x140),_0x30b35d,_0x5e46e5,![])+_0x4738a0(0x158)+_0x5b597f(_0x4738a0(0x185),_0x17056b,_0x4a7f9f,![])+'\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+_0x5b597f(_0x4738a0(0x18b),_0x135865,_0x490137,!![])+_0x4738a0(0x161),_0x499fc0[_0x4738a0(0x1b2)]=_0x3cbb43,_0x3f9847['appendChild'](_0x499fc0),document[_0x4738a0(0x168)][_0x4738a0(0x195)](_0x3f9847),_0x3f9847[_0x4738a0(0x167)](_0x4738a0(0x19b),_0xd817a2=>{if(_0xd817a2['target']===_0x3f9847)_0x3f9847['remove']();});}window[_0xc9f05c(0x144)]=_0x17bfc4,window[_0xc9f05c(0x12f)]={'buildCalendarMaps':_0x2f203d,'buildSmartMemoText':_0x3b065c,'open':_0x241d50};}()));
+/**
+ * common-training-log.js — 훈련일지 팝업 (index1·능력단위시간표 공용)
+ */
+(function () {
+    'use strict';
+
+    function trainingLogGetFixDate(rawDate) {
+        if (!rawDate) return '날짜미상';
+        let s = String(rawDate).trim();
+        s = s.replace(/\./g, '-');
+        if (s.includes('/')) {
+            const p = s.split('/');
+            if (p.length === 3) {
+                const year = p[2].length === 2 ? '20' + p[2] : p[2];
+                const month = p[0].padStart(2, '0');
+                const day = p[1].padStart(2, '0');
+                s = `${year}-${month}-${day}`;
+            }
+        }
+        return s.substring(0, 10);
+    }
+
+    function isStudyTimetableRow(row) {
+        if (!row || String(row.교시 || '').trim() === '점심') return false;
+        const subjectName = String(row.교과목 || '').trim();
+        const unitName = String(row.능력단위 || '').trim();
+        return subjectName !== '' && unitName !== '';
+    }
+
+    function getTimetableDisplayName(row, mode) {
+        if (!isStudyTimetableRow(row)) return '';
+        const val = mode === 'subject' ? row.교과목 : row.능력단위;
+        return String(val || '').trim();
+    }
+
+    function buildCalendarMaps(rawTimetable, calendarSubMode) {
+        const globalFirstDateMap = {};
+        const allBusinessDays = new Set();
+        const tempSubDates = {};
+
+        (rawTimetable || []).forEach(r => {
+            if (!isStudyTimetableRow(r)) return;
+            const sub = getTimetableDisplayName(r, calendarSubMode);
+            if (!sub) return;
+            const d = trainingLogGetFixDate(r.날짜);
+            allBusinessDays.add(d);
+            if (!tempSubDates[sub]) tempSubDates[sub] = new Set();
+            tempSubDates[sub].add(d);
+        });
+
+        const globalSortedBusinessDays = Array.from(allBusinessDays).sort();
+        const targetStartDay = globalSortedBusinessDays.length >= 11 ? globalSortedBusinessDays[10] : '0000-00-00';
+
+        for (const sub in tempSubDates) {
+            const sortedDates = Array.from(tempSubDates[sub]).sort();
+            const effectiveDates = sortedDates.filter(d => d >= targetStartDay);
+            globalFirstDateMap[sub] = effectiveDates.length > 0 ? effectiveDates[0] : sortedDates[0];
+        }
+
+        return { globalFirstDateMap, globalSortedBusinessDays };
+    }
+
+    function buildSmartMemoText(ctx, date) {
+        const dayIdx = new Date(date).getDay();
+        const todaySubjects = new Set();
+
+        (ctx.rawTimetable || []).forEach(r => {
+            if (trainingLogGetFixDate(r.날짜) !== date) return;
+            if (!isStudyTimetableRow(r)) return;
+            const sub = getTimetableDisplayName(r, ctx.calendarSubMode);
+            if (sub) todaySubjects.add(sub);
+        });
+
+        let baseMsg = '';
+        if (dayIdx === 1) baseMsg = '출결진행에 변동 발생시 학교로 꼭 연락바라며, 수업시간에는 집중하여 열공합시다.';
+        else if (dayIdx === 2) baseMsg = '작업 전 작업순서를 반드시 숙지한 후 안전에 유의해서 작업에 임합시다.';
+        else if (dayIdx === 3) baseMsg = '개인건강 및 작업안전 관리에 만전을 기합시다.';
+        else if (dayIdx === 4) baseMsg = '수업시간에는 수업에 집중합시다.';
+        else if (dayIdx === 5) baseMsg = '개인건강관리와 작업안전관리에 만전을 기해 주시고, 건강한 모습으로 만납시다.';
+        else baseMsg = todaySubjects.size > 0 ? '주말에도 수업하는라 수고하셨습니다.' : '주말/휴일입니다.';
+
+        const cleanText = (str) => String(str).split(',').map(s => s
+            .replace(/\[.*?\]|\(.*?\)/g, '')
+            .replace(/^[a-zA-Z0-9_\-]{5,}\s*/, '')
+            .replace(/^[\s\-_]+/, '')
+            .trim()).join(', ');
+
+        let specialMsg = '';
+        const evalDatesObj = (ctx.evaluationDates && ctx.evaluationDates[ctx.calendarSubMode]) || {};
+        const globalFirstDateMap = ctx.globalFirstDateMap || {};
+        const globalSortedBusinessDays = ctx.globalSortedBusinessDays || [];
+
+        todaySubjects.forEach(sub => {
+            const displaySub = cleanText(sub);
+            if (globalFirstDateMap[sub] === date) {
+                specialMsg += `\n오늘부터 배우게 된 '${displaySub}' 과목에 대한 내부평가 제반사항을 안내하오니 숙지해 주시기 바랍니다.`;
+            }
+        });
+
+        if (evalDatesObj[date]) {
+            const displaySubs = cleanText(evalDatesObj[date].subjects || '지정되지 않은');
+            specialMsg += `\n오늘 '${displaySubs}' 과목의 내부평가 수행하느라 수고하셨습니다.`;
+        }
+
+        const currentIdx = globalSortedBusinessDays.indexOf(date);
+        if (currentIdx !== -1 && currentIdx + 1 < globalSortedBusinessDays.length) {
+            const nextBDate = globalSortedBusinessDays[currentIdx + 1];
+            if (evalDatesObj[nextBDate]) {
+                const nextSubs = cleanText(evalDatesObj[nextBDate].subjects || '지정되지 않은');
+                specialMsg += `\n다음 훈련일(${nextBDate})에 '${nextSubs}' 과목의 내부평가가 있으니 꼭 출석해 주세요.`;
+            }
+        }
+
+        if (specialMsg.trim() !== '') return specialMsg.replace(/^\n/, '');
+        return baseMsg;
+    }
+
+    async function copyLogText(text, element) {
+        const tempTextArea = document.createElement('textarea');
+        tempTextArea.value = text;
+        tempTextArea.style.position = 'fixed';
+        tempTextArea.style.top = '-9999px';
+        document.body.appendChild(tempTextArea);
+        tempTextArea.select();
+        tempTextArea.setSelectionRange(0, 99999);
+
+        try {
+            document.execCommand('copy');
+            element.style.backgroundColor = '#c8e6c9';
+            element.style.fontWeight = 'bold';
+            element.style.color = '#27ae60';
+            setTimeout(() => {
+                element.style.backgroundColor = 'transparent';
+                element.style.fontWeight = 'normal';
+                element.style.color = '';
+            }, 400);
+        } catch (err) {
+            const alertFn = window.appAlert || alert;
+            await alertFn('복사 실패: 브라우저 환경을 확인해주세요.');
+        } finally {
+            document.body.removeChild(tempTextArea);
+        }
+    }
+
+    async function openTrainingLog(ctx, date, event) {
+        if (event) event.stopPropagation();
+        const alertFn = ctx.appAlert || window.appAlert || alert;
+
+        const existing = document.getElementById('trainingLogOverlay');
+        if (existing) existing.remove();
+
+        const dayData = (ctx.rawTimetable || []).filter(r => {
+            if (trainingLogGetFixDate(r.날짜) !== date) return false;
+            const periodStr = String(r.교시).trim();
+            const periodNum = parseInt(periodStr.replace(/[^0-9]/g, ''), 10) || 0;
+            return periodStr !== '점심' && periodNum > 0;
+        });
+
+        if (dayData.length === 0) return await alertFn('해당 일자에 진행된 수업 데이터가 없습니다.');
+
+        dayData.sort((a, b) => {
+            const pA = parseInt(String(a.교시).replace(/[^0-9]/g, ''), 10) || 0;
+            const pB = parseInt(String(b.교시).replace(/[^0-9]/g, ''), 10) || 0;
+            return pA - pB;
+        });
+
+        const toMin = (t) => {
+            if (!t || !String(t).includes(':')) return 0;
+            const p = t.split(':');
+            return parseInt(p[0], 10) * 60 + parseInt(p[1], 10);
+        };
+        const fmtTime = (t) => {
+            if (!t || t === '-' || t.length < 5) return '';
+            return t.substring(0, 5).replace(':', '');
+        };
+
+        const dayAtt = (ctx.fullAttendanceData && ctx.fullAttendanceData[date]) || {};
+        const isLeave = ctx.isDateOnOrAfterStudentLeave || (() => false);
+        let prevSubject = '';
+        let prevTeacher = '';
+        let prevNcs = '';
+        let tbodyHtml = '';
+
+        dayData.forEach((r) => {
+            const periodStr = String(r.교시).replace(/[^0-9]/g, '');
+            const subject = String(r.교과목 || '-').trim();
+            const teacher = String(r.강사명 || r.교사 || r.담당교사 || '김회준').trim();
+            let ncs = String(r.능력단위 || subject).trim();
+            if (r.isEval) ncs += '(평가시험)';
+
+            const timeStr = String(r.시간 || r.교육시간 || '').replace(/\s/g, '');
+            let classStart = 0, classEnd = 0, expectedDur = 0;
+
+            if (timeStr.includes('~') || timeStr.includes('-')) {
+                const parts = timeStr.split(/[~-]/);
+                classStart = toMin(parts[0]);
+                classEnd = toMin(parts[1]);
+                expectedDur = Math.max(0, classEnd - classStart);
+            } else {
+                const fallback = {
+                    1: { s: '09:00', e: '09:50' }, 2: { s: '10:00', e: '10:50' }, 3: { s: '11:00', e: '11:50' }, 4: { s: '12:00', e: '12:50' },
+                    5: { s: '14:00', e: '14:50' }, 6: { s: '15:00', e: '15:50' }, 7: { s: '16:00', e: '16:50' }, 8: { s: '17:00', e: '17:50' }
+                };
+                const pNum = parseInt(periodStr, 10);
+                if (fallback[pNum]) {
+                    classStart = toMin(fallback[pNum].s);
+                    classEnd = toMin(fallback[pNum].e);
+                    expectedDur = classEnd - classStart;
+                }
+            }
+
+            const missingStudents = [];
+            (ctx.studentNames || []).forEach(name => {
+                const att = dayAtt[name];
+                if (!att || att.status === '미편입') return;
+                if (isLeave(name, date)) return;
+
+                const st = att.status ? String(att.status).trim() : '';
+                let sIn = toMin(att.inTime), sOut = toMin(att.outTime);
+                let lIn = toMin(att.leaveTime), rIn = toMin(att.returnTime);
+                let effectiveIn = sIn;
+                const periodNum = parseInt(periodStr, 10) || 0;
+                if (periodNum === 1 && effectiveIn > 0 && effectiveIn <= classStart + 10) effectiveIn = classStart;
+                let effectiveOut = sOut;
+                if (effectiveOut > 0 && effectiveOut >= classEnd - 10) effectiveOut = classEnd;
+
+                if (expectedDur > 0) {
+                    let pStart = Math.max(effectiveIn, classStart);
+                    let pEnd = Math.min(effectiveOut, classEnd);
+                    let dur = Math.max(0, pEnd - pStart);
+                    if (lIn > 0 && rIn > 0) {
+                        const oStart = Math.max(lIn, classStart);
+                        const oEnd = Math.min(rIn, classEnd);
+                        dur -= Math.max(0, oEnd - oStart);
+                    }
+                    if (dur < expectedDur || st.includes('휴가') || st.includes('공가')) missingStudents.push(name);
+                }
+            });
+
+            const dispRemark = missingStudents.join(', ');
+            const dispSubject = (subject === prevSubject) ? '//' : subject;
+            const dispTeacher = (teacher === prevTeacher) ? '//' : teacher;
+            let dispNcs = ncs;
+            if (ncs === prevNcs && !r.isEval) dispNcs = '//';
+
+            const safeSubject = encodeURIComponent(subject).replace(/'/g, '%27');
+            const safeTeacher = encodeURIComponent(teacher).replace(/'/g, '%27');
+            const safeNcs = encodeURIComponent(ncs).replace(/'/g, '%27');
+            const safeRemark = encodeURIComponent(dispRemark).replace(/'/g, '%27');
+            const cellHover = 'transition: background 0.2s; cursor: pointer;';
+            const onHover = "onmouseover=\"this.style.background='#e8f5e9'\" onmouseout=\"this.style.background='transparent'\"";
+
+            tbodyHtml += `
+            <tr style="border-bottom: 1px solid #ddd; background:#fff;">
+                <td style="padding:10px; border-right:1px solid #ddd; text-align:center; font-weight:bold; color:#2c3e50;">${periodStr}</td>
+                <td style="padding:10px; border-right:1px solid #ddd; text-align:center; ${cellHover}" ${onHover} onclick="copyLogText(decodeURIComponent('${safeSubject}'), this)" title="클릭 시 복사">${dispSubject}</td>
+                <td style="padding:10px; border-right:1px solid #ddd; text-align:center; ${cellHover}" ${onHover} onclick="copyLogText(decodeURIComponent('${safeTeacher}'), this)" title="클릭 시 복사">${dispTeacher}</td>
+                <td style="padding:10px; text-align:center; border-right:1px solid #ddd; ${cellHover}" ${onHover} onclick="copyLogText(decodeURIComponent('${safeNcs}'), this)" title="클릭 시 복사">${dispNcs}</td>
+                <td style="padding:10px; text-align:center; font-size:11.5px; color:#c0392b; font-weight:bold; line-height:1.4; word-break:keep-all; ${cellHover}" ${onHover} onclick="copyLogText(decodeURIComponent('${safeRemark}'), this)" title="클릭 시 복사">${dispRemark}</td>
+            </tr>`;
+
+            prevSubject = subject;
+            prevTeacher = teacher;
+            prevNcs = ncs;
+        });
+
+        const lateList = [], absentList = [], earlyLeaveList = [], vacationList = [];
+        const otherMap = {};
+        let dropoutCount = 0;
+
+        (ctx.studentNames || []).forEach(name => {
+            if (isLeave(name, date)) {
+                dropoutCount++;
+                return;
+            }
+            const att = dayAtt[name];
+            if (!att || !att.status) return;
+            const st = att.status.trim();
+            const inT = fmtTime(att.inTime);
+            const outT = fmtTime(att.outTime);
+            const lIn = fmtTime(att.leaveTime);
+            const rIn = fmtTime(att.returnTime);
+
+            if (st !== '출석' && st !== '미편입' && st !== '') {
+                if (st.includes('결석')) absentList.push(name);
+                else if (st.includes('휴가')) vacationList.push(name);
+                else {
+                    if (st.includes('지각')) lateList.push(`${name}(${inT})`);
+                    if (st.includes('조퇴')) earlyLeaveList.push(`${name}(${outT})`);
+                    if (st.includes('외출')) {
+                        if (!otherMap['외출']) otherMap['외출'] = [];
+                        otherMap['외출'].push(`${name}(${lIn}~${rIn})`);
+                    }
+                    if (st.includes('공가') || (!st.includes('지각') && !st.includes('결석') && !st.includes('조퇴') && !st.includes('휴가') && !st.includes('외출'))) {
+                        let reason = att.note ? String(att.note).trim() : st;
+                        if (!reason.includes('(회수)')) {
+                            reason = reason.replace(/\s*\(신청\)/g, '').replace(/\s*\(승인\)/g, '').trim();
+                        }
+                        if (!otherMap[reason]) otherMap[reason] = [];
+                        otherMap[reason].push(name);
+                    }
+                }
+            }
+        });
+
+        const totalStudents = (ctx.studentNames || []).length;
+        const currentEnrolled = totalStudents - dropoutCount;
+        const absentCount = absentList.length;
+        const presentCount = currentEnrolled - absentCount;
+        const outingCount = otherMap['외출'] ? otherMap['외출'].length : 0;
+
+        const statHtml = `
+        <div style="margin-bottom: 20px;">
+            <table style="width: 100%; border-collapse: collapse; border: 2px solid #95a5a6; font-size: 13px; text-align: center; background: #fff;">
+                <tr style="border-bottom: 1px solid #ccc;">
+                    <td style="background: #ecf0f1; color: #2c3e50; font-weight: bold; padding: 10px 5px; border-right: 1px solid #ccc; width: 6%;">재적</td>
+                    <td style="color: #2980b9; font-weight: bold; padding: 10px 5px; border-right: 1px solid #ccc; width: 6%;">${currentEnrolled}명</td>
+                    <td style="background: #ecf0f1; color: #2c3e50; font-weight: bold; padding: 10px 5px; border-right: 1px solid #ccc; width: 6%;">출석</td>
+                    <td style="color: #27ae60; font-weight: bold; padding: 10px 5px; border-right: 1px solid #ccc; width: 6%;">${presentCount}명</td>
+                    <td style="background: #ecf0f1; color: #2c3e50; font-weight: bold; padding: 10px 5px; border-right: 1px solid #ccc; width: 6%;">결석</td>
+                    <td style="color: #c0392b; font-weight: bold; padding: 10px 5px; border-right: 1px solid #ccc; width: 6%;">${absentCount}명</td>
+                    <td style="background: #ecf0f1; color: #2c3e50; font-weight: bold; padding: 10px 5px; border-right: 1px solid #ccc; width: 6%;">휴가</td>
+                    <td style="color: #f39c12; font-weight: bold; padding: 10px 5px; border-right: 1px solid #ccc; width: 6%;">${vacationList.length}명</td>
+                    <td style="background: #ecf0f1; color: #2c3e50; font-weight: bold; padding: 10px 5px; border-right: 1px solid #ccc; width: 6%;">지각</td>
+                    <td style="color: #8e44ad; font-weight: bold; padding: 10px 5px; border-right: 1px solid #ccc; width: 6%;">${lateList.length}명</td>
+                    <td style="background: #ecf0f1; color: #2c3e50; font-weight: bold; padding: 10px 5px; border-right: 1px solid #ccc; width: 6%;">조퇴</td>
+                    <td style="color: #d35400; font-weight: bold; padding: 10px 5px; border-right: 1px solid #ccc; width: 6%;">${earlyLeaveList.length}명</td>
+                    <td style="background: #ecf0f1; color: #2c3e50; font-weight: bold; padding: 10px 5px; border-right: 1px solid #ccc; width: 6%;">외출</td>
+                    <td style="color: #34495e; font-weight: bold; padding: 10px 5px; border-right: 1px solid #ccc; width: 6%;">${outingCount}명</td>
+                    <td style="background: #ecf0f1; color: #2c3e50; font-weight: bold; padding: 10px 5px; border-right: 1px solid #ccc; width: 6%;">조수</td>
+                    <td style="color: #7f8c8d; font-weight: bold; padding: 10px 5px; border-right: 1px solid #ccc; width: 6%;">0명</td>
+                    <td style="background: #ecf0f1; color: #2c3e50; font-weight: bold; padding: 10px 5px; border-right: 1px solid #ccc; width: 6%;">탈락</td>
+                    <td style="color: #7f8c8d; font-weight: bold; padding: 10px 5px; width: 6%;">${dropoutCount}명</td>
+                </tr>
+            </table>
+        </div>`;
+
+        const formatArr = (arr) => arr.length > 0 ? arr.join(', ') : '';
+        const rawLate = formatArr(lateList);
+        const rawAbsent = formatArr(absentList);
+        const rawEarly = formatArr(earlyLeaveList);
+        const rawVacation = formatArr(vacationList);
+        const otherResultArr = [];
+        for (const key in otherMap) otherResultArr.push(`${key}:${otherMap[key].join(', ')}`);
+        const rawOtherHtml = otherResultArr.length > 0 ? otherResultArr.join('<br>') : '';
+        const rawOtherText = otherResultArr.length > 0 ? otherResultArr.join('\n') : '';
+
+        const safeLate = encodeURIComponent(rawLate).replace(/'/g, '%27');
+        const safeAbsent = encodeURIComponent(rawAbsent).replace(/'/g, '%27');
+        const safeEarly = encodeURIComponent(rawEarly).replace(/'/g, '%27');
+        const safeVacation = encodeURIComponent(rawVacation).replace(/'/g, '%27');
+        const safeOther = encodeURIComponent(rawOtherText).replace(/'/g, '%27');
+        const memoText = buildSmartMemoText(ctx, date);
+        const safeMemoText = encodeURIComponent(memoText).replace(/'/g, '%27');
+
+        const createRow = (title, safeData, rawData, isLast) => `
+        <div style="display: flex; ${isLast ? '' : 'border-bottom: 1px solid #ddd;'}">
+            <div style="width: 80px; background: #fdf2e9; color: #d35400; font-weight: bold; display: flex; align-items: center; justify-content: center; border-right: 1px solid #ddd; padding: 8px; flex-shrink: 0;">${title}</div>
+            <div onclick="copyLogText(decodeURIComponent('${safeData}'), this)" title="클릭 시 우측 명단만 복사"
+                 style="flex-grow: 1; font-size: 13px; color: #333; cursor: pointer; padding: 8px 12px; transition: background 0.2s; display: flex; align-items: center; min-height: 20px;"
+                 onmouseover="this.style.background='#e8f5e9'" onmouseout="this.style.background='transparent'">${rawData}</div>
+        </div>`;
+
+        const overlay = document.createElement('div');
+        overlay.id = 'trainingLogOverlay';
+        overlay.style.cssText = 'position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:6000; display:flex; justify-content:center; align-items:center;';
+
+        const box = document.createElement('div');
+        box.style.cssText = 'background:#fff; padding:20px; border-radius:10px; border:2px solid #2980b9; width:1100px; max-width:95%; max-height:90vh; overflow-y:auto; box-shadow:0 10px 30px rgba(0,0,0,0.3);';
+
+        let html = `
+        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:3px solid #2980b9; padding-bottom:10px; margin-bottom:15px;">
+            <h3 style="margin:0; color:#2980b9;">📝 ${date} 훈련일지</h3>
+            <button onclick="this.parentElement.parentElement.parentElement.remove()" style="background:none; border:none; font-size:20px; font-weight:bold; cursor:pointer; color:#7f8c8d;">✖</button>
+        </div>
+        ${statHtml}
+        <div style="font-size:12px; color:#e67e22; font-weight:bold; margin-bottom:10px; text-align:right;">💡 화면에 '//'로 표시되어도, 클릭하면 실제 원본 내용이 복사됩니다.</div>
+        <table style="width:100%; border-collapse:collapse; font-size:13px; border: 2px solid #2c3e50;">
+            <thead style="background:#f8f9fa;">
+                <tr>
+                    <th style="padding:10px; border:1px solid #ddd; width:7%;">교시</th>
+                    <th style="padding:10px; border:1px solid #ddd; width:20%;">훈련과목</th>
+                    <th style="padding:10px; border:1px solid #ddd; width:11%;">담당교사</th>
+                    <th style="padding:10px; border:1px solid #ddd; width:37%;">훈련내용</th>
+                    <th style="padding:10px; border:1px solid #ddd; width:25%;">비고</th>
+                </tr>
+            </thead>
+            <tbody>${tbodyHtml}</tbody>
+        </table>`;
+
+        html += `
+        <div style="margin-top:20px; border:2px solid #ddd; border-radius:6px; padding:15px; background:#f9f9f9;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-end; border-bottom:1.5px solid #f1c40f; padding-bottom:5px; margin-bottom:10px;">
+                <span style="color:#d35400; font-weight:bold; font-size:14px;">📢 지시 전달사항</span>
+                <span style="font-size:11px; color:#3498db; font-weight:bold;">(클릭 시 복사)</span>
+            </div>
+            <div onclick="copyLogText(decodeURIComponent('${safeMemoText}'), this)" title="클릭 시 복사"
+                 style="font-size:13px; color:#555; line-height:1.6; white-space: pre-wrap; word-break: break-all; text-align:left; cursor:pointer; padding:8px; border-radius:4px; transition:background 0.2s;"
+                 onmouseover="this.style.background='#e3f2fd'" onmouseout="this.style.background='transparent'">${memoText.trim()}</div>
+        </div>`;
+
+        html += `
+        <div style="margin-top:15px; border:2px solid #ddd; border-radius:6px; padding:15px; background:#f9f9f9;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-end; border-bottom:1.5px solid #27ae60; padding-bottom:5px; margin-bottom:10px;">
+                <span style="color:#2c3e50; font-weight:bold; font-size:14px;">📊 일일 특이사항</span>
+                <span style="font-size:11px; color:#3498db; font-weight:bold;">(우측 명단을 클릭 시 해당 텍스트만 복사됩니다)</span>
+            </div>
+            <div style="display: flex; flex-direction: column; border: 1px solid #ddd; border-radius: 4px; background: #fff; overflow: hidden;">
+                ${createRow('지각자', safeLate, rawLate, false)}
+                ${createRow('결석자', safeAbsent, rawAbsent, false)}
+                ${createRow('조퇴자', safeEarly, rawEarly, false)}
+                ${createRow('휴가자', safeVacation, rawVacation, false)}
+                ${createRow('기타사항', safeOther, rawOtherHtml, true)}
+            </div>
+        </div>`;
+
+        box.innerHTML = html;
+        overlay.appendChild(box);
+        document.body.appendChild(overlay);
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) overlay.remove();
+        });
+    }
+
+    window.copyLogText = copyLogText;
+    window.TrainingLogAPI = {
+        buildCalendarMaps,
+        buildSmartMemoText,
+        open: openTrainingLog
+    };
+})();

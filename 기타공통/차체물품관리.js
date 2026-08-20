@@ -1,1 +1,1634 @@
-const a4_0x33dcc1=a4_0x365f;(function(_0x49799d,_0x4c26a2){const _0x34fad4=a4_0x365f,_0x1ae553=_0x49799d();while(!![]){try{const _0x909933=-parseInt(_0x34fad4(0x2e5))/0x1+-parseInt(_0x34fad4(0x21f))/0x2+-parseInt(_0x34fad4(0x1de))/0x3*(-parseInt(_0x34fad4(0x2ac))/0x4)+-parseInt(_0x34fad4(0x2e7))/0x5*(parseInt(_0x34fad4(0x2c4))/0x6)+-parseInt(_0x34fad4(0x210))/0x7*(-parseInt(_0x34fad4(0x2bb))/0x8)+-parseInt(_0x34fad4(0x2d3))/0x9+parseInt(_0x34fad4(0x2dc))/0xa;if(_0x909933===_0x4c26a2)break;else _0x1ae553['push'](_0x1ae553['shift']());}catch(_0x141ca4){_0x1ae553['push'](_0x1ae553['shift']());}}}(a4_0x3ce1,0x8e15f));const a4_0x3efa78=(function(){let _0x5b11bb=!![];return function(_0x1a3523,_0x36c933){const _0xb16eae=_0x5b11bb?function(){const _0x2b27c1=a4_0x365f;if(_0x36c933){const _0x51a700=_0x36c933[_0x2b27c1(0x26f)](_0x1a3523,arguments);return _0x36c933=null,_0x51a700;}}:function(){};return _0x5b11bb=![],_0xb16eae;};}()),a4_0x77bf89=a4_0x3efa78(this,function(){const _0xa552ac=a4_0x365f;return a4_0x77bf89['toString']()[_0xa552ac(0x1ca)]('(((.+)+)+)+$')['toString']()['constructor'](a4_0x77bf89)[_0xa552ac(0x1ca)](_0xa552ac(0x280));});a4_0x77bf89();const equipmentMaster=[{'id':0x1,'name':a4_0x33dcc1(0x2e8),'unit':'대','baseQty':0x6},{'id':0x2,'name':a4_0x33dcc1(0x1bd),'unit':'대','baseQty':0x1},{'id':0x3,'name':'화이트\x20바디(보디라이너,카로나이너)','unit':'대','baseQty':0x2},{'id':0x4,'name':a4_0x33dcc1(0x26c),'unit':'대','baseQty':0x3},{'id':0x5,'name':'유압\x20램','unit':'SE','baseQty':0x1},{'id':0x6,'name':a4_0x33dcc1(0x261),'unit':'대','baseQty':0x3},{'id':0x7,'name':a4_0x33dcc1(0x231),'unit':'SE','baseQty':0x1},{'id':0x8,'name':a4_0x33dcc1(0x24b),'unit':'세트','baseQty':0x3},{'id':0x9,'name':a4_0x33dcc1(0x1d8),'unit':'대','baseQty':0x4},{'id':0xa,'name':a4_0x33dcc1(0x2e9),'unit':'대','baseQty':0x5},{'id':0xb,'name':'절단기(산소,\x20플라즈마))','unit':'대','baseQty':0x4},{'id':0xc,'name':a4_0x33dcc1(0x1fb),'unit':'대','baseQty':0xe},{'id':0xd,'name':a4_0x33dcc1(0x2b2),'unit':'대','baseQty':0x4},{'id':0xe,'name':a4_0x33dcc1(0x2db),'unit':'대','baseQty':0x2},{'id':0xf,'name':a4_0x33dcc1(0x2e1),'unit':'대','baseQty':0x4},{'id':0x10,'name':a4_0x33dcc1(0x2a0),'unit':'대','baseQty':0x1},{'id':0x11,'name':a4_0x33dcc1(0x289),'unit':'대','baseQty':0x1},{'id':0x12,'name':a4_0x33dcc1(0x2d1),'unit':'SE','baseQty':0xf},{'id':0x13,'name':a4_0x33dcc1(0x260),'unit':'SE','baseQty':0x7},{'id':0x14,'name':a4_0x33dcc1(0x29c),'unit':'대','baseQty':0x7},{'id':0x15,'name':a4_0x33dcc1(0x1cf),'unit':'세트','baseQty':0xf},{'id':0x16,'name':'에어\x20그라인더','unit':'개','baseQty':0x14},{'id':0x17,'name':a4_0x33dcc1(0x23d),'unit':'대','baseQty':0xf},{'id':0x18,'name':a4_0x33dcc1(0x1d2),'unit':'대','baseQty':0x22},{'id':0x19,'name':a4_0x33dcc1(0x200),'unit':'대','baseQty':0x18},{'id':0x1a,'name':a4_0x33dcc1(0x27c),'unit':'대','baseQty':0x19},{'id':0x1b,'name':a4_0x33dcc1(0x214),'unit':'대','baseQty':0x2}],consumableMaster=[{'id':0x1,'name':'전기용접봉','unit':'EA','baseQty':0x5,'initialStock':0x8},{'id':0x2,'name':a4_0x33dcc1(0x290),'unit':'EA','baseQty':0x5,'initialStock':0xb},{'id':0x3,'name':'용접장갑','unit':'짝','baseQty':0xf,'initialStock':0xf},{'id':0x4,'name':a4_0x33dcc1(0x28d),'unit':'EA','baseQty':0xf,'initialStock':0xf},{'id':0x5,'name':a4_0x33dcc1(0x298),'unit':'벌','baseQty':0x14,'initialStock':0xf},{'id':0x6,'name':a4_0x33dcc1(0x223),'unit':'EA','baseQty':0xf,'initialStock':0xf},{'id':0x7,'name':a4_0x33dcc1(0x1dc),'unit':'EA','baseQty':0x14,'initialStock':0xa},{'id':0x8,'name':a4_0x33dcc1(0x299),'unit':'EA','baseQty':0x14,'initialStock':0x4},{'id':0x9,'name':a4_0x33dcc1(0x1c0),'unit':'EA','baseQty':0x14,'initialStock':0x19},{'id':0xa,'name':a4_0x33dcc1(0x212),'unit':'EA','baseQty':0x3,'initialStock':0x2},{'id':0xb,'name':'탄산가스','unit':'통','baseQty':0x6,'initialStock':0x12},{'id':0xc,'name':a4_0x33dcc1(0x1e9),'unit':'통','baseQty':0x2,'initialStock':0x2},{'id':0xd,'name':'산소','unit':'통','baseQty':0x3,'initialStock':0x2},{'id':0xe,'name':a4_0x33dcc1(0x21d),'unit':'통','baseQty':0x3,'initialStock':0x2},{'id':0xf,'name':'혼합가스','unit':'통','baseQty':0x2,'initialStock':0x1},{'id':0x10,'name':a4_0x33dcc1(0x274),'unit':'EA','baseQty':0x12c,'initialStock':0x33f},{'id':0x11,'name':a4_0x33dcc1(0x2a5),'unit':'EA','baseQty':0x96,'initialStock':0x3e6},{'id':0x12,'name':a4_0x33dcc1(0x20d),'unit':'EA','baseQty':0x64,'initialStock':0x762},{'id':0x13,'name':a4_0x33dcc1(0x207),'unit':'EA','baseQty':0x64,'initialStock':0x5a},{'id':0x14,'name':a4_0x33dcc1(0x2ba),'unit':'EA','baseQty':0x14,'initialStock':0x96},{'id':0x15,'name':a4_0x33dcc1(0x249),'unit':'EA','baseQty':0xf,'initialStock':0xc},{'id':0x16,'name':a4_0x33dcc1(0x1c2),'unit':'EA','baseQty':0x1f4,'initialStock':0x1b8},{'id':0x17,'name':a4_0x33dcc1(0x282),'unit':'EA','baseQty':0x50,'initialStock':0x1},{'id':0x18,'name':'보호\x20면','unit':'EA','baseQty':0xf,'initialStock':0xf},{'id':0x19,'name':a4_0x33dcc1(0x2ce),'unit':'EA','baseQty':0x1e,'initialStock':0x4},{'id':0x1a,'name':'전기용접\x20홀더','unit':'EA','baseQty':0x2,'initialStock':0x2},{'id':0x1b,'name':a4_0x33dcc1(0x2d8),'unit':'EA','baseQty':0xa,'initialStock':0x2},{'id':0x1c,'name':a4_0x33dcc1(0x2ed),'unit':'EA','baseQty':0x1e,'initialStock':0x8},{'id':0x1d,'name':'해바라기\x20패빠','unit':'EA','baseQty':0x1e,'initialStock':0x91},{'id':0x1e,'name':a4_0x33dcc1(0x279),'unit':'EA','baseQty':0x64,'initialStock':0x0},{'id':0x1f,'name':'80방페이퍼','unit':'EA','baseQty':0x64,'initialStock':0x0}];let transactionLogs=typeof BASELINE_2022_LOGS!==a4_0x33dcc1(0x2ad)?BASELINE_2022_LOGS['slice']():[],nextLogId=0x2710,hasInferredMonths=![],consumptionProfileCache=null,itemCycleSettings={},itemStockOverrides={},previewSurveyOverlay=null,baselineRestoreCount=0x0;function isBaselineLockedYearMonth(_0x46416d,_0x272ee9){return _0x46416d===0x7e6&&_0x272ee9>=0x1&&_0x272ee9<=0x8;}function getYearMonthFromDateStr(_0x5ef0c0){const _0x443b31=a4_0x33dcc1,_0x3dd480=new Date(_0x5ef0c0);if(!_0x5ef0c0||isNaN(_0x3dd480[_0x443b31(0x1f8)]()))return{'year':0x0,'month':0x0};return{'year':_0x3dd480['getFullYear'](),'month':_0x3dd480[_0x443b31(0x2bc)]()+0x1};}function isSameYearMonth(_0x2c1e3c,_0x59bdb8){const _0x39c60c=a4_0x33dcc1;if(!_0x2c1e3c||!_0x59bdb8)return![];return _0x2c1e3c['substring'](0x0,0x7)===_0x59bdb8[_0x39c60c(0x2bf)](0x0,0x7);}function removeItemSurveyLogsForMonth(_0x4a92ec,_0x1798c2,_0x5627b4){const _0x260e74=a4_0x33dcc1,_0x3fb05c=getYearMonthFromDateStr(_0x5627b4);if(isBaselineLockedYearMonth(_0x3fb05c[_0x260e74(0x1b8)],_0x3fb05c[_0x260e74(0x202)]))return;const _0x1122b8=_0x5627b4[_0x260e74(0x2bf)](0x0,0x7);transactionLogs=transactionLogs[_0x260e74(0x256)](function(_0x4d1e92){const _0x501c70=_0x260e74;if(_0x4d1e92['type']!==_0x4a92ec||_0x4d1e92[_0x501c70(0x1c6)]!==_0x1798c2||_0x4d1e92['status']!=='실측')return!![];return(_0x4d1e92['date']||'')[_0x501c70(0x2bf)](0x0,0x7)!==_0x1122b8;});}function clearLockedBaselineOverrides(){const _0x18db01=a4_0x33dcc1;let _0x3c6664=0x0;return Object[_0x18db01(0x21a)](itemStockOverrides)[_0x18db01(0x2cb)](function(_0x1cea88){const _0x4fc011=_0x18db01,_0x5520f6=itemStockOverrides[_0x1cea88];if(!_0x5520f6)return;Object[_0x4fc011(0x21a)](_0x5520f6)['forEach'](function(_0x231215){const _0x59a01d=_0x4fc011,_0xdf4658=_0x231215[_0x59a01d(0x1c3)]('-'),_0x38c199=parseInt(_0xdf4658[0x0],0xa),_0x34688e=parseInt(_0xdf4658[0x1],0xa);isBaselineLockedYearMonth(_0x38c199,_0x34688e)&&(delete _0x5520f6[_0x231215],_0x3c6664++);});if(!Object[_0x4fc011(0x21a)](_0x5520f6)[_0x4fc011(0x288)])delete itemStockOverrides[_0x1cea88];}),_0x3c6664;}function enforceBaseline2022Anchors(){const _0x48d99d=a4_0x33dcc1;if(typeof BASELINE_2022_LOGS==='undefined')return 0x0;let _0x5b6faa=clearLockedBaselineOverrides();return BASELINE_2022_LOGS[_0x48d99d(0x2cb)](function(_0x3db28d){const _0x49629d=_0x48d99d;if(_0x3db28d[_0x49629d(0x2f3)]!=='실측')return;const _0x5489db=getYearMonthFromDateStr(_0x3db28d['date']);if(!isBaselineLockedYearMonth(_0x5489db[_0x49629d(0x1b8)],_0x5489db[_0x49629d(0x202)]))return;const _0x4d063e=_0x3db28d[_0x49629d(0x1eb)][_0x49629d(0x2bf)](0x0,0x7),_0x1cc9d3=transactionLogs[_0x49629d(0x288)];transactionLogs=transactionLogs[_0x49629d(0x256)](function(_0x21748e){const _0xde1072=_0x49629d;if(_0x21748e['type']!==_0x3db28d[_0xde1072(0x2de)]||_0x21748e[_0xde1072(0x1c6)]!==_0x3db28d[_0xde1072(0x1c6)]||_0x21748e['status']!=='실측')return!![];return(_0x21748e['date']||'')[_0xde1072(0x2bf)](0x0,0x7)!==_0x4d063e;});if(transactionLogs[_0x49629d(0x288)]!==_0x1cc9d3)_0x5b6faa++;const _0x403c8b=transactionLogs['some'](function(_0x2513b5){const _0x59aa5f=_0x49629d;return _0x2513b5[_0x59aa5f(0x2de)]===_0x3db28d[_0x59aa5f(0x2de)]&&_0x2513b5[_0x59aa5f(0x1c6)]===_0x3db28d[_0x59aa5f(0x1c6)]&&_0x2513b5[_0x59aa5f(0x2f3)]==='실측'&&_0x2513b5[_0x59aa5f(0x1eb)]===_0x3db28d[_0x59aa5f(0x1eb)]&&_0x2513b5[_0x59aa5f(0x2ec)]===_0x3db28d[_0x59aa5f(0x2ec)]&&_0x2513b5['memo']===_0x3db28d['memo'];});!_0x403c8b&&(transactionLogs[_0x49629d(0x20c)](Object['assign']({},_0x3db28d,{'id':_0x3db28d['id']!=null?_0x3db28d['id']:nextLogId++})),_0x5b6faa++);}),_0x5b6faa;}function getWorkingLogs(){const _0x521b73=a4_0x33dcc1;if(!previewSurveyOverlay||!previewSurveyOverlay['length'])return transactionLogs;const _0x7d6315=transactionLogs[_0x521b73(0x256)](function(_0x42da4d){if(_0x42da4d['status']!=='실측')return!![];return!previewSurveyOverlay['some'](function(_0x1d982c){const _0x488e67=a4_0x365f;return _0x1d982c[_0x488e67(0x2de)]===_0x42da4d[_0x488e67(0x2de)]&&_0x1d982c[_0x488e67(0x1c6)]===_0x42da4d['name']&&isSameYearMonth(_0x1d982c[_0x488e67(0x1eb)],_0x42da4d[_0x488e67(0x1eb)]);});});return _0x7d6315[_0x521b73(0x29b)](previewSurveyOverlay);}function collectSurveyDrafts(){const _0x1519bc=a4_0x33dcc1,_0x2fe082=document[_0x1519bc(0x1f6)]('surveyDate')['value'];if(!_0x2fe082)return null;const _0xe32b32=[];return document[_0x1519bc(0x1d3)](_0x1519bc(0x1c4))['forEach'](function(_0x1b0c55){const _0x12dc45=_0x1519bc,_0x5880f5=parseSurveyQtyInput(_0x1b0c55);if(_0x5880f5==null)return;_0xe32b32[_0x12dc45(0x20c)]({'id':_0x12dc45(0x2f5)+_0x1b0c55['dataset'][_0x12dc45(0x2de)]+'-'+_0x1b0c55[_0x12dc45(0x246)][_0x12dc45(0x1c6)],'date':_0x2fe082,'name':_0x1b0c55[_0x12dc45(0x246)]['name'],'type':_0x1b0c55[_0x12dc45(0x246)][_0x12dc45(0x2de)],'qty':_0x5880f5,'status':'실측','memo':'가상\x20미리보기\x20(미저장)'});}),_0xe32b32['length']?_0xe32b32:null;}function isSurveyQtyKept(_0x21f883){return _0x21f883===''||_0x21f883==='기존';}function parseSurveyQtyInput(_0x39f02c){const _0x28ef00=a4_0x33dcc1,_0x1fb298=(_0x39f02c['value']||'')[_0x28ef00(0x258)]();if(isSurveyQtyKept(_0x1fb298))return null;const _0x193f2a=roundStock(parseFloat(_0x1fb298));if(isNaN(_0x193f2a)||_0x193f2a<0x0)return null;return _0x193f2a;}function normalizeSurveyInputOnBlur(_0x4a7dc8){const _0x2c4c5d=a4_0x33dcc1,_0x1df756=parseSurveyQtyInput(_0x4a7dc8);if(_0x1df756==null){_0x4a7dc8[_0x2c4c5d(0x264)]='기존',_0x4a7dc8[_0x2c4c5d(0x265)][_0x2c4c5d(0x27b)](_0x2c4c5d(0x276));return;}_0x4a7dc8[_0x2c4c5d(0x264)]=String(_0x1df756),_0x4a7dc8['classList'][_0x2c4c5d(0x2c1)](_0x2c4c5d(0x276));}function getSurveyCarryStock(_0x4f4cee,_0x2f8054,_0x1d82b6){const _0x26c08f=a4_0x33dcc1;if(!_0x1d82b6)return getStartStock(_0x4f4cee,_0x2f8054);const _0x4ca4be=new Date(_0x1d82b6);if(isNaN(_0x4ca4be['getTime']()))return getStartStock(_0x4f4cee,_0x2f8054);const _0x3c02c4=_0x4ca4be[_0x26c08f(0x236)](),_0x5cea8e=_0x4ca4be['getMonth']()+0x1,_0xff9741=transactionLogs['slice']()[_0x26c08f(0x1bb)](function(_0x3c2878,_0x17f62d){const _0x458eb8=_0x26c08f;return new Date(_0x3c2878['date'])-new Date(_0x17f62d[_0x458eb8(0x1eb)]);}),_0x341e62=computeTimeline(_0x4f4cee,_0x2f8054,_0xff9741,Math[_0x26c08f(0x235)](_0x3c02c4,0x7e6)),_0x5bbf31=getTimelineMonth(_0x341e62,_0x3c02c4,_0x5cea8e);if(_0x5bbf31&&_0x5bbf31[_0x26c08f(0x2e6)]!==null&&_0x5bbf31[_0x26c08f(0x2e6)]!==undefined)return _0x5bbf31[_0x26c08f(0x2e6)];const _0x35ec45=getPrevYearMonth(_0x3c02c4,_0x5cea8e),_0x41370f=getTimelineMonth(_0x341e62,_0x35ec45[_0x26c08f(0x1b8)],_0x35ec45['month']);if(_0x41370f&&_0x41370f['stock']!==null&&_0x41370f[_0x26c08f(0x2e6)]!==undefined)return _0x41370f['stock'];return getStartStock(_0x4f4cee,_0x2f8054);}function collectSurveyInputDrafts(){const _0x3e0972=a4_0x33dcc1,_0x2d05ba={};return document['querySelectorAll']('.survey-qty')[_0x3e0972(0x2cb)](function(_0x4cda7b){const _0x30ec1e=_0x3e0972,_0x198e3d=(_0x4cda7b[_0x30ec1e(0x264)]||'')[_0x30ec1e(0x258)]();if(isSurveyQtyKept(_0x198e3d))return;const _0x90a1dd=_0x4cda7b['dataset'][_0x30ec1e(0x2de)]+'::'+_0x4cda7b['dataset']['name'];_0x2d05ba[_0x90a1dd]=_0x198e3d;}),_0x2d05ba;}function buildSurveyQtyInput(_0x1aaf7a,_0x4e0f22,_0x292218,_0x45e4ea){const _0x25a903=a4_0x33dcc1,_0x19318f=_0x4e0f22+'::'+_0x1aaf7a[_0x25a903(0x1c6)],_0x147575=getSurveyCarryStock(_0x1aaf7a,_0x4e0f22,_0x292218),_0x42131b=formatStockDisplay(_0x147575);let _0x5f39f4='기존',_0x3557b9=_0x25a903(0x293);return _0x45e4ea[_0x19318f]!=null&&(_0x5f39f4=_0x45e4ea[_0x19318f],_0x3557b9=''),_0x25a903(0x245)+_0x3557b9+_0x25a903(0x2cf)+'data-type=\x22'+_0x4e0f22+_0x25a903(0x2b0)+_0x1aaf7a[_0x25a903(0x1c6)]+_0x25a903(0x226)+_0x147575+'\x22\x20'+_0x25a903(0x27d)+_0x42131b+_0x25a903(0x266)+'value=\x22'+_0x5f39f4+'\x22>';}function initSurveyInputHandlers(){const _0x1f7a9f=a4_0x33dcc1;if(document[_0x1f7a9f(0x268)][_0x1f7a9f(0x246)][_0x1f7a9f(0x2d0)])return;document[_0x1f7a9f(0x268)]['dataset'][_0x1f7a9f(0x2d0)]='1',document[_0x1f7a9f(0x22e)](_0x1f7a9f(0x26d),function(_0x2ad43a){const _0x222958=_0x1f7a9f,_0x535553=_0x2ad43a[_0x222958(0x2c9)];if(!_0x535553[_0x222958(0x265)]||!_0x535553[_0x222958(0x265)][_0x222958(0x217)](_0x222958(0x1f1)))return;_0x535553['value']==='기존'&&(_0x535553[_0x222958(0x264)]='',_0x535553[_0x222958(0x265)][_0x222958(0x2c1)](_0x222958(0x276)));}),document['addEventListener'](_0x1f7a9f(0x221),function(_0x14d8d4){const _0x5f43a5=_0x1f7a9f,_0x169dc4=_0x14d8d4['target'];if(!_0x169dc4[_0x5f43a5(0x265)]||!_0x169dc4['classList']['contains'](_0x5f43a5(0x1f1)))return;normalizeSurveyInputOnBlur(_0x169dc4);});}function setPreviewBanner(_0x41cef0,_0x1b2b63){const _0xb9a8e3=a4_0x33dcc1,_0x15b991=document['getElementById'](_0xb9a8e3(0x2f0));if(!_0x15b991)return;if(!_0x41cef0){_0x15b991[_0xb9a8e3(0x286)][_0xb9a8e3(0x295)]=_0xb9a8e3(0x285);return;}_0x15b991[_0xb9a8e3(0x286)][_0xb9a8e3(0x295)]=_0xb9a8e3(0x224),_0x15b991[_0xb9a8e3(0x1bf)]=_0xb9a8e3(0x205)+_0x1b2b63+'개\x20품목이\x20임시\x20반영되었습니다.\x20'+_0xb9a8e3(0x1cb)+_0xb9a8e3(0x259)+_0xb9a8e3(0x291),document['getElementById'](_0xb9a8e3(0x23a))[_0xb9a8e3(0x22e)](_0xb9a8e3(0x234),applyBulkSurvey),document[_0xb9a8e3(0x1f6)](_0xb9a8e3(0x1b6))['addEventListener'](_0xb9a8e3(0x234),cancelPreviewSurvey);}function previewBulkSurvey(){const _0x21866e=a4_0x33dcc1,_0x160411=document[_0x21866e(0x1f6)](_0x21866e(0x23f))&&document[_0x21866e(0x1f6)](_0x21866e(0x23f))[_0x21866e(0x264)];if(_0x160411){const _0x9e625b=getYearMonthFromDateStr(_0x160411);if(isBaselineLockedYearMonth(_0x9e625b[_0x21866e(0x1b8)],_0x9e625b[_0x21866e(0x202)])){alert(_0x21866e(0x206));return;}}const _0x2c2702=collectSurveyDrafts();if(!_0x2c2702){alert('실측할\x20품목을\x20하나\x20이상\x20숫자로\x20입력해\x20주세요.\x0a「기존」으로\x20두면\x20미리보기·등록\x20대상에서\x20제외됩니다.');return;}previewSurveyOverlay=_0x2c2702;const _0xb6cc1f=new Date(_0x2c2702[0x0][_0x21866e(0x1eb)])[_0x21866e(0x236)]();_0xb6cc1f>=0x7e6&&_0xb6cc1f<=0x7ea&&(document['getElementById'](_0x21866e(0x296))[_0x21866e(0x264)]=String(_0xb6cc1f)),setPreviewBanner(!![],_0x2c2702[_0x21866e(0x288)]),calculateAndRender();}function cancelPreviewSurvey(){previewSurveyOverlay=null,setPreviewBanner(![]),calculateAndRender();}function roundStock(_0x2bb2a1){if(_0x2bb2a1===null||_0x2bb2a1===undefined||isNaN(_0x2bb2a1))return 0x0;return Math['round'](Number(_0x2bb2a1));}function isFutureMonth(_0x27d90d,_0x1cf57f){const _0x4ed4d5=a4_0x33dcc1,_0x1d9226=new Date(),_0x2e6538=_0x1d9226['getFullYear'](),_0x537f2c=_0x1d9226[_0x4ed4d5(0x2bc)]()+0x1;if(_0x27d90d>_0x2e6538)return!![];if(_0x27d90d===_0x2e6538&&_0x1cf57f>_0x537f2c)return!![];return![];}function formatStockDisplay(_0x1a629f){if(_0x1a629f===null||_0x1a629f===undefined||_0x1a629f==='')return'-';return String(roundStock(_0x1a629f));}function seededRandom(_0x373f54,_0xbb62b5,_0x121d9e,_0x233015){const _0x31d50f=a4_0x33dcc1,_0x373f7e=_0x373f54+'|'+_0xbb62b5+'|'+_0x121d9e+'|'+(_0x233015||'');let _0x216a9d=0x811c9dc5;for(let _0x36d047=0x0;_0x36d047<_0x373f7e[_0x31d50f(0x288)];_0x36d047++){_0x216a9d^=_0x373f7e[_0x31d50f(0x2c8)](_0x36d047),_0x216a9d=Math[_0x31d50f(0x1f5)](_0x216a9d,0x1000193);}return Math[_0x31d50f(0x2b7)](_0x216a9d)%0x2710/0x2710;}function defaultCycleFromProfile(_0x285188){const _0x28ea4d=a4_0x33dcc1;if(_0x285188[_0x28ea4d(0x216)]>0x0)return Math[_0x28ea4d(0x235)](0x1,Math[_0x28ea4d(0x1c9)](0x18,Math['round'](0x1/_0x285188[_0x28ea4d(0x216)])));return 0x3;}function getItemCycleSettings(_0x39ab20){const _0x26af0=a4_0x33dcc1,_0x5d277d=itemCycleSettings[_0x39ab20]||{},_0xc85a14=getConsumptionProfile(_0x39ab20,_0x26af0(0x2b4)),_0x14f4d1=consumableMaster[_0x26af0(0x225)](function(_0x459fc1){const _0x554d17=_0x26af0;return _0x459fc1[_0x554d17(0x1c6)]===_0x39ab20;}),_0x36b366=_0x14f4d1?_0x14f4d1[_0x26af0(0x20a)]:0x1;return{'purchaseCycleMonths':_0x5d277d[_0x26af0(0x1e3)]!=null&&_0x5d277d[_0x26af0(0x1e3)]!==''?Number(_0x5d277d[_0x26af0(0x1e3)]):defaultCycleFromProfile(_0xc85a14),'monthlyUse':_0x5d277d[_0x26af0(0x22c)]!=null&&_0x5d277d[_0x26af0(0x22c)]!==''?Number(_0x5d277d[_0x26af0(0x22c)]):Math[_0x26af0(0x235)](0x1,_0xc85a14[_0x26af0(0x1d4)]||_0x36b366*0.02),'purchaseQty':_0x5d277d[_0x26af0(0x2a4)]!=null&&_0x5d277d['purchaseQty']!==''?Number(_0x5d277d[_0x26af0(0x2a4)]):Math[_0x26af0(0x235)](0x1,_0xc85a14['avgPurchase']||_0x36b366),'cycleVariance':_0x5d277d[_0x26af0(0x1ed)]!=null&&_0x5d277d[_0x26af0(0x1ed)]!==''?Number(_0x5d277d['cycleVariance']):0.35};}function getNextCycleLength(_0x4a5e7b,_0x335b74,_0x558a92,_0x4f914a,_0x1dbe7c,_0x1e344d){const _0x5dde21=a4_0x33dcc1,_0x36d6b7=seededRandom(_0x4a5e7b,_0x4f914a,_0x1dbe7c,'cl'+_0x558a92),_0x5bf6d9=0x1-_0x1e344d*0.5+_0x36d6b7*_0x1e344d;return Math[_0x5dde21(0x235)](0x1,Math['round'](_0x335b74*_0x5bf6d9));}function generateCycleGapDeltas(_0x13fef8,_0x29ccf3,_0xf0b471,_0xe329c){const _0x32d81f=a4_0x33dcc1,_0x5be57f=getItemCycleSettings(_0x13fef8['name']),_0x1bdafe=getConsumptionProfile(_0x13fef8[_0x32d81f(0x1c6)],_0x32d81f(0x2b4)),_0x2a221d=Math['max'](0x1,_0x5be57f[_0x32d81f(0x22c)]),_0x50ec7a=Math[_0x32d81f(0x235)](0x1,_0x5be57f[_0x32d81f(0x2a4)]),_0x8146ce=Math[_0x32d81f(0x235)](0x1,Math[_0x32d81f(0x1c9)](0x24,_0x5be57f[_0x32d81f(0x1e3)])),_0x1b3d5f=Math['max'](0x0,Math[_0x32d81f(0x1c9)](0x1,_0x5be57f[_0x32d81f(0x1ed)])),_0x433cde=[];let _0x12d295=0x0,_0x24e563=0x0,_0x2413e3=getNextCycleLength(_0x13fef8[_0x32d81f(0x1c6)],_0x8146ce,_0x24e563,_0x29ccf3[_0xf0b471[0x0]]['y'],_0x29ccf3[_0xf0b471[0x0]]['m'],_0x1b3d5f);_0xf0b471[_0x32d81f(0x2cb)](function(_0x1b8670){const _0x3df207=_0x32d81f,_0x29628b=_0x29ccf3[_0x1b8670],_0x299455=_0x1bdafe['seasonal'][(_0x29628b['m']-0x1)%0xc]||0x1,_0x22ef7b=seededRandom(_0x13fef8[_0x3df207(0x1c6)],_0x29628b['y'],_0x29628b['m'],'use'),_0x6fca86=seededRandom(_0x13fef8[_0x3df207(0x1c6)],_0x29628b['y'],_0x29628b['m'],_0x3df207(0x248)),_0xcd8688=seededRandom(_0x13fef8['name'],_0x29628b['y'],_0x29628b['m'],_0x3df207(0x1c8));let _0x34e38f=-_0x2a221d*_0x299455*(0.55+_0x22ef7b*0.95);_0x12d295++;const _0x3e81f3=_0x12d295>=_0x2413e3,_0x25ec4b=_0xcd8688>0.88;(_0x3e81f3||_0x25ec4b)&&(_0x34e38f+=_0x50ec7a*(0.4+_0x6fca86*1.05),_0x12d295=0x0,_0x24e563++,_0x2413e3=getNextCycleLength(_0x13fef8[_0x3df207(0x1c6)],_0x8146ce,_0x24e563,_0x29628b['y'],_0x29628b['m'],_0x1b3d5f)),_0x433cde['push'](roundStock(_0x34e38f));});if(!_0x433cde['length'])return _0x433cde;const _0x537b06=_0x433cde[_0x32d81f(0x28a)](function(_0x4a07f2,_0x57af50){return _0x4a07f2+_0x57af50;},0x0);if(Math[_0x32d81f(0x2b7)](_0xe329c)<0.001){const _0x4b3f47=_0x537b06/_0x433cde[_0x32d81f(0x288)];return _0x433cde['map'](function(_0x3a1e31){return roundStock(_0x3a1e31-_0x4b3f47);});}if(Math[_0x32d81f(0x2b7)](_0x537b06)<0.001)return _0x433cde[_0x32d81f(0x244)](function(_0x18949f,_0x29102f){const _0x595afa=_0x32d81f,_0x5cb8a9=_0x29ccf3[_0xf0b471[_0x29102f]],_0x2d1fed=seededRandom(_0x13fef8[_0x595afa(0x1c6)],_0x5cb8a9['y'],_0x5cb8a9['m'],'flat');return roundStock(_0xe329c*(0.7+_0x2d1fed*0.6)/_0x433cde[_0x595afa(0x288)]);});const _0x46dcd1=_0xe329c/_0x537b06;return _0x433cde[_0x32d81f(0x244)](function(_0x58b3fb){return roundStock(_0x58b3fb*_0x46dcd1);});}function a4_0x3ce1(){const _0x475f57=['rMLYzwjHC2uGBg9HzcbMywLSzwq6','zgf0ywjHC2u','7jUuks54Bhn4','mvtSL7dQSjxTJja','jNf1B3q7','AxmTA2vLCa','Ahr0Chm6lY9IDxnHBI10zwfJAgvYlxDVCMTHBgWTzgvMyxvSDc1YDgrIlMfZAweTC291DgHLyxn0ms5MAxjLyMfZzwrHDgfIyxnLlMfWCa','z2HSD25ZmdiWmubUyxzLCI5JB20','mZBRSkNTJPJSNBtTJBW','C2v0','ywrK','7jEq7jA0ioYvTEQ4GcdQT7JRNBZSNBJRJzq','DgL0Bgu9iUQ4SoYHTcdSNkdSP4aG7iUCia','quL6yvn5rg5brhviDtbTCtrhswXXqM1FvKHMDJD5nLjHCMfIr2Hv','BMv4DeLK','kcGOlISPkYKRksSK','BwvZC2fNzq','7yAG7lMy65287j207ysW','DgfIu3vYDMv5rw50CMLLCW','CxvLCNLtzwXLy3rVCG','BM9Uzq','C3r5Bgu','Aw5UzxjuzxH0','BgvUz3rO','7iQK65287j2065sPio2vToUOUa','CMvKDwnL','yMCTCMvWywLY','zxjYB3i','7jQP7kcr6REa66Ei6RcC','pc90ywjSzt4','y3vYCMvUDfn0B2nR','7jQP7kcr7jMa7j207jA0','pgj1DhrVBIb0ExbLpsjIDxr0B24IignSyxnZpsjIDg4TChjLDMLLDY1Hy3rPB24GyNrUlxbYzxzPzxCTy2fUy2vSiIbPzd0IyNrUq2fUy2vSuhjLDMLLDYi+66+466AS67o06RIWioY3QoYgJdWVyNv0Dg9UpG','mI7SM5tRS4tSHOZRQQJSHlhRJ4tSNQxSMQNQTAWGka','igLZlwTLzxa','pgrPDIbJBgfZCZ0IDgfIBguTCMvZCg9UC2L2zsbZDxj2zxKTzw50CNKTDgfIBguTD3jHCci+','zgLZCgXHEq','z2XVyMfSwwvHCG','7zIe7zMP7j287kEa','6Rca7ko97jwE7lMy66Ei','7jQP7kcr7yAG7lMyio2mGE2zGoUnLa','phrKihn0EwXLpsj0zxH0lwfSAwDUoMXLzNq7iJ4','y29Uy2f0','7yYq6RIi7jQP6Ro16RwS','ywrTAw5qDW','7iIy64+z7kgW7kcv','7j2067kK7yQ464Quio2zLoUPToYxKcdRSjJSMihRKjJSL4JSNlZRGPGGrMLYzwjHC2uG7kca7j6L7jEqioYlPo2mQo2wIoYkTEUlIoUlPc4','7iUG7iAm7j6SioQ0GoUGQoYEKEYxHsdTIRNSIjJQS7xQTAW','lMn5y2XLlxf0Eq','C2f2zuLUDMvUDg9YEurHDge','pgrPDIbJBgfZCZ0Iy3LJBguTCM93iJ4','ChvYy2HHC2vrDhK','7is87ysW7zwe65+S','phrK','iIb2ywX1zt0I','C2vHC29UywW','lNrHyI1JB250zw50','AxnjBMzLCNjLza','y3jLyxrLrwXLBwvUDa','ofnKzerbDq','Dw5KzwzPBMvK','yNvZyw4TDgvHy2HLCI13B3jRywXSlMzPCMvIyxnLyxbWlMnVBq','pgLUChv0ihr5Cgu9iM51BwjLCIiGy2XHC3m9iMn5y2XLlwLUChv0ign5y2XLlw1VBNrOCYiGBwLUpsiXiIbTyxG9iJm2iIbZDgvWpsiXiIa','iIbKyxrHlw5HBwu9iG','zgLMzLf0Eq','7lcO7lk0ioYGKEYWQsdTIRNSIjJQS7xQTAWO7iQK7y+S7yQ4kq','Aw52zw50B3j5rgf0yvjLywr5','y29UC3vTywjSzq','phn1Bw1HCNK+','6Rg0ioUNNUY2SoYHJoYkTEUlIoUlPc48l3n0CM9UzZ4G7j20ioQ1RoQWHoYDGcdTLA3SG4eG7jUq67o4ioYlPoY4OEYCVoUHNcdSNkdSP4dRKkNRI4JRI6qUia','ywjZ','zxzLBNrgB3jTugfUzwW','y29TBw9Urgf0ys/SSkJSSRtRRlZTKOG','7iQK7y+/65oC66A0ioUcOa','ofnuwwPgAq','z2v0tw9UDgG','CgfKu3rHCNq','67o07jwiioYDUoYMNEYDTcdTLytSMPtTLANRI4JRI6qUioUPLoYDUcdTMztRQBtSL5dSHjWG66gC6RE47j247zw0ioYJVoYeUoYALc4','C3vIC3rYAw5N','ChvYy2HHC2u','CMvTB3zL','BwvTBW','C2v0sxrLBvn0B2nRt3zLCNjPzgu','nJu5mJy3ngTszMLzBa','CgfYC2u','Cg93','zMXVB3i','y2HHCKnVzgvbDa','DgfYz2v0','DM9SyxrPBgL0Eq','zM9YrwfJAa','lJa8l3rKpJX0zcbZDhLSzt0IDgv4Dc1HBgLNBJPSzwz0o2zVBNqTD2vPz2H0oMjVBgq7iJ4','yNrUu2f2zun5y2XLu2v0DgLUz3m','7zsm65287j207jA0','iIbPBNb1Dg1Vzgu9iM51BwvYAwmIia','C3vYDMv5sw5WDxrcB3vUza','7yob7iobioUWLoYDToYkPa','yMCTzgfTywDL','nZyZmdaYu2LXCxPh','7j6S6RoGioYlPoY4OsaO7j286RseioUtSEUHNsK','Aw5PDgLHBfn0B2nR','jMD0oW','ihn0EwXLpsjIywnRz3jVDw5KlwnVBg9YoInLogrHzwy7iG','q28Y6Rkm7j207kEa','D2fYBG','zgf0ys1Uyw1Lpsi','67cP7lkT6Rg0','mtKYote4nZbKCLbpCNe','icJSI6tSUkeP','DhLWzq','phrYpJX0zd4','Bg9JywXLq29TCgfYzq','7lcO7lk0ioUMRoUYSYdSNQxRUyq','i3rHyMXLq29UC3vTywjSzsb0yM9KEq','pgrLDgfPBhmGy2XHC3m9iNn1CNzLEs1LBNrYEs1NCM91Cci','7iUK7lIH7j2aio2zLoUPToYxKcdRSjJSMihRKjJSL4JSNlZRGPGGrMLYzwjHC2uG7kca7j6L7jEqioYlPo2mQo2wIoYkTEUlIoUlPc4G64sK7yQ47jUm7ygSWRFSNBJSPP3SNyqG7zMv7j247zwCioUsPcdRI6tSI5WG7kca7j6L7zw0ioYJVoYeUoYALc4','ntK3mdm4s1zKEvrP','C3rVy2S','nwHYy0vozq','7lIH7kcv7j6L67Me','tuLhiefm7jQP7kcr6RIW','7j2067kK7yQ46RcaioUtSEUHNEUqMoYxIoYCVoUPScaXWRCY67kiioUmGoYEPEYDTcdQSlhSI6dRKjJSL4JSIRxRI4JRI6qU','phnWyw4Gy2XHC3m9iNn1CNzLEs1Uyw1LiIb0AxrSzt0I','Cxr5','64+m6RE465287j24642u','AxrLBu5HBwu','DgfIBgvFDg9FyM9VAW','ChjLDMLLD0jHBM5LCG','phnWyw4Gy2XHC3m9iNn1CNzLEs11BML0iJ4','pc90zd48DgqGC3r5Bgu9iNrLEhqTywXPz246BgvMDdTMB250lxDLAwDODdPIB2XKoYi+','C3rHDhvZ','pc90zd4','ChjLDMLLDY0','C3fYDa','C3vYDMv5rw50CNLmAxn0','yNrUq2fUy2vSuhjLDMLLDW','Axnnyw51ywXpDMvYCMLKzq','EwvHCG','Bg9Nu3rHDhvZ','mI7SM5tRS4tSOBdSGQZTKzWO','C29YDa','B2jQzwn0','7lcO7lk06Rwq7kcv6RIW','ihn0EwXLpsjIywnRz3jVDw5KlwnVBg9YoInMzMyZy2q7iG','Aw5Uzxjive1m','7jQP7kcr7yAG7lMyio2mGq','phn0CM9UzZ7INiuGmJaYmUUfHcaXFJJSM5qG7jEr7iwaioYlPoY4OsdQS6dSOjxQSjlSNBqG','67kO7yQ47is8642uioUYQo2kUa','C3bSAxq','lNn1CNzLEs1XDhK','y3LJBgvtzxr0Aw5NCW','BMfTzq','mJaYmUUfHcaXFJJSM5tSNyaG7jEr7iwaioYlPoY4OsdQS6dSOjuG6RwS6Rce7j6f64Ui64UKlGRSNBqG6RIW6Rce7jEqioYlPoY4OsdQUldROz3SNyqG7lAu6RcaWRFRS4dQSR3TLAaG7iIyioYxHUYkTEUlIoUlPc4','DhjN','BwLU','C2vHCMnO','7jIK66w47kQ9io2rNoUNJcdRSjtRGiZRQBaG7iUK7kcCioUnSoYDTo2eSoUkLcdSOidSNQxRKjJSP4aG7jwk7iQ164Ui64UKlIa','phrKihn0EwXLpsj0zxH0lwfSAwDUoMXLzNq7zM9UDc13zwLNAhq6yM9SzdSIpG','yNvZyw4TDgvHy2HLCI13B3jRywXS','ks54Bhn4','7jEq7jA0io2gSq','7iUK7lIHioQ4SoYKGoYDVoYDHcdSHkdTG53TLBqG7ko87is47jQulG','pc90yM9KEt4','7jQP7kcr67cu7j207iQK','CxvLCNLtzwXLy3rVCKfSBa','yxzNvxnL','yxbWCW','7iAm66QO7zki','pc9ZDhjVBMC+pc90zd4','67cu7j207iQK','phnWyw4Gy2XHC3m9iNn1CNzLEs1IyxnLiJ4','pc90zd48DgqGC3r5Bgu9iNrLEhqTywXPz246BgvMDdSIpG','phrOzwfKpJX0CJ48DgGGD2LKDgG9iJCYiJ7RTOtRPzG8l3rOpJX0Ad7TKOJRQOu8l3rOpJX0Acb3Awr0Ad0IntyIpUUlQoYCHdWVDgG+phrOihDPzhrOpsi3mIi+7iUK7lIHpc90Ad48l3rYpJWVDgHLywq+','7jQP7kcr7yAG7lMyioUfUoYMKa','yxzNuhvYy2HHC2u','mtaYnda1m29Sr2HSwa','AxrLBvr5Cgu','C3vYDMv5tgLZDenVBNn1BwfIBgu','67o07jwiioYDUoYMNEYDTcdTLytSMPtTLANRI4JRI6qU','C3rVy2TpDMvYCMLKzxm','ChvYy2HHC2vdEwnSzu1VBNrOCW','B25SB2fK','iIb0AxrSzt0ImE2AJcdQTAZSNOxRN4KIpG','C2LNBKLUv2L0AevTywLSqw5KugfZC3DVCMq','phrKihn0EwXLpsjIywnRz3jVDw5KlwnVBg9YoInLowvJzwy7zM9UDc13zwLNAhq6yM9SzdTJB2XVCJP2yxiOls1WCMLTyxj5lwnVBg9YktSIpG','7j28icG','7jwe66w06RoK6Rca7iQK','CMvWBgfJzq','zgf0zq','rMLYzwjHC2uGDw5HDMfPBgfIBgu7ihvZAw5NigXVy2fSigjHy2T1CcbVBMX5lG','y3LJBgvwyxjPyw5Jzq','CMvM','pc9KzxrHAwXZpG','7jUu67oe7kgW7ikS7zgC','C3vYDMv5lxf0Eq','BgjSrgXzzwfY','ywn0AxzL','Bg9NCW','Aw11Ba','z2v0rwXLBwvUDej5swq','pc90zd48DgqGC3r5Bgu9iMjHy2TNCM91BMqTy29SB3i6i2yXzJnMntTMB250lxDLAwDODdPIB2XKoYi+','z2v0vgLTzq','y2HHBMDL','DgfIqNrUu3vYDMv5rw50CMLLCW','tuLhioYuQoYyPo2iRcdSMQNSOjhQUla','iIb0AxrSzt0I7jUuio2pIEQ3OcdSHOZRQQJRN4KIpG','DgfIBgvfCxvPCg1LBNq','AxnbCNjHEq','Aw5PDgLHBgL6zufWCa','7lkG7yYq67cu7j207iQK','l2LUDMvUDg9YEq','Bw9UDgG','z2v0rgf5','C2XPy2u','phn0CM9UzZ7WN5snioQWGoYdGsdRR7JRPQZRS7tQUlaG7ksrpc9ZDhjVBMC+iokaLca','mJaYmUUfHcaXFJJSM5tSNyaG7jEr7iwaioYlPoY4OsdQS6dSOjuG6RwS6Rce7j6f64Ui64UKlGRSNBqG6RIW6Rce7j2aioUVUoUMRoUZToQ4Smk365oX66gD7zwGioYiMcdSL4BSIRxRI4JRI6qU','7jEq7jA07yAXioUcOa','B25Jzq','pc90zd48l3rYpG','yMfZzvf0Eq','jMfTCdS','ChvZAa','m1qG6Rcv7yYq','DgfIBgvnB250AgX5u3vYDMv5','Bg9NtwvTBW','nZGYmtu5BK9JuvD1','ChjLDMvUDerLzMf1Bhq','7jQP7kcr7yAG7lMy','lMn5y2XLlxvZzq','67kO7yQ47is8642u','phnWyw4Gy2XHC3m9iNn1CNzLEs1LBNrYEs1KyxrLiJ4','ChvYy2HHC2vgCMvX','y29UDgfPBNm','4PA8ioQWNoUZHcdSNBtRSQtTIRGG7lAu6RcaicJQTAZSNOxcT+2mJoYgKcdRK7eP','u2vYDMvYvMfSDwu','A2v5CW','7j6L67MeloQ4SoYEKoYERoQ0GoUMRoUmGoYEPq','pc9KAxy+','7zse66gC7yYq','DhvZzq','nZiYmdK2EMvKEufh','ms7RTOtQUldRS4qG7lcO7lk07jQP7zkiioQ0GoUMRoUmGoYEPsG','zM9JDxnVDxq','phrY','7jQP7kcr66M0','yMXVy2S','zMLUza','iIbKyxrHlwnHCNj5psi','DMfS','6RcCio2sIoUQQEYDMcdSI6tSUkhSNBqG65oX66gD65cy7jEi7iQ164Ui64UKlGRRGPJRQlJSP4aG7zki66QP7j2aioQ4SoYHTcJSOitSM5qG7j207jUuWRFSTPtSOjuPioYERoQZOoQWGcdSNkdSP4dRKkNRI4JRI6qUcUoaJoYlPoYGNcdQUldSNOuG66QP66gD44cnio2dREYxKoYeNcdTMzxSNBJTLAaG7iIyioYEIoYkTEUlIoUlPc4','yxv0Aa','pgLUChv0ihr5Cgu9iM51BwjLCIiGy2XHC3m9iMn5y2XLlwLUChv0ign5y2XLlxvZzsiGBwLUpsiXiIbZDgvWpsiXiIa','veLnrvnuqu1q','Bw9UDgHSEvvZzq','zxf1AxbTzw50','ywrKrxzLBNrmAxn0zw5LCG','B3b0Aw9U','phnWyw4Gy2XHC3m9iMjHzgDLia','6Rca7jE0ioYEPEU5HcJTHQdSUzGP','z2v0rgf0zq','AM9PBG','y2XPy2S','Bwf4','z2v0rNvSBfLLyxi','zMLYzwjHC2vFBM90x3jLywr5','pgrPDIbJBgfZCZ0IC3vYDMv5lxjVDYi+','ChjLDG','yNrUq29TBwL0uhjLDMLLDW','C29Tzq','Dgv4DenVBNrLBNq','7iQK7y+/ioUtNoUMTa','Dw5PDa','C3vYDMv5rgf0zq','C25HChnOB3q','pc90zd48Dgq+','z2v0sxrLBq','phrYpG','BwfW','pgLUChv0ihr5Cgu9iNrLEhqIignSyxnZpsjZDxj2zxKTCxr5','zgf0yxnLDa','7iUK7lIH7zwGio2sIoUQQEYDHcdTLzJRGPGG7j207iobioYiQ+YEKoUHNcdSNOxROkxTLBqG7ko87is47jQulGRJGiZQUldSOBtJGi3SNlZROzWG65guio2sIoUQQEYDGcdSNBtSOiqG7j6S6RoG6RcaioQ3UoUmGoUHNcdSNkdSP4dRKkNRI4JRI6qU','ChvY','7jMa7j207jA067Im65+S7iUCioUcOa','4PAYioQWNoUZHcdSNBtRSQtTIRGG7j6f66cLioUlQ+Q4Sa','7j247j6L7jQPioUpHoQ1Ra','DhrYzW','yNrUvg9Nz2XLrxzLBNq','DxrPBhm','zxzLBNrZ','yMCTBg9ZCW','yxbWzw5Kq2HPBgq','Bw9UDgHSEvn1CNzLEurHDgvmywjLBa','C3vYDMv5tw9UDgHtzwXLy3q','phrKpJXZDhjVBMC+','pc90CJ4','zMLSDgvY','AxrLBxm','DhjPBq','pgj1DhrVBIb0ExbLpsjIDxr0B24IignSyxnZpsjIDg4TChjLDMLLDY1Hy3rPB24IigLKpsjIDg5dB21TAxrqCMv2Awv3iJ7SNBtRJidROzWG7iUK7kcCioUtSEUHNtWVyNv0Dg9UpIa','i3rHyMXLtg9NihrIB2r5','z2fWtM90AwnL','Bg9Nuxr5','y29UCW','Bg9Nrgf0zq','phrKpG','7jwe7ygS7jQP7kcr6RIWkoYGHoQ4SoYAQEYGKsK','u1rvrcJSNBJSTPZQUlaP','phaGy2XHC3m9iNn1CNzLEs1LBNrYEs1LBxb0Esi+7j286RseioYlPoY4OEYCVoUHNcdSOidSNQxRKjWG6RIW66gD7j20ioYxHUYkTEUlIoUlPc48l3a+','yMCTzgLZCg9ZywW','DMfSDwu','y2XHC3nmAxn0','icJSOitSM5qG7j207jUuWRFSTPtSOjuG7y+S7zwOksiG','AhjLzG','yM9KEq','mY7SNQxRUytRSi/QUldSNPdSNQZQTidRPQZTMitTMAKO','6Rg0ktWVC3bHBJ4','i3rHyMXLtw9UDgHSEvn1CNzLEsb0yM9KEq','7jEW7ikT6RIW','zM9JDxnPBG','pc9ZCgfUpG','yxbWBhK','D3jPDgvgAwXL'];a4_0x3ce1=function(){return _0x475f57;};return a4_0x3ce1();}function applyCycleTrailingMonth(_0xe11fd9,_0x105918,_0x156920){const _0x42ff34=a4_0x33dcc1,_0x2077e3=getItemCycleSettings(_0xe11fd9['name']),_0x352515=getConsumptionProfile(_0xe11fd9['name'],_0x42ff34(0x2b4)),_0x4e51df=Math[_0x42ff34(0x235)](0x1,_0x2077e3['monthlyUse']),_0x476e81=Math[_0x42ff34(0x235)](0x1,_0x2077e3['purchaseQty']),_0x118648=Math[_0x42ff34(0x235)](0x1,_0x2077e3[_0x42ff34(0x1e3)]),_0x4e6ac1=Math[_0x42ff34(0x235)](0x0,Math[_0x42ff34(0x1c9)](0x1,_0x2077e3['cycleVariance'])),_0x1327d2=_0x352515['seasonal'][(_0x105918['m']-0x1)%0xc]||0x1,_0x1b41d6=Math[_0x42ff34(0x2c7)]((_0x105918['y']-0x7e6)*0xc+(_0x105918['m']-0x1)),_0x19cacd=seededRandom(_0xe11fd9['name'],_0x105918['y'],_0x105918['m'],_0x42ff34(0x21e)),_0x404a1b=seededRandom(_0xe11fd9[_0x42ff34(0x1c6)],_0x105918['y'],_0x105918['m'],'tpur'),_0x4f1f0e=seededRandom(_0xe11fd9['name'],_0x105918['y'],_0x105918['m'],_0x42ff34(0x24c));let _0x2739f1=-_0x4e51df*_0x1327d2*(0.55+_0x19cacd*0.95);const _0x528523=_0x1b41d6%getNextCycleLength(_0xe11fd9['name'],_0x118648,Math[_0x42ff34(0x2c7)](_0x1b41d6/_0x118648),_0x105918['y'],_0x105918['m'],_0x4e6ac1);return(_0x528523===0x0||_0x4f1f0e>0.9)&&(_0x2739f1+=_0x476e81*(0.4+_0x404a1b*1.05)),Math[_0x42ff34(0x235)](0x0,roundStock(_0x156920+_0x2739f1));}function buildConsumptionProfiles(){const _0x253c3f=a4_0x33dcc1,_0x4dab06={},_0x42b7b9=typeof BASELINE_2022_LOGS!==_0x253c3f(0x2ad)?BASELINE_2022_LOGS:[];function _0x428f52(_0x554468){return!_0x4dab06[_0x554468]&&(_0x4dab06[_0x554468]={'avgUse':0x1,'avgPurchase':0x0,'seasonal':[0x1,0x1,0x1,0x1,0x1,0x1,0x1,0x1,0x1,0x1,0x1,0x1],'volatility':0.3}),_0x4dab06[_0x554468];}consumableMaster['forEach'](function(_0x1ed0a0){const _0x149bb1=_0x253c3f,_0x5eb73b=_0x1ed0a0[_0x149bb1(0x1c6)],_0x33f285=_0x428f52(_0x5eb73b),_0x12c13b=[];let _0x4aaa06=_0x1ed0a0[_0x149bb1(0x2d5)];for(let _0x227503=0x1;_0x227503<=0x8;_0x227503++){const _0x3fc727=_0x42b7b9[_0x149bb1(0x256)](function(_0x4b45f0){const _0x1edf4a=_0x149bb1,_0xe6269b=new Date(_0x4b45f0[_0x1edf4a(0x1eb)]);return _0x4b45f0[_0x1edf4a(0x2de)]===_0x1edf4a(0x2b4)&&_0x4b45f0['name']===_0x5eb73b&&_0x4b45f0[_0x1edf4a(0x2f3)]==='실측'&&_0xe6269b['getFullYear']()===0x7e6&&_0xe6269b['getMonth']()+0x1===_0x227503;});_0x3fc727[_0x149bb1(0x288)]&&(_0x12c13b['push']({'m':_0x227503,'stock':_0x3fc727[_0x3fc727[_0x149bb1(0x288)]-0x1][_0x149bb1(0x2ec)],'prev':_0x4aaa06}),_0x4aaa06=_0x3fc727[_0x3fc727[_0x149bb1(0x288)]-0x1]['qty']);}const _0xc9dec=[],_0x21521b=[0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0],_0x557eca=[0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0];_0x12c13b[_0x149bb1(0x2cb)](function(_0x2127e2){const _0x5d474f=_0x149bb1,_0xea0840=_0x2127e2[_0x5d474f(0x2e6)]-_0x2127e2[_0x5d474f(0x239)];if(_0xea0840<0x0){const _0x5cea7c=-_0xea0840;_0xc9dec[_0x5d474f(0x20c)](_0x5cea7c),_0x21521b[_0x2127e2['m']-0x1]+=_0x5cea7c,_0x557eca[_0x2127e2['m']-0x1]++;}_0x2127e2['prev']=_0x2127e2[_0x5d474f(0x2e6)];});const _0x2d6b0e=_0x42b7b9[_0x149bb1(0x256)](function(_0x1a3a4c){const _0x2cf290=_0x149bb1,_0x1a446d=new Date(_0x1a3a4c[_0x2cf290(0x1eb)]);return _0x1a3a4c[_0x2cf290(0x2de)]===_0x2cf290(0x2b4)&&_0x1a3a4c['name']===_0x5eb73b&&_0x1a3a4c['status']==='구입'&&_0x1a446d[_0x2cf290(0x236)]()===0x7e6;});if(_0xc9dec[_0x149bb1(0x288)]){_0x33f285['avgUse']=_0xc9dec[_0x149bb1(0x28a)](function(_0x51eefd,_0x273fd6){return _0x51eefd+_0x273fd6;},0x0)/_0xc9dec[_0x149bb1(0x288)];const _0x13ea8c=_0x33f285[_0x149bb1(0x1d4)];let _0x48115d=0x0;_0xc9dec[_0x149bb1(0x2cb)](function(_0x876d36){const _0x2b1755=_0x149bb1;_0x48115d+=Math[_0x2b1755(0x2c6)](_0x876d36-_0x13ea8c,0x2);}),_0x33f285[_0x149bb1(0x2ca)]=Math[_0x149bb1(0x2f6)](_0x48115d/_0xc9dec[_0x149bb1(0x288)])||_0x13ea8c*0.25;}else _0x33f285[_0x149bb1(0x1d4)]=Math['max'](0x1,_0x1ed0a0['baseQty']*0.02),_0x33f285[_0x149bb1(0x2ca)]=_0x33f285[_0x149bb1(0x1d4)]*0.35;if(_0x33f285[_0x149bb1(0x1d4)]<0x1)_0x33f285['avgUse']=0x1;for(let _0x3418ad=0x0;_0x3418ad<0xc;_0x3418ad++){_0x557eca[_0x3418ad]>0x0&&(_0x33f285[_0x149bb1(0x2a8)][_0x3418ad]=_0x21521b[_0x3418ad]/_0x557eca[_0x3418ad]/_0x33f285[_0x149bb1(0x1d4)]);}_0x2d6b0e[_0x149bb1(0x288)]&&(_0x33f285[_0x149bb1(0x1dd)]=_0x2d6b0e['reduce'](function(_0x37dce1,_0x31f637){const _0x1de857=_0x149bb1;return _0x37dce1+_0x31f637[_0x1de857(0x2ec)];},0x0)/_0x2d6b0e['length'],_0x33f285[_0x149bb1(0x216)]=_0x2d6b0e[_0x149bb1(0x288)]/0x8);}),equipmentMaster[_0x253c3f(0x2cb)](function(_0x20d32f){const _0x388935=_0x253c3f;_0x4dab06[_0x20d32f[_0x388935(0x1c6)]]={'avgUse':0x0,'avgPurchase':0x0,'seasonal':[0x1,0x1,0x1,0x1,0x1,0x1,0x1,0x1,0x1,0x1,0x1,0x1],'volatility':0x0,'purchaseFreq':0x0,'stable':!![]};}),consumptionProfileCache=_0x4dab06;}function getConsumptionProfile(_0x20af74,_0x33f0fc){const _0x2218bf=a4_0x33dcc1;if(!consumptionProfileCache)buildConsumptionProfiles();if(_0x33f0fc===_0x2218bf(0x22d))return consumptionProfileCache[_0x20af74]||{'avgUse':0x0,'avgPurchase':0x0,'seasonal':[0x1,0x1,0x1,0x1,0x1,0x1,0x1,0x1,0x1,0x1,0x1,0x1],'volatility':0x0,'purchaseFreq':0x0,'stable':!![]};return consumptionProfileCache[_0x20af74]||{'avgUse':0x1,'avgPurchase':0x0,'seasonal':[0x1,0x1,0x1,0x1,0x1,0x1,0x1,0x1,0x1,0x1,0x1,0x1],'volatility':0.3,'purchaseFreq':0x0,'stable':![]};}function generateGapDeltas(_0x8f0106,_0x408c86,_0x192566,_0x521184,_0x46372){const _0x18b212=a4_0x33dcc1;if(_0x408c86===_0x18b212(0x22d))return _0x521184[_0x18b212(0x244)](function(){return 0x0;});return generateCycleGapDeltas(_0x8f0106,_0x192566,_0x521184,_0x46372);}function applyTrailingVariation(_0x49e950,_0x3371d1,_0x2dbeb3,_0x36cbcd){let _0x575c4=_0x36cbcd;_0x49e950['forEach'](function(_0x380987){const _0x54f670=a4_0x365f;if(_0x380987[_0x54f670(0x2e6)]!==null){_0x575c4=_0x380987[_0x54f670(0x2e6)];return;}if(isFutureMonth(_0x380987['y'],_0x380987['m']))return;if(_0x2dbeb3===_0x54f670(0x22d)){_0x380987[_0x54f670(0x2e6)]=roundStock(_0x575c4),_0x380987['isInferred']=!![],hasInferredMonths=!![];return;}_0x575c4=applyCycleTrailingMonth(_0x3371d1,_0x380987,_0x575c4),_0x380987['stock']=_0x575c4,_0x380987[_0x54f670(0x2aa)]=!![],hasInferredMonths=!![];});}function getStartStock(_0x4dc53d,_0x11af21){const _0x2a08a3=a4_0x33dcc1;return _0x11af21===_0x2a08a3(0x2b4)?_0x4dc53d[_0x2a08a3(0x2d5)]:_0x4dc53d[_0x2a08a3(0x20a)];}function buildTimeline(_0x97574a,_0x3d262d,_0x12d792,_0x480d5b){const _0x248601=a4_0x33dcc1,_0x1fde80=[];for(let _0xa776d0=0x7e6;_0xa776d0<=_0x480d5b;_0xa776d0++){for(let _0x6f422f=0x1;_0x6f422f<=0xc;_0x6f422f++){const _0x10d71d=_0x12d792['filter'](function(_0xf99f38){const _0x371813=a4_0x365f,_0xa6123d=new Date(_0xf99f38['date']);return _0xf99f38['type']===_0x3d262d&&_0xf99f38['name']===_0x97574a[_0x371813(0x1c6)]&&_0xa6123d[_0x371813(0x236)]()===_0xa776d0&&_0xa6123d[_0x371813(0x2bc)]()+0x1===_0x6f422f;});_0x1fde80[_0x248601(0x20c)]({'y':_0xa776d0,'m':_0x6f422f,'stock':null,'isInferred':![],'snapshot':_0x10d71d[_0x248601(0x225)](function(_0x31c9fb){const _0x4c278b=_0x248601;return _0x31c9fb[_0x4c278b(0x2f3)]==='실측';})||null,'events':_0x10d71d[_0x248601(0x256)](function(_0x2b2ca8){const _0x1dff18=_0x248601;return _0x2b2ca8[_0x1dff18(0x2f3)]!=='실측';})});}}return _0x1fde80;}function applyEventDelta(_0x25b549,_0x269890){const _0x3d4a8a=a4_0x33dcc1;if(_0x269890[_0x3d4a8a(0x2f3)]==='구입')return roundStock(_0x25b549+_0x269890[_0x3d4a8a(0x2ec)]);if(_0x269890[_0x3d4a8a(0x2f3)]==='파손'||_0x269890['status']==='분실'||_0x269890[_0x3d4a8a(0x2f3)]==='폐기')return roundStock(_0x25b549-_0x269890[_0x3d4a8a(0x2ec)]);return roundStock(_0x25b549);}function interpolateGap(_0x279149,_0xdcd44a,_0x56d3fa,_0x3e7747,_0x18132d){const _0x319d1f=a4_0x33dcc1,_0x5c7bcf=_0x56d3fa-_0xdcd44a;if(_0x5c7bcf<=0x1)return;const _0x2bbf36=_0x279149[_0xdcd44a][_0x319d1f(0x2e6)],_0x15e883=_0x279149[_0x56d3fa][_0x319d1f(0x2e6)];let _0x22bb5b=0x0;for(let _0x5c1cb0=_0xdcd44a+0x1;_0x5c1cb0<_0x56d3fa;_0x5c1cb0++){_0x279149[_0x5c1cb0][_0x319d1f(0x24f)][_0x319d1f(0x2cb)](function(_0x44a266){const _0x50f059=_0x319d1f;if(_0x44a266[_0x50f059(0x2f3)]==='구입')_0x22bb5b+=_0x44a266[_0x50f059(0x2ec)];else{if(_0x44a266[_0x50f059(0x2f3)]==='파손'||_0x44a266[_0x50f059(0x2f3)]==='분실'||_0x44a266[_0x50f059(0x2f3)]==='폐기')_0x22bb5b-=_0x44a266[_0x50f059(0x2ec)];}});}const _0x143317=[];for(let _0xb43512=_0xdcd44a+0x1;_0xb43512<_0x56d3fa;_0xb43512++){if(_0x279149[_0xb43512][_0x319d1f(0x2e6)]!==null)continue;if(isFutureMonth(_0x279149[_0xb43512]['y'],_0x279149[_0xb43512]['m']))continue;_0x143317[_0x319d1f(0x20c)](_0xb43512);}if(!_0x143317[_0x319d1f(0x288)])return;const _0x3a4ef4=isFutureMonth(_0x279149[_0x56d3fa]['y'],_0x279149[_0x56d3fa]['m']),_0x270675=_0x3a4ef4?0x0:roundStock(_0x15e883-_0x2bbf36-_0x22bb5b),_0xe8cd81=generateGapDeltas(_0x3e7747,_0x18132d,_0x279149,_0x143317,_0x270675);let _0x2b2db8=_0x2bbf36;_0x143317[_0x319d1f(0x2cb)](function(_0x2b8d93,_0x52e1ac){const _0x5aa542=_0x319d1f;let _0x5ef377=0x0;_0x279149[_0x2b8d93][_0x5aa542(0x24f)][_0x5aa542(0x2cb)](function(_0x27546e){const _0x42a257=_0x5aa542;if(_0x27546e[_0x42a257(0x2f3)]==='구입')_0x5ef377+=_0x27546e[_0x42a257(0x2ec)];else{if(_0x27546e[_0x42a257(0x2f3)]==='파손'||_0x27546e['status']==='분실'||_0x27546e[_0x42a257(0x2f3)]==='폐기')_0x5ef377-=_0x27546e[_0x42a257(0x2ec)];}}),_0x2b2db8=roundStock(_0x2b2db8+_0xe8cd81[_0x52e1ac]+_0x5ef377),_0x2b2db8=Math['max'](0x0,_0x2b2db8),_0x279149[_0x2b8d93][_0x5aa542(0x2e6)]=_0x2b2db8,_0x279149[_0x2b8d93][_0x5aa542(0x2aa)]=!![],hasInferredMonths=!![];});}function computeTimeline(_0x3a1ba2,_0x2c0bfc,_0x34f30c,_0x831b1){const _0x5637a7=a4_0x33dcc1,_0x4f485c=buildTimeline(_0x3a1ba2,_0x2c0bfc,_0x34f30c,_0x831b1),_0x1ed592=getStartStock(_0x3a1ba2,_0x2c0bfc);let _0x23169c=_0x1ed592;_0x4f485c[_0x5637a7(0x2cb)](function(_0x20b1d2,_0x2645a9){const _0x3c4e31=_0x5637a7;if(_0x20b1d2[_0x3c4e31(0x240)]){_0x23169c=roundStock(_0x20b1d2[_0x3c4e31(0x240)][_0x3c4e31(0x2ec)]),_0x20b1d2['stock']=_0x23169c;return;}if(_0x2645a9===0x0){_0x20b1d2[_0x3c4e31(0x2e6)]=roundStock(_0x23169c);return;}if(_0x20b1d2[_0x3c4e31(0x24f)][_0x3c4e31(0x288)]>0x0){_0x20b1d2[_0x3c4e31(0x24f)][_0x3c4e31(0x2cb)](function(_0x421ffa){_0x23169c=applyEventDelta(_0x23169c,_0x421ffa);}),_0x20b1d2['stock']=roundStock(_0x23169c);return;}_0x20b1d2[_0x3c4e31(0x2e6)]=null;});const _0x5005c7=[];_0x4f485c['forEach'](function(_0x5184b3,_0x5a9bfe){const _0x41d811=_0x5637a7;if(_0x5184b3[_0x41d811(0x2e6)]!==null)_0x5005c7[_0x41d811(0x20c)](_0x5a9bfe);});for(let _0x33fa12=0x0;_0x33fa12<_0x5005c7[_0x5637a7(0x288)]-0x1;_0x33fa12++){interpolateGap(_0x4f485c,_0x5005c7[_0x33fa12],_0x5005c7[_0x33fa12+0x1],_0x3a1ba2,_0x2c0bfc);}return applyTrailingVariation(_0x4f485c,_0x3a1ba2,_0x2c0bfc,_0x1ed592),applyManualStockOverrides(_0x4f485c,_0x3a1ba2,_0x2c0bfc),_0x4f485c['forEach'](function(_0x34a884){const _0x5e2622=_0x5637a7;isFutureMonth(_0x34a884['y'],_0x34a884['m'])&&_0x34a884[_0x5e2622(0x2aa)]&&(_0x34a884['stock']=null,_0x34a884['isInferred']=![]);}),_0x4f485c;}function getTimelineMonth(_0x19962f,_0x387066,_0x244608){const _0x441f64=a4_0x33dcc1;return _0x19962f[_0x441f64(0x225)](function(_0x55e4e8){return _0x55e4e8['y']===_0x387066&&_0x55e4e8['m']===_0x244608;});}function getCurrentChartEnd(){const _0x3dea20=a4_0x33dcc1,_0x1ba6a5=new Date();return{'year':_0x1ba6a5[_0x3dea20(0x236)](),'month':_0x1ba6a5[_0x3dea20(0x2bc)]()+0x1};}function buildChartMonthAxis(){const _0x5e79e4=a4_0x33dcc1,_0x368c4a=getCurrentChartEnd(),_0x1ee610=[];let _0x476f14=0x7e6,_0x544aa3=0x1;while(_0x476f14<_0x368c4a[_0x5e79e4(0x1b8)]||_0x476f14===_0x368c4a[_0x5e79e4(0x1b8)]&&_0x544aa3<=_0x368c4a[_0x5e79e4(0x202)]){_0x1ee610[_0x5e79e4(0x20c)]({'year':_0x476f14,'month':_0x544aa3,'label':_0x476f14+'.'+_0x544aa3}),_0x544aa3+=0x1,_0x544aa3>0xc&&(_0x544aa3=0x1,_0x476f14+=0x1);}return _0x1ee610;}function buildItemTrendSeries(_0x4cee2c,_0x414e8d,_0x294c62){const _0x4c4b84=a4_0x33dcc1,_0x2ce34a=buildChartMonthAxis();if(!_0x2ce34a[_0x4c4b84(0x288)])return{'axis':[],'values':[],'inferred':[]};const _0x23cb79=_0x2ce34a[_0x2ce34a['length']-0x1][_0x4c4b84(0x1b8)];hasInferredMonths=![];const _0x3ef6d4=computeTimeline(_0x4cee2c,_0x414e8d,_0x294c62,_0x23cb79),_0x3749a8=[],_0x20d25b=[],_0x4d33d9=[];return _0x2ce34a['forEach'](function(_0x22ce5a){const _0x5d5c15=_0x4c4b84,_0x1e33d6=getTimelineMonth(_0x3ef6d4,_0x22ce5a['year'],_0x22ce5a['month']);if(!_0x1e33d6||_0x1e33d6[_0x5d5c15(0x2e6)]===null||_0x1e33d6[_0x5d5c15(0x2e6)]===undefined){_0x3749a8[_0x5d5c15(0x20c)](null),_0x20d25b[_0x5d5c15(0x20c)](![]),_0x4d33d9[_0x5d5c15(0x20c)](![]);return;}_0x3749a8[_0x5d5c15(0x20c)](roundStock(_0x1e33d6[_0x5d5c15(0x2e6)])),_0x20d25b['push'](!!_0x1e33d6[_0x5d5c15(0x2aa)]),_0x4d33d9[_0x5d5c15(0x20c)](!!_0x1e33d6[_0x5d5c15(0x1b7)]);}),{'axis':_0x2ce34a,'values':_0x3749a8,'inferred':_0x20d25b,'manual':_0x4d33d9};}const INVENTORY_STORAGE_KEY='codework_inventory_logs_v1',INVENTORY_FB_ROOT=a4_0x33dcc1(0x2b9);let inventoryDatabase=null;function getInventoryPayload(){return{'logs':transactionLogs,'nextId':nextLogId,'cycleSettings':itemCycleSettings,'stockOverrides':itemStockOverrides};}function applyInventoryPayload(_0x2652c0){const _0x4acb0f=a4_0x33dcc1;if(!_0x2652c0||!Array[_0x4acb0f(0x1fe)](_0x2652c0[_0x4acb0f(0x1f4)]))return![];return transactionLogs=_0x2652c0['logs'],nextLogId=_0x2652c0[_0x4acb0f(0x27f)]||0x2710,itemCycleSettings=_0x2652c0['cycleSettings']&&typeof _0x2652c0[_0x4acb0f(0x1c5)]==='object'?_0x2652c0[_0x4acb0f(0x1c5)]:{},itemStockOverrides=_0x2652c0[_0x4acb0f(0x1e2)]&&typeof _0x2652c0['stockOverrides']===_0x4acb0f(0x1bc)?_0x2652c0[_0x4acb0f(0x1e2)]:{},baselineRestoreCount=enforceBaseline2022Anchors(),!![];}function stockOverrideKey(_0x4d312c,_0x135ea5){return _0x4d312c+'::'+_0x135ea5;}function stockMonthKey(_0x5dbda4,_0x5b9609){const _0x507d23=a4_0x33dcc1;return _0x5dbda4+'-'+String(_0x5b9609)[_0x507d23(0x2bd)](0x2,'0');}function applyManualStockOverrides(_0x29ae94,_0x521146,_0x46d321){const _0xeb5c9b=a4_0x33dcc1,_0xa6707=stockOverrideKey(_0x46d321,_0x521146[_0xeb5c9b(0x1c6)]),_0x44e936=itemStockOverrides[_0xa6707];if(!_0x44e936||typeof _0x44e936!==_0xeb5c9b(0x1bc))return;_0x29ae94[_0xeb5c9b(0x2cb)](function(_0x2fbba3){const _0x5d32af=_0xeb5c9b;if(_0x2fbba3[_0x5d32af(0x240)])return;if(isFutureMonth(_0x2fbba3['y'],_0x2fbba3['m']))return;const _0x593406=stockMonthKey(_0x2fbba3['y'],_0x2fbba3['m']);if(_0x44e936[_0x593406]==null||_0x44e936[_0x593406]==='')return;const _0x524a60=roundStock(Number(_0x44e936[_0x593406]));if(isNaN(_0x524a60)||_0x524a60<0x0)return;_0x2fbba3[_0x5d32af(0x2e6)]=_0x524a60,_0x2fbba3[_0x5d32af(0x2aa)]=!![],_0x2fbba3[_0x5d32af(0x1b7)]=!![],hasInferredMonths=!![];});}function setItemStockOverride(_0x1ac465,_0x3188cc,_0x2405ff,_0x5a72f7,_0x493780){const _0x456a3b=a4_0x33dcc1;if(isBaselineLockedYearMonth(_0x2405ff,_0x5a72f7))return;const _0x30bd8a=stockOverrideKey(_0x1ac465,_0x3188cc);if(!itemStockOverrides[_0x30bd8a])itemStockOverrides[_0x30bd8a]={};itemStockOverrides[_0x30bd8a][stockMonthKey(_0x2405ff,_0x5a72f7)]=roundStock(Math[_0x456a3b(0x235)](0x0,_0x493780));}function clearItemStockOverride(_0x3332cd,_0xec12fa,_0x5742a3,_0x1c2cdb){const _0x45d690=a4_0x33dcc1,_0x1139d8=stockOverrideKey(_0x3332cd,_0xec12fa);if(!itemStockOverrides[_0x1139d8])return;delete itemStockOverrides[_0x1139d8][stockMonthKey(_0x5742a3,_0x1c2cdb)];if(!Object[_0x45d690(0x21a)](itemStockOverrides[_0x1139d8])[_0x45d690(0x288)])delete itemStockOverrides[_0x1139d8];}window[a4_0x33dcc1(0x2c3)]=setItemStockOverride,window['clearItemStockOverride']=clearItemStockOverride,window[a4_0x33dcc1(0x2a2)]=saveLogsToStorage;function readLocalInventoryBackup(){const _0x5dac4d=a4_0x33dcc1;try{const _0xd79d6=localStorage['getItem'](INVENTORY_STORAGE_KEY);if(!_0xd79d6)return null;const _0x475474=JSON[_0x5dac4d(0x2c5)](_0xd79d6);if(_0x475474[_0x5dac4d(0x1f4)]&&Array[_0x5dac4d(0x1fe)](_0x475474[_0x5dac4d(0x1f4)]))return _0x475474;}catch(_0x38524b){}return null;}function writeLocalInventoryBackup(){try{localStorage['setItem'](INVENTORY_STORAGE_KEY,JSON['stringify'](getInventoryPayload()));}catch(_0x2cc193){}}function initInventoryFirebase(){const _0x492fcc=a4_0x33dcc1;if(typeof firebase===_0x492fcc(0x2ad))return![];const _0x4c5be={'apiKey':_0x492fcc(0x27e),'authDomain':_0x492fcc(0x2ae),'databaseURL':_0x492fcc(0x277),'projectId':_0x492fcc(0x1cd)};if(!firebase[_0x492fcc(0x1d5)]['length'])firebase[_0x492fcc(0x1ff)](_0x4c5be);return inventoryDatabase=firebase[_0x492fcc(0x272)](),!![];}async function ensureInventoryAuth(){const _0x491e7e=a4_0x33dcc1,_0x37f550=localStorage[_0x491e7e(0x242)](_0x491e7e(0x29d));if(!_0x37f550){typeof appAlert==='function'?await appAlert(_0x491e7e(0x2be)):alert(_0x491e7e(0x1e1));location[_0x491e7e(0x267)]='../index.html';throw new Error('auth_required');}await firebase[_0x491e7e(0x229)]()[_0x491e7e(0x1e6)](_0x491e7e(0x278),_0x37f550);}async function loadLogsFromStorage(){const _0x3be705=a4_0x33dcc1,_0x59c4a7=readLocalInventoryBackup();if(inventoryDatabase)try{const _0x1af542=await inventoryDatabase[_0x3be705(0x1ee)](INVENTORY_FB_ROOT+_0x3be705(0x201))[_0x3be705(0x208)]('value'),_0x10cb50=_0x1af542[_0x3be705(0x227)]();if(applyInventoryPayload(_0x10cb50)){if(baselineRestoreCount>0x0)try{await saveLogsToStorage();}catch(_0x35cdec){console[_0x3be705(0x2d9)]('2022\x20baseline\x20restore\x20save\x20failed:',_0x35cdec),writeLocalInventoryBackup();}else writeLocalInventoryBackup();return;}if(_0x59c4a7&&applyInventoryPayload(_0x59c4a7)){await saveLogsToStorage();return;}}catch(_0x2751d9){console[_0x3be705(0x28c)](_0x3be705(0x271),_0x2751d9);if(_0x59c4a7&&applyInventoryPayload(_0x59c4a7))return;throw _0x2751d9;}else _0x59c4a7&&applyInventoryPayload(_0x59c4a7);}async function saveLogsToStorage(){const _0x3fd39c=a4_0x33dcc1;enforceBaseline2022Anchors(),writeLocalInventoryBackup();if(!inventoryDatabase)throw new Error(_0x3fd39c(0x237));await inventoryDatabase[_0x3fd39c(0x1ee)](INVENTORY_FB_ROOT+'/inventory')[_0x3fd39c(0x27a)]({'logs':transactionLogs,'nextId':nextLogId,'cycleSettings':itemCycleSettings,'stockOverrides':itemStockOverrides,'updatedAt':firebase[_0x3fd39c(0x272)][_0x3fd39c(0x219)][_0x3fd39c(0x22b)]});}function a4_0x365f(_0x1c37bd,_0x3bebb2){_0x1c37bd=_0x1c37bd-0x1b6;const _0x594a53=a4_0x3ce1();let _0x77bf89=_0x594a53[_0x1c37bd];if(a4_0x365f['MAJXcZ']===undefined){var _0x3efa78=function(_0x155ce2){const _0x456842='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x3f330f='',_0x47fd87='',_0x5dde22=_0x3f330f+_0x3efa78;for(let _0x5b11bb=0x0,_0x1a3523,_0x36c933,_0xb16eae=0x0;_0x36c933=_0x155ce2['charAt'](_0xb16eae++);~_0x36c933&&(_0x1a3523=_0x5b11bb%0x4?_0x1a3523*0x40+_0x36c933:_0x36c933,_0x5b11bb++%0x4)?_0x3f330f+=_0x5dde22['charCodeAt'](_0xb16eae+0xa)-0xa!==0x0?String['fromCharCode'](0xff&_0x1a3523>>(-0x2*_0x5b11bb&0x6)):_0x5b11bb:0x0){_0x36c933=_0x456842['indexOf'](_0x36c933);}for(let _0x51a700=0x0,_0x46416d=_0x3f330f['length'];_0x51a700<_0x46416d;_0x51a700++){_0x47fd87+='%'+('00'+_0x3f330f['charCodeAt'](_0x51a700)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x47fd87);};a4_0x365f['QFtVgw']=_0x3efa78,a4_0x365f['WdYUgB']={},a4_0x365f['MAJXcZ']=!![];}const _0x3ce160=_0x594a53[0x0],_0x365f3e=_0x1c37bd+_0x3ce160,_0x485259=a4_0x365f['WdYUgB'][_0x365f3e];if(!_0x485259){const _0x272ee9=function(_0x5ef0c0){this['VNUQQd']=_0x5ef0c0,this['XHSONK']=[0x1,0x0,0x0],this['auJzGl']=function(){return'newState';},this['HPrWKa']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['TvwFIv']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x272ee9['prototype']['PRsVjj']=function(){const _0x3dd480=new RegExp(this['HPrWKa']+this['TvwFIv']),_0x2c1e3c=_0x3dd480['test'](this['auJzGl']['toString']())?--this['XHSONK'][0x1]:--this['XHSONK'][0x0];return this['HdhQBq'](_0x2c1e3c);},_0x272ee9['prototype']['HdhQBq']=function(_0x59bdb8){if(!Boolean(~_0x59bdb8))return _0x59bdb8;return this['HotwmM'](this['VNUQQd']);},_0x272ee9['prototype']['HotwmM']=function(_0x4a92ec){for(let _0x1798c2=0x0,_0x5627b4=this['XHSONK']['length'];_0x1798c2<_0x5627b4;_0x1798c2++){this['XHSONK']['push'](Math['round'](Math['random']())),_0x5627b4=this['XHSONK']['length'];}return _0x4a92ec(this['XHSONK'][0x0]);},new _0x272ee9(a4_0x365f)['PRsVjj'](),_0x77bf89=a4_0x365f['QFtVgw'](_0x77bf89),a4_0x365f['WdYUgB'][_0x365f3e]=_0x77bf89;}else _0x77bf89=_0x485259;return _0x77bf89;}async function bootstrapInventoryData(){const _0x20b27e=a4_0x33dcc1;if(!initInventoryFirebase()){console[_0x20b27e(0x2d9)](_0x20b27e(0x1ec)),applyInventoryPayload(readLocalInventoryBackup());return;}try{await ensureInventoryAuth(),await loadLogsFromStorage();}catch(_0x2464ed){if(_0x2464ed&&_0x2464ed[_0x20b27e(0x281)]==='auth_required')throw _0x2464ed;console[_0x20b27e(0x28c)](_0x2464ed),applyInventoryPayload(readLocalInventoryBackup());}}window[a4_0x33dcc1(0x2b3)]=bootstrapInventoryData();function getPrevYearMonth(_0xd8f436,_0x32f4bc){if(_0x32f4bc===0x1)return{'year':_0xd8f436-0x1,'month':0xc};return{'year':_0xd8f436,'month':_0x32f4bc-0x1};}function sumPurchasesInMonth(_0xfe8554,_0x39c0b6,_0x270b84,_0x38c738){const _0x32e794=a4_0x33dcc1;return _0xfe8554[_0x32e794(0x256)](function(_0x2f7a91){const _0x5c4a10=_0x32e794,_0x74be74=new Date(_0x2f7a91[_0x5c4a10(0x1eb)]);return _0x2f7a91[_0x5c4a10(0x2de)]==='consumable'&&_0x2f7a91[_0x5c4a10(0x1c6)]===_0x39c0b6&&_0x2f7a91[_0x5c4a10(0x2f3)]==='구입'&&_0x74be74[_0x5c4a10(0x236)]()===_0x270b84&&_0x74be74['getMonth']()+0x1===_0x38c738;})[_0x32e794(0x28a)](function(_0x519342,_0x5aea6c){const _0x3ebd1a=_0x32e794;return roundStock(_0x519342+_0x5aea6c[_0x3ebd1a(0x2ec)]);},0x0);}function formatSheetDiff(_0x48eeb6){if(_0x48eeb6===null||_0x48eeb6===undefined||_0x48eeb6==='')return'-';const _0x754859=roundStock(Number(_0x48eeb6));if(_0x754859===0x0)return'-';if(_0x754859>0x0)return'+'+String(_0x754859);return String(_0x754859);}function formatSheetNum(_0x2f57fd){if(_0x2f57fd===null||_0x2f57fd===undefined||_0x2f57fd==='')return'';return String(roundStock(Number(_0x2f57fd)));}function computeMonthlySurveyRows(_0x2549b2,_0x3d0277,_0x5921ac){const _0x29bc21=a4_0x33dcc1,_0x1ac05b=getPrevYearMonth(_0x2549b2,_0x3d0277),_0xb8bcba=[];return consumableMaster[_0x29bc21(0x2cb)](function(_0x3d22cd){const _0x5873bc=_0x29bc21,_0x476949=computeTimeline(_0x3d22cd,_0x5873bc(0x2b4),_0x5921ac,_0x2549b2),_0x3e5a89=getTimelineMonth(_0x476949,_0x1ac05b[_0x5873bc(0x1b8)],_0x1ac05b['month']),_0x569beb=getTimelineMonth(_0x476949,_0x2549b2,_0x3d0277);let _0x5b693a=_0x3e5a89?_0x3e5a89[_0x5873bc(0x2e6)]:null;_0x5b693a===null&&_0x3d0277===0x1&&_0x2549b2===0x7e6&&(_0x5b693a=_0x3d22cd[_0x5873bc(0x2d5)]);_0x5b693a===null&&_0x1ac05b[_0x5873bc(0x1b8)]>=0x7e6&&(_0x5b693a=getStartStock(_0x3d22cd,_0x5873bc(0x2b4)));const _0x49b7b8=sumPurchasesInMonth(_0x5921ac,_0x3d22cd[_0x5873bc(0x1c6)],_0x2549b2,_0x3d0277);let _0x2b4a10=_0x569beb?_0x569beb[_0x5873bc(0x2e6)]:null,_0x5d2b26=null;const _0x266d5a=_0x5921ac[_0x5873bc(0x23b)](function(_0x1451b2){const _0x1a8331=_0x5873bc,_0x3c45a0=new Date(_0x1451b2[_0x1a8331(0x1eb)]);return _0x1451b2[_0x1a8331(0x2de)]==='consumable'&&_0x1451b2[_0x1a8331(0x1c6)]===_0x3d22cd[_0x1a8331(0x1c6)]&&_0x3c45a0['getFullYear']()===_0x2549b2&&_0x3c45a0[_0x1a8331(0x2bc)]()+0x1===_0x3d0277;});if(isFutureMonth(_0x2549b2,_0x3d0277)&&!_0x266d5a){_0xb8bcba[_0x5873bc(0x20c)]({'id':_0x3d22cd['id'],'name':_0x3d22cd[_0x5873bc(0x1c6)],'unit':_0x3d22cd[_0x5873bc(0x23e)],'prevStock':null,'currentStock':null,'diffQty':null,'purchase':'','isInferred':![]});return;}_0x2b4a10!==null&&_0x5b693a!==null&&(_0x5d2b26=roundStock(_0x2b4a10-_0x5b693a-_0x49b7b8)),_0xb8bcba['push']({'id':_0x3d22cd['id'],'name':_0x3d22cd[_0x5873bc(0x1c6)],'unit':_0x3d22cd[_0x5873bc(0x23e)],'prevStock':_0x5b693a,'currentStock':_0x2b4a10,'diffQty':_0x5d2b26,'purchase':_0x49b7b8||'','isInferred':_0x569beb?_0x569beb[_0x5873bc(0x2aa)]:!![],'isManualOverride':_0x569beb?!!_0x569beb[_0x5873bc(0x1b7)]:![]});}),_0xb8bcba;}function renderMonthlySurvey(_0x4c73fd,_0x50b635){const _0x67b1d1=a4_0x33dcc1,_0x5b7a36=document[_0x67b1d1(0x1f6)](_0x67b1d1(0x253)),_0x52e0fa=_0x5b7a36?parseInt(_0x5b7a36[_0x67b1d1(0x264)],0xa):0x1,_0x58801f=computeMonthlySurveyRows(_0x4c73fd,_0x52e0fa,_0x50b635),_0x30f492=document['querySelector'](_0x67b1d1(0x26b)),_0x1126c3=document['getElementById'](_0x67b1d1(0x252));if(!_0x30f492)return;if(_0x1126c3){let _0x29ffd0=_0x4c73fd+'년\x20'+_0x52e0fa+'월';if(_0x4c73fd===0x7e6&&typeof BASELINE_2022_MONTHLY_SHEETS!==_0x67b1d1(0x2ad)){const _0x2342fe=BASELINE_2022_MONTHLY_SHEETS[String(_0x52e0fa)];if(_0x2342fe&&_0x2342fe[_0x67b1d1(0x23f)])_0x29ffd0=_0x2342fe[_0x67b1d1(0x23f)];}_0x1126c3[_0x67b1d1(0x23c)]=_0x29ffd0;}_0x30f492[_0x67b1d1(0x1bf)]=_0x58801f['map'](function(_0x43905e){const _0x2bc2b3=_0x67b1d1,_0x574894=_0x43905e[_0x2bc2b3(0x1b7)]?'\x20style=\x22background-color:#e8daef;\x22':_0x43905e[_0x2bc2b3(0x2aa)]?_0x2bc2b3(0x1be):'',_0x51fcf1=_0x43905e[_0x2bc2b3(0x1b7)]?_0x2bc2b3(0x29e):_0x43905e['isInferred']?'추정':'';return _0x2bc2b3(0x222)+_0x574894+'>'+_0x2bc2b3(0x25f)+_0x43905e['id']+'</td>'+_0x2bc2b3(0x1cc)+_0x43905e['name']+_0x2bc2b3(0x2f4)+_0x2bc2b3(0x25f)+_0x43905e[_0x2bc2b3(0x23e)]+_0x2bc2b3(0x2f4)+_0x2bc2b3(0x25f)+formatSheetNum(_0x43905e['prevStock'])+'</td>'+_0x2bc2b3(0x25f)+formatSheetNum(_0x43905e[_0x2bc2b3(0x28f)])+_0x2bc2b3(0x2f4)+_0x2bc2b3(0x25f)+formatSheetDiff(_0x43905e[_0x2bc2b3(0x2b1)])+_0x2bc2b3(0x2f4)+_0x2bc2b3(0x25f)+formatSheetNum(_0x43905e[_0x2bc2b3(0x2c0)])+_0x2bc2b3(0x2f4)+_0x2bc2b3(0x29a)+_0x51fcf1+_0x2bc2b3(0x2f4)+'</tr>';})[_0x67b1d1(0x233)]('');}function buildDefaultCycleSettingsFromProfiles(){const _0x27be60=a4_0x33dcc1;if(!consumptionProfileCache)buildConsumptionProfiles();const _0x137f6e={};return consumableMaster[_0x27be60(0x2cb)](function(_0xe716ec){const _0x2be748=_0x27be60,_0x2dfe0e=consumptionProfileCache[_0xe716ec[_0x2be748(0x1c6)]]||{};_0x137f6e[_0xe716ec[_0x2be748(0x1c6)]]={'purchaseCycleMonths':defaultCycleFromProfile(_0x2dfe0e),'monthlyUse':roundStock(Math[_0x2be748(0x235)](0x1,_0x2dfe0e[_0x2be748(0x1d4)]||_0xe716ec[_0x2be748(0x20a)]*0.02)),'purchaseQty':roundStock(Math[_0x2be748(0x235)](0x1,_0x2dfe0e['avgPurchase']||_0xe716ec[_0x2be748(0x20a)]))};}),_0x137f6e;}function renderCycleSettingsList(){const _0xe45ccb=a4_0x33dcc1,_0x67349c=document[_0xe45ccb(0x1f6)]('cycleSettingsList');if(!_0x67349c)return;_0x67349c['innerHTML']=consumableMaster[_0xe45ccb(0x244)](function(_0x5d6a9e){const _0x15b333=_0xe45ccb,_0x1e2f20=getItemCycleSettings(_0x5d6a9e[_0x15b333(0x1c6)]),_0x1b88ea=function(_0x11b9a4){const _0x1c1abc=_0x15b333;return String(_0x11b9a4)[_0x1c1abc(0x1ea)](/&/g,_0x1c1abc(0x20b))[_0x1c1abc(0x1ea)](/"/g,_0x1c1abc(0x275));};return _0x15b333(0x2a3)+'<span\x20class=\x22cycle-name\x22\x20title=\x22'+_0x1b88ea(_0x5d6a9e[_0x15b333(0x1c6)])+'\x22>'+_0x1b88ea(_0x5d6a9e['name'])+_0x15b333(0x26e)+_0x15b333(0x2af)+_0x15b333(0x2da)+_0x1b88ea(_0x5d6a9e[_0x15b333(0x1c6)])+_0x15b333(0x2a7)+_0x1e2f20['purchaseCycleMonths']+'\x22\x20title=\x22구입\x20주기(월)\x22>'+_0x15b333(0x22a)+'data-name=\x22'+_0x1b88ea(_0x5d6a9e[_0x15b333(0x1c6)])+'\x22\x20value=\x22'+roundStock(_0x1e2f20[_0x15b333(0x22c)])+_0x15b333(0x1fc)+'<input\x20type=\x22number\x22\x20class=\x22cycle-input\x20cycle-qty\x22\x20min=\x221\x22\x20step=\x221\x22\x20'+_0x15b333(0x2da)+_0x1b88ea(_0x5d6a9e[_0x15b333(0x1c6)])+_0x15b333(0x2a7)+roundStock(_0x1e2f20[_0x15b333(0x2a4)])+_0x15b333(0x1e5)+_0x15b333(0x21c);})[_0xe45ccb(0x233)]('');}function collectCycleSettingsFromForm(){const _0x3b485a=a4_0x33dcc1,_0x46a67a={};document[_0x3b485a(0x1d3)]('.cycle-row')[_0x3b485a(0x2cb)](function(_0x110e49){const _0x427348=_0x3b485a,_0x3d33ea=_0x110e49[_0x427348(0x284)]('.cycle-months');if(!_0x3d33ea)return;const _0x4515bb=_0x3d33ea[_0x427348(0x246)][_0x427348(0x1c6)],_0x47d5ba=parseInt(_0x110e49[_0x427348(0x284)]('.cycle-months')[_0x427348(0x264)],0xa),_0x37aea9=parseFloat(_0x110e49[_0x427348(0x284)](_0x427348(0x213))[_0x427348(0x264)]),_0x38c0f3=parseFloat(_0x110e49[_0x427348(0x284)](_0x427348(0x2a1))[_0x427348(0x264)]);if(!_0x4515bb)return;if(!isNaN(_0x47d5ba)&&_0x47d5ba>=0x1){if(!_0x46a67a[_0x4515bb])_0x46a67a[_0x4515bb]={};_0x46a67a[_0x4515bb][_0x427348(0x1e3)]=_0x47d5ba;}if(!isNaN(_0x37aea9)&&_0x37aea9>0x0){if(!_0x46a67a[_0x4515bb])_0x46a67a[_0x4515bb]={};_0x46a67a[_0x4515bb][_0x427348(0x22c)]=roundStock(_0x37aea9);}if(!isNaN(_0x38c0f3)&&_0x38c0f3>0x0){if(!_0x46a67a[_0x4515bb])_0x46a67a[_0x4515bb]={};_0x46a67a[_0x4515bb][_0x427348(0x2a4)]=roundStock(_0x38c0f3);}}),itemCycleSettings=_0x46a67a;}async function saveCycleSettings(){collectCycleSettingsFromForm(),buildConsumptionProfiles(),calculateAndRender();try{await saveLogsToStorage(),alert('소모품\x20구입·소모\x20주기가\x20저장되었습니다.\x20공백\x20구간\x20추정\x20곡선이\x20갱신되었습니다.');}catch(_0xdacb62){console['error'](_0xdacb62),alert('주기\x20설정은\x20화면에\x20반영되었으나\x20Firebase\x20저장에\x20실패했습니다.');}}function previewCycleSettings(){collectCycleSettingsFromForm(),buildConsumptionProfiles(),calculateAndRender();}function resetCycleSettingsToDefaults(){itemCycleSettings=buildDefaultCycleSettingsFromProfiles(),renderCycleSettingsList(),buildConsumptionProfiles(),calculateAndRender();}function renderSurveyList(){const _0x2c3bac=a4_0x33dcc1,_0x2aae7a=document[_0x2c3bac(0x1f6)]('surveyListEquipment'),_0x8d0f96=document[_0x2c3bac(0x1f6)](_0x2c3bac(0x1e0));if(!_0x2aae7a||!_0x8d0f96)return;const _0xec421a=document[_0x2c3bac(0x1f6)](_0x2c3bac(0x23f))?document['getElementById'](_0x2c3bac(0x23f))[_0x2c3bac(0x264)]:'',_0x1775bd=collectSurveyInputDrafts();_0x2aae7a['innerHTML']=equipmentMaster[_0x2c3bac(0x244)](function(_0x233a8b){const _0x39d32b=_0x2c3bac;return _0x39d32b(0x238)+_0x39d32b(0x2eb)+_0x233a8b['name']+'\x22>'+_0x233a8b[_0x39d32b(0x1c6)]+'</span>'+_0x39d32b(0x2f1)+_0x233a8b['unit']+_0x39d32b(0x26e)+_0x39d32b(0x1d9)+_0x233a8b[_0x39d32b(0x20a)]+_0x39d32b(0x26e)+buildSurveyQtyInput(_0x233a8b,_0x39d32b(0x22d),_0xec421a,_0x1775bd)+_0x39d32b(0x21c);})['join'](''),_0x8d0f96[_0x2c3bac(0x1bf)]=consumableMaster[_0x2c3bac(0x244)](function(_0x3d72fd){const _0xd27ce7=_0x2c3bac;return _0xd27ce7(0x238)+_0xd27ce7(0x2eb)+_0x3d72fd[_0xd27ce7(0x1c6)]+'\x22>'+_0x3d72fd[_0xd27ce7(0x1c6)]+'</span>'+'<span\x20class=\x22survey-unit\x22>'+_0x3d72fd[_0xd27ce7(0x23e)]+_0xd27ce7(0x26e)+_0xd27ce7(0x1d9)+_0x3d72fd[_0xd27ce7(0x2d5)]+_0xd27ce7(0x26e)+buildSurveyQtyInput(_0x3d72fd,'consumable',_0xec421a,_0x1775bd)+_0xd27ce7(0x21c);})[_0x2c3bac(0x233)]('');}async function applyBulkSurvey(){const _0x3b3e98=a4_0x33dcc1,_0x5a63b9=document['getElementById']('surveyDate')[_0x3b3e98(0x264)];if(!_0x5a63b9){alert(_0x3b3e98(0x1d0));return;}const _0x2f1833=getYearMonthFromDateStr(_0x5a63b9);if(isBaselineLockedYearMonth(_0x2f1833[_0x3b3e98(0x1b8)],_0x2f1833['month'])){alert('2022년\x201~8월은\x20엑셀\x20실측\x20고정\x20구간입니다.\x0a이\x20기간의\x20재고는\x20변경할\x20수\x20없습니다.');return;}const _0x47b588=document[_0x3b3e98(0x1d3)](_0x3b3e98(0x1c4));let _0x499f9b=0x0;_0x47b588['forEach'](function(_0x579c70){const _0x2c4793=_0x3b3e98,_0x4f094f=parseSurveyQtyInput(_0x579c70);if(_0x4f094f==null)return;const _0x568e87=_0x579c70[_0x2c4793(0x246)][_0x2c4793(0x1c6)],_0x2ad4ab=_0x579c70['dataset']['type'];removeItemSurveyLogsForMonth(_0x2ad4ab,_0x568e87,_0x5a63b9),transactionLogs[_0x2c4793(0x20c)]({'id':nextLogId++,'date':_0x5a63b9,'name':_0x568e87,'type':_0x2ad4ab,'qty':_0x4f094f,'status':'실측','memo':'재고\x20실측\x20(일괄\x20등록)'}),_0x499f9b++;});if(_0x499f9b===0x0){alert(_0x3b3e98(0x247));return;}previewSurveyOverlay=null,setPreviewBanner(![]),enforceBaseline2022Anchors();const _0xba84e1=new Date(_0x5a63b9)[_0x3b3e98(0x236)]();_0xba84e1>=0x7e6&&_0xba84e1<=0x7ea&&(document[_0x3b3e98(0x1f6)](_0x3b3e98(0x296))[_0x3b3e98(0x264)]=String(_0xba84e1));calculateAndRender();try{await saveLogsToStorage(),showSurveyEntryListTab(_0x5a63b9[_0x3b3e98(0x2bf)](0x0,0xa)),alert(_0x499f9b+_0x3b3e98(0x228));}catch(_0x42f989){console[_0x3b3e98(0x28c)](_0x42f989),alert(_0x3b3e98(0x2e4));}}function toggleEventForm(){const _0x4669f6=a4_0x33dcc1,_0x460daa=document[_0x4669f6(0x1f6)](_0x4669f6(0x2b8)),_0x11b5b1=document[_0x4669f6(0x1f6)](_0x4669f6(0x24d));if(!_0x460daa)return;const _0x5d8560=_0x460daa[_0x4669f6(0x286)]['display']!=='block';_0x460daa[_0x4669f6(0x286)]['display']=_0x5d8560?_0x4669f6(0x224):_0x4669f6(0x285);if(_0x11b5b1)_0x11b5b1[_0x4669f6(0x23c)]=_0x5d8560?_0x4669f6(0x24a):_0x4669f6(0x218);}function updateItemDropdown(){const _0x4fd7c9=a4_0x33dcc1,_0x1d0ad5=document[_0x4fd7c9(0x1f6)](_0x4fd7c9(0x1df))[_0x4fd7c9(0x264)],_0x1d8ac5=document['getElementById'](_0x4fd7c9(0x2ee));_0x1d8ac5['innerHTML']='';const _0x202925=_0x1d0ad5===_0x4fd7c9(0x22d)?equipmentMaster:consumableMaster;_0x202925[_0x4fd7c9(0x2cb)](function(_0xdca92){const _0x3dd247=_0x4fd7c9,_0x76c298=document[_0x3dd247(0x2ab)](_0x3dd247(0x22f));_0x76c298[_0x3dd247(0x264)]=_0xdca92[_0x3dd247(0x1c6)],_0x76c298[_0x3dd247(0x23c)]=_0xdca92[_0x3dd247(0x1c6)],_0x1d8ac5[_0x3dd247(0x251)](_0x76c298);});}function switchTab(_0x430ef2,_0x2d0e0f){const _0x443b1a=a4_0x33dcc1;document[_0x443b1a(0x1d3)](_0x443b1a(0x2a9))[_0x443b1a(0x2cb)](function(_0x22ffcd){const _0x5254b4=_0x443b1a;_0x22ffcd[_0x5254b4(0x265)][_0x5254b4(0x2c1)](_0x5254b4(0x1f3));}),document[_0x443b1a(0x1d3)]('.tab-btn')[_0x443b1a(0x2cb)](function(_0x1a0767){const _0x534eb5=_0x443b1a;_0x1a0767[_0x534eb5(0x265)][_0x534eb5(0x2c1)]('active');}),document[_0x443b1a(0x1f6)](_0x430ef2)[_0x443b1a(0x265)][_0x443b1a(0x27b)]('active');if(_0x2d0e0f)_0x2d0e0f[_0x443b1a(0x265)]['add'](_0x443b1a(0x1f3));}function escHtml(_0x2d287f){const _0xc10a16=a4_0x33dcc1;return String(_0x2d287f==null?'':_0x2d287f)[_0xc10a16(0x1ea)](/&/g,'&amp;')[_0xc10a16(0x1ea)](/</g,'&lt;')[_0xc10a16(0x1ea)](/>/g,_0xc10a16(0x2d6))[_0xc10a16(0x1ea)](/"/g,'&quot;');}function isBulkSurveyEntryLog(_0x41d442){const _0x51a0a5=a4_0x33dcc1;return!!(_0x41d442&&_0x41d442[_0x51a0a5(0x2f3)]==='실측'&&_0x41d442[_0x51a0a5(0x2c2)]===_0x51a0a5(0x2d4));}function getItemUnit(_0x240048,_0x3734b8){const _0x4638dd=a4_0x33dcc1;if(_0x240048===_0x4638dd(0x22d)){const _0x45d580=equipmentMaster[_0x4638dd(0x225)](function(_0x40f1fc){const _0x3d5baa=_0x4638dd;return _0x40f1fc[_0x3d5baa(0x1c6)]===_0x3734b8;});return _0x45d580?_0x45d580[_0x4638dd(0x23e)]:'-';}const _0x1ac930=consumableMaster[_0x4638dd(0x225)](function(_0x2a875e){const _0x4a7b6a=_0x4638dd;return _0x2a875e[_0x4a7b6a(0x1c6)]===_0x3734b8;});return _0x1ac930?_0x1ac930['unit']:'-';}function formatSurveyEntryDate(_0x13ac3e){const _0x36e453=a4_0x33dcc1,_0x4e00c0=new Date(_0x13ac3e+'T12:00:00');if(isNaN(_0x4e00c0[_0x36e453(0x1f8)]()))return _0x13ac3e;const _0x2e03e8=['일','월','화','수','목','금','토'];return _0x4e00c0[_0x36e453(0x236)]()+'년\x20'+(_0x4e00c0[_0x36e453(0x2bc)]()+0x1)+'월\x20'+_0x4e00c0[_0x36e453(0x232)]()+_0x36e453(0x1e8)+_0x2e03e8[_0x4e00c0[_0x36e453(0x203)]()]+')';}function collectBulkSurveyEntriesByDate(){const _0x29ea42=a4_0x33dcc1,_0x3234c7={};return transactionLogs[_0x29ea42(0x2cb)](function(_0x738e9f){const _0x549d4c=_0x29ea42;if(!isBulkSurveyEntryLog(_0x738e9f))return;const _0x49709f=(_0x738e9f[_0x549d4c(0x1eb)]||'')[_0x549d4c(0x2bf)](0x0,0xa);if(!_0x49709f)return;if(!_0x3234c7[_0x49709f])_0x3234c7[_0x49709f]=[];_0x3234c7[_0x49709f][_0x549d4c(0x20c)](_0x738e9f);}),Object[_0x29ea42(0x21a)](_0x3234c7)[_0x29ea42(0x1bb)](function(_0x3a4749,_0x72d7e9){const _0x1b78c2=_0x29ea42;return _0x72d7e9[_0x1b78c2(0x2e0)](_0x3a4749);})[_0x29ea42(0x244)](function(_0x15d257){const _0x58fb5a=_0x29ea42,_0x3c8834=_0x3234c7[_0x15d257]['slice']()['sort'](function(_0x3c9696,_0x5b9a4f){const _0x191905=a4_0x365f,_0xf482b3=_0x3c9696[_0x191905(0x2de)]===_0x191905(0x22d)?0x0:0x1,_0x43a9cd=_0x5b9a4f[_0x191905(0x2de)]===_0x191905(0x22d)?0x0:0x1;if(_0xf482b3!==_0x43a9cd)return _0xf482b3-_0x43a9cd;return _0x3c9696['name'][_0x191905(0x2e0)](_0x5b9a4f[_0x191905(0x1c6)],'ko');});return{'date':_0x15d257,'items':_0x3c8834,'equip':_0x3c8834[_0x58fb5a(0x256)](function(_0x11cc5c){return _0x11cc5c['type']==='equipment';})[_0x58fb5a(0x288)],'cons':_0x3c8834[_0x58fb5a(0x256)](function(_0x28b647){const _0x924806=_0x58fb5a;return _0x28b647[_0x924806(0x2de)]==='consumable';})[_0x58fb5a(0x288)]};});}function renderSurveyEntryList(_0x1bd9a7){const _0x3ff052=a4_0x33dcc1,_0x574a4e=document[_0x3ff052(0x1f6)](_0x3ff052(0x2f7));if(!_0x574a4e)return;const _0x31f708=collectBulkSurveyEntriesByDate();if(!_0x31f708['length']){_0x574a4e[_0x3ff052(0x1bf)]=_0x3ff052(0x262);return;}_0x574a4e['innerHTML']=_0x31f708[_0x3ff052(0x244)](function(_0x4433c0){const _0x2ecbd0=_0x3ff052,_0x26ea07=_0x1bd9a7&&_0x4433c0['date']===_0x1bd9a7,_0x283ba3=_0x4433c0['items'][_0x2ecbd0(0x244)](function(_0x2e2d5c){const _0x27a5e5=_0x2ecbd0,_0x36b66d=_0x2e2d5c[_0x27a5e5(0x2de)]===_0x27a5e5(0x22d)?'장비':_0x27a5e5(0x1d6);return _0x27a5e5(0x243)+_0x27a5e5(0x25f)+_0x36b66d+_0x27a5e5(0x2f4)+_0x27a5e5(0x29a)+escHtml(_0x2e2d5c['name'])+'</td>'+_0x27a5e5(0x25f)+escHtml(getItemUnit(_0x2e2d5c['type'],_0x2e2d5c['name']))+_0x27a5e5(0x2f4)+_0x27a5e5(0x254)+formatStockDisplay(_0x2e2d5c[_0x27a5e5(0x2ec)])+_0x27a5e5(0x1d7)+_0x27a5e5(0x255);})[_0x2ecbd0(0x233)]('');return _0x2ecbd0(0x2e3)+(_0x26ea07?'\x20open':'')+'>'+_0x2ecbd0(0x2b5)+_0x2ecbd0(0x215)+formatSurveyEntryDate(_0x4433c0[_0x2ecbd0(0x1eb)])+'</span>'+'<span\x20class=\x22survey-entry-meta\x22>장비\x20'+_0x4433c0['equip']+'\x20·\x20소모품\x20'+_0x4433c0[_0x2ecbd0(0x25d)]+'\x20('+_0x4433c0[_0x2ecbd0(0x257)][_0x2ecbd0(0x288)]+_0x2ecbd0(0x26a)+'</summary>'+_0x2ecbd0(0x294)+'<table\x20class=\x22survey-entry-table\x22>'+_0x2ecbd0(0x1db)+'<tbody>'+_0x283ba3+_0x2ecbd0(0x1d1)+_0x2ecbd0(0x28e)+_0x2ecbd0(0x21c)+_0x2ecbd0(0x1ef);})[_0x3ff052(0x233)]('');}function showSurveyEntryListTab(_0x201beb){const _0x257d86=a4_0x33dcc1,_0x4170ed=document[_0x257d86(0x1f6)](_0x257d86(0x1fa));switchTab(_0x257d86(0x283),_0x4170ed),renderSurveyEntryList(_0x201beb);}function calculateAndRender(){const _0x5073a1=a4_0x33dcc1;enforceBaseline2022Anchors();const _0x555c59=parseInt(document[_0x5073a1(0x1f6)]('globalYear')[_0x5073a1(0x264)],0xa);hasInferredMonths=![],document[_0x5073a1(0x1d3)]('.titleTabYear')[_0x5073a1(0x2cb)](function(_0x2631b9){_0x2631b9['innerText']=_0x555c59;}),document['getElementById'](_0x5073a1(0x1f2))[_0x5073a1(0x287)]=_0x555c59;const _0x5d35d8=getWorkingLogs()[_0x5073a1(0x204)]()[_0x5073a1(0x1bb)](function(_0x31bb21,_0x5e60cb){const _0x38a7d3=_0x5073a1;return new Date(_0x31bb21[_0x38a7d3(0x1eb)])-new Date(_0x5e60cb[_0x38a7d3(0x1eb)]);}),_0x335567=document[_0x5073a1(0x284)](_0x5073a1(0x25a));_0x335567[_0x5073a1(0x1bf)]='';let _0x21c438=0x1;_0x5d35d8[_0x5073a1(0x2cb)](function(_0xad8a7e){const _0x312037=_0x5073a1;if(new Date(_0xad8a7e[_0x312037(0x1eb)])[_0x312037(0x236)]()!==_0x555c59)return;const _0x58b8d3=_0x312037(0x230)+getStatusClass(_0xad8a7e['status'])+'\x22>'+_0xad8a7e['status']+_0x312037(0x26e),_0x12012c=_0xad8a7e['status']==='실측'?formatStockDisplay(_0xad8a7e[_0x312037(0x2ec)])+_0x312037(0x2dd):formatStockDisplay(_0xad8a7e[_0x312037(0x2ec)]);_0x335567[_0x312037(0x1bf)]+=_0x312037(0x2df)+_0x21c438++ +'</td><td>'+_0xad8a7e[_0x312037(0x1eb)][_0x312037(0x2bf)](0x5)+_0x312037(0x2f4)+_0x312037(0x29a)+_0xad8a7e[_0x312037(0x1c6)]+_0x312037(0x241)+_0x12012c+_0x312037(0x2f4)+'<td>'+_0x58b8d3+_0x312037(0x1da)+(_0xad8a7e[_0x312037(0x2c2)]||'-')+_0x312037(0x209);});const _0x1d9585=document[_0x5073a1(0x284)](_0x5073a1(0x2e2));_0x1d9585[_0x5073a1(0x1bf)]='',consumableMaster['forEach'](function(_0x27c844){const _0x2b2cfc=_0x5073a1,_0x131cb8=computeTimeline(_0x27c844,_0x2b2cfc(0x2b4),_0x5d35d8,_0x555c59),_0x4ca4e2=getTimelineMonth(_0x131cb8,_0x555c59-0x1,0xc),_0x17b96b=_0x4ca4e2?_0x4ca4e2[_0x2b2cfc(0x2e6)]:_0x27c844[_0x2b2cfc(0x2d5)],_0x353df9=[];for(let _0x5560e4=0x1;_0x5560e4<=0xc;_0x5560e4++){const _0x477cef=getTimelineMonth(_0x131cb8,_0x555c59,_0x5560e4),_0x5d72a9=_0x477cef&&_0x477cef['isManualOverride']?_0x2b2cfc(0x2d7):_0x477cef&&_0x477cef[_0x2b2cfc(0x2aa)]?'\x20style=\x22background-color:#fff3cd;\x22':'',_0x123c2d=_0x477cef&&_0x477cef[_0x2b2cfc(0x2e6)]!==null&&_0x477cef[_0x2b2cfc(0x2e6)]!==undefined?formatStockDisplay(_0x477cef['stock']):'-';_0x353df9[_0x2b2cfc(0x20c)](_0x2b2cfc(0x2a6)+_0x5d72a9+'>'+_0x123c2d+'</td>');}_0x1d9585[_0x2b2cfc(0x1bf)]+=_0x2b2cfc(0x2df)+_0x27c844['id']+_0x2b2cfc(0x2f2)+_0x27c844[_0x2b2cfc(0x1c6)]+_0x2b2cfc(0x2f4)+_0x2b2cfc(0x25f)+_0x27c844[_0x2b2cfc(0x23e)]+_0x2b2cfc(0x241)+_0x27c844[_0x2b2cfc(0x20a)]+_0x2b2cfc(0x2f4)+_0x2b2cfc(0x1e7)+formatStockDisplay(_0x17b96b)+_0x2b2cfc(0x2f4)+_0x353df9[_0x2b2cfc(0x233)]('')+_0x2b2cfc(0x255);}),renderMonthlySurvey(_0x555c59,_0x5d35d8),renderSurveyEntryList();const _0x45d731=document[_0x5073a1(0x284)]('#tableEquipment\x20tbody');_0x45d731[_0x5073a1(0x1bf)]='',equipmentMaster['forEach'](function(_0x239b2a){const _0x1fbc78=_0x5073a1,_0x1441c7=computeTimeline(_0x239b2a,_0x1fbc78(0x22d),_0x5d35d8,_0x555c59),_0x340995=['q1','q2','q3','q4'],_0x549afb={'q1':{'p':0x0,'d':0x0,'l':0x0,'s':0x0},'q2':{'p':0x0,'d':0x0,'l':0x0,'s':0x0},'q3':{'p':0x0,'d':0x0,'l':0x0,'s':0x0},'q4':{'p':0x0,'d':0x0,'l':0x0,'s':0x0}};_0x5d35d8['forEach'](function(_0x2e520b){const _0x42afa1=_0x1fbc78,_0x9bfb3b=new Date(_0x2e520b[_0x42afa1(0x1eb)]);if(_0x2e520b['type']!==_0x42afa1(0x22d)||_0x2e520b['name']!==_0x239b2a[_0x42afa1(0x1c6)]||_0x2e520b[_0x42afa1(0x2f3)]==='실측')return;if(_0x9bfb3b[_0x42afa1(0x236)]()!==_0x555c59)return;const _0x4a83a1=_0x9bfb3b[_0x42afa1(0x2bc)]()+0x1,_0x1eb8d5=_0x4a83a1<=0x3?'q1':_0x4a83a1<=0x6?'q2':_0x4a83a1<=0x9?'q3':'q4';if(_0x2e520b[_0x42afa1(0x2f3)]==='구입')_0x549afb[_0x1eb8d5]['p']+=_0x2e520b[_0x42afa1(0x2ec)];if(_0x2e520b[_0x42afa1(0x2f3)]==='파손'||_0x2e520b[_0x42afa1(0x2f3)]==='폐기')_0x549afb[_0x1eb8d5]['d']+=_0x2e520b[_0x42afa1(0x2ec)];if(_0x2e520b[_0x42afa1(0x2f3)]==='분실')_0x549afb[_0x1eb8d5]['l']+=_0x2e520b[_0x42afa1(0x2ec)];}),_0x340995[_0x1fbc78(0x2cb)](function(_0x4bcabc,_0x1c468b){const _0x3f9a8c=_0x1fbc78,_0x50cd2c=(_0x1c468b+0x1)*0x3,_0x1944bf=getTimelineMonth(_0x1441c7,_0x555c59,_0x50cd2c);_0x549afb[_0x4bcabc]['s']=_0x1944bf?_0x1944bf[_0x3f9a8c(0x2e6)]:getStartStock(_0x239b2a,_0x3f9a8c(0x22d));});const _0x2de6bc=function(_0x5a6419){if(_0x5a6419===0x0)return'ㆍ';return formatStockDisplay(_0x5a6419);};_0x45d731[_0x1fbc78(0x1bf)]+=_0x1fbc78(0x2df)+_0x239b2a['id']+_0x1fbc78(0x2cc)+_0x239b2a[_0x1fbc78(0x1c6)]+_0x1fbc78(0x241)+_0x239b2a['unit']+'</td>'+'<td>'+_0x2de6bc(_0x549afb['q1']['p'])+_0x1fbc78(0x241)+_0x2de6bc(_0x549afb['q1']['d'])+_0x1fbc78(0x241)+_0x2de6bc(_0x549afb['q1']['l'])+_0x1fbc78(0x1f7)+formatStockDisplay(_0x549afb['q1']['s'])+'</td>'+_0x1fbc78(0x25f)+_0x2de6bc(_0x549afb['q2']['p'])+'</td><td>'+_0x2de6bc(_0x549afb['q2']['d'])+_0x1fbc78(0x241)+_0x2de6bc(_0x549afb['q2']['l'])+_0x1fbc78(0x1f7)+formatStockDisplay(_0x549afb['q2']['s'])+_0x1fbc78(0x2f4)+_0x1fbc78(0x25f)+_0x2de6bc(_0x549afb['q3']['p'])+_0x1fbc78(0x241)+_0x2de6bc(_0x549afb['q3']['d'])+_0x1fbc78(0x241)+_0x2de6bc(_0x549afb['q3']['l'])+_0x1fbc78(0x1f7)+formatStockDisplay(_0x549afb['q3']['s'])+_0x1fbc78(0x2f4)+_0x1fbc78(0x25f)+_0x2de6bc(_0x549afb['q4']['p'])+_0x1fbc78(0x241)+_0x2de6bc(_0x549afb['q4']['d'])+_0x1fbc78(0x241)+_0x2de6bc(_0x549afb['q4']['l'])+_0x1fbc78(0x1f7)+formatStockDisplay(_0x549afb['q4']['s'])+_0x1fbc78(0x209);});const _0x39b3ca=document[_0x5073a1(0x1f6)](_0x5073a1(0x25b));if(_0x39b3ca){let _0x321acd=hasInferredMonths?'<strong>💡\x20추정\x20규칙:</strong>\x20<strong>소모품</strong>\x20공백은\x20구입주기\x20곡선으로\x20추정하며,\x20<strong>수량\x20추이</strong>\x20화면에서\x20드래그한\x20수동\x20조절값도\x20반영됩니다.\x20<strong>장비</strong>는\x20실측·이벤트\x20기준\x20<strong>수량\x20고정</strong>.\x20<span\x20style=\x22background:#fff3cd;padding:0\x204px;\x22>노란</span>=추정\x20·\x20<span\x20style=\x22background:#e8daef;padding:0\x204px;\x22>보라</span>=수동조정.':'<strong>💡\x20연동\x20엔진:</strong>\x20왼쪽\x20실측·이벤트\x20입력\x20→\x201·2번\x20대장\x20자동\x20갱신.\x20소모품\x20공백은\x20③\x20주기\x20설정을\x20반영합니다.';baselineRestoreCount>0x0&&(_0x321acd=_0x5073a1(0x1c1)+baselineRestoreCount+_0x5073a1(0x2b6)+_0x321acd,baselineRestoreCount=0x0),previewSurveyOverlay&&(_0x321acd='<strong>🔍\x20가상\x20미리보기:</strong>\x20아래\x20표는\x20입력값\x20반영\x20결과입니다.\x20확정하려면\x20왼쪽\x20「이대로\x20실제\x20등록」을\x20누르세요.\x20'+_0x321acd),_0x39b3ca[_0x5073a1(0x1bf)]=_0x321acd;}renderSurveyList();}function getStatusClass(_0x251f0d){const _0xff41ff=a4_0x33dcc1;switch(_0x251f0d){case'구입':return'bg-purchase';case'수리':return _0xff41ff(0x28b);case'파손':return _0xff41ff(0x2d2);case'분실':return _0xff41ff(0x250);case'폐기':return _0xff41ff(0x263);case'실측':return'bg-survey';default:return'';}}function getSelectedYear(){const _0x7fdef3=a4_0x33dcc1;return document[_0x7fdef3(0x1f6)](_0x7fdef3(0x296))['value'];}function exportFile1(){const _0x266088=a4_0x33dcc1,_0x3fb91c=XLSX['utils'][_0x266088(0x2ef)](document[_0x266088(0x1f6)](_0x266088(0x1fd)),{'sheet':_0x266088(0x21b)});XLSX[_0x266088(0x270)](_0x3fb91c,_0x266088(0x220)+getSelectedYear()+_0x266088(0x1ce));}function exportFile2(){const _0x214349=a4_0x33dcc1,_0x3eca51=XLSX[_0x214349(0x24e)][_0x214349(0x2ef)](document['getElementById']('tableConsumable'),{'sheet':'월별재고종합'});XLSX[_0x214349(0x270)](_0x3eca51,_0x214349(0x292)+getSelectedYear()+_0x214349(0x1ce));}function exportFile2Monthly(){const _0x33b4eb=a4_0x33dcc1,_0x31504d=XLSX[_0x33b4eb(0x24e)][_0x33b4eb(0x2ef)](document['getElementById'](_0x33b4eb(0x20e)),{'sheet':_0x33b4eb(0x1f0)}),_0x120c59=document[_0x33b4eb(0x1f6)](_0x33b4eb(0x253))[_0x33b4eb(0x264)];XLSX[_0x33b4eb(0x270)](_0x31504d,_0x33b4eb(0x1ba)+getSelectedYear()+'-'+_0x120c59+_0x33b4eb(0x273));}function exportFile3(){const _0x247459=a4_0x33dcc1,_0x1652d7=XLSX[_0x247459(0x24e)][_0x247459(0x2ef)](document[_0x247459(0x1f6)]('tableLog'),{'sheet':_0x247459(0x297)});XLSX[_0x247459(0x270)](_0x1652d7,_0x247459(0x269)+getSelectedYear()+_0x247459(0x1ce));}window[a4_0x33dcc1(0x1e4)]=async function(){const _0x295ca8=a4_0x33dcc1;try{await window['inventoryDataReady'];}catch(_0xf43f37){return;}buildConsumptionProfiles();const _0x383685=new Date(),_0x352d4c=_0x383685[_0x295ca8(0x236)]()+'-'+String(_0x383685[_0x295ca8(0x2bc)]()+0x1)[_0x295ca8(0x2bd)](0x2,'0')+'-'+String(_0x383685[_0x295ca8(0x232)]())[_0x295ca8(0x2bd)](0x2,'0'),_0x1c92f0=document[_0x295ca8(0x1f6)](_0x295ca8(0x23f)),_0x406dbf=document[_0x295ca8(0x1f6)]('logDate');if(_0x1c92f0)_0x1c92f0[_0x295ca8(0x264)]=_0x352d4c;if(_0x406dbf)_0x406dbf[_0x295ca8(0x264)]=_0x352d4c;initSurveyInputHandlers(),renderSurveyList(),_0x1c92f0&&_0x1c92f0['addEventListener'](_0x295ca8(0x1f9),function(){renderSurveyList();}),renderCycleSettingsList(),updateItemDropdown(),calculateAndRender(),document['getElementById']('btnApplySurvey')[_0x295ca8(0x22e)](_0x295ca8(0x234),applyBulkSurvey),document['getElementById']('btnPreviewSurvey')['addEventListener'](_0x295ca8(0x234),previewBulkSurvey),document['getElementById'](_0x295ca8(0x2cd))?.[_0x295ca8(0x22e)]('click',saveCycleSettings),document[_0x295ca8(0x1f6)]('btnPreviewCycleSettings')?.[_0x295ca8(0x22e)](_0x295ca8(0x234),previewCycleSettings),document[_0x295ca8(0x1f6)]('btnResetCycleSettings')?.[_0x295ca8(0x22e)](_0x295ca8(0x234),resetCycleSettingsToDefaults),document[_0x295ca8(0x1f6)]('logForm')[_0x295ca8(0x22e)]('submit',async function(_0x4d5ce0){const _0x1a0aa7=_0x295ca8;_0x4d5ce0[_0x1a0aa7(0x211)]();const _0x27f01e={'id':nextLogId++,'date':document[_0x1a0aa7(0x1f6)](_0x1a0aa7(0x25e))['value'],'name':document[_0x1a0aa7(0x1f6)]('itemName')[_0x1a0aa7(0x264)],'type':document['getElementById'](_0x1a0aa7(0x1df))['value'],'qty':roundStock(parseFloat(document[_0x1a0aa7(0x1f6)](_0x1a0aa7(0x25c))[_0x1a0aa7(0x264)])),'status':document['getElementById'](_0x1a0aa7(0x1b9))['value'],'memo':document[_0x1a0aa7(0x1f6)](_0x1a0aa7(0x20f))[_0x1a0aa7(0x264)]},_0x23e735=getYearMonthFromDateStr(_0x27f01e[_0x1a0aa7(0x1eb)]);if(_0x27f01e[_0x1a0aa7(0x2f3)]==='실측'&&isBaselineLockedYearMonth(_0x23e735[_0x1a0aa7(0x1b8)],_0x23e735[_0x1a0aa7(0x202)])){alert(_0x1a0aa7(0x1c7));return;}transactionLogs['push'](_0x27f01e),enforceBaseline2022Anchors();const _0x101c01=new Date(_0x27f01e[_0x1a0aa7(0x1eb)])['getFullYear']();_0x101c01>=0x7e6&&_0x101c01<=0x7ea&&(document['getElementById'](_0x1a0aa7(0x296))[_0x1a0aa7(0x264)]=String(_0x101c01));calculateAndRender();try{await saveLogsToStorage(),document[_0x1a0aa7(0x1f6)]('logQty')['value']=0x1,document[_0x1a0aa7(0x1f6)](_0x1a0aa7(0x20f))[_0x1a0aa7(0x264)]='',alert(_0x1a0aa7(0x2ea));}catch(_0x4cae34){console[_0x1a0aa7(0x28c)](_0x4cae34),alert(_0x1a0aa7(0x29f));}});};
+// --- [마스터 데이터: 2022년 원본 기준] ---
+const equipmentMaster = [
+    { id: 1, name: '측정장비', unit: '대', baseQty: 6 },
+    { id: 2, name: '차체교정기', unit: '대', baseQty: 1 },
+    { id: 3, name: '화이트 바디(보디라이너,카로나이너)', unit: '대', baseQty: 2 },
+    { id: 4, name: '연삭기', unit: '대', baseQty: 3 },
+    { id: 5, name: '유압 램', unit: 'SE', baseQty: 1 },
+    { id: 6, name: 'STUD(인출기)', unit: '대', baseQty: 3 },
+    { id: 7, name: '가열 장비(토치)', unit: 'SE', baseQty: 1 },
+    { id: 8, name: '인장용 도구', unit: '세트', baseQty: 3 },
+    { id: 9, name: '바이스', unit: '대', baseQty: 4 },
+    { id: 10, name: 'MIG AL용접기', unit: '대', baseQty: 5 },
+    { id: 11, name: '절단기(산소, 플라즈마))', unit: '대', baseQty: 4 },
+    { id: 12, name: 'MIG 씨오투 용접기', unit: '대', baseQty: 14 },
+    { id: 13, name: '차체 접착 특수공구(스포트)', unit: '대', baseQty: 4 },
+    { id: 14, name: '방청건', unit: '대', baseQty: 2 },
+    { id: 15, name: '차체 리벳 장비', unit: '대', baseQty: 4 },
+    { id: 16, name: '신소재 관련작업 특수공구', unit: '대', baseQty: 1 },
+    { id: 17, name: '스라이딩 해머', unit: '대', baseQty: 1 },
+    { id: 18, name: '탁상 바이스', unit: 'SE', baseQty: 15 },
+    { id: 19, name: '아크용접기(전기용접)', unit: 'SE', baseQty: 7 },
+    { id: 20, name: '판금용공구', unit: '대', baseQty: 7 },
+    { id: 21, name: '에어 톱', unit: '세트', baseQty: 15 },
+    { id: 22, name: '에어 그라인더', unit: '개', baseQty: 20 },
+    { id: 23, name: '스폿 드릴', unit: '대', baseQty: 15 },
+    { id: 24, name: '용접바이스', unit: '대', baseQty: 34 },
+    { id: 25, name: '철판바이스', unit: '대', baseQty: 24 },
+    { id: 26, name: '에어 앵글 그라인더', unit: '대', baseQty: 25 },
+    { id: 27, name: '벨트센더', unit: '대', baseQty: 2 }
+];
+
+const consumableMaster = [
+    { id: 1, name: '전기용접봉', unit: 'EA', baseQty: 5, initialStock: 8 },
+    { id: 2, name: '용접와이어', unit: 'EA', baseQty: 5, initialStock: 11 },
+    { id: 3, name: '용접장갑', unit: '짝', baseQty: 15, initialStock: 15 },
+    { id: 4, name: '용접귀마개', unit: 'EA', baseQty: 15, initialStock: 15 },
+    { id: 5, name: '가죽앞치마', unit: '벌', baseQty: 20, initialStock: 15 },
+    { id: 6, name: '용접면', unit: 'EA', baseQty: 15, initialStock: 15 },
+    { id: 7, name: '용접토치 노즐', unit: 'EA', baseQty: 20, initialStock: 10 },
+    { id: 8, name: '용접토치 팁홀더', unit: 'EA', baseQty: 20, initialStock: 4 },
+    { id: 9, name: '용접토치 팁', unit: 'EA', baseQty: 20, initialStock: 25 },
+    { id: 10, name: '용접토치', unit: 'EA', baseQty: 3, initialStock: 2 },
+    { id: 11, name: '탄산가스', unit: '통', baseQty: 6, initialStock: 18 },
+    { id: 12, name: '아르곤가스', unit: '통', baseQty: 2, initialStock: 2 },
+    { id: 13, name: '산소', unit: '통', baseQty: 3, initialStock: 2 },
+    { id: 14, name: '프로판', unit: '통', baseQty: 3, initialStock: 2 },
+    { id: 15, name: '혼합가스', unit: '통', baseQty: 2, initialStock: 1 },
+    { id: 16, name: '1T연강판', unit: 'EA', baseQty: 300, initialStock: 831 },
+    { id: 17, name: '센터필러', unit: 'EA', baseQty: 150, initialStock: 998 },
+    { id: 18, name: '3T 강판', unit: 'EA', baseQty: 100, initialStock: 1890 },
+    { id: 19, name: '에어톱 날', unit: 'EA', baseQty: 100, initialStock: 90 },
+    { id: 20, name: '스폿드릴 날', unit: 'EA', baseQty: 20, initialStock: 150 },
+    { id: 21, name: '와이어브러시 날', unit: 'EA', baseQty: 15, initialStock: 12 },
+    { id: 22, name: '벨트센더 벨트', unit: 'EA', baseQty: 500, initialStock: 440 },
+    { id: 23, name: '토치라이터', unit: 'EA', baseQty: 80, initialStock: 1 },
+    { id: 24, name: '보호 면', unit: 'EA', baseQty: 15, initialStock: 15 },
+    { id: 25, name: '플라이어', unit: 'EA', baseQty: 30, initialStock: 4 },
+    { id: 26, name: '전기용접 홀더', unit: 'EA', baseQty: 2, initialStock: 2 },
+    { id: 27, name: 'Co2게이지', unit: 'EA', baseQty: 10, initialStock: 2 },
+    { id: 28, name: '돌그라인더', unit: 'EA', baseQty: 30, initialStock: 8 },
+    { id: 29, name: '해바라기 패빠', unit: 'EA', baseQty: 30, initialStock: 145 },
+    { id: 30, name: '36방페이퍼', unit: 'EA', baseQty: 100, initialStock: 0 },
+    { id: 31, name: '80방페이퍼', unit: 'EA', baseQty: 100, initialStock: 0 }
+];
+
+let transactionLogs = (typeof BASELINE_2022_LOGS !== 'undefined' ? BASELINE_2022_LOGS.slice() : []);
+
+let nextLogId = 10000;
+let hasInferredMonths = false;
+let consumptionProfileCache = null;
+/** 품목별 구입·소모 주기 (소모품, Firebase·localStorage 동기화) */
+let itemCycleSettings = {};
+/** 그래프에서 수동 조절한 월말 재고 (추정 구간만, 실측은 불변) */
+let itemStockOverrides = {};
+/** 가상 미리보기용 임시 실측 로그 (실제 transactionLogs에는 반영 안 됨) */
+let previewSurveyOverlay = null;
+/** 로드 시 2022년 1~8월 엑셀 실측이 복원된 건수 (안내용) */
+let baselineRestoreCount = 0;
+
+/** 2022년 1~8월 = 엑셀 실측 고정 구간 (변경·삭제 불가) */
+function isBaselineLockedYearMonth(year, month) {
+    return year === 2022 && month >= 1 && month <= 8;
+}
+
+function getYearMonthFromDateStr(dateStr) {
+    const d = new Date(dateStr);
+    if (!dateStr || isNaN(d.getTime())) return { year: 0, month: 0 };
+    return { year: d.getFullYear(), month: d.getMonth() + 1 };
+}
+
+function isSameYearMonth(dateStrA, dateStrB) {
+    if (!dateStrA || !dateStrB) return false;
+    return dateStrA.substring(0, 7) === dateStrB.substring(0, 7);
+}
+
+function removeItemSurveyLogsForMonth(type, name, surveyDate) {
+    const ymInfo = getYearMonthFromDateStr(surveyDate);
+    if (isBaselineLockedYearMonth(ymInfo.year, ymInfo.month)) return;
+
+    const ym = surveyDate.substring(0, 7);
+    transactionLogs = transactionLogs.filter(function (l) {
+        if (l.type !== type || l.name !== name || l.status !== '실측') return true;
+        return (l.date || '').substring(0, 7) !== ym;
+    });
+}
+
+function clearLockedBaselineOverrides() {
+    let cleared = 0;
+    Object.keys(itemStockOverrides).forEach(function (key) {
+        const bucket = itemStockOverrides[key];
+        if (!bucket) return;
+        Object.keys(bucket).forEach(function (mk) {
+            const parts = mk.split('-');
+            const y = parseInt(parts[0], 10);
+            const m = parseInt(parts[1], 10);
+            if (isBaselineLockedYearMonth(y, m)) {
+                delete bucket[mk];
+                cleared++;
+            }
+        });
+        if (!Object.keys(bucket).length) delete itemStockOverrides[key];
+    });
+    return cleared;
+}
+
+/** 2022년 1~8월 엑셀 실측을 BASELINE 값으로 항상 고정 */
+function enforceBaseline2022Anchors() {
+    if (typeof BASELINE_2022_LOGS === 'undefined') return 0;
+    let changes = clearLockedBaselineOverrides();
+
+    BASELINE_2022_LOGS.forEach(function (baseLog) {
+        if (baseLog.status !== '실측') return;
+        const ymInfo = getYearMonthFromDateStr(baseLog.date);
+        if (!isBaselineLockedYearMonth(ymInfo.year, ymInfo.month)) return;
+
+        const ymStr = baseLog.date.substring(0, 7);
+        const beforeLen = transactionLogs.length;
+
+        transactionLogs = transactionLogs.filter(function (l) {
+            if (l.type !== baseLog.type || l.name !== baseLog.name || l.status !== '실측') return true;
+            return (l.date || '').substring(0, 7) !== ymStr;
+        });
+        if (transactionLogs.length !== beforeLen) changes++;
+
+        const hasExact = transactionLogs.some(function (l) {
+            return l.type === baseLog.type && l.name === baseLog.name && l.status === '실측' &&
+                l.date === baseLog.date && l.qty === baseLog.qty && l.memo === baseLog.memo;
+        });
+        if (!hasExact) {
+            transactionLogs.push(Object.assign({}, baseLog, {
+                id: baseLog.id != null ? baseLog.id : nextLogId++
+            }));
+            changes++;
+        }
+    });
+
+    return changes;
+}
+
+function getWorkingLogs() {
+    if (!previewSurveyOverlay || !previewSurveyOverlay.length) return transactionLogs;
+    const merged = transactionLogs.filter(function (l) {
+        if (l.status !== '실측') return true;
+        return !previewSurveyOverlay.some(function (d) {
+            return d.type === l.type && d.name === l.name && isSameYearMonth(d.date, l.date);
+        });
+    });
+    return merged.concat(previewSurveyOverlay);
+}
+
+function collectSurveyDrafts() {
+    const date = document.getElementById('surveyDate').value;
+    if (!date) return null;
+    const drafts = [];
+    document.querySelectorAll('.survey-qty').forEach(function (input) {
+        const qty = parseSurveyQtyInput(input);
+        if (qty == null) return;
+        drafts.push({
+            id: 'preview-' + input.dataset.type + '-' + input.dataset.name,
+            date: date,
+            name: input.dataset.name,
+            type: input.dataset.type,
+            qty: qty,
+            status: '실측',
+            memo: '가상 미리보기 (미저장)'
+        });
+    });
+    return drafts.length ? drafts : null;
+}
+
+function isSurveyQtyKept(raw) {
+    return raw === '' || raw === '기존';
+}
+
+function parseSurveyQtyInput(input) {
+    const raw = (input.value || '').trim();
+    if (isSurveyQtyKept(raw)) return null;
+    const qty = roundStock(parseFloat(raw));
+    if (isNaN(qty) || qty < 0) return null;
+    return qty;
+}
+
+function normalizeSurveyInputOnBlur(input) {
+    const qty = parseSurveyQtyInput(input);
+    if (qty == null) {
+        input.value = '기존';
+        input.classList.add('is-keep');
+        return;
+    }
+    input.value = String(qty);
+    input.classList.remove('is-keep');
+}
+
+function getSurveyCarryStock(item, type, surveyDateStr) {
+    if (!surveyDateStr) return getStartStock(item, type);
+    const d = new Date(surveyDateStr);
+    if (isNaN(d.getTime())) return getStartStock(item, type);
+    const year = d.getFullYear();
+    const month = d.getMonth() + 1;
+    const sortedLogs = transactionLogs.slice().sort(function (a, b) {
+        return new Date(a.date) - new Date(b.date);
+    });
+    const timeline = computeTimeline(item, type, sortedLogs, Math.max(year, 2022));
+    const cell = getTimelineMonth(timeline, year, month);
+    if (cell && cell.stock !== null && cell.stock !== undefined) {
+        return cell.stock;
+    }
+    const prev = getPrevYearMonth(year, month);
+    const prevCell = getTimelineMonth(timeline, prev.year, prev.month);
+    if (prevCell && prevCell.stock !== null && prevCell.stock !== undefined) {
+        return prevCell.stock;
+    }
+    return getStartStock(item, type);
+}
+
+function collectSurveyInputDrafts() {
+    const drafts = {};
+    document.querySelectorAll('.survey-qty').forEach(function (input) {
+        const raw = (input.value || '').trim();
+        if (isSurveyQtyKept(raw)) return;
+        const key = input.dataset.type + '::' + input.dataset.name;
+        drafts[key] = raw;
+    });
+    return drafts;
+}
+
+function buildSurveyQtyInput(item, type, surveyDate, drafts) {
+    const key = type + '::' + item.name;
+    const carry = getSurveyCarryStock(item, type, surveyDate);
+    const carryHint = formatStockDisplay(carry);
+    let value = '기존';
+    let keepClass = ' is-keep';
+    if (drafts[key] != null) {
+        value = drafts[key];
+        keepClass = '';
+    }
+    return (
+        '<input type="text" class="survey-qty' + keepClass + '" inputmode="numeric" ' +
+            'data-type="' + type + '" data-name="' + item.name + '" data-carry="' + carry + '" ' +
+            'title="기존 유지 시 ' + carryHint + ' (전월 이월·추정 포함)" ' +
+            'value="' + value + '">'
+    );
+}
+
+function initSurveyInputHandlers() {
+    if (document.body.dataset.surveyInputBound) return;
+    document.body.dataset.surveyInputBound = '1';
+    document.addEventListener('focusin', function (e) {
+        const input = e.target;
+        if (!input.classList || !input.classList.contains('survey-qty')) return;
+        if (input.value === '기존') {
+            input.value = '';
+            input.classList.remove('is-keep');
+        }
+    });
+    document.addEventListener('focusout', function (e) {
+        const input = e.target;
+        if (!input.classList || !input.classList.contains('survey-qty')) return;
+        normalizeSurveyInputOnBlur(input);
+    });
+}
+
+function setPreviewBanner(active, count) {
+    const banner = document.getElementById('previewBanner');
+    if (!banner) return;
+    if (!active) {
+        banner.style.display = 'none';
+        return;
+    }
+    banner.style.display = 'block';
+    banner.innerHTML =
+        '<strong>🔍 가상 미리보기 중</strong> — ' + count + '개 품목이 임시 반영되었습니다. ' +
+        '오른쪽 표만 바뀌며 실제 데이터는 저장되지 않습니다. ' +
+        '<button type="button" class="btn-preview-action" id="btnCommitPreview">이대로 실제 등록</button> ' +
+        '<button type="button" class="btn-preview-action btn-preview-cancel" id="btnCancelPreview">미리보기 취소</button>';
+    document.getElementById('btnCommitPreview').addEventListener('click', applyBulkSurvey);
+    document.getElementById('btnCancelPreview').addEventListener('click', cancelPreviewSurvey);
+}
+
+function previewBulkSurvey() {
+    const date = document.getElementById('surveyDate') && document.getElementById('surveyDate').value;
+    if (date) {
+        const surveyYm = getYearMonthFromDateStr(date);
+        if (isBaselineLockedYearMonth(surveyYm.year, surveyYm.month)) {
+            alert('2022년 1~8월은 엑셀 실측 고정 구간입니다.\n이 기간은 미리보기·등록할 수 없습니다.');
+            return;
+        }
+    }
+    const drafts = collectSurveyDrafts();
+    if (!drafts) {
+        alert('실측할 품목을 하나 이상 숫자로 입력해 주세요.\n「기존」으로 두면 미리보기·등록 대상에서 제외됩니다.');
+        return;
+    }
+    previewSurveyOverlay = drafts;
+    const inputYear = new Date(drafts[0].date).getFullYear();
+    if (inputYear >= 2022 && inputYear <= 2026) {
+        document.getElementById('globalYear').value = String(inputYear);
+    }
+    setPreviewBanner(true, drafts.length);
+    calculateAndRender();
+}
+
+function cancelPreviewSurvey() {
+    previewSurveyOverlay = null;
+    setPreviewBanner(false);
+    calculateAndRender();
+}
+
+function roundStock(n) {
+    if (n === null || n === undefined || isNaN(n)) return 0;
+    return Math.round(Number(n));
+}
+
+/** 오늘 달력 기준 — 해당 연·월이 아직 오지 않았으면 true (자동 기입 금지) */
+function isFutureMonth(year, month) {
+    const now = new Date();
+    const ty = now.getFullYear();
+    const tm = now.getMonth() + 1;
+    if (year > ty) return true;
+    if (year === ty && month > tm) return true;
+    return false;
+}
+
+function formatStockDisplay(stock) {
+    if (stock === null || stock === undefined || stock === '') return '-';
+    return String(roundStock(stock));
+}
+
+/** 품목·연·월 기준 고정 난수 (새로고침해도 같은 추정값) */
+function seededRandom(name, year, month, salt) {
+    const s = name + '|' + year + '|' + month + '|' + (salt || '');
+    let h = 2166136261;
+    for (let i = 0; i < s.length; i++) {
+        h ^= s.charCodeAt(i);
+        h = Math.imul(h, 16777619);
+    }
+    return (Math.abs(h) % 10000) / 10000;
+}
+
+function defaultCycleFromProfile(profile) {
+    if (profile.purchaseFreq > 0) {
+        return Math.max(1, Math.min(24, Math.round(1 / profile.purchaseFreq)));
+    }
+    return 3;
+}
+
+function getItemCycleSettings(name) {
+    const custom = itemCycleSettings[name] || {};
+    const profile = getConsumptionProfile(name, 'consumable');
+    const item = consumableMaster.find(function (i) { return i.name === name; });
+    const baseQty = item ? item.baseQty : 1;
+    return {
+        purchaseCycleMonths: custom.purchaseCycleMonths != null && custom.purchaseCycleMonths !== ''
+            ? Number(custom.purchaseCycleMonths)
+            : defaultCycleFromProfile(profile),
+        monthlyUse: custom.monthlyUse != null && custom.monthlyUse !== ''
+            ? Number(custom.monthlyUse)
+            : Math.max(1, profile.avgUse || baseQty * 0.02),
+        purchaseQty: custom.purchaseQty != null && custom.purchaseQty !== ''
+            ? Number(custom.purchaseQty)
+            : Math.max(1, profile.avgPurchase || baseQty),
+        cycleVariance: custom.cycleVariance != null && custom.cycleVariance !== ''
+            ? Number(custom.cycleVariance)
+            : 0.35
+    };
+}
+
+function getNextCycleLength(itemName, baseCycle, cycleIndex, year, month, variance) {
+    const r = seededRandom(itemName, year, month, 'cl' + cycleIndex);
+    const jitter = 1 - variance * 0.5 + r * variance;
+    return Math.max(1, Math.round(baseCycle * jitter));
+}
+
+/** 소모품 공백월: 구입주기 기반 소모→구입→소모 곡선 (난수는 품목·연·월 고정) */
+function generateCycleGapDeltas(item, timeline, fillIndices, totalDelta) {
+    const settings = getItemCycleSettings(item.name);
+    const profile = getConsumptionProfile(item.name, 'consumable');
+    const monthlyUse = Math.max(1, settings.monthlyUse);
+    const purchaseQty = Math.max(1, settings.purchaseQty);
+    const baseCycle = Math.max(1, Math.min(36, settings.purchaseCycleMonths));
+    const variance = Math.max(0, Math.min(1, settings.cycleVariance));
+
+    const deltas = [];
+    let monthsSincePurchase = 0;
+    let cycleIndex = 0;
+    let nextCycleAt = getNextCycleLength(
+        item.name, baseCycle, cycleIndex,
+        timeline[fillIndices[0]].y, timeline[fillIndices[0]].m, variance
+    );
+
+    fillIndices.forEach(function (j) {
+        const t = timeline[j];
+        const seasonal = profile.seasonal[(t.m - 1) % 12] || 1;
+        const rUse = seededRandom(item.name, t.y, t.m, 'use');
+        const rPur = seededRandom(item.name, t.y, t.m, 'pur');
+        const rTrig = seededRandom(item.name, t.y, t.m, 'trg');
+
+        let delta = -monthlyUse * seasonal * (0.55 + rUse * 0.95);
+        monthsSincePurchase++;
+
+        const cycleDue = monthsSincePurchase >= nextCycleAt;
+        const emergencyBuy = rTrig > 0.88;
+
+        if (cycleDue || emergencyBuy) {
+            delta += purchaseQty * (0.4 + rPur * 1.05);
+            monthsSincePurchase = 0;
+            cycleIndex++;
+            nextCycleAt = getNextCycleLength(item.name, baseCycle, cycleIndex, t.y, t.m, variance);
+        }
+
+        deltas.push(roundStock(delta));
+    });
+
+    if (!deltas.length) return deltas;
+
+    const sum = deltas.reduce(function (a, b) { return a + b; }, 0);
+
+    if (Math.abs(totalDelta) < 0.001) {
+        const fix = sum / deltas.length;
+        return deltas.map(function (d) { return roundStock(d - fix); });
+    }
+
+    if (Math.abs(sum) < 0.001) {
+        return deltas.map(function (_, i) {
+            const t = timeline[fillIndices[i]];
+            const r = seededRandom(item.name, t.y, t.m, 'flat');
+            return roundStock(totalDelta * (0.7 + r * 0.6) / deltas.length);
+        });
+    }
+
+    const scale = totalDelta / sum;
+    return deltas.map(function (d) { return roundStock(d * scale); });
+}
+
+/** 실측 앵커 없는 이후 구간: 동일 주기 엔진으로 월말 재고 추정 */
+function applyCycleTrailingMonth(item, t, running) {
+    const settings = getItemCycleSettings(item.name);
+    const profile = getConsumptionProfile(item.name, 'consumable');
+    const monthlyUse = Math.max(1, settings.monthlyUse);
+    const purchaseQty = Math.max(1, settings.purchaseQty);
+    const baseCycle = Math.max(1, settings.purchaseCycleMonths);
+    const variance = Math.max(0, Math.min(1, settings.cycleVariance));
+    const seasonal = profile.seasonal[(t.m - 1) % 12] || 1;
+
+    const cycleSlot = Math.floor((t.y - 2022) * 12 + (t.m - 1));
+    const rUse = seededRandom(item.name, t.y, t.m, 'tuse');
+    const rPur = seededRandom(item.name, t.y, t.m, 'tpur');
+    const rTrig = seededRandom(item.name, t.y, t.m, 'ttrg');
+
+    let delta = -monthlyUse * seasonal * (0.55 + rUse * 0.95);
+    const phase = cycleSlot % getNextCycleLength(item.name, baseCycle, Math.floor(cycleSlot / baseCycle), t.y, t.m, variance);
+    if (phase === 0 || rTrig > 0.9) {
+        delta += purchaseQty * (0.4 + rPur * 1.05);
+    }
+    return Math.max(0, roundStock(running + delta));
+}
+
+function buildConsumptionProfiles() {
+    const profiles = {};
+    const baseline = typeof BASELINE_2022_LOGS !== 'undefined' ? BASELINE_2022_LOGS : [];
+
+    function ensure(name) {
+        if (!profiles[name]) {
+            profiles[name] = {
+                avgUse: 1,
+                avgPurchase: 0,
+                seasonal: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                volatility: 0.3
+            };
+        }
+        return profiles[name];
+    }
+
+    consumableMaster.forEach(function (item) {
+        const name = item.name;
+        const p = ensure(name);
+        const stocks = [];
+        let prev = item.initialStock;
+
+        for (let m = 1; m <= 8; m++) {
+            const hit = baseline.filter(function (l) {
+                const d = new Date(l.date);
+                return l.type === 'consumable' && l.name === name && l.status === '실측' &&
+                    d.getFullYear() === 2022 && d.getMonth() + 1 === m;
+            });
+            if (hit.length) {
+                stocks.push({ m: m, stock: hit[hit.length - 1].qty, prev: prev });
+                prev = hit[hit.length - 1].qty;
+            }
+        }
+
+        const uses = [];
+        const seasonalSum = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        const seasonalCnt = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+        stocks.forEach(function (row) {
+            const delta = row.stock - row.prev;
+            if (delta < 0) {
+                const use = -delta;
+                uses.push(use);
+                seasonalSum[row.m - 1] += use;
+                seasonalCnt[row.m - 1]++;
+            }
+            row.prev = row.stock;
+        });
+
+        const purchases = baseline.filter(function (l) {
+            const d = new Date(l.date);
+            return l.type === 'consumable' && l.name === name && l.status === '구입' && d.getFullYear() === 2022;
+        });
+
+        if (uses.length) {
+            p.avgUse = uses.reduce(function (a, b) { return a + b; }, 0) / uses.length;
+            const mean = p.avgUse;
+            let varSum = 0;
+            uses.forEach(function (u) { varSum += Math.pow(u - mean, 2); });
+            p.volatility = Math.sqrt(varSum / uses.length) || mean * 0.25;
+        } else {
+            p.avgUse = Math.max(1, item.baseQty * 0.02);
+            p.volatility = p.avgUse * 0.35;
+        }
+
+        if (p.avgUse < 1) p.avgUse = 1;
+
+        for (let mi = 0; mi < 12; mi++) {
+            if (seasonalCnt[mi] > 0) {
+                p.seasonal[mi] = (seasonalSum[mi] / seasonalCnt[mi]) / p.avgUse;
+            }
+        }
+
+        if (purchases.length) {
+            p.avgPurchase = purchases.reduce(function (a, l) { return a + l.qty; }, 0) / purchases.length;
+            p.purchaseFreq = purchases.length / 8;
+        }
+    });
+
+    equipmentMaster.forEach(function (item) {
+        profiles[item.name] = {
+            avgUse: 0,
+            avgPurchase: 0,
+            seasonal: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            volatility: 0,
+            purchaseFreq: 0,
+            stable: true
+        };
+    });
+
+    consumptionProfileCache = profiles;
+}
+
+function getConsumptionProfile(name, type) {
+    if (!consumptionProfileCache) buildConsumptionProfiles();
+    if (type === 'equipment') {
+        return consumptionProfileCache[name] || {
+            avgUse: 0, avgPurchase: 0,
+            seasonal: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            volatility: 0, purchaseFreq: 0, stable: true
+        };
+    }
+    return consumptionProfileCache[name] || {
+        avgUse: 1, avgPurchase: 0,
+        seasonal: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        volatility: 0.3, purchaseFreq: 0, stable: false
+    };
+}
+
+/** 장비: 변동 없음 / 소모품: 품목별 구입주기 기반 소모·구입 곡선 */
+function generateGapDeltas(item, type, timeline, fillIndices, totalDelta) {
+    if (type === 'equipment') {
+        return fillIndices.map(function () { return 0; });
+    }
+    return generateCycleGapDeltas(item, timeline, fillIndices, totalDelta);
+}
+
+function applyTrailingVariation(timeline, item, type, startStock) {
+    let lastKnown = startStock;
+    timeline.forEach(function (t) {
+        if (t.stock !== null) {
+            lastKnown = t.stock;
+            return;
+        }
+        if (isFutureMonth(t.y, t.m)) return;
+
+        if (type === 'equipment') {
+            t.stock = roundStock(lastKnown);
+            t.isInferred = true;
+            hasInferredMonths = true;
+            return;
+        }
+
+        lastKnown = applyCycleTrailingMonth(item, t, lastKnown);
+        t.stock = lastKnown;
+        t.isInferred = true;
+        hasInferredMonths = true;
+    });
+}
+
+function getStartStock(item, type) {
+    return type === 'consumable' ? item.initialStock : item.baseQty;
+}
+
+function buildTimeline(item, type, sortedLogs, endYear) {
+    const timeline = [];
+    for (let y = 2022; y <= endYear; y++) {
+        for (let m = 1; m <= 12; m++) {
+            const logs = sortedLogs.filter(function (log) {
+                const d = new Date(log.date);
+                return log.type === type && log.name === item.name &&
+                    d.getFullYear() === y && d.getMonth() + 1 === m;
+            });
+            timeline.push({
+                y: y,
+                m: m,
+                stock: null,
+                isInferred: false,
+                snapshot: logs.find(function (l) { return l.status === '실측'; }) || null,
+                events: logs.filter(function (l) { return l.status !== '실측'; })
+            });
+        }
+    }
+    return timeline;
+}
+
+function applyEventDelta(stock, log) {
+    if (log.status === '구입') return roundStock(stock + log.qty);
+    if (log.status === '파손' || log.status === '분실' || log.status === '폐기') return roundStock(stock - log.qty);
+    return roundStock(stock);
+}
+
+function interpolateGap(timeline, fromIdx, toIdx, item, type) {
+    const gap = toIdx - fromIdx;
+    if (gap <= 1) return;
+
+    const fromStock = timeline[fromIdx].stock;
+    const toStock = timeline[toIdx].stock;
+    let netEventDelta = 0;
+
+    for (let j = fromIdx + 1; j < toIdx; j++) {
+        timeline[j].events.forEach(function (log) {
+            if (log.status === '구입') netEventDelta += log.qty;
+            else if (log.status === '파손' || log.status === '분실' || log.status === '폐기') netEventDelta -= log.qty;
+        });
+    }
+
+    const fillIndices = [];
+    for (let j = fromIdx + 1; j < toIdx; j++) {
+        if (timeline[j].stock !== null) continue;
+        if (isFutureMonth(timeline[j].y, timeline[j].m)) continue;
+        fillIndices.push(j);
+    }
+    if (!fillIndices.length) return;
+
+    const endIsFuture = isFutureMonth(timeline[toIdx].y, timeline[toIdx].m);
+    const totalDelta = endIsFuture ? 0 : roundStock(toStock - fromStock - netEventDelta);
+    const deltas = generateGapDeltas(item, type, timeline, fillIndices, totalDelta);
+
+    let running = fromStock;
+    fillIndices.forEach(function (j, di) {
+        let eventD = 0;
+        timeline[j].events.forEach(function (log) {
+            if (log.status === '구입') eventD += log.qty;
+            else if (log.status === '파손' || log.status === '분실' || log.status === '폐기') eventD -= log.qty;
+        });
+
+        running = roundStock(running + deltas[di] + eventD);
+        running = Math.max(0, running);
+        timeline[j].stock = running;
+        timeline[j].isInferred = true;
+        hasInferredMonths = true;
+    });
+}
+
+function computeTimeline(item, type, sortedLogs, endYear) {
+    const timeline = buildTimeline(item, type, sortedLogs, endYear);
+    const startStock = getStartStock(item, type);
+    let stock = startStock;
+
+    timeline.forEach(function (t, i) {
+        if (t.snapshot) {
+            stock = roundStock(t.snapshot.qty);
+            t.stock = stock;
+            return;
+        }
+
+        if (i === 0) {
+            t.stock = roundStock(stock);
+            return;
+        }
+
+        if (t.events.length > 0) {
+            t.events.forEach(function (log) {
+                stock = applyEventDelta(stock, log);
+            });
+            t.stock = roundStock(stock);
+            return;
+        }
+
+        t.stock = null;
+    });
+
+    const anchorIndices = [];
+    timeline.forEach(function (t, idx) {
+        if (t.stock !== null) anchorIndices.push(idx);
+    });
+
+    for (let a = 0; a < anchorIndices.length - 1; a++) {
+        interpolateGap(timeline, anchorIndices[a], anchorIndices[a + 1], item, type);
+    }
+
+    applyTrailingVariation(timeline, item, type, startStock);
+    applyManualStockOverrides(timeline, item, type);
+
+    timeline.forEach(function (t) {
+        if (isFutureMonth(t.y, t.m) && t.isInferred) {
+            t.stock = null;
+            t.isInferred = false;
+        }
+    });
+
+    return timeline;
+}
+
+function getTimelineMonth(timeline, year, month) {
+    return timeline.find(function (t) { return t.y === year && t.m === month; });
+}
+
+/** 그래프용: 2022-01 ~ 오늘 달까지 월 축 */
+function getCurrentChartEnd() {
+    const now = new Date();
+    return { year: now.getFullYear(), month: now.getMonth() + 1 };
+}
+
+function buildChartMonthAxis() {
+    const end = getCurrentChartEnd();
+    const axis = [];
+    let y = 2022;
+    let m = 1;
+    while (y < end.year || (y === end.year && m <= end.month)) {
+        axis.push({
+            year: y,
+            month: m,
+            label: y + '.' + m
+        });
+        m += 1;
+        if (m > 12) {
+            m = 1;
+            y += 1;
+        }
+    }
+    return axis;
+}
+
+/** 품목별 월말 재고 시계열 (추이 그래프용) */
+function buildItemTrendSeries(item, type, sortedLogs) {
+    const axis = buildChartMonthAxis();
+    if (!axis.length) return { axis: [], values: [], inferred: [] };
+
+    const endYear = axis[axis.length - 1].year;
+    hasInferredMonths = false;
+    const timeline = computeTimeline(item, type, sortedLogs, endYear);
+
+    const values = [];
+    const inferred = [];
+    const manual = [];
+    axis.forEach(function (p) {
+        const cell = getTimelineMonth(timeline, p.year, p.month);
+        if (!cell || cell.stock === null || cell.stock === undefined) {
+            values.push(null);
+            inferred.push(false);
+            manual.push(false);
+            return;
+        }
+        values.push(roundStock(cell.stock));
+        inferred.push(!!cell.isInferred);
+        manual.push(!!cell.isManualOverride);
+    });
+
+    return { axis: axis, values: values, inferred: inferred, manual: manual };
+}
+
+const INVENTORY_STORAGE_KEY = 'codework_inventory_logs_v1';
+const INVENTORY_FB_ROOT = 'commonData/차체물품';
+
+let inventoryDatabase = null;
+
+function getInventoryPayload() {
+    return {
+        logs: transactionLogs,
+        nextId: nextLogId,
+        cycleSettings: itemCycleSettings,
+        stockOverrides: itemStockOverrides
+    };
+}
+
+function applyInventoryPayload(data) {
+    if (!data || !Array.isArray(data.logs)) return false;
+    transactionLogs = data.logs;
+    nextLogId = data.nextId || 10000;
+    itemCycleSettings = (data.cycleSettings && typeof data.cycleSettings === 'object')
+        ? data.cycleSettings
+        : {};
+    itemStockOverrides = (data.stockOverrides && typeof data.stockOverrides === 'object')
+        ? data.stockOverrides
+        : {};
+    baselineRestoreCount = enforceBaseline2022Anchors();
+    return true;
+}
+
+function stockOverrideKey(type, name) {
+    return type + '::' + name;
+}
+
+function stockMonthKey(year, month) {
+    return year + '-' + String(month).padStart(2, '0');
+}
+
+function applyManualStockOverrides(timeline, item, type) {
+    const key = stockOverrideKey(type, item.name);
+    const overrides = itemStockOverrides[key];
+    if (!overrides || typeof overrides !== 'object') return;
+
+    timeline.forEach(function (t) {
+        if (t.snapshot) return;
+        if (isFutureMonth(t.y, t.m)) return;
+        const mk = stockMonthKey(t.y, t.m);
+        if (overrides[mk] == null || overrides[mk] === '') return;
+        const v = roundStock(Number(overrides[mk]));
+        if (isNaN(v) || v < 0) return;
+        t.stock = v;
+        t.isInferred = true;
+        t.isManualOverride = true;
+        hasInferredMonths = true;
+    });
+}
+
+function setItemStockOverride(type, name, year, month, value) {
+    if (isBaselineLockedYearMonth(year, month)) return;
+    const key = stockOverrideKey(type, name);
+    if (!itemStockOverrides[key]) itemStockOverrides[key] = {};
+    itemStockOverrides[key][stockMonthKey(year, month)] = roundStock(Math.max(0, value));
+}
+
+function clearItemStockOverride(type, name, year, month) {
+    const key = stockOverrideKey(type, name);
+    if (!itemStockOverrides[key]) return;
+    delete itemStockOverrides[key][stockMonthKey(year, month)];
+    if (!Object.keys(itemStockOverrides[key]).length) delete itemStockOverrides[key];
+}
+
+window.setItemStockOverride = setItemStockOverride;
+window.clearItemStockOverride = clearItemStockOverride;
+window.saveInventoryData = saveLogsToStorage;
+
+function readLocalInventoryBackup() {
+    try {
+        const raw = localStorage.getItem(INVENTORY_STORAGE_KEY);
+        if (!raw) return null;
+        const data = JSON.parse(raw);
+        if (data.logs && Array.isArray(data.logs)) return data;
+    } catch (e) { /* ignore */ }
+    return null;
+}
+
+function writeLocalInventoryBackup() {
+    try {
+        localStorage.setItem(INVENTORY_STORAGE_KEY, JSON.stringify(getInventoryPayload()));
+    } catch (e) { /* ignore */ }
+}
+
+function initInventoryFirebase() {
+    if (typeof firebase === 'undefined') return false;
+    const masterConfig = {
+        apiKey: 'AIzaSyDnADuHu0mq4GIlqBm_VHfv7y6RarabGhU',
+        authDomain: 'busan-teacher-workall.firebaseapp.com',
+        databaseURL: 'https://busan-teacher-workall-default-rtdb.asia-southeast1.firebasedatabase.app',
+        projectId: 'busan-teacher-workall'
+    };
+    if (!firebase.apps.length) firebase.initializeApp(masterConfig);
+    inventoryDatabase = firebase.database();
+    return true;
+}
+
+async function ensureInventoryAuth() {
+    const savedPw = localStorage.getItem('adminPw');
+    if (!savedPw) {
+        if (typeof appAlert === 'function') {
+            await appAlert('보안 인증이 필요합니다. 메인 화면에서 로그인해 주세요.');
+        } else {
+            alert('보안 인증이 필요합니다.');
+        }
+        location.href = '../index.html';
+        throw new Error('auth_required');
+    }
+    await firebase.auth().signInWithEmailAndPassword('ghlwns0201@naver.com', savedPw);
+}
+
+async function loadLogsFromStorage() {
+    const local = readLocalInventoryBackup();
+
+    if (inventoryDatabase) {
+        try {
+            const snap = await inventoryDatabase.ref(INVENTORY_FB_ROOT + '/inventory').once('value');
+            const fb = snap.val();
+            if (applyInventoryPayload(fb)) {
+                if (baselineRestoreCount > 0) {
+                    try {
+                        await saveLogsToStorage();
+                    } catch (e) {
+                        console.warn('2022 baseline restore save failed:', e);
+                        writeLocalInventoryBackup();
+                    }
+                } else {
+                    writeLocalInventoryBackup();
+                }
+                return;
+            }
+            if (local && applyInventoryPayload(local)) {
+                await saveLogsToStorage();
+                return;
+            }
+        } catch (e) {
+            console.error('Firebase load failed:', e);
+            if (local && applyInventoryPayload(local)) return;
+            throw e;
+        }
+    } else if (local) {
+        applyInventoryPayload(local);
+    }
+}
+
+async function saveLogsToStorage() {
+    enforceBaseline2022Anchors();
+    writeLocalInventoryBackup();
+    if (!inventoryDatabase) {
+        throw new Error('firebase_not_ready');
+    }
+    await inventoryDatabase.ref(INVENTORY_FB_ROOT + '/inventory').set({
+        logs: transactionLogs,
+        nextId: nextLogId,
+        cycleSettings: itemCycleSettings,
+        stockOverrides: itemStockOverrides,
+        updatedAt: firebase.database.ServerValue.TIMESTAMP
+    });
+}
+
+async function bootstrapInventoryData() {
+    if (!initInventoryFirebase()) {
+        console.warn('Firebase unavailable; using local backup only.');
+        applyInventoryPayload(readLocalInventoryBackup());
+        return;
+    }
+    try {
+        await ensureInventoryAuth();
+        await loadLogsFromStorage();
+    } catch (e) {
+        if (e && e.message === 'auth_required') throw e;
+        console.error(e);
+        applyInventoryPayload(readLocalInventoryBackup());
+    }
+}
+
+window.inventoryDataReady = bootstrapInventoryData();
+
+function getPrevYearMonth(year, month) {
+    if (month === 1) return { year: year - 1, month: 12 };
+    return { year: year, month: month - 1 };
+}
+
+function sumPurchasesInMonth(sortedLogs, itemName, year, month) {
+    return sortedLogs.filter(function (log) {
+        const d = new Date(log.date);
+        return log.type === 'consumable' && log.name === itemName && log.status === '구입' &&
+            d.getFullYear() === year && d.getMonth() + 1 === month;
+    }).reduce(function (sum, log) { return roundStock(sum + log.qty); }, 0);
+}
+
+function formatSheetDiff(val) {
+    if (val === null || val === undefined || val === '') return '-';
+    const v = roundStock(Number(val));
+    if (v === 0) return '-';
+    if (v > 0) return '+' + String(v);
+    return String(v);
+}
+
+function formatSheetNum(val) {
+    if (val === null || val === undefined || val === '') return '';
+    return String(roundStock(Number(val)));
+}
+
+function computeMonthlySurveyRows(targetYear, targetMonth, sortedLogs) {
+    const prev = getPrevYearMonth(targetYear, targetMonth);
+    const rows = [];
+
+    consumableMaster.forEach(function (item) {
+        const timeline = computeTimeline(item, 'consumable', sortedLogs, targetYear);
+        const prevCell = getTimelineMonth(timeline, prev.year, prev.month);
+        const currCell = getTimelineMonth(timeline, targetYear, targetMonth);
+
+        let prevStock = prevCell ? prevCell.stock : null;
+        if (prevStock === null && targetMonth === 1 && targetYear === 2022) {
+            prevStock = item.initialStock;
+        }
+        if (prevStock === null && prev.year >= 2022) {
+            prevStock = getStartStock(item, 'consumable');
+        }
+
+        const purchase = sumPurchasesInMonth(sortedLogs, item.name, targetYear, targetMonth);
+        let currentStock = currCell ? currCell.stock : null;
+        let diff = null;
+
+        const hasActualInMonth = sortedLogs.some(function (log) {
+            const d = new Date(log.date);
+            return log.type === 'consumable' && log.name === item.name &&
+                d.getFullYear() === targetYear && d.getMonth() + 1 === targetMonth;
+        });
+
+        if (isFutureMonth(targetYear, targetMonth) && !hasActualInMonth) {
+            rows.push({
+                id: item.id,
+                name: item.name,
+                unit: item.unit,
+                prevStock: null,
+                currentStock: null,
+                diffQty: null,
+                purchase: '',
+                isInferred: false
+            });
+            return;
+        }
+
+        if (currentStock !== null && prevStock !== null) {
+            diff = roundStock(currentStock - prevStock - purchase);
+        }
+
+        rows.push({
+            id: item.id,
+            name: item.name,
+            unit: item.unit,
+            prevStock: prevStock,
+            currentStock: currentStock,
+            diffQty: diff,
+            purchase: purchase || '',
+            isInferred: currCell ? currCell.isInferred : true,
+            isManualOverride: currCell ? !!currCell.isManualOverride : false
+        });
+    });
+
+    return rows;
+}
+
+function renderMonthlySurvey(targetYear, sortedLogs) {
+    const monthSel = document.getElementById('surveyMonthSelect');
+    const targetMonth = monthSel ? parseInt(monthSel.value, 10) : 1;
+    const rows = computeMonthlySurveyRows(targetYear, targetMonth, sortedLogs);
+    const tbody = document.querySelector('#tableMonthlySurvey tbody');
+    const dateLbl = document.getElementById('monthlySurveyDateLabel');
+    if (!tbody) return;
+
+    if (dateLbl) {
+        let dateText = targetYear + '년 ' + targetMonth + '월';
+        if (targetYear === 2022 && typeof BASELINE_2022_MONTHLY_SHEETS !== 'undefined') {
+            const sheet = BASELINE_2022_MONTHLY_SHEETS[String(targetMonth)];
+            if (sheet && sheet.surveyDate) dateText = sheet.surveyDate;
+        }
+        dateLbl.textContent = dateText;
+    }
+
+    tbody.innerHTML = rows.map(function (row) {
+        const bg = row.isManualOverride
+            ? ' style="background-color:#e8daef;"'
+            : (row.isInferred ? ' style="background-color:#fff3cd;"' : '');
+        const note = row.isManualOverride ? '수동조정' : (row.isInferred ? '추정' : '');
+        return '<tr' + bg + '>' +
+            '<td>' + row.id + '</td>' +
+            '<td style="text-align:left;font-weight:bold;">' + row.name + '</td>' +
+            '<td>' + row.unit + '</td>' +
+            '<td>' + formatSheetNum(row.prevStock) + '</td>' +
+            '<td>' + formatSheetNum(row.currentStock) + '</td>' +
+            '<td>' + formatSheetDiff(row.diffQty) + '</td>' +
+            '<td>' + formatSheetNum(row.purchase) + '</td>' +
+            '<td style="text-align:left;">' + note + '</td>' +
+            '</tr>';
+    }).join('');
+}
+
+function buildDefaultCycleSettingsFromProfiles() {
+    if (!consumptionProfileCache) buildConsumptionProfiles();
+    const defaults = {};
+    consumableMaster.forEach(function (item) {
+        const profile = consumptionProfileCache[item.name] || {};
+        defaults[item.name] = {
+            purchaseCycleMonths: defaultCycleFromProfile(profile),
+            monthlyUse: roundStock(Math.max(1, profile.avgUse || item.baseQty * 0.02)),
+            purchaseQty: roundStock(Math.max(1, profile.avgPurchase || item.baseQty))
+        };
+    });
+    return defaults;
+}
+
+function renderCycleSettingsList() {
+    const area = document.getElementById('cycleSettingsList');
+    if (!area) return;
+
+    area.innerHTML = consumableMaster.map(function (item) {
+        const s = getItemCycleSettings(item.name);
+        const esc = function (v) {
+            return String(v).replace(/&/g, '&amp;').replace(/"/g, '&quot;');
+        };
+        return (
+            '<div class="cycle-row">' +
+                '<span class="cycle-name" title="' + esc(item.name) + '">' + esc(item.name) + '</span>' +
+                '<input type="number" class="cycle-input cycle-months" min="1" max="36" step="1" ' +
+                    'data-name="' + esc(item.name) + '" value="' + s.purchaseCycleMonths + '" title="구입 주기(월)">' +
+                '<input type="number" class="cycle-input cycle-use" min="1" step="1" ' +
+                    'data-name="' + esc(item.name) + '" value="' + roundStock(s.monthlyUse) + '" title="월 평균 소모량">' +
+                '<input type="number" class="cycle-input cycle-qty" min="1" step="1" ' +
+                    'data-name="' + esc(item.name) + '" value="' + roundStock(s.purchaseQty) + '" title="1회 구입량">' +
+            '</div>'
+        );
+    }).join('');
+}
+
+function collectCycleSettingsFromForm() {
+    const next = {};
+    document.querySelectorAll('.cycle-row').forEach(function (row) {
+        const nameInput = row.querySelector('.cycle-months');
+        if (!nameInput) return;
+        const name = nameInput.dataset.name;
+        const months = parseInt(row.querySelector('.cycle-months').value, 10);
+        const monthlyUse = parseFloat(row.querySelector('.cycle-use').value);
+        const purchaseQty = parseFloat(row.querySelector('.cycle-qty').value);
+        if (!name) return;
+        if (!isNaN(months) && months >= 1) {
+            if (!next[name]) next[name] = {};
+            next[name].purchaseCycleMonths = months;
+        }
+        if (!isNaN(monthlyUse) && monthlyUse > 0) {
+            if (!next[name]) next[name] = {};
+            next[name].monthlyUse = roundStock(monthlyUse);
+        }
+        if (!isNaN(purchaseQty) && purchaseQty > 0) {
+            if (!next[name]) next[name] = {};
+            next[name].purchaseQty = roundStock(purchaseQty);
+        }
+    });
+    itemCycleSettings = next;
+}
+
+async function saveCycleSettings() {
+    collectCycleSettingsFromForm();
+    buildConsumptionProfiles();
+    calculateAndRender();
+    try {
+        await saveLogsToStorage();
+        alert('소모품 구입·소모 주기가 저장되었습니다. 공백 구간 추정 곡선이 갱신되었습니다.');
+    } catch (e) {
+        console.error(e);
+        alert('주기 설정은 화면에 반영되었으나 Firebase 저장에 실패했습니다.');
+    }
+}
+
+function previewCycleSettings() {
+    collectCycleSettingsFromForm();
+    buildConsumptionProfiles();
+    calculateAndRender();
+}
+
+function resetCycleSettingsToDefaults() {
+    itemCycleSettings = buildDefaultCycleSettingsFromProfiles();
+    renderCycleSettingsList();
+    buildConsumptionProfiles();
+    calculateAndRender();
+}
+
+function renderSurveyList() {
+    const equipArea = document.getElementById('surveyListEquipment');
+    const consArea = document.getElementById('surveyListConsumable');
+    if (!equipArea || !consArea) return;
+
+    const surveyDate = document.getElementById('surveyDate') ? document.getElementById('surveyDate').value : '';
+    const drafts = collectSurveyInputDrafts();
+
+    equipArea.innerHTML = equipmentMaster.map(function (item) {
+        return (
+            '<div class="survey-row">' +
+                '<span class="survey-name" title="' + item.name + '">' + item.name + '</span>' +
+                '<span class="survey-unit">' + item.unit + '</span>' +
+                '<span class="survey-base">' + item.baseQty + '</span>' +
+                buildSurveyQtyInput(item, 'equipment', surveyDate, drafts) +
+            '</div>'
+        );
+    }).join('');
+
+    consArea.innerHTML = consumableMaster.map(function (item) {
+        return (
+            '<div class="survey-row">' +
+                '<span class="survey-name" title="' + item.name + '">' + item.name + '</span>' +
+                '<span class="survey-unit">' + item.unit + '</span>' +
+                '<span class="survey-base">' + item.initialStock + '</span>' +
+                buildSurveyQtyInput(item, 'consumable', surveyDate, drafts) +
+            '</div>'
+        );
+    }).join('');
+}
+
+async function applyBulkSurvey() {
+    const date = document.getElementById('surveyDate').value;
+    if (!date) {
+        alert('실측 기준일을 선택해 주세요.');
+        return;
+    }
+
+    const surveyYm = getYearMonthFromDateStr(date);
+    if (isBaselineLockedYearMonth(surveyYm.year, surveyYm.month)) {
+        alert('2022년 1~8월은 엑셀 실측 고정 구간입니다.\n이 기간의 재고는 변경할 수 없습니다.');
+        return;
+    }
+
+    const inputs = document.querySelectorAll('.survey-qty');
+    let count = 0;
+
+    inputs.forEach(function (input) {
+        const qty = parseSurveyQtyInput(input);
+        if (qty == null) return;
+
+        const name = input.dataset.name;
+        const type = input.dataset.type;
+
+        removeItemSurveyLogsForMonth(type, name, date);
+
+        transactionLogs.push({
+            id: nextLogId++,
+            date: date,
+            name: name,
+            type: type,
+            qty: qty,
+            status: '실측',
+            memo: '재고 실측 (일괄 등록)'
+        });
+        count++;
+    });
+
+    if (count === 0) {
+        alert('실측할 품목을 하나 이상 숫자로 입력해 주세요.\n「기존」으로 둔 품목은 이전 재고가 그대로 유지됩니다.');
+        return;
+    }
+
+    previewSurveyOverlay = null;
+    setPreviewBanner(false);
+
+    enforceBaseline2022Anchors();
+
+    const inputYear = new Date(date).getFullYear();
+    if (inputYear >= 2022 && inputYear <= 2026) {
+        document.getElementById('globalYear').value = String(inputYear);
+    }
+
+    calculateAndRender();
+    try {
+        await saveLogsToStorage();
+        showSurveyEntryListTab(date.substring(0, 10));
+        alert(count + '개 품목의 실측이 등록되었습니다.\n나머지 품목은 기존(전월 이월·추정) 재고가 유지됩니다.\n「실제 기입 목록」 탭에서 확인할 수 있습니다.');
+    } catch (e) {
+        console.error(e);
+        alert('실측은 화면에 반영되었으나 Firebase 저장에 실패했습니다. 네트워크·인증을 확인한 뒤 다시 저장해 주세요.');
+    }
+}
+
+function toggleEventForm() {
+    const panel = document.getElementById('eventFormPanel');
+    const btn = document.getElementById('btnToggleEvent');
+    if (!panel) return;
+    const open = panel.style.display !== 'block';
+    panel.style.display = open ? 'block' : 'none';
+    if (btn) btn.textContent = open ? '▲ 개별 이벤트 입력 닫기' : '▼ 개별 이벤트 추가 (구입·파손 등)';
+}
+
+function updateItemDropdown() {
+    const type = document.getElementById('itemType').value;
+    const nameSelect = document.getElementById('itemName');
+    nameSelect.innerHTML = '';
+    const list = type === 'equipment' ? equipmentMaster : consumableMaster;
+    list.forEach(function (item) {
+        const opt = document.createElement('option');
+        opt.value = item.name;
+        opt.textContent = item.name;
+        nameSelect.appendChild(opt);
+    });
+}
+
+function switchTab(tabId, btn) {
+    document.querySelectorAll('.tab-content').forEach(function (el) { el.classList.remove('active'); });
+    document.querySelectorAll('.tab-btn').forEach(function (el) { el.classList.remove('active'); });
+    document.getElementById(tabId).classList.add('active');
+    if (btn) btn.classList.add('active');
+}
+
+function escHtml(text) {
+    return String(text == null ? '' : text)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+}
+
+function isBulkSurveyEntryLog(log) {
+    return !!(log && log.status === '실측' && log.memo === '재고 실측 (일괄 등록)');
+}
+
+function getItemUnit(type, name) {
+    if (type === 'equipment') {
+        const item = equipmentMaster.find(function (i) { return i.name === name; });
+        return item ? item.unit : '-';
+    }
+    const item = consumableMaster.find(function (i) { return i.name === name; });
+    return item ? item.unit : '-';
+}
+
+function formatSurveyEntryDate(dateStr) {
+    const d = new Date(dateStr + 'T12:00:00');
+    if (isNaN(d.getTime())) return dateStr;
+    const days = ['일', '월', '화', '수', '목', '금', '토'];
+    return d.getFullYear() + '년 ' + (d.getMonth() + 1) + '월 ' + d.getDate() + '일 (' + days[d.getDay()] + ')';
+}
+
+function collectBulkSurveyEntriesByDate() {
+    const groups = {};
+    transactionLogs.forEach(function (log) {
+        if (!isBulkSurveyEntryLog(log)) return;
+        const dateKey = (log.date || '').substring(0, 10);
+        if (!dateKey) return;
+        if (!groups[dateKey]) groups[dateKey] = [];
+        groups[dateKey].push(log);
+    });
+
+    return Object.keys(groups).sort(function (a, b) { return b.localeCompare(a); }).map(function (dateKey) {
+        const items = groups[dateKey].slice().sort(function (a, b) {
+            const ta = a.type === 'equipment' ? 0 : 1;
+            const tb = b.type === 'equipment' ? 0 : 1;
+            if (ta !== tb) return ta - tb;
+            return a.name.localeCompare(b.name, 'ko');
+        });
+        return {
+            date: dateKey,
+            items: items,
+            equip: items.filter(function (l) { return l.type === 'equipment'; }).length,
+            cons: items.filter(function (l) { return l.type === 'consumable'; }).length
+        };
+    });
+}
+
+function renderSurveyEntryList(openDate) {
+    const area = document.getElementById('surveyEntryList');
+    if (!area) return;
+
+    const groups = collectBulkSurveyEntriesByDate();
+    if (!groups.length) {
+        area.innerHTML = '<p class="survey-entry-empty">일괄 실측으로 저장된 기록이 없습니다.</p>';
+        return;
+    }
+
+    area.innerHTML = groups.map(function (g) {
+        const shouldOpen = openDate && g.date === openDate;
+        const rows = g.items.map(function (log) {
+            const typeLabel = log.type === 'equipment' ? '장비' : '소모품';
+            return '<tr>' +
+                '<td>' + typeLabel + '</td>' +
+                '<td style="text-align:left;">' + escHtml(log.name) + '</td>' +
+                '<td>' + escHtml(getItemUnit(log.type, log.name)) + '</td>' +
+                '<td><strong>' + formatStockDisplay(log.qty) + '</strong></td>' +
+                '</tr>';
+        }).join('');
+
+        return '<details class="survey-entry-group"' + (shouldOpen ? ' open' : '') + '>' +
+            '<summary>' +
+                '<span class="survey-entry-date">' + formatSurveyEntryDate(g.date) + '</span>' +
+                '<span class="survey-entry-meta">장비 ' + g.equip + ' · 소모품 ' + g.cons + ' (' + g.items.length + '건)</span>' +
+            '</summary>' +
+            '<div class="table-responsive survey-entry-table-wrap">' +
+                '<table class="survey-entry-table">' +
+                    '<thead><tr><th width="72">분류</th><th>품명</th><th width="56">단위</th><th width="72">실측</th></tr></thead>' +
+                    '<tbody>' + rows + '</tbody>' +
+                '</table>' +
+            '</div>' +
+        '</details>';
+    }).join('');
+}
+
+function showSurveyEntryListTab(openDate) {
+    const btn = document.getElementById('tabBtnSurveyEntries');
+    switchTab('tabSurveyEntries', btn);
+    renderSurveyEntryList(openDate);
+}
+
+function calculateAndRender() {
+    enforceBaseline2022Anchors();
+    const targetYear = parseInt(document.getElementById('globalYear').value, 10);
+    hasInferredMonths = false;
+
+    document.querySelectorAll('.titleTabYear').forEach(function (el) { el.innerText = targetYear; });
+    document.getElementById('lblDlYear').innerText = targetYear;
+
+    const sortedLogs = getWorkingLogs().slice().sort(function (a, b) {
+        return new Date(a.date) - new Date(b.date);
+    });
+
+    const tbodyLog = document.querySelector('#tableLog tbody');
+    tbodyLog.innerHTML = '';
+    let displayIdx = 1;
+    sortedLogs.forEach(function (log) {
+        if (new Date(log.date).getFullYear() !== targetYear) return;
+        const statusBadge = '<span class="badge ' + getStatusClass(log.status) + '">' + log.status + '</span>';
+        const qtyDisplay = log.status === '실측'
+            ? formatStockDisplay(log.qty) + ' (실측)'
+            : formatStockDisplay(log.qty);
+        tbodyLog.innerHTML +=
+            '<tr><td>' + displayIdx++ + '</td><td>' + log.date.substring(5) + '</td>' +
+            '<td style="text-align:left;">' + log.name + '</td><td>' + qtyDisplay + '</td>' +
+            '<td>' + statusBadge + '</td><td style="text-align:left;">' + (log.memo || '-') + '</td></tr>';
+    });
+
+    const tbodyConsumable = document.querySelector('#tableConsumable tbody');
+    tbodyConsumable.innerHTML = '';
+
+    consumableMaster.forEach(function (item) {
+        const timeline = computeTimeline(item, 'consumable', sortedLogs, targetYear);
+        const prevDec = getTimelineMonth(timeline, targetYear - 1, 12);
+        const carryOver = prevDec ? prevDec.stock : item.initialStock;
+        const monthCells = [];
+
+        for (let m = 1; m <= 12; m++) {
+            const cell = getTimelineMonth(timeline, targetYear, m);
+            const bg = cell && cell.isManualOverride
+                ? ' style="background-color:#e8daef;"'
+                : (cell && cell.isInferred ? ' style="background-color:#fff3cd;"' : '');
+            const display = cell && cell.stock !== null && cell.stock !== undefined
+                ? formatStockDisplay(cell.stock) : '-';
+            monthCells.push('<td' + bg + '>' + display + '</td>');
+        }
+
+        tbodyConsumable.innerHTML +=
+            '<tr><td>' + item.id + '</td><td style="text-align:left;font-weight:bold;">' + item.name + '</td>' +
+            '<td>' + item.unit + '</td><td>' + item.baseQty + '</td>' +
+            '<td style="background-color:#e9ecef;font-weight:bold;color:var(--primary-color);">' + formatStockDisplay(carryOver) + '</td>' +
+            monthCells.join('') + '</tr>';
+    });
+
+    renderMonthlySurvey(targetYear, sortedLogs);
+
+    renderSurveyEntryList();
+
+    const tbodyEquipment = document.querySelector('#tableEquipment tbody');
+    tbodyEquipment.innerHTML = '';
+
+    equipmentMaster.forEach(function (item) {
+        const timeline = computeTimeline(item, 'equipment', sortedLogs, targetYear);
+        const qKeys = ['q1', 'q2', 'q3', 'q4'];
+        const qData = {
+            q1: { p: 0, d: 0, l: 0, s: 0 },
+            q2: { p: 0, d: 0, l: 0, s: 0 },
+            q3: { p: 0, d: 0, l: 0, s: 0 },
+            q4: { p: 0, d: 0, l: 0, s: 0 }
+        };
+
+        sortedLogs.forEach(function (log) {
+            const d = new Date(log.date);
+            if (log.type !== 'equipment' || log.name !== item.name || log.status === '실측') return;
+            if (d.getFullYear() !== targetYear) return;
+            const month = d.getMonth() + 1;
+            const k = month <= 3 ? 'q1' : month <= 6 ? 'q2' : month <= 9 ? 'q3' : 'q4';
+            if (log.status === '구입') qData[k].p += log.qty;
+            if (log.status === '파손' || log.status === '폐기') qData[k].d += log.qty;
+            if (log.status === '분실') qData[k].l += log.qty;
+        });
+
+        qKeys.forEach(function (qk, qi) {
+            const endMonth = (qi + 1) * 3;
+            const cell = getTimelineMonth(timeline, targetYear, endMonth);
+            qData[qk].s = cell ? cell.stock : getStartStock(item, 'equipment');
+        });
+
+        const fmt = function (val) {
+            if (val === 0) return 'ㆍ';
+            return formatStockDisplay(val);
+        };
+        tbodyEquipment.innerHTML +=
+            '<tr><td>' + item.id + '.0</td><td style="text-align:left;font-weight:bold;">' + item.name + '</td><td>' + item.unit + '</td>' +
+            '<td>' + fmt(qData.q1.p) + '</td><td>' + fmt(qData.q1.d) + '</td><td>' + fmt(qData.q1.l) + '</td><td style="background-color:#f1f3f5;font-weight:bold;">' + formatStockDisplay(qData.q1.s) + '</td>' +
+            '<td>' + fmt(qData.q2.p) + '</td><td>' + fmt(qData.q2.d) + '</td><td>' + fmt(qData.q2.l) + '</td><td style="background-color:#f1f3f5;font-weight:bold;">' + formatStockDisplay(qData.q2.s) + '</td>' +
+            '<td>' + fmt(qData.q3.p) + '</td><td>' + fmt(qData.q3.d) + '</td><td>' + fmt(qData.q3.l) + '</td><td style="background-color:#f1f3f5;font-weight:bold;">' + formatStockDisplay(qData.q3.s) + '</td>' +
+            '<td>' + fmt(qData.q4.p) + '</td><td>' + fmt(qData.q4.d) + '</td><td>' + fmt(qData.q4.l) + '</td><td style="background-color:#f1f3f5;font-weight:bold;">' + formatStockDisplay(qData.q4.s) + '</td></tr>';
+    });
+
+    const notice = document.getElementById('gapNotice');
+    if (notice) {
+        let base = hasInferredMonths
+            ? '<strong>💡 추정 규칙:</strong> <strong>소모품</strong> 공백은 구입주기 곡선으로 추정하며, <strong>수량 추이</strong> 화면에서 드래그한 수동 조절값도 반영됩니다. <strong>장비</strong>는 실측·이벤트 기준 <strong>수량 고정</strong>. <span style="background:#fff3cd;padding:0 4px;">노란</span>=추정 · <span style="background:#e8daef;padding:0 4px;">보라</span>=수동조정.'
+            : '<strong>💡 연동 엔진:</strong> 왼쪽 실측·이벤트 입력 → 1·2번 대장 자동 갱신. 소모품 공백은 ③ 주기 설정을 반영합니다.';
+        if (baselineRestoreCount > 0) {
+            base = '<strong>✅ 2022년 1~8월 엑셀 실측 고정값이 ' + baselineRestoreCount + '건 맞춰졌습니다.</strong> 이 구간은 항상 원본 실측으로 유지됩니다. ' + base;
+            baselineRestoreCount = 0;
+        }
+        if (previewSurveyOverlay) {
+            base = '<strong>🔍 가상 미리보기:</strong> 아래 표는 입력값 반영 결과입니다. 확정하려면 왼쪽 「이대로 실제 등록」을 누르세요. ' + base;
+        }
+        notice.innerHTML = base;
+    }
+
+    renderSurveyList();
+}
+
+function getStatusClass(status) {
+    switch (status) {
+        case '구입': return 'bg-purchase';
+        case '수리': return 'bg-repair';
+        case '파손': return 'bg-damage';
+        case '분실': return 'bg-loss';
+        case '폐기': return 'bg-disposal';
+        case '실측': return 'bg-survey';
+        default: return '';
+    }
+}
+
+function getSelectedYear() {
+    return document.getElementById('globalYear').value;
+}
+
+function exportFile1() {
+    const wb = XLSX.utils.table_to_book(document.getElementById('tableEquipment'), { sheet: '장비,기자재관리대장' });
+    XLSX.writeFile(wb, '1.분기별 차체용품 관리대장(' + getSelectedYear() + ').xlsx');
+}
+
+function exportFile2() {
+    const wb = XLSX.utils.table_to_book(document.getElementById('tableConsumable'), { sheet: '월별재고종합' });
+    XLSX.writeFile(wb, '2.월별소모성도장용구 (' + getSelectedYear() + ').xlsx');
+}
+
+function exportFile2Monthly() {
+    const wb = XLSX.utils.table_to_book(document.getElementById('tableMonthlySurvey'), { sheet: '월별조사표' });
+    const m = document.getElementById('surveyMonthSelect').value;
+    XLSX.writeFile(wb, '2.월별조사표(' + getSelectedYear() + '-' + m + '월).xlsx');
+}
+
+function exportFile3() {
+    const wb = XLSX.utils.table_to_book(document.getElementById('tableLog'), { sheet: '현황일지' });
+    XLSX.writeFile(wb, '3.장비및기자재관리현황(' + getSelectedYear() + ').xlsx');
+}
+
+window.onload = async function () {
+    try {
+        await window.inventoryDataReady;
+    } catch (e) {
+        return;
+    }
+    buildConsumptionProfiles();
+    const today = new Date();
+    const todayStr = today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0') + '-' + String(today.getDate()).padStart(2, '0');
+    const surveyDateEl = document.getElementById('surveyDate');
+    const logDateEl = document.getElementById('logDate');
+    if (surveyDateEl) surveyDateEl.value = todayStr;
+    if (logDateEl) logDateEl.value = todayStr;
+    initSurveyInputHandlers();
+    renderSurveyList();
+    if (surveyDateEl) {
+        surveyDateEl.addEventListener('change', function () {
+            renderSurveyList();
+        });
+    }
+    renderCycleSettingsList();
+    updateItemDropdown();
+    calculateAndRender();
+
+    document.getElementById('btnApplySurvey').addEventListener('click', applyBulkSurvey);
+    document.getElementById('btnPreviewSurvey').addEventListener('click', previewBulkSurvey);
+    document.getElementById('btnSaveCycleSettings')?.addEventListener('click', saveCycleSettings);
+    document.getElementById('btnPreviewCycleSettings')?.addEventListener('click', previewCycleSettings);
+    document.getElementById('btnResetCycleSettings')?.addEventListener('click', resetCycleSettingsToDefaults);
+
+    document.getElementById('logForm').addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const newLog = {
+            id: nextLogId++,
+            date: document.getElementById('logDate').value,
+            name: document.getElementById('itemName').value,
+            type: document.getElementById('itemType').value,
+            qty: roundStock(parseFloat(document.getElementById('logQty').value)),
+            status: document.getElementById('logStatus').value,
+            memo: document.getElementById('logMemo').value
+        };
+
+        const logYm = getYearMonthFromDateStr(newLog.date);
+        if (newLog.status === '실측' && isBaselineLockedYearMonth(logYm.year, logYm.month)) {
+            alert('2022년 1~8월은 엑셀 실측 고정 구간입니다.\n이 기간에 실측 기록을 추가·변경할 수 없습니다.');
+            return;
+        }
+
+        transactionLogs.push(newLog);
+        enforceBaseline2022Anchors();
+        const inputYear = new Date(newLog.date).getFullYear();
+        if (inputYear >= 2022 && inputYear <= 2026) {
+            document.getElementById('globalYear').value = String(inputYear);
+        }
+        calculateAndRender();
+        try {
+            await saveLogsToStorage();
+            document.getElementById('logQty').value = 1;
+            document.getElementById('logMemo').value = '';
+            alert('이벤트가 등록되었으며 1·2번 대장이 갱신되었습니다.');
+        } catch (err) {
+            console.error(err);
+            alert('이벤트는 화면에 반영되었으나 Firebase 저장에 실패했습니다.');
+        }
+    });
+};

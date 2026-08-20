@@ -1,4 +1,14 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>단위개월별 직권 신청 | 자동차 교육과정 통합 시스템</title><script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script><script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script><script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script><style>body { font-family: 'Malgun Gothic', sans-serif; background: #f4f7f6; margin: 0; padding: 20px; color: #333; }
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단위개월별 직권 신청 | 자동차 교육과정 통합 시스템</title>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <style>
+        body { font-family: 'Malgun Gothic', sans-serif; background: #f4f7f6; margin: 0; padding: 20px; color: #333; }
         .container { max-width: 1200px; margin: 0 auto; background: #fff; padding: 28px 32px; border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
         .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid #8e44ad; padding-bottom: 14px; margin-bottom: 18px; gap: 12px; flex-wrap: wrap; }
         .header h1 { margin: 0; font-size: 22px; color: #2c3e50; }
@@ -113,4 +123,75 @@
             font-size: 11px;
             color: #7f8c8d;
             margin-top: -2px;
-        }</style></head><body><div class="container"><div class="header"><h1 id="directAuthPageTitle">단위개월별 직권 신청</h1><div style="display:flex; gap:8px; flex-wrap:wrap;"><a href="#" id="btn_nav_main" class="btn-nav">🏠 메인화면</a> <a href="#" id="btn_nav_daily" class="btn-nav">📅 일일출석부</a></div></div><div class="unit-select-bar" id="directAuthUnitSelectBar"><div class="unit-select-hint">단위개월을 선택하면 해당 기간 직권 신청 내역을 볼 수 있습니다.</div></div><div class="info-bar"><div id="directAuthInfoGrid" class="info-bar-grid"><div class="info-bar-meta-cell"><strong>단위기간</strong> <span id="directAuthPeriodLabel">확인 중...</span></div><div class="info-bar-meta-cell"><span class="summary-total-label">총 신청</span> <span class="summary-total-count" id="directAuthPageCount">0</span></div></div></div><div id="directAuthTableArea"><div class="direct-auth-empty-line">데이터 확인 중...</div></div></div><link rel="stylesheet" href="../common-dialog.css"><script src="../common-dialog.js"></script><script src="../common-class-db.js"></script><script src="직권신청.js"></script><script>let storedConfig=localStorage.getItem("firebaseConfig"),firebaseConfig=storedConfig?JSON.parse(storedConfig):{apiKey:"AIzaSyCO37zrsZEjKTokMCNWbIc1C_o5BZMqh8E",databaseURL:"https://busan-teacher-work-default-rtdb.asia-southeast1.firebasedatabase.app",projectId:"busan-teacher-work"},auth=(firebase.apps.length||firebase.initializeApp(firebaseConfig),firebase.auth());initClassContext(),auth.onAuthStateChanged(async e=>{var a=localStorage.getItem("adminPw");e?DirectAuthAPI.initStandalonePage():a?auth.signInWithEmailAndPassword("ghlwns0201@naver.com",a).catch(async()=>{await appAlert("인증 정보가 만료되었습니다. 다시 로그인해주세요."),location.href="../index.html"}):(await appAlert("보안 인증이 필요한 페이지입니다."),location.href="../index.html")}),document.getElementById("btn_nav_main").addEventListener("click",e=>{e.preventDefault(),location.href=classNavHref("index1.html")}),document.getElementById("btn_nav_daily").addEventListener("click",e=>{e.preventDefault(),location.href=classNavHref("일일출석부.html")})</script></body></html>
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1 id="directAuthPageTitle">단위개월별 직권 신청</h1>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <a href="#" id="btn_nav_main" class="btn-nav">🏠 메인화면</a>
+            <a href="#" id="btn_nav_daily" class="btn-nav">📅 일일출석부</a>
+        </div>
+    </div>
+
+    <div class="unit-select-bar" id="directAuthUnitSelectBar">
+        <div class="unit-select-hint">단위개월을 선택하면 해당 기간 직권 신청 내역을 볼 수 있습니다.</div>
+    </div>
+
+    <div class="info-bar">
+        <div id="directAuthInfoGrid" class="info-bar-grid">
+            <div class="info-bar-meta-cell"><strong>단위기간</strong> <span id="directAuthPeriodLabel">확인 중...</span></div>
+            <div class="info-bar-meta-cell"><span class="summary-total-label">총 신청</span> <span class="summary-total-count" id="directAuthPageCount">0</span></div>
+        </div>
+    </div>
+
+    <div id="directAuthTableArea">
+        <div class="direct-auth-empty-line">데이터 확인 중...</div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="../common-dialog.css">
+<script src="../common-dialog.js"></script>
+<script src="../common-class-db.js"></script>
+<script src="직권신청.js"></script>
+<script>
+const storedConfig = localStorage.getItem('firebaseConfig');
+const firebaseConfig = storedConfig ? JSON.parse(storedConfig) : {
+    apiKey: "AIzaSyCO37zrsZEjKTokMCNWbIc1C_o5BZMqh8E",
+    databaseURL: "https://busan-teacher-work-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "busan-teacher-work"
+};
+
+if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+initClassContext();
+
+auth.onAuthStateChanged(async (user) => {
+    const savedPw = localStorage.getItem('adminPw');
+    if (user) {
+        DirectAuthAPI.initStandalonePage();
+    } else if (savedPw) {
+        auth.signInWithEmailAndPassword('ghlwns0201@naver.com', savedPw)
+            .catch(async () => {
+                await appAlert('인증 정보가 만료되었습니다. 다시 로그인해주세요.');
+                location.href = '../index.html';
+            });
+    } else {
+        await appAlert('보안 인증이 필요한 페이지입니다.');
+        location.href = '../index.html';
+    }
+});
+
+document.getElementById('btn_nav_main').addEventListener('click', (e) => {
+    e.preventDefault();
+    location.href = classNavHref('index1.html');
+});
+document.getElementById('btn_nav_daily').addEventListener('click', (e) => {
+    e.preventDefault();
+    location.href = classNavHref('일일출석부.html');
+});
+</script>
+</body>
+</html>

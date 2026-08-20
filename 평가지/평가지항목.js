@@ -1,1 +1,650 @@
-function a2_0x13bb(_0x15252b,_0x3693b0){_0x15252b=_0x15252b-0xd3;const _0x34eb2f=a2_0x1338();let _0x4a1f35=_0x34eb2f[_0x15252b];if(a2_0x13bb['exOaUT']===undefined){var _0x3ac666=function(_0x5cec40){const _0x34af1e='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x3c6b70='',_0x4d788e='',_0x441a00=_0x3c6b70+_0x3ac666;for(let _0xaf0b5=0x0,_0x5632cb,_0x5e8894,_0x55ce78=0x0;_0x5e8894=_0x5cec40['charAt'](_0x55ce78++);~_0x5e8894&&(_0x5632cb=_0xaf0b5%0x4?_0x5632cb*0x40+_0x5e8894:_0x5e8894,_0xaf0b5++%0x4)?_0x3c6b70+=_0x441a00['charCodeAt'](_0x55ce78+0xa)-0xa!==0x0?String['fromCharCode'](0xff&_0x5632cb>>(-0x2*_0xaf0b5&0x6)):_0xaf0b5:0x0){_0x5e8894=_0x34af1e['indexOf'](_0x5e8894);}for(let _0x3bab4f=0x0,_0x12bdf5=_0x3c6b70['length'];_0x3bab4f<_0x12bdf5;_0x3bab4f++){_0x4d788e+='%'+('00'+_0x3c6b70['charCodeAt'](_0x3bab4f)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x4d788e);};a2_0x13bb['ZsNuQd']=_0x3ac666,a2_0x13bb['rMkcRF']={},a2_0x13bb['exOaUT']=!![];}const _0x13381a=_0x34eb2f[0x0],_0x13bb7c=_0x15252b+_0x13381a,_0x4c41af=a2_0x13bb['rMkcRF'][_0x13bb7c];if(!_0x4c41af){const _0x54bd79=function(_0x2ffd7c){this['NCDHjT']=_0x2ffd7c,this['SHLgLt']=[0x1,0x0,0x0],this['dgpwmC']=function(){return'newState';},this['EonUBT']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['EHualI']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x54bd79['prototype']['gOKhrh']=function(){const _0x7d6b4e=new RegExp(this['EonUBT']+this['EHualI']),_0x1d352c=_0x7d6b4e['test'](this['dgpwmC']['toString']())?--this['SHLgLt'][0x1]:--this['SHLgLt'][0x0];return this['CSUqqC'](_0x1d352c);},_0x54bd79['prototype']['CSUqqC']=function(_0x50ae16){if(!Boolean(~_0x50ae16))return _0x50ae16;return this['LYxBim'](this['NCDHjT']);},_0x54bd79['prototype']['LYxBim']=function(_0x11cd08){for(let _0x3a78b8=0x0,_0x58b3de=this['SHLgLt']['length'];_0x3a78b8<_0x58b3de;_0x3a78b8++){this['SHLgLt']['push'](Math['round'](Math['random']())),_0x58b3de=this['SHLgLt']['length'];}return _0x11cd08(this['SHLgLt'][0x0]);},new _0x54bd79(a2_0x13bb)['gOKhrh'](),_0x4a1f35=a2_0x13bb['ZsNuQd'](_0x4a1f35),a2_0x13bb['rMkcRF'][_0x13bb7c]=_0x4a1f35;}else _0x4a1f35=_0x4c41af;return _0x4a1f35;}const a2_0x48dd9d=a2_0x13bb;(function(_0x225f1f,_0x5d9972){const _0x26e383=a2_0x13bb,_0x10558a=_0x225f1f();while(!![]){try{const _0x1b09a2=-parseInt(_0x26e383(0x17a))/0x1*(parseInt(_0x26e383(0x17f))/0x2)+parseInt(_0x26e383(0x12b))/0x3+-parseInt(_0x26e383(0x118))/0x4*(parseInt(_0x26e383(0x131))/0x5)+-parseInt(_0x26e383(0x178))/0x6+parseInt(_0x26e383(0x180))/0x7*(-parseInt(_0x26e383(0x105))/0x8)+parseInt(_0x26e383(0x17e))/0x9+-parseInt(_0x26e383(0x167))/0xa*(-parseInt(_0x26e383(0x160))/0xb);if(_0x1b09a2===_0x5d9972)break;else _0x10558a['push'](_0x10558a['shift']());}catch(_0x1542a9){_0x10558a['push'](_0x10558a['shift']());}}}(a2_0x1338,0xa0119));const a2_0x3ac666=(function(){let _0xaf0b5=!![];return function(_0x5632cb,_0x5e8894){const _0x55ce78=_0xaf0b5?function(){if(_0x5e8894){const _0x3bab4f=_0x5e8894['apply'](_0x5632cb,arguments);return _0x5e8894=null,_0x3bab4f;}}:function(){};return _0xaf0b5=![],_0x55ce78;};}()),a2_0x4a1f35=a2_0x3ac666(this,function(){const _0x2e5cca=a2_0x13bb;return a2_0x4a1f35[_0x2e5cca(0x16a)]()[_0x2e5cca(0xd9)](_0x2e5cca(0x177))['toString']()[_0x2e5cca(0x111)](a2_0x4a1f35)[_0x2e5cca(0xd9)](_0x2e5cca(0x177));});function a2_0x1338(){const _0x44785a=['y3vZDg9TsgvPz2H0','ofLTALL4rq','i2mWmZKYyG','ihbHzgrPBMC6nNb4oYb0zxH0lwfSAwDUoG','Aw5UzxjuzxH0','Dw5KzwzPBMvK','zM9UDc13zwLNAhq6yM9SzdS','zgL2','4PQG77IpioUZKE2vQE2vOcdSHydSNyqGq3rYBcJRMjdRIPqGu2HPzNqP7ykK66w8ioUiHoULUcdSSyqGmUQWNcdSNBtSG4eG7isG7yoD7zw07ko87is47jQulG','CxvLCNLtzwXLy3rVCG','4PgIioYGLEU5HcdRSi8G7kgW7lMy7ikS7zwT','CMvWBgfJzq','zgf0ys1J','y29UC3rYDwn0B3i','4PQG77IpioU5OoULUcdTHy3SIQtTIRJQSiaG67Aa7jES65cy7jA0ioYEOoQ4TcdSHydSL5dRIPqG7lk07ygS67cv7iQK66w8ioY2LoQWGo2vOcdSIjGG7jEg7iQ164Ui64UKlG','zMLUzeLUzgv4','C2vSzwn0zwrdzwXSCW','zM9YrwfJAa','7zwTioUQQsaY','4PgIio2mKcdSOju','mJbeuMLRyvu','7zwT66QPmG','C2nVCMu','C3rVCMu','z3jPza','Dgv4DefSAwDU','DxnLCLnLBgvJDa','7zw17iUS7j6r7jEf66Qf','BwvYz2vdzwXSCW','DeLK','AgvHzgvYq29SB3i','7zwTioUQQq','DxbKyxrLq2vSBfrLEhq','yMfJA2DYB3vUzc1JB2XVCJOJzJjMmMyYoW','pgjYpG','z2v0rwXLBwvUDej5swq','4PQG77IpioYYTo2bRoUWLEYkPoULVcdRHkpSNyqG7iwa7j2eioYeOo2dNE2vToYJVoYeUoYALc4','zw50zxjfzgL0tw9Kzq','4PgGioY4OEYGLEQWKG','mJuWodmZmhfNAuXLtq','ywn0AxzLvgfIBgvjza','CMvTB3zLqwXSuMfUz2vZ','z2v0qxr0CMLIDxrL','ywn0AxzL','y3jLyxrLsw5PDgLHBeDYAwq','mJGYmdKWz2X4rhfr','C3rVCfbYB3bHz2f0Aw9U','zM9UDfnPEMu','C2v0qxr0CMLIDxrL','y2XVC2vZDa','AxnbBNm','vgfI','7kgW7lMy7ikS7zwT','B3v0BgLUztOGm3b4ihnVBgLKicnLnJDLmJi7ig91DgXPBMuTB2zMC2v0oIaTmNb4oYb6lwLUzgv4oIaXmdSGCg9ZAxrPB246ihjLBgf0AxzLoYbIywnRz3jVDw5KlwnVBg9YoIaJzMzLywe3icfPBxbVCNrHBNq7','D3jHChbLCL8','iIb0ywjPBMrLEd0ImcikicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGC3r5Bgu9iG','4PgHio2mKcdSOju','y3jLyxrLrwXLBwvUDa','y2XHC3nmAxn0','BwLU','yMX1CG','ANnVBI1JzwXSlwvKAxrVCG','zMXLEa','q3vZDg9Ttwf0CML4rw5NAw5L','4PgJioYGLEU5HcdRSi8G7kgW7lMy7ikS7zwT','AgLKzgvU','4PQG77IpioU5OoULUcdTHy3SIQtTIRJQSiaG67Aa7jES65cy7jA0ioYEOoQ4TcdSHydSNyaG7kEb7kcrioYiMoYGLE2vOcdSIjGG7jEg7iQ164Ui64UKlIaO64As7j20ioYHSoYGIoYDGcdSL5tTHlaV67cX7iQK7y6y7j207iQK66gCioQWGoUkPE2vQEUlIoUlPcK','Dg9Nz2XLu2vSzwn0Aw9U','qMfJA3nWywnL','ANnVBG','7zwTioUQQsaX','iIakicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGCM93C3bHBJ0I','C3bSAwnL','Dw5KBW','ywrKuM93','Dgv4Da','y3rYBeTLEq','DxnLCI1ZzwXLy3q6BM9UztS','A2v5CW','y29SB3i','y29SBgfWC2u','oYb2zxj0AwnHBc1HBgLNBJPTAwrKBgu7igHLAwDODdO','zgf0ys10Awq','C2f2zuHPC3rVCNK','6REC7kcv6Rcs','lMPZB24Ty2vSBfTKyxrHlxrPzd0I','ANnVBI1LBMDPBMuTDg9VBgjHCG','zgLZCgXHEq','ywn0AxzLrwXLBwvUDa','64k07jQP7iob7yoC','cIaGicaGicaGicaGicaGicbKAxnWBgf5oIbUB25LoYbWB3nPDgLVBJOGzML4zwq7ihrVCdOGmtiWChG7ihjPz2H0oIaZmhb4oYb6lwLUzgv4oIa5otK5otSGcIaGicaGicaGicaGicaGicbIywnRz3jVDw5KoIaJmMmZztuWoYbWywrKAw5NoIaXmNb4oYbIB3jKzxiTCMfKAxvZoIa4ChG7igjVEc1ZAgfKB3C6idaGohb4idiWChGGCMDIysGWldaSmcWWlJqPoYakicaGicaGicaGicaGicaGigzSzxGTzgLYzwn0Aw9UoIbJB2X1Bw47igDHCdOGohb4oYb3Awr0AdOGmtGWChG7igjVEc1ZAxPPBMC6igjVCMrLCI1IB3G7cIaGicaGicaGicaGia','A2v5zg93BG','mJjcu2ncC2u','BwfYA0nOyw5Nzwq','BgvUz3rO','4PgGioYDToYdGsdRTOdSNiq','ywrKuMfUz2u','Bwf4','DxbKyxrLvg9VBgjHCG','odqXnZeZmhzvAvjpsq','A2v5','ywrKq29S','Dg9tDhjPBMC','7lIH7kcv6Rcs','4PgHioUcToYAQsdRSi8G7iob7yoC','yM9YzgvYlwjVDhrVBtOXChGGC29SAwqGiZaWmdS','rw50zxi','7yYq7kcvmG','rxnJyxbL','7j207iob67Aa7jYe','y3nZvgv4Da','zgf0ys1Y','BwfW','y29SC3bHBG','7kgW7lMy7ikS7zwTmW','kcGOlISPkYKRksSK','nZCXmJaXmhjprwneyG','7zwT66QPmq','ntG5zMn6EwTw','AxrLBu5HBwu','y2vUDgvY','y2XLyxjtzwXLy3rPB24','nZu2oti4ohHcz0vXsq','mJeWyuvkAgDf','nZuYotu5ovrQswfOtW','Dg9mB3DLCKnHC2u','BM9Uzq','C3r5Bgu','ChvZAa','ywrKrxzLBNrmAxn0zw5LCG','CM93C3bHBG','iIbKyxrHlxi9iG','DgfYz2v0','C2vHCMnO','CMvUzgvYvgfIBgu','pc90CJ4','zM9JDxm','ChG7ign1CNnVCJPWB2LUDgvYoYb0CMfUC2L0Aw9UoJaUmNm7iJ4kicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGicaGpgrPDIbJB250zw50zwrPDgfIBgu9iG','4PQG77IpifVSTiJQUldTMzqG6Rk96RoGxqRTMitSNQWG7j6r7jEfioYKKEYDUcdTKzZRPBWG66QO65gqioYNGoYASoQZOca07kseihGGmJdSUBGG67Yi64Ya66gCioYzHoYGHo2EIcdRKjJRJ4ZRPQZSI5ZQSQdSIRxRI4JQUyW/','iL1Bzgf0ys1Ypsi','lMPZB24Ty2vSBc1LzgL0B3i','zwrPDe1Vzgvnyxa','CgfNztm','iL1Bzgf0ys1Jpsi','ChG7igzVBNqTC2L6ztO','phrYpG','iIbJB2XZCgfUpsi','Aw5Uzxjive1m','phnWyw4Gy2XHC3m9iMn1C3rVBs1JAgSIihn0EwXLpsjJDxjZB3i6Cg9PBNrLCJSGzM9UDc13zwLNAhq6yM9SzdSGy29SB3i6yMXHy2S7iIbJB250zw50zwrPDgfIBgu9iMzHBhnLiJ7ILQe8l3nWyw4+phnWyw4GC3r5Bgu9iMzVBNqTD2vPz2H0oM5VCM1HBdSIpIzUyNnWoZWVC3bHBJ4','yM9YzgvYlxjPz2H0oJfWEcbZB2XPzcaJmdaWoW','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','Cg9W','Aw5JBhvKzxm','65oDioYGKdXICJ48C3bHBIbZDhLSzt0IzM9UDc13zwLNAhq6BM9YBwfSoYi+ka','y3vZDg9TlwnOAW','y29SCW','y29UDgfPBNm','Aw5WDxq','C2vSzwn0tM9KzunVBNrLBNrZ','pc9KAxy+cIaGicaGicaGicaGicaGicaGicaGicaGicaGicaGpc90zd4','zwrPDenLBgXuzxH0','pc90ywjSzt4','AxnmB2nRzwq','y3jLyxrLuMfUz2u','7kcqktWVC3bHBJ4','yMfJA2DYB3vUzc1JB2XVCJOJzMrMmMu5oYbIB3jKzxi6mNb4igrHC2HLzcaJzty3ztiYoW','z2v0u2vSzwn0Aw9U','C3rYAw5NAwz5','phnWyw4Gy2XHC3m9iMn1C3rVBs1JAgSIihn0EwXLpsjJDxjZB3i6Cg9PBNrLCJSGzM9UDc13zwLNAhq6yM9SzdSGy29SB3i6yMXHy2S7iIbJB250zw50zwrPDgfIBgu9iMzHBhnLiJ7ILQe8l3nWyw4+idXZCgfUihn0EwXLpsjMB250lxDLAwDODdPUB3jTywW7ignVBg9YoMjSywnRoYi+7jAr7zI4pc9ZCgfUpJXICJ48C3bHBIbJBgfZCZ0Iy3vZDg9TlwnOAYiGC3r5Bgu9iMn1CNnVCJPWB2LUDgvYoYbMB250lxDLAwDODdPIB2XKoYbJB2XVCJPIBgfJAZSIignVBNrLBNrLzgL0ywjSzt0IzMfSC2uIpUkwOtWVC3bHBJ4GphnWyw4GC3r5Bgu9iMzVBNqTD2vPz2H0oM5VCM1HBdSGy29SB3i6yMXHy2S7iJ7RTOJRN4K8l3nWyw4+','AgLZDg9YEq','ChjLDMvUDerLzMf1Bhq','zNvUy3rPB24','phrKignSyxnZpsjQC29UlwnLBgWGzwrPDgfIBguTy2vSBca','zgf0ys1LBMDPBMu','CM93CW','yMXHy2S'];a2_0x1338=function(){return _0x44785a;};return a2_0x1338();}a2_0x4a1f35(),window[a2_0x48dd9d(0x143)]={'store':{},'selectedCells':[],'history':{},'activeTableId':null,'editModeMap':{},'createInitialGrid':function(_0x12bdf5,_0x54bd79){const _0x5e5c18=a2_0x48dd9d;let _0x2ffd7c=[];for(let _0x7d6b4e=0x0;_0x7d6b4e<_0x12bdf5;_0x7d6b4e++){let _0x1d352c=[];for(let _0x50ae16=0x0;_0x50ae16<_0x54bd79;_0x50ae16++){_0x1d352c['push']({'text':'','rowspan':0x1,'colspan':0x1,'hidden':![],'isAns':![],'headerColor':![],'fontSize':0xd,'textAlign':_0x5e5c18(0x17c),'customHeight':0x16,'isLocked':![]});}_0x2ffd7c[_0x5e5c18(0xd4)](_0x1d352c);}return _0x2ffd7c;},'initEngine':function(_0x11cd08,_0x3a78b8,_0x58b3de){const _0xf02de8=a2_0x48dd9d;this[_0xf02de8(0x11b)][_0x11cd08]={'score':_0x3a78b8,'itemName':_0x58b3de,'rows':0x4,'cols':0x14,'grid':this[_0xf02de8(0x130)](0x4,0x14)},this[_0xf02de8(0xfd)][_0x11cd08]=[],this[_0xf02de8(0xda)](_0x11cd08);},'loadJsonData':function(_0x325e21,_0x287196){const _0x50f196=a2_0x48dd9d;this[_0x50f196(0x11b)][_0x325e21]=_0x287196,this[_0x50f196(0xfd)][_0x325e21]=[],this[_0x50f196(0xda)](_0x325e21);},'getJsonData':function(_0x5aba7c){const _0x56f4d1=a2_0x48dd9d;return this[_0x56f4d1(0x11b)][_0x5aba7c];},'enterEditMode':function(_0x19102d){const _0x3e40df=a2_0x48dd9d;this[_0x3e40df(0xe1)][_0x19102d]=!![],this[_0x3e40df(0x12c)]=_0x19102d,this[_0x3e40df(0x166)](),this[_0x3e40df(0xda)](_0x19102d);},'closeEditor':function(){const _0x3ac043=a2_0x48dd9d;this['activeTableId']&&(this[_0x3ac043(0xe1)][this[_0x3ac043(0x12c)]]=![]),this['activeTableId']=null,this[_0x3ac043(0x114)]=[],this[_0x3ac043(0x166)](),Object[_0x3ac043(0x152)](this['store'])[_0x3ac043(0x115)](_0x31f4b7=>this[_0x3ac043(0xda)](_0x31f4b7));},'saveHistory':function(_0x2d08e0){const _0x5508b4=a2_0x48dd9d;if(!this[_0x5508b4(0xfd)][_0x2d08e0])this[_0x5508b4(0xfd)][_0x2d08e0]=[];this[_0x5508b4(0xfd)][_0x2d08e0]['push'](JSON[_0x5508b4(0xfb)](this[_0x5508b4(0x11b)][_0x2d08e0]));},'undo':function(){const _0x4bca39=a2_0x48dd9d;if(this['selectedCells'][_0x4bca39(0x162)]===0x0)return;let _0x3516ef=this[_0x4bca39(0x114)][0x0][_0x4bca39(0x121)];if(this[_0x4bca39(0xfd)][_0x3516ef]&&this[_0x4bca39(0xfd)][_0x3516ef][_0x4bca39(0x162)]>0x0){let _0x13e61a=this[_0x4bca39(0xfd)][_0x3516ef][_0x4bca39(0xeb)]();this[_0x4bca39(0x11b)][_0x3516ef]=JSON['parse'](_0x13e61a),this[_0x4bca39(0xda)](_0x3516ef);}else this[_0x4bca39(0x17d)]();},'resetEngine':function(){const _0x269782=a2_0x48dd9d;let _0x3464bb=this['activeTableId'];if(!_0x3464bb)return;if(!confirm(_0x269782(0xde)))return;this[_0x269782(0x157)](_0x3464bb);let _0x2f3a1=this[_0x269782(0x11b)][_0x3464bb][_0x269782(0x11a)],_0x5716f0=this[_0x269782(0x11b)][_0x3464bb][_0x269782(0x17b)];this['initEngine'](_0x3464bb,_0x2f3a1,_0x5716f0),this[_0x269782(0x129)](_0x3464bb);},'renderTable':function(_0x46b7f5){const _0x4c03b9=a2_0x48dd9d,_0x321053=this[_0x4c03b9(0x11b)][_0x46b7f5];if(!_0x321053)return;let _0x430452=this[_0x4c03b9(0xe1)][_0x46b7f5],_0x5d48a6='<table\x20id=\x22'+_0x46b7f5+'\x22\x20class=\x22ep-table\x20trainee-table-target\x22\x20style=\x22margin-bottom:\x200;\x20table-layout:\x20fixed;\x20width:\x20100%;\x20word-break:\x20break-all;\x20border:\x202px\x20solid\x20#000;\x20border-collapse:\x20collapse;\x22>';for(let _0x58b9f5=0x0;_0x58b9f5<_0x321053[_0x4c03b9(0x102)];_0x58b9f5++){_0x5d48a6+=_0x4c03b9(0xe5);for(let _0x2693dd=0x0;_0x2693dd<_0x321053[_0x4c03b9(0xef)];_0x2693dd++){let _0xc2c79d=_0x321053[_0x4c03b9(0x11c)][_0x58b9f5][_0x2693dd];if(_0xc2c79d[_0x4c03b9(0x145)])continue;let _0x3df64a=_0x58b9f5+_0xc2c79d[_0x4c03b9(0xd6)]-0x1<_0x321053[_0x4c03b9(0x102)]-0x1?_0x4c03b9(0x16d):'',_0x95b4b1=_0x2693dd+_0xc2c79d['colspan']-0x1<_0x321053['cols']-0x1?_0x4c03b9(0xe9):'',_0x55e68e=_0xc2c79d['headerColor']?_0x4c03b9(0x125):'background-color:transparent;',_0x377eb8=_0xc2c79d[_0x4c03b9(0x122)]?_0x4c03b9(0x10a):'font-weight:normal;',_0x1bbc6a=_0xc2c79d[_0x4c03b9(0x136)]?_0x4c03b9(0xf9):'',_0x1e7c42=_0x430452&&this[_0x4c03b9(0x114)]['some'](_0x4cb1f6=>_0x4cb1f6[_0x4c03b9(0x121)]===_0x46b7f5&&_0x4cb1f6['r']===_0x58b9f5&&_0x4cb1f6['c']===_0x2693dd),_0x193996=_0x1e7c42?'active-json-cell':'',_0xdcb6e1=_0x1e7c42?_0x4c03b9(0x139):'',_0x190b85=_0xc2c79d['fontSize']||0xd,_0x4ddc40=_0xc2c79d[_0x4c03b9(0x11d)]||_0x4c03b9(0x17c),_0x3e073b=_0xc2c79d[_0x4c03b9(0x104)]||0x16,_0x38dccf=_0xc2c79d[_0x4c03b9(0xf6)]?_0x4c03b9(0x151):'';_0x5d48a6+=_0x4c03b9(0x100)+_0x193996+'\x22\x20data-tid=\x22'+_0x46b7f5+_0x4c03b9(0xd7)+_0x58b9f5+'\x22\x20data-c=\x22'+_0x2693dd+_0x4c03b9(0x14b)+_0xc2c79d[_0x4c03b9(0xd6)]+_0x4c03b9(0xe6)+_0xc2c79d['colspan']+_0x4c03b9(0x13b)+_0x3df64a+'\x20'+_0x95b4b1+'\x20'+_0x55e68e+'\x20'+_0x377eb8+'\x20'+_0x1bbc6a+'\x20'+_0xdcb6e1+_0x4c03b9(0x107)+_0x4ddc40+_0x4c03b9(0x155)+_0x3e073b+_0x4c03b9(0xe4)+_0x190b85+_0x4c03b9(0xdd)+!_0xc2c79d[_0x4c03b9(0xf6)]+'\x22\x20class=\x22json-cell-editor\x22\x20style=\x22width:100%;\x20outline:none;\x20min-height:20px;\x20display:inline-block;\x20vertical-align:middle;\x20'+_0x38dccf+'\x22>'+_0xc2c79d[_0x4c03b9(0x14f)]+_0x4c03b9(0xf3);}_0x5d48a6+=_0x4c03b9(0xdb);}_0x5d48a6+=_0x4c03b9(0xf5);let _0x3770ca=document[_0x4c03b9(0x127)](_0x4c03b9(0x13a)+_0x46b7f5);_0x3770ca&&(_0x3770ca[_0x4c03b9(0xe7)]=_0x5d48a6,_0x3770ca[_0x4c03b9(0x134)](_0x4c03b9(0x101),_0x4c03b9(0x149)));if(typeof window[_0x4c03b9(0x161)]===_0x4c03b9(0xff))window[_0x4c03b9(0x161)](_0x46b7f5);},'toggleSelection':function(_0x1eb581,_0x5c6ace,_0x3e760a){const _0x5a0ae8=a2_0x48dd9d;let _0x1bc8ad=this[_0x5a0ae8(0x114)][_0x5a0ae8(0x113)](_0x56e5e9=>_0x56e5e9[_0x5a0ae8(0x121)]===_0x1eb581&&_0x56e5e9['r']===_0x5c6ace&&_0x56e5e9['c']===_0x3e760a);_0x1bc8ad>-0x1?this[_0x5a0ae8(0x114)][_0x5a0ae8(0x14c)](_0x1bc8ad,0x1):(this[_0x5a0ae8(0x114)][_0x5a0ae8(0x162)]>0x0&&this[_0x5a0ae8(0x114)][0x0][_0x5a0ae8(0x121)]!==_0x1eb581&&(this[_0x5a0ae8(0x114)]=[]),this['selectedCells']['push']({'tId':_0x1eb581,'r':_0x5c6ace,'c':_0x3e760a})),this['renderTable'](_0x1eb581);},'clearSelection':function(){const _0xb39bd4=a2_0x48dd9d;if(this[_0xb39bd4(0x114)][_0xb39bd4(0x162)]>0x0){let _0xa11b94=this[_0xb39bd4(0x114)][0x0]['tId'];this[_0xb39bd4(0x114)]=[],this[_0xb39bd4(0xda)](_0xa11b94);}},'updateCellText':function(_0x1ef1d7,_0xfaf0d0,_0x5909a1,_0x24807d){const _0xe8558=a2_0x48dd9d;if(this[_0xe8558(0x11b)][_0x1ef1d7]){this[_0xe8558(0x11b)][_0x1ef1d7][_0xe8558(0x11c)][_0xfaf0d0][_0x5909a1][_0xe8558(0x14f)]=_0x24807d;if(typeof window['markChanged']===_0xe8558(0xff))window[_0xe8558(0x161)](_0x1ef1d7);}},'editCellText':function(){const _0x4de45b=a2_0x48dd9d;if(this[_0x4de45b(0x114)]['length']!==0x1)return;let {tId:_0x20b5d8,r:_0x32090b,c:_0x3bbb32}=this[_0x4de45b(0x114)][0x0],_0x2d9eea=this[_0x4de45b(0x11b)][_0x20b5d8][_0x4de45b(0x11c)][_0x32090b][_0x3bbb32];if(_0x2d9eea['isLocked'])return alert(_0x4de45b(0x146));let _0x59f293=document[_0x4de45b(0x10d)](_0x4de45b(0x159)+_0x20b5d8+_0x4de45b(0xdf)+_0x32090b+'\x22][data-c=\x22'+_0x3bbb32+'\x22]');if(_0x59f293){let _0x10329f=_0x59f293['querySelector'](_0x4de45b(0xe0));if(_0x10329f){_0x10329f[_0x4de45b(0xdc)]();if(typeof window[_0x4de45b(0xfa)]!==_0x4de45b(0x109)&&typeof document[_0x4de45b(0xf7)]!==_0x4de45b(0x109)){let _0x40c699=document[_0x4de45b(0xf7)]();_0x40c699[_0x4de45b(0xf2)](_0x10329f),_0x40c699[_0x4de45b(0x154)](![]);let _0x281442=window[_0x4de45b(0xfa)]();_0x281442[_0x4de45b(0x12d)](),_0x281442[_0x4de45b(0x164)](_0x40c699);}}}},'changeFontSize':function(_0x2caef0){const _0x4eb3c3=a2_0x48dd9d;if(this[_0x4eb3c3(0x114)][_0x4eb3c3(0x162)]===0x0)return;let _0x3ab73b=this['selectedCells'][0x0]['tId'];this[_0x4eb3c3(0x157)](_0x3ab73b);let _0x4c66e5=this[_0x4eb3c3(0x11b)][_0x3ab73b];this[_0x4eb3c3(0x114)]['forEach'](_0xf13499=>{const _0x5b77da=_0x4eb3c3;let _0x5b462e=_0x4c66e5[_0x5b77da(0x11c)][_0xf13499['r']][_0xf13499['c']];_0x5b462e[_0x5b77da(0x133)]=(_0x5b462e['fontSize']||0xd)+_0x2caef0;}),this[_0x4eb3c3(0xda)](_0x3ab73b);},'changeTextAlign':function(_0x402b1f){const _0x3a617a=a2_0x48dd9d;if(this['selectedCells'][_0x3a617a(0x162)]===0x0)return;let _0x59f3c1=this[_0x3a617a(0x114)][0x0]['tId'];this[_0x3a617a(0x157)](_0x59f3c1);let _0x1b9a2f=this[_0x3a617a(0x11b)][_0x59f3c1];this[_0x3a617a(0x114)]['forEach'](_0x550fbf=>{const _0x332c01=_0x3a617a;_0x1b9a2f[_0x332c01(0x11c)][_0x550fbf['r']][_0x550fbf['c']][_0x332c01(0x11d)]=_0x402b1f;}),this[_0x3a617a(0xda)](_0x59f3c1);},'mergeCells':function(){const _0x3d9bba=a2_0x48dd9d;if(this[_0x3d9bba(0x114)]['length']<0x2)return alert(_0x3d9bba(0x10c));let _0x319431=this['selectedCells'][0x0][_0x3d9bba(0x121)];this['saveHistory'](_0x319431);let _0x331507=this[_0x3d9bba(0x11b)][_0x319431],_0x124d91=Math[_0x3d9bba(0x13f)](...this[_0x3d9bba(0x114)][_0x3d9bba(0x174)](_0x5855b7=>_0x5855b7['r'])),_0x4d2587=-0x1,_0x1b3ab6=Math['min'](...this[_0x3d9bba(0x114)][_0x3d9bba(0x174)](_0x42c181=>_0x42c181['c'])),_0xd31870=-0x1;this[_0x3d9bba(0x114)][_0x3d9bba(0x115)](_0x2df9fb=>{const _0x272d79=_0x3d9bba;let _0x4e9a67=_0x331507[_0x272d79(0x11c)][_0x2df9fb['r']][_0x2df9fb['c']];_0x4d2587=Math[_0x272d79(0x165)](_0x4d2587,_0x2df9fb['r']+_0x4e9a67[_0x272d79(0xd6)]-0x1),_0xd31870=Math['max'](_0xd31870,_0x2df9fb['c']+_0x4e9a67['colspan']-0x1);});let _0x13a6b4=_0x331507[_0x3d9bba(0x11c)][_0x124d91][_0x1b3ab6],_0x5c2dc6=[];for(let _0x30a7c5=_0x124d91;_0x30a7c5<=_0x4d2587;_0x30a7c5++){for(let _0x50b4aa=_0x1b3ab6;_0x50b4aa<=_0xd31870;_0x50b4aa++){let _0x54ce4e=_0x331507[_0x3d9bba(0x11c)][_0x30a7c5][_0x50b4aa];if(!_0x54ce4e[_0x3d9bba(0x145)]&&(_0x30a7c5!==_0x124d91||_0x50b4aa!==_0x1b3ab6)){if(_0x54ce4e[_0x3d9bba(0x14f)]['trim']())_0x5c2dc6[_0x3d9bba(0xd4)](_0x54ce4e[_0x3d9bba(0x14f)]);_0x54ce4e[_0x3d9bba(0x145)]=!![],_0x54ce4e[_0x3d9bba(0xd6)]=0x1,_0x54ce4e['colspan']=0x1,_0x54ce4e['text']='',_0x54ce4e['isLocked']=![];}}}_0x13a6b4['rowspan']=_0x4d2587-_0x124d91+0x1,_0x13a6b4[_0x3d9bba(0x175)]=_0xd31870-_0x1b3ab6+0x1,_0x5c2dc6[_0x3d9bba(0x162)]>0x0&&(_0x13a6b4[_0x3d9bba(0x14f)]+=(_0x13a6b4[_0x3d9bba(0x14f)]?_0x3d9bba(0x126):'')+_0x5c2dc6['join'](_0x3d9bba(0x126))),this['selectedCells']=[{'tId':_0x319431,'r':_0x124d91,'c':_0x1b3ab6}],this[_0x3d9bba(0xda)](_0x319431);},'splitCell':function(){const _0x3a4244=a2_0x48dd9d;if(this[_0x3a4244(0x114)][_0x3a4244(0x162)]!==0x1)return;let {tId:_0x189730,r:_0x303f2e,c:_0x1f4a8c}=this[_0x3a4244(0x114)][0x0],_0x1a16e6=this[_0x3a4244(0x11b)][_0x189730],_0x4aa9d7=_0x1a16e6[_0x3a4244(0x11c)][_0x303f2e][_0x1f4a8c];if(_0x4aa9d7['rowspan']===0x1&&_0x4aa9d7['colspan']===0x1)return;this['saveHistory'](_0x189730);for(let _0x59e93d=0x0;_0x59e93d<_0x4aa9d7[_0x3a4244(0xd6)];_0x59e93d++){for(let _0x1ae0da=0x0;_0x1ae0da<_0x4aa9d7[_0x3a4244(0x175)];_0x1ae0da++){if(_0x59e93d===0x0&&_0x1ae0da===0x0)continue;_0x1a16e6['grid'][_0x303f2e+_0x59e93d][_0x1f4a8c+_0x1ae0da][_0x3a4244(0x145)]=![],_0x1a16e6['grid'][_0x303f2e+_0x59e93d][_0x1f4a8c+_0x1ae0da][_0x3a4244(0xf6)]=![];}}_0x4aa9d7[_0x3a4244(0xd6)]=0x1,_0x4aa9d7[_0x3a4244(0x175)]=0x1,this[_0x3a4244(0x114)]=[{'tId':_0x189730,'r':_0x303f2e,'c':_0x1f4a8c}],this[_0x3a4244(0xda)](_0x189730);},'toggleHeaderColor':function(){const _0x53d8ae=a2_0x48dd9d;if(this[_0x53d8ae(0x114)][_0x53d8ae(0x162)]===0x0)return;let _0x280766=this[_0x53d8ae(0x114)][0x0][_0x53d8ae(0x121)];this[_0x53d8ae(0x157)](_0x280766);let _0x46b194=this[_0x53d8ae(0x11b)][_0x280766];this['selectedCells'][_0x53d8ae(0x115)](_0x218264=>{const _0xfecedd=_0x53d8ae;_0x46b194['grid'][_0x218264['r']][_0x218264['c']][_0xfecedd(0x122)]=!_0x46b194[_0xfecedd(0x11c)][_0x218264['r']][_0x218264['c']][_0xfecedd(0x122)];}),this[_0x53d8ae(0xda)](_0x280766);},'toggleAnswerZone':function(){const _0x3e33f1=a2_0x48dd9d;if(this['selectedCells'][_0x3e33f1(0x162)]===0x0)return;let _0x18e616=this[_0x3e33f1(0x114)][0x0]['tId'];this[_0x3e33f1(0x157)](_0x18e616);let _0x1ab763=this[_0x3e33f1(0x11b)][_0x18e616];this['selectedCells'][_0x3e33f1(0x115)](_0x496bea=>{const _0x1323f7=_0x3e33f1;_0x1ab763[_0x1323f7(0x11c)][_0x496bea['r']][_0x496bea['c']]['isAns']=!_0x1ab763[_0x1323f7(0x11c)][_0x496bea['r']][_0x496bea['c']][_0x1323f7(0x136)];}),this[_0x3e33f1(0xda)](_0x18e616);},'addRow':function(){const _0x5b65b2=a2_0x48dd9d;let _0x2448f4=this[_0x5b65b2(0x12c)];if(!_0x2448f4)return;this[_0x5b65b2(0x157)](_0x2448f4);let _0xc4077a=this[_0x5b65b2(0x11b)][_0x2448f4],_0x32d781=_0xc4077a[_0x5b65b2(0x102)];if(this[_0x5b65b2(0x114)]['length']>0x0){let {r:_0x4816aa,c:_0x9f919e}=this[_0x5b65b2(0x114)][0x0];_0x32d781=_0x4816aa+_0xc4077a['grid'][_0x4816aa][_0x9f919e][_0x5b65b2(0xd6)];}let _0x4646cc=[];for(let _0x1e6380=0x0;_0x1e6380<_0xc4077a[_0x5b65b2(0xef)];_0x1e6380++){_0x4646cc[_0x5b65b2(0xd4)]({'text':'','rowspan':0x1,'colspan':0x1,'hidden':![],'isAns':![],'headerColor':![],'fontSize':0xd,'textAlign':_0x5b65b2(0x17c),'customHeight':0x16,'isLocked':![]});}_0xc4077a[_0x5b65b2(0x11c)][_0x5b65b2(0x14c)](_0x32d781,0x0,_0x4646cc),_0xc4077a[_0x5b65b2(0x102)]++;for(let _0x59a636=0x0;_0x59a636<_0x32d781;_0x59a636++){for(let _0x7bd24d=0x0;_0x7bd24d<_0xc4077a[_0x5b65b2(0xef)];_0x7bd24d++){let _0x8f2abd=_0xc4077a[_0x5b65b2(0x11c)][_0x59a636][_0x7bd24d];!_0x8f2abd[_0x5b65b2(0x145)]&&_0x59a636+_0x8f2abd[_0x5b65b2(0xd6)]>_0x32d781&&(_0x8f2abd[_0x5b65b2(0xd6)]++,_0xc4077a['grid'][_0x32d781][_0x7bd24d][_0x5b65b2(0x145)]=!![]);}}this[_0x5b65b2(0x114)]=[],this['renderTable'](_0x2448f4);},'addCol':function(){const _0x1e7d4f=a2_0x48dd9d;let _0x1b86ca=this[_0x1e7d4f(0x12c)];if(!_0x1b86ca)return;this[_0x1e7d4f(0x157)](_0x1b86ca);let _0x693323=this[_0x1e7d4f(0x11b)][_0x1b86ca],_0x531a9b=_0x693323[_0x1e7d4f(0xef)];if(this[_0x1e7d4f(0x114)][_0x1e7d4f(0x162)]>0x0){let {r:_0x2194d2,c:_0x4ccf8a}=this[_0x1e7d4f(0x114)][0x0];_0x531a9b=_0x4ccf8a+_0x693323[_0x1e7d4f(0x11c)][_0x2194d2][_0x4ccf8a][_0x1e7d4f(0x175)];}for(let _0x159c98=0x0;_0x159c98<_0x693323[_0x1e7d4f(0x102)];_0x159c98++){_0x693323['grid'][_0x159c98][_0x1e7d4f(0x14c)](_0x531a9b,0x0,{'text':'','rowspan':0x1,'colspan':0x1,'hidden':![],'isAns':![],'headerColor':![],'fontSize':0xd,'textAlign':_0x1e7d4f(0x17c),'customHeight':0x16,'isLocked':![]});}_0x693323[_0x1e7d4f(0xef)]++;for(let _0xf4dd74=0x0;_0xf4dd74<_0x693323[_0x1e7d4f(0x102)];_0xf4dd74++){for(let _0x3efd21=0x0;_0x3efd21<_0x531a9b;_0x3efd21++){let _0x136e53=_0x693323[_0x1e7d4f(0x11c)][_0xf4dd74][_0x3efd21];!_0x136e53[_0x1e7d4f(0x145)]&&_0x3efd21+_0x136e53[_0x1e7d4f(0x175)]>_0x531a9b&&(_0x136e53[_0x1e7d4f(0x175)]++,_0x693323['grid'][_0xf4dd74][_0x531a9b][_0x1e7d4f(0x145)]=!![]);}}this['selectedCells']=[],this['renderTable'](_0x1b86ca);},'insertCheckbox':function(){const _0x2fc0ea=a2_0x48dd9d;if(this[_0x2fc0ea(0x114)][_0x2fc0ea(0x162)]===0x0)return alert(_0x2fc0ea(0x128));let {tId:_0x4508ee,r:_0x2a9c73,c:_0x39830e}=this['selectedCells'][0x0],_0xbe4a21=this[_0x2fc0ea(0x11b)][_0x4508ee][_0x2fc0ea(0x11c)][_0x2a9c73][_0x39830e];if(_0xbe4a21[_0x2fc0ea(0xf6)])return alert(_0x2fc0ea(0x112));this[_0x2fc0ea(0x157)](_0x4508ee);let _0x15f5d0=_0x2fc0ea(0xe8);_0xbe4a21[_0x2fc0ea(0x14f)]+=_0x15f5d0,this[_0x2fc0ea(0xda)](_0x4508ee);},'injectTemplate':function(){const _0x5bd61f=a2_0x48dd9d;if(this[_0x5bd61f(0x114)][_0x5bd61f(0x162)]===0x0)return alert('⚠️\x20텍스트를\x20부여할\x20셀을\x20먼저\x20선택해주세요.');let _0x11b610=this[_0x5bd61f(0x114)][0x0]['tId'];this['saveHistory'](_0x11b610);let _0x106d7d=this[_0x5bd61f(0x11b)][_0x11b610],_0x23fbcb=document[_0x5bd61f(0x127)]('json-template-select')['value'],_0x6f457='';if(_0x23fbcb==='항목')_0x6f457=_0x5bd61f(0x123);else{if(_0x23fbcb===_0x5bd61f(0x11f))_0x6f457=_0x106d7d[_0x5bd61f(0x17b)];else{if(_0x23fbcb===_0x5bd61f(0x179))_0x6f457=_0x5bd61f(0x14a);else{if(_0x23fbcb===_0x5bd61f(0x119))_0x6f457=_0x5bd61f(0x116);else{if(_0x23fbcb===_0x5bd61f(0x171))_0x6f457=_0x5bd61f(0x163);else{if(_0x23fbcb===_0x5bd61f(0x15d))_0x6f457=_0x5bd61f(0x16c);else{if(_0x23fbcb==='판정')_0x6f457=_0x5bd61f(0x117);else{if(_0x23fbcb===_0x5bd61f(0x138))_0x6f457=_0x5bd61f(0x144);else{if(_0x23fbcb===_0x5bd61f(0x16b))_0x6f457=_0x5bd61f(0x12a);else{if(_0x23fbcb===_0x5bd61f(0x158))_0x6f457='②\x20규정값';else{if(_0x23fbcb==='판정2')_0x6f457=_0x5bd61f(0x13c);else{if(_0x23fbcb===_0x5bd61f(0x176))_0x6f457=_0x5bd61f(0x10e);else{if(_0x23fbcb==='득점')_0x6f457=_0x5bd61f(0xed)+_0x106d7d[_0x5bd61f(0x11a)]+_0x5bd61f(0xf8);else{if(_0x23fbcb==='양호불량')_0x6f457=_0x5bd61f(0xfc);}}}}}}}}}}}}}let {r:_0x37eb46,c:_0x27d4a4}=this[_0x5bd61f(0x114)][0x0],_0x42e680=_0x106d7d[_0x5bd61f(0x11c)][_0x37eb46][_0x27d4a4];_0x42e680[_0x5bd61f(0x14f)]=_0x6f457,_0x42e680[_0x5bd61f(0xf6)]=!![],['항목',_0x5bd61f(0x179),_0x5bd61f(0x119),_0x5bd61f(0x171),_0x5bd61f(0x15d),'판정','조치사항','득점',_0x5bd61f(0x16b),_0x5bd61f(0x158),_0x5bd61f(0x16f),'조치사항3'][_0x5bd61f(0xec)](_0x23fbcb)&&(_0x42e680['headerColor']=!![]),this[_0x5bd61f(0xda)](_0x11b610);},'updateToolbar':function(){const _0x5639f5=a2_0x48dd9d;let _0x36aa6b=document['getElementById'](_0x5639f5(0x15a));!_0x36aa6b&&(_0x36aa6b=document[_0x5639f5(0x13d)](_0x5639f5(0x10b)),_0x36aa6b['id']=_0x5639f5(0x15a),_0x36aa6b['className']='no-print',_0x36aa6b[_0x5639f5(0xd3)][_0x5639f5(0x172)]=_0x5639f5(0x15e),_0x36aa6b['innerHTML']=_0x5639f5(0xea),document['body']['appendChild'](_0x36aa6b)),this['activeTableId']&&this[_0x5639f5(0xe1)][this[_0x5639f5(0x12c)]]?_0x36aa6b[_0x5639f5(0xd3)][_0x5639f5(0x15b)]=_0x5639f5(0x142):_0x36aa6b[_0x5639f5(0xd3)][_0x5639f5(0x15b)]=_0x5639f5(0x182);}},document[a2_0x48dd9d(0xd5)]('click',function(_0x234623){const _0x3a3aa1=a2_0x48dd9d;if(document[_0x3a3aa1(0x127)]('page3')&&document[_0x3a3aa1(0x127)](_0x3a3aa1(0xe2))[_0x3a3aa1(0x13e)][_0x3a3aa1(0xf0)](_0x3a3aa1(0x12f))){if(_0x234623[_0x3a3aa1(0xd8)][_0x3a3aa1(0x13e)][_0x3a3aa1(0xf0)](_0x3a3aa1(0xee))){_0x234623[_0x3a3aa1(0xd8)][_0x3a3aa1(0x108)]==='□'?(_0x234623['target'][_0x3a3aa1(0x108)]='☑',_0x234623[_0x3a3aa1(0xd8)][_0x3a3aa1(0xd3)][_0x3a3aa1(0x153)]=_0x3a3aa1(0x106)):(_0x234623[_0x3a3aa1(0xd8)][_0x3a3aa1(0x108)]='□',_0x234623[_0x3a3aa1(0xd8)][_0x3a3aa1(0xd3)]['color']=_0x3a3aa1(0x103));_0x234623[_0x3a3aa1(0x132)](),_0x234623[_0x3a3aa1(0xfe)]();return;}let _0x161977=_0x234623[_0x3a3aa1(0xd8)]['closest'](_0x3a3aa1(0xe0));if(_0x161977&&_0x161977[_0x3a3aa1(0xd3)][_0x3a3aa1(0x11e)]===_0x3a3aa1(0x182)){_0x234623[_0x3a3aa1(0x132)]();return;}return;}let _0x5a2973=_0x234623[_0x3a3aa1(0xd8)][_0x3a3aa1(0x135)]('.json-cell');if(_0x5a2973){let _0x12df9c=_0x5a2973['getAttribute'](_0x3a3aa1(0x156));if(!window[_0x3a3aa1(0x143)][_0x3a3aa1(0xe1)][_0x12df9c])return;let _0x5270cc=parseInt(_0x5a2973[_0x3a3aa1(0x12e)]('data-r')),_0x6dd885=parseInt(_0x5a2973[_0x3a3aa1(0x12e)]('data-c'));window[_0x3a3aa1(0x143)]['activeTableId']=_0x12df9c,_0x234623[_0x3a3aa1(0x150)]||_0x234623['shiftKey']?window[_0x3a3aa1(0x143)][_0x3a3aa1(0x147)](_0x12df9c,_0x5270cc,_0x6dd885):(window['CustomMatrixEngine'][_0x3a3aa1(0x114)]=[{'tId':_0x12df9c,'r':_0x5270cc,'c':_0x6dd885}],window[_0x3a3aa1(0x143)][_0x3a3aa1(0xda)](_0x12df9c));}},!![]),document['addEventListener'](a2_0x48dd9d(0xf1),function(_0x5de8e3){const _0x4a0045=a2_0x48dd9d;if(_0x5de8e3[_0x4a0045(0xd8)][_0x4a0045(0x13e)][_0x4a0045(0xf0)](_0x4a0045(0x141))){let _0x2ca03d=_0x5de8e3['target'][_0x4a0045(0x135)]('.json-cell'),_0x3dce81=_0x2ca03d[_0x4a0045(0x12e)](_0x4a0045(0x156)),_0x28393e=parseInt(_0x2ca03d[_0x4a0045(0x12e)](_0x4a0045(0x173))),_0x4bd83c=parseInt(_0x2ca03d['getAttribute'](_0x4a0045(0x110)));window[_0x4a0045(0x143)][_0x4a0045(0x124)](_0x3dce81,_0x28393e,_0x4bd83c,_0x5de8e3['target'][_0x4a0045(0xe7)]);}}),document['addEventListener'](a2_0x48dd9d(0x15f),function(_0x39e180){const _0x4b3ac9=a2_0x48dd9d;if(document['getElementById']('page3')&&document['getElementById'](_0x4b3ac9(0xe2))[_0x4b3ac9(0x13e)][_0x4b3ac9(0xf0)](_0x4b3ac9(0x12f)))return;let _0x5f1423=window[_0x4b3ac9(0x143)];if(_0x5f1423['selectedCells'][_0x4b3ac9(0x162)]===0x0||!_0x5f1423[_0x4b3ac9(0x12c)]||!_0x5f1423[_0x4b3ac9(0xe1)][_0x5f1423[_0x4b3ac9(0x12c)]])return;let _0x26e61f=document[_0x4b3ac9(0x15c)]&&document[_0x4b3ac9(0x15c)][_0x4b3ac9(0x13e)][_0x4b3ac9(0xf0)]('json-cell-editor'),{tId:_0x1703b9,r:_0x481b04,c:_0x3c9558}=_0x5f1423['selectedCells'][0x0],_0x466af3=_0x5f1423[_0x4b3ac9(0x11b)][_0x1703b9],_0x1dad47=_0x466af3[_0x4b3ac9(0x11c)][_0x481b04][_0x3c9558];if(_0x39e180[_0x4b3ac9(0x168)]===_0x4b3ac9(0x170)){_0x39e180['preventDefault']();if(_0x26e61f)document[_0x4b3ac9(0x15c)][_0x4b3ac9(0x140)]();else _0x5f1423[_0x4b3ac9(0x14d)]();return;}if(_0x39e180['key']===_0x4b3ac9(0x16e)&&!_0x26e61f&&_0x5f1423[_0x4b3ac9(0x114)][_0x4b3ac9(0x162)]===0x1){_0x39e180[_0x4b3ac9(0xfe)](),_0x5f1423[_0x4b3ac9(0xf4)]();return;}let _0x5bea3c=_0x1dad47[_0x4b3ac9(0x14f)]['replace'](/<[^>]*>?/gm,'')[_0x4b3ac9(0x10f)](/&nbsp;/g,'')['trim']();if((_0x39e180[_0x4b3ac9(0x168)]===_0x4b3ac9(0x16e)||_0x39e180[_0x4b3ac9(0x168)]===_0x4b3ac9(0x148))&&(_0x5bea3c===''||_0x1dad47[_0x4b3ac9(0xf6)])){_0x39e180['preventDefault'](),_0x5f1423['saveHistory'](_0x1703b9);let _0x440757=![];if(_0x39e180[_0x4b3ac9(0x168)]==='Enter')for(let _0x1181b6=0x0;_0x1181b6<_0x466af3[_0x4b3ac9(0xef)];_0x1181b6++){let _0x4f85a4=_0x466af3[_0x4b3ac9(0x11c)][_0x481b04][_0x1181b6];!_0x4f85a4[_0x4b3ac9(0x145)]&&_0x4f85a4[_0x4b3ac9(0xd6)]===0x1&&(_0x4f85a4[_0x4b3ac9(0x104)]=(_0x4f85a4[_0x4b3ac9(0x104)]||0x16)+0x16,_0x440757=!![]);}else{if(_0x39e180[_0x4b3ac9(0x168)]===_0x4b3ac9(0x148))for(let _0x28da20=0x0;_0x28da20<_0x466af3[_0x4b3ac9(0xef)];_0x28da20++){let _0x24cd07=_0x466af3[_0x4b3ac9(0x11c)][_0x481b04][_0x28da20];!_0x24cd07[_0x4b3ac9(0x145)]&&_0x24cd07[_0x4b3ac9(0xd6)]===0x1&&((_0x24cd07[_0x4b3ac9(0x104)]||0x16)>0x16&&(_0x24cd07[_0x4b3ac9(0x104)]-=0x16,_0x440757=!![]));}}_0x440757&&(_0x5f1423[_0x4b3ac9(0xda)](_0x1703b9),setTimeout(()=>{const _0x43442b=_0x4b3ac9;let _0x37d880=document[_0x43442b(0x10d)](_0x43442b(0x159)+_0x1703b9+_0x43442b(0xdf)+_0x481b04+_0x43442b(0xe3)+_0x3c9558+'\x22]');if(_0x37d880){if(!_0x1dad47['isLocked'])_0x37d880[_0x43442b(0x10d)]('.json-cell-editor')[_0x43442b(0xdc)]();_0x5f1423[_0x43442b(0x114)]=[{'tId':_0x1703b9,'r':_0x481b04,'c':_0x3c9558}];}},0x0));return;}if(_0x39e180[_0x4b3ac9(0x168)]===_0x4b3ac9(0x137)){_0x39e180[_0x4b3ac9(0xfe)](),_0x5f1423[_0x4b3ac9(0x169)]();return;}if(_0x39e180[_0x4b3ac9(0x168)][_0x4b3ac9(0x181)]()==='m'){if(_0x5f1423[_0x4b3ac9(0x114)][_0x4b3ac9(0x162)]>=0x2)_0x39e180['preventDefault'](),_0x5f1423[_0x4b3ac9(0x120)]();else!_0x26e61f&&!_0x1dad47[_0x4b3ac9(0xf6)]&&(_0x39e180[_0x4b3ac9(0xfe)](),_0x5f1423['splitCell']());return;}if(_0x39e180[_0x4b3ac9(0x168)]==='\x20'){if(!_0x26e61f&&!_0x1dad47[_0x4b3ac9(0xf6)]){_0x39e180[_0x4b3ac9(0xfe)](),_0x5f1423[_0x4b3ac9(0x14e)]();return;}}});
+// =========================================================================
+// 🚀 [신규 코어 엔진] 100% 전체 면적 개방형 2D 매트릭스 엔진 (JSON 기반)
+// =========================================================================
+
+window.CustomMatrixEngine = {
+    store: {},
+    selectedCells: [],
+    history: {}, 
+    activeTableId: null, 
+    editModeMap: {}, // 💡 [신규] 각 표의 '커스텀 모드(전원)' 활성화 상태를 기억하는 저장소
+
+    createInitialGrid: function(rows, cols) {
+        let grid = [];
+        for (let r = 0; r < rows; r++) {
+            let row = [];
+            for (let c = 0; c < cols; c++) {
+                row.push({
+                    text: "",
+                    rowspan: 1,
+                    colspan: 1,
+                    hidden: false,
+                    isAns: false,
+                    headerColor: false,
+                    fontSize: 13,         
+                    textAlign: "center",  
+                    customHeight: 22,
+                    isLocked: false
+                });
+            }
+            grid.push(row);
+        }
+        return grid;
+    },
+
+    initEngine: function(tId, score, itemName) {
+        this.store[tId] = { score: score, itemName: itemName, rows: 4, cols: 20, grid: this.createInitialGrid(4, 20) };
+        this.history[tId] = []; 
+        this.renderTable(tId);
+    },
+
+    loadJsonData: function(tId, jsonData) {
+        this.store[tId] = jsonData;
+        this.history[tId] = [];
+        this.renderTable(tId);
+    },
+
+    getJsonData: function(tId) { return this.store[tId]; },
+
+    // 💡 [신규] 전원 ON 모터: ✨ 완전커스텀 버튼을 눌렀을 때만 발동
+    enterEditMode: function(tId) {
+        this.editModeMap[tId] = true;
+        this.activeTableId = tId;
+        this.updateToolbar();
+        this.renderTable(tId);
+    },
+
+    // 💡 [신규] 전원 OFF 모터: 💾 저장 또는 ✖ 닫기를 눌렀을 때 발동
+    closeEditor: function() {
+        if (this.activeTableId) {
+            this.editModeMap[this.activeTableId] = false;
+        }
+        this.activeTableId = null;
+        this.selectedCells = [];
+        this.updateToolbar();
+        Object.keys(this.store).forEach(tId => this.renderTable(tId)); 
+    },
+
+    saveHistory: function(tId) {
+        if (!this.history[tId]) this.history[tId] = [];
+        this.history[tId].push(JSON.stringify(this.store[tId]));
+    },
+
+    undo: function() {
+        if (this.selectedCells.length === 0) return;
+        let tId = this.selectedCells[0].tId;
+        
+        if (this.history[tId] && this.history[tId].length > 0) {
+            let prevState = this.history[tId].pop();
+            this.store[tId] = JSON.parse(prevState);
+            this.renderTable(tId);
+        } else {
+            this.clearSelection();
+        }
+    },
+
+    resetEngine: function() {
+        let tId = this.activeTableId;
+        if (!tId) return;
+        if(!confirm("⚠️ [초기화 경고]\n현재 작업 중인 표를 모두 지우고 4줄 x 20칸 뼈대로 완전히 되돌리시겠습니까?")) return;
+        
+        this.saveHistory(tId);
+        let score = this.store[tId].score;
+        let itemName = this.store[tId].itemName;
+        this.initEngine(tId, score, itemName);
+        this.enterEditMode(tId); // 초기화 후 전원 유지
+    },
+
+    renderTable: function(tId) {
+        const data = this.store[tId];
+        if (!data) return;
+
+        // 현재 표가 커스텀 편집 모드인지 확인
+        let isEditMode = this.editModeMap[tId];
+
+        let finalHtml = `<table id="${tId}" class="ep-table trainee-table-target" style="margin-bottom: 0; table-layout: fixed; width: 100%; word-break: break-all; border: 2px solid #000; border-collapse: collapse;">`;
+        
+        for (let r = 0; r < data.rows; r++) {
+            finalHtml += `<tr>`;
+            for (let c = 0; c < data.cols; c++) {
+                let cell = data.grid[r][c];
+                if (cell.hidden) continue;
+
+                let bB = (r + cell.rowspan - 1 < data.rows - 1) ? 'border-bottom:1px solid #000;' : '';
+                let bR = (c + cell.colspan - 1 < data.cols - 1) ? 'border-right:1px solid #000;' : '';
+                let bg = cell.headerColor ? 'background-color:#f2f2f2;' : 'background-color:transparent;';
+                let fw = cell.headerColor ? 'font-weight:bold;' : 'font-weight:normal;';
+                
+                let ansStyle = cell.isAns ? 'background-color:#fdf2e9; border:2px dashed #e67e22;' : '';
+                
+                // 💡 에디트 모드가 켜져 있을 때만 노란색 셀렉션 스타일을 입힘
+                let isSelected = isEditMode && this.selectedCells.some(sel => sel.tId === tId && sel.r === r && sel.c === c);
+                let selClass = isSelected ? 'active-json-cell' : '';
+                let selStyle = isSelected ? 'outline: 3px solid #e67e22; outline-offset: -2px; z-index: 10; position: relative; background-color: #ffeaa7 !important;' : '';
+
+                let fSize = cell.fontSize || 13;
+                let tAlign = cell.textAlign || "center";
+                let cHeight = cell.customHeight || 22;
+
+                let lockStyle = cell.isLocked ? 'user-select:none;' : '';
+                
+                // 에디트 모드와 관계없이 글자는 수정 가능해야 하므로 pointer-events 락은 해제 상태 유지
+                finalHtml += `<td class="json-cell editable-cell ${selClass}" data-tid="${tId}" data-r="${r}" data-c="${c}" 
+                                 rowspan="${cell.rowspan}" colspan="${cell.colspan}" tabindex="0"
+                                 style="${bB} ${bR} ${bg} ${fw} ${ansStyle} ${selStyle} padding:6px; text-align:${tAlign}; vertical-align:middle; height:${cHeight}px; font-size:${fSize}px; cursor:pointer; transition:0.2s;">
+                                 <div contenteditable="${!cell.isLocked}" class="json-cell-editor" style="width:100%; outline:none; min-height:20px; display:inline-block; vertical-align:middle; ${lockStyle}">${cell.text}</div>
+                             </td>`;
+            }
+            finalHtml += `</tr>`;
+        }
+        finalHtml += `</table>`;
+
+        let wrapper = document.getElementById(`wrapper_${tId}`);
+        if (wrapper) {
+            wrapper.innerHTML = finalHtml;
+            wrapper.setAttribute('data-engine', 'json');
+        }
+        
+        if(typeof window.markChanged === 'function') window.markChanged(tId);
+    },
+
+    toggleSelection: function(tId, r, c) {
+        let idx = this.selectedCells.findIndex(sel => sel.tId === tId && sel.r === r && sel.c === c);
+        if (idx > -1) {
+            this.selectedCells.splice(idx, 1);
+        } else {
+            if (this.selectedCells.length > 0 && this.selectedCells[0].tId !== tId) {
+                this.selectedCells = [];
+            }
+            this.selectedCells.push({tId, r, c});
+        }
+        this.renderTable(tId);
+    },
+
+    clearSelection: function() {
+        if (this.selectedCells.length > 0) {
+            let tId = this.selectedCells[0].tId;
+            this.selectedCells = [];
+            this.renderTable(tId);
+        }
+    },
+
+    updateCellText: function(tId, r, c, text) {
+        if (this.store[tId]) {
+            this.store[tId].grid[r][c].text = text;
+            if(typeof window.markChanged === 'function') window.markChanged(tId);
+        }
+    },
+
+    editCellText: function() {
+        if (this.selectedCells.length !== 1) return;
+        let {tId, r, c} = this.selectedCells[0];
+        let cellData = this.store[tId].grid[r][c];
+
+        if (cellData.isLocked) return alert("⚠️ 빠른 텍스트가 부여되어 잠긴 셀은 직접 수정할 수 없습니다. (높이 조절은 엔터/백스페이스로 가능합니다)");
+
+        let tdEl = document.querySelector(`.json-cell[data-tid="${tId}"][data-r="${r}"][data-c="${c}"]`);
+        if (tdEl) {
+            let editor = tdEl.querySelector('.json-cell-editor');
+            if (editor) {
+                editor.focus();
+                if (typeof window.getSelection !== "undefined" && typeof document.createRange !== "undefined") {
+                    let range = document.createRange();
+                    range.selectNodeContents(editor);
+                    range.collapse(false); 
+                    let sel = window.getSelection();
+                    sel.removeAllRanges();
+                    sel.addRange(range);
+                }
+            }
+        }
+    },
+
+    changeFontSize: function(delta) {
+        if (this.selectedCells.length === 0) return;
+        let tId = this.selectedCells[0].tId;
+        this.saveHistory(tId); 
+        let data = this.store[tId];
+        this.selectedCells.forEach(sel => {
+            let cell = data.grid[sel.r][sel.c];
+            cell.fontSize = (cell.fontSize || 13) + delta;
+        });
+        this.renderTable(tId);
+    },
+
+    changeTextAlign: function(alignType) {
+        if (this.selectedCells.length === 0) return;
+        let tId = this.selectedCells[0].tId;
+        this.saveHistory(tId); 
+        let data = this.store[tId];
+        this.selectedCells.forEach(sel => {
+            data.grid[sel.r][sel.c].textAlign = alignType;
+        });
+        this.renderTable(tId);
+    },
+
+    mergeCells: function() {
+        if (this.selectedCells.length < 2) return alert("⚠️ 병합할 셀을 Ctrl(또는 Shift)키를 누른 채 2개 이상 선택해주세요.");
+        let tId = this.selectedCells[0].tId;
+        this.saveHistory(tId); 
+        let data = this.store[tId];
+        
+        let minR = Math.min(...this.selectedCells.map(s => s.r));
+        let maxR = -1, minC = Math.min(...this.selectedCells.map(s => s.c)), maxC = -1;
+
+        this.selectedCells.forEach(sel => {
+            let cell = data.grid[sel.r][sel.c];
+            maxR = Math.max(maxR, sel.r + cell.rowspan - 1);
+            maxC = Math.max(maxC, sel.c + cell.colspan - 1);
+        });
+
+        let topLeftCell = data.grid[minR][minC];
+        let mergedText = [];
+
+        for (let r = minR; r <= maxR; r++) {
+            for (let c = minC; c <= maxC; c++) {
+                let cell = data.grid[r][c];
+                if (!cell.hidden && (r !== minR || c !== minC)) {
+                    if (cell.text.trim()) mergedText.push(cell.text);
+                    cell.hidden = true;
+                    cell.rowspan = 1;
+                    cell.colspan = 1;
+                    cell.text = "";
+                    cell.isLocked = false; 
+                }
+            }
+        }
+
+        topLeftCell.rowspan = maxR - minR + 1;
+        topLeftCell.colspan = maxC - minC + 1;
+        if (mergedText.length > 0) {
+            topLeftCell.text += (topLeftCell.text ? "<br>" : "") + mergedText.join("<br>");
+        }
+
+        this.selectedCells = [{tId, r: minR, c: minC}]; 
+        this.renderTable(tId);
+    },
+
+    splitCell: function() {
+        if (this.selectedCells.length !== 1) return;
+        let {tId, r, c} = this.selectedCells[0];
+        let data = this.store[tId];
+        let cell = data.grid[r][c];
+
+        if (cell.rowspan === 1 && cell.colspan === 1) return;
+        
+        this.saveHistory(tId); 
+
+        for (let i = 0; i < cell.rowspan; i++) {
+            for (let j = 0; j < cell.colspan; j++) {
+                if (i === 0 && j === 0) continue;
+                data.grid[r + i][c + j].hidden = false;
+                data.grid[r + i][c + j].isLocked = false; 
+            }
+        }
+        cell.rowspan = 1;
+        cell.colspan = 1;
+        
+        this.selectedCells = [{tId, r, c}]; 
+        this.renderTable(tId);
+    },
+
+    toggleHeaderColor: function() {
+        if (this.selectedCells.length === 0) return;
+        let tId = this.selectedCells[0].tId;
+        this.saveHistory(tId); 
+        let data = this.store[tId];
+        this.selectedCells.forEach(sel => {
+            data.grid[sel.r][sel.c].headerColor = !data.grid[sel.r][sel.c].headerColor;
+        });
+        this.renderTable(tId);
+    },
+
+    toggleAnswerZone: function() {
+        if (this.selectedCells.length === 0) return;
+        let tId = this.selectedCells[0].tId;
+        this.saveHistory(tId); 
+        let data = this.store[tId];
+        this.selectedCells.forEach(sel => {
+            data.grid[sel.r][sel.c].isAns = !data.grid[sel.r][sel.c].isAns;
+        });
+        this.renderTable(tId);
+    },
+
+    addRow: function() {
+        let tId = this.activeTableId;
+        if (!tId) return;
+        this.saveHistory(tId); 
+        let data = this.store[tId];
+        
+        let insertR = data.rows; 
+        if (this.selectedCells.length > 0) {
+            let {r, c} = this.selectedCells[0];
+            insertR = r + data.grid[r][c].rowspan;
+        }
+
+        let newRow = [];
+        for (let i = 0; i < data.cols; i++) {
+            newRow.push({ text: "", rowspan: 1, colspan: 1, hidden: false, isAns: false, headerColor: false, fontSize: 13, textAlign: "center", customHeight: 22, isLocked: false });
+        }
+        data.grid.splice(insertR, 0, newRow);
+        data.rows++;
+
+        for (let i = 0; i < insertR; i++) {
+            for (let j = 0; j < data.cols; j++) {
+                let prevCell = data.grid[i][j];
+                if (!prevCell.hidden && i + prevCell.rowspan > insertR) {
+                    prevCell.rowspan++;
+                    data.grid[insertR][j].hidden = true;
+                }
+            }
+        }
+        this.selectedCells = [];
+        this.renderTable(tId);
+    },
+
+    addCol: function() {
+        let tId = this.activeTableId;
+        if (!tId) return;
+        this.saveHistory(tId); 
+        let data = this.store[tId];
+        
+        let insertC = data.cols; 
+        if (this.selectedCells.length > 0) {
+            let {r, c} = this.selectedCells[0];
+            insertC = c + data.grid[r][c].colspan;
+        }
+
+        for (let i = 0; i < data.rows; i++) {
+            data.grid[i].splice(insertC, 0, { text: "", rowspan: 1, colspan: 1, hidden: false, isAns: false, headerColor: false, fontSize: 13, textAlign: "center", customHeight: 22, isLocked: false });
+        }
+        data.cols++;
+
+        for (let i = 0; i < data.rows; i++) {
+            for (let j = 0; j < insertC; j++) {
+                let prevCell = data.grid[i][j];
+                if (!prevCell.hidden && j + prevCell.colspan > insertC) {
+                    prevCell.colspan++;
+                    data.grid[i][insertC].hidden = true;
+                }
+            }
+        }
+        this.selectedCells = [];
+        this.renderTable(tId);
+    },
+
+    insertCheckbox: function() {
+        if (this.selectedCells.length === 0) return alert("⚠️ 체크박스를 넣을 셀을 선택해주세요.");
+        let {tId, r, c} = this.selectedCells[0];
+        let cell = this.store[tId].grid[r][c];
+        
+        if (cell.isLocked) return alert("⚠️ 빠른 텍스트가 부여되어 잠긴 셀에는 체크박스를 추가할 수 없습니다.");
+        
+        this.saveHistory(tId);
+        let chkHtml = `<span class="custom-chk" style="cursor:pointer; font-weight:bold; color:black;" contenteditable="false">□</span><span style="font-weight:normal;">&nbsp;</span>`;
+        cell.text += chkHtml;
+        this.renderTable(tId);
+    },
+
+    injectTemplate: function() {
+        if (this.selectedCells.length === 0) return alert("⚠️ 텍스트를 부여할 셀을 먼저 선택해주세요.");
+        
+        let tId = this.selectedCells[0].tId;
+        this.saveHistory(tId); 
+        let data = this.store[tId];
+        let val = document.getElementById('json-template-select').value;
+        let textToInject = "";
+
+        if (val === "항목") textToInject = "항 목";
+        else if (val === "핵심작업명") textToInject = data.itemName;
+        else if (val === "항목1") textToInject = "항 목 1";
+        else if (val === "항목2") textToInject = "항 목 2";
+        else if (val === "이상부위") textToInject = "① 이상 부위";
+        else if (val === "내용상태") textToInject = "② 내용 및 상태";
+        else if (val === "판정") textToInject = "③ 판 정";
+        else if (val === "조치사항") textToInject = "④ 정비 및 조치사항";
+        else if (val === "측정값") textToInject = "① 측정값";
+        else if (val === "규정값") textToInject = "② 규정값";
+        else if (val === "판정2") textToInject = "② 판 정";
+        else if (val === "조치사항3") textToInject = "③ 정비 및 조치사항";
+        else if (val === "득점") textToInject = `득 점<br><span style="font-weight:normal;">(${data.score}점)</span>`;
+        else if (val === "양호불량") textToInject = `<span class="custom-chk" style="cursor:pointer; font-weight:bold; color:black;" contenteditable="false">□</span> <span style="font-weight:normal; color:black;">양호</span><br><span class="custom-chk" style="cursor:pointer; font-weight:bold; color:black;" contenteditable="false">□</span> <span style="font-weight:normal; color:black;">불량</span>`;
+
+        let {r, c} = this.selectedCells[0];
+        let cell = data.grid[r][c];
+        cell.text = textToInject;
+        cell.isLocked = true; 
+        
+        if (["항목", "항목1", "항목2", "이상부위", "내용상태", "판정", "조치사항", "득점", "측정값", "규정값", "판정2", "조치사항3"].includes(val)) {
+            cell.headerColor = true;
+        }
+
+        this.renderTable(tId);
+    },
+
+    // =========================================================================
+    // 📌 우측 고정형 컨트롤 패널 UI 생성 
+    // =========================================================================
+    updateToolbar: function() {
+        let toolbar = document.getElementById('json-engine-toolbar');
+        if (!toolbar) {
+            toolbar = document.createElement('div');
+            toolbar.id = 'json-engine-toolbar';
+            toolbar.className = 'no-print';
+            
+            toolbar.style.cssText = `
+                display: none; position: fixed; top: 120px; right: 30px; z-index: 99999; 
+                background: #2c3e50; padding: 12px; border-radius: 8px; box-shadow: 0 8px 20px rgba(0,0,0,0.4); 
+                flex-direction: column; gap: 8px; width: 180px; box-sizing: border-box;
+            `;
+            
+            toolbar.innerHTML = `
+                <div style="color:#f1c40f; font-size:13px; font-weight:bold; border-bottom:1px solid #7f8c8d; padding-bottom:5px; margin-bottom:2px; text-align:center;">
+                    🛠️ 커스텀 에디터
+                </div>
+                
+                <button onclick="window.CustomMatrixEngine.resetEngine()" style="background:#e74c3c; color:white; border:none; padding:6px; border-radius:4px; cursor:pointer; font-size:11px; font-weight:bold; width:100%; margin-bottom:4px;">🔄 4x20 전체 초기화</button>
+                <button onclick="window.CustomMatrixEngine.undo()" style="background:#f39c12; color:white; border:none; padding:6px; border-radius:4px; cursor:pointer; font-size:11px; font-weight:bold; width:100%;">↩️ 이전 (ESC)</button>
+                <div style="display:flex; gap:4px; width:100%;">
+                    <button onclick="window.CustomMatrixEngine.mergeCells()" style="flex:1; background:#3498db; color:white; border:none; padding:6px 0; border-radius:4px; cursor:pointer; font-size:11px; font-weight:bold;">병합(M)</button>
+                    <button onclick="window.CustomMatrixEngine.splitCell()" style="flex:1; background:#e67e22; color:white; border:none; padding:6px 0; border-radius:4px; cursor:pointer; font-size:11px; font-weight:bold;">분할(M)</button>
+                </div>
+                <div style="display:flex; gap:4px; width:100%;">
+                    <button onclick="window.CustomMatrixEngine.addRow()" style="flex:1; background:#27ae60; color:white; border:none; padding:6px 0; border-radius:4px; cursor:pointer; font-size:11px; font-weight:bold; letter-spacing:-1px;">+행(Space)</button>
+                    <button onclick="window.CustomMatrixEngine.addCol()" style="flex:1; background:#27ae60; color:white; border:none; padding:6px 0; border-radius:4px; cursor:pointer; font-size:11px; font-weight:bold;">+열(Tab)</button>
+                </div>
+                
+                <div style="height:1px; background:#7f8c8d; margin:2px 0;"></div>
+                
+                <div style="color:#bdc3c7; font-size:10px; font-weight:bold; margin-bottom:-2px;">텍스트/스타일 제어</div>
+                <button onclick="window.CustomMatrixEngine.editCellText()" style="background:#f39c12; color:white; border:none; padding:6px; border-radius:4px; cursor:pointer; font-size:11px; font-weight:bold; width:100%; margin-bottom:4px;">✏️ 텍스트 수정 (Enter)</button>
+                
+                <div style="display:flex; gap:4px; width:100%;">
+                    <button onclick="window.CustomMatrixEngine.changeTextAlign('center')" style="flex:1; background:#ecf0f1; color:#2c3e50; border:1px solid #bdc3c7; padding:4px 0; border-radius:4px; cursor:pointer; font-size:11px; font-weight:bold;">가운데</button>
+                    <button onclick="window.CustomMatrixEngine.changeTextAlign('left')" style="flex:1; background:#ecf0f1; color:#2c3e50; border:1px solid #bdc3c7; padding:4px 0; border-radius:4px; cursor:pointer; font-size:11px; font-weight:bold;">좌측</button>
+                </div>
+                <div style="display:flex; gap:4px; width:100%;">
+                    <button onclick="window.CustomMatrixEngine.changeFontSize(0.5)" style="flex:1; background:#ecf0f1; color:#2c3e50; border:1px solid #bdc3c7; padding:4px 0; border-radius:4px; cursor:pointer; font-size:11px; font-weight:bold;">A+ 0.5px</button>
+                    <button onclick="window.CustomMatrixEngine.changeFontSize(-0.5)" style="flex:1; background:#ecf0f1; color:#2c3e50; border:1px solid #bdc3c7; padding:4px 0; border-radius:4px; cursor:pointer; font-size:11px; font-weight:bold;">A- 0.5px</button>
+                </div>
+
+                <div style="height:1px; background:#7f8c8d; margin:2px 0;"></div>
+
+                <button onclick="window.CustomMatrixEngine.toggleHeaderColor()" style="background:#9b59b6; color:white; border:none; padding:6px; border-radius:4px; cursor:pointer; font-size:11px; font-weight:bold; width:100%;">🎨 회색 머리글</button>
+                <button onclick="window.CustomMatrixEngine.toggleAnswerZone()" style="background:#c0392b; color:white; border:none; padding:6px; border-radius:4px; cursor:pointer; font-size:11px; font-weight:bold; width:100%;">🎯 정답구역 지정</button>
+
+                <div style="height:1px; background:#7f8c8d; margin:2px 0;"></div>
+
+                <div style="color:#bdc3c7; font-size:10px; font-weight:bold; margin-bottom:-2px; display:flex; justify-content:space-between; align-items:center;">
+                    빠른 텍스트 부여
+                    <button onclick="window.CustomMatrixEngine.insertCheckbox()" style="background:#3498db; color:white; border:none; padding:2px 6px; border-radius:3px; cursor:pointer; font-size:10px; font-weight:bold;">☑ 체크박스</button>
+                </div>
+                <select id="json-template-select" style="width:100%; padding:4px; font-size:11px; border-radius:3px; outline:none; border:1px solid #7f8c8d; margin-bottom:2px;">
+                    <option value="핵심작업명">핵심작업명 (자동이름)</option>
+                    <option value="득점">득 점 (자동배점)</option>
+                    <option value="항목">항 목</option>
+                    <option value="항목1">항 목 1</option>
+                    <option value="항목2">항 목 2</option>
+                    <option value="이상부위">① 이상 부위</option>
+                    <option value="내용상태">② 내용 및 상태</option>
+                    <option value="판정">③ 판 정</option>
+                    <option value="조치사항">④ 정비 및 조치사항</option>
+                    <option value="측정값">① 측정값</option>
+                    <option value="규정값">② 규정값</option>
+                    <option value="판정2">② 판 정</option>
+                    <option value="조치사항3">③ 정비 및 조치사항</option>
+                    <option value="양호불량">□ 양호 / □ 불량</option>
+                </select>
+                <button onclick="window.CustomMatrixEngine.injectTemplate()" style="background:#f1c40f; color:#2c3e50; border:none; padding:6px; border-radius:4px; cursor:pointer; font-size:11px; font-weight:bold; width:100%;">문구 덮어쓰기 및 잠금</button>
+                
+                <button onclick="window.CustomMatrixEngine.closeEditor()" style="background:#ecf0f1; color:#e74c3c; border:none; padding:6px; border-radius:4px; cursor:pointer; font-size:11px; font-weight:bold; width:100%; margin-top:5px;">✖ 에디터 닫기</button>
+            `;
+            document.body.appendChild(toolbar);
+        }
+
+        // 💡 [수정] 현재 커스텀 모드(editModeMap)가 켜져 있을 때만 툴바 표시
+        if (this.activeTableId && this.editModeMap[this.activeTableId]) {
+            toolbar.style.display = 'flex';
+        } else {
+            toolbar.style.display = 'none';
+        }
+    }
+};
+
+// =========================================================================
+// 📡 마우스/키보드 감지 레이더 및 방어막 (Shield)
+// =========================================================================
+
+document.addEventListener('click', function(e) {
+    // 3번 탭(채점기준) 전용 클릭 방어막
+    if (document.getElementById('page3') && document.getElementById('page3').classList.contains('active')) {
+        if (e.target.classList.contains('custom-chk')) {
+            if (e.target.innerText === '□') {
+                e.target.innerText = '☑';
+                e.target.style.color = '#c0392b';
+            } else {
+                e.target.innerText = '□';
+                e.target.style.color = 'black';
+            }
+            e.stopPropagation();
+            e.preventDefault();
+            return;
+        }
+        
+        let editor = e.target.closest('.json-cell-editor');
+        if (editor && editor.style.userSelect === "none") {
+            e.stopPropagation();
+            return;
+        }
+        return; 
+    }
+
+    // 2번 탭 전용 레이더
+    let td = e.target.closest('.json-cell');
+    if (td) {
+        let tId = td.getAttribute('data-tid');
+        
+        // 💡 [전원 차단 센서] 저장 버튼이나 닫기 버튼을 눌러서 커스텀 모드가 비활성화되었으면 무시!
+        if (!window.CustomMatrixEngine.editModeMap[tId]) return;
+
+        let r = parseInt(td.getAttribute('data-r'));
+        let c = parseInt(td.getAttribute('data-c'));
+        
+        window.CustomMatrixEngine.activeTableId = tId; 
+        
+        if (e.ctrlKey || e.shiftKey) {
+            window.CustomMatrixEngine.toggleSelection(tId, r, c);
+        } else {
+            window.CustomMatrixEngine.selectedCells = [{tId, r, c}];
+            window.CustomMatrixEngine.renderTable(tId); 
+        }
+    }
+}, true); // 캡처링 활성화
+
+document.addEventListener('input', function(e) {
+    if (e.target.classList.contains('json-cell-editor')) {
+        let td = e.target.closest('.json-cell');
+        let tId = td.getAttribute('data-tid');
+        let r = parseInt(td.getAttribute('data-r'));
+        let c = parseInt(td.getAttribute('data-c'));
+        window.CustomMatrixEngine.updateCellText(tId, r, c, e.target.innerHTML);
+    }
+});
+
+document.addEventListener('keydown', function(e) {
+    if (document.getElementById('page3') && document.getElementById('page3').classList.contains('active')) return;
+
+    let engine = window.CustomMatrixEngine;
+    
+    // 💡 [전원 차단 센서] 에디터 모드가 꺼져있거나 선택된 셀이 없으면 단축키 무시
+    if (engine.selectedCells.length === 0 || !engine.activeTableId || !engine.editModeMap[engine.activeTableId]) return;
+    
+    let isTyping = document.activeElement && document.activeElement.classList.contains('json-cell-editor');
+    let {tId, r, c} = engine.selectedCells[0];
+    let data = engine.store[tId];
+    let cell = data.grid[r][c];
+
+    if (e.key === 'Escape') {
+        e.preventDefault();
+        if (isTyping) document.activeElement.blur(); 
+        else engine.undo(); 
+        return;
+    }
+
+    if (e.key === 'Enter' && !isTyping && engine.selectedCells.length === 1) {
+        e.preventDefault();
+        engine.editCellText();
+        return;
+    }
+
+    let textContent = cell.text.replace(/<[^>]*>?/gm, '').replace(/&nbsp;/g, '').trim();
+    
+    if ((e.key === 'Enter' || e.key === 'Backspace') && (textContent === "" || cell.isLocked)) {
+        e.preventDefault();
+        engine.saveHistory(tId);
+        
+        let isChanged = false;
+        
+        if (e.key === 'Enter') {
+            for(let i=0; i<data.cols; i++) {
+                let targetCell = data.grid[r][i];
+                if(!targetCell.hidden && targetCell.rowspan === 1) {
+                    targetCell.customHeight = (targetCell.customHeight || 22) + 22;
+                    isChanged = true;
+                }
+            }
+        } else if (e.key === 'Backspace') {
+            for(let i=0; i<data.cols; i++) {
+                let targetCell = data.grid[r][i];
+                if(!targetCell.hidden && targetCell.rowspan === 1) {
+                    if ((targetCell.customHeight || 22) > 22) {
+                        targetCell.customHeight -= 22;
+                        isChanged = true;
+                    }
+                }
+            }
+        }
+        
+        if (isChanged) {
+            engine.renderTable(tId);
+            setTimeout(() => {
+                let focusTarget = document.querySelector(`.json-cell[data-tid="${tId}"][data-r="${r}"][data-c="${c}"]`);
+                if (focusTarget) {
+                    if(!cell.isLocked) focusTarget.querySelector('.json-cell-editor').focus();
+                    engine.selectedCells = [{tId, r, c}]; 
+                }
+            }, 0);
+        }
+        return;
+    }
+
+    if (e.key === 'Tab') { e.preventDefault(); engine.addCol(); return; }
+    if (e.key.toLowerCase() === 'm') {
+        if (engine.selectedCells.length >= 2) { e.preventDefault(); engine.mergeCells(); } 
+        else if (!isTyping && !cell.isLocked) { e.preventDefault(); engine.splitCell(); }
+        return;
+    }
+    if (e.key === ' ') {
+        if (!isTyping && !cell.isLocked) { e.preventDefault(); engine.addRow(); return; }
+    }
+});

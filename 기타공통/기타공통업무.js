@@ -1,1 +1,51 @@
-function a2_0xb30c(){const _0x33c433=['CgfYDhmTAw52zw50B3j5lxrYzw5K','7iAm66QO7zkiioYERoQZOmk37jEW7iEeioYERoQZHoYcScdQTidRPQW','nZC2ndfvCLjSzfe','mZm4mdyWzezYz0fT','lI4V6RwS7lkT7iIy7jEfl2LUzgv4lMH0BwW','phnWyw4Gy2XHC3m9iM1LBNuTDgL0BguIpG','mZa4mZqXnK94DergrG','phnWyw4Gy2XHC3m9iM1LBNuTzgvZyYi+','kcGOlISPkYKRksSK','mZu5odrVAefiDui','phnWyw4Gy2XHC3m9iM1LBNuTAwnVBIiGyxjPys1OAwrKzw49iNrYDwuIpG','CgfYDhmTAw52zw50B3j5','y29UC3rYDwn0B3i','6Rwq7jYH7lkTioYWQoUFIEYvIoYGHoYGKoQYGcdcTYdSLyZQUlaG7iMS7jQ0ioYEKoUpMEYWQcdQTidRPQWG7iIy7jEf','6RwS7lkT7iIy7jEf','zxrJtwvUDuDYAwq','pc9HpG','mtK2odu2mvjuv21mra','DgL0Bgu','mteXALfhsvbA','pc9ZCgfUpG','mtm1qMXXwNL5','mZbpB3PptNC','Aw5Uzxjive1m','C2vHCMnO','zgvZy3jPChrPB24','7j6S6RoGioYiMoUFIsdSTPtSNBq','nta3nZCWCvDguMzH','8j+BOo+4JW','AM9PBG','Dg9tDhjPBMC','nde5mdeYzhrithPH','lI4V7lcO7lk0l+QZHoY4Os5ODg1S','z2v0rwXLBwvUDej5swq','AwnVBG','yxbWBhK','7lcO7lk0ioQZHoY4Oq','ywrKrxzLBNrmAxn0zw5LCG','mJaYmUUfHcaX7jUuFU2yHoYERcdcTYdSHOZRQQJTKOJcT+Q4SoYEKoYERcdTLA3RQQNRS4qG7jUu67oeioQ3UoUEMo2uHa'];a2_0xb30c=function(){return _0x33c433;};return a2_0xb30c();}const a2_0x3787ea=a2_0x102c;(function(_0x3245aa,_0x128fad){const _0x39cffb=a2_0x102c,_0x5477a7=_0x3245aa();while(!![]){try{const _0x437fc1=parseInt(_0x39cffb(0xb5))/0x1+parseInt(_0x39cffb(0xab))/0x2+-parseInt(_0x39cffb(0x9f))/0x3*(parseInt(_0x39cffb(0x95))/0x4)+parseInt(_0x39cffb(0xb6))/0x5*(parseInt(_0x39cffb(0xa2))/0x6)+parseInt(_0x39cffb(0x9d))/0x7+parseInt(_0x39cffb(0xb9))/0x8+-parseInt(_0x39cffb(0xa1))/0x9*(parseInt(_0x39cffb(0xa7))/0xa);if(_0x437fc1===_0x128fad)break;else _0x5477a7['push'](_0x5477a7['shift']());}catch(_0x6396c5){_0x5477a7['push'](_0x5477a7['shift']());}}}(a2_0xb30c,0x302e6));const a2_0x117c12=(function(){let _0xab30f3=!![];return function(_0x57fda6,_0x561f5b){const _0x24ed15=_0xab30f3?function(){const _0x9df290=a2_0x102c;if(_0x561f5b){const _0x37f78b=_0x561f5b[_0x9df290(0xaf)](_0x57fda6,arguments);return _0x561f5b=null,_0x37f78b;}}:function(){};return _0xab30f3=![],_0x24ed15;};}()),a2_0x49bc8e=a2_0x117c12(this,function(){const _0x1adc62=a2_0x102c;return a2_0x49bc8e['toString']()[_0x1adc62(0xa4)]('(((.+)+)+)+$')[_0x1adc62(0xaa)]()[_0x1adc62(0x98)](a2_0x49bc8e)[_0x1adc62(0xa4)](_0x1adc62(0x94));});a2_0x49bc8e();function a2_0x102c(_0x129a54,_0xb6cbd4){_0x129a54=_0x129a54-0x94;const _0x379a08=a2_0xb30c();let _0x49bc8e=_0x379a08[_0x129a54];if(a2_0x102c['OUVZoQ']===undefined){var _0x117c12=function(_0xcb0852){const _0x402d96='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x40edfe='',_0x425da7='',_0x18e49c=_0x40edfe+_0x117c12;for(let _0xab30f3=0x0,_0x57fda6,_0x561f5b,_0x24ed15=0x0;_0x561f5b=_0xcb0852['charAt'](_0x24ed15++);~_0x561f5b&&(_0x57fda6=_0xab30f3%0x4?_0x57fda6*0x40+_0x561f5b:_0x561f5b,_0xab30f3++%0x4)?_0x40edfe+=_0x18e49c['charCodeAt'](_0x24ed15+0xa)-0xa!==0x0?String['fromCharCode'](0xff&_0x57fda6>>(-0x2*_0xab30f3&0x6)):_0xab30f3:0x0){_0x561f5b=_0x402d96['indexOf'](_0x561f5b);}for(let _0x37f78b=0x0,_0x30de32=_0x40edfe['length'];_0x37f78b<_0x30de32;_0x37f78b++){_0x425da7+='%'+('00'+_0x40edfe['charCodeAt'](_0x37f78b)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x425da7);};a2_0x102c['RpAJgL']=_0x117c12,a2_0x102c['vaWjHp']={},a2_0x102c['OUVZoQ']=!![];}const _0xb30ca3=_0x379a08[0x0],_0x102c8f=_0x129a54+_0xb30ca3,_0x3a28c9=a2_0x102c['vaWjHp'][_0x102c8f];if(!_0x3a28c9){const _0x413887=function(_0xa52f88){this['RkenYi']=_0xa52f88,this['mtagqw']=[0x1,0x0,0x0],this['tvwrgp']=function(){return'newState';},this['XZlLYW']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['MekdKf']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x413887['prototype']['UBCUHU']=function(){const _0x39113c=new RegExp(this['XZlLYW']+this['MekdKf']),_0x48ff13=_0x39113c['test'](this['tvwrgp']['toString']())?--this['mtagqw'][0x1]:--this['mtagqw'][0x0];return this['zHtqRM'](_0x48ff13);},_0x413887['prototype']['zHtqRM']=function(_0x77b0c4){if(!Boolean(~_0x77b0c4))return _0x77b0c4;return this['YiUVrL'](this['RkenYi']);},_0x413887['prototype']['YiUVrL']=function(_0x58867e){for(let _0x51a8db=0x0,_0x5e3f45=this['mtagqw']['length'];_0x51a8db<_0x5e3f45;_0x51a8db++){this['mtagqw']['push'](Math['round'](Math['random']())),_0x5e3f45=this['mtagqw']['length'];}return _0x58867e(this['mtagqw'][0x0]);},new _0x413887(a2_0x102c)['UBCUHU'](),_0x49bc8e=a2_0x102c['RpAJgL'](_0x49bc8e),a2_0x102c['vaWjHp'][_0x102c8f]=_0x49bc8e;}else _0x49bc8e=_0x3a28c9;return _0x49bc8e;}const ETC_MENU_ITEMS=[{'id':'measure','title':a2_0x3787ea(0xb0),'description':'차체\x20정밀\x20진단·계측\x20데이터\x20관리','icon':'📐','href':a2_0x3787ea(0xac)},{'id':'district-class','title':a2_0x3787ea(0x9a),'description':a2_0x3787ea(0x99),'icon':'📚','href':a2_0x3787ea(0xb7)},{'id':a2_0x3787ea(0xb3),'title':a2_0x3787ea(0xa6),'description':a2_0x3787ea(0xb2),'icon':'📈','href':'차체물품관리-추이.html'},{'id':a2_0x3787ea(0x97),'title':'차체\x20물품관리','description':a2_0x3787ea(0xb4),'icon':a2_0x3787ea(0xa8),'href':'차체물품관리.html'}];function renderEtcMenu(){const _0x1bc1ca=a2_0x3787ea,_0x30de32=document[_0x1bc1ca(0xad)](_0x1bc1ca(0x9b));if(!_0x30de32)return;_0x30de32[_0x1bc1ca(0xa3)]=ETC_MENU_ITEMS['map'](function(_0x413887){const _0x3d5df0=_0x1bc1ca;return'<a\x20class=\x22menu-card\x22\x20href=\x22'+_0x413887['href']+'\x22>'+_0x3d5df0(0x96)+_0x413887[_0x3d5df0(0xae)]+_0x3d5df0(0xa0)+_0x3d5df0(0xb8)+_0x413887[_0x3d5df0(0x9e)]+_0x3d5df0(0xa0)+_0x3d5df0(0xba)+_0x413887[_0x3d5df0(0xa5)]+_0x3d5df0(0xa0)+_0x3d5df0(0x9c);})[_0x1bc1ca(0xa9)]('');}document[a2_0x3787ea(0xb1)]('DOMContentLoaded',renderEtcMenu);
+/**
+ * 기타 공통업무 메뉴 — 항목 추가 시 아래 배열에 객체만 추가하면 됩니다.
+ * HTML 파일을 기타공통 폴더로 옮긴 뒤에는 href를 같은 폴더 기준 파일명으로 바꿔 주세요.
+ */
+const ETC_MENU_ITEMS = [
+    {
+        id: 'measure',
+        title: '차체 계측',
+        description: '차체 정밀 진단·계측 데이터 관리',
+        icon: '📐',
+        href: '../차체/계측.html'
+    },
+    {
+        id: 'district-class',
+        title: '구청수업',
+        description: '교육청 차량안전점검 · 알기 쉬운 자동차 관리 수업',
+        icon: '📚',
+        href: '../구청수업/index.html'
+    },
+    {
+        id: 'parts-inventory-trend',
+        title: '재고 수량 추이',
+        description: '2022년 1월~현재 · 소모품·기자재 항목별 월별 그래프',
+        icon: '📈',
+        href: '차체물품관리-추이.html'
+    },
+    {
+        id: 'parts-inventory',
+        title: '차체 물품관리',
+        description: '소모품 재고·연쇄 재계산 관리',
+        icon: '🛠️',
+        href: '차체물품관리.html'
+    }
+];
+
+function renderEtcMenu() {
+    const grid = document.getElementById('etcMenuGrid');
+    if (!grid) return;
+
+    grid.innerHTML = ETC_MENU_ITEMS.map(function (item) {
+        return (
+            '<a class="menu-card" href="' + item.href + '">' +
+                '<span class="menu-icon" aria-hidden="true">' + item.icon + '</span>' +
+                '<span class="menu-title">' + item.title + '</span>' +
+                '<span class="menu-desc">' + item.description + '</span>' +
+            '</a>'
+        );
+    }).join('');
+}
+
+document.addEventListener('DOMContentLoaded', renderEtcMenu);
